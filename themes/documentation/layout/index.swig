@@ -1,2 +1,4 @@
-<div>{{ page.content }}</div>
-<div>{{ __('test') }}</div>
+<div class="container">
+  <div>{{ page.content }}</div>
+  <div>{{ __('lang') }}</div>
+</div>

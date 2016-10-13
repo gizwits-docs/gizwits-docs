@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('https://at.alicdn.com/t/font_1459332919_3852491.eot'); /* IE9*/
+  src: url('https://at.alicdn.com/t/font_1459332919_3852491.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('https://at.alicdn.com/t/font_1459332919_3852491.woff') format('woff'), /* chromeã€firefox */
+  url('https://at.alicdn.com/t/font_1459332919_3852491.ttf') format('truetype'), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+*/
+  url('https://at.alicdn.com/t/font_1459332919_3852491.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.header {
+  line-height: 50px;
+  background: $black;
+  vertical-align: middle;
+  
+  .brand a{
+    color: $yellow;
+  }
+
+  .logo {
+    font-family: "iconfont";
+    font-style: normal;
+    font-size: 1.8em;
+  }
+
+  .text {
+    font-size: .8em;
+    margin-left: 20px;
+    padding: 10px 0 10px 20px;
+    border-left: 1px solid $yellow;
+  }
+}
