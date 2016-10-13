@@ -69,4 +69,4 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:kelly-apollo/gizwits-docs.github.io.git
+  repo: git@github.com:gizwits-docs/gizwits-docs.github.io.git
