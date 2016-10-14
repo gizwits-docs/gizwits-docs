@@ -1,0 +1,8 @@
+levelOneA:
+  path: /path/to/article
+levelOneB:
+  levelTwoA:
+    path: /path/to/article
+  levelTwoB:
+      levelThreeA:
+        path: /path/to/article

@@ -1,0 +1,32 @@
+一级菜单A:
+  path: /path/to/article
+一级菜单B:
+  二级菜单A:
+    path: /path/to/article
+  二级菜单B:
+      三级菜单A:
+        path: /path/to/article
+      三级菜单B:
+        path: /path/to/article
+  二级菜单C:
+    path: /path/to/article
+  二级菜单D:
+      三级菜单A:
+        path: /path/to/article
+      三级菜单B:
+        path: /path/to/article
+一级菜单C:
+  二级菜单A:
+    path: /path/to/article
+  二级菜单B:
+      三级菜单A:
+        path: /path/to/article
+      三级菜单B:
+        path: /path/to/article
+  二级菜单C:
+    path: /path/to/article
+  二级菜单D:
+      三级菜单A:
+        path: /path/to/article
+      三级菜单B:
+        path: /path/to/article

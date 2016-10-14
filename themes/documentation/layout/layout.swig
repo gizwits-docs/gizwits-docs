@@ -1,11 +1,12 @@
+{% set lang = __('lang') %}
 <!DOCTYPE html>
 <html>
-  {{ partial('partial/head') }}
+  {{ partial('partial/head', {lang: lang}) }}
   <body>
-    {{ partial('partial/header') }}
+    {{ partial('partial/header', {lang: lang}) }}
     {{ body }}
-    {{ partial('partial/footer') }}
+    {{ partial('partial/footer', {lang: lang}) }}
 
-    {{ partial('partial/after-footer') }}
+    {{ partial('partial/after-footer', {lang: lang}) }}
   </body>
 </html>
