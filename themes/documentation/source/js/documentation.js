@@ -63,7 +63,7 @@
 // documentation's navigation
 +function($) {
   $(function() {
-    var headings = $('.body').find('h1, h2, h3, h4, h5, h6')
+    var headings = $('.body').find('h1, h2, h3')
     var navigation = ''
     headings.each(function() {
       var $this = $(this)
