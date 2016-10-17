@@ -19,7 +19,7 @@
 
 
 
-// 首页重定向
+// index redirect
 +function() {
   var browserLang = /zh/.test(navigator.userLanguage || navigator.language) ? 'zh-cn' : 'en-us'
   var lang
