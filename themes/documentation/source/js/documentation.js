@@ -1,6 +1,5 @@
 // header nav dropdown
 +function($) {
-  
   $(function() {
     dropdownToggle('.levelA', '.levelB')
     dropdownToggle('.levelB', '.levelC')
@@ -64,6 +63,16 @@
 // documentation's navigation
 +function($) {
   $(function() {
-    $('.body').find('h1, h2, h3, h4, h5, h6')
+    var headings = $('.body').find('h1, h2, h3, h4, h5, h6')
+    var navigation = ''
+    headings.each(function() {
+      var $this = $(this)
+      var className = $this.prop('tagName').toLowerCase()
+      var anchor = $this.attr('id')
+      var text = $this.text()
+      var element = '<a class="' + className + '" href="#' + anchor + '">' + text + '</a>'
+      navigation += element
+    })
+    $('.navigation').append(navigation)
   })
 }(jQuery)

@@ -1,3 +1,10 @@
 .body {
   padding-top: 40px;
+
+  .navigation {
+    padding: 0 20px;
+    a {
+      display: block;
+    }
+  }
 }
