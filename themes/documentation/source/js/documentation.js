@@ -1,4 +1,4 @@
-// nav dropdown
+// header nav dropdown
 +function($) {
   
   $(function() {
@@ -58,3 +58,7 @@
     })
   })
 }(jQuery)
+
+
+
+// documentation's navigation
