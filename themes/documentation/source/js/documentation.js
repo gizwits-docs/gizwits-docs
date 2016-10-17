@@ -40,3 +40,21 @@
   if (location.pathname === '/')
     location.href = lang + '/overview/overview.html'
 }()
+
+
+
+// lang switch
++function($) {
+  $(function() {
+    $('.lang-switch').click(function() {
+      var lang = $(this).data('lang')
+      var paths = location.pathname.split('/').slice(2)
+      paths.unshift(lang)
+      location.href = '/' + paths.join('/')
+
+      if (localStorage) {
+        localStorage.setItem('lang', lang)
+      }
+    })
+  })
+}(jQuery)

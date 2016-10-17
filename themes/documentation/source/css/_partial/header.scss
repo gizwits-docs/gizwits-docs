@@ -74,4 +74,14 @@
       display: block;
     }
   }
+
+  .lang-switch {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: white;
+    &:focus {
+      outline: none;
+    }
+  }
 }
