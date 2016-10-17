@@ -5,14 +5,16 @@ var cssMinify = require('gulp-cssnano')
 var jsMinify = require('gulp-uglify')
 
 var publicDir = path.resolve(__dirname, 'public')
+
 var cssDir = path.resolve(publicDir, 'css')
 var cssFile = path.resolve(cssDir, 'documentation.css')
 var jsDir = path.resolve(publicDir, 'js')
 var jsFile = path.resolve(jsDir, 'documentation.js')
 
+
 gulp.task('cpAssets', function() {
-  var resources = path.resolve(__dirname, 'assets')
-  shell.cp('-R', resources, publicDir)
+  shell.rm(path.resolve(publicDir, 'assets', '*'))
+  shell.cp('-R', path.resolve(__dirname, 'assets'), publicDir)
 })
 
 gulp.task('cssMinify', function() {
