@@ -16,5 +16,27 @@
       subWrapper.hide()
     })
   }
-
 }(jQuery)
+
+
+
+// 首页重定向
++function() {
+  var browserLang = /zh/.test(navigator.userLanguage || navigator.language) ? 'zh-cn' : 'en-us'
+  var lang
+
+  if (localStorage) {
+    var prefLang = localStorage.getItem('lang')
+    if (prefLang) {
+      lang = prefLang
+    } else {
+      lang = browserLang
+      localStorage.setItem('lang', lang)
+    }
+  } else {
+    lang = browserLang
+  }
+
+  if (location.pathname === '/')
+    location.href = lang + '/overview/overview.html'
+}()
