@@ -1,6 +1,6 @@
 {% set lang = __('lang') %}
 <!DOCTYPE html>
-<html>
+<html lang="{{ lang }}">
   {{ partial('partial/head', {lang: lang}) }}
   <body>
     {{ partial('partial/header', {lang: lang}) }}
