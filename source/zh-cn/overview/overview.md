@@ -30,3 +30,5 @@ alert('fuck me plz')
 更多细节，请参考身份认证的 [快速入门](/quickstart/auth/web.html)。
 
 ![Alt text](/assets/test.png)
+![Alt text](/assets/1.png)
+![Alt text](/assets/2.png)
