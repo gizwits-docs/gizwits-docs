@@ -1,6 +1,6 @@
-一级菜单A:
+概述:
   path: /path/to/article
-一级菜单B:
+快速入门:
   二级菜单A:
     path: /path/to/article
   二级菜单B:
