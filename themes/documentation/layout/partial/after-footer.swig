@@ -1,2 +1,2 @@
-{{ js('js/jquery.min.js') }}
-{{ js('js/documentation.js') }}
+{{ js("js/jquery.min.js") }}
+{{ js("js/documentation.js") }}

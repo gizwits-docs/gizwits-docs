@@ -4,9 +4,9 @@
     <div class="markdown-body pure-u-16-24">
       <div class="title">{{ page.title }}</div>
       <div>
-        <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank">{{ __('feedback') }}</a>
+        <a href="https://github.com/gizwits-docs/gizwits-docs/issues" target="_blank">{{ __("feedback") }}</a>
         <br>
-        <a class="edit-link" target="_blank">{{ __('edit') }}</a>
+        <a class="edit-link" target="_blank">{{ __("edit") }}</a>
       </div>
       {{ page.content }}
     </div>
