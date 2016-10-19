@@ -43,7 +43,7 @@
     }
     &,
     a {
-      color: white;
+      color: $yellow;
       &,
       &:hover {
         text-decoration: none;
@@ -58,8 +58,13 @@
       white-space: nowrap;
       display: none;
       position: absolute;
-      background: $black;
-      border: 1px solid white;
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 1px 1px 5px #ddd;
+      &,
+      & a {
+        color: black;
+      }
     }
     .levelB-wrapper {
       left: 0;
@@ -79,7 +84,7 @@
     padding: 0;
     border: 0;
     background: none;
-    color: white;
+    color: $yellow;
     &:focus {
       outline: none;
     }

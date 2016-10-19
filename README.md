@@ -90,3 +90,7 @@ quickstart:
 ```
 - 图片直接上传到github repo相应文件后，github会自动生成预览
 - 过期或无用的图片直接从repo删除即可
+
+# contribution
+- 使用文档过程中有任何疑惑或建议通过 github Issues 页面反馈
+- 文档修改完成之后提交合并请求到master分支

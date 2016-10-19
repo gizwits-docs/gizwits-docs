@@ -84,7 +84,7 @@
 +function($) {
   $(function() {
     var path = location.pathname
-    var editPath = 'https://github.com/gizwits-docs/gizwits-docs/edit/master/source' + path.slice(0, path.length - 4) + 'md'
+    var editPath = 'https://github.com/gizwits-docs/gizwits-docs/edit/develop/source' + path.slice(0, path.length - 4) + 'md'
     $('.edit-link').attr('href', editPath)
   }) 
 }(jQuery)
@@ -94,7 +94,7 @@
 // documentation's navigation
 +function($) {
   $(function() {
-    var headings = $('.body').find('h1, h2, h3')
+    var headings = $('.body').find('h1, h2')
     var navigation = ''
     headings.each(function() {
       var $this = $(this)
