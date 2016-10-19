@@ -1,11 +1,14 @@
 <div class="header">
   <div class="container pure-g">
-    <span class="brand pure-u-3-24">
-      {# <a class="logo" href="http://www.giziwts.com">&#xe600;</a> #}
+    <span class="brand pure-u-6-24">
+      <a href="http://www.gizwits.com" class="logo">
+        <img src="{{ url_for('images/logo.png') }}" alt="logo"> 
+        <span>{{ __("title") }}</span>
+      </a>
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
 
-    <span class="menu pure-u-20-24">
+    <span class="menu pure-u-17-24">
       <ul class="levelA-wrapper">
         {% for levelA in site.data["menu-" + lang] %}
           {% if levelA.path %}
@@ -37,7 +40,7 @@
   
     <span class="pure-u-1-24">
       {% if lang == "zh-cn" %}
-        <button class="lang-switch" data-lang="en-us">ENGLISH</button>
+        <button class="lang-switch" data-lang="en-us">English</button>
       {% else %}
         <button class="lang-switch" data-lang="zh-cn">中文</button>
       {% endif %}

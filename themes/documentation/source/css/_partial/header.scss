@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'iconfont';
-  src: url('https://at.alicdn.com/t/font_1459332919_3852491.eot'); /* IE9*/
-  src: url('https://at.alicdn.com/t/font_1459332919_3852491.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('https://at.alicdn.com/t/font_1459332919_3852491.woff') format('woff'), /* chromeã€firefox */
-  url('https://at.alicdn.com/t/font_1459332919_3852491.ttf') format('truetype'), /* chromeã€firefoxã€operaã€Safari, Android, iOS 4.2+*/
-  url('https://at.alicdn.com/t/font_1459332919_3852491.svg#iconfont') format('svg'); /* iOS 4.1- */
-}
 .header {
   line-height: 50px;
   background: $black;
@@ -16,9 +8,9 @@
   }
 
   .logo {
-    font-family: "iconfont";
-    font-style: normal;
-    font-size: 1.8em;
+    img {
+      vertical-align: middle;
+    }
   }
 
   .text {
@@ -60,10 +52,13 @@
       position: absolute;
       background: white;
       border: 1px solid #ccc;
-      box-shadow: 1px 1px 5px #ddd;
+      box-shadow: 1px 1px 10px #eee;
       &,
       & a {
         color: black;
+      }
+      li:hover {
+        background: #eee;
       }
     }
     .levelB-wrapper {
