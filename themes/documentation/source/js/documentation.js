@@ -113,15 +113,15 @@
 // clipboard
 +function($) {
   $(function() {
-    $('.gutter').prepend($('<i class="fa fa-clipboard tooltip" aria-hidden="true"><i class="tooltiptext">copied</i></i>'))
+    $('.code pre').prepend($('<i class="fa fa-clipboard fa-lg tooltip" aria-hidden="true"><i class="tooltiptext">copied</i></i>'))
 
     new Clipboard('.fa-clipboard', {
       text: function(trigger) {
+        var $trigger = $(trigger)
         var text = ''
-        var container = $(trigger).parent()
-        var tooltip = container.find('.tooltiptext')
+        var tooltip = $trigger.find('.tooltiptext')
 
-        container.next().find('.line').each(function() {
+        $trigger.parent().find('.line').each(function() {
           text += $(this).text() + '\n'
         })
         tooltip.show()

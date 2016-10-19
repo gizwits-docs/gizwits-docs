@@ -1,13 +1,27 @@
 .highlight {
+  border: none;
   .gutter {
-    background: #f7f7f7;
-    text-align: center;
-    .line {
+    border: none;
+    pre {
       display: none;
     }
-    .fa {
-      cursor: pointer;
+  }
+  .fa {
+    cursor: pointer;
+  }
+
+  .code {
+    pre {
+      position: relative;
     }
+  }
+
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
   }
 }
 
@@ -33,7 +47,7 @@ pre code {
 .highlight {
   position: relative;
   z-index: 3;
-  padding: 10px 15px;
+  padding: 10px 0;
   color: #4d4d4c;
   overflow: auto;
   margin: 0;

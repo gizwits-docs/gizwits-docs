@@ -1,22 +1,24 @@
 .tooltip {
-  position: relative;
+  position: absolute;
   display: inline-block;
   border-bottom: 1px dotted $black;
+  top: 12%;
+  left: 93%;
 
   .tooltiptext {
     display: none;
-    width: 50px;
+    width: 40px;
     background-color: $black;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
+    padding: 2px;
     border-radius: 3px;
     position: absolute;
     z-index: 1;
-    top: 150%;
+    top: 170%;
     left: 50%;
-    margin-left: -16px;
-    font-size: .7em;
+    margin-left: -20px;
+    font-size: .6em;
 
     &:after {
       content: " ";
