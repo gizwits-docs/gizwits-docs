@@ -26,6 +26,16 @@ alert('fuck me plz')
 
 ### 提高账户安全性
 野狗采用行业标准的 JWT 格式对传输数据进行加密，有效提高账号系统的安全性，防止用户信息泄漏。
+```javascript
+console.log('hello world')
+alert('fuck me plz')
+console.log('hello world')
+alert('fuck me plz')
+console.log('hello world')
+alert('fuck me plz')
+console.log('hello world')
+alert('fuck me plz')
+```
 
 更多细节，请参考身份认证的 [快速入门](/quickstart/auth/web.html)。
 

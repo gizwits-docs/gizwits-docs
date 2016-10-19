@@ -1,0 +1,32 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted $black;
+
+  .tooltiptext {
+    display: none;
+    width: 50px;
+    background-color: $black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 3px;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -16px;
+    font-size: .7em;
+
+    &:after {
+      content: " ";
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent $black transparent;
+    }
+  }
+}

@@ -107,3 +107,29 @@
     $('.navigation').append(navigation)
   })
 }(jQuery)
+
+
+
+// clipboard
++function($) {
+  $(function() {
+    $('.gutter').prepend($('<i class="fa fa-clipboard tooltip" aria-hidden="true"><i class="tooltiptext">copied</i></i>'))
+
+    new Clipboard('.fa-clipboard', {
+      text: function(trigger) {
+        var text = ''
+        var container = $(trigger).parent()
+        var tooltip = container.find('.tooltiptext')
+
+        container.next().find('.line').each(function() {
+          text += $(this).text() + '\n'
+        })
+        tooltip.show()
+        setTimeout(function() {
+          tooltip.hide()
+        }, 1000)
+        return text
+      }
+    })
+  })
+}(jQuery)

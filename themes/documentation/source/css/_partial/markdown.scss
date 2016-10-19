@@ -265,35 +265,6 @@
   line-height: 1.25;
 }
 
-.markdown-body h1 .octicon-link,
-.markdown-body h2 .octicon-link,
-.markdown-body h3 .octicon-link,
-.markdown-body h4 .octicon-link,
-.markdown-body h5 .octicon-link,
-.markdown-body h6 .octicon-link {
-  color: #000;
-  vertical-align: middle;
-  visibility: hidden;
-}
-
-.markdown-body h1:hover .anchor,
-.markdown-body h2:hover .anchor,
-.markdown-body h3:hover .anchor,
-.markdown-body h4:hover .anchor,
-.markdown-body h5:hover .anchor,
-.markdown-body h6:hover .anchor {
-  text-decoration: none;
-}
-
-.markdown-body h1:hover .anchor .octicon-link,
-.markdown-body h2:hover .anchor .octicon-link,
-.markdown-body h3:hover .anchor .octicon-link,
-.markdown-body h4:hover .anchor .octicon-link,
-.markdown-body h5:hover .anchor .octicon-link,
-.markdown-body h6:hover .anchor .octicon-link {
-  visibility: visible;
-}
-
 .markdown-body h1 {
   padding-bottom: 0.3em;
   font-size: 2em;
@@ -414,7 +385,6 @@
   margin: 0;
   font-size: 100%;
   word-break: normal;
-  white-space: pre;
   background: transparent;
   border: 0;
 }

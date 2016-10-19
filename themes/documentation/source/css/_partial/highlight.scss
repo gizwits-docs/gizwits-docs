@@ -1,19 +1,28 @@
+.highlight {
+  .gutter {
+    background: #f7f7f7;
+    text-align: center;
+    .line {
+      display: none;
+    }
+    .fa {
+      cursor: pointer;
+    }
+  }
+}
+
 pre,
 code {
   font-family: font-mono;
   color: #4d4d4c;
-  background: #f6f6f6;
   font-size: 0.95em;
 }
 
 code {
   padding: 0 5px;
+  background: #f6f6f6;
 }
 
-pre {
-  padding: 10px 15px;
-  line-height: 22px;
-}
 
 pre code {
   border: none;
