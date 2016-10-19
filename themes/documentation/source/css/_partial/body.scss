@@ -1,6 +1,6 @@
 .body {
   padding-top: 30px;
-  background: #eee;
+  background: $light-gray;
   
   .container {
     background: white;
@@ -11,7 +11,7 @@
   }
 
   .heading {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $light-gray;
     .title {
       font: {
         size: 40px;

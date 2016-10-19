@@ -51,14 +51,14 @@
       display: none;
       position: absolute;
       background: white;
-      border: 1px solid #ccc;
-      box-shadow: 1px 1px 10px #eee;
+      border: 1px solid $dark-gray;
+      box-shadow: 1px 1px 10px $light-gray;
       &,
       & a {
-        color: black;
+        color: $black;
       }
       li:hover {
-        background: #eee;
+        background: $light-gray;
       }
     }
     .levelB-wrapper {
