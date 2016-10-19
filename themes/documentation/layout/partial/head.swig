@@ -14,4 +14,5 @@
 
   {{ css("css/pure.min.css") }}
   {{ css("css/documentation.css") }}
+  {{ css("css/font-awesome.min.css") }}
 </head>
