@@ -1,0 +1,18 @@
+.widget {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  a {
+    color: white;
+    display: block;
+    background: $dark-gray;
+    padding: 0 5px;
+    margin: 10px 0;
+    font-size: 1.5em;
+    text-align: center;
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
