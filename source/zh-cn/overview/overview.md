@@ -1,15 +1,15 @@
 
 title:  概述吧
 ---
-### iOS SDK 2.0文档
+# iOS SDK 2.0文档
 
-### 1. 设备接入SDK概述
-#### 1.1. SDK目的与功能
+# 1. 设备接入SDK概述
+## 1.1. SDK目的与功能
 
 机智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。 
 相比之下，SDK在新接口定义上做了进一步的简化，使用流程更加简单了。APP已经完全不需要了解设备连接方面的概念，可以更专注于APP用户体验的优化设计。
 
-#### 1.2. 机智云物联方案概况
+## 1.2. 机智云物联方案概况
 ![Alt text](./微信截图_20161020163729.png)
 #### 1.3. 找到最合适的SDK
 机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台，具体内容请参考：《APICloud SDK 集成指南》。
@@ -18,7 +18,7 @@ title:  概述吧
 全称Gizwits Agent，运行于Wi-Fi模块中，设备通过GAgent接入机智云服务器。 目前已兼容国内主流的Wi-Fi模块， 开发者也可以通过获取GAgent二次开发包实现自定义的模块接入机智云。
 
 
-### 代码块
+# 代码块
 ``` python
 [GizWifiSDK shareInstance].delegate = self;
 [GizWifiSDK startWithAppID:@"your_app_id"];
