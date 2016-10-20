@@ -7,18 +7,18 @@
 
   .tooltiptext {
     display: none;
-    width: 40px;
+    width: 60px;
     background-color: $black;
     color: #fff;
     text-align: center;
-    padding: 2px;
-    border-radius: 3px;
+    padding: 4px 8px;
+    border-radius: 6px;
     position: absolute;
     z-index: 1;
     top: 170%;
     left: 50%;
-    margin-left: -20px;
-    font-size: .6em;
+    margin-left: -30px;
+    font-size: .7em;
 
     &:after {
       content: " ";
