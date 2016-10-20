@@ -1,13 +1,21 @@
 .body {
-  padding-top: 30px;
   background: $light-gray;
+  padding: {
+    top: 50px;
+  }
   
-  .container {
-    background: white;
-    padding: {
-      top: 20px;
-      bottom: 20px;
+  .navigation {
+    position: fixed;
+    left: 15%;
+    margin: {
+      top: 50px;
     }
+  }
+
+  .navigation,
+  .markdown-body {
+    background: white;
+    padding: 20px;
   }
 
   .heading {
@@ -25,7 +33,6 @@
   }
 
   .navigation {
-    padding: 0 20px;
     line-height: 2em;
     font-size: .8em;
     a {

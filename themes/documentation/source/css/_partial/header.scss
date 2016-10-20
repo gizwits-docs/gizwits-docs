@@ -2,6 +2,9 @@
   line-height: 50px;
   background: $black;
   vertical-align: middle;
+  position: fixed;
+  width: 100%;
+  z-index: 999999;
   
   .brand a{
     color: $yellow;

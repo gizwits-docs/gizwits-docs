@@ -95,6 +95,7 @@
 +function($) {
   $(function() {
     var headings = $('.body').find('h1, h2')
+    console.log(headings)
     var navigation = ''
     headings.each(function() {
       var $this = $(this)
