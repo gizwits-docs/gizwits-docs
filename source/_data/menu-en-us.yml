@@ -1,8 +1,23 @@
-levelOneA:
-  path: /path/to/article
-levelOneB:
-  levelTwoA:
+Tutorial:
+  path: /overview/overview.html
+Device:
+  二级菜单A二级菜单A:
     path: /path/to/article
-  levelTwoB:
-      levelThreeA:
+  二级菜单B:
+      三级菜单A:
         path: /path/to/article
+      三级菜单B:
+        path: /path/to/article
+  二级菜单C:
+    path: /path/to/article
+  二级菜单D:
+      三级菜单A:
+        path: /path/to/article
+      三级菜单B:
+        path: /path/to/article
+App:
+  path: /path
+Cloud:
+  path: /path
+API:
+  path: /path

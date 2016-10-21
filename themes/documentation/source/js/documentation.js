@@ -94,7 +94,7 @@
 // documentation's navigation
 +function($) {
   $(function() {
-    var headings = $('.body').find('h1, h2')
+    var headings = $('.markdown-body').find('h1, h2')
     var navigation = '<ol>'
     headings.each(function(index) {
       var $this = $(this)
@@ -117,6 +117,7 @@
     navigation = navigation.replace(/<ol><\/ol>/g, '')
     $('.navigation').append(navigation)
 
+    // slide
     if ($('.navigation .h2').length) {
       $('.navigation .h1').click(function(evt) {
         var subMenu = $(this).next()
@@ -126,6 +127,47 @@
         }
       })
     }
+
+    // scroll
+    var navs = $('.navigation').find('.h1, .h2')
+    var index = 0
+    var prevPosition = 0
+    $(navs[index]).addClass('active')
+    $(window).scroll(function() {
+      var curPosition = $(window).scrollTop()
+      if (curPosition > prevPosition) {
+        if (index === headings.length - 1) {
+          return
+        }
+        if ($(headings[index + 1]).isOnScreen()) {
+          if ($(navs[index]).hasClass('h2')) {
+            $(navs[index]).parent().parent().hide()
+          }
+          if ($(navs[index + 1]).hasClass('h2')) {
+            $(navs[index + 1]).parent().parent().show()
+          }
+          $(navs[index]).removeClass('active')
+          $(navs[index + 1]).addClass('active')
+          index ++
+        }
+      } else {
+        if (!index) {
+          return
+        }
+        if ($(headings[index -1]).isOnScreen()) {
+          if ($(navs[index]).hasClass('h2')) {
+            $(navs[index]).parent().parent().hide()
+          }
+          if ($(navs[index - 1]).hasClass('h2')) {
+            $(navs[index - 1]).parent().parent().show()
+          }
+          $(navs[index]).removeClass('active')
+          $(navs[index - 1]).addClass('active')
+          index --
+        }
+      }
+      prevPosition = curPosition  
+    })
   })
 }(jQuery)
 

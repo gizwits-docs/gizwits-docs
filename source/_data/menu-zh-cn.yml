@@ -1,6 +1,6 @@
-测试:
-  path: /overview/overview.html
 快速入门:
+  path: /overview/overview.html
+设备开发:
   二级菜单A二级菜单A:
     path: /path/to/article
   二级菜单B:
@@ -15,18 +15,9 @@
         path: /path/to/article
       三级菜单B:
         path: /path/to/article
-一级菜单C:
-  二级菜单A:
-    path: /path/to/article
-  二级菜单B:
-      三级菜单A:
-        path: /path/to/article
-      三级菜单B:
-        path: /path/to/article
-  二级菜单C:
-    path: /path/to/article
-  二级菜单D:
-      三级菜单A:
-        path: /path/to/article
-      三级菜单B:
-        path: /path/to/article
+App开发:
+  path: /path
+云平台:
+  path: /path
+API:
+  path: /path
