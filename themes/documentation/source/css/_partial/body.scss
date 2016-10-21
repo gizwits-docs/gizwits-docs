@@ -10,6 +10,7 @@
   }
 
   .navigation {
+    width: 18%;
     line-height: 2em;
     font-size: .8em;
     position: fixed;
@@ -23,11 +24,24 @@
       top: 20px;
       bottom: 20px;
     }
+    ol,
+    li {
+      list-style-type: none;
+    }
+    ol {
+      padding-left: 0;
+      ol {
+        display: none;
+      }
+    }
     a {
       display: block;
       white-space: nowrap;
+      width: 100%;
       padding: 10px 20px;
       color: $black;
+      text-overflow: ellipsis;
+      overflow: hidden;
       &:hover {
         background: $light-gray;
       }
@@ -36,7 +50,7 @@
       content: '>\0000a0';
     }
     .h2 {
-      padding-left: 32px;
+      padding-left: 33px;
     }
   }
 }

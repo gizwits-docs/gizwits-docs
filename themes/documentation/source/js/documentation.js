@@ -95,17 +95,37 @@
 +function($) {
   $(function() {
     var headings = $('.body').find('h1, h2')
-    var navigation = ''
-    headings.each(function() {
+    var navigation = '<ol>'
+    headings.each(function(index) {
       var $this = $(this)
       var className = $this.prop('tagName').toLowerCase()
       var anchor = $this.attr('id')
       var text = $this.text()
       var element = '<a class="' + className + '" href="#' + anchor + '">' + text + '</a>'
       $this.wrap('<a href="#' + anchor + '"></a>')
-      navigation += element
+
+      switch (className) {
+        case 'h1':
+          navigation += (index ? '</ol></li>' : '') + '<li>' + element + '<ol>'
+          break
+        case 'h2':
+          navigation += '<li>' + element + '</li>' + (index === (length - 1) ? '</ol></li>' : '')
+          break
+      }
     })
+    navigation += '</ol>'
+    navigation = navigation.replace(/<ol><\/ol>/g, '')
     $('.navigation').append(navigation)
+
+    if ($('.navigation .h2').length) {
+      $('.navigation .h1').click(function(evt) {
+        var subMenu = $(this).next()
+        if (subMenu.length) {
+          evt.preventDefault()
+          subMenu.slideToggle()
+        }
+      })
+    }
   })
 }(jQuery)
 
