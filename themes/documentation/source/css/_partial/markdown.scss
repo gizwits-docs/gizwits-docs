@@ -6,9 +6,22 @@
   line-height: 1.5;
   word-wrap: break-word;
 
-  h1 {
-    font-family: PingFangSC-Medium;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color:#484848;
+    &:hover {
+      text-decoration: underline;
+      &:after {
+        content: "\002693";
+      }
+    }
+  }
+
+  h1 {
     font-size: 28px;
     margin: 28px 0 0;
     line-height: 72px;

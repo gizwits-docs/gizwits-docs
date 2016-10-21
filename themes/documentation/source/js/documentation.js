@@ -95,7 +95,6 @@
 +function($) {
   $(function() {
     var headings = $('.body').find('h1, h2')
-    console.log(headings)
     var navigation = ''
     headings.each(function() {
       var $this = $(this)
@@ -103,9 +102,22 @@
       var anchor = $this.attr('id')
       var text = $this.text()
       var element = '<a class="' + className + '" href="#' + anchor + '">' + text + '</a>'
+      $this.wrap('<a href="#' + anchor + '"></a>')
       navigation += element
     })
     $('.navigation').append(navigation)
+  })
+}(jQuery)
+
+
+
+// fix fixed header anchors' behavior
++function($) {
+  $(function() {
+    $(window).hashchange(function() {
+      var headerHeight = $('.header').height()
+      $(window).scrollTop($(window).scrollTop() - headerHeight)
+    })
   })
 }(jQuery)
 
