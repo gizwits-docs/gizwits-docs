@@ -6,11 +6,14 @@
 
   .heading {
     border-bottom: 1px solid $light-gray;
+    position: relative;
     .title {
       font-size: 28px;
     }
     .edit-link {
-      float: right;
+      position: absolute;
+      bottom: 0;
+      right: 0;
     }
   }
 

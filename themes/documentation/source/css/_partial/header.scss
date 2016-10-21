@@ -5,6 +5,7 @@
   position: fixed;
   width: 100%;
   z-index: 999999;
+  font-size: 14px;
   
   .brand a{
     color: $yellow;
@@ -77,6 +78,11 @@
     .levelC {
       display: block;
     }
+  }
+
+  .fa-globe {
+    color: $yellow;
+    margin-right: 3px;
   }
 
   .lang-switch {
