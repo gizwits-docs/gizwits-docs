@@ -1,7 +1,6 @@
 .markdown-body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  line-height: 1.5;
   font-size: 14px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -16,6 +15,7 @@
   h5,
   h6 {
     color:#484848;
+    font-weight: normal;
   }
 
   h1,
@@ -32,7 +32,6 @@
     font-size: 28px;
     margin: 28px 0 0;
     line-height: 72px;
-    font-family: PingFangSC-Medium;
   }
   h2 {
     font-size: 24px;

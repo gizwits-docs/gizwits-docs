@@ -4,6 +4,16 @@
     top: 50px;
   }
 
+  .heading {
+    border-bottom: 1px solid $light-gray;
+    .title {
+      font-size: 28px;
+    }
+    .edit-link {
+      float: right;
+    }
+  }
+
   .navigation,
   .markdown-body {
     background: white;
