@@ -3,14 +3,6 @@
   padding: {
     top: 50px;
   }
-  
-  .navigation {
-    position: fixed;
-    left: 10%;
-    margin: {
-      top: 50px;
-    }
-  }
 
   .navigation,
   .markdown-body {
@@ -18,23 +10,14 @@
     padding: 20px;
   }
 
-  .heading {
-    border-bottom: 1px solid $light-gray;
-    .title {
-      font: {
-        size: 40px;
-        weight: bold;
-      }
-    }
-    a {
-      float: right;
-      padding: 0 20px;
-    }
-  }
-
   .navigation {
     line-height: 2em;
     font-size: .8em;
+    position: fixed;
+    left: 10%;
+    margin: {
+      top: 50px;
+    }
     a {
       display: block;
       white-space: nowrap;

@@ -1,9 +1,9 @@
 .tooltip {
-  position: absolute;
   display: inline-block;
-  border-bottom: 1px dotted $black;
-  top: 12%;
-  left: 93%;
+  float: right;
+  position: relative;
+  top: 10px;
+  right: 20px;
 
   .tooltiptext {
     display: none;
