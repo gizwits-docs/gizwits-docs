@@ -12,17 +12,18 @@
     }
     .edit-link {
       position: absolute;
-      bottom: 0;
+      bottom: 4px;
       right: 0;
     }
   }
 
   .navigation,
   .markdown-body {
-    background: white;
+    background: #fcfcfc;
   }
 
   .navigation {
+    font-size: 14px;
     width: 18%;
     line-height: 2em;
     font-size: .8em;
@@ -54,7 +55,7 @@
       display: block;
       white-space: nowrap;
       width: 100%;
-      padding: 10px 20px;
+      padding: 3px 20px;
       color: $black;
       text-overflow: ellipsis;
       overflow: hidden;
