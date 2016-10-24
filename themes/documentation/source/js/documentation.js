@@ -137,7 +137,7 @@
       timeoutHandler = setTimeout(function() {
         if (pos + $('.navigation').scrollTop() > navHeight) {
           $('.navigation').animate({
-            scrollTop: pos + $('.navigation').scrollTop() - navHeight
+            scrollTop: pos + $('.navigation').scrollTop()
           })
         } else if (pos - navHeight < 376) {
           $('.navigation').animate({

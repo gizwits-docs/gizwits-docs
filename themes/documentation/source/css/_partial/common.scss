@@ -4,7 +4,7 @@
 }
 
 .container {
-  max-width: 1080px;
+  width: 1080px;
   margin: 0 auto;
   padding: 0 50px;
 }
@@ -29,4 +29,8 @@ a {
     clear: both;
     zoom: 1;
   }
+}
+
+::-webkit-scrollbar {
+display: none;
 }
