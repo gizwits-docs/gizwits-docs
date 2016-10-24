@@ -51,8 +51,7 @@
       offsetMethod = 'position'
       offsetBase   = this.$scrollElement.scrollTop()
     }
-
-    console.log(this.$body.find(this.selector), ':::')
+    
     this.$body
       .find(this.selector)
       .map(function () {
