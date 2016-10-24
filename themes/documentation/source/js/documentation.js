@@ -135,6 +135,12 @@
 // doc's nav scrollspy
 +function($) {
   $(function() {
+    $('.navigation li:first').addClass('active')
+    $(window).scroll(function() {
+      if (!$('.navigation .active').length) {
+        $('.navigation li:first').addClass('active')
+      }
+    })
     $('body').scrollspy({target: '.navigation'})
   })
 }(jQuery)
