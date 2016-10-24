@@ -3,3 +3,4 @@
 {{ js("js/jquery.fn.js") }}
 {{ js("js/clipboard.min.js") }}
 {{ js("js/documentation.js") }}
+{{ js("js/scrollspy.js") }}
