@@ -174,7 +174,7 @@
 // clipboard
 +function($) {
   $(function() {
-    $('.code pre').prepend($('<i class="fa fa-clone fa-lg tooltip" aria-hidden="true"><i class="tooltiptext">copied</i></i>'))
+    $('.code pre').prepend($('<i class="fa fa-clone fa-lg tooltip" title="复制" aria-hidden="true"><i class="tooltiptext">已复制</i></i>'))
 
     new Clipboard('.fa-clone', {
       text: function(trigger) {
