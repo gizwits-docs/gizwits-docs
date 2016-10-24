@@ -4,7 +4,7 @@
 }
 
 .container {
-  width: 1080px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 50px;
 }
@@ -16,15 +16,17 @@ a {
   }
 }
 
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-.clearfix:after {
-  clear: both;
-}
-.clearfix {
-  clear: both;
-  zoom: 1;
+@media (min-width: $break-lg) {
+  .clearfix:before,
+  .clearfix:after {
+    content: "";
+    display: table;
+  }
+  .clearfix:after {
+    clear: both;
+  }
+  .clearfix {
+    clear: both;
+    zoom: 1;
+  }
 }

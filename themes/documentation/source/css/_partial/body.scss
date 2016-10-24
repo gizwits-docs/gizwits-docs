@@ -26,7 +26,6 @@
     max-height: 80%;
     overflow: auto;
     float: left;
-    font-size: 14px;
     width: 200px;
     line-height: 2em;
     font-size: .8em;
@@ -41,14 +40,18 @@
       bottom: 20px;
     }
     .active {
+      border: {
+        right: 2px solid $yellow;
+      }
       background: $yellow;
       ol {
       display: block;
       li {
-        background: white;
+        border: none;
+        background: #fcfcfc;
       }
       li.active {
-        background: $dark-gray;
+        background: $yellow;
       }
       }
     }
@@ -79,6 +82,9 @@
     }
     .h2 {
       padding-left: 33px;
+    }
+    @media(max-width: $break-lg) {
+      display: none;
     }
   }
 }

@@ -125,10 +125,22 @@
 +function($) {
   $(function() {
     $('.navigation li:first').addClass('active')
+    var timeoutHandler
+    var navHeight = $('.navigation').height()
     $(window).scroll(function() {
+      clearTimeout(timeoutHandler)
       if (!$('.navigation .active').length) {
         $('.navigation li:first').addClass('active')
       }
+      var pos = $('.navigation .active:last').position().top
+
+      timeoutHandler = setTimeout(function() {
+        if (pos + $('.navigation').scrollTop() > navHeight) {
+          $('.navigation').animate({
+            scrollTop: pos + $('.navigation').scrollTop() - navHeight
+          })
+        }
+      }, 500)
     })
     $('body').scrollspy({target: '.navigation'})
   })

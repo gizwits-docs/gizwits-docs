@@ -9,6 +9,11 @@
   float: right;
   position: relative;
 
+  @media (max-width: $break-lg) {
+    float: none;
+    width: 100%;
+  }
+
   h1,
   h2,
   h3,
