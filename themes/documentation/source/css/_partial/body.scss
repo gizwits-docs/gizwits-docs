@@ -23,6 +23,8 @@
   }
 
   .navigation {
+    max-height: 80%;
+    overflow: auto;
     float: left;
     font-size: 14px;
     width: 200px;

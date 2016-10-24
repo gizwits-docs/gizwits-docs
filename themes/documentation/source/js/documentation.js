@@ -116,17 +116,6 @@
     navigation += '</ol>'
     navigation = navigation.replace(/<ol><\/ol>/g, '')
     $('.navigation').find('.nav').append(navigation)
-
-    // slide toggle
-    // if ($('.navigation .h2').length) {
-    //   $('.navigation .h1').click(function(evt) {
-    //     var subMenu = $(this).next()
-    //     if (subMenu.length) {
-    //       evt.preventDefault()
-    //       subMenu.slideToggle()
-    //     }
-    //   })
-    // }
   })
 }(jQuery)
 
