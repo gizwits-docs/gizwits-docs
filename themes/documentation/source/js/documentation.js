@@ -139,6 +139,10 @@
           $('.navigation').animate({
             scrollTop: pos + $('.navigation').scrollTop() - navHeight
           })
+        } else if (pos - navHeight < 376) {
+          $('.navigation').animate({
+            scrollTop: - pos - $('.navigation').scrollTop()
+          })
         }
       }, 500)
     })
