@@ -23,12 +23,12 @@
   }
 
   .navigation {
+    float: left;
     font-size: 14px;
-    width: 18%;
+    width: 200px;
     line-height: 2em;
     font-size: .8em;
     position: fixed;
-    left: 5%;
     border: 1px solid $dark-gray;
     box-shadow: 2px 2px 10px $dark-gray;
     margin: {

@@ -1,8 +1,9 @@
 <div class="body">
-  <div class="navigation">
-    <div class="nav"></div>
-  </div>
-  <div class="container">
+  
+  <div class="container clearfix">
+    <div class="navigation">
+      <div class="nav"></div>
+    </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
         <span class="title">{{ page.title }}</span>
