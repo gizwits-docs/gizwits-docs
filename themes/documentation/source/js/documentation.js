@@ -145,6 +145,13 @@
           })
         }
       }, 500)
+
+      $('.navigation .active').each(function() {
+        var $this = $(this)
+        if ($this.find('.active').length) {
+          $this.css('background', '#fcfcfc')
+        }
+      })
     })
     $('body').scrollspy({target: '.navigation'})
   })
