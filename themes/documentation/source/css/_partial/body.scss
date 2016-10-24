@@ -40,6 +40,15 @@
     }
     .active {
       background: $yellow;
+      ol {
+      display: block;
+      li {
+        background: white;
+      }
+      li.active {
+        background: $dark-gray;
+      }
+      }
     }
     ol,
     li {
