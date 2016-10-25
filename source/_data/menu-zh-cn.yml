@@ -6,7 +6,7 @@
   APP开发:
     path: /path/to/article
 设备开发:
-  path:/path/to/article
+  path: /path/to/article
 APP开发:
   ios SDK:
     path: /path/to/article
@@ -22,4 +22,4 @@ APP开发:
   全球部署:
     path: /path/to/article
 API:
-  path:/path/to/article
+  path: /path/to/article
