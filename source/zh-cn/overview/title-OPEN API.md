@@ -23,14 +23,15 @@ Header
 
 Body
 ```
-  {
+   {
     "phone_id": "apiary"
   }
 ```
+
 ### Response 201 (application/json)
 Body
 ```
-  { 
+   { 
     "uid": "akkdlfeiow", 
     "token": "akdlfkad",
     "expire_at": 13894002020
