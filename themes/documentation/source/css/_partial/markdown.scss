@@ -28,10 +28,14 @@
 
   h1,
   h2 {
+    a.anchor {
+      display: none;
+      margin-left: 10px;
+      color: $black;
+    }
     &:hover {
-      text-decoration: underline;
-      &:after {
-        content: " #";
+      a.anchor {
+        display: inline;
       }
     }
   }

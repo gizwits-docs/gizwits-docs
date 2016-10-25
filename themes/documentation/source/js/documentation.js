@@ -102,7 +102,7 @@
       var anchor = $this.attr('id')
       var text = $this.text()
       var element = '<a class="' + className + '" href="#' + anchor + '">' + text + '</a>'
-      $this.wrap('<a href="#' + anchor + '"></a>')
+      $this.append($('<a class="anchor" href="#' + anchor + '">#</a>'))
 
       switch (className) {
         case 'h1':
