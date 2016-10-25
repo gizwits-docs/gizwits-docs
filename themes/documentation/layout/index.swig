@@ -7,7 +7,7 @@
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
-        <h1 class="title">{{ page.title }}</h1>
+        <div class="title">{{ page.title }}</div>
         <a class="edit-link" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> {{ __('edit') }}</a>
       </div>
       {{ page.content }}

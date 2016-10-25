@@ -150,6 +150,8 @@
         var $this = $(this)
         if ($this.find('.active').length) {
           $this.css('background', '#fcfcfc')
+        } else {
+          $this.removeAttr('style')
         }
       })
     })
