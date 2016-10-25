@@ -1,4 +1,4 @@
-title:OPEN API
+title:  OPEN API
 ---
 # 简介
 机智云 Open API 主要帮助开发者通过 HTTP 的方式维护用户、用户与设备之间的绑定关系，以及获取设备数据、发送控制指令给设备。
