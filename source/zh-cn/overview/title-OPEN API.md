@@ -37,3 +37,4 @@ Body
     "expire_at": 13894002020
     }
 ```
+![1.2](/assets/zh-cn/app/1.2.png)
