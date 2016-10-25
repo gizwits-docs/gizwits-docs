@@ -17,8 +17,10 @@ python sdk: https://github.com/gizwits/gservice_sdk_py
 或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。
 ### Request (application/json)
 Header
-
+```
     X-Gizwits-Application-Id: {appid}
+```
+
 Body
 
     {
