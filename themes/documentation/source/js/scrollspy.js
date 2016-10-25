@@ -31,7 +31,7 @@
   ScrollSpy.VERSION  = '3.3.7'
 
   ScrollSpy.DEFAULTS = {
-    offset: $('.header').height()
+    offset: 200
   }
 
   ScrollSpy.prototype.getScrollHeight = function () {

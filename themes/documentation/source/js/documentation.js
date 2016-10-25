@@ -124,14 +124,10 @@
 // doc's nav scrollspy
 +function($) {
   $(function() {
-    $('.navigation li:first').addClass('active')
     var timeoutHandler
     var navHeight = $('.navigation').height()
     $(window).scroll(function() {
       clearTimeout(timeoutHandler)
-      if (!$('.navigation .active').length) {
-        $('.navigation li:first').addClass('active')
-      }
       var pos = $('.navigation .active:last').position().top
 
       timeoutHandler = setTimeout(function() {
