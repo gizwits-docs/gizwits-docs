@@ -13,7 +13,7 @@ APP开发:
   Android SDK:
     path: /path/to/article
   微信SDK:
-    path: /path/to/gizwits-docs/source/zh-cn/overview/微信SDK
+    path: gizwits-docs/source/zh-cn/overview/title-OPEN API.html
 云平台:
   业务云:
     path: /path/to/article
