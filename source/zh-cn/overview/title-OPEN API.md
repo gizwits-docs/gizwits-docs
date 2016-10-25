@@ -18,19 +18,21 @@ python sdk: https://github.com/gizwits/gservice_sdk_py
 ### Request (application/json)
 Header
 ```
-    X-Gizwits-Application-Id: {appid}
+   X-Gizwits-Application-Id: {appid}
 ```
 
 Body
-
-    {
+```
+  {
     "phone_id": "apiary"
-    }
+  }
+```
 ### Response 201 (application/json)
 Body
-
-    { 
+```
+  { 
     "uid": "akkdlfeiow", 
     "token": "akdlfkad",
     "expire_at": 13894002020
     }
+```
