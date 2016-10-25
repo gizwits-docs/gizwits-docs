@@ -84,14 +84,11 @@
       text-overflow: ellipsis;
       overflow: hidden;
       &:hover {
-        background: $light-gray;
+        background: $yellow;
       }
     }
     .h2 {
       padding-left: 33px;
-    }
-    @media(max-width: $break-lg) {
-      display: none;
     }
   }
 }

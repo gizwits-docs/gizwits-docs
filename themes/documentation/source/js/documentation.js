@@ -163,12 +163,21 @@
 
 // fix fixed header anchors' behavior
 +function($) {
+  $(window).load(function() {
+    if (location.hash) {
+      scroll()
+    }
+  })
   $(function() {
     $(window).hashchange(function() {
-      var headerHeight = $('.header').height()
-      $(window).scrollTop($(window).scrollTop() - headerHeight)
+      scroll()
     })
   })
+
+  function scroll() {
+    var headerHeight = $('.header').height()
+    $(window).scrollTop($(window).scrollTop() - headerHeight)
+  }
 }(jQuery)
 
 
