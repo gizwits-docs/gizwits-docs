@@ -1,25 +1,45 @@
+平台概述:
+  path: /overview/overview.html
+  
 快速入门:
-  5分钟入门:
-    path: /path/to/article
-  设备接入:
-    path: /path/to/article
-  APP开发:
-    path: /path/to/article
-设备开发:
   path: /path/to/article
+  
 APP开发:
-  ios SDK:
+  iOS App开发框架:
     path: /overview/ios_sdk_2.html
-  Android SDK:
+  Android App开发框架:
     path: /path/to/article
-  微信SDK:
-    path: /overview/title-OPEN API.html
-云平台:
-  业务云:
+  iOS SDK 2.0:
     path: /path/to/article
-  D3:
+  Android SDK 2.0:
     path: /path/to/article
-  全球部署:
+  APICloud SDK:
     path: /path/to/article
-API:
+  iOS SDK1.0兼容2.0指南:
+    path: /path/to/article
+  Android SDK 1.0兼容2.0指南:
+    path: /path/to/article
+  iOS 数据接入SDK（蓝牙产品）:
+    path: /path/to/article
+  Android 数据接入SDK（蓝牙产品）:
+    path: /path/to/article
+
+微信开发:
+  path: /path/to/article
+
+设备开发:
+  Wi-Fi模组开发:
+    path: /path/to/article
+  MCU开发框架使用说明:
+    path: /path/to/article
+  Gokit开发板资料:
+    path: /path/to/article
+    
+云端API:
+  企业API:
+    path: /path/to/article
+  Noti 2.0:
+    path: /path/to/article
+    
+更多文档:
   path: /path/to/article

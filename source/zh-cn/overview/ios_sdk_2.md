@@ -74,16 +74,26 @@ title:  iOS SDK 2.0
 ### 1.5.5.   导入SDK
 
 第一步，双击解开压缩包 GizWifiSDK-iOS-xxx.zip。 
-第二步，将解压后的文件添加到指定的工程中： 
+第二步，将解压后的文件添加到指定的工程中：
+
 ![Alt text](/assets/zh-cn/app/1.55.png)
-第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。 
+
+第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
+
 ![Alt text](/assets/zh-cn/app/1.552.png)
+
 ![Alt text](/assets/zh-cn/app/1.553.png)
+
 第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
+
 ![Alt text](/assets/zh-cn/app/1.554.png)
+
 第五步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
+
 ![Alt text](/assets/zh-cn/app/1.555.png)
+
 最后，确保工程里面有这些链接库，SDK就添加完成了:
+
 ![Alt text](/assets/zh-cn/app/1.556.png)
 
 # 2. SDK流程简介
