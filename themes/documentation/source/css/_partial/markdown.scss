@@ -40,13 +40,19 @@
     &:before {
       content: '';
       display: block;
-      margin-top: -200px;
-      height: 200px;
+      margin-top: -50px;
+      height: 50px;
       pointer-events: none;
     }
   }
 
   h1 {
+    &:first-of-type {
+      &:before {
+        margin-top: -300px;
+        height: 300px;
+      }
+    }
     font-size: 24px;
     margin: 28px 0 0;
   }

@@ -95,7 +95,7 @@
 +function($) {
   $(function() {
     var headings = $('.markdown-body').find('h1, h2')
-    var navigation = '<ol>'
+    var navigation = '<ul>'
     headings.each(function(index) {
       var $this = $(this)
       var className = $this.prop('tagName').toLowerCase()
@@ -103,18 +103,9 @@
       var text = $this.text()
       var element = '<a class="' + className + '" href="#' + anchor + '">' + text + '</a>'
       $this.append($('<a class="anchor" href="#' + anchor + '">#</a>'))
-
-      switch (className) {
-        case 'h1':
-          navigation += (index ? '</ol></li>' : '') + '<li>' + element + '<ol>'
-          break
-        case 'h2':
-          navigation += '<li>' + element + '</li>' + (index === (length - 1) ? '</ol></li>' : '')
-          break
-      }
+      navigation += '<li>' + element + '</li>'
     })
-    navigation += '</ol>'
-    navigation = navigation.replace(/<ol><\/ol>/g, '')
+    navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
   })
 }(jQuery)
@@ -128,7 +119,7 @@
     var navHeight = $('.navigation').height()
     $(window).scroll(function() {
       clearTimeout(timeoutHandler)
-      var pos = $('.navigation .active:last').position().top
+      var pos = $('.navigation .active').position().top
 
       timeoutHandler = setTimeout(function() {
         if (pos + $('.navigation').scrollTop() > navHeight) {

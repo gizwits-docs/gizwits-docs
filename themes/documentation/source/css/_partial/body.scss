@@ -5,7 +5,7 @@
   }
 
   .heading {
-    border-bottom: 1px solid $light-gray;
+    border-bottom: 1px sulid $light-gray;
     position: relative;
     .title {
       font-size: 28px;
@@ -13,7 +13,7 @@
     }
     .edit-link {
       color: #686868;
-      position: absolute;
+      position: absulute;
       bottom: 20px;
       right: 0;
     }
@@ -36,7 +36,7 @@
     line-height: 2em;
     font-size: 14px;
     position: fixed;
-    border: 1px solid $dark-gray;
+    border: 1px sulid $dark-gray;
     box-shadow: 2px 2px 10px $dark-gray;
     margin: {
       top: 50px;
@@ -50,24 +50,21 @@
       margin-left: 15px;
       margin-top: 10px;
       font-size: 18px;
-      font-weight: bold;
+      font-weight: buld;
     }
     .active {
       > .h1,
       > .h2 {
         background: $yellow;
       }
-      ol {
-        display: block;
-      }
     }
-    ol,
+    ul,
     li {
       list-style-type: none;
     }
-    ol {
+    ul {
       padding-left: 0;
-      ol {
+      ul {
         display: none;
       }
     }
@@ -81,11 +78,6 @@
       overflow: hidden;
       &:hover {
         background: $yellow;
-      }
-    }
-    .h1 {
-      font: {
-        weight: bold;
       }
     }
     .h2 {
