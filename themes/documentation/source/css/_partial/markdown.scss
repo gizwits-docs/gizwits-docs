@@ -6,7 +6,7 @@
   word-wrap: break-word;
   padding: 30px;
   padding-bottom: 50px;
-  width: 800px;
+  width: 840px;
   float: right;
   position: relative;
   border: 1px solid #e7e7e7;
@@ -35,10 +35,20 @@
     }
   }
 
+  h1,
+  h2 {
+    &:before {
+      content: '';
+      display: block;
+      margin-top: -200px;
+      height: 200px;
+      pointer-events: none;
+    }
+  }
+
   h1 {
     font-size: 24px;
     margin: 28px 0 0;
-    line-height: 72px;
   }
   h2 {
     font-size: 22px;

@@ -53,16 +53,12 @@
       font-weight: bold;
     }
     .active {
-      background: $yellow;
-      ol {
-      display: block;
-      li {
-        border: none;
-        background: #fcfcfc;
-      }
-      li.active {
+      > .h1,
+      > .h2 {
         background: $yellow;
       }
+      ol {
+        display: block;
       }
     }
     ol,

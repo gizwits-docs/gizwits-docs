@@ -34,4 +34,10 @@ gulp.task('moveFiles', function() {
   shell.mv(path.resolve(publicDir, 'documentation.js'), jsDir)
 })
 
+gulp.task('modifyIndex', function() {
+  var result = shell.cat(path.resolve(publicDir, 'index.html')).stdout
+  var header = result.match(/<!DOCTYPE\shtml>[\S\s]+<\/head>/)
+  console.log(header[0])
+})
+
 gulp.task('default', ['cpAssets', 'cssMinify', 'jsMinify'])

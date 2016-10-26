@@ -141,39 +141,9 @@
           })
         }
       }, 500)
-
-      $('.navigation .active').each(function() {
-        var $this = $(this)
-        if ($this.find('.active').length) {
-          $this.css('background', '#fcfcfc')
-        } else {
-          $this.removeAttr('style')
-        }
-      })
     })
     $('body').scrollspy({target: '.navigation'})
   })
-}(jQuery)
-
-
-
-// fix fixed header anchors' behavior
-+function($) {
-  $(window).load(function() {
-    if (location.hash) {
-      scroll()
-    }
-  })
-  $(function() {
-    $(window).hashchange(function() {
-      scroll()
-    })
-  })
-
-  function scroll() {
-    var headerHeight = $('.header').height()
-    $(window).scrollTop($(window).scrollTop() - headerHeight)
-  }
 }(jQuery)
 
 

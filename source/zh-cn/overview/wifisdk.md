@@ -72,7 +72,7 @@
 ### 3.1.1.   初始化部分流程图
 ### 3.1.2.   引用头文件
 
-```
+``` python
 import <GizWifiSDK/GizWifiSDK.h>
 ```
 
