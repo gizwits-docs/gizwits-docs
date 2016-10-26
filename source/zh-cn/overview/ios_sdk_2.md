@@ -6,7 +6,9 @@ title:  iOS SDK 2.0
 
 相比之下，SDK在新接口定义上做了进一步的简化，使用流程更加简单了。APP已经完全不需要了解设备连接方面的概念，可以更专注于APP用户体验的优化设计。
 ## 1.2.  机智云物联方案概况
+
 ![Alt text](/assets/zh-cn/app/1.2.png)
+
 ## 1.3.  找到最合适的SDK
 机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台，具体内容请参考：《APICloud SDK 集成指南》。
 ## 1.4. 相关名词定义
@@ -73,25 +75,15 @@ title:  iOS SDK 2.0
 
 第一步，双击解开压缩包 GizWifiSDK-iOS-xxx.zip。 
 第二步，将解压后的文件添加到指定的工程中： 
-
 ![Alt text](/assets/zh-cn/app/1.55.png)
-
 第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。 
-
 ![Alt text](/assets/zh-cn/app/1.552.png)
-
 ![Alt text](/assets/zh-cn/app/1.553.png)
-
 第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
-
 ![Alt text](/assets/zh-cn/app/1.554.png)
-
 第五步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
-
 ![Alt text](/assets/zh-cn/app/1.555.png)
-
 最后，确保工程里面有这些链接库，SDK就添加完成了:
-
 ![Alt text](/assets/zh-cn/app/1.556.png)
 
 # 2. SDK流程简介
@@ -106,14 +98,16 @@ title:  iOS SDK 2.0
 ### 3.1.1.   初始化部分流程图
 ![Alt text](/assets/zh-cn/app/iossdk3.11.png)
 ### 3.1.2.   引用头文件
-```
+```objective-c
 import <GizWifiSDK/GizWifiSDK.h>
 ```
 ### 3.1.3.   设置SDK通用委托
 注册SDK通用委托是为了能让APP收到来自GizWifiSDK类的响应事件，包含了注册、登录、配置设备、绑定设备等回调接口。这是SDK使用中十分重要的一个委托，与GizWifiSDK类相关的操作都会在这里会回调。如果没有正确注册通用委托，将无法正常使用SDK。注册委托时，APP可以根据自己的需求实现回调接口。
 ### 3.1.4.   初始化SDK
 SDK启动前，任何功能都是无法正常使用的。SDK启动时，会进行SDK初始化，并自动发现当前局域网设备。SDK将通过通用委托，上报已发现的设备以及相应的事件。APP可以先设置SDK的通用委托，再启动SDK，以便处理这些事件通知。 
+
 SDK启动时需要指定应用程序的AppID，开发者需要先在机智云网站上为自己的APP申请一个AppID，请在应用的AppDelegate中调用该方法指定应用的AppID。该方法只需要调用一次。 
+
 SDK的日志可以帮助开发者发现APP运行时发生的问题。SDK默认将所有日志信息输出到调试终端和日志文件中，日志文件保存在应用程序的Documents\GizWifiSDK\GizSDKLog目录下。APP如果不希望在调试终端输出日志，可以通过日志级别设置接口，把日志输出级别修改为GizLogPrintNone。 
 
 【示例代码】
@@ -165,7 +159,7 @@ else if(eventType == GizEventToken)
 第一步：获取短信验证码。SDK向云端发送短信验证码请求，如果请求成功，云端会给手机发送短信验证码。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] requestSendPhoneSMSCode:@"your_app_secret" phone:@"your_phone_number"];
  
@@ -181,7 +175,7 @@ else if(eventType == GizEventToken)
 第二步：用短信验证码注册。APP把手机收到的短信验证码传给SDK，填上手机号和密码就可以注册了。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] registerUser:@"your_phone_number" password:@"your_password" verifyCode:@"your_verify_code" accountType:GizUserPhone];
  
@@ -200,7 +194,7 @@ else if(eventType == GizEventToken)
 注册普通用户，使用用户名、密码即可创建一个账号。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] registerUser:@"your_user_name" password:@"your_password" verifyCode:nil accountType:GizUserNormal];
  
@@ -220,7 +214,7 @@ else if(eventType == GizEventToken)
 通过有效的电子邮箱地址，注册一个账号。注册成功后，云端会给指定邮箱发送注册成功的邮件。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] registerUser:@"your_email_address" password:@"your_password" verifyCode:nil accountType:GizUserEmail];
  
@@ -242,7 +236,7 @@ else if(eventType == GizEventToken)
 实名用户登录时，用户名可以是注册过的手机号、邮箱、普通用户名。登录账号要先注册好，如果更换了AppID，登录账号需要重新注册。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] userLogin:@"your_user_name" password:@"your_user_password"]; 
  
@@ -260,7 +254,7 @@ else if(eventType == GizEventToken)
 用户每次匿名登录时，获取到的uid是相同的。匿名用户登录时，如果账号不存在，系统会根据设备唯一标识码，生成一个匿名账号，并登录该账号。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] userLoginAnonymous];
  
@@ -281,7 +275,7 @@ ShareSDK http://mob.com/
 BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3%E9%A6%96%E9%A1%B5/%E7%99%BE%E5%BA%A6%E5%B8%90%E5%8F%B7%E8%BF%9E%E6%8E%A5 
 
 【示例代码】
-```
+```objective-c
 // 以新浪账号为例
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] userLoginWithThirdAccount:GizThirdSINA uid:@"your_third_uid" token:@"your_third_token"]; 
@@ -305,7 +299,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 第一步：获取短信验证码 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] requestSendPhoneSMSCode:@"your_app_secret" phone:@"your_phone_number"];
  
@@ -321,7 +315,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 第二步：用短信验证码重置密码 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] resetPassword:@"your_phone_number" verifyCode:@"your_verify_code" newPassword:@"your_new_password" accountType:GizUserPhone]; 
  
@@ -340,7 +334,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 邮件发送成功回调与密码修改成功回调一致，因此需要注意在回调的时候区分。
  
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] resetPassword:@"your_email_address" verifyCode:nil newPassword:@"your_new_password" accountType:GizUserEmail]; 
  
@@ -358,7 +352,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 用户登录后可以修改密码。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] changeUserPassword:@"your_token" oldPassword:@"your_old_password" newPassword:@"your_new_password"]; 
  
@@ -380,7 +374,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 转普通用户时，填入待转换的用户名、密码，以及登录的token就可以了。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] transAnonymousUser:@"your_token" username:@"your_user_name" password:@"your_password" verifyCode:nil accountType:GizUserNormal]; 
  
@@ -398,7 +392,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 转手机用户时，需要填入待转换的手机号、密码、短信验证码，登录的token。获取短信验证码的过程与手机注册时一样。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] transAnonymousUser:@"your_token" username:@"your_phone_number" password:@"your_password" verifyCode:@"your_verify_code" accountType:GizUserPhone]; 
  
@@ -422,7 +416,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 只修改用户邮箱时，个人信息的参数传nil，用户类型可以指定为邮箱用户。以下为修改用户邮箱的示例代码。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_email_address" SMSVerifyCode:nil userType:GizUserEmail additionalInfo:nil]; 
  
@@ -440,7 +434,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 只修改用户手机号时，个人信息参数传nil，用户类型可以指定为手机用户。修改手机号之前，需要先获取手机验证码。以下示例代码为修改用户手机号的代码，获取短信验证码的代码请参考手机号注册。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_phone_number" SMSVerifyCode: @"your_verify_code" userType:GizUserPhone additionalInfo:nil]; 
  
@@ -458,7 +452,7 @@ BaiduSDK http://developer.baidu.com/wiki/index.php?title=%E5%B8%AE%E5%8A%A9%E6%9
 只修改用户个人信息时，手机号或邮箱参数传nil，用户类型可以指定为普通用户。个人信息包含多项内容，通过GizUserInfo类指定。其中不想修改的信息填nil，云端会保留上次修改过的值。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
  
 GizUserInfo* additialInfo = new GizUserInfo();
@@ -484,7 +478,7 @@ additialInfo.remark = @"home";
 修改邮箱同时修改个人信息时，用户类型需指定为邮箱用户。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
  
 GizUserInfo* additialInfo = new GizUserInfo();
@@ -510,7 +504,7 @@ additialInfo.remark = @"home";
 修改手机号同时修改个人信息时，用户类型需指定为手机用户。修改手机号同样需要先获取手机验证码，获取短信验证码的代码请参考手机号注册。
  
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
  
 GizUserInfo* additialInfo = new GizUserInfo();
@@ -548,7 +542,7 @@ AirLink使⽤UDP广播方式，由手机端发出含有目标路由器名称和�
 模块开启AirLink模式后，如果一分钟内未收到AirLink广播或无法正确连上路由器，将进入SoftAP模式。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self; 
 [[GizWifiSDK sharedInstance] setDeviceOnboarding:@"your_ssid" key:@"your_key" mode:GizWifiAirLink softAPSSIDPrefix:nil timeout:60 wifiGAgentType:[NSArray arrayWithObjects: @(GizGAgentESP), nil]];
  
@@ -569,7 +563,7 @@ AirLink使⽤UDP广播方式，由手机端发出含有目标路由器名称和�
 使用机智云提供的模组固件，设备产生的Wifi热点以“XPG-GAgent-”开头，密码为” 123456789”。其他厂商提供的模组，SoftAP热点名称由各自厂商指定。APP可以根据需要传入正确的热点前缀。 
 
 【示例代码】
-```
+```objective-c
 // MCU发出进入SoftAP串口指令，通知模组开启SoftAP模式。
 详情请参考《智能云空调-机智云接入串口通信协议文档》
 //让手机连接模组的SoftAP热点
@@ -603,7 +597,7 @@ APP设置好委托，启动SDK后，就可以收到SDK的设备列表推送。�
 SDK提供设备列表缓存，设备列表中的设备对象在整个APP生命周期中一直有效。缓存的设备列表会与当前最新的已发现设备同步更新。 
 
 【示例代码】
-```
+```objective-c
 // 使用缓存的设备列表刷新UI
 NSArray* devices = [GizWifiSDK sharedInstance].deviceList;
  
@@ -641,7 +635,7 @@ APP得到设备列表后，给设备设置委托后，可以订阅设备。已�
 所有通过SDK得到的设备，都可以订阅，订阅结果通过回调返回。订阅成功的设备，要在其网络状态变为可控时才能查询状态和下发控制指令。 
 
 【示例代码】
-```
+```objective-c
 // 以设备列表中的第一个设备实例为例，为其设置委托 
 GizWifiDevice* mDevice = nil;
 for (int i = 0; i < deviceList.count; i++) {
@@ -663,7 +657,7 @@ for (int i = 0; i < deviceList.count; i++) {
 APP可以通过设备的mac、productKey、productSecret完成非局域网设备的绑定,可以用上述信息生成二维码，APP通过扫码方式绑定。GPRS设备、蓝牙设备等都是无法通过Wifi局域网发现的设备，都属于非局域网设备。 
 
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self;
 [[GizWifiSDK sharedInstance] bindRemoteDevice:@"your_uid" token:@"your_token" mac:@"your_mac" productKey:@"your_product_key" productSecret:@"your_product_secret"];
  
@@ -681,7 +675,7 @@ APP可以通过设备的mac、productKey、productSecret完成非局域网设备
 不订阅设备也可以设置设备的绑定信息。在设备列表中找到要修改的设备，如果是已绑定的，就可以修改remark和alias信息。 
 
 【示例代码】
-```
+```objective-c
 // mDevice是从设备列表中获取到的设备实体对象，为其设置委托
 mDevice.delegate = self;
 [mDevice setCustomInfo:@"your_remark" alias:@"your_alias"]; 
@@ -700,7 +694,7 @@ mDevice.delegate = self;
 已绑定的设备可以解绑，解绑需要APP调用接口完成操作，SDK不支持自动解绑。对于已订阅的设备，解绑成功时会被解除订阅，同时断开设备连接，设备状态也不会再主动上报了。设备解绑后，APP刷新绑定设备列表时就得不到该设备了。
  
 【示例代码】
-```
+```objective-c
 [GizWifiSDK sharedInstance].delegate = self;
 [[GizWifiSDK sharedInstance] unbindDevice:@"your_uid" token:@"your_token" did:@"your_did"];
  
@@ -718,7 +712,7 @@ mDevice.delegate = self;
 不订阅设备也可以获取硬件信息。APP可以获取模块协议版本号，mcu固件版本号等硬件信息，但只有局域网设备才支持该功能。 
 
 【示例代码】
-```
+```objective-c
 // mDevice是从设备列表中获取到的设备实体对象，为其设置委托
 mDevice.delegate = self;
 [mDevice getHardwareInfo]; 
@@ -762,7 +756,7 @@ APP下发操作指令时可以指定sn，通过回调参数中的sn能够对应�
 如果APP下发指令后只关心是否有设备状态上报，那么下发指令的sn可填0，这时回调参数sn也为0。 
 
 【示例代码】
-```
+```objective-c
 /*
  * 以下代码为App使用sn的示例。如果App不使用sn，sn可设为0，回调中也不需要判断sn
  */
@@ -792,7 +786,7 @@ int sn = 5;
 设备订阅变成可控状态后，APP可以随时收到设备状态的主动上报，仍然通过didReceiveData回调返回。设备上报状态时，回调参数sn为0，回调参数dataMap为设备上报的状态。
  
 【示例代码】
-```
+```objective-c
 - (void)device:(GizWifiDevice *)device didReceiveData:(NSError *)result data:(NSDictionary *)dataMap withSN:(NSNumber *)sn {
     if (result.code == GIZ_SDK_SUCCESS) {
         // 已定义的设备数据点，有布尔、数值、枚举、扩展类型        
@@ -822,7 +816,7 @@ int sn = 5;
 设备订阅变成可控状态后，APP可以查询设备状态。设备状态查询结果也通过didReceiveData回调返回，回调参数sn为0。回调参数dataMap为设备回复的状态。
  
 【示例代码】
-```
+```objective-c
 // mDevice是从设备列表中获取到的设备实体对象，为其设置委托
 mDevice.delegate = self;
 [mDevice getDeviceStatus];
