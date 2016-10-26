@@ -5,9 +5,9 @@
   path: /path/to/article
   
 APP开发:
-  iOS App开发框架（Wi-Fi产品）:
+  iOS App开发框架:
     path: /overview/ios_sdk_2.html
-  Android App开发框架（Wi-Fi产品）:
+  Android App开发框架:
     path: /path/to/article
   iOS SDK 2.0:
     path: /path/to/article
@@ -41,5 +41,5 @@ APP开发:
   Noti 2.0:
     path: /path/to/article
     
-其它教程文档:
+更多文档:
   path: /path/to/article
