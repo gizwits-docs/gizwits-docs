@@ -22,15 +22,26 @@
   .navigation,
   .markdown-body {
     background: #fcfcfc;
-  }
-
-  .markdown-body {
-    margin-top: 50px;
+    margin: {
+      top: 30px;
+    }
   }
 
   .navigation {
-    max-height: 80%;
-    overflow: auto;
+    .nav {
+      height: 400px;
+      overflow: auto;
+    }
+
+    .nav-control {
+      text-align: center;
+      border-top: 2px solid $dark-gray;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+    
     float: left;
     width: 220px;
     line-height: 2em;
@@ -38,9 +49,6 @@
     position: fixed;
     border: 1px sulid $dark-gray;
     box-shadow: 2px 2px 10px $dark-gray;
-    margin: {
-      top: 50px;
-    }
     padding: {
       top: 20px;
       bottom: 20px;

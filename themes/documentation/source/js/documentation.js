@@ -107,6 +107,7 @@
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
+    // $('.navigation').append($('<div class="nav-control">show</div>'))
   })
 }(jQuery)
 
@@ -116,19 +117,19 @@
 +function($) {
   $(function() {
     var timeoutHandler
-    var navHeight = $('.navigation').height()
+    var navHeight = $('.nav').height()
     $(window).scroll(function() {
       clearTimeout(timeoutHandler)
-      var pos = $('.navigation .active').position().top
+      var pos = $('.nav .active').position().top
 
       timeoutHandler = setTimeout(function() {
-        if (pos + $('.navigation').scrollTop() > navHeight) {
-          $('.navigation').animate({
-            scrollTop: pos + $('.navigation').scrollTop()
+        if (pos + $('.nav').scrollTop() > navHeight) {
+          $('.nav').animate({
+            scrollTop: pos + $('.nav').scrollTop()
           })
         } else if (pos - navHeight < 376) {
-          $('.navigation').animate({
-            scrollTop: - pos - $('.navigation').scrollTop()
+          $('.nav').animate({
+            scrollTop: - pos - $('.nav').scrollTop()
           })
         }
       }, 500)
