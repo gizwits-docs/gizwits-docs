@@ -80,15 +80,10 @@ title:  iOS SDK 2.0
 ![Alt text](/assets/zh-cn/app/1.552.png)
 ![Alt text](/assets/zh-cn/app/1.553.png)
 第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
-
 ![Alt text](/assets/zh-cn/app/1.554.png)
-
 第五步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
-
 ![Alt text](/assets/zh-cn/app/1.555.png)
-
 最后，确保工程里面有这些链接库，SDK就添加完成了:
-
 ![Alt text](/assets/zh-cn/app/1.556.png)
 
 # 2. SDK流程简介
