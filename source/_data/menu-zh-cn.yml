@@ -5,23 +5,23 @@
   path: /path/to/article
   
 APP开发:
-  Wi-Fi产品iOS App开发框架使用指南:
+  iOS App开发框架（Wi-Fi产品）:
     path: /overview/ios_sdk_2.html
-  Wi-Fi产品Android App开发框架使用指南:
+  Android App开发框架（Wi-Fi产品）:
     path: /path/to/article
-  Wi-Fi产品iOS SDK 2.0集成指南:
+  iOS SDK 2.0:
     path: /path/to/article
-  Wi-Fi产品Android SDK 2.0集成指南:
+  Android SDK 2.0:
     path: /path/to/article
-  Wi-Fi产品APICloud SDK 集成指南:
+  APICloud SDK:
     path: /path/to/article
-  Wi-Fi产品iOS SDK1.0兼容2.0指南:
+  iOS SDK1.0兼容2.0指南:
     path: /path/to/article
-  Wi-Fi产品Android SDK 1.0兼容2.0指南:
+  Android SDK 1.0兼容2.0指南:
     path: /path/to/article
-  蓝牙产品iOS 数据接入SDK使用指南:
+  iOS 数据接入SDK（蓝牙产品）:
     path: /path/to/article
-  蓝牙产品Android 数据接入SDK使用指南:
+  Android 数据接入SDK（蓝牙产品）:
     path: /path/to/article
 
 微信开发:
