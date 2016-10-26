@@ -107,34 +107,49 @@
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
-    // $('.navigation').append($('<div class="nav-control">show</div>'))
+    $('.navigation').append($('<div class="nav-control">show</div>'))
   })
-}(jQuery)
 
-
-
-// doc's nav scrollspy
-+function($) {
   $(function() {
     var timeoutHandler
-    var navHeight = $('.nav').height()
+    var $nav = $('.nav')
+    var navHeight = $nav.height()
+    var lastScrollTop = $(window).scrollTop()
+
+    $('body').scrollspy({target: '.navigation'})
+
     $(window).scroll(function() {
       clearTimeout(timeoutHandler)
-      var pos = $('.nav .active').position().top
+      var $active = $('.nav .active')
+      var pos = $active.position().top
+      var curScrollTop = $(window).scrollTop()
 
       timeoutHandler = setTimeout(function() {
-        if (pos + $('.nav').scrollTop() > navHeight) {
-          $('.nav').animate({
-            scrollTop: pos + $('.nav').scrollTop()
+        if (pos + $nav.scrollTop() > navHeight) {
+          $nav.animate({
+            scrollTop: pos + $nav.scrollTop()
           })
         } else if (pos - navHeight < 376) {
-          $('.nav').animate({
-            scrollTop: - pos - $('.nav').scrollTop()
+          $nav.animate({
+            scrollTop: - pos - $nav.scrollTop()
           })
         }
       }, 500)
+
+      if (curScrollTop > lastScrollTop) {
+        if ($active.hasClass('h1')) {
+          $active.prevAll('.h2').hide()
+          $active.nextUntil('.h1').show()
+        }
+      } else {
+        if ($active.hasClass('h2') && $active.next().hasClass('h1')) {
+          $active.show()
+          $active.nextAll('.h2').hide()
+          $active.prevUntil('.h1').show()
+        }
+      }
+      lastScrollTop = curScrollTop   
     })
-    $('body').scrollspy({target: '.navigation'})
   })
 }(jQuery)
 
