@@ -103,7 +103,7 @@
       var text = $this.text()
       var element = '<a class="' + className + '" href="#' + anchor + '">' + text + '</a>'
       $this.append($('<a class="anchor" href="#' + anchor + '">#</a>'))
-      navigation += '<li>' + element + '</li>'
+      navigation += '<li class="' + className + '"><a href="#' + anchor + '">'+ text + '</a>' + '</li>'
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)

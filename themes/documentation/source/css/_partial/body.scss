@@ -53,8 +53,8 @@
       font-weight: buld;
     }
     .active {
-      > .h1,
-      > .h2 {
+      &,
+      &:hover {
         background: $yellow;
       }
     }
@@ -64,21 +64,20 @@
     }
     ul {
       padding-left: 0;
-      ul {
-        display: none;
+      li {
+        padding: 3px 20px;
+        &:hover {
+          background: $dark-gray;
+        }
       }
     }
     a {
       display: block;
       white-space: nowrap;
       width: 100%;
-      padding: 3px 20px;
       color: $black;
       text-overflow: ellipsis;
       overflow: hidden;
-      &:hover {
-        background: $yellow;
-      }
     }
     .h2 {
       padding-left: 33px;
