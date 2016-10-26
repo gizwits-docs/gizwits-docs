@@ -75,15 +75,10 @@ title:  iOS SDK 2.0
 
 第一步，双击解开压缩包 GizWifiSDK-iOS-xxx.zip。 
 第二步，将解压后的文件添加到指定的工程中： 
-
 ![Alt text](/assets/zh-cn/app/1.55.png)
-
 第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。 
-
 ![Alt text](/assets/zh-cn/app/1.552.png)
-
 ![Alt text](/assets/zh-cn/app/1.553.png)
-
 第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
 
 ![Alt text](/assets/zh-cn/app/1.554.png)
@@ -115,8 +110,11 @@ import <GizWifiSDK/GizWifiSDK.h>
 注册SDK通用委托是为了能让APP收到来自GizWifiSDK类的响应事件，包含了注册、登录、配置设备、绑定设备等回调接口。这是SDK使用中十分重要的一个委托，与GizWifiSDK类相关的操作都会在这里会回调。如果没有正确注册通用委托，将无法正常使用SDK。注册委托时，APP可以根据自己的需求实现回调接口。
 ### 3.1.4.   初始化SDK
 SDK启动前，任何功能都是无法正常使用的。SDK启动时，会进行SDK初始化，并自动发现当前局域网设备。SDK将通过通用委托，上报已发现的设备以及相应的事件。APP可以先设置SDK的通用委托，再启动SDK，以便处理这些事件通知。 
+
 SDK启动时需要指定应用程序的AppID，开发者需要先在机智云网站上为自己的APP申请一个AppID，请在应用的AppDelegate中调用该方法指定应用的AppID。该方法只需要调用一次。 
+
 SDK的日志可以帮助开发者发现APP运行时发生的问题。SDK默认将所有日志信息输出到调试终端和日志文件中，日志文件保存在应用程序的Documents\GizWifiSDK\GizSDKLog目录下。APP如果不希望在调试终端输出日志，可以通过日志级别设置接口，把日志输出级别修改为GizLogPrintNone。 
+
 【示例代码】
 ```objective-c
 [GizWifiSDK shareInstance].delegate = self;
