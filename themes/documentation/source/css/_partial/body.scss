@@ -5,7 +5,7 @@
   }
 
   .heading {
-    border-bottom: 1px sulid $light-gray;
+    border-bottom: 1px solid $light-gray;
     position: relative;
     .title {
       font-size: 28px;
@@ -13,7 +13,7 @@
     }
     .edit-link {
       color: #686868;
-      position: absulute;
+      position: absolute;
       bottom: 20px;
       right: 0;
     }
