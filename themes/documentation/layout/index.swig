@@ -2,7 +2,7 @@
   
   <div class="container clearfix">
     <div class="navigation">
-      <div class="nav-title">目录</div>
+      <div class="nav-title">{{ __('content') }}</div>
       <div class="nav"></div>
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">

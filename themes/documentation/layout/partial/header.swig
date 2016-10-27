@@ -3,7 +3,6 @@
     <span class="brand pure-u-5-24">
       <a href="http://www.gizwits.com" class="logo">
         <img src="{{ url_for('images/logo.png') }}" alt="logo"> 
-        <span>{{ __("title") }}</span>
       </a>
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
