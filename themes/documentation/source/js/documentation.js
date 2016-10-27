@@ -179,18 +179,18 @@
     })
   })
 
-  $(function() {
-    var hash = location.hash
-    if (hash) {
-      $('.nav a').each(function() {
-        var $this = $(this)
-        if ($this.attr('href') === hash) {
-          // $('.nav li').removeClass('active')
-          $this.parent().addClass('active')
-        }
-      })
-    }
-  })
+  // $(function() {
+  //   var hash = location.hash
+  //   if (hash) {
+  //     $('.nav a').each(function() {
+  //       var $this = $(this)
+  //       if ($this.attr('href') === hash) {
+  //         $('.nav .active').removeClass('active')
+  //         // $this.parent().addClass('active')
+  //       }
+  //     })
+  //   }
+  // })
 }(jQuery)
 
 
