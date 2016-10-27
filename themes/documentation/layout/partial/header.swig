@@ -1,6 +1,6 @@
 <div class="header">
   <div class="container pure-g">
-    <span class="brand pure-u-6-24">
+    <span class="brand pure-u-5-24">
       <a href="http://www.gizwits.com" class="logo">
         <img src="{{ url_for('images/logo.png') }}" alt="logo"> 
         <span>{{ __("title") }}</span>
@@ -8,7 +8,7 @@
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
 
-    <span class="menu pure-u-16-24">
+    <span class="menu pure-u-17-24">
       <ul class="levelA-wrapper">
         {% for levelA in site.data["menu-" + lang] %}
           {% if levelA.path %}
