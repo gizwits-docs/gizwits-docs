@@ -107,7 +107,7 @@
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
-    $('.navigation').append($('<div class="nav-control">show</div>'))
+    $('.navigation').append($('<div class="nav-control" data-show="false">' + (localStorage.getItem('lang') === 'en-us' ?  'Show' : '展开全部') +'</div>'))
   })
 
   $(function() {
@@ -134,21 +134,38 @@
             scrollTop: - pos - $nav.scrollTop()
           })
         }
-      }, 500)
+      }, 200)
 
-      if (curScrollTop > lastScrollTop) {
-        if ($active.hasClass('h1')) {
-          $active.prevAll('.h2').hide()
-          $active.nextUntil('.h1').show()
+      if (!$('.nav-control').data().show) {
+        if (curScrollTop > lastScrollTop) {
+          if ($active.hasClass('h1')) {
+            $active.prevAll('.h2').hide()
+            $active.nextUntil('.h1').show()
+          }
+        } else {
+          if ($active.hasClass('h2') && $active.next().hasClass('h1')) {
+            $active.nextAll('.h2').hide()
+            $active.next().prevUntil('.h1').show()
+          }
         }
+        lastScrollTop = curScrollTop
+      } 
+    })
+  })
+
+  $(function() {
+    $('.nav-control').click(function() {
+      var $this = $(this)
+      var langIsEn = localStorage.getItem('lang') === 'en-us'
+      if ($this.data().show) {
+        $this.text(langIsEn ? 'Show' : '展开全部')
+        $this.data('show', false)
+        $('.nav .h2').hide()
       } else {
-        if ($active.hasClass('h2') && $active.next().hasClass('h1')) {
-          $active.show()
-          $active.nextAll('.h2').hide()
-          $active.prevUntil('.h1').show()
-        }
+        $this.text(langIsEn ?  'Hide' : '折叠全部')
+        $this.data('show', true)
+        $('.nav .h2').show()
       }
-      lastScrollTop = curScrollTop   
     })
   })
 }(jQuery)
