@@ -175,7 +175,7 @@
 // clipboard
 +function($) {
   $(function() {
-    $('.code pre').prepend($('<i class="fa fa-clipboard fa-lg tooltip" title="复制" aria-hidden="true"><i class="tooltiptext">已复制</i></i>'))
+    $('.code pre').prepend($('<i class="fa fa-clipboard fa-lg tooltip" title="' + (localStorage.getItem('lang') === 'zh-cn' ? '复制' : 'COPY') + '"aria-hidden="true"><i class="tooltiptext">'+ (localStorage.getItem('lang') === 'zh-cn' ? '已复制' : 'COPIED') + '</i></i>'))
 
     new Clipboard('.fa-clipboard', {
       text: function(trigger) {
