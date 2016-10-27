@@ -150,7 +150,16 @@
           }
         }
         lastScrollTop = curScrollTop
-      } 
+      }
+    })
+
+    $('.nav .h1').click(function() {
+      if (!$('.nav-control').data().show) {
+        var $this = $(this)
+        $this.next('.h1').nextAll('.h2').hide()
+        $this.prevAll('.h2').hide()
+        $this.nextUntil('.h1').show()
+      }
     })
   })
 
@@ -168,6 +177,19 @@
         $('.nav .h2').show()
       }
     })
+  })
+
+  $(function() {
+    var hash = location.hash
+    if (hash) {
+      $('.nav a').each(function() {
+        var $this = $(this)
+        if ($this.attr('href') === hash) {
+          // $('.nav li').removeClass('active')
+          $this.parent().addClass('active')
+        }
+      })
+    }
   })
 }(jQuery)
 

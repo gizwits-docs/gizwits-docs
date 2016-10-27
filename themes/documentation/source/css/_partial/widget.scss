@@ -1,17 +1,17 @@
 .widget {
-  font-weight: bold;
   position: fixed;
   bottom: 10%;
   right: 5%;
-  width: 60px;
+  width: 50px;
 
   a {
     color: #000;
     display: block;
+    height: 50px;
     background: #ddd;
     padding: 10px;
     margin: 10px 0;
-    font-size: 14px;
+    font-size: 13px;
     text-align: center;
 
     &:hover {

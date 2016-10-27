@@ -8,7 +8,10 @@
     border-bottom: 1px solid $light-gray;
     position: relative;
     .title {
-      font-size: 28px;
+      font: {
+        size: 28px;
+        weight: bold;
+      }
       margin-top: -10px;
     }
     .edit-link {
@@ -72,22 +75,24 @@
     ul {
       padding-left: 0;
       li {
-        padding: 3px 20px;
         &:hover {
           background: $dark-gray;
         }
       }
     }
     a {
+      padding: 3px 20px;
       display: block;
       white-space: nowrap;
       width: 100%;
-      color: $black;
+      color: #3c4145;
       text-overflow: ellipsis;
       overflow: hidden;
     }
     .h2 {
-      padding-left: 33px;
+      a {
+        padding-left: 33px;
+      }
       display: none;
     }
   }
