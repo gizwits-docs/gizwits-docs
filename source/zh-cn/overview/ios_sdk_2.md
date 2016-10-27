@@ -1,4 +1,4 @@
-title:  iOS SDK 2.0
+title:  Wifi产品iOS SDK 2.0
 ---
 # 1.设备接入SDK概述
 ## 1.1.  SDK目的与功能
