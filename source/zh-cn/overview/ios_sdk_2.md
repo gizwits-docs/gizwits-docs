@@ -121,7 +121,7 @@ SDK启动时需要指定应用程序的AppID，开发者需要先在机智云网
 SDK的日志可以帮助开发者发现APP运行时发生的问题。SDK默认将所有日志信息输出到调试终端和日志文件中，日志文件保存在应用程序的Documents\GizWifiSDK\GizSDKLog目录下。APP如果不希望在调试终端输出日志，可以通过日志级别设置接口，把日志输出级别修改为GizLogPrintNone。 
 
 【示例代码】
-```objective-c
+```objectivec
 [GizWifiSDK shareInstance].delegate = self;
 [GizWifiSDK startWithAppID:@"your_app_id"];
  
