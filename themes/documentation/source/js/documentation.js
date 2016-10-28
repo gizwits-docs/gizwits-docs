@@ -94,7 +94,7 @@
 // documentation's navigation
 +function($) {
   $(function() {
-    var headings = $('.markdown-body').find('h1, h2, h3, h4, h5, h6')
+    var headings = $('.markdown-body').find('h1, h2')
     var navigation = '<ul>'
     headings.each(function(index) {
       var $this = $(this)
@@ -102,9 +102,7 @@
       var anchor = $this.attr('id')
       var text = $this.text()
       $this.append($('<a class="anchor" href="#' + anchor + '">#</a>'))
-      if (className === 'h1' || className === 'h2') {
-        navigation += '<li class="' + className + '"><a href="#' + anchor + '">'+ text + '</a>' + '</li>'
-      }
+      navigation += '<li class="' + className + '"><a href="#' + anchor + '">'+ text + '</a>' + '</li>'
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
