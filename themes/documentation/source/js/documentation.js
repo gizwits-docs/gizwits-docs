@@ -144,6 +144,9 @@
           if ($active.hasClass('h1')) {
             $active.prevAll('.h2').hide()
             $active.nextUntil('.h1').show()
+          } else {
+            $active.prevUntil('.h1').show()
+            $active.nextUntil('.h1').show()
           }
         } else {
           if ($active.hasClass('h2') && $active.next().hasClass('h1')) {
