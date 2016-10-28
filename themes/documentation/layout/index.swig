@@ -2,8 +2,10 @@
   
   <div class="container clearfix">
     <div class="navigation">
-      <div class="nav-title">{{ __('content') }}</div>
-      <div class="nav"></div>
+      <div class="navigation-inner">
+        <div class="nav-title">{{ __('content') }}</div>
+        <div class="nav"></div>
+      </div>
     </div>
     <div class="markdown-body" data-spy="scroll" data-target=".navigation">
       <div class="heading">
@@ -12,5 +14,7 @@
       </div>
       {{ page.content }}
     </div>
+    
+    {{ partial("partial/widget") }}
   </div>
 </div>

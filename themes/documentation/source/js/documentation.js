@@ -108,7 +108,7 @@
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
-    $('.navigation').append($('<div class="nav-control" data-show="false">' + (localStorage.getItem('lang') === 'en-us' ?  'Show' : '展开全部') +'</div>'))
+    $('.navigation-inner').append($('<div class="nav-control" data-show="false">' + (localStorage.getItem('lang') === 'en-us' ?  'Show' : '展开全部') +'</div>'))
   })
 
   $(function() {
@@ -120,12 +120,12 @@
     $('body').scrollspy({target: '.navigation'})
 
     $(window).scroll(function() {
+      var $active = $('.nav .active')
+      var pos = $active.position().top
+      var curScrollTop = $(window).scrollTop()
+
       if (!$('.nav:hover').length) {
         clearTimeout(timeoutHandler)
-        var $active = $('.nav .active')
-        var pos = $active.position().top
-        var curScrollTop = $(window).scrollTop()
-
         timeoutHandler = setTimeout(function() {
           if (pos + $nav.scrollTop() > navHeight) {
             $nav.animate({
