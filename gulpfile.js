@@ -38,8 +38,9 @@ gulp.task('modifyIndex', function() {
   var indexFile = path.resolve(publicDir, 'index.html')
   var html = shell.cat(indexFile).stdout
   var header = html.match(/<!DOCTYPE\shtml>[\S\s]+<\/head>/)[0]
-  var body = `<body style="background: black">
-  `
+  var body = html.match(/<body>[\S\s]+class="body"/)[0]
+  body = body.slice(0, body.length - 17)
+
   var scripts = html.match(/<script[\S\s]+<\/html>/)[0]
   var newHtml = header + body + scripts
   shell.rm(indexFile)
