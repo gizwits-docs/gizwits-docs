@@ -31,6 +31,10 @@
 
   .menu {
     line-height: 40px;
+    a {
+      padding: 5px 15px;
+      display: block;
+    }
     ul {
       padding-left: 0;
       margin: 0;
@@ -38,7 +42,6 @@
     li {
       display: inline-block;
       list-style-type: none;
-      padding: 5px 15px;
       &:hover {
         cursor: pointer;
       }
