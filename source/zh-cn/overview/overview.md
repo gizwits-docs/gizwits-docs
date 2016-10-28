@@ -39,7 +39,7 @@ title:  机智云平台概述
 
 ## 代码示例
 
-```Javascript
+```
 
   //设置协议引用
   @interface Class1 () <XPGWifiSDKDelegate>
