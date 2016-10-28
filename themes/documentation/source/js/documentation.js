@@ -120,22 +120,24 @@
     $('body').scrollspy({target: '.navigation'})
 
     $(window).scroll(function() {
-      clearTimeout(timeoutHandler)
-      var $active = $('.nav .active')
-      var pos = $active.position().top
-      var curScrollTop = $(window).scrollTop()
+      if (!$('.nav:hover').length) {
+        clearTimeout(timeoutHandler)
+        var $active = $('.nav .active')
+        var pos = $active.position().top
+        var curScrollTop = $(window).scrollTop()
 
-      timeoutHandler = setTimeout(function() {
-        if (pos + $nav.scrollTop() > navHeight) {
-          $nav.animate({
-            scrollTop: pos + $nav.scrollTop()
-          })
-        } else if (pos - navHeight < 376) {
-          $nav.animate({
-            scrollTop: - pos - $nav.scrollTop()
-          })
-        }
-      }, 200)
+        timeoutHandler = setTimeout(function() {
+          if (pos + $nav.scrollTop() > navHeight) {
+            $nav.animate({
+              scrollTop: pos + $nav.scrollTop()
+            })
+          } else if (pos - navHeight < 376) {
+            $nav.animate({
+              scrollTop: - pos - $nav.scrollTop()
+            })
+          }
+        }, 200)
+      }
 
       if (!$('.nav-control').data().show) {
         if (curScrollTop > lastScrollTop) {
