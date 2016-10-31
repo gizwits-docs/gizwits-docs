@@ -98,7 +98,7 @@
 
   // generate navigation
   $(function() {
-    var headings = $('.markdown-body').find('h1, h2')
+    var headings = $('.markdown-body').find('h1, h2, h3, h4, h5, h6')
     var navigation = '<ul>'
     var group = 0
     headings.each(function() {
@@ -111,7 +111,9 @@
         group += 1
       }
       $this.append($('<a class="anchor" href="#' + anchor + '">#</a>'))
-      navigation += '<li class="' + className + '" data-group="' + group + '"><a href="#' + anchor + '">'+ text + '</a>' + '</li>'
+      if (className === 'h1' || className === 'h2') {
+        navigation += '<li class="' + className + '" data-group="' + group + '"><a href="#' + anchor + '">'+ text + '</a>' + '</li>'
+      }
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
