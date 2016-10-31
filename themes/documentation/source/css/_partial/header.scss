@@ -30,7 +30,6 @@
   }
 
   .menu {
-    line-height: 40px;
     a {
       padding: 5px 15px;
       display: block;
@@ -85,6 +84,17 @@
     .levelB,
     .levelC {
       display: block;
+    }
+    .levelA {
+      padding: 0 5px;
+      &:first-child {
+        padding: {
+          left: 15px;
+        }
+      }
+      > a {
+        padding: 0;
+      }
     }
   }
 
