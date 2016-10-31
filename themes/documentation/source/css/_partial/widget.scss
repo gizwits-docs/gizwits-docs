@@ -9,6 +9,9 @@
   .widget {
     position: fixed;
     bottom: 100px;
+    margin: {
+      left: 20px;
+    }
     a {
       color: #000;
       display: block;
