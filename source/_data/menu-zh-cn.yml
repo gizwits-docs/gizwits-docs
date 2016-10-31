@@ -6,11 +6,11 @@
   
 APP开发:
   iOS App开发框架:
-    path: /overview/ios_sdk_2.html
+    path: /path/to/article
   Android App开发框架:
     path: /path/to/article
   iOS SDK 2.0:
-    path: /path/to/article
+    path: /overview/ios_sdk_2.html
   Android SDK 2.0:
     path: /path/to/article
   APICloud SDK:
