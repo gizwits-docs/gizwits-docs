@@ -31,7 +31,7 @@
 
   .menu {
     a {
-      padding: 5px 15px;
+      padding: 0 15px;
       display: block;
     }
     ul {
@@ -70,12 +70,13 @@
         color: $black;
       }
       li:hover {
-        background: $light-gray;
+        background: $dark-gray;
       }
     }
     .levelB-wrapper {
       left: 0;
       top: 100%;
+      padding: 10px 0;
     }
     .levelC-wrapper {
       left: 100%;
@@ -84,6 +85,9 @@
     .levelB,
     .levelC {
       display: block;
+      a {
+        line-height: 2em;
+      }
     }
     .levelA {
       padding: 0 5px;
