@@ -93,16 +93,23 @@
 
 // documentation's navigation
 +function($) {
+
+  // generate navigation
   $(function() {
     var headings = $('.markdown-body').find('h1, h2')
     var navigation = '<ul>'
-    headings.each(function(index) {
+    var group = 0
+    headings.each(function() {
       var $this = $(this)
       var className = $this.prop('tagName').toLowerCase()
       var anchor = $this.attr('id')
       var text = $this.text()
+
+      if (className === 'h1') {
+        group += 1
+      }
       $this.append($('<a class="anchor" href="#' + anchor + '">#</a>'))
-      navigation += '<li class="' + className + '"><a href="#' + anchor + '">'+ text + '</a>' + '</li>'
+      navigation += '<li class="' + className + '" data-group="' + group + '"><a href="#' + anchor + '">'+ text + '</a>' + '</li>'
     })
     navigation += '</ul>'
     $('.navigation').find('.nav').append(navigation)
@@ -113,15 +120,15 @@
     var timeoutHandler
     var $nav = $('.nav')
     var navHeight = $nav.height()
-    var lastScrollTop = $(window).scrollTop()
 
     $('body').scrollspy({target: '.navigation'})
 
+    // scrollspy behavior
     $(window).scroll(function() {
       var $active = $('.nav .active')
       var pos = $active.position().top
-      var curScrollTop = $(window).scrollTop()
 
+      // nav auto scroll
       if (!$('.nav:hover').length) {
         clearTimeout(timeoutHandler)
         timeoutHandler = setTimeout(function() {
@@ -137,43 +144,37 @@
         }, 200)
       }
 
+      // auto dipslay sub-menu
       if (!$('.nav-control').data().show) {
-        if (curScrollTop > lastScrollTop) {
-          if ($active.hasClass('h1')) {
-            $active.prevAll('.h2').hide()
-            $active.nextUntil('.h1').show()
-          } else {
-            $active.prevUntil('.h1').show()
-            $active.nextUntil('.h1').show()
-          }
-        } else {
-          if ($active.hasClass('h2') && $active.next().hasClass('h1')) {
-            $active.nextAll('.h2').hide()
-            $active.next().prevUntil('.h1').show()
-          }
-        }
-        lastScrollTop = curScrollTop
-      }
-    })
-
-    $('.nav .h1').click(function() {
-      if (!$('.nav-control').data().show) {
-        var $this = $(this)
-        $this.next('.h1').nextAll('.h2').hide()
-        $this.prevAll('.h2').hide()
-        $this.nextUntil('.h1').show()
+        var activeGroup = $active.data().group
+        $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
+        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
       }
     })
   })
 
+  // click the main-menu to show the sub-menu
+  $(function() {
+    $('.nav .h1').click(function() {
+      if (!$('.nav-control').data().show) {
+        var activeGroup = $(this).data().group
+        $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
+        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
+      }
+    })
+  })
+
+  // nav's sub-menu show/hide
   $(function() {
     $('.nav-control').click(function() {
       var $this = $(this)
       var langIsEn = localStorage.getItem('lang') === 'en-us'
       if ($this.data().show) {
+        var activeGroup = $('.active').data().group
         $this.text(langIsEn ? 'Show' : '展开全部')
         $this.data('show', false)
-        $('.nav .h2').hide()
+        $('.nav > ul > .h1[data-group=' + activeGroup + ']').addClass('active')
+        $('.nav .h2').removeClass('active').hide()
       } else {
         $this.text(langIsEn ?  'Hide' : '折叠全部')
         $this.data('show', true)
