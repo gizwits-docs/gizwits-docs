@@ -8,12 +8,7 @@ APP开发:
   iOS App开发框架:
     path: /path/to/article
   Android 开源框架:
-    消息推送:
-      path: /openSoure/push.html
-    第三方登录:
-      path: /openSoure/push.html
-    APP换肤:
-      path: /openSoure/push.html
+    path: /openSoure/Android App开源框架使用教程.html
   iOS SDK 2.0:
     path: /overview/iOS_SDK_2.html
   Android SDK 2.0:
