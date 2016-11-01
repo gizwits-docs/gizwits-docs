@@ -11,16 +11,16 @@ title:  快速集成消息推送
 
 开发者需要根据框架包名在极光官网上创建应用并填写相应信息，如下所示：
 
-查看框架包名
+1、查看框架包名
 
 ![name](\assets\zh-cn\app\openSoure\push\image001.png)
 
-在极光平台创建应用
+2、在极光平台创建应用
 
 ![name](\assets\zh-cn\app\openSoure\push\image002.png)
 
 
-查看对应的AppKey和Master Secret
+3、查看对应的AppKey和Master Secret
 
 ![name](\assets\zh-cn\app\openSoure\push\image003.png)
 
@@ -29,13 +29,17 @@ title:  快速集成消息推送
 
 ### 2.2.1.	申请开通D3 Engine
 
-查看D3 Engine
+1、查看D3 Engine
 
 ![name](\assets\zh-cn\app\openSoure\push\image004.png)
 
 
-开通审核
+2、开通服务
 
 ![name](\assets\zh-cn\app\openSoure\push\image005.png)
 
 开通D3 Engine需要机智云审核通过，点击开通服务后需要联系机智云FAE协助审核开通。
+
+### 2.2.2.	云端绑定极光推送
+
+通过审核后，可以在服务一栏看到D3 Engine，依次点击“配置”->” 编辑推送平台”
