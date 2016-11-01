@@ -12,3 +12,7 @@ title:  快速集成消息推送
 根据框架包名在极光官网上创建应用并填写相应信息，如下图：
 
 ![name](\assets\zh-cn\app\openSoure\push\image001.png)
+
+![name](\assets\zh-cn\app\openSoure\push\image002.png)
+
+![name](\assets\zh-cn\app\openSoure\push\image003.png)
