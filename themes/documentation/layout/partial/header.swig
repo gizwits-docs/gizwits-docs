@@ -7,7 +7,7 @@
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
 
-    <span class="menu pure-u-17-24">
+    <span class="menu pure-u-16-24">
       <ul class="levelA-wrapper">
         {% for levelA in site.data["menu-" + lang] %}
           {% if levelA.path %}
@@ -37,7 +37,7 @@
       </ul>
     </span>
   
-    <span class="pure-u-2-24">
+    <span class="pure-u-3-24">
       <i class="fa fa-globe" aria-hidden="true"></i> 
       {% if lang == "zh-cn" %}
         <button class="lang-switch" data-lang="en-us">English</button>
