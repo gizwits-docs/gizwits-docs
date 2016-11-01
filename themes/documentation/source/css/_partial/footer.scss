@@ -1,5 +1,5 @@
 .footer {
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
   background: $light-gray;
   padding: {
@@ -8,8 +8,10 @@
   }
   p,
   a {
-    margin: 0;
     color: #999;
+  }
+  p {
+    margin: 10px 0;
   }
   span {
     border-left: 1px solid #999;
@@ -23,9 +25,5 @@
     a:hover {
       text-decoration: underline;
     }
-  }
-  .footnote {
-    font-size: .8em;
-    margin-top: 20px;
   }
 }
