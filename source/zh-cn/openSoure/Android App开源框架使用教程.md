@@ -9,7 +9,7 @@ title:  Android App开源框架使用教程
 
 机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台。
 
- ![@机智云SDK功能](./机智云SDK功能.png)
+ ![@机智云SDK功能](/assets/zh-cn/app/quick_start/andriod/机智云SDK功能.png)
 
  
 ## 2.	机智云APP开源框架
