@@ -13,16 +13,16 @@ title:  快速集成消息推送
 
 1、查看框架包名
 
-![name](\assets\zh-cn\app\openSoure\push\image001.png)
+![name](\assets\zh-cn\app\openSoure\Android\pushimage001.png)
 
 2、在极光平台创建应用
 
-![name](\assets\zh-cn\app\openSoure\push\image002.png)
+![name](\assets\zh-cn\app\openSoure\Android\push\image002.png)
 
 
 3、查看对应的AppKey和Master Secret
 
-![name](\assets\zh-cn\app\openSoure\push\image003.png)
+![name](\assets\zh-cn\app\openSoure\Android\push\image003.png)
 
 
 ## 2.2.	在云端绑定第三方推送
@@ -31,12 +31,12 @@ title:  快速集成消息推送
 
 1、查看D3 Engine
 
-![name](\assets\zh-cn\app\openSoure\push\image004.png)
+![name](\assets\zh-cn\app\openSoure\Android\push\image004.png)
 
 
 2、开通服务
 
-![name](\assets\zh-cn\app\openSoure\push\image005.png)
+![name](\assets\zh-cn\app\openSoure\Android\push\image005.png)
 
 开通D3 Engine需要机智云审核通过，点击开通服务后需要联系机智云FAE协助审核开通。
 
