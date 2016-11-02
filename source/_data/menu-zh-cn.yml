@@ -1,16 +1,21 @@
 平台概述:
   path: /overview/overview.html
-  
+
+
 快速入门:
   5分钟了解机智云:
     path: /path/to/article
+    
   设备快速接入:
     path: /path/to/article
+    
   Android App 快速入门:
     path: /path/to/article
+    
   iOS App 快速入门:
     path: /path/to/article
-  
+
+
 APP开发:
   App 开源框架:
     iOS 开源框架使用说明:
@@ -35,23 +40,64 @@ APP开发:
   开发者帐号申请:
     path: /path/to/article
 
+
 微信开发:
   path: /path/to/article
+
 
 设备开发:
   Wi-Fi模组开发:
     path: /path/to/article
-  MCU开发框架使用说明:
-    path: /path/to/article
-  Gokit3.0介绍:
-    path: /path/to/article
-  WiFi SOC方案:
-    path: /path/to/article
-  Gokit3.0语音开发:
-    path: /path/to/article
-  调试与烧写:
-    path: /path/to/article
     
+  MCU开发框架使用说明:
+    GoKit3.0代码自动生成工具:
+      path: /path/to/article
+    GoKit3.0 DEV SDK Common版移植说明:
+      path: /path/to/article
+      
+  Gokit3.0介绍:
+    Gokit3。0系列开发套件简介:
+      path: /path/to/article
+    Gokit3.0硬件手册:
+      path: /path/to/article
+      
+  WiFi SOC方案:
+    GoKit3.0(S)使用说明书:
+      path: /path/to/article
+    Gokit3.0(S)开发套件介绍:
+      path: /path/to/article
+    GoKit3.0(S)开发环境搭建:
+      path: /path/to/article
+    Gokit3.0(S)源码详解:
+      path: /path/to/article
+    
+  Gokit3.0语音开发:
+    GoKit3.0(V)使用说明书:
+      path: /path/to/article
+    Gokit3.0(V)开发指南:
+      path: /path/to/article
+    GoKit3.0(V)开词条管理:
+      path: /path/to/article
+    Gokit3.0(V)源码详解:
+      path: /path/to/article
+    
+  调试与烧写:
+    串口工具使用文档:
+      path: /path/to/article
+    HF-LPB100串口烧写说明:
+      path: /path/to/article
+    HF-LPT120串口烧写说明:
+      path: /path/to/article
+    MXCHIP串口烧写说明:
+      path: /path/to/article
+    ESP8266串口烧写说明:
+      path: /path/to/article
+    产测工具使用文档:
+      path: /path/to/article
+    日志抓取教程文档:
+      path: /path/to/article
+ 
+ 
 云平台:
   path: /overview/overview.html
 
