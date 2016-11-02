@@ -7,7 +7,7 @@ title: iOS SDK 2.0集成指南
 相比之下，SDK在新接口定义上做了进一步的简化，使用流程更加简单了。APP已经完全不需要了解设备连接方面的概念，可以更专注于APP用户体验的优化设计。
 
 ## 2.	机智云物联方案概况
-![Alt text](./image1.png)
+![Alt text](/AppDev/iOSSDK/image1.png)
  
 ## 3.	找到最合适的SDK
 机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台，具体内容请参考：《APICloud SDK 集成指南》。
@@ -48,7 +48,7 @@ title: iOS SDK 2.0集成指南
 第一步，双击解开压缩包 GizWifiSDK-iOS-xxx.zip。
 
 第二步，将解压后的文件添加到指定的工程中：
-  ![Alt text](./image3.png)
+  ![Alt text](/AppDev/iOSSDK/image3.png)
   
 第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
 ![Alt text](./image4.png)
