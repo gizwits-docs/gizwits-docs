@@ -85,9 +85,13 @@
     .levelB,
     .levelC {
       display: block;
+      &,
       a {
         line-height: 2em;
       }
+    }
+    .levelB.has-submenu {
+      padding: 0 15px;
     }
     .levelA {
       padding: 0 10px;

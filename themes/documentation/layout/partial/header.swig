@@ -20,7 +20,7 @@
                   {% if levelB.path %}
                     <li class="levelB"><a href="/{{ lang }}{{ levelB.path }}">{{ loop.key }}</a></li>
                   {% else %}
-                    <li class="levelB">
+                    <li class="levelB has-submenu">
                       {{ loop.key }} &#9656;
                       <ul class="levelC-wrapper">
                         {% for levelC in levelB %}
