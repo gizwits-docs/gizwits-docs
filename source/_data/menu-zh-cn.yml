@@ -2,26 +2,37 @@
   path: /overview/overview.html
   
 快速入门:
-  path: /path/to/article
+  5分钟了解机智云:
+    path: /path/to/article
+  设备快速接入:
+    path: /path/to/article
+  Android App 快速入门:
+    path: /path/to/article
+  iOS App 快速入门:
+    path: /path/to/article
   
 APP开发:
-  iOS App开发框架:
-    path: /openSoure/Android消息推送.html
-  Android 开源框架:
-    path: /openSoure/Android App开源框架使用教程.html
-  iOS SDK 2.0:
+  App 开源框架:
+    iOS 开源框架使用说明:
+      path: /path/to/article
+    Android 开源框架使用说明:
+      path: /path/to/article
+    iOS 消息推送:
+      path: /path/to/article
+    Android 消息推送:
+      path: /path/to/article
+    iOS 第三方登录与换肤:
+      path: /path/to/article
+    Android 第三方登录与换肤:
+      path: /path/to/article
+  
+  iOS SDK:
     path: /overview/iOS_SDK_2.html
-  Android SDK 2.0:
+  Android SDK:
     path: /path/to/article
   APICloud SDK:
     path: /path/to/article
-  iOS SDK1.0兼容2.0指南:
-    path: /path/to/article
-  Android SDK 1.0兼容2.0指南:
-    path: /path/to/article
-  iOS 数据接入SDK（蓝牙产品）:
-    path: /path/to/article
-  Android 数据接入SDK（蓝牙产品）:
+  开发者帐号申请:
     path: /path/to/article
 
 微信开发:
@@ -32,14 +43,15 @@ APP开发:
     path: /path/to/article
   MCU开发框架使用说明:
     path: /path/to/article
-  Gokit开发板资料:
+  Gokit3.0介绍:
+    path: /path/to/article
+  WiFi SOC方案:
+    path: /path/to/article
+  Gokit3.0语音开发:
+    path: /path/to/article
+  调试与烧写:
     path: /path/to/article
     
-云端API:
-  企业API使用说明:
-    path: /path/to/article
-  Noti 2.0使用说明:
-    path: /path/to/article
-    
-更多文档:
-  path: /path/to/article
+云平台:
+  path: /overview/overview.html
+
