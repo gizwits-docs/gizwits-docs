@@ -3,6 +3,7 @@
 #GAgent功能概述
 
 GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。目前机智云提供由机智云移植的WiFi模组对应固件有：汉枫LPB100、乐鑫8266、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162等。
+
 ![Alt text](/assets/zh-cn/deviceDev/GAgent/1478078696133.png)
 
 #GAgent接入机智云流程。
@@ -13,34 +14,55 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 > B、回复GAgent设备信息 
 > C、设备正常工作，需回复GAgent发出的心跳包
 > D、GAgent网络状态发生变化通知mcu。
-![Alt text](./1478078706996.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478078706996.png)
+
 ##2.配置入网
 配置入网：使设备连接路由器，目前主要有3种配网方式airkiss(微信)、airlink、softap。
-![Alt text](./1478078715473.png)
-![Alt text](./1478078724982.png)
-![Alt text](./1478078734580.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478078715473.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478078724982.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478078734580.png)
+
 ##3.搜索绑定设备
 控制设备前必须绑定设备，WIFI普遍采用局域网发现绑定设备方式，而gprs模组由于没有局域网，只能采用扫码绑定。
-![Alt text](./1478078743019.png)
-![Alt text](./1478078749230.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478078743019.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478078749230.png)
+
 ##4.下发、上报设备数据
 下发设备数据：一般指的是APP、云端控制设备。局域网内APP可以选择是否经过云端再下发给GAgent或者不经过云端直接下发给GAgent。
 上报设备数据：一般指的是设备主动上报当前状态，当设备MCU收到WiFi模组控制产生的状态变化,设备MCU应立刻主动上报当前状态,发送频率不受限制。但如设备的状态的变化是由于用户触发或环境变化所产生的,其发送的频率不能快于6秒每次。建议按需上报，有特殊上报需求请联系机智云。
-![Alt text](./1478076808590.png)
-![Alt text](./1478076831961.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478076808590.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478076831961.png)
+
 ##5.GAgent OTA流程
  GAgent OTA是指通过机智云官网创建远程推送GAgent固件规则后，通知当前模组更新到对应新固件。GAgent OTA有两种触发动作：云端主动通知OTA动作；GAgent连接云端检查是否需要OTA。
-![Alt text](./1478077165960.png)
-![Alt text](./1478077171725.png)
+ 
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478077165960.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478077171725.png)
+
 ##6.MCU OTA流程
  MCU OTA是指通过机智云官网创建远程推送MCU固件规则后，通知当前MCU更新到对应新固件。MCU OTA过程，即GAgen向MCU进行大文件传输。
-![Alt text](./1478077185915.png)
+ 
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478077185915.png)
+
 ##7.MCU上传大文件至机智云
  设备采集的数据过大时，MCU可以通过GAgent向机智云传输大文件。上传到机智云后，可通过相应接口接收。目前APP暂不支持获取MCU上传的大文件。
-![Alt text](./1478077205085.png)
+ 
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478077205085.png)
+
 ##8.产测流程
 产测主要应用在设备生产检测过程中，对设备检测的一种方法。目前产测适用于WiFi模组，不适用GPRS模组。
-![Alt text](./1478077224022.png)
+
+![Alt text](/assets/zh-cn/deviceDev/GAgent/1478077224022.png)
+
 #GAgent关键策略
 ##1. Reset与重置命令什么时候用？
 Reset指复位GAgent模组，GAgent在正常工作中因为某些因素而长时间无法连接云端，GAgent有异常处理策略，但不能100%保证。
