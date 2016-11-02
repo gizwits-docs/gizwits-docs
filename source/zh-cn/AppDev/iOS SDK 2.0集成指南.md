@@ -7,7 +7,7 @@ title: iOS SDK 2.0集成指南
 相比之下，SDK在新接口定义上做了进一步的简化，使用流程更加简单了。APP已经完全不需要了解设备连接方面的概念，可以更专注于APP用户体验的优化设计。
 
 ## 2.	机智云物联方案概况
-![Alt text](/AppDev/iOSSDK/image1.png)
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image1.png)
  
 ## 3.	找到最合适的SDK
 机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台，具体内容请参考：《APICloud SDK 集成指南》。
@@ -42,30 +42,30 @@ title: iOS SDK 2.0集成指南
 ### 5.3.	获得 app ID 和产品标识码（productkey）
 此部分请参考《快速入门》。
 ### 5.4.	下载SDK
- ![Alt text](./image2.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image2.png)
 
 ### 5.5.	导入SDK
 第一步，双击解开压缩包 GizWifiSDK-iOS-xxx.zip。
 
 第二步，将解压后的文件添加到指定的工程中：
-  ![Alt text](/AppDev/iOSSDK/image3.png)
+  ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image3.png)
   
 第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
-![Alt text](./image4.png)
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image4.png)
 
-  ![Alt text](./image5.png)
+  ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image5.png)
   
 第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
- ![Alt text](./image6.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image6.png)
 
 
 第五步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
-![Alt text](./image7.png)
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image7.png)
 
 
 
 最后，确保工程里面有这些链接库，SDK就添加完成了:
- ![Alt text](./image8.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image8.png)
 
 
 ### 5.6.	通过cocoapods使用GizWifiSDK（可选）
@@ -97,7 +97,7 @@ pod install --no-repo-update
 
 # SDK流程简介
 ## 1.	通用流程图
- ![Alt text](./image9.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image9.png)
 
 ## 2.	关键点说明
 1)	SDK已经封装了所有的用户、配置、发现、连接、控制的过程，开发者使用这些API可以完成上述流程中的功能开发，不需要再自行实现通讯协议。
@@ -107,7 +107,7 @@ pod install --no-repo-update
 # SDK流程详解
 ## 1.	初始化部分
 ### 1.1.	初始化部分流程图
- ![Alt text](./image10.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image10.png)
 
 ### 1.2.	引用头文件
 
@@ -557,7 +557,7 @@ SDK的设备配置接口如果超时时间还未结束，无法进行下一次�
 需要注意的是，如果配置上线的设备不是APP要获取的产品类型，该设备就不会出现在设备列表中。
 
 ### 3.1.	设备配置流程图
- ![Alt text](./image11.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image11.png)
 
 ### 3.2.	AirLink配置
 AirLink使⽤UDP广播方式，由手机端发出含有目标路由器名称和密码的广播，设备上的Wifi模块接收到广播包后自动连接目标路由器，连上路由器后发出配置成功广播，通知手机配置已完成。
@@ -611,7 +611,7 @@ if(result.code == GIZ_SDK_SUCCESS) {
 
 ## 4.	设备发现和订阅部分
 ### 4.1.	设备发现和订阅流程图
- ![Alt text](./image12.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image12.png)
 
 ### 4.2.	设备发现
 APP设置好委托，启动SDK后，就可以收到SDK的设备列表推送。每次局域网设备或者用户绑定设备发生变化时，SDK都会主动上报最新的设备列表。设备断电再上电、有新设备上线等都会触发设备列表发生变化。用户登录后，SDK会主动把用户已绑定的设备列表上报给APP，绑定设备在不同的手机上登录帐号都可获取到。
