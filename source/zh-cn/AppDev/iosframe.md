@@ -12,7 +12,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 iOS Gokit App是使用开源框架工程的源码范例，源码链接：
 https://git.oschina.net/dantang/GoKit_Demo_iOS
 也可在下载中心下载：
-![Alt text](./image1.png)
+![Alt text](/assets/zh-cn/AppDev/AppFrame/image1.png)
 
 
 # APP开源框架的目录结构说明
