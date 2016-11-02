@@ -50,7 +50,7 @@ APP开发:
 
 设备开发:
   Wi-Fi模组开发:
-    path: /path/to/article
+    path: /deviceDev/gagent_info.html
     
   MCU开发框架使用说明:
     GoKit3.0代码自动生成工具:
