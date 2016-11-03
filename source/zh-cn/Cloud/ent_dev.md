@@ -32,7 +32,8 @@ title: 企业应用开发
 ## 如何接入消息代理
 
 ### 1、提出申请
-消息代理服务通常是向企业开发者开放，如果企业需要实时获取接入到机智云PaaS平台的数据进行二次开发，则向机智云提出申请
+- 消息代理服务通常是向企业开发者开放，如果企业需要实时获取接入到机智云PaaS平台的数据进行二次开发，则向机智云提出申请
+-  消息代理服务一般会与企业API服务共同使用，所以企业开发者也要同步申请企业API服务
 ### 2、理解协议
 具体协议请点击 [消息代理接口协议](./noti1.0.html)
 ### 3、获取参数
@@ -43,7 +44,7 @@ title: 企业应用开发
 选择左侧组织，然后再点击“API配置”，即可获取Eid,Esecret，也可以在此设置IP白名单，若不设置IP白名单，消息代理服务将会鉴权失败
 ![@企业API开通申请](/assets/zh-cn/cloud/ent_info02.png)
 ### 4、调试Demo代码
-该Demo代码已实现了接口协议，只需修改eid,esecret即可实时获取设备数据。Demo代码请点击 [Demo code](https://github.com/gizwits/noti-java-demo/tree/master) 下载
+该Demo代码已实现了消息代理服务的接口协议，只需修改eid,esecret即可实时获取设备数据。Demo代码请点击 [Demo code](https://github.com/gizwits/noti-java-demo/tree/master) 下载
 ```java
 public static void main( String[] args )
     {
@@ -61,8 +62,18 @@ public static void main( String[] args )
     }
 
 ```
+### 5、通过虚拟设备模拟真实设备推送数据
+- 启动Demo Code，前提是已经修改为正确的enterpriseId与enterpriseSecret
 
-### 5、按需实现客户端
+- 在该企业组织下创建产品，并定义数据点
+
+- 在该产品下申请企业API服务
+
+- 审批通过后即可启动虚拟设备，并模拟数据，点击”推送“
+
+- Demo Code会实时打印消息代理服务推送的设备状态数据
+
+### 6、按需实现客户端
 企业根据Demo Code，根据自己的需求实现客户端功能开发，可以以Demo Code为原型，实现接收到设备数据后的业务逻辑。如：
 1. 可将接受到收据实时Publish到企业应用的队列中，尤其是实时性较强的业务，进行异步操作；
 2. 若实时性要求不高，可直接写入数据库；
