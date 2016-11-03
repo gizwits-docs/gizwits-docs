@@ -37,6 +37,8 @@
   .menu {
     @media (max-width: $header-bp) {
       width: 100%;
+      max-height: 70%;
+      overflow: scroll;
     }
     a {
       @media (min-width: $header-bp + 1) {
@@ -74,6 +76,7 @@
     .levelC-wrapper {
       @media (max-width: $header-bp) {
         position: inherit;
+        padding: 0 20px;
       }
       white-space: nowrap;
       display: none;
@@ -156,16 +159,22 @@
   .lang-switch-wrapper {
     @media (max-width: $header-bp) {
       padding: 0 20px;
+      display: none;
     }
   }
 
   .mobile-header {
+    padding: 0 20px;
     width: 100%;
     color: $yellow;
     text-align: center;
     letter-spacing: 0;
     font-size: 16px;
     background: black;
+    .fa {
+      float: right;
+      line-height: 50px;
+    }
     @media (min-width: $header-bp) {
       display: none;
     }

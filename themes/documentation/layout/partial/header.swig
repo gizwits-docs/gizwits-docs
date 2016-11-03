@@ -8,7 +8,11 @@
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
     
-    <div class="mobile-header">{{ __("title") }} {{ __("sub_title") }}</div>
+    <div class="mobile-header"v>
+      <span class="title">{{ __("title") }} {{ __("sub_title") }}</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
 
     <span class="menu pure-u-16-24">
       <ul class="levelA-wrapper">
