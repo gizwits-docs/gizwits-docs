@@ -3,8 +3,7 @@ title: 企业API
 ---
 
 # 概述
-企业API是机智云为接入机智云平台的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求，如用户管理、订单管理等，以满足企业开发者的运营管理需要。
-所以企业API就是从接入机智云平台的企业的运营管理的需求出发，为企业的业务管理系统提供REST API接口，为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本与时间。
+企业API是机智云为接入机智云平台的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求。企业API为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本。
 
 
 
@@ -40,62 +39,38 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 #  典型接入场景
 ## 1、设备远程控制
 ### 场景描述
-    该业务场景是指企业通过企业应用系统去控制接入到机智云平台的设备，管理设备的主要需求就是在业务管理系统中对设备发起控制。 
+该业务场景是指企业通过企业应用系统去控制接入到机智云平台的设备，管理设备的主要需求就是在业务管理系统中对设备发起控制。 
 ### 接入流程
 流程说明：
-1、获取token：相当于登陆鉴权，鉴权通过返回服务端生成的token，作为后续API的输入;
-2、发起设备远程控制，如果无法获取设备的did，则调用“设备信息查询”接口获得did；如果通过其他方式获得did，可忽略此步骤。(使用数据实时同步服务实时获取设备数据的可忽略此步骤，业务管理系统一般在收到每条设备上报的数据，会实时将最新的Did进行更新，所以在发起远程控制的时候，无需再次获取Did）
-6、如果产品定义了数据点协议，则可以使用“E04数据点方式远程控制”去向设备发起控制；如果是数据透传协议，则通过“E05原始指令方式远程控制”控制。
+- 获取token：相当于登陆鉴权，鉴权通过返回服务端生成的token，作为后续API的输入;
+- 发起设备远程控制，如果无法获取设备的did，则调用“设备信息查询”接口获得did；如果通过其他方式获得did，可忽略此步骤。(使用数据实时同步服务实时获取设备数据的可忽略此步骤，业务管理系统一般在收到每条设备上报的数据，会实时将最新的Did进行更新，所以在发起远程控制的时候，无需再次获取Did）
+- 如果产品定义了数据点协议，则可以使用“E04数据点方式远程控制”去向设备发起控制；如果是数据透传协议，则通过“E05原始指令方式远程控制”控制。
 
 ## 2、设备数据聚合查询
 ### 场景描述
 该业务场景是指接入企业想通过机智云提供设备数据的聚合查询,在业务管理系统中展现设备的数据值类型数据的聚合报表，这样企业的业务管理系统就无需存储设备数据并进行较容易出现性能问题的数据查询。 
 目前设备数据点聚合查询提供单台设备级别的查询以及产品级别的查询。主要能实现以下业务功能：
-只支持对数字类型的数据点进行求和(sum)、求平均值（avg)、求最大值（max)、求最小值（min)
-支持按月、周、天、小时四个时间维度计算数据
-目前支持最大时间范围是最近一个月的数据
-有特殊时间需求需要向机智云申请
+- 只支持对数字类型的数据点进行求和(sum)、求平均值（avg)、求最大值（max)、求最小值（min)
+- 支持按月、周、天、小时四个时间维度计算数据
+- 目前支持最大时间范围是最近一个月的数据
+- 有特殊时间需求需要向机智云申请
 
-## 单台设备数据点聚合查询接入流程
-
-
-
+## 3、单台设备数据点聚合查询接入流程
 流程说明：
 1、获取Eid等都是一次性行为。其他关联产品、获取Token同2.1设备远程控制流程
 2、找到需要查询目标设备的did，可通过E03接口查询；如果业务管理系统使用了机智云的数据实时同步服务并实时处理了did信息，则可跳过E03接口。
 3、调用“E06单台设备数据聚合查询”接口获取指定设备的聚合数据。
 
-## 3、设备历史数据查询
-2.3.1场景描述
+## 4、设备历史数据查询
+### 场景描述
 该业务场景是指接入企业查询某台设备、某段时间的设备上报的历史数据。 
 
-2.3.2接入流程
+### 接入流程
 
 
 
 # 接口协议
-##  E01关联产品
-### 业务功能描述
-该接口提供创建企业与产品的关联关系能力，一个 product_key 只能关联到一个 enterprise_id，一个enterprise_id可以关联多个product_key。
-### 接口地址
-    ttp://enterpriseapi.gizwits.com/v1/products/<product_key>/association
-### 请求方式
-    POST
-### 请求报文
-```json
-{
-  "enterprise_id":"ad7e60f0594247dcba017ba76d2f4275",
-  "enterprise_secret":"db2ac98200824181b447b03e4d42f99b",
-  "product_secret":"8f11ee69eb9d4269ba0777ca5e7280f5"
-}
-```
-
-### 应答报文
-响应编码	返回内容	说明
-201	{}	 关联成功
-
-
-## E02获取Token
+##  获取Token
 ### 业务功能描述
 该接口提供获取企业API接口访问权限的功能
 ### 接口地址
@@ -120,54 +95,31 @@ Http Response Code ： 201
 }  
 ```
 
+## 数据点方式远程控制
+### 业务功能描述
+该接口提供远程设置设备数据点的功能，完成对设备的控制操作
+### 接口地址
+  http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/control
 
+### 请求方式
+POST
 
+### 请求报文
+1. header
+```json
+Content-Type: application/json 
+Authorization: token <token值>
+```
 
-
-## E03设备信息查询
-3.3.1业务功能描述
-该接口提供某一台设备的详细信息查询功能，获取did信息，主要目的是用于没有使用机智云数据同步服务（Noti接口）的企业获取接入到机智云平台的设备对应的Did。
-3.3.2接口地址
-http://enterpriseapi.gizwits.com/v1/products/<product_key>/device_detail
-3.3.3请求方式
-     GET
-3.3.4请求报文 
-
-参数	类型	必填	参数类型	描述
-Authorization	string	是	header 	获取授权返回的token值,For example: Authorization:token xxxx
-product_key	string	是	path	
-mac	string	是	query	
-
-3.3.5应答报文
-响应编码	返回内容	说明
-201	{
-  "did": "7cf955ec8b504d6497d83f39ce9b16d2",
-  “product_key”:”7cf955ec8b504d6497d83f39ce9b16d2”,
-  “mac”:”955ec8b504d6497d”,
-   “type”: “string”
-}  	
-设备ID
-产品ID
-设备mac
-设备类型
-
-## E04数据点方式远程控制
-3.4.1业务功能描述
-该接口提供远程设置设备数据点的功能，可修改设备可写数据点的值。
-3.4.2接口地址
-     http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/control
-3.4.3请求方式
-    POST
-3.4.4请求报文
-参数	类型	必填	参数类型	描述	备注
-Authorization	String	是	header	获取授权返回的token值, For example: Authorization:token xxxx	
-did	String	是	URL	设备id	
-
+2. body
+```json
 {
   "attrs": {
-    "temp": 10
+    "temp": 10     
   }
-}  	JSON	是	BODY	只能设置可写类型的数据点
+}  	
+```
+
 bool 类型的数据点设置为 true/false
 enum 类型的数据点设置为枚举的字符串
 uint8/uint16/uint32 类型的数据点设置为数字
@@ -178,48 +130,62 @@ binary 类型的数据设置为 hex 类型字符串，如发送一串二进制�
 可同时传送多个。
 
 
-3.4.5应答报文
-响应编码	返回内容	说明
-200	{ }
-	设置数据点成功
+### 应答报文
+```json
+Http Response Code ： 201	
+返回报文：
+{
+  "token": "7cf955ec8b504d6497d83f39ce9b16d2",
+  "expired_at": 1372700873   //Expired_at为token过期时间；
+}  
+```
 
 
 
-## E05原始指令方式远程控制
-3.5.1业务功能描述
+## 原始指令方式远程控制
+### 业务功能描述
 该接口提供通过原始控制指令远程控制设备的功能。
-3.5.2接口地址
+### 接口地址
 http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/control
-3.5.3请求方式
+### 请求方式
     POST
-3.5.4请求报文
-参数	类型	必填	参数类型	描述	备注
-Authorization	String	是	header	获取授权返回的token值, For example: Authorization:token xxxx	
-did	String	是	URL	设备id	
-body
+### 请求报文
+1. header
+```json
+Content-Type: application/json 
+Authorization: token <token值>
+```
+
+2. body
+```json
 {
     "raw": [<byte>, <byte>, ...]
 }  
+	
+```
+body
 
-	JSON	是	BODY	原始控制指令,十六进制的格式需要转换为十进制。	假设要发送的原始控制指令为：01020304ffff（十六进制），那么 raw 的值为 [1, 2, 3, 4, 255, 255]
-
-
-3.5.5应答报文
-响应编码	返回内容	说明
-200	{ }
-	远程控制指令执行成功
+原始控制指令,十六进制的格式需要转换为十进制。	假设要发送的原始控制指令为：01020304ffff（十六进制），那么 raw 的值为 [1, 2, 3, 4, 255, 255]
 
 
 
-## E06单台设备数据聚合查询
-3.6.1业务功能描述
+### 应答报文
+```json
+Http Response Code ： 200	
+返回报文：
+{ }  
+```
+
+
+
+## 单台设备数据聚合查询
+### 业务功能描述
 该接口提供查询某个时间周期内某个wifi设备数值型数据点的聚合运算，包括求和、平均、最大、最小的计算。
-3.6.2接口地址
+### 接口地址
 http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/agg_data?start_ts=1447837618000&end_ts=1447837828000&attrs=weight&aggregator=sum&unit=DAYS
 
-3.6.3请求方式
-    GET
-3.6.4请求报文
+### 请求方式
+### 请求报文
 参数	类型	必填	参数类型	描述	备注
 Authorization	String	是	header	获取授权返回的token值, For example: Authorization:token xxxx	
 did	String	是	URL	设备id	
@@ -231,11 +197,13 @@ aggregator	String	是	URL	sum,avg,max,min
 unit	String	是	URL	展示时间维度的单位	包括：HOURS,DAYS,WEEKS,MONTHS
 
 
-3.6.5应答报文
-响应编码	返回内容	说明
-200	{
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
     "query": {
-               "start_ts": 1447837618000,
+        "start_ts": 1447837618000,
         "end_ts": 1447837828000,
         "attrs": "weight,fat",
         "aggregator": "sum",
@@ -257,7 +225,8 @@ unit	String	是	URL	展示时间维度的单位	包括：HOURS,DAYS,WEEKS,MONTHS
         "datetime": xxx
     }]
 }
-	返回报文中的 datetime 格式:
+```
+返回报文中的 datetime 格式:
 HOURS: "2015072010"
 DAYS: "20150720"
 WEEKS: "201529"
@@ -266,16 +235,15 @@ MONTHS: "201507"
 
 
 
-## E07设备历史数据查询
-3.7.1业务功能描述
+## 设备历史数据查询
+### 业务功能描述
 该接口提供获取某个产品某台设备的历史数据，如温度值等功能；
-3.7.2接口地址
+### 接口地址
 http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/data?start_ts=<start_ts>&end_ts=<end_ts>&limit=20&skip=0
-3.7.3请求方式
+### 请求方式
     GET
-3.7.4请求报文
-参数	类型	必填	参数类型	描述	备注
-Authorization	String	是	header	获取授权返回的token值, For example: Authorization:token xxxx	
+### 请求报文
+
 did	String	是	URL	设备号	
 Start_ts	
 Integer 
@@ -289,9 +257,11 @@ Integer
 limit	Integer 	是	URL		
 skip	Integer 	是	URL		
 
-3.7.5应答报文
-响应编码	返回内容	说明
-200	{
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+	{
   "meta": {
     "total": 100,
     "limit": 20,
@@ -317,4 +287,49 @@ skip	Integer 	是	URL
   ]
 }
 	
+```
 
+
+# 接口错误
+
+## 错误信息格式
+{
+      "error_code": "5001",
+      "error_message": "body json invalid",
+      "detail": ""
+    }
+
+## 错误信息表
+
+HTTP响应编码	系统错误编码	错误信息描述	解决办法
+400	5001	json字串格式错误	核对json字串
+400	5002	form invalid	输入数据不对
+404	5003	enterprise id not exist	Eid不存在，检查是否申请或者Eid输入错误
+400	5004	enterprise secret error	Esecret校验失败，检查是否是正确的
+400	5005	product secret error	Product Secret校验失败，检查是否是正确的
+400	5006	product exist devicegroups	
+404	5007	association not exist	表示Eid没有雨对应的产品Product Key 关联，必须成功关联才能操作
+400	5008	association existed	
+400	5009	token错误或者token格式错误	请携带token或检查token字段格式,正确的token格式是在http header中输入：
+token token值   ，token后面必须空一格后再写入具体的token值，无需引号
+400	5010	token未匹配	请核对token
+400	5011	token过期	请再次获取token
+400	5012	发起关联请求的主机ip无访问权限	添加ip到ip企业数据访问白名单中
+403	5013	接口使用过于频繁	等待一定时间后再次使用此接口
+400	5014	Report has not been generated!	
+404	5015	Product Key不存在	核对产品Product Key是否正确
+403	5201	device group not belong to this product	
+404	5202	parent group not exist	
+400	5203	already has one root group	
+400	5204	group has subgroup	
+400	5205	group has device item	
+404	5206	group not exist	
+404	5301	设备不存在	核对设备ID
+403	5302	产品与设备未绑定	请先将设备绑定到产品
+400	5303	device not bound	
+400	5304	设备未激活	激活设备
+400	5305	设备处于下线状态	上线设备
+400	5401	数据点错误	核对数据点信息
+400	5402	数据点未定义	先定义数据点,然后再次尝试
+400	5403	控制命令发送失败	请再次使用此接口
+400	5404	remote control not allowed	远程控制操作需要后台开启
