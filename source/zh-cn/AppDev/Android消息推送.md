@@ -83,7 +83,7 @@ title:  快速集成消息推送
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image016.png)
 
-## 2.4修改UIConfig.json代码
+### 2.4修改UIConfig.json代码
 
 1、填写机智云app_id与product_key并修改push_type
 
@@ -92,23 +92,23 @@ title:  快速集成消息推送
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image018.png)
 
 
-## 2.5	修改AndroidManifest.xml
+### 2.5	修改AndroidManifest.xml
 
 将图3中的APP KEY填写到AndroidManifest.xml中的对应的代码中。
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image019.png)
 
-## 2.6启动虚拟设备
+### 2.6启动虚拟设备
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image020.png)
 
-## 2.7	部署APP运行
+### 2.7	部署APP运行
 
 通过以上步骤，该APP已具备了极光推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image021.png)
 
-## 2.8测试推送功能
+### 2.8测试推送功能
 
 关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。
 
