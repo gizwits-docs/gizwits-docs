@@ -1,8 +1,10 @@
 .header {
+  @media (min-width: $body-bp + 1) {
+    position: fixed;
+  }
   line-height: 50px;
   background: $black;
   vertical-align: middle;
-  position: fixed;
   width: 100%;
   z-index: 999999;
   font-size: 14px;

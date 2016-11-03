@@ -41,25 +41,29 @@
 
   h1,
   h2 {
-    &:before {
-      content: "";
-      display: block;
-      margin-top: -50px;
-      height: 50px;
-      pointer-events: none;
+    @media (min-width: $body-bp + 1) {
+      &:before {
+        content: "";
+        display: block;
+        margin-top: -50px;
+        height: 50px;
+        pointer-events: none;
+      }
     }
   }
 
   h1 {
-    &:first-of-type {
-      &:before {
-        margin-top: -300px;
-        height: 300px;
+    @media (min-width: $body-bp + 1) {
+      &:first-of-type {
+        &:before {
+          margin-top: -300px;
+          height: 300px;
+        }
       }
+      line-height: 2.5em;
+      font-size: 24px;
+      margin: 28px 0 0; 
     }
-    line-height: 2.5em;
-    font-size: 24px;
-    margin: 28px 0 0;
   }
   h2 {
     font-size: 22px;

@@ -1,4 +1,7 @@
 .tooltip {
+  @media (max-width: $header-bp) {
+    display: none;
+  }
   display: inline-block;
   float: right;
   position: relative;

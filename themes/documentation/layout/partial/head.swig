@@ -13,6 +13,6 @@
   <link rel="shortcut icon" href="{{ url_for('images/favicon.png') }}" type="image/x-icon">
 
   {{ css("css/pure.min.css") }}
-  {{ css("css/documentation.css") }}
   {{ css("css/font-awesome.min.css") }}
+  {{ css("css/documentation.css") }}
 </head>
