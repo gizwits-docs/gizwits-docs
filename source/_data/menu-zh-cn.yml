@@ -87,7 +87,7 @@ APP开发:
     HF-LPB100串口烧写说明:
       path: /deviceDev/HF-LPB100串口烧写说明.html
     HF-LPT120串口烧写说明:
-      path: /deviceDev/HF-LPT120串口烧写说明.html
+      path: /deviceDev/debug/HF-LPT120.html
     MXCHIP串口烧写说明:
       path: /deviceDev/MXCHIP串口烧写说明.html
     ESP8266串口烧写说明:
