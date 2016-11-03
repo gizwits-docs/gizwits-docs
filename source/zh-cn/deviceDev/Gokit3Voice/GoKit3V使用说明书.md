@@ -2,7 +2,7 @@ title:  GoKit3(V)使用说明书
 ---
 
 
-# 1. 初见GoKit3(V)
+#  初见GoKit3(V)
 
 ![](/assets/zh-cn/deviceDev/Gokit3Voice/Instructions/image1.jpeg)
 
@@ -23,7 +23,7 @@ title:  GoKit3(V)使用说明书
 
 ##### **注意：**
 
-#####  **功能板支持MCU/SoC两种方式，GoKit3(V)使用MCU的方式连接(天线朝向电机一方)，配合底板MCU进行产品开发。**
+功能板支持MCU/SoC两种方式，GoKit3(V)使用MCU的方式连接(天线朝向电机一方)，配合底板MCU进行产品开发。
 
 
 #  下载官方应用
