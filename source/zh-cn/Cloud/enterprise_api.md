@@ -96,16 +96,13 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ### 请求方式
     POST
 ### 请求报文
-
-参数 | 类型 | 必填 | 参数类型 | 参数类型 | 描述
------|------|----
+```json
 {
-  "enterprise_id": "ad7e60f0594247dcba017ba76d2f4275",
-  "enterprise_secret": "db2ac98200824181b447b03e4d42f99b",
-  "product_secret": "8f11ee69eb9d4269ba0777ca5e7280f5"
-}    | 是    | Body | Product secret：product key对应的唯一秘钥，在开发者中心产品信息中获取
-
-
+  "enterprise_id":"ad7e60f0594247dcba017ba76d2f4275",
+  "enterprise_secret":"db2ac98200824181b447b03e4d42f99b",
+  "product_secret":"8f11ee69eb9d4269ba0777ca5e7280f5"
+}
+```
 
 ### 应答报文
 响应编码	返回内容	说明
