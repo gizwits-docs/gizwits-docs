@@ -1,7 +1,7 @@
 title: iOS开源框架使用指南
 ---
 
-# 简介
+# 开源框架简介
 机智云APP开源框架是使用机智云SDK开发的APP模板，实现了SDK的加载、初始化、用户注册、用户登陆、设备配置、设备发现、设备连接、设备列表等基本的功能。APP开源框架是一个可以编译的源码工程，对所有开发者开源，目前提供iOS和Android版本。APP开发者可以在框架上实现具体产品的控制页面就可以生成一个完整的APP。
 
 本文档为机智云物联网开源基础App套件使用说明，旨在为机智云物联网开发者提供一个快速开发模板，可在此工程基础上进行快速开发或参考相关代码进行开发。
@@ -15,7 +15,7 @@ https://git.oschina.net/dantang/GoKit_Demo_iOS
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/image1.png)
 
 
-# APP开源框架的目录结构说明
+# 框架目录结构说明
 **A. Library: 包括 GizWifiSDK 在内的的第三方库目录**
 
 **B. GizOpenSourceModules: 组成模块**
@@ -28,7 +28,7 @@ https://git.oschina.net/dantang/GoKit_Demo_iOS
 - PushModule: 推送模块，包含 百度和极光的推送SDK 集成封装
 
 # 快速集成指南
-**A、设定初始化参数**
+##1.设定初始化参数
 
 默认程序入口在 UserModule 中的 LoginViewController。在工程的GOpenSourceModules/CommonModule/UIConfig.json 文件中可填写机智云AppID及AppSecret以及程序样式。
 
@@ -60,7 +60,7 @@ https://git.oschina.net/dantang/GoKit_Demo_iOS
 - **wechat：**是否打开微信登录【true：打开】
 - **anonymousLogin：**是否打开匿名登录【true：打开】
 
-**B、加载控制界面**
+##2.加载控制界面
 
 1）框架工程内提供的代码已经可以在不修改任何代码的前提下，进行到控制界面的跳转操作，开发者只需要关心操作界面的逻辑即可。如果需要在设备列表界面中点击某设备后，跳转到自己创建的控制器视图中，请在 AppDelegate.m 文件中修改相应跳转参数。请按图所示修改引入的头文件及跳转视图的类定义，如果使用默认提供的空白界面（GosDeviceController）来进行编写控制界面，可略过此步骤。
  
@@ -90,7 +90,7 @@ self.device.delegate = self;
 ```
 
  
-**C、设置界面增加菜单项及点击处理**
+##3.设置界面增加菜单项及点击处理
 如果需要在设置界面进行列表项的增加或修改，需要操作设置模块（SettingsModule）中的GosSettingsViewController类文件，在 .m 文件中找到 UITableView 的委托方法，进行修改。
 
 
