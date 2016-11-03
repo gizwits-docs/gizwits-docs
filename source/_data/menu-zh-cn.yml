@@ -20,14 +20,14 @@ APP开发:
   App 开源框架:
     iOS 开源框架使用说明:
       path: /AppDev/iosframe.html
-    Android 开源框架使用说明:
-      path: /AppDev/Android开源框架使用指南.html
     iOS 消息推送:
       path: /path/to/article
-    Android 消息推送:
-      path: /AppDev/Android消息推送.html
     iOS 第三方登录与换肤:
       path: /path/to/article
+    Android 开源框架使用说明:
+      path: /AppDev/Android开源框架使用指南.html
+    Android 消息推送:
+      path: /AppDev/Android消息推送.html
     Android 第三方登录与换肤:
       path: /path/to/article
   
@@ -35,7 +35,7 @@ APP开发:
     path: /AppDev/iossdk.html
     
   Android SDK:
-    path: /path/to/article
+    path: /AppDev/AndroidSDKA2.html
     
   APICloud SDK:
     path: /path/to/article
@@ -45,18 +45,18 @@ APP开发:
 
 
 微信开发:
-  path: /path/to/article
+  path: /WechatDev/微信应用开发.html
 
 
 设备开发:
-  Wi-Fi模组开发:
+  GAgent详解:
     path: /deviceDev/gagent_info.html
     
   MCU开发框架使用说明:
     GoKit3.0代码自动生成工具:
       path: /path/to/article
     GoKit3.0 DEV SDK Common版移植说明:
-      path: /path/to/article
+      path: /deviceDev/GoKit3 DEV SDK Common版移植说明.html
       
   Gokit3.0介绍:
     Gokit3.0系列开发套件简介:
