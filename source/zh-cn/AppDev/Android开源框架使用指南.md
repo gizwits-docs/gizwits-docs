@@ -149,14 +149,14 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
 
 在工程的AndroidManifest.xml文件中修改
 
-1.    
+1)    
 ```
 <permission android:name=”您应用的包名.permission.JPUSH_MESSAGE” android:protectionLevel=”signature” />
 ```
 
 （详见开源APP套件的AndroidManifest.xml文件第13行）
 
-2. 
+2)
 
 ```
 <uses-permission android:name=”您应用的包名.permission.JPUSH_MESSAGE” />
@@ -164,7 +164,7 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
 
 （详见开源APP套件的AndroidManifest.xml文件第17行）
 
-3.        
+3)       
 
 ```
 DaemonService下<category android:name=”您应用的包名” />
@@ -172,7 +172,7 @@ DaemonService下<category android:name=”您应用的包名” />
 
 （详见开源APP套件的AndroidManifest.xml文件第159行）
       
-4.  
+4)  
 
 ```
 PushPeceiver下<category android:name=”您应用的包名” />
@@ -180,7 +180,7 @@ PushPeceiver下<category android:name=”您应用的包名” />
 
 （详见开源APP套件的AndroidManifest.xml文件第170行）
 
-5.        
+5)        
 
 ```
 PushActivity下<category android:name=”您应用的包名” />
@@ -188,7 +188,7 @@ PushActivity下<category android:name=”您应用的包名” />
 
 （详见开源APP套件的AndroidManifest.xml文件第193行）
 
-6.        
+6)       
 
 ```
 JPushReceiver下<category android:name=”您应用的包名” />
@@ -196,7 +196,7 @@ JPushReceiver下<category android:name=”您应用的包名” />
 
 （详见开源APP套件的AndroidManifest.xml文件第224行）
 
-7.      
+7)      
  
 
 ```
