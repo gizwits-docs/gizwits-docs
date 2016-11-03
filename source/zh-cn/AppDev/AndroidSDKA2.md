@@ -6,12 +6,16 @@ title:设备接入SDK V4A2集成指南
 ## 1.	SDK目的与功能
 机智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
 ## 2.	机智云物联方案概况
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088778140.png)
 
 ## 3.	找到最合适的SDK
+
 机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台，具体内容请参考：《APICloud SDK 集成指南》。
+
 ## 4.	相关名词定义
 **4.1.	GAgent**
+
 全称Gizwits Agent，运行于Wi-Fi模块中，设备通过GAgent接入机智云服务器。 目前已兼容国内主流的Wi-Fi模块， 开发者也可以通过获取GAgent二次开发包实现自定义的模块接入机智云。
 
 **4.2.	小循环**
@@ -52,14 +56,18 @@ title:设备接入SDK V4A2集成指南
 此部分请参考《快速入门》。
 
 **5.4.	下载SDK**
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088957775.png)
  
 **5.5.	导入SDK**
 第一步，双击解开压缩包 GizWifiSDK-Android-xxx.zip。
+
 第二步，将解压后的libs目录下所有内容拷贝到指定工程的libs目录，保证下图红框中的文件都加载到了工程中：
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088998492.png)
  
 **5.6.	配置AndroidManifest.xml**
+
 请将下面权限配置代码复制到 AndroidManifest.xml 文件中：
 
 ```
@@ -75,24 +83,28 @@ title:设备接入SDK V4A2集成指南
 ```
 
 权限说明：
-权限|用途
-------|------
-ACCESS_NETWORK_STATE	|允许程序访问有关GSM网络信息
-ACCESS_WIFI_STATE	|允许程序访问WiFI网络状态信息
-READ_PHONE_STATE	|允许程序访问手机状态信息
-ACCESS_COARSE_LOCATION	|允许程序访问CellID或WiFi热点来获取粗略的位置
-ACCESS_FINE_LOCATION	 |允许程序访问精良位置（如GPRS）
-WRITE_EXTERNAL_STORAGE	|允许程序写入外部SD卡
-INTERNET	|允许程序打开网络接口
-CHANGE_WIFI_STATE	|允许程序改变WiFi连接状态
-CHANGE_WIFI_MULTICAST_STATE	|允许程序改变WiFi多播状态
+
+|权限|用途|
+|------|------|
+|ACCESS_NETWORK_STATE	|允许程序访问有关GSM网络信息|
+|ACCESS_WIFI_STATE	|允许程序访问WiFI网络状态信息|
+|READ_PHONE_STATE	|允许程序访问手机状态信息|
+|ACCESS_COARSE_LOCATION	|允许程序访问CellID或WiFi热点来获取粗略的位置|
+|ACCESS_FINE_LOCATION	 |允许程序访问精良位置（如GPRS）|
+|WRITE_EXTERNAL_STORAGE	|允许程序写入外部SD卡|
+|INTERNET	|允许程序打开网络接口|
+|CHANGE_WIFI_STATE	|允许程序改变WiFi连接状态|
+|CHANGE_WIFI_MULTICAST_STATE	|允许程序改变WiFi多播状态|
 
 **5.7.	Android6.0系统文件读写权限设置**
 Android 6.0新增了运行时权限动态检测，GizWifiSDK中使用的以下权限需要在运行时判断：
+
 WRITE_EXTERNAL_STORAGE。
+
 Android6.0系统为targetSdkVersion小于23的应用默认授予了所申请的所有权限，所以如果App使用的targetSdkVersion低于23，可以正常运行。但如果用户在设置中取消了授予的权限，或者App使用的targetSdkVersion为23以上，需要在App代码中处理。以下以Android Studio举例：
 
-	目标SDK版本
+- 目标SDK版本
+
 在build.gradle中设置targetSdkVersion为23：
 
 ```
@@ -115,7 +127,7 @@ proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pr
 }
 ```
 
-	检查并申请权限
+- 检查并申请权限
 需要检查APP是否已经拥有WRITE_EXTERNAL_STORAGE权限，没有则申请权限：
 
 ```
@@ -124,10 +136,10 @@ ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.WRITE
 }
 ```
 
-	请求权限后，系统会弹出请求权限的对话框：
+- 请求权限后，系统会弹出请求权限的对话框：
 ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089519041.png)
  
-	用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：
+- 用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：
 
 ```
 onActivityResult  
@@ -149,8 +161,10 @@ if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 ```
 
 Fragment中运行时权限的特殊处理
-•	在Fragment中申请权限，不要使用ActivityCompat.requestPermissions, 直接使用Fragment的requestPermissions方法，否则会回调到Activity onRequestPermissionsResult
-•	如果在Fragment中嵌套Fragment，在子Fragment中使用requestPermissions方 法，onRequestPermissionsResult不会回调回来，建议使用getParentFragment().requestPermissions方法。这个方法会回调到父Fragment中的onRequestPermissionsResult，在回调中加入以下代码可以把回调透传到子Fragment：
+
+- 在Fragment中申请权限，不要使用ActivityCompat.requestPermissions, 直接使用Fragment的requestPermissions方法，否则会回调到Activity onRequestPermissionsResult
+
+- 如果在Fragment中嵌套Fragment，在子Fragment中使用requestPermissions方 法，onRequestPermissionsResult不会回调回来，建议使用getParentFragment().requestPermissions方法。这个方法会回调到父Fragment中的onRequestPermissionsResult，在回调中加入以下代码可以把回调透传到子Fragment：
 
 ```
 Override  
@@ -168,42 +182,56 @@ fragment.onRequestPermissionsResult(requestCode,permissions,grantResults);    }
 
 **5.8.	如何在AndroidStudio上使用GizWifiSDK**
 第一步、下载sdk
+
 下载地址 ：http://site.gizwits.com/zh-cn/developer/resource/sdk?service=m2m
+
 下载完成以后请自行解压。
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089637866.png)
 
 第二步、导入jar包到Android Studio
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089651398.png)
  
 第三步、把jar包导成库文件
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089673059.png)
 
 第四步、导入so文件
+
 请在main文件加下创建文件夹jniLibs,将armeabi粘贴到对应的文件夹下：
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089691846.png)
 
 第五步、导入完成以后查看对应的build.gradle
+
 下图中可以看到已经关联库成功：
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089707379.png)
 
 第六步、测试是否成功
+
 ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089721437.png)
 
 如果有下面图片中的log的话代表成功：
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089735454.png)
 
 # 	SDK流程简介
 ## 1.	通用流程图
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089762043.png)
  
 ## 2.	关键点说明
 
-1)	SDK已经封装了所有的用户、配置、发现、连接、控制的过程，开发者使用这些API可以完成上述流程中的功能开发，不需要再自行实现通讯协议。
+1)SDK已经封装了所有的用户、配置、发现、连接、控制的过程，开发者使用这些API可以完成上述流程中的功能开发，不需要再自行实现通讯协议。
 
-2)	SDK采取回调的工作方式，所以必须设置必要的监听，比如通用监听和设备监听，具体请参见流程详解。SDK在主线程中给APP回调。
+2)SDK采取回调的工作方式，所以必须设置必要的监听，比如通用监听和设备监听，具体请参见流程详解。SDK在主线程中给APP回调。
 
-3)	SDK支持APP在Activity之间以及在Activity和Service之间传递对象。
-	如果是在activity之间传递对象的话可以用intent来传递
+3)SDK支持APP在Activity之间以及在Activity和Service之间传递对象。
+
+- 如果是在activity之间传递对象的话可以用intent来传递
+
 （传递）
 	
 
@@ -221,8 +249,9 @@ Intent intent = getIntent();
 	intent.getParcelableExtra("参数名");
 ```
 
-	在activity和service之间传递对象
-	可以通过广播来传递数据，由一方发送数据另一方接收。
+- 在activity和service之间传递对象
+- 可以通过广播来传递数据，由一方发送数据另一方接收。
+
 （注册广播）	
 
 ```
@@ -244,8 +273,10 @@ Intent intent = new Intent();
 	sendOrderedBroadcast(intent, null);
 ```
 
-	另外一种，是在Activity中通过bindService获取到Service对象，直接调用Service方法获取想要的
+- 另外一种，是在Activity中通过bindService获取到Service对象，直接调用Service方法获取想要的
+
 ## 3.	混淆打包配置
+
 如果您的项目使用了Proguard混淆打包，为了避免SDK被二次混淆导致无法正常使用SDK，请务必在 proguard-project.txt中添加以下代码：
 
 ```
@@ -264,11 +295,15 @@ proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.
 # SDK流程详解
 ## 1.	初始化部分
 ### 1.1.	初始化部分流程图
+
 ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478090975626.png)
+
 ### 1.2.	注册SDK通用监听器
+
 注册SDK通用监听器是为了能让APP收到来自GizWifiSDK类的响应事件，包含了注册、登录、配置设备、绑定设备等回调接口。该监听器是SDK使用中十分重要的一个监听器，与GizWifiSDK类相关的操作都会在这里会回调。如果没有正确注册通用监听器，将无法正常使用SDK。注册监听时，APP可以根据自己的需求实现回调接口。建议两种设置方式：
 
-1)	在每一个使用到的Activity中都实例化一次监听器并注册一次，且只实现需要的回调接口。该种方式比较灵活，可在service中使用。但要注意必须每次打开activity都监听一次， 且无法多个Activity同时收到回调。
+1)在每一个使用到的Activity中都实例化一次监听器并注册一次，且只实现需要的回调接口。该种方式比较灵活，可在service中使用。但要注意必须每次打开activity都监听一次， 且无法多个Activity同时收到回调。
+
 【示例代码】
 
 ```
@@ -296,7 +331,8 @@ GizWifiSDK.sharedInstance().registerUser("HelloGizwits", "12345678");
 }
 ```
 
-2)	在一个基类中实例化一次监听器，并把回调抛出，子类继承基类，这就不需要每个子类都实例化一次监听器。该种方式通过继承的方式，可以多个Activity都收到回调。但该种方式无法在Service中使用。如无特别说明，文档中的范例都是使用该方法注册监听器。
+2)在一个基类中实例化一次监听器，并把回调抛出，子类继承基类，这就不需要每个子类都实例化一次监听器。该种方式通过继承的方式，可以多个Activity都收到回调。但该种方式无法在Service中使用。如无特别说明，文档中的范例都是使用该方法注册监听器。
+
 【示例代码】
 
 ```
@@ -380,9 +416,11 @@ if (eventType == GizEventType.GizEventSDK) {
 ```
 ## 2.	用户部分
 机智云的用户系统包含了用户的注册、登录、重置密码、修改个人信息等功能，机智云以APPID区分用户系统，不同APPID的用户系统相互独立。更换APPID后，需要重新注册用户。
+
 以下流程中涉及到的监听器注册方法是用子类继承基类的方式实现的。
 
 ### 2.1.	用户部分主要流程图
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478091545169.png)
 
 用户的注册方式有多种，比如手机号、普通用户名、邮箱等，APP可以根据需要采取不同的方式。其他流程比如登录、密码修改、个人信息修改等部分，请直接阅读下面的流程文档。
@@ -394,6 +432,7 @@ if (eventType == GizEventType.GizEventSDK) {
 通过手机注册账号，需要一个有效的手机号。注册时需要两步操作：获取短信验证码、用短信验证码注册用户。
 
 第一步：APP获取短信验证码时，SDK向云端发送短信验证码请求，如果请求成功，云端会给手机发送短信验证码。
+
 【示例代码】
 
 ```
@@ -434,6 +473,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 ```
 
 #### 2.2.2.	注册普通用户
+
 注册普通用户，使用用户名、密码即可创建一个账号。
 
 ```
@@ -455,7 +495,9 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 ```
 
 #### 2.2.3.	注册邮箱用户
+
 通过有效的电子邮箱地址，注册一个账号。注册成功后，云端会给指定邮箱发送注册成功的邮件。
+
 【示例代码】
 
 ```
@@ -479,6 +521,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 机智云提供三种用户登录方式：实名登录、匿名登录、第三方账号登录。实名登录适用于设计了登录界面，必须使用用户名密码注册登录以后才能使用的APP。匿名登录适用于没有设计登录界面，由后台自动生成用户账号的APP。登录后获取到的token有效期为7天。
 #### 2.3.1.	实名登录
 实名用户登录时，用户名可以是注册过的手机号、邮箱、普通用户名。登录账号要先注册好，如果更换了AppID，登录账号需要重新注册。
+
 【示例代码】
 
 ```
@@ -523,6 +566,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 目前支持的第三方账号有百度、新浪、腾讯。用户可以使用这三者的API获取到uid和token登录机智云，使用第三方账号登录时无需在机智云上注册，可直接登录。
 
 开发者可通过新浪、百度或腾讯api获取uid和token, 具体方法请参考各第三方平台的开发者文档。
+
 【示例代码】
 
 ```
@@ -547,7 +591,9 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 如果忘记了用户密码，可以通过手机验证码或邮箱设置新的密码。SDK支持手机号重置密码和邮箱重置密码两种，手机号重置需要接收验证码，邮箱重置需要进⼊邮箱，根据链接提示进行重置。
 #### 2.4.1.	手机号重置密码
 手机号重置密码时，需要先获取短信验证码再重置。获取短信验证码方式与手机注册时相同。
+
 第一步：获取短信验证码
+
 【示例代码】
 
 ```
@@ -567,6 +613,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 ```
 
 第二步：用短信验证码重置密码
+
 【示例代码】
 
 ```
@@ -611,7 +658,9 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 ```
 
 ### 2.5.	修改密码
+
 用户登录后可以修改密码。
+
 【示例代码】
 
 ```
@@ -635,6 +684,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 匿名注册的用户可以转换为普通用户或者手机用户，转换后匿名用户的信息会转移到实名用户下，原匿名账号失效。但普通用户和手机用户必须是还未注册过的，已注册的用户名是无法转换的。
 #### 2.6.1.	匿名用户转普通用户
 转普通用户时，填入待转换的用户名、密码，以及登录的token就可以了。
+
 【示例代码】
 
 ```
@@ -657,6 +707,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 
 #### 2.6.2.	匿名用户转手机用户
 转手机用户时，需要填入待转换的手机号、密码、短信验证码，登录的token。获取短信验证码的过程与手机注册时一样。
+
 【示例代码】
 
 ```
@@ -679,6 +730,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 
 ### 2.7.	修改用户信息
 实名用户不支持修改普通用户名，可以修改邮箱、手机号，可以补充个人信息。实名用户必须登录后才能修改这些信息，并且待修改的邮箱或手机号必须是已经注册过的。
+
 实名用户修改邮箱或手机号成功后，可以使用修改后的邮箱或手机号登录。登录后获得的绑定设备列表与原实名用户一致。
 
 修改邮箱或手机号时，可以同时补充个人信息。不想修改个人信息时，对应参数可以传null。同时修改个人信息时，如果邮箱或用户名修改成功而个人信息修改失败，回调会返回成功并在errorMessage中提示个人信息修改失败的原因。
@@ -897,6 +949,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 ```
 ## 4.	设备发现和订阅部分
 ### 4.1.	设备发现和订阅流程图
+
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478092365497.png)
 
 ### 4.2.	设备发现
@@ -946,6 +999,7 @@ APP得到设备列表后，给设备设置监听后，可以订阅设备。已�
 
 #### 4.4.1.	设备订阅
 所有通过SDK得到的设备，都可以订阅，订阅结果通过回调返回。订阅成功的设备，要在其网络状态变为可控时才能查询状态和下发控制指令。
+
 【示例代码】
 
 ```
