@@ -1,4 +1,4 @@
-title:  快速集成消息推送
+title:  Android App消息推送集成指南
 ---
 
 # 概述
