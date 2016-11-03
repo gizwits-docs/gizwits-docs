@@ -1,11 +1,11 @@
 
 
-GoKit3(V)二次开发--开发指南
-====
+title: GoKit3(V)二次开发--开发指南
+---
 
 # 初见GoKit3(V)
 
-![Alt text](./image3.jpeg)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image3.jpeg)
 
 上图既是GoKit3(V)开发套件，此套件支持语音识别、语音控制传感器。使用Lark7618模组进行智能硬件产品开发时，有以下几点需要注意：
 
@@ -73,7 +73,7 @@ Lark7618符合机智云标准接入协议，通过串口与MCU进行数据交互
 
 8)  更新资源重复步骤3，直到形成最终的产品资源；
 
-以上工作做完后，用户进入产品发布阶段，按照下列流程
+**以上工作做完后，用户进入产品发布阶段，按照下列流程**
 
 1)  重新在宇音天下平台注册正式账号（此时上次测试账号管理的词条和mp3资源会自动应用到新的正式账号中）； 
  
@@ -87,31 +87,33 @@ Lark7618符合机智云标准接入协议，通过串口与MCU进行数据交互
 
 6)  用户根据需要在产品上线后升级新的产品资源；
 
-注：
-  **1）产品发布请注册正式账号，不同产品需要注册不同的正式账号，开发阶段请不要申请正式账号进行产品测试，避免正式账号下存在过多的测试升级资源文件。**
+**注：**
+
+>  产品发布请注册正式账号，不同产品需要注册不同的正式账号，开发阶段请不要申请正式账号进行产品测试，避免正式账号下存在过多的测试升级资源文件。
+
 	
 ### 2.3 资源管理工具使用方法
 
 #### 2.3.1 程序启动
 
-第一次使用资源管理工具软件时鼠标右击![Alt text](./image4.png)
+第一次使用资源管理工具软件时鼠标右击![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image4.png)
 ，以管理员方式运行，软件检测到本机如果没有注册Mscomm32.ocx（串口通讯控件）会自动注册Mscomm32.ocx，如果360之类的安全软件提示程序正在修改注册表，请允许本次操作。
 
-![Alt text](./image5.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image5.png)
 
-![Alt text](./image6.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image6.png)
 
 
 #### 2.3.2 程序主界面
 
 主界面包括词条更新、MP3更新和出厂参数配置和业务参数四个tab页，分别管理词条、MP3和出厂参数，业务参数。其中出厂参数通过串口烧录到所有模块中，词条和MP3、业务参数所做的改变需要打包成升级资源供模块下载更新。即出厂参数是在产品提交给用户前由厂家预先烧录好，而词条、MP3、业务参数是产品上线运行后由厂家进行修改后打包上传到宇音天下平台供模块下载更新升级。
-![Alt text](./image7.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image7.png)
 
 **注：程序提供右键菜单，一些操作会放在右键菜单里，用户可在操作窗口中用鼠标右键弹出菜单执行相应功能。**
 
 #### 2.3.3 注册产品
 用户拿到模块后首先必须向宇音天下平台注册产品。注册时必须正确填写公司名称和产品名称（注册信息必须如实填写，宇音天下有权禁止非法的注册账号）、登录账号等信息。 
-![Alt text](./image8.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image8.png)
 
 **注：在开发阶段请注册测试账号。**
 
@@ -119,7 +121,7 @@ Lark7618符合机智云标准接入协议，通过串口与MCU进行数据交互
 
 1）模式2：集成机智云数据点功能可支持远程控制的应用模式；用户和机智云合作，在机智云平台定义产品，通过机智云平台实现设备远程控制，wifi芯片采用宇音天下公司7618芯片，集成wifi上网和语音控制功能。
 
-![Alt text](./image9.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image9.png)
 
 注：对于机智云用户，如果想实现语音控制设备，请选择模式2。
 
@@ -127,13 +129,13 @@ Lark7618符合机智云标准接入协议，通过串口与MCU进行数据交互
 
 用产品注册账号登录宇音天下平台。在进行【出厂烧录】、【生成升级资源】、【上传升级资源】时如果未登录宇音天下平台系统会提示登录。
 
-![Alt text](./image10.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image10.png)
 
 #### 2.3.5 出厂参数配置
 
 用户注册产品并登录后，可设置出厂参数，可在出厂时设置的参数如下图所示：
 
-![Alt text](./image11.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image11.png)
 
 wifi用户名和密码在公司内部产品测试阶段可输入公司的wifi账号信息，保证模块可以正常上网。
 
@@ -143,7 +145,7 @@ wifi用户名和密码在公司内部产品测试阶段可输入公司的wifi账
 
 将配置的出厂参数和注册的产品信息烧录到模块中。
 
-![Alt text](./image12.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image12.png)
 
 1. 请检查以上产品信息是否正确
 
@@ -161,7 +163,7 @@ wifi用户名和密码在公司内部产品测试阶段可输入公司的wifi账
 
 **1) 设置是否允许固件升级**
 
-![Alt text](./image13.png),如果不允许7618芯片固件升级请选择否。
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image13.png),如果不允许7618芯片固件升级请选择否。
 
 注：修改是否允许固件升级参数项设置后，必须点击上传升级资源，芯片下载正常工作后才起作用。
 
@@ -170,7 +172,7 @@ wifi用户名和密码在公司内部产品测试阶段可输入公司的wifi账
 **2) 设置机智云productkey**
 
 针对用户在机智云平台定义产品形态的模式2，输入productkey，点击保存。
-![Alt text](./image14.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image14.png)
 
 保存机智云的productkey后，点击下载产品json文件，就可将在命令管理中将命令与机智云数据点关联起来，从而实现语音控制设备。
 
@@ -185,7 +187,7 @@ wifi用户名和密码在公司内部产品测试阶段可输入公司的wifi账
 按下列步骤执行：
 **1) 初次执行时选取命令目录中对应的命令，导入到命令窗口中。**
 
-![Alt text](./image15.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image15.png)
 
 目录展开/收缩：展开和收缩命令目录
 
@@ -198,7 +200,7 @@ wifi用户名和密码在公司内部产品测试阶段可输入公司的wifi账
 **2)命令管理**
 
 命令管理界面如下图所示：
-![Alt text](./image16.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image16.png)
 
 命令管理功能有：
 	
@@ -224,7 +226,7 @@ wifi用户名和密码在公司内部产品测试阶段可输入公司的wifi账
 
 MP3资源管理界面如下图所示：
 
-![Alt text](./image17.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image17.png)
 
 其中系统MP3可被替换，系统MP3全部打到资源包中。
 
@@ -249,11 +251,11 @@ MP3资源管理界面如下图所示：
 
 选择命令，弹出右键菜单，选择数据点，设置数据点值，最后点击确定保存。
 
-![Alt text](./image18.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image18.png)
 
-![Alt text](./image19.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image19.png)
 
-![Alt text](./image20.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image20.png)
 
 2) 删除数据点
 
@@ -273,7 +275,7 @@ MP3资源管理界面如下图所示：
 资源最大不能超过2M，请合理安排资源。
 
 **只有选取框被打勾的内容才打包到资源中，如下图所示：**
-![Alt text](./image21.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image21.png)
 
 
 #### 2.3.12 上传升级资源
@@ -294,7 +296,7 @@ MP3资源管理界面如下图所示：
 
 按照下列步骤可将测试账号测试通过的词条、MP3资源配置应用到正式账号中，从而进行正式产品发布：
 
-a) 以测试账号登录后，在界面中执行注册，向宇音天下注册正式账号，账号类型选择![Alt text](./image22.png)
+a) 以测试账号登录后，在界面中执行注册，向宇音天下注册正式账号，账号类型选择![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image22.png)
 ，如实填写公司、产品信息。注册正式账号后，上次针对测试账号所做的命令、词条和MP3资源自动绑定到正式账号中，即本地数据自动与新账号关联。注：必须先以测试账号登录后再注册正式账号才能将测试账号最后形成的稳定的资源配置自动迁移到正式账号上，否则用户还需在正式账号重新进行资源配置。
 
 b)将产品信息依次烧录到所有模块中。
@@ -310,17 +312,17 @@ c)重新生成资源、上传升级资源（注册了新的正式账号需要重
 1) 注册账号时产品形态选择模式2
 
 2) 在命令窗口中选择转动【转动控制】、【灯光】，然后导入
-![Alt text](./image23.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image23.png)
 
 在业务参数中设置机智云宠物屋的productkey,输入：6f3074fe43894547a4f1314bd7e3ae0b，下载产品定义json文件。
 
-![Alt text](./image24.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image24.png)
 
 3) 设置电机命令对应的数据点
 
-![Alt text](./image25.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image25.png)
 
-![Alt text](./image26.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image26.png)
 
 **说明：按照机智云宠物屋数据点定义，电机转速是-5~5之间整数值，5为正转最大转速，-5为反转最大转速，0为停止转动。**
 
@@ -329,9 +331,9 @@ c)重新生成资源、上传升级资源（注册了新的正式账号需要重
 4) 设置灯控数据点
 设置【开灯】命令的数据点
 
-![Alt text](./image27.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image27.png)
 
-![Alt text](./image28.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image28.png)
 
 【关灯】则选择数据点“开启/关闭红色灯(LED_OnOff)”,设置值选择“否(false)”。
 
@@ -362,7 +364,7 @@ c)重新生成资源、上传升级资源（注册了新的正式账号需要重
 
 1）串口通讯采用Mscomm32.ocx控件，系统会自动注册该控件，如果进入烧录系统弹出程序运行错误窗口，说明Msconn32.ocx未能自动注册成功（一般是在win7及其以上版本机器），请改用管理员身份执行程序。
 
-![Alt text](./image29.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image29.png)
 
 还不能烧录，则执行手工注册，按下列步骤执行：
 
@@ -372,9 +374,9 @@ c)重新生成资源、上传升级资源（注册了新的正式账号需要重
 
 点桌面左下角开始-所有程序-附件-右键命令提示符-选择以管理员身份运行（如图1），打开DOS界面后在命令行窗口执行 regsvr32.exe  c:\windows\system32\Mscomm32.ocx
 
-![Alt text](./image30.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image30.png)
 
-![Alt text](./image31.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/dev/image31.png)
 
 2）软件可执行程序为:Lark7618ResTool.exe,请勿改为中文文件名。
 
