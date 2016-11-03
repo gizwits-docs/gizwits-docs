@@ -38,7 +38,7 @@
     </span>
     
     {# for DELETE #}
-    <span class="pure-u-2-24"><a href="" style="color: #faeb00;">返回旧版</a></span>
+    <span class="pure-u-2-24"><a href="https://gizwits.kf5.com" style="color: #faeb00;">返回旧版</a></span>
   
     <span class="pure-u-3-24">
       <i class="fa fa-globe" aria-hidden="true"></i> 
