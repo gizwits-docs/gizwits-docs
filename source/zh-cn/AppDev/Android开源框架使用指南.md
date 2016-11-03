@@ -20,6 +20,7 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
 
  **B.     GizOpenSource: 组成模块**
 
+```
     assets: 包含 UIConfig.json 配置文件
 
     GizOpenSourceModules：组成模块
@@ -49,13 +50,13 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
     wxapi // 微信集成包
 
     zxing // 扫描二维码
-
+```
 
 #   快速集成指南
 
 默认程序入口在 UserModule 中的 GosUserLoginActivity。
 
-##1.    设定初始化参数
+## 1.    设定初始化参数
 
 在工程的 GosApplication.java 文件中填写机智云AppID及AppSecret，如果使用第三方登录或推送，需要填写相应的从其他资源平台申请的参数；如果使用推送需要打开当前需要使用推送的类型的初始化，如果都为注释状态则表示当前不使用第三方推送，同时只支持一种第三方推送，不可打开多个第三方推送宏定义的注释。可配置的参数有：
 
@@ -109,7 +110,7 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
 > 
 > 3.tencent\_app\_id需要在AndroidManifest.xml中89行填写
 
-##2.   加载控制界面
+## 2.   加载控制界面
 
 1） 框架工程内提供的代码已经可以在不修改任何代码的前提下，进行到控制界面的跳转操作，开发者只需要关心操作界面的逻辑即可，如果需要在设备列表界面中点击某设备后，跳转到自己创建的控制器视图中，请在 GosDeviceListActivity.java  文件中修改相应跳转参数。请按照图示修改跳转视图的类定义，如果使用默认提供的空白界面（GosDeviceControlActivity）来进行编写控制界面，可略过此步骤。
 
@@ -124,7 +125,7 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
 5）退出控制界面时，需要取消当前设备订阅，调用SDK中GizWifiDevice类实例的接口方法，将参数设为False：  device.setSubscribe(false);
 
 
-##3.    设置界面增加菜单项及点击处理
+## 3.    设置界面增加菜单项及点击处理
 
 如果需要在设置界面进行列表项的增加或修改，需要在activity\_gos\_settings.xml中添加相应控件，并在模块（SettingsModule）中的GosSettingsActivity.java文件中添加相应事件。
 
