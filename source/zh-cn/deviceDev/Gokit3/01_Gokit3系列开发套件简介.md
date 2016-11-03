@@ -1,66 +1,33 @@
-# **Gokit3系列开发套件简介**
+title: Gokit3系列开发套件简介
+---
 
-机智云
 
-|          |           |          |        |          |     |
-|----------|-----------|----------|--------|----------|-----|
-| 编制人   | TureZhang | 审核人   |        | 批准人   |     |
-| 产品名称 |           | 产品型号 |        | 文档编号 |     |
-| 会签日期 |           | 版本     | V0.1.3 |
 
-GizWits
-
-**修改记录：**
-
-|              |                        |            |          |          |
-|--------------|------------------------|------------|----------|----------|
-| **修改时间** | **修改记录**           | **修改人** | **版本** | **备注** |
-| 20160510     | 初建                   | TureZhang  | 0.1.0    |          |
-| 20160524     | 调整结构及部分描述     | AndyGao    | 0.1.1    |          |
-| 20160531     | 修改部分描述错误       | AndyGao    | 0.1.2    |          |
-| 20160603     | 增加mcu及soc方式硬件图 | AndyGao    | 0.1.3    |          |
-
-## 目录
-
-### [1、GoKit3介绍 4](#_Toc11901)
-
-### [2、GoKit3套件 5](#_Toc706)
-
-### [2.1、GoKit3(S) 5](#_Toc4021)
-
-### [2.2、GoKit3(V) 7](#_Toc10051)
-
-### [3、FAQ 8](#_Toc21079)
-
-### [3.1、SOC版与MCU版的区别 8](#_Toc13588)
-
-### [3.2、GoKit3后期规划 8](#_Toc30047)
-
-## <span id="_Toc11901" class="anchor"></span>**1、GoKit3介绍**
-
+# GoKit3介绍
 Gokit3是GoKit产品系列的第三代，支持MCU、SoC、BLE、语音、模式切换等特性。目前支持的SoC方案模组有ESP8266、Hi3518E模组、宇音天下模组等。
 
 GoKit3的扩展板的模组接口采用双排母的设计，模组的单排针根据用法不同选择MCU(MCU模式接口)和SoC(SoC模式接口)两种接入方式，如下图所示扩展板接口图：
 
-<span id="SOC版与MCU版的区别" class="anchor"><span id="扩展板正面图" class="anchor"></span></span>![](./media/image1.png)
+![](/zh-cn/deviceDev/Gokit3/intro/media/image1.png)
 
-![](./media/image2.png)
+![](/zh-cn/deviceDev/Gokit3/intro/media/image2.png)
 
-## **说明：**
+ **说明：**
 
-1.  **SoC版本的模组应该插到扩展板的SoC模式接口上。**
+1. SoC版本的模组应该插到扩展板的SoC模式接口上。
 
-2.  **SoC版本使用时应与底板分离，否则模组程序无法正常启动。**
+2.  SoC版本使用时应与底板分离，否则模组程序无法正常启动。
 
-<span id="_Toc706" class="anchor"></span>**2、GoKit3套件**
 
-<span id="_Toc4021" class="anchor"></span>**2.1、GoKit3(S)**
+# GoKit3套件
 
-![](./media/image3.jpeg)
+## 1、GoKit3(S)
+
+![](/zh-cn/deviceDev/Gokit3/intro/media/image3.jpeg)
 
 GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之一，目的是帮助传统硬件快速接入互联网。完成入网之后，数据可以在产品与云端、制造商与用户之间互联互通，实现智能互联。
 
-## **主要特点：**
+### 主要特点：
 
 1.  分体式的设计方案，即底板(SoC方式应去掉)+功能板+模组。
 
@@ -74,43 +41,43 @@ GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之�
 
 6.  提供完整开源Demo工程和相关SDK集成指南。
 
-## **硬件资源：**
+### 硬件资源：
 
-1.红外探测器；
+1. 红外探测器；
 
-2.温湿度传感器；
+2. 温湿度传感器；
 
-3.RGB三色LED；
+3. RGB三色LED；
 
-4.可调速微型直流电机；
+4. 可调速微型直流电机；
 
-5.3个自定义功能按键
+5. 3个自定义功能按键
 
-6.OLED显示屏接口；
+6. OLED显示屏接口；
 
 7. Arduino标准接口；
 
-8.内置USB2UART调试接口。
+8. 内置USB2UART调试接口。
 
-9.其他预留接口
+9. 其他预留接口
 
-## **创客版底板**
+### 创客版底板
 
-![](./media/image4.png)
+![](/zh-cn/deviceDev/Gokit3/intro/media/image4.png)
 
-## **标准版底板**
+### 标准版底板
 
-![](./media/image5.png)
+![](/zh-cn/deviceDev/Gokit3/intro/media/image5.png)
 
-## <span id="_Toc10051" class="anchor"></span>**2.2、GoKit3(V)**
 
-![](./media/image6.jpeg)
+## 2、GoKit3(V)
 
-## GoKit3(V)
+![](/zh-cn/deviceDev/Gokit3/intro/media/image6.jpeg)
+
 
 **GoKit3(V)**是机智云（GizWits）推出的物联网智能硬件开发套件（第三代）之一，目的是帮助传统硬件快速接入互联网。完成入网之后，数据可以在产品与云端、制造商与用户之间互联互通，实现智能互联。
 
-## **主要特点：**
+### 主要特点：
 
 1.  整体式的设计方案，较低的开发成本。
 
@@ -120,7 +87,7 @@ GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之�
 
 4.  提供完整开源Demo工程。
 
-## **硬件资源：**
+### 硬件资源：
 
 1. 红外探测器；
 
@@ -138,28 +105,28 @@ GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之�
 
 8. USB2UART调试接口。
 
-9.其他预留接口。
+9. 其他预留接口。
 
-## <span id="_Toc21079" class="anchor"></span>**3、FAQ**
+#  3、FAQ
 
-## <span id="_Toc6106" class="anchor"><span id="_Toc13588" class="anchor"></span></span>**3.1、SOC版与MCU版的区别**
+## 1、SOC版与MCU版的区别
+![@MCU方式](/zh-cn/deviceDev/Gokit3/intro/media/image7.jpeg)
 
-> ![](./media/image7.jpeg)![](./media/image8.jpeg)
->
-> 图1 MCU方式 图2 SoC方式
+![@SoC方式](/zh-cn/deviceDev/Gokit3/intro/media/image8.jpeg)
 
-## 1.  MCU版
 
-> 是分体式的设计方案。WiFi模组只负责信息的接收与发送，它通过串口等方式与MCU进行通信，需要在MCU上进行协议解析与外设相关的开发。
->
-> 总结：这种方案的优点是不受限于WiFi SOC片上资源、应用扩展度高；缺点是开发难度大、生产成本高。
+**MCU版**
 
-## 1.  SOC版
+是分体式的设计方案。WiFi模组只负责信息的接收与发送，它通过串口等方式与MCU进行通信，需要在MCU上进行协议解析与外设相关的开发。
 
-> 是整体式的设计方案。它将WiFi模组与外设驱动模块直接连接起来，直接在WiFi SOC上进行开发，省去了一层通讯过程。
->
-> 总结：这种方案的优点是能降低开发难度、降低生产成本；缺点是受限于WiFi SOC片上资源，应用有限。
+总结：这种方案的优点是不受限于WiFi SOC片上资源、应用扩展度高；缺点是开发难度大、生产成本高。
 
-## <span id="_Toc30047" class="anchor"></span>**3.2、GoKit3后期规划**
+** SOC版**
+
+是整体式的设计方案。它将WiFi模组与外设驱动模块直接连接起来，直接在WiFi SOC上进行开发，省去了一层通讯过程。
+
+ 总结：这种方案的优点是能降低开发难度、降低生产成本；缺点是受限于WiFi SOC片上资源，应用有限。
+
+## 2、GoKit3后期规划
 
 为了使开发者能够基于GoKit开发更多类型产品及应用，我们有更高性能的SoC、BLE等不同接入方式的模组正在研发中，请大家关注机智云网站动态。
