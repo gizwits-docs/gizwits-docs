@@ -1,14 +1,15 @@
 
 
-GoKit3(V)二次开发-程序详解
-=====
+title: GoKit3(V)二次开发-程序详解
+---
+
 # 通信协议详解
 
 ## 1 协议命令格式
 
 我们首先了解具体**通讯协议的约定**，可以看到协议格式为：
 
-![Alt text](./image3.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image3.png)
 
 说明：
 
@@ -85,7 +86,7 @@ GoKit3(V)二次开发-程序详解
 
 ### 1.1 一级目录说明
 
-![Alt text](./image4.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image4.png)
 
 | 文件夹	   |    说明 |
 | :-------- | :--------|
@@ -98,7 +99,7 @@ GoKit3(V)二次开发-程序详解
 
 ### 1.2 代码文件说明
 
-![Alt text](./image5.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image5.png)
 
 
 主要文件说明：
@@ -137,30 +138,30 @@ GoKit3(V)二次开发-程序详解
 
 结构体dataPoint_t  ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
 
-![Alt text](./image6.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image6.png)
 
 
 说明：结构体dataPoint_t作用是存储用户区的设备状态信息，用户根据云端定义的数据点向其对应的数据位赋值后便不需关心数据的转换，其数据位对应“p0 数据区约定”中的“4.9 设备MCU向WiFi模组主动上报当前状态”中的：dev_status(11B) 位：
 
-![Alt text](./image7.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image7.png)
 
 
 **attrFlags_t、attrVals_t** ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
 
-![Alt text](./image8.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image8.png)
 
 结构体**attrFlags_t、attrVals_t**分别对应**“p0 数据区约定”**中的**“4.10 WiFi模组控制设备”**中的：attr_flags(1B) + attr_vals(6B)位：
 
-![Alt text](./image9.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image9.png)
 
 结构体**devStatus_t**，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
 
-![Alt text](./image10.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image10.png)
 
 结构体devStatus_t对应**“p0 数据区约定”中**的**“4.9 设备MCU向WiFi模组主动上报当前状态”**中的：dev_status(11B) 位：
 
 
-![Alt text](./10.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/10.png)
 
 
 
@@ -186,7 +187,7 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 位置：gokit_mcu_stm32_xxx\User\main.c中main() 函数：
 
 
-![Alt text](./image11.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image11.png)
 
 
 相关说明：
@@ -206,7 +207,7 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 接下来看用户初始化相关代码（位置：**main.c**中**userInit() 函数**）：
 
 
-![Alt text](./image12.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image12.png)
 
 
 这部分完成了RGB LED、电机、温湿度、红外传感器的硬件驱动初始化以及电机初始状态，对应的驱动程序实现都在 **gokit_mcu_stm32_xxx\Hal** 下。
@@ -215,19 +216,19 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 		
 下面是平台协议相关初始化 （位置：**main.c中gizwitsInit() 函数**）：
 
-![Alt text](./image13.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image13.png)
 
 
 其中完成了定时器、串口的初始化（详情查看2.3.4、2.3.5两节），以及一个环形缓冲区的初始化。
 
 最后是一个通信处理模块结构体的变量的初始化，该变量为通信模块的全局变量：
 
-![Alt text](./image14.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image14.png)
 
 
 其定义的位置：**user\user_mian.c**
 
-![Alt text](./image15.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image15.png)
 
 
 相关结构体内容，详情查看**“2.3.1 数据协议结构体的定义”**一节。
@@ -237,16 +238,16 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 相关代码：
 
 定时器初始化，代码位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.c 中timerInit()函数**
-![Alt text](./image16.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image16.png)
 
 
 
 注：这里我们定义了周期为1ms的定时器，其定时计算公式为：
-![Alt text](./image17.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image17.png)
 
 
 定时器中断函数，代码位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.c**
-![Alt text](./image18.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image18.png)
 
 
 注：在该中断函数内我们完成了周期为1ms的定时累加计数。
@@ -254,7 +255,7 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 定时器使用说明：
 代码位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.h**
 
-![Alt text](./image19.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image19.png)
 
 
 a.这里我们使用定时器TIM3(**#define TIMER TIM3**)；
@@ -263,9 +264,9 @@ b.TIM3的中断回调函数为**UTIM3_IRQHandler() (#define TIMER_IRQ_FUN TIM3_I
 
 特别说明（复用**TIMER2**的方式，修改对应宏即可）：
 
-![Alt text](./image20.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image20.png)
 
-![Alt text](./image21.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image21.png)
 
 
 ### 3.5 串口的使用
@@ -273,18 +274,18 @@ b.TIM3的中断回调函数为**UTIM3_IRQHandler() (#define TIMER_IRQ_FUN TIM3_I
 相关代码：
 
 串口初始化，位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.c** 中的**uartInit()**
-![Alt text](./image22.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image22.png)
 
 
 串口中断函数，位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.c** 
-![Alt text](./image23.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image23.png)
 
 
 串口使用说明：
 
 代码位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.h**
 
-![Alt text](./image24.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image24.png)
 
 
 a.这里我们使用USART2**(#define UART USART2)**，作为数据通信的串口;
@@ -294,7 +295,7 @@ b.设置它的波特率为9600**(#define UART_BAUDRATE 9600)**
 c.USART2的串口中断回调函数为**USART2_IRQHandler() (#define UART_IRQ_FUN USART2_IRQHandler)**，在该中断函数内我们完成了串口数据的接收。
 
 特别说明（复用USART1的方式，修改对应宏即可）：
-![Alt text](./image25.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image25.png)
 
 
 ## 4 配置模式说明
@@ -319,17 +320,17 @@ Wifi 配置接口说明：
 程序中触发逻辑位置：**gokit_mcu_stm32_xxx\User\main.c** 
 
 A.进入Soft AP 模式：key2按键短按。
-![Alt text](./image26.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image26.png)
 
 
 
 B.进入AirLink 模式：key2按键长按。
-![Alt text](./image27.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image27.png)
 
 
 
 C.模组复位：key1按键长。
-![Alt text](./image28.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image28.png)
 
 
 
@@ -337,63 +338,63 @@ C.模组复位：key1按键长。
 
 位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.c中gizwitsHandle()** 函数：
 
-![Alt text](./image29.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image29.png)
 
 
 以下是该协议处理函数的详细介绍：
 
 ● 首先是一些局部变量的初始化，比较重要的是：“**protocolHead_t *recvHead = NULL**;”它的作用是保存解析出来的协议包头。
 
-![Alt text](./image30.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image30.png)
 
 
 ● 然后是协议的重发机制，它的作用是对发送后的协议数据进行超时判断，超时200ms进行重发，重发上限为三次：
 
-![Alt text](./image31.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image31.png)
 
 
 ● 接下来程序会从环形缓冲区中抓取一包的数据，例如协议4.9：
 
-![Alt text](./image32.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image32.png)
 
 程序中对应如下：
 
-![Alt text](./image33.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image33.png)
 
 
 ● 当我们获得到一整包的数据，就会进入下面的if判断逻辑，进行协议的解析。
 
-![Alt text](./image34.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image34.png)
 
 
 这里保存了接收到的协议包头：
 
-![Alt text](./image35.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image35.png)
 
 
 ● 然后是各协议命令的处理流程：
 
-![Alt text](./image36.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image36.png)
 
 
 其中完成了《机智云 - 设备串口通讯协议》中相关的协议处理，如下：
 
-![Alt text](./image37.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image37.png)
 
 
 例如协议4.8：
 
-![Alt text](./image38.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image38.png)
 
 
 其“cmd”值 为“0x03”，对应程序中的的case为**“CMD_ISSUED_P0”**
 
-![Alt text](./image39.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image39.png)
 
 
 同理其他协议cmd值对应的宏定义的位置在**Gizwits\gizwits_protocol.h**中:
 
-![Alt text](./image40.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image40.png)
 
 
 其中与P0协议有关的处理都在“**gizProtocolIssuedProcess**”中完成，详情请查看“2.6 控制型协议的实现”、“2.7 上报型协议的实现”两节。
@@ -414,41 +415,41 @@ C.模组复位：key1按键长。
 
 ● 协议判断完成后是一个状态机的判断，用来完成对应协议命令的处理：
 
-![Alt text](./image41.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image41.png)
 
 
 例如在P0协议处理函数（**gizProtocolIssuedProcess**）中，当我们完成了控制型协议的解析，会让 issuedFlag = 1，如下：
 
-![Alt text](./image42.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image42.png)
 
 
 然后会执行如下的处理，执行**gizwitsEventProcess函数**：
 
-![Alt text](./image43.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image43.png)
 
 
 在**gizwitsEventProcess** 中，完成了对应控制型事件的处理，其他状态的issuedFlag 同理。
 
 ● 之后是一个数据上报判断机制，主要执行了**gizCheckReport函数**。
 
-![Alt text](./image44.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image44.png)
 
 
 **gizCheckReport**函数的作用用来判断当前与上次上报数据的一致性，如果符合上报条件便上报，上报条件要符合协议“4.9 设备MCU向WiFi模组主动上报当前状态”中的描述：
 
-![Alt text](./image45.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image45.png)
 
 
 符合上报之后会执行数据类型的转化函数**gizDataPoints2ReportData**（详情查看“**2.8 机智云协议数据处理**”一节），以及数据上报函数**gizReportData**。
 
 ● 最后一段代码是一个数据定时上报机制：
 
-![Alt text](./image46.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image46.png)
 
 
 对应协议“4.9 设备MCU向WiFi模组主动上报当前状态”中的描述：
 
-![Alt text](./image47.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image47.png)
 
 
 至此我们完成了协议处理函数的详解。
@@ -456,7 +457,7 @@ C.模组复位：key1按键长。
 ## 6 控制型协议的实现
 
 与控制型协议相关的函数调用关系如下：
-![Alt text](./image48.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image48.png)
 
 
 
@@ -481,7 +482,7 @@ C.模组复位：key1按键长。
 完成写类型外设的事件处理。
 
 相应代码：
-![Alt text](./image49.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image49.png)
 
 
 ### 6.2 可写型数据类型转换
@@ -497,16 +498,16 @@ C.模组复位：key1按键长。
 
 程序中对应：
 
-![Alt text](./image50.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image50.png)
 
-![Alt text](./image51.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image51.png)
 
 
 
 ## 7 上报型协议的实现
 
 与上报型协议相关的函数调用关系如下：
-![Alt text](./image52.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image52.png)
 
 
 函数调用说明：
@@ -529,7 +530,7 @@ C.模组复位：key1按键长。
 
 该函数中完成了用户区上报型数据的获取。用户只需将读到的数据赋值到**用户区当前设备状态结构体**即可：
 
-![Alt text](./image53.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image53.png)
 
 
 注：赋值完的数据是通过**gizwitsHandle** （详情请查看“2.5 协议处理函数的实现”一节中：数据上报判断机制**gizCheckReport**部分）上报云端的，开发者不需要关注变化上报和定时上报。
@@ -551,11 +552,11 @@ C.模组复位：key1按键长。
 
 协议中说明如下：(“4.9 设备MCU向WiFi模组主动上报当前状态”)
 
-![Alt text](./image54.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image54.png)
 
 
 以红灯开关为例：
-![Alt text](./image55.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image55.png)
 
 
 
@@ -582,14 +583,14 @@ gizY2X	  |   将用户区数据转化为传输数据，详情查看“2.8.1 数�
 	
 以《微信宠物屋》的温湿度传感器温度数据点为例： 
 
-![Alt text](./image56.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image56.png)
 
 
 取值范围：-13（Ymin） ~ 187（Ymax），分辨率：1，增量：-13 ；
 
 其分辨率、偏移量作为宏定义定义在**app\Gizwits\gizwits_product.h**中：
 
-![Alt text](./image57.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image57.png)
 
 
 根据公式：y=kx＋m，k = 1 ; m = -13
@@ -598,11 +599,11 @@ gizY2X	  |   将用户区数据转化为传输数据，详情查看“2.8.1 数�
 
 转换函数在程序中的说明：
 A.X2Y的转换：
-![Alt text](./image58.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image58.png)
 
 
 B. Y2X的转换：
-![Alt text](./image59.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image59.png)
 
 
 ### 8.2 数据解压与压缩处理
@@ -618,28 +619,28 @@ B. Y2X的转换：
 
 以《微信宠物屋》的RGB LED控制为例，云端定义如下：
  
-![Alt text](./image60.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image60.png)
 
 
 对应文档中数据存储格式如下：
 
-![Alt text](./image61.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image61.png)
 
 
 
 字节序与bit序对应代码中宏定义如下：
 
-![Alt text](./image62.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image62.png)
 
 
 对应的数据点在接收解压时处理如下(位于**gizDataPoint2Event**函数中)：位于
 
-![Alt text](./image63.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image63.png)
 
 
 对应的数据点在发送压缩时处理如下(位于**gizDataPoints2ReportData**函数中)：
 
-![Alt text](./image64.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image64.png)
 
 
 
@@ -660,6 +661,7 @@ GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得
 网站地址：http://www.gizwits.com/about-us
 
 官方二维码：
-![Alt text](./image65.png)
+
+![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image65.png)
 
 
