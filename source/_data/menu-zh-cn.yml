@@ -99,5 +99,8 @@ APP开发:
  
  
 云平台:
-  path: /overview/overview.html
+    产测工具使用文档:
+      path: /Cloud/ent_dev.html
+    日志抓取教程文档:
+      path: /Cloud/enterprise_api.html 
 
