@@ -86,19 +86,19 @@ APP开发:
     
   调试与烧写:
     串口工具使用文档:
-      path: /path/to/article
+      path: /deviceDev/串口工具使用文档.html
     HF-LPB100串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/HF-LPB100串口烧写说明.html
     HF-LPT120串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/HF-LPT120串口烧写说明.html
     MXCHIP串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/MXCHIP串口烧写说明.html
     ESP8266串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/ESP8266串口烧写说明.html
     产测工具使用文档:
-      path: /path/to/article
+      path: /deviceDev/产测工具使用文档.html
     日志抓取教程文档:
-      path: /path/to/article
+      path: /deviceDev/日志抓取教程文档.html
  
  
 云平台:
