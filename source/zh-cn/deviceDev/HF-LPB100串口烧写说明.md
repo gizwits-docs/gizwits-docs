@@ -27,13 +27,13 @@
 
 ## 4.串口设置
 
-1、确认串口参数
+### 4.1.确认串口参数
 
 将上述串口连接电脑后，通过“我的电脑”->“管理”-> “设备管理器”->“端口（COM 和LPT）”选项中可以看到相应增加的COM口。
  
  ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077440542.png)
 
-2、下载串口工具SecureCRT
+### 4.2下载串口工具SecureCRT
 
 下载地址：http://pan.baidu.com/s/1dECLxYD
 
