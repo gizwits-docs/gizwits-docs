@@ -5,7 +5,7 @@
 
 # 操作流程
 
-## 1.在机智云官网下载中心下载HF-LPB100对应的固件
+## 1.下载HF-LPB100对应的固件
  
  ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077175722.png)
  
