@@ -6,7 +6,7 @@ title:设备接入SDK V4A2集成指南
 ## 1.	SDK目的与功能
 机智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
 ## 2.	机智云物联方案概况
- ![Alt text](./1478088778140.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088778140.png)
 
 ## 3.	找到最合适的SDK
 机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台，具体内容请参考：《APICloud SDK 集成指南》。
@@ -52,12 +52,12 @@ title:设备接入SDK V4A2集成指南
 此部分请参考《快速入门》。
 
 **5.4.	下载SDK**
- ![Alt text](./1478088957775.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088957775.png)
  
 **5.5.	导入SDK**
 第一步，双击解开压缩包 GizWifiSDK-Android-xxx.zip。
 第二步，将解压后的libs目录下所有内容拷贝到指定工程的libs目录，保证下图红框中的文件都加载到了工程中：
- ![Alt text](./1478088998492.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088998492.png)
  
 **5.6.	配置AndroidManifest.xml**
 请将下面权限配置代码复制到 AndroidManifest.xml 文件中：
@@ -125,7 +125,7 @@ ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.WRITE
 ```
 
 	请求权限后，系统会弹出请求权限的对话框：
-![Alt text](./1478089519041.png)
+![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089519041.png)
  
 	用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：
 
@@ -170,33 +170,34 @@ fragment.onRequestPermissionsResult(requestCode,permissions,grantResults);    }
 第一步、下载sdk
 下载地址 ：http://site.gizwits.com/zh-cn/developer/resource/sdk?service=m2m
 下载完成以后请自行解压。
- ![Alt text](./1478089637866.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089637866.png)
 
 第二步、导入jar包到Android Studio
- ![Alt text](./1478089651398.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089651398.png)
  
 第三步、把jar包导成库文件
- ![Alt text](./1478089673059.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089673059.png)
 
 第四步、导入so文件
 请在main文件加下创建文件夹jniLibs,将armeabi粘贴到对应的文件夹下：
- ![Alt text](./1478089691846.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089691846.png)
 
 第五步、导入完成以后查看对应的build.gradle
 下图中可以看到已经关联库成功：
- ![Alt text](./1478089707379.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089707379.png)
 
 第六步、测试是否成功
-![Alt text](./1478089721437.png)
+![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089721437.png)
 
 如果有下面图片中的log的话代表成功：
- ![Alt text](./1478089735454.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089735454.png)
 
 # 	SDK流程简介
 ## 1.	通用流程图
- ![Alt text](./1478089762043.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089762043.png)
  
 ## 2.	关键点说明
+
 1)	SDK已经封装了所有的用户、配置、发现、连接、控制的过程，开发者使用这些API可以完成上述流程中的功能开发，不需要再自行实现通讯协议。
 
 2)	SDK采取回调的工作方式，所以必须设置必要的监听，比如通用监听和设备监听，具体请参见流程详解。SDK在主线程中给APP回调。
@@ -263,7 +264,7 @@ proguard.config=${sdk.dir}/tools/proguard/proguard-android.txt:proguard-project.
 # SDK流程详解
 ## 1.	初始化部分
 ### 1.1.	初始化部分流程图
-![Alt text](./1478090975626.png)
+![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478090975626.png)
 ### 1.2.	注册SDK通用监听器
 注册SDK通用监听器是为了能让APP收到来自GizWifiSDK类的响应事件，包含了注册、登录、配置设备、绑定设备等回调接口。该监听器是SDK使用中十分重要的一个监听器，与GizWifiSDK类相关的操作都会在这里会回调。如果没有正确注册通用监听器，将无法正常使用SDK。注册监听时，APP可以根据自己的需求实现回调接口。建议两种设置方式：
 
@@ -382,7 +383,7 @@ if (eventType == GizEventType.GizEventSDK) {
 以下流程中涉及到的监听器注册方法是用子类继承基类的方式实现的。
 
 ### 2.1.	用户部分主要流程图
- ![Alt text](./1478091545169.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478091545169.png)
 
 用户的注册方式有多种，比如手机号、普通用户名、邮箱等，APP可以根据需要采取不同的方式。其他流程比如登录、密码修改、个人信息修改等部分，请直接阅读下面的流程文档。
 
@@ -829,7 +830,7 @@ SDK的设备配置接口如果超时时间还未结束，无法进行下一次�
 需要注意的是，如果配置上线的设备不是APP要获取的产品类型，该设备就不会出现在设备列表中。
 
 ### 3.1.	设备配置流程图
- ![Alt text](./1478092203699.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478092203699.png)
 
 3.3.2.	AirLink配置
 AirLink使用UDP广播方式，由手机端发出含有目标路由器名称和密码的广播，设备上的Wifi模块接收到广播包后自动连接目标路由器，连上路由器后发出配置成功广播，通知手机配置已完成。
@@ -896,7 +897,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 ```
 ## 4.	设备发现和订阅部分
 ### 4.1.	设备发现和订阅流程图
- ![Alt text](./1478092365497.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478092365497.png)
 
 ### 4.2.	设备发现
 APP设置好监听，启动SDK后，就可以收到SDK的设备列表推送。每次局域网设备或者用户绑定设备发生变化时，SDK都会主动上报最新的设备列表。设备断电再上电、有新设备上线等都会触发设备列表发生变化。用户登录后，SDK会主动把用户已绑定的设备列表上报给APP，绑定设备在不同的手机上登录帐号都可获取到。
@@ -1085,7 +1086,7 @@ SDK通过字典键值对方式进行设备控制和状态接收。SDK接收到AP
 智能设备需正确烧写了GAgent固件和机智云串口通讯协议。如果设备定义了数据点，APP发送的指令必须符合数据点定义。如果设备没有定义数据点，设备指令可以按照透传数据以自定义格式下发。
 
 ### 5.1.	设备控制流程图
- ![Alt text](./1478092569984.png)
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478092569984.png)
 
 ### 5.2.	发送控制指令
 设备订阅变成可控状态后，APP可以发送操作指令。操作指令是字典格式，键值对为数据点名称和值。操作指令的确认回复，通过didReceiveData回调返回。
