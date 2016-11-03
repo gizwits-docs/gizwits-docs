@@ -138,7 +138,7 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
 
 在工程的AndroidManifest.xml 文件下，修改versionNmae即可更改SettingsModule模块下，关于界面的版本号显示。示例：
 
-**3.     关于推送与包名（以下使用集成极光推送示例）**
+**C.     关于推送与包名（以下使用集成极光推送示例）**
 
 在新建工程下，替换框架内模块使用时。需要将AndroidManifest.xml 文件package与申请推送时所填包名相对应，并修改集成推送时相应位置。示例：
 
