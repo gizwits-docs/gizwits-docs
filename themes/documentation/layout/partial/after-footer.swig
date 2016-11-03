@@ -5,6 +5,9 @@
 {{ js("js/scrollspy.js") }}
 {{ js("js/documentation.js") }}
 
+<!-- 咨询客服 -->
+<script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
+
 <!-- 百度统计/推广 -->
 <script>
   // 百度站长统计代码
