@@ -1,11 +1,14 @@
 <div class="header">
   <div class="container pure-g">
     <span class="brand pure-u-5-24">
+
       <a href="http://www.gizwits.com" class="logo">
         <img src="{{ url_for('images/logo.png') }}" alt="logo"> 
       </a>
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
+    
+    <div class="mobile-header">{{ __("title") }} {{ __("sub_title") }}</div>
 
     <span class="menu pure-u-16-24">
       <ul class="levelA-wrapper">
@@ -37,7 +40,7 @@
       </ul>
     </span>
   
-    <span class="pure-u-3-24">
+    <span class="pure-u-3-24 lang-switch-wrapper">
       <i class="fa fa-globe" aria-hidden="true"></i> 
       {% if lang == "zh-cn" %}
         <button class="lang-switch" data-lang="en-us">English</button>

@@ -10,10 +10,13 @@
   font-size: 14px;
   
   .brand {
+    @media (max-width: $header-bp) {
+      display: none;
+    }
     font: {
       weight: bold;
     }
-    a{
+    a {
       color: $yellow;
     }
   }
@@ -32,8 +35,13 @@
   }
 
   .menu {
+    @media (max-width: $header-bp) {
+      width: 100%;
+    }
     a {
-      padding: 0 15px;
+      @media (min-width: $header-bp + 1) {
+        padding: 0 15px;
+      }
       display: block;
     }
     ul {
@@ -41,6 +49,9 @@
       margin: 0;
     }
     li {
+      @media (max-width: $header-bp) {
+        display: block;
+      }
       display: inline-block;
       list-style-type: none;
       &:hover {
@@ -61,6 +72,9 @@
     }
     .levelB-wrapper,
     .levelC-wrapper {
+      @media (max-width: $header-bp) {
+        position: inherit;
+      }
       white-space: nowrap;
       display: none;
       position: absolute;
@@ -76,13 +90,17 @@
       }
     }
     .levelB-wrapper {
-      left: 0;
-      top: 100%;
-      padding: 10px 0;
+      @media (min-width: $header-bp + 1) {
+        left: 0;
+        top: 100%;
+        padding: 10px 0;
+      }
     }
     .levelC-wrapper {
-      left: 100%;
-      top: 0;
+      @media (min-width: $header-bp + 1) {
+        left: 100%;
+        top: 0;
+      }
     }
     .levelB,
     .levelC {
@@ -93,18 +111,22 @@
       }
     }
     .levelB.has-submenu {
-      padding: 0 15px;
+      @media (min-width: $header-bp + 1) {
+        padding: 0 15px;
+      }
     }
     .levelA {
-      padding: 0 10px;
-      &:first-child {
-        padding: {
-          left: 15px;
+      @media (min-width: $header-bp + 1) {
+        padding: 0 10px;
+        &:first-child {
+          padding: {
+            left: 15px;
+          }
         }
-      }
-      > a {
-        padding: 0;
-      }
+        > a {
+          padding: 0;
+        }
+      } 
     }
   }
 
@@ -120,6 +142,35 @@
     color: $yellow;
     &:focus {
       outline: none;
+    }
+  }
+
+  .lang-switch-wrapper {
+    @media (max-width: $header-bp) {
+      width: 100%;
+      text-align: right;
+    }
+  }
+
+  .menu,
+  .lang-switch-wrapper {
+    @media (max-width: $header-bp) {
+      padding: 0 20px;
+    }
+  }
+
+  .mobile-header {
+    width: 100%;
+    color: $yellow;
+    text-align: center;
+    letter-spacing: 0;
+    font-size: 16px;
+    background: black;
+    @media (min-width: $header-bp) {
+      display: none;
+    }
+    @media (max-width: $header-bp + 1) {
+      display: block;
     }
   }
 }
