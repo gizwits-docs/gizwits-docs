@@ -28,7 +28,7 @@ https://git.oschina.net/dantang/GoKit_Demo_iOS
 - PushModule: 推送模块，包含 百度和极光的推送SDK 集成封装
 
 # 快速集成指南
-##1.设定初始化参数
+## 1.设定初始化参数
 
 默认程序入口在 UserModule 中的 LoginViewController。在工程的GOpenSourceModules/CommonModule/UIConfig.json 文件中可填写机智云AppID及AppSecret以及程序样式。
 
@@ -60,7 +60,7 @@ https://git.oschina.net/dantang/GoKit_Demo_iOS
 - **wechat：**是否打开微信登录【true：打开】
 - **anonymousLogin：**是否打开匿名登录【true：打开】
 
-##2.加载控制界面
+## 2.加载控制界面
 
 1）框架工程内提供的代码已经可以在不修改任何代码的前提下，进行到控制界面的跳转操作，开发者只需要关心操作界面的逻辑即可。如果需要在设备列表界面中点击某设备后，跳转到自己创建的控制器视图中，请在 AppDelegate.m 文件中修改相应跳转参数。请按图所示修改引入的头文件及跳转视图的类定义，如果使用默认提供的空白界面（GosDeviceController）来进行编写控制界面，可略过此步骤。
  
@@ -90,7 +90,7 @@ self.device.delegate = self;
 ```
 
  
-##3.设置界面增加菜单项及点击处理
+## 3.设置界面增加菜单项及点击处理
 如果需要在设置界面进行列表项的增加或修改，需要操作设置模块（SettingsModule）中的GosSettingsViewController类文件，在 .m 文件中找到 UITableView 的委托方法，进行修改。
 
 
