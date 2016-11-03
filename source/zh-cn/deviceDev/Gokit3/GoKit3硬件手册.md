@@ -1,9 +1,11 @@
-title GoKit 3硬件手册
+title: GoKit 3硬件手册
+---
+
 # GoKit 3开发套件概述
 ## 1.硬件相关
 GoKit 3采用可扩展式的硬件设计方案。核心硬件是包括：功能扩展板、ESP8266 WiFi模块。
 同时GoKit 3兼容标准Arduino接口、Hi3518E WiFi模块、语音模块等相关模组。
-![Alt text](./1478155289532.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478155289532.png)
 ## 2.软件相关
 GoKit 3开发套件使用机智云物联网云服务平台，使用自定义数据点的IoT开发框架，用户可以试用其方便地开发智能硬件产品。
 ## 3.开发者支持
@@ -19,35 +21,36 @@ GoKit 3开发套件使用机智云物联网云服务平台，使用自定义数�
 乐鑫ESP8266 拥有高性能无线SOC，给移动平台设计师带来福音，它以最低成本提供最大实用性，为 WiFi 功能嵌入其他系统提供无限可能。
 ## 2.ESP8266结构图
 
-![Alt text](./1478155586395.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478155586395.png)
+
 ## 3.ESP8266特点
-802.11 b/g/n
- WIFI @2.4 GHz， 支持 WPA/WPA2 安全模式
- 超小尺寸模组 11.5mm*11.5mm
- 内置 10 bit 高精度 ADC
- 内置 TCP/IP 协议栈
- 内置 TR 开关、 balun、 LNA、功率放大器和匹配网络
- 内置 PLL、稳压器和电源管理组件
- 802.11b 模式下+ 19.5dBm 的输出功率
- 支持天线分集
- 断电泄露电流小于10uA
- 内置低功率 32 位 CPU：可以兼作应用处理器
- SDIO 2.0、 SPI、 UART
- STBC、 1x1 MIMO、 2x1 MIMO
- A-MPDU 、 A-MSDU 的聚合和 0.4 s的保护间隔
- 2ms之内唤醒、连接并传递数据包
- 待机状态消耗功率小于1.0mW (DTIM3)
- 工作温度范围 -40 ~ 125℃
+- 802.11 b/g/n
+- WIFI @2.4 GHz， 支持 WPA/WPA2 安全模式
+- 超小尺寸模组 11.5mm*11.5mm
+-  内置 10 bit 高精度 ADC
+-  内置 TCP/IP 协议栈
+- 内置 TR 开关、 balun、 LNA、功率放大器和匹配网络
+- 内置 PLL、稳压器和电源管理组件
+-  802.11b 模式下+ 19.5dBm 的输出功率
+- 支持天线分集
+-  断电泄露电流小于10uA
+- 内置低功率 32 位 CPU：可以兼作应用处理器
+-  SDIO 2.0、 SPI、 UART
+- STBC、 1x1 MIMO、 2x1 MIMO
+- A-MPDU 、 A-MSDU 的聚合和 0.4 s的保护间隔
+- 2ms之内唤醒、连接并传递数据包
+-  待机状态消耗功率小于1.0mW (DTIM3)
+-  工作温度范围 -40 ~ 125℃
 ## 4.ESP8266实物图
 WiFi模组（正面）：
 
-![Alt text](./1478155718807.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478155718807.png)
 WiFi模组（反面）：
 
-![Alt text](./1478155732433.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478155732433.png)
 ## 5.ESP8266模组接口原理图
 
-![Alt text](./1478155753013.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478155753013.png)
 # GoKit 3功能扩展板
 ## 1.功能扩展板介绍
 
@@ -73,22 +76,22 @@ GoKit 3功能扩展板兼容多种型号的WiFi模组，用于连接各种外设
 ## 3.功能扩展板实物图
 功能扩展板实物图（正面）：
 
-![Alt text](./1478156758112.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156758112.png)
 功能扩展板实物图（反面）：
 
-![Alt text](./1478156770706.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156770706.png)
 ## 4.功能扩展板详解
 ### 4.1 按键
 功能扩展板上设计有三个可编程按键，用户可根据需要来使用。
 硬件原理图如下：
 
-![Alt text](./1478156872840.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156872840.png)
 ### 4.2 红外传感器
 扩展板上采用一个单光束反射式红外光电传感器ST188，该传感器模块对环境光线适应能力强，其具有一对红外线发射与接收管，发射管发射出一定频率的红外线，当检测方向遇到障碍物（反射面）时，红外线反射回来被接收管接收，经过比较器电路处理之后，红色指示灯会亮起，同时信号输出接口输出数字信号（一个低电平信号），可通过电位器旋钮调节检测距离，有效距离范围2～80cm，工作电压为3.3V-5V。该传感器的探测距离可以通过电位器调节、具有干扰小、便于装配、使用方便等特点。比较器采用LM393，工作稳定。
 
 硬件原理图如下：
 
-![Alt text](./1478156915338.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156915338.png)
 ### 4.3 温湿度传感器
 扩展板上设计了一款有已校准数字信号输出的温湿度传感器：DHT11。
 
@@ -98,10 +101,10 @@ GoKit 3功能扩展板兼容多种型号的WiFi模组，用于连接各种外设
 
 驱动的时序图如下图所示：
 
-![Alt text](./1478156945859.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156945859.png)
 硬件原理图如下：
 
-![Alt text](./1478156958283.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156958283.png)
 ### 4.4 微型直流电动机
 
 为了模拟现场的执行机构，扩展板上设计一个微型直流电动机，采用L9110进行驱动。
@@ -110,10 +113,10 @@ L9110是为控制和驱动电机设计的两通道推挽式功率放大专用集
 
 管脚波形图：
 
-![Alt text](./1478156983598.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156983598.png)
 硬件原理图如下：
 
-![Alt text](./1478156994820.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478156994820.png)
 ### 4.5 RGB 三色 LED
 
 扩展板上设计了一个RGB三色LED指示灯，通过P9813驱动，可以实现对LED的全色彩控制。
@@ -132,12 +135,12 @@ P9813 是一款全彩点光源 LED 驱劢芯片，采用 CMOS 工艺，提供三
 
 驱动的时序图如下图所示：
 
-![Alt text](./1478157160322.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157160322.png)
 注意：由于 P9813 不是标准的 I2C 接口，为了节约 IO，电路连接在 I2C 的总线上，但是需要配置为 GPIO，根据时序图来实现调色，调光的功能。
 
 硬件原理图如下：
 
-![Alt text](./1478157179862.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157179862.png)
 ### 4.6 OLED屏幕接口
 有机収光二极管（Organic Light-Emitting Diode，OLED）具有自収光，不需背光源、对比度高、厚度薄、规角广、反应速度快、可用于挠曲性面板、使用温度范围广、构造及制程较简单等优异之特性，被认为是下一代的平面显示器新兴应用技术。
 
@@ -145,58 +148,58 @@ P9813 是一款全彩点光源 LED 驱劢芯片，采用 CMOS 工艺，提供三
 
 硬件原理图如下：
 
-![Alt text](./1478157207909.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157207909.png)
 ### 4.7 扬声器接口
 
 功能扩展板提供一个扬声器接口。
 
 硬件原理图如下：
 
-![Alt text](./1478157227393.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157227393.png)
 ### 4.8 咪头接口
 
 功能扩展板提供一组咪头接口。
 
 硬件原理图如下：
 
-![Alt text](./1478157247809.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157247809.png)
 ### 4.9 标准 Arduino 接口
 
 扩展板采用了标准的 Arduino 接口，能使扩展板与Arduino之间无缝链接，也可以插在任何标准的Arduino 的 MCU 主板中。
 
 硬件原理图如下：
 
-![Alt text](./1478157270575.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157270575.png)
 ### 4.10 UART 转USB接口
 
 扩展板预留一个 USB 接口，方便用户调试和通信。转换芯片采用CP2102，具有集成度高的特点，可内置USB2.0全速功能控制器、USB收发器、晶体振荡器、EEPROM及异步串行数据总线（UART），支持调制解调器全功能信号，无需任何外部的USB器件。
 
 硬件原理图如下：
 
-![Alt text](./1478157294911.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157294911.png)
 ### 4.11 WiFi模组接口
 
 拓展版提供一个双模式模组接口，可按需求切换为SOC模式（GoKit 3所使用的模式）或MCU模式。
 
 硬件原理图如下：
 
-![Alt text](./1478157312213.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157312213.png)
 ### 4.12 语音降噪模块接口
 
 扩展板提供一个语音降噪模块接口。
 
 硬件原理图如下：
 
-![Alt text](./1478157333930.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157333930.png)
 ### 4.13 预留接口
 
-![Alt text](./1478157351579.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157351579.png)
 扩展板P9接口具有电源输出、共地的功能。
 P7 接口中有一组SWD接口（可用于模组程序烧录）、一组Uart TTL接口（用来输出模组Debug日志）。
 
 P6 接口是Arduino的外置兼容接口。
 #附录：GoKit 3功能扩展板原理图
 
-![Alt text](./1478157403571.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157403571.png)
 
-![Alt text](./1478157409033.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit3/manual/1478157409033.png)
