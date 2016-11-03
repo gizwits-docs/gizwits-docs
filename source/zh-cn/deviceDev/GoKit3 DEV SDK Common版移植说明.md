@@ -3,10 +3,10 @@ GoKit3 DEV SDK Common版移植说明
 
 
 
-#前文需知
+# 前文需知
 
 
-##1.什么是&quot;代码自动生成工具&quot;？
+## 1.什么是&quot;代码自动生成工具&quot;？
 
 
 为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。
@@ -21,12 +21,12 @@ MCU方案默认支持 **STM32F103C8x** 平台，如果是其他MCU芯片，可�
 
 在机智云平台定义一个产品后，选择左侧服务中的&quot;MCU开发&quot;，选中硬件方案中的&quot;独立MCU方案&quot;，再选中&quot;硬件平台&quot;中的&quot;其他平台&quot;，最后点击&quot;生成代码包&quot;，等待生成完毕下载即可。
 
-![Alt text](./image3.png)
+![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/image3.png)
 
 
 下载完成后解压如下：
 
- ![Alt text](./image4.png)
+ ![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/image4.png)
 
 
 ## 3.通用平台移植需知
@@ -41,17 +41,17 @@ C.平台支持至少2K的RAM空间（可调整环形缓冲区大小来解决此�
 
 注：环形缓冲区修改位置: **gokit\_mcu\_stm32\_xxx\Gizwits\gizwits\_protocol.h**
 
- ![Alt text](./image5.png)
+ ![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/image5.png)
 
 
 原代码中MAX\_PACKAGE\_LEN = 950，即环形缓冲区所占RAM空间大小为950\*2 = 1900 字节，开发者可以此来调整程序所占RAM空间的大小。
 
 
-#通用平台版代码移植说明
+# 通用平台版代码移植说明
 
 ## 1.文件介绍
 
- ![Alt text](./image6.png)
+ ![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/image6.png)
 
  
 重要文件解读:
@@ -124,7 +124,7 @@ WIFI\_开头的事件为wifi状态更新事件，data参数仅在WIFI\_RSSI有�
 
 自动化代码生成工具已经根据用户定义的产品数据点信息，生成了对应的机智云串口协议层代码，用户需要移植代码到自己的工程中，完成设备的接入工作。如图如下：
 
- ![Alt text](./image7.png)
+ ![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/image7.png)
 
 
 代码绿色部分的协议逻辑和程序主流程已经帮用户实现，图中用黄色字体注标的部分待用户实现并完成代码的移植。用户的移植分以下几步进行：
@@ -141,7 +141,7 @@ e.实现应用层逻辑开发（必要）：包括数据上下行、入网配置
 
 
 
-#移植步骤介绍
+# 移植步骤介绍
 
 下面我们以 **MSP430平台的移植** 为例来介绍移植步骤。
 
@@ -555,7 +555,7 @@ int32_t gizwitsSetMode(uint8_t mode)
 
                 break;
 
-#相关支持
+# 相关支持
 
 1)   如果您是开发者
 
@@ -573,6 +573,6 @@ GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得
 
 官方二维码：
 
- ![Alt text](./image8.png)
+ ![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/image8.png)
 
 
