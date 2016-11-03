@@ -29,7 +29,7 @@ APP开发:
     Android 消息推送:
       path: /AppDev/Android消息推送.html
     Android 第三方登录与换肤:
-      path: /path/to/article
+      path: /AppDev/Android第三方登录与换肤.html
   
   iOS SDK:
     path: /AppDev/iossdk.html
