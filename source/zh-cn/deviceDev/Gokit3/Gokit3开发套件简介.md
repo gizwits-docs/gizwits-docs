@@ -107,7 +107,7 @@ GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之�
 
 9. 其他预留接口。
 
-#  3、FAQ
+#  FAQ
 
 ## 1、SOC版与MCU版的区别
 ![@MCU方式](/assets/zh-cn/deviceDev/Gokit3/intro/image7.jpeg)
