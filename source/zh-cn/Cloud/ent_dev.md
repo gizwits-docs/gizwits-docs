@@ -39,6 +39,20 @@ title: 企业应用开发
 登录开发者中心，获取Eid，设置ip白名单
 ### 4、调试Demo代码
 该Demo代码已实现了接口协议，只需修改eid,esecret即可实时获取设备数据。Demo代码请点击 [Demo code](https://github.com/gizwits/noti-java-demo/tree/master)
+public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        String enterpriseId = "8fb23e6dbf06438b8200cf4588e45b5f";
+        String enterpriseSecret = "c7c9e01549004b96a8612a0e7c71a9d6";
+        new GizwitsNoti(enterpriseId, enterpriseSecret, 
+                        new CallBack() {
+                            public void call(JSONObject msg)    
+                            {
+                                System.out.println( msg.toString() );
+                            }
+                        }).connect();
+    }
 
 Demo Code已实现的功能：
 -  登录接口
@@ -49,14 +63,16 @@ Demo Code已实现的功能：
 根据Demo Code，实现接收到数据后的处理。
 
 ## 使用企业API
-### 申请企业API服务
+### 1、申请企业API服务
 企业开发者登陆开发者中心，选择添加服务，如下图
+![@企业API申请](/assets/zh-cn/cloud/add_ent_api.png)
 
-服务审批通过后，进入下一步
+点击上图红色框中的企业API，进入下一步
 
+![@企业API开通申请](/assets/zh-cn/cloud/add_ent_api02.png)
 
-### 获取eid等参数
+### 2、获取参数
 登陆开发者中心，选择“企业信息”，进入“API配置”
 
-### 了解企业API接口协议
+### 3、理解协议
 可参考接口协议。
