@@ -4,7 +4,7 @@
 
 # 操作流程
 
-## 1.在机智云官网下载中心下载MXCHIP模块对应的固件
+## 1.下载MXCHIP模块对应的固件
 
  ![name](/assets/zh-cn/deviceDev/debug/MXCHP/1478078324899.png)
 
