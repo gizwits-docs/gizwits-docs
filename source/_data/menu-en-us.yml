@@ -1,23 +1,25 @@
 Tutorial:
-  path: /overview/overview.html
+  Intro in 5 mins:
+    path: /path/to/article
+  Device Accessing:
+    path: /path/to/article
+  App Development:
+    path: /path/to/article
 Device:
-  二级菜单A二级菜单A:
-    path: /path/to/article
-  二级菜单B:
-      三级菜单A:
-        path: /path/to/article
-      三级菜单B:
-        path: /path/to/article
-  二级菜单C:
-    path: /path/to/article
-  二级菜单D:
-      三级菜单A:
-        path: /path/to/article
-      三级菜单B:
-        path: /path/to/article
+  path: /path/to/article
 App:
-  path: /path
+  ios SDK:
+    path: /path/to/article
+  Android SDK:
+    path: /path/to/article
+  Wechat SDK:
+    path: /path/to/article
 Cloud:
-  path: /path
+  Business Cloud:
+    path: /path/to/article
+  D3:
+    path: /path/to/article
+  Global Deployment:
+    path: /path/to/article
 API:
-  path: /path
+  path: /path/to/article

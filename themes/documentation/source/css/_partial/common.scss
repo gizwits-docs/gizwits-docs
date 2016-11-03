@@ -4,7 +4,7 @@
 }
 
 .container {
-  width: 1080px;
+  width: 1180px;
   margin: 0 auto;
   padding: 0 50px;
 }
@@ -14,4 +14,21 @@ a {
   &:hover {
     text-decoration: none;
   }
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  clear: both;
+  zoom: 1;
+}
+
+::-webkit-scrollbar {
+display: none;
 }

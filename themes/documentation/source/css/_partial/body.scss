@@ -8,11 +8,16 @@
     border-bottom: 1px solid $light-gray;
     position: relative;
     .title {
-      font-size: 28px;
+      font: {
+        size: 28px;
+        weight: bold;
+      }
+      margin-top: -10px;
     }
     .edit-link {
+      color: #686868;
       position: absolute;
-      bottom: 4px;
+      bottom: 20px;
       right: 0;
     }
   }
@@ -20,54 +25,87 @@
   .navigation,
   .markdown-body {
     background: #fcfcfc;
+    margin: {
+      top: 30px;
+    }
   }
 
   .navigation {
-    font-size: 14px;
-    width: 18%;
-    line-height: 2em;
-    font-size: .8em;
-    position: fixed;
-    left: 5%;
-    border: 1px solid $dark-gray;
-    box-shadow: 2px 2px 10px $dark-gray;
-    margin: {
-      top: 50px;
+
+    .navigation-inner {
+      position: fixed;
+      width: 220px;
+      background-color: white;
+      border: 1px solid $dark-gray;
+      box-shadow: 2px 2px 10px $dark-gray;
+      padding: {
+        top: 20px;
+      }
+      line-height: 2em;
+      font-size: 14px;
     }
-    padding: {
-      top: 20px;
-      bottom: 20px;
+    .nav {
+      max-height: 400px;
+      overflow: auto;
+    }
+
+    .nav-control {
+      text-align: center;
+      border-top: 2px solid $dark-gray;
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+      padding: {
+        top: 10px;
+        bottom: 10px;
+      }
+    }
+    
+    float: left;
+    width: 220px;
+    margin: {
+      right: 20px;
+    }
+    
+    .nav-title {
+      margin: 0;
+      margin-left: 15px;
+      margin-top: 10px;
+      font-size: 18px;
     }
     .active {
-      background: $yellow;
+      &,
+      &:hover {
+        background: $yellow;
+      }
     }
-    ol,
+    ul,
     li {
       list-style-type: none;
     }
-    ol {
+    ul {
       padding-left: 0;
-      ol {
-        display: none;
+      li {
+        &:hover {
+          background: $dark-gray;
+        }
       }
     }
     a {
+      padding: 3px 20px;
       display: block;
       white-space: nowrap;
       width: 100%;
-      padding: 3px 20px;
-      color: $black;
+      color: #3c4145;
       text-overflow: ellipsis;
       overflow: hidden;
-      &:hover {
-        background: $light-gray;
-      }
-    }
-    .h1:before {
-      content: '>\0000a0';
     }
     .h2 {
-      padding-left: 33px;
+      a {
+        padding-left: 33px;
+      }
+      display: none;
     }
   }
 }

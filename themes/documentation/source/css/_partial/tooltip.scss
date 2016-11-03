@@ -9,19 +9,20 @@
     display: none;
     width: 60px;
     background-color: $black;
+    font-style: normal;
     color: #fff;
     text-align: center;
     padding: 4px 8px;
-    border-radius: 6px;
     position: absolute;
     z-index: 1;
     top: 170%;
     left: 50%;
     margin-left: -30px;
+    margin-top: 5px;
     font-size: .7em;
 
     &:after {
-      content: " ";
+      content: "";
       position: absolute;
       bottom: 100%;
       left: 50%;

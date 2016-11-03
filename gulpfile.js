@@ -34,4 +34,18 @@ gulp.task('moveFiles', function() {
   shell.mv(path.resolve(publicDir, 'documentation.js'), jsDir)
 })
 
+gulp.task('modifyIndex', function() {
+  var indexFile = path.resolve(publicDir, 'index.html')
+  var html = shell.cat(indexFile).stdout
+  var header = html.match(/<!DOCTYPE\shtml>[\S\s]+<\/head>/)[0]
+  var body = html.match(/<body>[\S\s]+class="body"/)[0]
+  body = body.slice(0, body.length - 17)
+
+  var scripts = html.match(/<script[\S\s]+<\/html>/)[0]
+  var newHtml = header + body + scripts
+  shell.rm(indexFile)
+  shell.touch(indexFile)
+  shell.echo(newHtml).to(indexFile)
+})
+
 gulp.task('default', ['cpAssets', 'cssMinify', 'jsMinify'])

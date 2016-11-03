@@ -1,18 +1,30 @@
-.widget {
-  position: fixed;
-  bottom: 5%;
-  right: 5%;
-  a {
-    color: white;
-    display: block;
-    background: $dark-gray;
-    padding: 0 5px;
-    margin: 10px 0;
-    font-size: 1.5em;
-    text-align: center;
+.widget-wrapper {
+  float: left;
+  width: 50px;
+  &,
+  .widget {
+    width: 50px;
+  }
 
-    &:hover {
-      color: $black;
+  .widget {
+    position: fixed;
+    bottom: 100px;
+    margin: {
+      left: 20px;
+    }
+    a {
+      color: #000;
+      display: block;
+      height: 50px;
+      background: #ddd;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 13px;
+      text-align: center;
+
+      &:hover {
+        color: $black;
+      }
     }
   }
 }

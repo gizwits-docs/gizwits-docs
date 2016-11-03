@@ -6,9 +6,6 @@
     {{ partial("partial/header", {lang: lang}) }}
     {{ body }}
     {{ partial("partial/footer") }}
-    
-    {{ partial("partial/widget") }}
-
     {{ partial("partial/after-footer") }}
   </body>
 </html>
