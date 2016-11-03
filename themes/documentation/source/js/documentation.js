@@ -105,7 +105,7 @@
 +function($) {
   $(function() {
     var path = location.pathname
-    var editPath = 'https://github.com/gizwits-docs/gizwits-docs/edit/develop/source' + path.slice(0, path.length - 4) + 'md'
+    var editPath = 'https://github.com/gizwits-docs/gizwits-docs/edit/master/source' + path.slice(0, path.length - 4) + 'md'
     $('.edit-link').attr('href', editPath)
   }) 
 }(jQuery)
