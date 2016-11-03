@@ -3841,7 +3841,7 @@ GizPushBaiDu  | 百度推送：0
 GizPushJiGuang  | 极光推送：1
 
 
-## 错误码描述**
+## 错误码描述
 
 errorCode |       msg  |
 ---------- |   --------  |
@@ -3980,14 +3980,14 @@ errorCode |       msg  |
 10011  | GIZ_SITE_DATAPOINTS_NOT_MALFORME
 
 
-## 新旧设备配置方式对照表**
+## 新旧设备配置方式对照表
 GizWifiConfigureMode  | 设备配置方式（old）  | 设备配置方式（new） 
 ---------- |   --------  |   --------  |
 GizWifiSoftAP  | 软AP配置方式：1  | 软AP配置方式：0
 GizWifiAirLink  | 一键配置方式：2  | 一键配置方式：1
 
 
-## 新旧错误码对照表**
+## 新旧错误码对照表
 
 errorCode(new) |   errorCode(old)  |   msg(old)  |
 ---------- |   --------  |   --------  |
@@ -4032,7 +4032,7 @@ errorCode(new) |   errorCode(old)  |   msg(old)  |
 其他  | -1 | GizWifiError_GENERAL
 
 
-## 新旧错误码转换函数**
+## 新旧错误码转换函数
 
 errorCodeConversion
 
