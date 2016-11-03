@@ -5,7 +5,7 @@ title:  微信应用开发
 如果开发者有通过微信公众平台作为与最终消费者的交互界面的需求，您可以通过阅读本文档了解如何借助机智云以及微信公众号、微信硬件平台进行开发。由于基于微信公众号进行硬件设备的接入、控制需要与多个平台交互。所以，有必要对每个平台的作用有清晰的了解。
 
 ## 总体接入流程图
-![Alt text](./wechat_01.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_01.png)
 ## 机智云
 
 如图①在微信接入业务场景中，通过开发者中心（site.gizwits.com）的图形化界面定义设备功能，机智云自动生成设备MCU与通信模组之间的串口通信协议，开发者根据协议文档即可实现设备的联网能力。
@@ -71,7 +71,7 @@ title:  微信应用开发
 
 微信接入前，需保证，设备能正常地与机智云进行通讯，设备的具体开发流程如下。
 
-![Alt text](./wechat_02.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_02.png)
 
  注意，在WIFI模块中，写入AirKiss时，需要配置公众号的原始ID。也就说，除了将机智云的product_key写入MCU以外，还需要将公众号原始ID写入WIFI固件中。关于固件的烧录，厂商或者小伙伴们如有困难，可以寻求机智云 · 客服MM的帮助。
 
@@ -79,7 +79,7 @@ title:  微信应用开发
 
 微信客户端APP可以通过扫描二维码添加设备。设备二维码相关信息请点击这里。设置内容如下：
 
-![Alt text](./wechat_03.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_03.png)
 
 ## 设备授权
 
@@ -89,7 +89,7 @@ title:  微信应用开发
 
 很多小伙伴反应，授权经常失败，我们这里给出一组基于WIFI通讯的示例，大家可以参考：
 
-![Alt text](./wechat_04.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_04.png)
 
  注意：12位xxxxxxxxxxxx，代表设备的Mac地址，id是指设备ID，也就是机智云的did。但因为设备必须在上线后，机智云才会分配一个did，所以，我们并无法预知did是什么。通常的做法是：将id和mac，都设置为设备的Mac值。
 
@@ -107,7 +107,7 @@ op_type为0时，表示添加一台设备，后面需要跟着product_id字段(�
 
 打开你的微信（确保是wifi链接状态），扫一扫你的产品二维码。
 
-![Alt text](./wechat_05.jpg)
+![Alt text](/assets/zh-cn/WechatDev/wechat_05.jpg)
 
 下面有两个按钮，绿色的按钮，是启动微信的AirKiss，将WIFI的账号密码，发送给设备的WIFI模块。
 
@@ -137,11 +137,11 @@ SDK，可以在本文的附件中下载。
 
 我们使用微信的OpenId，作为唯一标识，生成匿名用户。什么时候注册匿名用户呢？微信绑定设备时候，将推送一条设备绑定事件消息到我们的业务服务器。我们在这个时候，将同时完成注册匿名用户，以及绑定用户/设备的操作。
 
-![Alt text](./wechat_06.jpg)
+![Alt text](/assets/zh-cn/WechatDev/wechat_06.jpg)
 
 微信在绑定时，发送这么一条事件消息：
 
-![Alt text](./wechat_6.5.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_6.5.png)
 
 我们需要的是其中的OpenID和Mac，然后我们调用机智云的Java-SDK：
 
@@ -170,11 +170,11 @@ DeviceInfo deviceInfo = OpenApi.bindDevice(
 其中deviceAlias（设备别名）以及deviceRemark（设备备注）都可以填空字符串“”。gizwitsProductKey就是你在开发者中心创建的产品。
 
 
-![Alt text](./wechat_07.jpg)
+![Alt text](/assets/zh-cn/WechatDev/wechat_07.jpg)
 
 而gizwitsProductSecret，则是该产品对应的密匙，在产品的详细信息中可以找到。
 
-![Alt text](./wechat_08.jpg)
+![Alt text](/assets/zh-cn/WechatDev/wechat_08.jpg)
 
 gizwitsAppId是机智云中，APP的Id。由于一个产品，可能是多个APP操作的，比如IOS的APP，Android的APP，网站Web应用，甚至微信这样的轻应用，都算是一个APP。因此，在创建产品后，你还可以在为产品绑定一个或多个APP。这里的gizwitsAppId就是我们所绑定APP的Id了。注意，APP必须绑定在产品上，才能使用。
 
@@ -207,7 +207,7 @@ Boolean isOnline = OpenApi.getDeviceOnlineStatus(wechatOpenId, gizwitsAppId, giz
 
 ## 代码样例
 
-![Alt text](./wechat_09.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_09.png)
 
 请注意，在服务器部署的时候，部分开发者会发现部署失败。tomcat中的catalina日志会报错：
 
@@ -231,7 +231,7 @@ javax.net.ssl.SSLException:java.security.ProviderException:java.security.KeyExce
 
 其中最重要的参数，是code，我们通过Code可以获取OpenId。然后，我们再将OpenId返回到页面中。
 
-![Alt text](./wechat_10.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_10.png)
 
 ## 连接机智云的WebSocket
 
@@ -241,7 +241,7 @@ javax.net.ssl.SSLException:java.security.ProviderException:java.security.KeyExce
 
 首先是，构建一个gizwits服务：
 
-![Alt text](./wechat_11.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_11.png)
 
  这个gizwits服务，会负责接下来所有的操作，包括：连接设备，读取设备的数据点，操作设备等。
 
@@ -254,7 +254,7 @@ javax.net.ssl.SSLException:java.security.ProviderException:java.security.KeyExce
 
 当然，此时gizwits服务，并没有运行起来，我们还需要初始化操作。但在操作之前，我们可以选择配置一个回调函数，它会在初始化结束后，自动运行。
 
-![Alt text](./wechat_12.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_12.png)
 
 当执行gizwits.init()的时候，就会初始化gizwits服务，并且将匿名用户OpenId绑定的所有设备，放置在回调函数的devices中。
 
@@ -264,7 +264,7 @@ devices列表中的每个设备，都会有六个属性，分别是product_key(�
 
 ## 设备列表
 
-![Alt text](./wechat_13.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_13.png)
 
 上面的操作中，我们已经获取到了设备列表。一般来说，客户可能拥有多个设备，因此，我们在这一步，就可以罗列一个设备列表，由用户自己决定，来操作哪台设备。
 
@@ -277,7 +277,7 @@ devices列表中的每个设备，都会有六个属性，分别是product_key(�
 
 连接成功后，我们就可以收到设备上报的数据了。上报的数据通过回调函数：gizwits.onReceivedAttrs。该回调函数会有一个回调值（参数），这个回调值的格式如下：
 
-![Alt text](./wechat_14.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_14.png)
 
 上面的操作中，我们已经获取到了设备列表。一般来说，客户可能拥有多个设备，因此，我们在这一步，就可以罗列一个设备列表，由用户自己决定，来操作哪台设备。
 
@@ -291,7 +291,7 @@ devices列表中的每个设备，都会有六个属性，分别是product_key(�
 
 连接成功后，我们就可以收到设备上报的数据了。上报的数据通过回调函数：gizwits.onReceivedAttrs。该回调函数会有一个回调值（参数），这个回调值的格式如下：
 
-![Alt text](./wechat_15.png)
+![Alt text](/assets/zh-cn/WechatDev/wechat_15.png)
 
 ## 手动读取：设备数据点
 
