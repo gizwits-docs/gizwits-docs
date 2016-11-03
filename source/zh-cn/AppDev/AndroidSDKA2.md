@@ -1,5 +1,5 @@
 
-title:设备接入SDK V4A2集成指南
+title: 设备接入SDK V4A2集成指南
 ---
  
 # 	设备接入SDK概述
