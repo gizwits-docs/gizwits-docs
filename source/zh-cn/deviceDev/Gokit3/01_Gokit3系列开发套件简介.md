@@ -8,9 +8,9 @@ Gokit3是GoKit产品系列的第三代，支持MCU、SoC、BLE、语音、模式
 
 GoKit3的扩展板的模组接口采用双排母的设计，模组的单排针根据用法不同选择MCU(MCU模式接口)和SoC(SoC模式接口)两种接入方式，如下图所示扩展板接口图：
 
-![](/zh-cn/deviceDev/Gokit3/intro/media/image1.png)
+![](/assets/zh-cn/deviceDev/Gokit3/intro/image1.png)
 
-![](/zh-cn/deviceDev/Gokit3/intro/media/image2.png)
+![](/assets/zh-cn/deviceDev/Gokit3/intro/image2.png)
 
  **说明：**
 
@@ -23,7 +23,7 @@ GoKit3的扩展板的模组接口采用双排母的设计，模组的单排针�
 
 ## 1、GoKit3(S)
 
-![](/zh-cn/deviceDev/Gokit3/intro/media/image3.jpeg)
+![](/assets/zh-cn/deviceDev/Gokit3/intro/image3.jpeg)
 
 GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之一，目的是帮助传统硬件快速接入互联网。完成入网之后，数据可以在产品与云端、制造商与用户之间互联互通，实现智能互联。
 
@@ -63,16 +63,16 @@ GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之�
 
 ### 创客版底板
 
-![](/zh-cn/deviceDev/Gokit3/intro/media/image4.png)
+![](/assets/zh-cn/deviceDev/Gokit3/intro/image4.png)
 
 ### 标准版底板
 
-![](/zh-cn/deviceDev/Gokit3/intro/media/image5.png)
+![](/assets/zh-cn/deviceDev/Gokit3/intro/image5.png)
 
 
 ## 2、GoKit3(V)
 
-![](/zh-cn/deviceDev/Gokit3/intro/media/image6.jpeg)
+![](/assets/zh-cn/deviceDev/Gokit3/intro/image6.jpeg)
 
 
 **GoKit3(V)**是机智云（GizWits）推出的物联网智能硬件开发套件（第三代）之一，目的是帮助传统硬件快速接入互联网。完成入网之后，数据可以在产品与云端、制造商与用户之间互联互通，实现智能互联。
@@ -110,9 +110,9 @@ GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之�
 #  3、FAQ
 
 ## 1、SOC版与MCU版的区别
-![@MCU方式](/zh-cn/deviceDev/Gokit3/intro/media/image7.jpeg)
+![@MCU方式](/assets/zh-cn/deviceDev/Gokit3/intro/image7.jpeg)
 
-![@SoC方式](/zh-cn/deviceDev/Gokit3/intro/media/image8.jpeg)
+![@SoC方式](/assets/zh-cn/deviceDev/Gokit3/intro/image8.jpeg)
 
 
 **MCU版**
