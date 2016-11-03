@@ -48,22 +48,23 @@ title: 企业应用开发
 ![@企业API开通申请](/assets/zh-cn/cloud/ent_info02.png)
 ### 4、调试Demo代码
 该Demo代码已实现了接口协议，只需修改eid,esecret即可实时获取设备数据。Demo代码请点击 [Demo code](https://github.com/gizwits/noti-java-demo/tree/master)
+```java
 public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
         
-        String enterpriseId = "8fb23e6dbf06438b8200cf4588e45b5f";
-        String enterpriseSecret = "c7c9e01549004b96a8612a0e7c71a9d6";
+        String enterpriseId = "8fb23e6dbf06438b8200cf4588e";  //修改为您的企业的eid参数
+        String enterpriseSecret = "c7c9e01549004b96a8612a0ed6";//同上
         new GizwitsNoti(enterpriseId, enterpriseSecret, 
                         new CallBack() {
                             public void call(JSONObject msg)    
                             {
-                                System.out.println( msg.toString() );
+                                System.out.println( msg.toString() );  
                             }
                         }).connect();
     }
 
-
+```
 
 ### 5、按需实现
 企业根据Demo Code，实现接收到设备数据后的业务逻辑。如：
