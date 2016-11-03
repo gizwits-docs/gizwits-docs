@@ -342,23 +342,23 @@ gizwits.write(did, JSON.parse(command));
 最后，希望大家能多多反馈意见，为更加便捷的开发贡献一份力量。
 
 # FAQ
-#### 机智云Web Socket API服务是什么？
+#### 1、机智云Web Socket API服务是什么？
 
 机智云Web Socket API服务是为了满足基于Html5应用如微信公众号这种应用远程控制设备，实时展现设备状态而开发的一套API接口。Web Socket API主要是为了弥补HTTP协议短连接的不足，能够实时将设备数据传输到网页并展现。
 
-#### WEB socket协议与HTTP有什么区别？
+#### 2、WEB socket协议与HTTP有什么区别？
 HTTP协议是由客户端主动向服务端发起单向通信，是短连接。 
 
 Web Socket是长连接双向通信，服务端与客户端都可主动发送数据。
 
-#### 如果未成功绑定设备，是否可以调用web socket api提供的控制设备指令？
+#### 3、如果未成功绑定设备，是否可以调用web socket api提供的控制设备指令？
 
 未成功绑定设备，不能成功调用控制设备的指令。 
 
-#### 在使用设备控制api与服务端通讯，采用什么编码？
+#### 4、在使用设备控制api与服务端通讯，采用什么编码？
 采用utf8编码。数据点中枚举值为非ASCII的字符明确需要以Unicode编码。 
 
-#### 设备控制api协议中的参数详细描述有吗？
+#### 5、设备控制api协议中的参数详细描述有吗？
 
 did：目标设备的did。attr：属性值。raw：自定义内容。
 
@@ -370,7 +370,7 @@ raw的值需要结合p0协议的定义。
 
 websocket只是m2m客户端的一种存在形式。因此与open api的结合如同用户或设备与open api中定义的参数是一样的，可在Open api获取参数的详细意义。
 
-#### Web socket api提供SSL的通讯支持吗？
+#### 6、Web socket api提供SSL的通讯支持吗？
 
 支持。
 
