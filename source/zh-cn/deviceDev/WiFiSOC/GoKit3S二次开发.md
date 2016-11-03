@@ -1,5 +1,5 @@
-GoKit3(S) 二次开发--开发环境搭
-====
+title: GoKit3(S) 二次开发--开发环境搭
+---
 #GoKit3(S)开发环境准备
 
 ##1.开发环境搭建方式
@@ -16,7 +16,7 @@ GoKit3(S)有两种开发环境的搭建方式：
 链接: http://pan.baidu.com/s/1eSbSsQQ 密码: 46vf
 
 安装包说明：
-![Alt text](./image3.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image3.png)
 
 注：
 开发者需先安装虚拟机VirtualBox (及运行VirtualBox-4.3.12-93733-Win.exe)，然后用VirtualBox 加载编译环境的虚拟镜像（ESP8266_lubuntu_20141021.ova）。
@@ -29,68 +29,68 @@ xtensa-lx106-elf.tar.bz2 是交叉编译工具，在“自定义开发环境”�
 
 Step 1: 选择 "Preferences" 选项
 
-![Alt text](./image4.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image4.png)
 
 
 Step 2: 选择 "General" 创建VM默认虚拟机路径，例如： D:\vm 
 
-![Alt text](./image5.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image5.png)
 
 
 Step 3: 选择 "Import Appliance " 选项
 
-![Alt text](./image6.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image6.png)
 
 
 Step 4: 选择要加载的虚拟镜像，例如: D:\vm\ ESP8266_lubuntu_20141021.ova
 
-![Alt text](./image7.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image7.png)
 
 
 Step 5: 导入虚拟镜像
 
-![Alt text](./image8.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image8.png)
 
 
 导入后，可以发现相应文件 D:\vm\ ESP8266_lubuntu_1:
 
-![Alt text](./image9.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image9.png)
 
 
 Step 5: 创建共享文件夹
 
 在windows下创建名叫 "share"的共享文件，使VirtualBox与windows之间方便的进行文件传输，操作步骤如下：
 
-![Alt text](./image10.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image10.png)
 
-![Alt text](./image11.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image11.png)
 
 
 Step 6: 验证编译环境
 
 运行链接脚本： “./mount.sh”
 
-![Alt text](./image12.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image12.png)
 
 
 输入用户密码： **“espressif”**，回车确认。
 
-![Alt text](./image13.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image13.png)
 
 
 进入Gokit3(S)文件目录（可查看**“GoKit3(S)源码编译”**一节）
 
-![Alt text](./image14.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image14.png)
 
 
 运行编译脚本：./gen_misc.sh
 
-![Alt text](./image15.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image15.png)
 
 
 显示如下说明编译环境搭建成功。
 
-![Alt text](./image16.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image16.png)
 
 
 如有问题请查看乐鑫官方说明：
@@ -105,24 +105,24 @@ https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
 
 Step 1: 将 **xtensa-lx106-elf.tar.bz2**  复制到 D:\share 中。（之前创建的共享文件夹）完成后如下：
 
-![Alt text](./image17.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image17.png)
 
 
 Step 2: 进入Ubuntu运行Terminal，如下图顺序打开Terminal
 
-![Alt text](./image18.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image18.png)
 
 
 首先进入root权限，命令行中输入：sudo su ，输密码后回车。
 
-![Alt text](./image19.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image19.png)
 
 
 更新源：
 
 apt-get update
 
-![Alt text](./image20.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image20.png)
 
 
 安装相关软件库：
@@ -135,7 +135,7 @@ apt-get update
 
 cd /mnt/hgfs/share
 
-![Alt text](./image21.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image21.png)
 
 
 命令行顺序执行：
@@ -146,7 +146,7 @@ cd /opt/
 
 tar -jxvf xtensa-lx106-elf.tar.bz2					//解压后显示如下
 
-![Alt text](./image22.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image22.png)
 
 
 cd /home/$ username	                    //$username为登录用户名
@@ -155,7 +155,7 @@ vim .profile
 
 export PATH="/opt/xtensa-lx106-elf/bin:$PATH"		//添加到最后一行 保存退出
 
-![Alt text](./image23.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image23.png)
 
 
 exit											//注意在要退出超级用户权限
@@ -165,7 +165,7 @@ source .profile 								//在用户名权限下执行此脚本
 echo $PATH									//显示红框所示表示配置正确		
 
 
-![Alt text](./image24.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image24.png)
 
 如有问题请查看**乐鑫官方**说明：
 
@@ -176,21 +176,21 @@ GoKit3(S)源码下载地址：
 
 http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit
 
-![Alt text](./image25.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image25.png)
 
 
 #GoKit3(S)源码编译
 
 1) 将GoKit3(S)源码解压后放入share共享目录下：
 
-![Alt text](./image26.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image26.png)
 
 
 2) 进入编译目录：
 
 cd /mnt/hgfs/share/gokit-soc-esp8266/app/
 
-![Alt text](./image27.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image27.png)
 
 
 3) 设置编译脚本为Unix格式，防止Win系统下对编译脚本产生影响：
@@ -204,7 +204,7 @@ vim gen_misc.sh
 4) 运行编译脚本：
 ./gen_misc.sh 
 
-![Alt text](./image28.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image28.png)
 
 
 注：如图所示表明编译成功
@@ -212,13 +212,13 @@ vim gen_misc.sh
 5) 生成的固件位置:
 share/gokit3_SoC_ESP8266_xxx/bin/upgrade
 
-![Alt text](./image29.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image29.png)
 
 
 Windows中显示如下
 
 
-![Alt text](./image30.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image30.png)
 
 
 #GoKit3(S)固件下载
@@ -230,7 +230,7 @@ http://bbs.espressif.com/viewtopic.php?f=57&t=433
 
 下载完毕解压后点击运行**“ESP_DOWNLOAD_TOOL_V2.4.exe”**
 
-![Alt text](./image31.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image31.png)
 
 
 ##2.设置烧写选项
@@ -262,7 +262,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 烧写选项按如下图所示选择、填写：
 
-![Alt text](./image32.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image32.png)
 
 
 注：
@@ -281,22 +281,22 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 ##3.连接TTL转USB接口
 
-![Alt text](./image33.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image33.png)
 
 
 将TTL转USB与电脑连接：
 
-![Alt text](./image34.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image34.png)
 
 
 设备管理器中找到对应的串口号：（此处为COM4）
 
-![Alt text](./image35.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image35.png)
 
 
 ##4.给Gokit供电
 
-![Alt text](./image36.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image36.png)
 
 
 注：
@@ -307,39 +307,39 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 首先，将拨码开关设为程序烧录模式（下拨位置）
 
-![Alt text](./image37.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image37.png)
 
 
 相继按下烧录工具的“START”键与WiFi模组的“Reset”键，开始烧录程序：
 
-![Alt text](./image38.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image38.png)
 
 
-![Alt text](./image39.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image39.png)
 
 
 若显示“完成”及烧录成功
 
-![Alt text](./image40.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image40.png)
 
 
 注：若不成功，先查看COM是否正确，并调低BAUDRATE多试几次。
 
 接下来，将拨码开关设为正常使用模式**（上拨位置）**
 
-![Alt text](./image41.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image41.png)
 
 
 按下 **Reset键重启模组**，程序开始工作
 
-![Alt text](./image42.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image42.png)
 
 
 ##6 查看LOG日志
 
 将USB口（及供电接口）连接计算机便可通过串口（注意**选择对应COM口号**）打印工具查看LOG信息（波特率：115200）
 
-![Alt text](./image43.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image43.png)
 
 
 注：若LOG信息出现乱码，可重启串口打印软件，即可恢复正常。
