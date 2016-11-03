@@ -1,4 +1,8 @@
 .markdown-body {
+  @media (max-width: $body-bp) {
+    width: 100%;
+  }
+  
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;

@@ -148,6 +148,9 @@
 
     // scrollspy behavior
     $(window).scroll(function() {
+      if ($(window).width() < 1119) {
+        return
+      }
       var $active = $('.nav .active')
       var pos = $active.position().top
 

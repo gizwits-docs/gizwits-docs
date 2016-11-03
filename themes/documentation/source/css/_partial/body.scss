@@ -31,6 +31,14 @@
   }
 
   .navigation {
+    @media (max-width: $body-bp) {
+      display: none;
+    }
+    float: left;
+    width: 220px;
+    margin: {
+      right: 20px;
+    }
 
     .navigation-inner {
       position: fixed;
@@ -60,12 +68,6 @@
         top: 10px;
         bottom: 10px;
       }
-    }
-    
-    float: left;
-    width: 220px;
-    margin: {
-      right: 20px;
     }
     
     .nav-title {
