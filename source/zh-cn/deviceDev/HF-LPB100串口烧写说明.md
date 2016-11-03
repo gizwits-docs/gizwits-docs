@@ -5,13 +5,13 @@
 
 # 操作流程
 
-## 1、在机智云官网下载中心下载HF-LPB100对应的固件
+## 1.在机智云官网下载中心下载HF-LPB100对应的固件
  
  ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077175722.png)
  
  ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077150728.png)
 
-##  2、解压下载的固件包
+##  2.解压下载的固件包
  
   ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077203909.png)
  
@@ -19,13 +19,13 @@
 
  ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077302828.png)
 
-## 3、设备连接
+## 3.设备连接
 
 将HF-LPB100模块按照如下原理图进行接线，注意nReload（45号管脚）需要输入低电平，本实验直接接地处理。KEY1实现外部复位功能。
  
   ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077343754.png)
 
-## 4、串口设置
+## 4.串口设置
 
 1、确认串口参数
 
@@ -49,7 +49,7 @@
 
  ![name](/assets/zh-cn/deviceDev/debug/LPB100/1478077592325.png)
 
-##  5、烧写操作
+##  5.烧写操作
 
 ### 5.1.进入烧写模式
 
