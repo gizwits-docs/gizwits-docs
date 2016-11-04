@@ -45,18 +45,18 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
 在工程的 GosApplication.java 文件中填写机智云AppID及AppSecret，如果使用第三方登录或推送，需要填写相应的从其他资源平台申请的参数；如果使用推送需要打开当前需要使用推送的类型的初始化，如果都为注释状态则表示当前不使用第三方推送，同时只支持一种第三方推送，不可打开多个第三方推送宏定义的注释。可配置的参数有：
 
 ```json
-app\_id：机智云 app id
-app\_secret：机智云 app secret
-product\_key：机智云 product key
-wifi\_type\_select：默认配置模块wifi模组选择功能是否开启
-tencent\_app\_id：qq登录 app id
-wechat\_app\_id：微信登录 app id
-wechat\_app\_secret：微信登录 app secret
-push\_type：推送类型 【0：关闭，1：极光，2：百度】
-bpush\_app\_key：百度推送 app key
-openAPI\_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80
-site\_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80
-push\_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80
+app_id：机智云 app id
+app_secret：机智云 app secret
+product_key：机智云 product key
+wifi_type_select：默认配置模块wifi模组选择功能是否开启
+tencent_app_id：qq登录 app id
+wechat_app_id：微信登录 app id
+wechat_app_secret：微信登录 app secret
+push_type：推送类型 【0：关闭，1：极光，2：百度】
+bpush_app_key：百度推送 app key
+openAPI_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80
+site_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80
+push_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80
 buttonColor：按钮颜色
 buttonTextColor：按钮文字颜色
 navigationBarColor：导航栏颜色
