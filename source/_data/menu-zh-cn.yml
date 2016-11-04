@@ -107,4 +107,8 @@ APP开发:
       path: /Cloud/ent_dev.html
     企业API:
       path: /Cloud/enterprise_api.html 
+    Open API:
+      path: /Cloud/OpenAPI.html
+    WebSocketAPI:
+      path:/Cloud/WebsocketAPI.html
 
