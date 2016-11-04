@@ -246,7 +246,7 @@ SOC版的程序固件名称为：
 
 **share/gokit3_SoC_ESP8266_xxx/bin/upgrade**
 
-## 2.2 GoKit3(S) MCU版
+### 2.2 GoKit3(S) MCU版
 
 MCU版的程序固件名称为：
 
