@@ -54,7 +54,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 
 在机智云官网上分别找到产品的Product Key（如《1. 创建产品并定义数据点》中的图），App ID（如《2. 为产品创建安卓和iOS应用》的第二个图）与App Secret分别填入json文件中对应的位置，如下图所示：
 
-![Alt text](assets/zh-cn/quickstart/iOS/1478080815360.png)
+![Alt text](/assets/zh-cn/quickstart/iOS/1478080815360.png)
 
 ## 5. 控制界面入口
 在框架中若要将控制界面切换为用户自定义的控制界面，而非框架自带的界面，则可以将下图的《GosDeviceController》切换为自定义控制界面即可，即删除图右边红框中的代码，做两步操作：
