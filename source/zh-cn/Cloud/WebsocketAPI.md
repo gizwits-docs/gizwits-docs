@@ -5,7 +5,7 @@ title: Websocket API 指南
 
 浏览器（Javascript）可以通过Web Socket API与云端直接通讯。浏览器（Javascript）通过 Web Socket API，可以控制设备和实时接收设备上报的数据。 
 
-![通信模型](/assets/zh-cn/cloud/1.jpg)
+![通信模型](/assets/zh-cn/cloud/通信模型.jpg)
 
 #2. 通讯流程 
 
