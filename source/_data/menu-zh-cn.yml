@@ -110,5 +110,5 @@ APP开发:
     Open API:
       path: /Cloud/OpenAPI.html
     WebSocketAPI:
-      path:/Cloud/WebsocketAPI.html
+      path: /Cloud/WebsocketAPI.html
 
