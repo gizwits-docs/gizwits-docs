@@ -28,32 +28,33 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 
 如上图所示，UIConfig.json文件是一个全局配置文件，在这里可以设置工程的配置信息，逐一介绍：
 
-```
-app_id：机智云app id
-app_secret：机智云app secret
-product_key：机智云 product key
-wifi_type_select：默认配置模块wifi模组选择功能是否开启
-tencent_app_id：qq登录 app id
-wechat_app_id：微信登录 app id
-wechat_app_secret：微信登录 app secret
-push_type：推送类型 【0：关闭，1：极光，2：百度】
-jpush_app_key：极光推送app key
-bpush_app_key：百度推送 app key
-openAPI_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80
-site_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80
-push_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80
-buttonColor：按钮颜色
-buttonTextColor：按钮文字颜色
-navigationBarColor：导航栏颜色
-navigationBarTextColor：导航栏文字颜色
-configProgressViewColor：配置中界面 progress view颜色
-statusBarStyle：状态栏样子【0：默认的黑色样式， 1：白色样式】
-addDeviceTitle：添加设备界面 导航栏标题文字
-```
+- **app_id：机智云app id**
+- **app_secret：机智云app secret**
+- **product_key：机智云 product key**
+- **wifi_type_select：默认配置模块wifi模组选择功能是否开启**
+- **tencent_app_id：qq登录 app id**
+- **wechat_app_id：微信登录 app id**
+- **wechat_app_secret：微信登录 app secret**
+- **push_type：推送类型 【0：关闭，1：极光，2：百度】**
+- **jpush_app_key：极光推送app key**
+- **bpush_app_key：百度推送 app key**
+- **openAPIDomain：域名及端口，格式：“api.gizwits.com:80”，不写端口默认80**
+- **siteDomain 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80**
+- **pushDomain：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80**
+- **buttonColor：按钮颜色**
+- **buttonTextColor：按钮文字颜色**
+- **navigationBarColor：导航栏颜色**
+- **navigationBarTextColor：导航栏文字颜色**
+- **configProgressViewColor：配置中界面 progress view颜色**
+- **statusBarStyle：状态栏样子【0：默认的黑色样式， 1：白色样式]**
+- **addDeviceTitle：添加设备界面 导航栏标题文字**
+- **qq：登陆界面的QQ登陆按钮【true：显示， false：隐藏】**
+- **wechat：登陆界面的微信登陆按钮【true：显示, flase：隐藏】**
+- **anonymousLogin：登陆界面的跳过按钮【true：显示, flase：隐藏】**
 
 在机智云官网上分别找到产品的Product Key（如《1. 创建产品并定义数据点》中的图），App ID（如《2. 为产品创建安卓和iOS应用》的第二个图）与App Secret分别填入json文件中对应的位置，如下图所示：
 
-![Alt text](./1478080815360.png)
+![Alt text](assets/zh-cn/quickstart/iOS/1478080815360.png)
 
 ## 5. 控制界面入口
 在框架中若要将控制界面切换为用户自定义的控制界面，而非框架自带的界面，则可以将下图的《GosDeviceController》切换为自定义控制界面即可，即删除图右边红框中的代码，做两步操作：
@@ -69,7 +70,7 @@ addDeviceTitle：添加设备界面 导航栏标题文字
 
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478080908799.png)
 
-![Alt text](./1478080914847.png)
+![Alt text](/assets/zh-cn/quickstart/iOS/1478080914847.png)
 
 ## 7. 注册新用户
 

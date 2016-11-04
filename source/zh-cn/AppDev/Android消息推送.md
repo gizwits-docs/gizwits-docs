@@ -27,7 +27,7 @@ title:  Android App消息推送集成指南
 
 ## 2、在云端绑定第三方推送
 
-### 2.1 申请开通D3 Engine
+### 2.1 申请开通D3 Engine 
 
 1、查看D3 Engine
 
@@ -132,7 +132,7 @@ title:  Android App消息推送集成指南
 
 ### 2.1申请开通D3 Engine
 
-该步骤可以参考2.2.2
+该步骤可以参考[这里](#2-1-申请开通D3-Engine)。
 
 ### 2.2云端绑定百度推送
 
@@ -148,7 +148,7 @@ title:  Android App消息推送集成指南
 
 ### 2.3	利用D3 Engine创建推送规则
 
-该步骤可以参考2.3
+该步骤可以参考[这里](#2-3-利用D3-Engine创建推送规则)。
 
 ### 2.4修改UIConfig.json代码
 填写app_id、app_secret、product_key，修改push_type为2，并将图24对应的key填入到对应的位置
@@ -157,7 +157,7 @@ title:  Android App消息推送集成指南
 
 ### 2.5启动虚拟设备
 
-该步骤可以参考2.5
+该步骤可以参考[这里](#2-6启动虚拟设备)。
 
 ### 2.6部署APP运行
 
