@@ -71,4 +71,6 @@ theme: documentation
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:gizwits-docs/gizwits-docs.github.io.git
+  repo: 
+    github: git@github.com:gizwits-docs/gizwits-docs.github.io.git
+    gitlab: git@gitlab.gizwits.com:gizwits-site/gizwits-doc-static.git
