@@ -1,4 +1,4 @@
-title: Android App开发快速入门
+title: Android App开发快速开发
 ---
 
 # 概述
@@ -76,24 +76,29 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 
 ## 4.	修改UIConfig.json文件
 在上面所列的文件中。assets目录下的UIConfig.json文件是一个全局配置文件，在这里可以设置工程的配置信息，逐一介绍：
-- **app_id：**机智云 app id
-- **app_secret：**机智云 app secret
-- **product_key：**机智云 product key
-- **wifi_type_select：**默认配置模块wifi模组选择功能是否开启
-- **tencent_app_id：**qq登录 app id
-- **wechat_app_id：**微信登录 app id
-- **wechat_app_secret：**微信登录 app secret
-- **push_type：**推送类型 【0：关闭，1：极光，2：百度】
-- **bpush_app_key：**百度推送 app key
-- **openAPI_URL：**openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80
-- **site_URL：**site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80
-- **push_URL：**推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80
-- **buttonColor：**按钮颜色
-- **buttonTextColor：**按钮文字颜色
-- **navigationBarColor：**导航栏颜色
-- **navigationBarTextColor：**导航栏文字颜色
-- **configProgressViewColor：**配置中界面 progress view 颜色
-- **addDeviceTitle：**添加设备界面 导航栏标题文字
+
+- **app_id：机智云 app id**
+- **app_secret：机智云 app secret**
+- **product_key：机智云 product key**
+- **wifi_type_select：默认配置模块wifi模组选择功能是否开启**
+- **tencent_app_id：qq登录 app id**
+- **wechat_app_id：微信登录 app** id
+- **wechat_app_secret：微信登录 app secret**
+- **push_type：推送类型 【0：关闭，1：极光，2：百度】**
+- **bpush_app_key：百度推送 app key**
+- **openAPI_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80**
+- **site_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80**
+- **push_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80**
+- **buttonColor：按钮颜色**
+- **buttonTextColor：按钮文字颜色**
+- **navigationBarColor：导航栏颜色**
+- **navigationBarTextColor：导航栏文字颜色**
+- **configProgressViewColor：配置中界面 progress view 颜色**
+- **addDeviceTitle：添加设备界面 导航栏标题文字**
+- **qq：是否打开QQ登录【true：打开】**
+- **wechat：是否打开微信登录【true：打开】**
+- **anonymousLogin：是否打开匿名登录【true：打开】**
+
 
 在机智云官网上分别找到产品的Product Key、App ID与App Secret分别填入json文件中对应的位置，如下图所示：
  
@@ -224,24 +229,42 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 
 ## 4.	控制逻辑代码开发
 ### 4.1.在GosDeviceControlActivity定义相关变量
-根据数据点的标识名定义常量：LIGHT_SWITCH
+
+下图为该产品在云端创建的数据点。
  
 ![Alt text](/assets/zh-cn/quickstart/定义变量.png)
 
-1）	定义开关灯Button控件
+整个GosDeviceControlActivity的参考代码如下：
 
-2）	定义设备监听器deviceListener，重写接收数据的回调
- 
 ```java
+package com.gizwits.opensource.appkit.ControlModule;
+
+import java.util.concurrent.ConcurrentHashMap;
+
+import com.gizwits.gizwifisdk.api.GizWifiDevice;
+import com.gizwits.gizwifisdk.enumration.GizWifiErrorCode;
+import com.gizwits.gizwifisdk.listener.GizWifiDeviceListener;
+import com.gizwits.opensource.appkit.CommonModule.GosBaseActivity;
+import com.gizwits.opensource.appkit.R;
+
+import android.app.ActionBar;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+
 public class GosDeviceControlActivity extends GosBaseActivity {
 
-	/** The GizWifiDevice device */
+	/** 智能灯设备 */
 	private GizWifiDevice device;
 
-	/** The ActionBar actionBar */
+	/** 导航栏 */
 	ActionBar actionBar;
 
-	/** 数据点标识名 */
+	/** 在云端创建的数据点标识名 */
 	public static final String LIGHT_SWITCH = "switch";
 
 	/** 开关灯Button */
@@ -263,12 +286,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 		}
 	};
 
-```
-
-### 4.2.	初始化变量
-
-```java
-@Override
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_gos_device_control);
@@ -278,6 +296,9 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 		initView();
 	}
 
+	/**
+	 * Description:初始化控件
+	 */
 	private void initView() {
 		btnLightSwitch = (Button) findViewById(R.id.btn_light_onoff);
 		btnLightSwitch.setOnClickListener(new OnClickListener() {
@@ -288,6 +309,9 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 		});
 	}
 
+	/**
+	 * Description:初始化设备
+	 */
 	private void initDevice() {
 		Intent intent = getIntent();
 		device = (GizWifiDevice) intent.getParcelableExtra("GizWifiDevice");
@@ -305,37 +329,10 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 		return super.onOptionsItemSelected(item);
 	}
 
-``` 
-
-1）在initDevice()中找到设备，并设置设备的监听器
-
-2）在initView()中找到Button控件，并设置点击事件监听器
-
-```java
-private void initView() {
-btnLightSwitch = (Button) findViewById(R.id.btn_light_onoff);
-btnLightSwitch.setOnClickListener(new OnClickListener() {
-	@Override
-	public void onClick(View v) {
-			controlLight();
-	}
-});
-}
-
-private void initDevice() {
-Intent intent = getIntent();
-device = (GizWifiDevice) intent.getParcelableExtra("GizWifiDevice");
-device.setListener(deviceListener);
-Log.i("Apptest", device.getDid());
-}
-
-```
-
-### 4.3.	实现控制逻辑
-如图所示，在controlLight()方法中添加如下代码：
- 
-```java
-private void controlLight() {
+	/**
+	 * Description:控制智能灯
+	 */
+	private void controlLight() {
 		if (btnLightSwitch.isSelected()) {
 			// 下发控制命令
 			sendCommand(false);
@@ -345,43 +342,25 @@ private void controlLight() {
 			sendCommand(true);
 			btnLightSwitch.setSelected(true);
 		}
-}
+	}
 
 	/**
 	 * Description:下发命令方法
-	 * @param onOff
-	 *            true表示开灯，false表示关灯
+	 * @param onOff	  true表示开灯，false表示关灯
 	 */
-private void sendCommand(boolean onOff) {
+	private void sendCommand(boolean onOff) {
 		int sn = 5;
 		ConcurrentHashMap<String, Object> command = new ConcurrentHashMap<String, Object>();
+		// map中key为云端创建数据点的标识名，value为需要传输的值
 		command.put(LIGHT_SWITCH, onOff);
+		// 调用write方法即可下发命令
 		device.write(command, sn);
-}
-```
-### 4.4.	实现接收数据逻辑
-如图所示，在设备监听器变量中实现监听回调，并控制开关图片的切换。
- 
-
-```java
-/** 设备监听器 */
-private GizWifiDeviceListener deviceListener = new GizWifiDeviceListener() {
-	// 接收数据回调
-public void didReceiveData(GizWifiErrorCode result, GizWifiDevice device,
-				ConcurrentHashMap<String, Object> dataMap, int sn) {
-			// 已定义的设备数据点，有布尔、数值和枚举型数据
-	if (dataMap.get("data") != null) {
-		ConcurrentHashMap<String, Object> map = (ConcurrentHashMap<String, Object>) dataMap.get("data");
-		// 根据标识名，在回调的map中找到设备上报的值
-		boolean status = (Boolean) map.get(LIGHT_SWITCH);
-		// 根据设备上报的值更改按钮的图标
-		btnLightSwitch.setSelected(status);
 	}
+
 }
-};
 ```
 
-### 4.5.	部署调试
+### 4.2.	部署调试
 完成上述代码编写之后，就可以部署到手机中测试控制结果了。
 
 **下发命令**
@@ -406,3 +385,4 @@ public void didReceiveData(GizWifiErrorCode result, GizWifiDevice device,
 此时APP的控制页面中，灯的按钮马上变成了关灯状态，表示APP成功收到了设备的上报数据。
  
 ![Alt text](/assets/zh-cn/quickstart/关灯.png)
+

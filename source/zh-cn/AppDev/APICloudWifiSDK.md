@@ -159,91 +159,6 @@ gizWifiDevice类、GizWifiCentralControlDevice类
 
 # 接口说明
 
-## gizWifiSDK类接口
-
-机智云 Wi-Fi SDK 的基础类。该类提供了SDK初始化、基本设置、用户管理、设备管理的基本接口。
-
-
-## startWithAppID<div id="a1"></div>
- 
-启动 SDK。 注意，该接口执行成功后才能正常执行其他接口功能。SDK启动在Android平台上可能会耗费1～2秒的时间，建议App开发者在收到启动ret返回8316(SDK启动成功)时或者启动后延时2秒左右再调用其他接口。
-
-startWithAppID({params}, callback(ret, err))
-
-### params
-appID:
-
-* 类型： 字符串
-* 默认值：无
-* 描述：开发者在[机智云网站](http://site.gizwits.com)申请的应用标识。
-
-cloudServiceInfo:
-
-* 类型： 数字类型数组
-* 默认值：0
-* 描述：要切换的服务器域名信息。使用机智云生产云服务的开发者不用传值，需要连接其他云服务的要传值。域名信息不指定端口则SDK使用默认服务端口，此时这样写域名：api.gizwits.com。若需要指定特殊端口，需同时指定 Http 和 Https 端口，此时这样写域名：api.gizwits.com:81&8443
-* 内部字段
-
-    {
-        openAPIInfo: 	// api服务域名
-        siteInfo:       // site服务域名
-        pushInfo:       // 推送服务域名
-    }
-
-
-specialProductKeys:
-
-* 类型： 字符串数组
-* 默认值：无
-* 描述：要过滤的设备 productKey 列表。如果希望返回所有能发现的设备则不需要传参。指定了之后,SDK 将只返回过滤后的设备
-
-### callback(ret, err)
-
-ret
-
-* 类型：JSON对象
-* 内部字段
-
-        {
-            errorCode: 8316,	// SDK启动成功，数字类型
-            msg:                // 成功消息的描述，字符串类型
-        }
-
-err
-
-* 类型：JSON对象
-* 内部字段
-
-        {
-            errorCode:	// 错误代码（见枚举定义GizWifiErrorCode），数字类型
-            msg:		// 错误描述，字符串类型
-        }
-
-
-### 示例代码
-   
-
-```
- // 不指定域名和过滤productKey，参考代码如下：
-	var gizWifiSDK = api.require('gizWifiSDK');
-gizWifiSDK.startWithAppID({"appID": "your_app_id"}, function(ret, err) {
-		alert("ret = " + JSON.stringify(ret) + "err = " + JSON.stringify(err))
-	});
-
-    // 要指定cloudServiceInfo和过滤的productKey，则参考代码如下：
-    var gizWifiSDK = api.require('gizWifiSDK');
-gizWifiSDK.startWithAppID({"appID": "your_app_id", "specialProductKeys": ["your_product_key"], "cloudServiceInfo": {"openAPIInfo": "xxx.xxxx.com", "siteInfo": "xxx.xxxx.com"}}, function(ret, err) {
-        alert("ret = " + JSON.stringify(ret) + "err = " + JSON.stringify(err))
-    });
-```
-
-### 可用性
-
-iOS系统，Android系统
-
-可提供的1.0.0及更高版本
-
-
 ## registerNotifications<div id="a2"></div>
  
 注册 SDK 事件通知。通知的事件包括SDK启动失败或成功、设备列表变化上报等
@@ -2059,7 +1974,89 @@ err
 iOS系统，Android系统
 
 可提供的1.0.0及更高版本
+# gizWifiSDK类接口
 
+机智云 Wi-Fi SDK 的基础类。该类提供了SDK初始化、基本设置、用户管理、设备管理的基本接口。
+
+
+## startWithAppID<div id="a1"></div>
+ 
+启动 SDK。 注意，该接口执行成功后才能正常执行其他接口功能。SDK启动在Android平台上可能会耗费1～2秒的时间，建议App开发者在收到启动ret返回8316(SDK启动成功)时或者启动后延时2秒左右再调用其他接口。
+
+startWithAppID({params}, callback(ret, err))
+
+### params
+appID:
+
+* 类型： 字符串
+* 默认值：无
+* 描述：开发者在[机智云网站](http://site.gizwits.com)申请的应用标识。
+
+cloudServiceInfo:
+
+* 类型： 数字类型数组
+* 默认值：0
+* 描述：要切换的服务器域名信息。使用机智云生产云服务的开发者不用传值，需要连接其他云服务的要传值。域名信息不指定端口则SDK使用默认服务端口，此时这样写域名：api.gizwits.com。若需要指定特殊端口，需同时指定 Http 和 Https 端口，此时这样写域名：api.gizwits.com:81&8443
+* 内部字段
+
+    {
+        openAPIInfo: 	// api服务域名
+        siteInfo:       // site服务域名
+        pushInfo:       // 推送服务域名
+    }
+
+
+specialProductKeys:
+
+* 类型： 字符串数组
+* 默认值：无
+* 描述：要过滤的设备 productKey 列表。如果希望返回所有能发现的设备则不需要传参。指定了之后,SDK 将只返回过滤后的设备
+
+### callback(ret, err)
+
+ret
+
+* 类型：JSON对象
+* 内部字段
+
+        {
+            errorCode: 8316,	// SDK启动成功，数字类型
+            msg:                // 成功消息的描述，字符串类型
+        }
+
+err
+
+* 类型：JSON对象
+* 内部字段
+
+        {
+            errorCode:	// 错误代码（见枚举定义GizWifiErrorCode），数字类型
+            msg:		// 错误描述，字符串类型
+        }
+
+
+### 示例代码
+   
+
+```
+ // 不指定域名和过滤productKey，参考代码如下：
+	var gizWifiSDK = api.require('gizWifiSDK');
+gizWifiSDK.startWithAppID({"appID": "your_app_id"}, function(ret, err) {
+		alert("ret = " + JSON.stringify(ret) + "err = " + JSON.stringify(err))
+	});
+
+    // 要指定cloudServiceInfo和过滤的productKey，则参考代码如下：
+    var gizWifiSDK = api.require('gizWifiSDK');
+gizWifiSDK.startWithAppID({"appID": "your_app_id", "specialProductKeys": ["your_product_key"], "cloudServiceInfo": {"openAPIInfo": "xxx.xxxx.com", "siteInfo": "xxx.xxxx.com"}}, function(ret, err) {
+        alert("ret = " + JSON.stringify(ret) + "err = " + JSON.stringify(err))
+    });
+```
+
+### 可用性
+
+iOS系统，Android系统
+
+可提供的1.0.0及更高版本
 
 # gizWifiDevice类接口
 机智云 Wi-Fi 的设备类。该类提供了设备登录，控制、接收设备信息功能。
