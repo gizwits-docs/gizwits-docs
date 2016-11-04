@@ -9,18 +9,18 @@ title: 企业API
 
 # 协议约定
 ## 1、请求方式
-本文档所定义接口基于Http/HTTPS协议进行传输，需要注意协议中标注的请求方式，通过GET、PUT、DELETE等进行不同的操作。
+本文档所定义接口基于HTTP/HTTPS协议进行传输，需要注意协议中标注的请求方式，通过GET、PUT、DELETE等进行不同的操作。
 ## 2、接口地址
-接口地址中当用<>号包含的为变量，需要使用者通过对应的变量替换。例如<product_key>，表示需要将获取的product_key值赋予到接口地址中，<did>表示是需要替换为具体的did
+接口地址中当用${}号包含的为变量，需要使用者通过对应的变量替换。例如${product_key}，表示需要将获取的product_key值赋予到接口地址中，${did}表示是需要替换为具体的did，${token值}表示是需要替换为通过授权接口获取的token。
 ##  3、请求参数
-HTTP请求参数的类型一般分为三种。header表示该参数是在HTTP请求头中；URL表示是通过url传参；BODY表示是Request Body，通常Body中都是JSON格式
+HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请求头中；URL表示是通过url传参；Body表示是Request Body，通常Body中都是JSON格式
 
 ##  4、HTTP请求头部
 本文档协议中设备管理类、设备报表查询类的接口在进行接口访问时，都需要在请求头增加token值，以此校验访问者是否有权访问该接口。token值是通过获取授权接口获得。
 请求头格式如下：
 ```json
 Content-Type: application/json 
-Authorization: token <token值>
+Authorization: token ${token值}
 ```
 注意：<token值>是不包括<>号，只需将从获取token接口获得token值放到token之后。例如：Authorization: token  efbekskdklllsF
 
@@ -45,14 +45,14 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 流程说明：
 - 获取token
 - 获得did：需要通过消息代理的客户端获取到设备状态数据中的did
-- 如果产品定义了数据点协议，则可以使用“数据点方式远程控制”去向设备发起控制；如果是数据透传协议，则通过“原始指令方式远程控制”控制
+- 如果产品定义了数据点协议，则可以使用“数据点方式远程控制”去向设备发起控制；如果是数据透传协议，则通过“原始指令方式远程控制”向设备发起控制
 
 ## 2、设备数据聚合查询
 ### 场景描述
-该业务场景是指接入企业想通过机智云提供设备数据的聚合查询,在企业应用系统中展现设备的数据值类型数据的聚合报表，这样企业的业务管理系统就无需存储设备数据并进行较容易出现性能问题的数据查询。 
+该业务场景是指接入企业想通过机智云提供设备数据的聚合查询，在企业应用系统中展现设备的数值型数据的聚合报表，这样企业的业务管理系统就无需存储设备数据并进行较容易出现性能问题的数据查询。 
 
 目前设备数据点聚合查询提供单台设备级别的查询以及产品级别的查询。主要能实现以下业务功能：
-- 只支持对数字类型的数据点进行求和(sum)、求平均值（avg)、求最大值（max)、求最小值（min)
+- 只支持对数值类型的数据点进行求和(sum)、求平均值（avg)、求最大值（max)、求最小值（min)
 - 支持按月、周、天、小时四个时间维度计算数据
 - 目前支持最大时间范围是最近一个月的数据
 - 有特殊时间需求需要向机智云申请
@@ -65,7 +65,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ### 业务功能描述
 该接口提供获取企业API接口访问权限的功能
 ### 接口地址
-     http://enterpriseapi.gizwits.com/v1/products/<product_key>/access_token
+     http://enterpriseapi.gizwits.com/v1/products/${product_key}/access_token
 ### 请求方式
      POST
 ### 请求报文 
@@ -88,9 +88,9 @@ Http Response Code ： 201
 
 ## 数据点方式远程控制
 ### 业务功能描述
-该接口提供远程设置设备数据点的功能，完成对设备的控制操作
+该接口提供远程设置设备数据点的功能，完成对在线设备的控制操作
 ### 接口地址
-  http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/control
+  http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/control
 
 ### 请求方式
 POST
@@ -99,23 +99,23 @@ POST
 1. header
 ```json
 Content-Type: application/json 
-Authorization: token <token值>
+Authorization: token ${token值}
 ```
 
 2. body
 ```json
 {
   "attrs": {
-    "temp": 10     
+     "${数据点标识名}": ${数据点值},    
   }
 }  	
 ```
 
-bool 类型的数据点设置为 true/false
-enum 类型的数据点设置为枚举的字符串
-uint8/uint16/uint32 类型的数据点设置为数字
-binary 类型的数据设置为 hex 类型字符串，如发送一串二进制数据 0x01, 0x02, 0x03, 就写成 "010203”
-	例如在机智云开发者中心定义了一个产品的数据点例如是开关，标示名为“switch”，类型为bool类型；如果要关闭该设备，则报文为 "attrs": {
+bool 类型的数据点值设置为 true/false
+enum 类型的数据点值设置为枚举的字符串
+uint8/uint16/uint32 类型的数据点值设置为数字
+binary 类型的数据点值设置为 hex 类型字符串，如发送一串二进制数据 0x01, 0x02, 0x03, 就写成 "010203”
+	例如在机智云开发者中心定义了一个产品的数据点例如是开关，标识名为“switch”，类型为bool类型；如果要关闭该设备，则报文为 "attrs": {
     "switch": true
   }
 可同时传送多个。
@@ -123,12 +123,9 @@ binary 类型的数据设置为 hex 类型字符串，如发送一串二进制�
 
 ### 应答报文
 ```json
-Http Response Code ： 201	
+Http Response Code ： 200	
 返回报文：
-{
-  "token": "7cf955ec8b504d6497d83f39ce9b16d2",
-  "expired_at": 1372700873   //Expired_at为token过期时间；
-}  
+{}  
 ```
 
 
@@ -137,14 +134,14 @@ Http Response Code ： 201
 ### 业务功能描述
 该接口提供通过原始控制指令远程控制设备的功能。
 ### 接口地址
-http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/control
+http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/control
 ### 请求方式
     POST
 ### 请求报文
 1. header
 ```json
 Content-Type: application/json 
-Authorization: token <token值>
+Authorization: token ${token值}
 ```
 
 2. body
@@ -156,7 +153,8 @@ Authorization: token <token值>
 ```
 body
 
-原始控制指令,十六进制的格式需要转换为十进制。	假设要发送的原始控制指令为：01020304ffff（十六进制），那么 raw 的值为 [1, 2, 3, 4, 255, 255]
+原始控制指令，以byte数组方式传送，每个byte的范围必须为0~255，十六进制的格式需要转换为十进制。假设要发送的原始控制指令为：01020304ffff（十六进制），那么 raw 的值为 [1, 2, 3, 4, 255, 255]。
+往设备转发数据，raw的值需要加上以下的协议前缀再接上发往设备的数据，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 144] + 发往设备的数据，其中的varLen为可变长度，由1~4个字节(B)表示本可变长度字段后一直到数据包结尾的字节数 ，如长度小于128B，直接用一个字节(B)表示长度即可，长度大于等于128B的编码解码方式请参考MQTT V3.1协议的可变长度（Remaining Length）定义。
 
 
 
@@ -173,7 +171,7 @@ Http Response Code ： 200
 ### 业务功能描述
 该接口提供查询某个时间周期内某个wifi设备数值型数据点的聚合运算，包括求和、平均、最大、最小的计算。
 ### 接口地址
-http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/agg_data?start_ts=1447837618000&end_ts=1447837828000&attrs=weight&aggregator=sum&unit=DAYS
+http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/agg_data?start_ts=1447837618000&end_ts=1447837828000&attrs=weight&aggregator=sum&unit=DAYS
 
 ### 请求方式
 ### 请求报文
@@ -230,7 +228,7 @@ MONTHS: "201507"
 ### 业务功能描述
 该接口提供获取某个产品某台设备的历史数据，如温度值等功能；
 ### 接口地址
-http://enterpriseapi.gizwits.com/v1/products/<product_key>/devices/<did>/data?start_ts=<start_ts>&end_ts=<end_ts>&limit=20&skip=0
+http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/data?start_ts=1372700873>&end_ts=1372701873&limit=20&skip=0
 ### 请求方式
     GET
 ### 请求报文
