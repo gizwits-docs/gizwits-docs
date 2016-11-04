@@ -236,9 +236,11 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 			if (dataMap.get("data") != null) {
 				ConcurrentHashMap<String, Object> map = (ConcurrentHashMap<String, Object>) dataMap.get("data");
 				// 根据标识名，在回调的map中找到设备上报的值
-				boolean status = (Boolean) map.get(LIGHT_SWITCH);
-				// 根据设备上报的值更改按钮的图标
-				btnLightSwitch.setSelected(status);
+				if (map.get(LIGHT_SWITCH)!=null) {
+					boolean status = (Boolean) map.get(LIGHT_SWITCH);
+					// 根据设备上报的值更改按钮的图标
+					btnLightSwitch.setSelected(status);
+				}
 			}
 		}
 	};
@@ -254,7 +256,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 	}
 
 	/**
-	 * Description:初始化控件
+	 *Description:初始化控件
 	 */
 	private void initView() {
 		btnLightSwitch = (Button) findViewById(R.id.btn_light_onoff);
@@ -267,7 +269,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 	}
 
 	/**
-	 * Description:初始化设备
+	 *Description:初始化设备
 	 */
 	private void initDevice() {
 		Intent intent = getIntent();
@@ -287,7 +289,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 	}
 
 	/**
-	 * Description:控制智能灯
+	 *Description::控制智能灯
 	 */
 	private void controlLight() {
 		if (btnLightSwitch.isSelected()) {
@@ -303,7 +305,8 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 
 	/**
 	 * Description:下发命令方法
-	 * @param onOff	  true表示开灯，false表示关灯
+	 * 
+	 * @param onOff   true表示开灯，false表示关灯
 	 */
 	private void sendCommand(boolean onOff) {
 		int sn = 5;
@@ -315,6 +318,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 	}
 
 }
+
 ```
 
 ### 4.2.	部署调试
