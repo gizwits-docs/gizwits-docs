@@ -8,7 +8,7 @@ title:  平台概述
 
 # 机智云PaaS平台架构（图还需美化）
 
-![@机智云PaaS平台架构](/assets/zh-cn/OverView/arti.jpg)
+![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti.jpg)
 
 
 ## 接入代理
