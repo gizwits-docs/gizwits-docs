@@ -6,101 +6,103 @@
   5分钟了解机智云:
     path: /quickstart/5分钟了解机智云.html
     
-  设备快速接入:
-    path: /path/to/article
+  设备快速接入机智云:
+    path: /quickstart/设备快速接入.html
     
-  Android App 快速入门:
+  Android App 开发入门:
     path: /quickstart/AndroidAppFrame.html
     
-  iOS App 快速入门:
-    path: /path/to/article
+  iOS App 开发入门:
+    path: /quickstart/iOSAPP快速入门.html
 
 
 APP开发:
   App 开源框架:
     iOS 开源框架使用说明:
       path: /AppDev/iosframe.html
+    iOS 消息推送:
+      path: /AppDev/iOS消息推送.html
+    iOS 第三方登录与换肤:
+      path: /AppDev/iOS第三方登陆与换肤.html
     Android 开源框架使用说明:
       path: /AppDev/Android开源框架使用指南.html
-    iOS 消息推送:
-      path: /path/to/article
     Android 消息推送:
-      path: /path/to/article
-    iOS 第三方登录与换肤:
-      path: /path/to/article
+      path: /AppDev/Android消息推送.html
     Android 第三方登录与换肤:
-      path: /path/to/article
+      path: /AppDev/Android第三方登录与换肤.html
   
   iOS SDK:
     path: /AppDev/iossdk.html
     
   Android SDK:
-    path: /path/to/article
+    path: /AppDev/AndroidSDKA2.html
     
   APICloud SDK:
-    path: /path/to/article
-    
-  开发者帐号申请:
-    path: /path/to/article
+    path: /AppDev/APICloudWifiSDK.html
 
 
 微信开发:
-  path: /path/to/article
-
+  了解微信应用开发:
+    path: /WechatDev/了解微信应用开发.html
+  微信应用开发教程:
+    path: /WechatDev/微信应用开发教程.html
 
 设备开发:
-  Wi-Fi模组开发:
+  GAgent详解:
     path: /deviceDev/gagent_info.html
     
   MCU开发框架使用说明:
     GoKit3.0代码自动生成工具:
-      path: /path/to/article
+      path: /deviceDev/DevSDK/代码自动生成工具.html
     GoKit3.0 DEV SDK Common版移植说明:
-      path: /path/to/article
+      path: /deviceDev/GoKit3 DEV SDK Common版移植说明.html
       
   Gokit3.0介绍:
     Gokit3.0系列开发套件简介:
-      path: /path/to/article
+      path: /deviceDev/Gokit3/Gokit3开发套件简介.html
     Gokit3.0硬件手册:
-      path: /path/to/article
+      path: /deviceDev/Gokit3/GoKit3硬件手册.html
       
   WiFi SOC方案:
     GoKit3.0(S)使用说明书:
-      path: /path/to/article
+      path: /deviceDev/WiFiSOC/GoKit3S使用说明书.html
     Gokit3.0(S)开发套件介绍:
-      path: /path/to/article
+      path: /deviceDev/WiFiSOC/GoKit3S开发套件介绍.html
     GoKit3.0(S)开发环境搭建:
-      path: /path/to/article
+      path: /deviceDev/WiFiSOC/GoKit3S二次开发.html
     Gokit3.0(S)源码详解:
-      path: /path/to/article
+      path: /deviceDev/WiFiSOC/GoKit3S程序详解.html
     
   Gokit3.0语音开发:
     GoKit3.0(V)使用说明书:
-      path: /path/to/article
+      path: /deviceDev/Gokit3Voice/GoKit3V使用说明书.html
     Gokit3.0(V)开发指南:
-      path: /path/to/article
+      path: /deviceDev/Gokit3Voice/GoKit3V二次开发指南.html
     GoKit3.0(V)开词条管理:
-      path: /path/to/article
+      path: /deviceDev/Gokit3Voice/GoKit3V词条.html
     Gokit3.0(V)源码详解:
-      path: /path/to/article
+      path: /deviceDev/Gokit3Voice/GoKit3V程序详解.html
     
   调试与烧写:
     串口工具使用文档:
-      path: /path/to/article
+      path: /deviceDev/串口工具使用文档.html
     HF-LPB100串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/HF-LPB100串口烧写说明.html
     HF-LPT120串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/debug/HF-LPT120.html
     MXCHIP串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/MXCHIP串口烧写说明.html
     ESP8266串口烧写说明:
-      path: /path/to/article
+      path: /deviceDev/ESP8266串口烧写说明.html
     产测工具使用文档:
-      path: /path/to/article
+      path: /deviceDev/产测工具使用文档.html
     日志抓取教程文档:
-      path: /path/to/article
+      path: /deviceDev/日志抓取教程文档.html
  
  
 云平台:
-  path: /overview/overview.html
+    企业应用开发:
+      path: /Cloud/ent_dev.html
+    企业API:
+      path: /Cloud/enterprise_api.html 
 
