@@ -171,7 +171,7 @@ Http Response Code ： 200
     GET
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
-| :-------- | --------:| :--: |
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |token  |String|是|header|获取授权返回的token值, For example: Authorization:token xxx| 
 |did    |String|是|URL|设备id| 
 |start_ts|integer|是|URL|开始时间戳| 
@@ -228,7 +228,7 @@ MONTHS: "201507"
     GET
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
-| :-------- | --------:| :--: |
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |did    |String   |是|URL|设备id| 
 |start_ts   |integer   |是|URL|开始时间戳| 
 |end_ts   |integer   |是|URL|结束时间戳| 
