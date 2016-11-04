@@ -11,10 +11,10 @@
 
   App快速接入机智云:
     App开发准备工作:
-      path: /quickstart/App开发准备工作.html
-    Android App 开发入门:
+      path: /quickstart/准备工作.html
+    Android App 快速开发:
       path: /quickstart/AndroidAppFrame.html    
-    iOS App 开发入门:
+    iOS App 快速开发:
       path: /quickstart/iOSAPP快速入门.html
 
 
@@ -107,4 +107,8 @@ APP开发:
       path: /Cloud/ent_dev.html
     企业API:
       path: /Cloud/enterprise_api.html 
+    Open API:
+      path: /Cloud/OpenAPI.html
+    WebSocketAPI:
+      path: /Cloud/WebsocketAPI.html
 
