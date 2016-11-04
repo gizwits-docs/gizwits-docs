@@ -1,52 +1,9 @@
-title: Android App开发快速开发
+title: Android App快速开发
 ---
 
 # 概述
-本文主要介绍了机智云设备接入SDK的功能以及如何快速使用机智云APP开源框架来进行APP的开发与测试。
-# 机智云APP开发资源简述
-## 1. 机智云设备接入SDK
-机智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
 
-机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台。
-
- ![@机智云SDK功能](/assets/zh-cn/quickstart/机智云SDK功能.png)
-
- 
-## 2.	机智云APP开源框架
-为了进一步降低开发者的开发难度，机智云推出了APP开源框架。在框架中，已经模块化集成了如下功能：
-
-1）用户部分：用户注册，找回密码、第三方登录（微信登录、QQ登录）用户登录：包括云端用户登录，第三方登录（微信登录、QQ登录）
-2）配置设备入网（Arilink+SoftAP）
-3）设备发现，列表展示
-4）消息推送：极光推送、百度推送
-5）自定义皮肤
-
-APP开源框架将各个模块独立成包，开发者如果想了解其中某一个模块的实现代码与流程，直接参考框架代码即可。下面就将如何使用机智云开源框架快速开发一个APP做详细的讲解。
-
-# 准备工作
-## 1.	创建产品并定义数据点
- ![@创建产品](/assets/zh-cn/quickstart/创建产品.png)
-
- 
-![@创建数据点](/assets/zh-cn/quickstart/创建数据点.png)
-
-
-## 2.	为产品创建安卓和iOS应用
-在服务栏目下，点击“应用配置”，分别添加安卓与iOS应用。
- 
-![@添加应用](/assets/zh-cn/quickstart/添加应用.png)
-
- 
-![@添加Android和iOS应用](/assets/zh-cn/quickstart/添加Android和iOS应用.png)
-
-## 3.	App ID与App Secret含义与作用
-**App ID：**应用标识码，当开发者需要为一款智能产品开发应用（包括iOS、Android、Web应用等）时，在机智云开发者中创建应用的时候，后台会自动生成一个AppID，并与此设备进行关联。应用开发时需要填入此AppID。在APP注册的所有用户绑定在该Appid下。
-
-**App Secret：**App ID的验证密钥。
-
-如下图所示，为APPID在开发APP过程中的作用。
- 
-![@AppID的作用](/assets/zh-cn/quickstart/AppID的作用.png)
+本文主要介绍了如何快速使用机智云安卓APP开源框架来进行APP的开发与测试，在阅读本文档之前，请先完成[APP开发准备工作](/zh-cn/quickstart/AndroidAppFrame.html)
 
 # 	10分钟部署调试机智云APP开源框架
 ## 1.	下载安卓APP开源框架
