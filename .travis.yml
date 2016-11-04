@@ -23,8 +23,6 @@ install:
 script:
   - npm run build
 
-before_deploy:
+after_success:
   - git clone git@github.com:gizwits-docs/gizwits-docs.github.io.git .deploy_git
-
-deploy:
   - npm run deploy
