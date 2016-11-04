@@ -15,7 +15,7 @@ title: GoKit3(S)二次开发-程序详解
 
 云端生成的协议文档默认是MCU版的协议文档，其实SOC版完全可复用MCU版的协议，故在这里直接将《xxx-机智云接入串口通讯协议文档》中的MCU理解为SOC（后文同理）。
 
-## 2.“p0 数据区约定”
+## 2 “p0 数据区约定”
 **“p0 数据区约定”有如下功能：**
 
 1) 模块向SOC发送控制命令时携带p0 命令和命令标志位以及可写数据区
@@ -114,7 +114,7 @@ title: GoKit3(S)二次开发-程序详解
 | user guide V0.3.pdf	    |   Gokit3S二次开发导读 |
 
 
-## 1.2 代码文件说明
+### 1.2 代码文件说明
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image6.png)
 
