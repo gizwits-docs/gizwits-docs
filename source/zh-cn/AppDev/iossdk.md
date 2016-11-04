@@ -846,6 +846,7 @@ mDevice.delegate = self;
     }
 }
 ```
+# SDK_API参考手册
 附件：[iOS_SDK2.0_API参考手册](/assets/pdf/iOS_SDK2.0_API参考手册.pdf)
 
 
