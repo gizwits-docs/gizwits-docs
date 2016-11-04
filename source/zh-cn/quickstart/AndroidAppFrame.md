@@ -228,7 +228,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 此时整个页面布局就做好了。
 
 ## 4.	控制逻辑代码开发
-### 4.1.在GosDeviceControlActivity定义相关变量
+### 4.1.编写控制页面代码
 
 下图为该产品在云端创建的数据点。
  
