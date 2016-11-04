@@ -157,7 +157,7 @@
         timeoutHandler = setTimeout(function() {
           if (pos + $nav.scrollTop() > navHeight) {
             $nav.animate({
-              scrollTop: pos + $nav.scrollTop()
+              scrollTop: pos + $nav.scrollTop() - 120
             })
           } else if (pos - navHeight < 376) {
             $nav.animate({
