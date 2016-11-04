@@ -42,8 +42,10 @@ APP开发:
 
 
 微信开发:
-  path: /WechatDev/微信应用开发.html
-
+  了解微信应用开发:
+    path: /WechatDev/了解微信应用开发.html
+  微信应用开发教程:
+    path: /WechatDev/微信应用开发教程.html
 
 设备开发:
   GAgent详解:
