@@ -7,19 +7,9 @@ title: GoKit 3 硬件手册
 GoKit 3采用可扩展式的硬件设计方案。核心硬件是包括：功能扩展板、ESP8266 WiFi模块。
 同时GoKit 3兼容标准Arduino接口、Hi3518E WiFi模块、语音模块等相关模组。
 
-![GoKit3](/assets/zh-cn/deviceDev/Gokit3/manual/1478155289532.png)
-
 ## 2.软件相关
 
 GoKit 3开发套件使用机智云物联网云服务平台，使用自定义数据点的IoT开发框架，用户可以试用其方便地开发智能硬件产品。
-
-## 3.开发者支持
-
-使用Gokit 系列开収套件，用户将拥有机智云开发者专有账号，给予开发者进入机智云云平台的技术支持，包括开发者所需要的资料及SDK、社区论坛服务、以及其他服务。
-
-机智云官方网站：[http://www.gizwits.com/](http://www.gizwits.com/)
-
-开収者论坛： [http://club.gizwits.com/forum.php](http://club.gizwits.com/forum.php)
 
 # ESP8266 Wi-Fi模组
 
@@ -235,9 +225,18 @@ P9813 是一款全彩点光源 LED 驱劢芯片，采用 CMOS 工艺，提供三
 P7 接口中有一组SWD接口（可用于模组程序烧录）、一组Uart TTL接口（用来输出模组Debug日志）。
 
 P6 接口是Arduino的外置兼容接口。
-# 附录：GoKit 3功能扩展板原理图
 
-![GoKit 3功能扩展板原理图](/assets/zh-cn/deviceDev/Gokit3/manual/1478157403571.png)
+# 开发者支持
 
-![GoKit 3功能扩展板原理图](/assets/zh-cn/deviceDev/Gokit3/manual/1478157409033.png)
+使用Gokit 系列开収套件，用户将拥有机智云开发者专有账号，给予开发者进入机智云云平台的技术支持，包括开发者所需要的资料及SDK、社区论坛服务、以及其他服务。
+
+机智云官方网站：[http://www.gizwits.com/](http://www.gizwits.com/)
+
+开収者论坛： [http://club.gizwits.com/forum.php](http://club.gizwits.com/forum.php)
+
+文档中心： [http://docs.gizwits.com/hc/](http://docs.gizwits.com/hc/)
+
+# 附录：GoKit 3原理图下载地址
+
+文档中心： [http://club.gizwits.com/thread-2889-1-1.html](http://club.gizwits.com/thread-2889-1-1.html)
 
