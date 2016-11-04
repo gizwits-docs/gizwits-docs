@@ -3,7 +3,7 @@ title: Android App快速开发
 
 # 概述
 
-本文主要介绍了如何快速使用机智云安卓APP开源框架来进行APP的开发与测试，在阅读本文档之前，请先完成[APP开发准备工作](/zh-cn/quickstart/AndroidAppFrame.html)
+本文主要介绍了如何快速使用机智云安卓APP开源框架来进行APP的开发与测试，在阅读本文档之前，请先完成[APP开发准备工作](/zh-cn/quickstart/准备工作.html)
 
 # 	10分钟部署调试机智云APP开源框架
 ## 1.	下载安卓APP开源框架
