@@ -56,17 +56,17 @@ C.平台支持至少2K的RAM空间（可调整环形缓冲区大小来解决此�
  
 重要文件解读:
 
-1. gizwits\_product.c
+1. gizwits_product.c
 该文件为产品相关处理函数，如gizwitsEventProcess()。
 
-2. gizwits\_product.h
-该文件为gizwits\_product.c的头文件，如HARDWARE\_VERSION、SOFTWARE\_VERSION。
+2. gizwits_product.h
+该文件为gizwits_product.c的头文件，如HARDWARE_VERSION、SOFTWARE_VERSION。
 
-3. gizwits\_protocol.c
+3. gizwits_protocol.c
 该文件为SDK API接口函数定义文件。
 
-4. gizwits\_protocol.h
-该文件为gizwits\_protocol.c对应头文件，相关API的接口声明均在此文件中。
+4. gizwits_protocol.h
+该文件为gizwits_protocol.c对应头文件，相关API的接口声明均在此文件中。
 
 5. 其他文件
  a) User/main.c
@@ -83,7 +83,7 @@ gizwits协议初始化接口。
 用户调用该接口可以完成Gizwits协议相关初始化（包括协议相关定时器、串口的初始化）。
 
 
-**· void gizwitsSetMode (uint8\_t mode)**
+**· void gizwitsSetMode (uint8_t mode)**
 
 
 参数mode[in]：仅支持0,1和2,其他数据无效。
@@ -93,7 +93,7 @@ gizwits协议初始化接口。
 参数为1或2，配置模式切换接口，支持SoftAP和AirLink模式。参数为1时配置模组进入SoftAp模式，参数为2配置模组进入AirLink模式。
 
 
-**· void gizwitsHandle(dataPoint\_t \*dataPoint)**
+**· void gizwitsHandle(dataPoint_t *dataPoint)**
 
 
 参数dataPoint[in]:用户设备数据点。
@@ -101,7 +101,7 @@ gizwits协议初始化接口。
 该函数中完成了相应协议数据的处理即数据上报的等相关操作。
 
 
-**· int8\_t gizwitsEventProcess(eventInfo\_t \*info, uint8\_t \*data, uint32\_t len)**
+**· int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)**
 
 
 参数info[in]:事件队列
@@ -152,9 +152,9 @@ e.实现应用层逻辑开发（必要）：包括数据上下行、入网配置
 ```
 /** 用户区当前设备状态结构体*/
 
-dataPoint\_t currentDataPoint;
+dataPoint_t currentDataPoint;
 
-void Sys\_Init(void)
+void Sys_Init(void)
 
 {
 
@@ -182,7 +182,7 @@ void main(void)
 
         //System space init
 
- Sys\_Init();
+ Sys_Init();
 
         //Gizwits protocol init
 
@@ -196,7 +196,7 @@ void main(void)
 
         userHandle();
 
-        gizwitsHandle((dataPoint\_t *)&amp;currentDataPoint);
+        gizwitsHandle((dataPoint_t *)&currentDataPoint);
 
  }
 
@@ -205,12 +205,12 @@ void main(void)
 
 ## 2.实现串口驱动（必要）
 
-MCU方案需要用户实现一个串口，用于设备MCU与WIFI模组之间数据通信。用户首先需要实现串口接收中断服务函数接口UART\_IRQ\_FUN（MSP430平台函数接口为：USCI0RX\_ISR），该接口调用**gizPutData()**函数实现串口数据的接收并且写入协议层数据缓冲区。
+MCU方案需要用户实现一个串口，用于设备MCU与WIFI模组之间数据通信。用户首先需要实现串口接收中断服务函数接口UART_IRQ_FUN（MSP430平台函数接口为：USCI0RX_ISR），该接口调用**gizPutData()**函数实现串口数据的接收并且写入协议层数据缓冲区。
 
 下面以MSP430平台为例，本例使用USCI0与模组通信，串口初始化实现如下：
 
 ```
-void Sys\_Init(void)
+void Sys_Init(void)
 
 {
 
@@ -224,9 +224,9 @@ void Sys\_Init(void)
 
 //串口设置-9600bps
 
- serial\_init(9600);
+ serial_init(9600);
 
-        cio\_printf(" Start system \n";);
+        cio_printf(" Start system \n";);
 
 }
 
@@ -237,7 +237,7 @@ void Sys\_Init(void)
 ```
 /*******************************************************************
 
-** 函数名称：void USCI0RX\_ISR(void)
+** 函数名称：void USCI0RX_ISR(void)
 
 ** 函数功能：Echo back RXed character, confirm TX buffer is ready first
 
@@ -247,15 +247,15 @@ void Sys\_Init(void)
 
 ********************************************************************/
 
-#pragma vector=USCIAB0RX\_VECTOR
+#pragma vector=USCIAB0RX_VECTOR
 
-__interruptvoid USCI0RX\_ISR(void)
+__interruptvoid USCI0RX_ISR(void)
 
 {
 
-  while (!(IFG2&amp;UCA0TXIFG));   // USCI\_A0 TX buffer ready?
+  while (!(IFG2&UCA0TXIFG));   // USCI_A0 TX buffer ready?
 
-  gizPutData((uint8\_t *)&amp;UCA0RXBUF,1);
+  gizPutData((uint8_t *)&UCA0RXBUF,1);
 
   return;
 
@@ -324,7 +324,7 @@ int32_t uartWrite(uint8_t *buf, uint32_t len)
 
 注：注意示例中的0x55条件处理，即出现0xFF的数据时后面要加0x55，这个操作一定要保留。
 
-如果用户需要打印日志调试信息，用户需实现GIZWITS\_LOG函数，只需修改 **gizwits\_protocol.h** 中对应的宏定义即可，如下：
+如果用户需要打印日志调试信息，用户需实现GIZWITS_LOG函数，只需修改 **gizwits_protocol.h** 中对应的宏定义即可，如下：
 
 ```
 #define GIZWITS_LOG cio_printf  //<运行日志打印
@@ -332,7 +332,7 @@ int32_t uartWrite(uint8_t *buf, uint32_t len)
 
 ## 3.实现定时器驱动（必要）
 
-协议层使用到了一个系统时间，该事件单位为毫秒，所以要求用户实现一个毫秒定时器（必须是1ms精确定时，若不准确，会影响到超时重发、定时上报等处理），并且实现中断服务函数TIMER\_IRQ\_FUN（MSP430平台函数接口为：Timer\_A），该函数调用**gizTimerMs()**实现协议层系统时间的维护。
+协议层使用到了一个系统时间，该事件单位为毫秒，所以要求用户实现一个毫秒定时器（必须是1ms精确定时，若不准确，会影响到超时重发、定时上报等处理），并且实现中断服务函数TIMER_IRQ_FUN（MSP430平台函数接口为：Timer_A），该函数调用**gizTimerMs()**实现协议层系统时间的维护。
 
 下面以MSP430平台为例，本例使用Timer\_A实现时间维护，定时器初始化如下：
 
@@ -363,7 +363,7 @@ void Sys_Init(void)
 
  serial _init(9600);
 
-        cio_printf("quot; Start system \n");
+        cio_printf("Start system \n");
 
 }
 ```
@@ -371,9 +371,9 @@ void Sys_Init(void)
 中断服务函数实现如下：
 
 ```
-#pragma vector=TIMER0\_A0\_VECTOR//固定的格式
+#pragma vector=TIMER0_A0_VECTOR//固定的格式
 
-\_\_interruptvoid Timer\_A (void) //定时器A的CC0中断处理程序必须是没有返回值的
+__interruptvoid Timer_A (void) //定时器A的CC0中断处理程序必须是没有返回值的
 
 {
 
@@ -401,7 +401,7 @@ void mcuRestart(void)
 
 {
 
-        ((void (\*)())0xFFFE)();
+        ((void (*)())0xFFFE)();
 
 }
 ```
@@ -435,7 +435,7 @@ void mcuRestart(void)
 
 * @return NULL
 
-* @ref gizwits\_protocol.h
+* @ref gizwits_protocol.h
 
 */
 
@@ -447,7 +447,7 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
 
   dataPoint_t *dataPointPtr = (dataPoint_t *)data;
 
-  moduleStatusInfo_t \*wifiData = (moduleStatusInfo_t *)data;
+  moduleStatusInfo_t *wifiData = (moduleStatusInfo_t *)data;
   
 
   if((NULL == info) || (NULL == data))
