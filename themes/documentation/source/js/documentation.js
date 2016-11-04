@@ -235,6 +235,15 @@
 
 
 
+// open doc anchor in new page
++function($) {
+  $(function() {
+    $('.markdown-body a').not('.anchor').attr('target', '_blank')
+  })
+}(jQuery)
+
+
+
 // spin
 +function() {
   var opts = {
