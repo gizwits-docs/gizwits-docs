@@ -8,11 +8,11 @@ title:  平台概述
 
 # 机智云平台架构
 
-![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti02.png)
+![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti03.png)
 
 
-## 1、设备接入网关
-GAgent：模组系统GAgent，通过使用GAgent，开发者可根据机智云提供的协议与GAgent对接，使设备可快速接入云端。目前已兼容国内主流的Wi-Fi模块、移动网络模块
+## 1、设备接入开发
+硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统。硬件厂商只需理解如何与GAgent进行通讯即可。
 
 相关链接：
  [了解GAgent](../deviceDev/gagent_info.html)
@@ -29,10 +29,12 @@ GAgent：模组系统GAgent，通过使用GAgent，开发者可根据机智云�
  [微信开发](zh-cn/WechatDev/微信应用开发教程.html)
 
 ## 3、企业应用开发
-开发者如果已完成设备接入、APP开发，还需要构建一套业务管理系统，则需了解以下文档
+开发者如果已完成设备接入、APP开发，还需要从机智云PaaS平台获取数据构建一套业务管理系统，或者访问机智云提供的服务，z则需了解以下文档
 
 相关链接：
  [了解企业应用开发](../Cloud/ent_dev.html)
+ [了解消息代理服务接口](../Cloud/noti1.0.html)
+ [了解企业API](../Cloud/enterprise_api.html)
 
 
 
