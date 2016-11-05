@@ -19,13 +19,14 @@ GAgent：模组系统GAgent，通过使用GAgent，开发者可根据机智云�
  [设备如何快速接入](/zh-cn/quickstart/设备快速接入.html)
 
 
-## 2、IOT SDK 
-- A2 IOT SDK: 机智云提供了基于IOS，Android系统的IOT SDK 2.0版本，开发者通过SDK，可快速实现APP开发，无缝接入机智云，A2 IOT SDK更加稳定、更低功耗，并向下兼容
+## 2、手机应用开发
+- 机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能
 
 相关链接：
  [APP开源框架](../deviceDev/gagent_info.html)
- [安卓SDK接入](/zh-cn/quickstart/设备快速接入.html)
-  [IOS SDK接入](/zh-cn/quickstart/设备快速接入.html)
+ [安卓SDK接入](/zh-cn/AppDev/AndroidSDKA2.html)
+ [IOS SDK接入](/zh-cn/AppDev/iossdk.html)
+ [微信开发](zh-cn/WechatDev/微信应用开发教程.html)
 
 ## 企业应用开发
 开发者如果已完成设备接入、APP开发，还需要构建一套业务管理系统，则需了解以下文档
