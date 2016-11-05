@@ -8,7 +8,7 @@ title:  平台概述
 
 # 机智云平台架构
 
-![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti.jpg)
+![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti02.jpg)
 
 
 ## 1、设备接入网关
@@ -28,12 +28,11 @@ GAgent：模组系统GAgent，通过使用GAgent，开发者可根据机智云�
  [IOS SDK接入](/zh-cn/AppDev/iossdk.html)
  [微信开发](zh-cn/WechatDev/微信应用开发教程.html)
 
-## 企业应用开发
+## 3、企业应用开发
 开发者如果已完成设备接入、APP开发，还需要构建一套业务管理系统，则需了解以下文档
 
 相关链接：
  [了解企业应用开发](../Cloud/ent_dev.html)
-
 
 
 
