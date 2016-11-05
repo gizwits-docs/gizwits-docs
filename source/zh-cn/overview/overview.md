@@ -11,12 +11,28 @@ title:  平台概述
 ![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti.jpg)
 
 
-## 智能端
-- GAgent：模组系统GAgent，通过使用GAgent，开发者可根据机智云提供的协议与GAgent对接，使设备可快速接入。目前已兼容国内主流的Wi-Fi模块、移动网络模块
-- SDK: 机智云提供了基于IOS，Android系统的IOT SDK，开发者通过SDK，可快速实现APP开发，无缝接入机智云，并根据SDK获取机智云平台逐步推出的新服务
+## 1、设备接入网关
+GAgent：模组系统GAgent，通过使用GAgent，开发者可根据机智云提供的协议与GAgent对接，使设备可快速接入云端。目前已兼容国内主流的Wi-Fi模块、移动网络模块
 
-## 云平台
-- PaaS平台：提供强大、稳定的物联网云平台
+相关链接：
+ [了解GAgent](../deviceDev/gagent_info.html)
+ [设备如何快速接入](/zh-cn/quickstart/设备快速接入.html)
+
+
+## 2、IOT SDK 
+- A2 IOT SDK: 机智云提供了基于IOS，Android系统的IOT SDK 2.0版本，开发者通过SDK，可快速实现APP开发，无缝接入机智云，A2 IOT SDK更加稳定、更低功耗，并向下兼容
+
+相关链接：
+ [APP开源框架](../deviceDev/gagent_info.html)
+ [安卓SDK接入](/zh-cn/quickstart/设备快速接入.html)
+  [IOS SDK接入](/zh-cn/quickstart/设备快速接入.html)
+
+## 企业应用开发
+开发者如果已完成设备接入、APP开发，还需要构建一套业务管理系统，则需了解以下文档
+
+相关链接：
+ [了解企业应用开发](../Cloud/ent_dev.html)
+
 
 
 
@@ -46,13 +62,13 @@ title:  平台概述
 
 
 ### 5、多层次云端数据服务
-  - 消息代理服务: 按需订阅企业设备数据
-  - 企业API：提供控制、设备管理、设备数据查询、位置服务等服务
-  - D3 Engine：灵活、强大的数据编排引擎
+  - 消息代理服务: 按需订阅企业设备数据
+  - 企业API：提供控制、设备管理、设备数据查询、位置服务等服务
+  - D3 Engine：灵活、强大的数据编排引擎
 
 ### 6、开放性
-  - 全球最开放的物联网自助开发平台
-  - 开放互联AWS ECHO、微信、JD、Nest、苹果HomeKit、苏宁云等各大平台
+  - 全球最开放的物联网自助开发平台
+  - 开放互联AWS ECHO、微信、JD、Nest、苹果HomeKit、苏宁云等各大平台
 
 ### 7、国际化
 
