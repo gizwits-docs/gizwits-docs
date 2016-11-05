@@ -164,6 +164,7 @@ statusBarStyle：状态栏颜色
 " statusBarStyle "：1
 ```
 实际效果图：
+
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478096491169.png)
 
 **3. 肤色三**
