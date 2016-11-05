@@ -134,6 +134,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478081924503.png)
 
 ### 3.2 添加Button控件
+
 1)打开控制器的xib文件 – GosDeviceController.xib，删除Label控件，并到GosDeviceController.m文件中删除所有相关代码
 
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478081956383.png)
