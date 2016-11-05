@@ -8,7 +8,7 @@ title:  平台概述
 
 # 机智云平台架构
 
-![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti02.jpg)
+![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/arti02.png)
 
 
 ## 1、设备接入网关
