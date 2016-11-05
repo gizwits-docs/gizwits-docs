@@ -16,6 +16,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478079062215.png)
 
 框架目录如下：
+
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478079123727.png)
 
 ## 3. 开源框架包结构说明
