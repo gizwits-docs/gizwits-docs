@@ -1,7 +1,7 @@
 title:   消息代理1.0
 ---
 
-# 服务端地址
+# 消息代理服务端地址
 - 域名：noti.gizwitsapi.com
 - 端口：2015
 
@@ -172,7 +172,7 @@ title:   消息代理1.0
 ```
 客户端开发者应检查客户端发出的消息内容是否正确（注意：如果客户端没有在消息结尾添加"\n"，服务器端会认为还没有收到完整的消息而继续等待更多的消息内容）。
 
-## 7、客户端Demo
+## 6、客户端Demo
 该Demo代码已实现了如何接入消息代理服务，已封装好了登录鉴权、心跳、消息ACK等基本功能，企业只需将main函数中的eid,esecret修改为企业自己的即可运行。Demo代码请点击 [Demo code](https://github.com/gizwits/noti-java-demo/tree/master) 下载
 ```java
 public static void main( String[] args )
@@ -195,7 +195,7 @@ public static void main( String[] args )
 
 ## 7、FAQ
 ### 7.1 IP白名单
-客户端需要将请求消息代理服务端的请求IP设置到IP白名单中，具体的设置方法请参考：![@设置IP白名单](/source/zh-cn/Cloud/ent_dev.html)
+客户端需要将请求消息代理服务端的请求IP设置到IP白名单中，具体的设置方法请参考：![@设置IP白名单](/zh-cn/Cloud/ent_dev.html)
 
 
 ### 7.1 心跳与重连机制
