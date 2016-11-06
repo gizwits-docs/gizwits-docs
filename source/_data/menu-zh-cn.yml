@@ -105,10 +105,10 @@ APP开发:
 云平台:
     企业应用开发:
       path: /Cloud/ent_dev.html
+    消息代理服务:
+      path: /Cloud/noti1.0.html
     企业API:
       path: /Cloud/enterprise_api.html 
-    Open API:
-      path: /Cloud/OpenAPI.html
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
 
