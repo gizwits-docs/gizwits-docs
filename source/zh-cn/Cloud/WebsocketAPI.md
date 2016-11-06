@@ -3,7 +3,7 @@ title: Websocket API 指南
 
 # 1. 通讯模型 
 
-浏览器（Javascript）可以通过Web Socket API与云端直接通讯。浏览器（Javascript）通过 Web Socket API，可以控制设备和实时接收设备上报的数据。 
+浏览器（Javascript）可以通过Web Socket API与机智云云端直接通讯。浏览器（Javascript）通过 Web Socket API，可以控制设备和实时接收设备上报的数据。 
 
 ![通信模型](/assets/zh-cn/cloud/通信模型.jpg)
 
@@ -11,10 +11,10 @@ title: Websocket API 指南
 
 浏览器（Javascript）通过Web Socket API与云端通讯主要包括以下的通讯过程。
 
-* 用户登陆。用户通过从Http API获得的uid和token登陆云端。
-* 接收设备上线下线消息。只有绑定设备后才能控制设备。 
-* 发送和接收设备业务逻辑数据。
-* 心跳。浏览器（Javascript）定期向云端发送心跳，云端回复心跳响应。
+* 用户登陆：用户通过从Http API获得的uid和token登陆云端。
+* 接收设备上线下线消息：只有绑定设备后才能控制设备。 
+* 发送和接收设备业务逻辑数据：
+* 心跳：浏览器（Javascript）定期向云端发送心跳，云端回复心跳响应。
 
 
 # 3. 约定 
@@ -39,7 +39,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 * Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app(​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)，也可以查看这个网页的源代码作为示例代码参考。
 
 
-# 4. 通讯协议 
+#  4. 通讯协议 
 
 
 ## 4.1. 用户登陆 
