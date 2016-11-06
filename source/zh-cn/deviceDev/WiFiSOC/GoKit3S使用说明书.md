@@ -202,4 +202,4 @@ MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方�
 
 若想了解整个机智云的开发框架请查看开发者**文档中心**：
 
-[*http://docs.gizwits.com/hc/*](http://docs.gizwits.com/hc/)
+[*http://docs.gizwits.com*](http://docs.gizwits.com)
