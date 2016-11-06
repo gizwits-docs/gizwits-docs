@@ -221,7 +221,7 @@ MONTHS: "201507"
 ### 业务功能描述
 该接口提供获取某个产品某台设备的历史数据，如温度值等功能；
 ### 接口地址
-     http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/data?start_ts=${start_ts}&end_ts=${end_ts}&limit=20&skip=0
+    http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/data?start_ts=${start_ts}&end_ts=${end_ts}&limit=20&skip=0
 ### 请求方式
     GET
 ### 请求报文
@@ -231,7 +231,7 @@ MONTHS: "201507"
 |start_ts   |integer   |是|URL|开始时间戳| 
 |end_ts   |integer   |是|URL|结束时间戳| 
 |limit   |integer   |是|URL| |
-|skip   |integer   |是|URL| |		
+|skip   |integer   |是|URL|  |		
 
 ### 应答报文
 ```json
@@ -285,9 +285,9 @@ Body：
 |404|   5003|   enterprise id not exist|   Eid不存在，检查是否申请或者Eid输入错误|
 |400|   5004|   enterprise secret error|   Esecret校验失败，检查是否是正确的|
 |400|   5005|   product secret error|   Product Secret校验失败，检查是否是正确的|
-|400|   5006|   product exist devicegroups|	
+|400|   5006|   product exist devicegroups| |	
 |404|   5007|   association not exist|   表示Eid没有雨对应的产品Product Key 关联，必须成功关联才能操作|
-|400|   5008|   association existed|	
+|400|   5008|   association existed| |
 |400|   5009|   token invalid|   请携带token或检查token字段格式,正确的token格式是在http header中输入:token ${token值}，token后面必须空一格后再写入具体的token值|
 |400|   5010|   token未匹配|   请核对token|
 |400|	5011|	token过期|	请再次获取token|
@@ -303,7 +303,7 @@ Body：
 |404|	5206|	group not exist| |	
 |404|	5301|	设备不存在|   核对设备ID|
 |403|	5302|	产品与设备未绑定|   请先将设备绑定到产品|
-|400|	5303|	device not bound|	
+|400|	5303|	device not bound| |	
 |400|	5304|	设备未激活|   激活设备|
 |400|	5305|	设备处于下线状态|   上线设备|
 |400|	5401|	数据点错误|	核对数据点信息|
