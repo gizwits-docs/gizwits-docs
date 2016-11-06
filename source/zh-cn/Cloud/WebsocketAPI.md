@@ -39,8 +39,6 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 * Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app(​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)，也可以查看这个网页的源代码作为示例代码参考。
 
 # 4. 通讯协议 
- 
-
 
 ## 4.1. 用户登陆 
 
