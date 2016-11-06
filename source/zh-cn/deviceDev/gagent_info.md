@@ -1,4 +1,4 @@
-title:GAgent详解
+title:  GAgent详解
 ---
 
 # GAgent功能概述
