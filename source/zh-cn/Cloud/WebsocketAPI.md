@@ -26,9 +26,9 @@ title: Websocket API 指南
 
 
 ## 3.2. 云端Web Socket服务地址 
-<pre>
+```
 ws://&lt;m2m_host&gt;:8080/ws/app/v1 
-</pre>
+```
 其中的&lt;m2m_host&gt;为绑定设备列表中的host字段的值，如”m2m.gizwits.com”或”sandbox.gizwits.com”，请参考获取绑定设备列表HTTP API。
 
 
@@ -46,7 +46,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 浏览器（Javascript）必须登陆后才能和云端作进一步的交互。 
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
-<pre>
+```
 {
     "cmd": "login_req",
     "data":
@@ -58,10 +58,10 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         "heartbeat_interval": &lt;int&gt; (心跳的时间间隔，单位为秒，值必须小于等于180)
     }
 }
-</pre>   
+```   
 
 云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。
-<pre>
+```
 {
     "cmd": "login_res",
     "data":
@@ -69,7 +69,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         "success": true | false （true为登陆成功，false登陆失败）
     }
 }
-</pre>
+```
  
  
 ## 4.2. 设备上线下线通知 
@@ -77,7 +77,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 当设备上线或下线时，云端会主动发送通知到浏览器。
 
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知设备上线或下线。
-<pre>
+```
 {
     "cmd": "s2c_online_status",
     "data": 
@@ -88,7 +88,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         "online": true | false （true表示设备上线，false表示设备下线）
     }
 }
-</pre>  
+```  
 
 
 ## 4.3. 浏览器与云端的数据交互（数据透传）
@@ -97,7 +97,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 当用户在登 陆时参数"p0_type"的值等于"custom"时，只能以这种方式和云端交互数据。
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。 
-<pre>
+```
 {
     "cmd": "c2s_raw",
     "data": 
@@ -106,13 +106,13 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         "raw": [&lt;byte&gt;, &lt;byte&gt;, ...] （自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255。该内容必须要以[0, 0, 0, 3, varLen(1~4B), 0, 0, 144]开头）
     }  
 }
-</pre> 
+``` 
 
 若想云端往设备转发数据，raw的值需要加上以下的协议前缀再接上发往设备的数据，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 144] + 发往设备的数据，其中的varLen为可变长度，由1~4个字节(B)表示本可变长度字段后一直到数据包结尾的字节数 ，如长度小于128B，直接用一个字节(B)表示长度即可，长度大于等于128B的编码解码方式请参考MQTT V3.1协议的可变长度（Remaining Length）定义。  
 
 
 云端 ⇒ 浏览器。当云端收到设备上传的数据后，云端向浏览器转发以下的JSON字符串，数据放在raw字段中。登陆参数​"p0_type"​的值等于​"attrs_v4"​时,设备以“透传业务指令”上报的数据会以本指令发往浏览器。
-<pre>
+```
 {
     "cmd": "s2c_raw", 
     "data":
@@ -121,7 +121,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         "raw": [&lt;byte&gt;, &lt;byte&gt;, ...]（自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255）
     }
 }
-</pre> 
+``` 
 
 若该数据为设备上报的数据，raw的值会带上一个协议前缀，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 145] + 设备数据，其中的varLen为可变长度，定义请参考上文。 
 
@@ -130,7 +130,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 当用户在登陆时参数"p0_type"的值等于"attrs_v4"时，云端会以标准数据点协议的方式和浏览器交互。   
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，读取目标设备当前的状态。陆参数"p0_type"​的值等于​"custom"​时不允许使用本指令。
-<pre>
+```
 {
     "cmd": "c2s_read",
     "data":
@@ -138,10 +138,10 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         "did": &lt;str&gt;（目标设备的did）
     }
 }
-</pre>   
+```   
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，控制目标设备（更改目标设备的状态）。登陆参数​"p0_type"​的值等于​"custom"​时不允许使用本指令。
-<pre>
+```
 {
     "cmd": "c2s_write",
     "data":
@@ -155,11 +155,11 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         }
     }
 }
-</pre>   
+```   
 
 云端 ⇒ 浏览器。设备收到读取指令或状态发生变化后，会主动发送当前状态到云端，云端向浏览器转发以下的JSON字符串。 登陆参数​"p0_type"​的值等于​"custom"​时不会收到本指令。
 
-<pre>
+```
 {
     "cmd": "s2c_noti",     
     "data": 
@@ -173,7 +173,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         }
     } 
 } 
-</pre>
+```
 
 
 ## 4.5. 心跳
@@ -181,27 +181,27 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 浏览器和云端建立Web Socket连接后，需要在登陆参数"heartbeat_interval"指定的时间间隔内，定期向云端发送心跳。云端收到后会回复心跳。
     
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
-<pre>
+```
 {
     "cmd": "ping"
 }
-</pre> 
+``` 
   
 云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。
-<pre>
+```
 {
     "cmd": "pong"
 }
-</pre>
+```
 
 ## 4.6. 非法消息通知
 
 当浏览器向云端发送的消息不合法或收到设备上报的数据不合法时,云端会下发此消息通知浏览器。
 
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有非法消息。
-<pre>
+```
 {
     "cmd": "s2c_invalid_msg", 
     "data": &lt;str&gt; ​(描述文本)
 }
-</pre>
+```
