@@ -405,7 +405,7 @@ Response 200
 |X-Gizwits-Application-Id  |String|是|header|| 
 |email|string|是|body||
 
-# 应答报文
+### 应答报文
 Response 200 (application/json)
 
 ## 使用手机号重置密码
@@ -424,7 +424,7 @@ Response 200 (application/json)
 |phone|string|是|body|手机号码|
 |code|string|是|body|验证码|
 |new_pwd|string|是|body|新密码|
-# 应答报文
+### 应答报文
 Response 200 (application/json)
 
 # 绑定管理
