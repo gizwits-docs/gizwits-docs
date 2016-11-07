@@ -26,7 +26,7 @@ App用户token值， 生存周期为1个星期有效，调用获取token接口�
 
 # App Token申请
 
-## 获取 App Token [/app/request_token]
+## 获取 App Token
 ### 业务功能描述
 该接口提供获取访问token访问权限的功能
 ### 接口地址
@@ -331,12 +331,13 @@ X-Gizwits-Application-Auth: {signature}
 }
 ```
 
-# 验证码与密码重置
+# 验证码
 
-## 验证码 [/app/verify/codes]
-
+## 获取图片验证码 [/app/verify/codes]
 ### 业务功能描述
-该接口提供获取图片验证码和发送手机短信验证码
+该接口提供获取图片验证码
+### 请求地址
+http://api.gizwits.com/app/verify/codes
 ### 请求方式
     POST
 
@@ -354,8 +355,13 @@ X-Gizwits-Application-Auth: {signature}
 
 Response 201
 
-### 请求内容
+## 发送手机短信验证码
+### 业务功能描述
 发送手机短信验证码
+### 请求地址
+http://api.gizwits.com/app/verify/codes
+### 请求方式
+    POST
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
@@ -369,9 +375,9 @@ Response 201
 
 Response 201
 
-### 校验短信验证码
+## 校验短信验证码
 ### 业务功能描述
-该接口提供获取图片验证码和发送手机短信验证码
+该接口校验短信验证码功能
 ### 请求方式
     PUT
 ### 请求报文
@@ -384,69 +390,42 @@ Response 201
 ### 应答报文
 Response 200
 
-## 重置密码 [/app/reset_password]
+# 重置密码
 
-### 使用邮箱重置密码 [POST]
-
+## 邮箱重置密码
+### 业务功能描述
 请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。
+### 接口地址
+    http://api.gizwits.com/app/reset_password
+### 请求方式
+     POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|email|string|是|body||
 
-+ Request (application/json)
+# 应答报文
+Response 200 (application/json)
 
-    + Header
+## 使用手机号重置密码
 
-            X-Gizwits-Application-Id: {appid}
-
-    + Body
-
-            {
-                "email": "bob@bob.com"
-            }
-
-+ Response 200 (application/json)
-
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{
-            \"email\": \"bob@bob.com\"
-        }" \
-        'http://api.gizwits.com/app/reset_password'
-
-### 使用手机号重置密码 [POST]
-
+### 业务功能描述
 使用手机号重置密码需要先调用一次获取短信验证码的接口。
 
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-
-    + Body
-
-            {
-                "phone": "13232433",
-                "code": "13232',
-                "new_pwd": "1323200"
-            }
-
-+ Response 200 (application/json)
-
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{
-            \"phone\": \"13232433\",
-            \"code\": \"13232\',
-            \"new_pwd\": \"1323200\"
-        }" \
-        'http://api.gizwits.com/app/reset_password'
+### 接口地址
+    http://api.gizwits.com/app/reset_password
+### 请求方式
+     POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|phone|string|是|body|手机号码|
+|code|string|是|body|验证码|
+|new_pwd|string|是|body|新密码|
+# 应答报文
+Response 200 (application/json)
 
 # 绑定管理
 
