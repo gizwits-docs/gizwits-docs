@@ -632,6 +632,7 @@ X-Gizwits-User-token: {token}
       "humi": 20
     }
 }
+```
 
 ## 远程控制设备
 
