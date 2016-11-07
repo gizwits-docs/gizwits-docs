@@ -77,6 +77,9 @@
       @media (max-width: $header-bp) {
         position: inherit;
         padding: 0 20px;
+        background: inherit;
+        border: none;
+        box-shadow: none;
       }
       white-space: nowrap;
       display: none;
@@ -89,6 +92,9 @@
         color: $black;
       }
       li:hover {
+        @media (max-width: $header-bp) {
+          background: $black;
+        }
         background: $dark-gray;
       }
     }
@@ -107,6 +113,14 @@
     }
     .levelB,
     .levelC {
+      &,
+      &:hover,
+      a {
+        @media (max-width: $header-bp) {
+          color: $yellow;
+          background: $black;
+        }
+      }
       display: block;
       &,
       a {
