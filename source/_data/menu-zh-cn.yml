@@ -20,13 +20,13 @@
 
 APP开发:
   App 开源框架:
-    iOS 开源框架使用说明:
+    iOS 开源框架说明(含源码):
       path: /AppDev/iosframe.html
     iOS 消息推送:
       path: /AppDev/iOS消息推送.html
     iOS 第三方登录与换肤:
       path: /AppDev/iOS第三方登陆与换肤.html
-    Android 开源框架使用说明:
+    Android 开源框架说明（含源码）:
       path: /AppDev/Android开源框架使用指南.html
     Android 消息推送:
       path: /AppDev/Android消息推送.html
@@ -65,7 +65,7 @@ APP开发:
     Gokit3.0硬件手册:
       path: /deviceDev/Gokit3/GoKit3硬件手册.html
       
-  WiFi SOC方案:
+  Gokit 3.0 SOC方案:
     GoKit3.0(S)使用说明书:
       path: /deviceDev/WiFiSOC/GoKit3S使用说明书.html
     Gokit3.0(S)开发套件介绍:
