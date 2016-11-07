@@ -18,9 +18,11 @@ http://api.gizwits.com
 
 * python sdk: https://github.com/gizwits/gservice_sdk_py
 
-# 用户信息 [/app/users]
+# 用户管理
 
-## 创建匿名用户 [POST]
+## 用户信息 [/app/users]
+
+### 创建匿名用户 [POST]
 
 如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。
 
@@ -60,7 +62,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 使用用户名和密码创建用户 [POST]
+### 使用用户名和密码创建用户 [POST]
 
 + Request (application/json)
 
@@ -97,7 +99,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 使用邮箱创建用户 [POST]
+### 使用邮箱创建用户 [POST]
 
 用户通过邮箱注册机智云帐号，注册成功后会收到一封邮件通知。
 
@@ -136,7 +138,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 使用手机号创建用户 [POST]
+### 使用手机号创建用户 [POST]
 
 如果希望用户使用手机号注册机智云帐号，机智云提供短信验证码接口，您需要先调用获取验证码接口获取验证码，然后再进行注册。
 
@@ -177,7 +179,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 使用第三方账号（百度/新浪/QQ）创建用户 [POST]
+### 使用第三方账号（百度/新浪/QQ）创建用户 [POST]
 
 机智云目前支持使用百度、新浪和QQ创建用户，但是需要您在客户端实现 OAuth 授权，获得用户的 uid 和 token，机智云会验证 uid 和 token 的合法性，验证通过就会创建一个机智云帐号。
 
@@ -236,7 +238,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 匿名用户设置用户名和密码 [PUT]
+### 匿名用户设置用户名和密码 [PUT]
 
 假设您的机智云应用帮用户创建了一个匿名用户，他不需要注册就可以体验您的应用，并且绑定了设备，他体验满意之后，希望有一个自己的机智云帐号，但是又不想重复绑定设备。这时您可以调用该接口，为匿名用户设置用户名和密码，这样他就不再是一个匿名用户了。
 
@@ -275,7 +277,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 匿名用户设置手机号和密码 [PUT]
+### 匿名用户设置手机号和密码 [PUT]
 
 与匿名用户设置用户名和密码类似，该接口可以为匿名用户设置手机号和密码，但是需要先调用一次获取短信验证码的接口。
 
@@ -316,7 +318,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 修改密码 [PUT]
+### 修改密码 [PUT]
 
 + Request (application/json)
 
@@ -353,7 +355,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 修改 email [PUT]
+### 修改 email [PUT]
 
 + Request (application/json)
 
@@ -388,7 +390,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-## 修改手机号 [PUT]
+### 修改手机号 [PUT]
 
 修改手机号需要先调用一次获取短信验证码的接口，给新手机号发送一条短信验证码。
 
@@ -427,11 +429,11 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/users'
 
-# 用户登录 [/app/login]
+## 用户登录 [/app/login]
 
 可以使用用户名/邮箱/手机号登录，一律填写到 username 字段。
 
-## 用户登录 [POST]
+### 用户登录 [POST]
 
 + Request (application/json)
 
@@ -503,9 +505,11 @@ http://api.gizwits.com
              --header "X-Gizwits-Application-Auth: {signature}" \
           'https://api.gizwits.com/app/request_token'
 
-# 图片验证码 [/app/verify/codes]
+# 验证码与密码重置
 
-## 获取图片验证码 [GET]
+## 图片验证码 [/app/verify/codes]
+
+### 获取图片验证码 [GET]
 
 + Request (application/json)
 
@@ -532,7 +536,7 @@ http://api.gizwits.com
              --header "X-Gizwits-Application-Token: {token}" \
           'http://api.gizwits.com/app/verify/codes'
 
-## 发送手机短信验证码 [POST]
+### 发送手机短信验证码 [POST]
 
 + Request (application/json)
 
@@ -565,7 +569,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/verify/codes'
 
-## 校验短信验证码 [PUT]
+### 校验短信验证码 [PUT]
 
 + Request (application/json)
 
@@ -596,9 +600,10 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/verify/codes'
 
-# 重置密码 [/app/reset_password]
 
-## 使用邮箱重置密码 [POST]
+## 重置密码 [/app/reset_password]
+
+### 使用邮箱重置密码 [POST]
 
 请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。
 
@@ -627,7 +632,7 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/reset_password'
 
-## 使用手机号重置密码 [POST]
+### 使用手机号重置密码 [POST]
 
 使用手机号重置密码需要先调用一次获取短信验证码的接口。
 
@@ -660,45 +665,11 @@ http://api.gizwits.com
         }" \
         'http://api.gizwits.com/app/reset_password'
 
-# 获取设备最近上传数据 [/app/devdata/{did}/latest]
+# 绑定管理
 
-## 获取设备最近上传数据点 [GET]
+## 绑定设备 [/app/bind_mac]
 
-获取设备最近一次上传的数据，包含所有数据点的键值对。
-
-+ 参数列表
-    + did (required, string, `gdGn7PzAYf4VrhnVag5x8D`)
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "did": "gdGn7PzAYf4VrhnVag5x8D",
-                "updated_at": 148293984328,
-                "attr": {
-                  "temp": 10,
-                  "humi": 20
-                }
-            }
-
-+ 请求示例
-
-        curl --include \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-          'http://api.gizwits.com/app/devdata/gdGn7PzAYf4VrhnVag5x8D/latest'
-
-
-# 绑定设备 [/app/bind_mac]
-
-## 绑定设备 [POST]
+### 绑定设备 [POST]
 
 X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟
 X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()
@@ -741,9 +712,9 @@ X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()
         }" \
         'http://api.gizwits.com/app/bind_mac'
 
-# 绑定关系 [/app/bindings]
+## 绑定关系 [/app/bindings]
 
-## 获取绑定列表 [GET]
+### 获取绑定列表 [GET]
 
 + 参数列表
     + limit (optional, number, `20`)
@@ -800,7 +771,7 @@ limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，sk
              --header "X-Gizwits-User-token: {token}" \
           'http://api.gizwits.com/app/bindings?show_disabled=1&limit=20&skip=0'
 
-## 绑定设备: 通过 did + passcode [POST]
+### 绑定设备: 通过 did + passcode [POST]
 
 使用该接口适合知道 did 和 passcode 的情况。
 
@@ -849,7 +820,7 @@ remark 用于设置备注信息。
         }" \
         'http://api.gizwits.com/app/bindings'
 
-## 解除绑定 [DELETE]
+### 解除绑定 [DELETE]
 
 + Request (application/json)
 
@@ -887,7 +858,45 @@ remark 用于设置备注信息。
         }" \
         'http://api.gizwits.com/app/bindings'
 
-# 远程控制设备 [/app/control/{did}]
+# 设备管理
+
+## 获取设备最近上传数据 [/app/devdata/{did}/latest]
+
+### 获取设备最近上传数据点 [GET]
+
+获取设备最近一次上传的数据，包含所有数据点的键值对。
+
++ 参数列表
+    + did (required, string, `gdGn7PzAYf4VrhnVag5x8D`)
+
++ Request (application/json)
+
+    + Header
+
+            X-Gizwits-Application-Id: {appid}
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "did": "gdGn7PzAYf4VrhnVag5x8D",
+                "updated_at": 148293984328,
+                "attr": {
+                  "temp": 10,
+                  "humi": 20
+                }
+            }
+
++ 请求示例
+
+        curl --include \
+             --header "Content-Type: application/json" \
+             --header "X-Gizwits-Application-Id: {appid}" \
+          'http://api.gizwits.com/app/devdata/gdGn7PzAYf4VrhnVag5x8D/latest'
+
+
+## 远程控制设备 [/app/control/{did}]
 
 远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。
 推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。
@@ -895,7 +904,7 @@ remark 用于设置备注信息。
 + 参数列表
     + did (required, string, `did`)
 
-## 设置数据点 [POST]
+### 设置数据点 [POST]
 
 * 只能设置可写类型的数据点
 * bool 类型的数据点设置为 true/false
@@ -963,7 +972,7 @@ remark 用于设置备注信息。
         'http://api.gizwits.com/app/control/did'
 
 
-## 发送原始控制指令 [POST]
+### 发送原始控制指令 [POST]
 
 + Request (application/json)
 
@@ -996,7 +1005,9 @@ remark 用于设置备注信息。
         }" \
         'http://api.gizwits.com/app/control/did'
 
-# 定时任务 [/app/scheduler{?limit,skip}]
+# 定时管理
+
+## 定时任务 [/app/scheduler{?limit,skip}]
 
 定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。
 
@@ -1023,7 +1034,7 @@ remark 用于设置备注信息。
 
 重复策略通过 retry_task 来设置，全部重试为 "all"，部分重试为 "failed"。
 
-## 创建定时任务 [POST]
+### 创建定时任务 [POST]
 
 + Request (application/json)
 
@@ -1068,7 +1079,7 @@ remark 用于设置备注信息。
               "id": "adkle"
             }
 
-## 获取定时任务 [GET]
+### 获取定时任务 [GET]
 
 + 参数列表
     + limit (optional, number, `20`)
@@ -1142,12 +1153,12 @@ remark 用于设置备注信息。
               }
             ]
 
-# 删除定时任务 [/app/scheduler/{id}]
+## 删除定时任务 [/app/scheduler/{id}]
 
 + 参数列表
   + id (required, string, `sid1`)
 
-## 删除定时任务 [DELETE]
+### 删除定时任务 [DELETE]
 
 + Request (application/text)
 
