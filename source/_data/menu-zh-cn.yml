@@ -84,7 +84,10 @@ APP开发:
       path: /deviceDev/Gokit3Voice/GoKit3V词条.html
     Gokit3.0(V)源码详解:
       path: /deviceDev/Gokit3Voice/GoKit3V程序详解.html
-    
+           
+  Gokit2 使用指南:
+    path: /deviceDev/Gokit2使用指南.html
+ 
   调试与烧写:
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
