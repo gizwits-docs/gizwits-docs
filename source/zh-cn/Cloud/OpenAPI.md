@@ -18,6 +18,54 @@ http://api.gizwits.com
 
 * python sdk: https://github.com/gizwits/gservice_sdk_py
 
+# HTTP请求头部
+
+## X-Gizwits-Application-Id
+
+所有接口都需要设置该头部, 该头部信息的值通过在开发者中心的应用管理中创建应用获得
+
+## X-Gizwits-User-token
+
+App用户token值， 生存周期为1个星期有效，调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 > expired_at时间戳，则需要重新获取token, 获取token接口请见“App用户token申请”
+
+# App用户token申请
+
+该接口提供获取App用户接口访问权限的功能
+
+## 获取 App Token [/app/request_token]
+
+### 获取 App Token [POST]
+
+* 请使用 *https* 调用本接口
+* signature 的算法: signature = MD5(appid+appsecret) 32位小写
+
++ Request (application/json)
+
+    + Header
+
+            X-Gizwits-Application-Id: {appid}
+            X-Gizwits-Application-Auth: {signature}
+
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+                "token": "XxXXXxxxx",
+                "expired_at": 123333333,
+            }
+
++ 请求示例
+
+        curl --include \
+             --insecure \
+             --request POST \
+             --header "Content-Type: application/json" \
+             --header "X-Gizwits-Application-Id: {appid}" \
+             --header "X-Gizwits-Application-Auth: {signature}" \
+          'https://api.gizwits.com/app/request_token'
+
 # 用户管理
 
 ## 用户信息 [/app/users]
@@ -469,41 +517,6 @@ http://api.gizwits.com
             \"password\": \"123456\"
         }" \
         'http://api.gizwits.com/app/login'
-
-
-# 获取 App Token [/app/request_token]
-
-## 获取 App Token [POST]
-
-* 请使用 *https* 调用本接口
-* signature 的算法: signature = MD5(appid+appsecret) 32位小写
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-Application-Auth: {signature}
-
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "token": "XxXXXxxxx",
-                "expired_at": 123333333,
-            }
-
-+ 请求示例
-
-        curl --include \
-             --insecure \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-Application-Auth: {signature}" \
-          'https://api.gizwits.com/app/request_token'
 
 # 验证码与密码重置
 
@@ -1005,7 +1018,7 @@ remark 用于设置备注信息。
         }" \
         'http://api.gizwits.com/app/control/did'
 
-# 定时管理
+# 定时功能
 
 ## 定时任务 [/app/scheduler{?limit,skip}]
 
@@ -1169,12 +1182,133 @@ remark 用于设置备注信息。
 
 + Response 200 (application/json)
 
-# 定时任务执行日志 [/app/scheduler/{id}/logs]
+## 获取设备定时任务 [/app/devices/{did}/scheduler]
+
++ 参数列表
+  + limit (optional, number, `20`)
+  + skip (optional, number, `0`)
+
++ Request (application/text)
+
+    + Header
+
+            X-Gizwits-Application-Id: {appid}
+            X-Gizwits-User-token: {token}
+
++ Response 200 (application/json)
+    
+     + Body
+            [
+              {
+                "attrs": {"attr": 1},
+                "date": "2016-11-07",
+                "time": "12:00",
+                "repeat": "none",
+                "days": [
+                  0
+                ],
+                "start_date": "2016-11-07",
+                "end_date": "2016-11-07",
+                "enabled": true,
+                "remark": "",
+                "id": "",
+                "created_at": "2016-11-07"
+              }
+            ]
+
+## 创建设备定时任务 [/app/devices/{did}/scheduler]
+
+### 创建设备定时任务 [POST]
+
++ Request (application/json)
+
+    + Header
+
+            X-Gizwits-Application-Id: {appid}
+            X-Gizwits-User-token: {token}
+
+    + Body
+
+            {
+              "attrs": {},
+              "date": "2016-11-07",
+              "time": "12:00",
+              "repeat": "none",
+              "days": [
+                0
+              ],
+              "start_date": "2016-11-07",
+              "end_date": "2016-11-07",
+              "enabled": true,
+              "remark": ""
+            }
+
++ Response 201 (application/json)
+
+    + Body
+
+            {
+              "id": "adkle"
+            }
+
+## 修改设备定时任务 [/app/devices/{did}/scheduler]
+
+### 修改设备定时任务 [PUT]
+
++ Request (application/json)
+
+    + Header
+
+            X-Gizwits-Application-Id: {appid}
+            X-Gizwits-User-token: {token}
+
+    + Body
+
+            {
+              "attrs": {},
+              "date": "2016-11-07",
+              "time": "12:00",
+              "repeat": "none",
+              "days": [
+                0
+              ],
+              "start_date": "2016-11-07",
+              "end_date": "2016-11-07",
+              "enabled": true,
+              "remark": ""
+            }
+
++ Response 200 (application/json)
+
+    + Body
+
+            {
+              "id": "adkle"
+            }
+
+## 删除设备定时任务 [/app/devices/{did}/scheduler/{id}]
 
 + 参数列表
   + id (required, string, `sid1`)
 
-## 获取最近一次定时任务执行日志 [GET]
+### 删除设备定时任务 [DELETE]
+
++ Request (application/text)
+
+    + Header
+
+            X-Gizwits-Application-Id: {appid}
+            X-Gizwits-User-token: {token}
+
++ Response 200 (application/json)
+
+
+## 定时任务执行日志 [/app/scheduler/{id}/logs]
+
++ 参数列表
+  + id (required, string, `sid1`)
+
+### 获取最近一次定时任务执行日志 [GET]
 
 + Request (application/text)
 
