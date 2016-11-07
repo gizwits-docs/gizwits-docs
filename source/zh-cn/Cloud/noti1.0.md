@@ -195,8 +195,7 @@ public static void main( String[] args )
 
 ## 7、FAQ
 ### 7.1 IP白名单
-客户端需要将请求消息代理服务端的请求IP设置到IP白名单中，具体的设置方法请参考：
-[@设置IP白名单](/zh-cn/Cloud/ent_dev.html)
+客户端需要将请求消息代理服务端的请求IP设置到IP白名单中，具体的设置方法请点击 [设置IP白名单](/zh-cn/Cloud/ent_dev.html)
 
 
 ### 7.1 心跳与重连机制
