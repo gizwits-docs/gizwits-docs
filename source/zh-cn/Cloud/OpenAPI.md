@@ -50,13 +50,11 @@ X-Gizwits-Application-Auth: {signature}
     "token": "XxXXXxxxx",
     "expired_at": 123333333
 }
-
+```
 
 # 用户管理
 
-
 ## 创建用户
-
 ### 1、创建匿名用户
 
 如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。
@@ -310,142 +308,81 @@ X-Gizwits-Application-Auth: {signature}
 }
 ```
 
-## 用户登录 [/app/login]
+## 用户登录
 
 可以使用用户名/邮箱/手机号登录，一律填写到 username 字段。
 
-### 用户登录 [POST]
-
-+ Request (application/json)
-
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-    
-    + Body
-    
-            {
-                "username": "bob",
-                "password": "123456"
-            }
-            
-+ Response 200 (application/json)
-
-    + Body
-    
-            { 
+### 接口地址
+    api.gizwits.com/app/login
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|username|string|是|body|用户名|
+|password|string|是|body|密码|
+### 应答报文
+```json
+{ 
                 "uid": "akkdlfeiow", 
                 "token": "akdlfkad",
                 "expire_at": 13894002020
-            }
-
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{
-            \"username\": \"bob\",
-            \"password\": \"123456\"
-        }" \
-        'http://api.gizwits.com/app/login'
+}
+```
 
 # 验证码与密码重置
 
-## 图片验证码 [/app/verify/codes]
+## 验证码 [/app/verify/codes]
 
-### 获取图片验证码 [GET]
+### 业务功能描述
+该接口提供获取图片验证码和发送手机短信验证码
+### 请求方式
+    POST
 
-+ Request (application/json)
+### 请求内容
+获取图片验证码
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|captcha_url|string|是|body||
+|captcha_id|string|是|body||
 
-    + Header
+### 应答报文
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-Application-Token: {token}
+Response 201
 
+### 请求内容
+发送手机短信验证码
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|captcha_url|string|是|body||
+|captcha_id|string|是|body||
+|phone|string|是|body||
 
-+ Response 200 (application/json)
+### 应答报文
 
-    + Body
+Response 201
 
-            {
-                "captcha_url": "http://xxxxx",
-                "captcha_id": "XXXXXXXxxxxxxx",
-            }
-
-+ 请求示例
-
-        curl --include \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-Application-Token: {token}" \
-          'http://api.gizwits.com/app/verify/codes'
-
-### 发送手机短信验证码 [POST]
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-Application-Token: {token}
-
-    + Body
-
-            {
-                "captcha_id": "XXXXXXXxxxxxxx",
-                "captcha_code": "123123",
-                "phone": "123123123"
-            }
-
-+ Response 201 (application/json)
-
-+ 请求示例
-
-        Try curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-Application-Token: {token}" \
-             --data-binary "{
-            \"captcha_id\": \"XXXXXXXxxxxxxx\",
-            \"captcha_code\": \"123123\",
-            \"phone\": \"123123123\"
-        }" \
-        'http://api.gizwits.com/app/verify/codes'
-
-### 校验短信验证码 [PUT]
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-Application-Token: {token}
-
-    + Body
-
-            {
-                "sms_code": "123xx",
-                "phone": "123123123"
-            }
-
-+ Response 200 (application/json)
-
-+ 请求示例
-
-        curl --include \
-             --request PUT \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-Application-Token: {token}" \
-             --data-binary "{
-            \"sms_code\": \"123xx\",
-            \"phone\": \"123123123\"
-        }" \
-        'http://api.gizwits.com/app/verify/codes'
-
+### 校验短信验证码
+### 业务功能描述
+该接口提供获取图片验证码和发送手机短信验证码
+### 请求方式
+    PUT
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|sms_code|string|是|body||
+|phone|string|是|body||
+### 应答报文
+Response 200
 
 ## 重置密码 [/app/reset_password]
 
