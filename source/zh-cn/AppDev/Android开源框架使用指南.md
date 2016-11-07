@@ -1,4 +1,4 @@
-title: Android开源框架使用指南
+title: Android开源框架使用指南（含源码）
 ---
 # 简介
 
@@ -36,7 +36,7 @@ Android Gokit App是使用开源框架工程的源码范例，源码链接：
     - wxapi // 微信集成包
     - zxing // 扫描二维码
 
-# 3.  快速集成指南
+#   快速集成指南
 
 默认程序入口在 UserModule 中的 GosUserLoginActivity。
 
