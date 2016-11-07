@@ -11,6 +11,10 @@
   position: relative;
   border: 1px solid #e7e7e7;
   box-shadow: 2px 2px 10px #e7e7e7;
+  
+  li {
+    color:#686868;
+  }
 
   h1,
   h2,
@@ -83,7 +87,6 @@
     line-height: 1.5em;
   }
   p {
-    color:#686868;
     font-size: 16px;
     padding-left: 21px;
   }
