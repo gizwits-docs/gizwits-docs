@@ -429,7 +429,7 @@ Response 200 (application/json)
 
 # 绑定管理
 
-## 绑定设备 [/app/bind_mac]
+## 绑定设备
 
 ### 业务功能描述
 X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟
@@ -460,7 +460,7 @@ X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()
 ### 应答报文
 Response 201 (application/json)
 
-## 获取绑定列表 [GET]
+## 获取绑定列表
 
 ### 业务功能描述
 该接口提供绑定列表
@@ -512,7 +512,7 @@ limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，sk
             }
 ```
 
-## 绑定设备: 通过 did + passcode 
+## 绑定设备
 
 ### 业务功能描述
 使用该接口适合知道 did 和 passcode 的情况。
@@ -694,8 +694,9 @@ X-Gizwits-User-token: {token}
 
 # 定时功能
 
-## 定时任务 [/app/scheduler{?limit,skip}]
+## 定时任务
 
+### 业务详情描述
 定时任务分为一次性定时任务和可重复执行定时任务。一次性定时任务在设定好的日期和时间执行；可重复执行定时任务可以设置按星期重复，如每周一执行，工作日执行等，在重复的星期的设定时间执行。
 
 执行日期通过 date 参数进行设置，格式为："2015-01-01"。
@@ -706,6 +707,7 @@ X-Gizwits-User-token: {token}
 
 一次定时任务可以给多个已绑定的设备发送控制指令，只有设定的所有控制指令都发送成功，本次定时任务才算执行成功。任务内容通过 task 设定，为一个列表，列表内的内容为每个具体的任务。具体的任务需要提供设备 did, product_key 和要设置的数据点键值对 attrs。如：
 
+```json
     {
       "did": "did1",
       "product_key": "xxx",
@@ -714,24 +716,29 @@ X-Gizwits-User-token: {token}
         "attr2": val
       }
     }
-
+```
 对于执行失败的定时任务，可以设置重复次数和重复策略。重复次数的范围为 0 ～ 60 次。置重复策略分为全部重试和部分重试。全部重试，将在重试的时候发送所有设定的控制指令；部分重试，只对还未发送成功指令进行发送。
 
 重复次数通过 retry_count 来设置。
 
 重复策略通过 retry_task 来设置，全部重试为 "all"，部分重试为 "failed"。
 
-### 创建定时任务 [POST]
+## 创建定时任务 
 
-+ Request (application/json)
+### 请求地址
+    http://api.gizwits.com/app/scheduler
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|limit  |String|是|url|| 
+|skip  |String|是|url|| 
 
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
+2. request body
+```json
             {
               "date": "2015-01-01",
               "time": "12:00",
@@ -757,32 +764,35 @@ X-Gizwits-User-token: {token}
               "retry_count": 3,
               "retry_task": "all"
             }
+```
 
-+ Response 201 (application/json)
+### 应答报文
 
-    + Body
-
+```json
             {
               "id": "adkle"
             }
+```
 
-### 获取定时任务 [GET]
+## 获取定时任务 
 
-+ 参数列表
-    + limit (optional, number, `20`)
-    + skip (optional, number, `0`)
+### 请求地址
+    http://api.gizwits.com/app/scheduler
+### 请求方式
+    GET
+### 请求报文
 
-+ Request (application/text)
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|limit  |String|是|url|| 
+|skip  |String|是|url|| 
 
-    + Header
+### 应答报文
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-
-    + Body
-
+```json
             [
               {
                 "id": "abckaldkl",
@@ -839,6 +849,7 @@ X-Gizwits-User-token: {token}
                 "retry_task": "all"
               }
             ]
+```
 
 ## 删除定时任务 [/app/scheduler/{id}]
 
