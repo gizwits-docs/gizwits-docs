@@ -333,7 +333,7 @@ X-Gizwits-Application-Auth: {signature}
 
 # 验证码
 
-## 获取图片验证码 [/app/verify/codes]
+## 获取图片验证码
 ### 业务功能描述
 该接口提供获取图片验证码
 ### 请求地址
