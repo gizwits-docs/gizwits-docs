@@ -36,7 +36,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 
 * 在与云端进行Web Socket交互前，用户必须已注册并已绑定了设备。 
 * 与云端交互的数据均为JSON字符串,以UTF-8的方式编码。可以通过JSON.stringify(json)把Javascript对象转化为字符串再发送给云端，或通过var res = JSON.parse(evt.data)把接收到的字符串数据转化成Javascript对象。
-* Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app(​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)， 也可以查看这个网页的源代码作为示例代码参考。
+* Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app (​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)， 也可以查看这个网页的源代码作为示例代码参考。
 
 
 # 4. 通讯协议 
@@ -59,6 +59,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
         "heartbeat_interval": &lt;int&gt; (心跳的时间间隔，单位为秒，值必须小于等于180)
     }
 }
+
 ```   
 
 
