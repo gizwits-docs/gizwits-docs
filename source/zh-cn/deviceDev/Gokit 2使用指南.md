@@ -1,7 +1,7 @@
 title: Gokit 2使用指南
 ---
 
-![Alt text](./1.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/1.png)
 
 #  GoKit的产品使命
 
@@ -73,7 +73,7 @@ title: Gokit 2使用指南
 
 ## 1. GoKit背后是一个完整的产品体系
 
-![Alt text](./2.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/2.png)
 
 
 这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛:http://club.gizwits.com/。
@@ -82,7 +82,7 @@ title: Gokit 2使用指南
 
 GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。
 
-![Alt text](./3.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/3.png)
 
 
  
@@ -91,23 +91,23 @@ GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能�
 
 打开包装后，你可以看到一个黄色纸皮盒包裹着一个透明亚克力盒。里面的板子就是GoKit2代。
 
- ![Alt text](./4.png)
+ ![Alt text](/assets/zh-cn/deviceDev/Gokit2/4.png)
 
-![Alt text](./5.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/5.png)
 
 
 GoKit 2代，我们把应用板与主控板分离，使用了Arduino标准接口，你现在可以有两个选择，使用标准的STM32主控板或者兼容Arduino的Atmel主控板。如下图：
 
 
 
-![Alt text](./6.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/6.png)
 
-![Alt text](./7.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/7.png)
 
 
 应用板依然板载了正反转可调速电机马达、温湿度传感器、红外感应器、RGB全彩LED灯，另外增加了OLED扩展接口，你可以为GoKit配上一块显示屏。
 
-![Alt text](./8.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/8.png)
 
 
 
@@ -137,17 +137,17 @@ AirLink配置就是说明书上介绍的方法，实现过程就是：通过按�
 
 2）打开下载好的“IoE Demo” App，点击主屏幕右上角“菜单栏”中的“添加新设备”。如下图
 
-![Alt text](./9.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/9.png)
 
 
 3）使用USB线为GoKit供电，开机后长按［KEY2］3~5秒直到［RGB LED］亮绿灯，表示设备AirLink模式已经开启。如下图
 
-![Alt text](./10.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/10.png)
 
 
 4）IoE Demo APP上输入已连接WiFi的密码，点击配置按钮，等待30秒到一分钟，APP提示配置成功。在此期间，您可以看到GoKit的绿灯熄灭，WiFi模组两个指示灯瞬间熄灭，直到指示灯开始交叉闪烁，这表示GoKit已经连上路由器，配置完成。
 
-![Alt text](./11.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/11.png)
 
 
 ###  SoftAP配置入网
@@ -156,20 +156,20 @@ AirLink配置就是说明书上介绍的方法，实现过程就是：通过按�
 
 1）GoKit正常供电情况下，短按［KEY2］直到［RGB LED］亮红灯，表示GoKit已经初始化。而GoKit在初始状态下将自动进入“SoftAP”模式。
 
-![Alt text](./12.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/12.png)
 
 
 2）手机进入“系统设置”中的“WiFi设置”，找到“XPG-GAgent-XXXX”（XXXX是你的GoKit MAC地址后4位）并连接此WiFi网络，如需密码请输入：123456789 。
 
-![Alt text](./13.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/13.png)
 
 
 3）打开“IoE Demo” App，此时App会自动进入SoftAP配置模式，选择或手动输入你附近的可用WiFi网络SSIS及密码，点击“确定”。
 
- ![Alt text](./14.png)
+ ![Alt text](/assets/zh-cn/deviceDev/Gokit2/14.png)
 
 
-![Alt text](./15.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/15.png)
 
 
 4）等待30秒到一分钟，当GoKit上WiFi模组的指示灯交叉闪烁时，表示配置完成。
@@ -184,7 +184,7 @@ Web Config是SoftAP配置模式的一种升级，解决了智能硬件配置上�
 
 3）打开手机浏览器，并在地址栏输入“10.10.100.254”即可访问GoKit配置页面，根据提示输入可用WiFi网络SSID及密码，点击配置。
 
-![Alt text](./16.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/16.png)
 
 
 4）等待30秒到一分钟，当GoKit上WiFi模组的指示灯交叉闪烁时，表示配置完成。
@@ -197,7 +197,7 @@ Web Config是SoftAP配置模式的一种升级，解决了智能硬件配置上�
 
 确保手机与GoKit连接同一个WiFi网络，打开IoE Demo，刷新设备列表你将可以发现一台未绑定的新设备“微信宠物屋”，如图
 
-![Alt text](./17.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/17.png)
 
 
 点击设备将自动进行绑定，如果你从未注册、登录IoE Demo，GoKit将绑定当前手机，在不更换手机的情况下，你可以对设备进行所有的状态查询与远程控制等功能，更换手机后需要重新在局域网下进行绑定。如果你希望在不同的手机下对GoKit进行控制，可以先注册账号并登录后进行绑定操作，绑定完成后只需使用账号登录，在不同手机都可以对GoKit进行远程控制。
@@ -216,19 +216,19 @@ Web Config是SoftAP配置模式的一种升级，解决了智能硬件配置上�
 
 1）打开GoKit附带的说明书，找到一张白色二维码（此二维码每台设备唯一，请注意保管）。如图：
 
-![Alt text](./18.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/18.png)
 
 
 2）打开微信扫描说明书上的二维码，点击“关注”并进入公众号。
 
 3）点击“窝窝”，公众号将返回你绑定的设备列表。点击进入设备主界面，如图
 
-![Alt text](./19.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/19.png)
 
 
 4）在此界面上你可以看到宠物屋（GoKit）当前的状态，并可以通过点击“送风”或“抽湿”对GoKit上的电机进行控制。
 
-![Alt text](./20.png)
+![Alt text](/assets/zh-cn/deviceDev/Gokit2/20.png)
 
 
 #  第五步：开始您的智能硬件开发之旅
