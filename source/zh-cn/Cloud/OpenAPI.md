@@ -14,10 +14,6 @@ title:  Gizwits Open API
 
 http://api.gizwits.com
 
-# SDK
-
-* python sdk: https://github.com/gizwits/gservice_sdk_py
-
 # HTTP请求头部
 
 ## X-Gizwits-Application-Id
@@ -28,210 +24,143 @@ http://api.gizwits.com
 
 App用户token值， 生存周期为1个星期有效，调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 > expired_at时间戳，则需要重新获取token, 获取token接口请见“App用户token申请”
 
-# App用户token申请
-
-该接口提供获取App用户接口访问权限的功能
+# App Token申请
 
 ## 获取 App Token [/app/request_token]
-
-### 获取 App Token [POST]
-
+### 业务功能描述
+该接口提供获取访问token访问权限的功能
+### 接口地址
+    http://api.gizwits.com/app/request_token
+### 请求方式
+    POST
+### 说明
 * 请使用 *https* 调用本接口
 * signature 的算法: signature = MD5(appid+appsecret) 32位小写
 
-+ Request (application/json)
+### 请求报文
+1 Header
+```json
+X-Gizwits-Application-Id: {appid}
+X-Gizwits-Application-Auth: {signature}
+```
 
-    + Header
+### 应答报文
+```json
+{
+    "token": "XxXXXxxxx",
+    "expired_at": 123333333
+}
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-Application-Auth: {signature}
-
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "token": "XxXXXxxxx",
-                "expired_at": 123333333,
-            }
-
-+ 请求示例
-
-        curl --include \
-             --insecure \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-Application-Auth: {signature}" \
-          'https://api.gizwits.com/app/request_token'
 
 # 用户管理
 
-## 用户信息 [/app/users]
 
-### 创建匿名用户 [POST]
+## 创建用户
+
+### 1、创建匿名用户
 
 如果您想让您的用户不需要显示注册和登录就能使用机智云的功能，就可以通过匿名注册的方式来为该用户创建一个匿名用户。phone_id 可以是手机的唯一识别码。
 
 或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。
 
-+ Request (application/json)
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|phone_id|string|是|body|phone_id 可以是手机的唯一识别码| 
 
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-            
-    + Body
-            
-            {
-                "phone_id": "apiary"
-            }
+### 应答报文
+```json
+    { 
+        "uid": "akkdlfeiow", 
+        "token": "akdlfkad",
+        "expire_at": 13894002020
+    }
+```
 
-+ Response 201 (application/json)
+### 2、使用用户名和密码创建用户
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|username|string|是|body|用户名|
+|password|string|是|body|密码|
 
-    + Body
-    
-            { 
+### 应答报文
+```json
+    { 
                 "uid": "akkdlfeiow", 
                 "token": "akdlfkad",
                 "expire_at": 13894002020
-            }
+    }
+```
 
 
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{
-            \"phone_id\": \"apiary\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 使用用户名和密码创建用户 [POST]
-
-+ Request (application/json)
-
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-    
-    + Body
-    
-            {
-                "username": "bob",
-                "password": "123456"
-            }
-            
-+ Response 201 (application/json)
-
-    + Body
-    
-            { 
-                "uid": "akkdlfeiow", 
-                "token": "akdlfkad",
-                "expire_at": 13894002020
-            }
-
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{
-            \"username\": \"bob\",
-            \"password\": \"123456\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 使用邮箱创建用户 [POST]
-
+### 3、使用邮箱创建用户 
+### 业务功能描述
 用户通过邮箱注册机智云帐号，注册成功后会收到一封邮件通知。
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|email|string|是|body|用户邮箱|
+|password|string|是|body|密码|
 
-+ Request (application/json)
+### 应答报文
 
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-    
-    + Body
-    
-            {
-                "email": "bob@bob.com",
-                "password": "123456"
-            }
-            
-+ Response 201 (application/json)
-
-    + Body
-    
-            { 
+```json
+        { 
                 "uid": "akkdlfeiow", 
                 "token": "akdlfkad",
                 "expire_at": 13894002020
-            }
+        }
+```
 
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{
-            \"email\": \"bob@bob.com\",
-            \"password\": \"123456\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 使用手机号创建用户 [POST]
-
+### 4、使用手机号创建用户
+### 业务功能描述
 如果希望用户使用手机号注册机智云帐号，机智云提供短信验证码接口，您需要先调用获取验证码接口获取验证码，然后再进行注册。
 
-+ Request (application/json)
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|phone|string|是|body|手机号码|
+|password|string|是|body|密码|
+|code|string|是|body|验证码|
 
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-    
-    + Body
-    
-            {
-                "phone": "123456",
-                "password": "123456",
-                "code": "abc"
-            }
-            
-+ Response 201 (application/json)
+### 应答报文
 
-    + Body
-    
-            { 
-                "uid": "akkdlfeiow", 
-                "token": "akdlfkad",
-                "expire_at": 13894002020
-            }
+```json
+        { 
+            "uid": "akkdlfeiow", 
+            "token": "akdlfkad",
+            "expire_at": 13894002020
+        }
+```
 
-+ 请求示例
+### 使用第三方账号（百度/新浪/QQ）创建用户 
 
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{
-            \"phone\": \"123456\",
-            \"password\": \"123456\",
-            \"code\": \"abc\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 使用第三方账号（百度/新浪/QQ）创建用户 [POST]
+### 业务功能描述
 
 机智云目前支持使用百度、新浪和QQ创建用户，但是需要您在客户端实现 OAuth 授权，获得用户的 uid 和 token，机智云会验证 uid 和 token 的合法性，验证通过就会创建一个机智云帐号。
 
-## 关于 QQ 登录
+#### 关于 QQ 登录
 
 使用 QQ 登录，需要提供您的机智云 APP ID 和 QQ 应用 APP ID 发送给我们的客服，我们客服将会在后台将二者进行关联。
 
@@ -245,237 +174,141 @@ App用户token值， 生存周期为1个星期有效，调用获取token接口�
         }
     }
 
-+ Request (application/json)
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    POST
+### 请求报文
+1. Header
+```json
+    X-Gizwits-Application-Id: {appid}
+```
 
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-    
-    + Body
- 
-            {   
+2. Body
+```json
+    {   
                 "authData": {
                     "src": "baidu|sina|qq",
                     "uid": "2346677",
                     "token":"pnktnjyb996sj4p156gjtp4im"
                 }
             }
-            
-+ Response 201 (application/json)
+```
 
-    + Body
-    
-            { 
-                "uid": "akkdlfeiow", 
-                "token": "akdlfkad",
-                "expire_at": 13894002020
-            }
+### 应答报文
+```json
+        { 
+            "uid": "akkdlfeiow", 
+            "token": "akdlfkad",
+            "expire_at": 13894002020
+        }
+```
 
-+ 请求示例
+### 匿名用户设置用户名和密码 
 
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --data-binary "{   
-            \"authData\": {
-                \"src\": \"baidu\",
-                \"uid\": \"2346677\",
-                \"token\":\"pnktnjyb996sj4p156gjtp4im\"
-            }
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 匿名用户设置用户名和密码 [PUT]
-
+### 业务功能描述
 假设您的机智云应用帮用户创建了一个匿名用户，他不需要注册就可以体验您的应用，并且绑定了设备，他体验满意之后，希望有一个自己的机智云帐号，但是又不想重复绑定设备。这时您可以调用该接口，为匿名用户设置用户名和密码，这样他就不再是一个匿名用户了。
 
-+ Request (application/json)
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|username|string|是|body|用户名|
+|password|string|是|body|密码|
 
-    + Header
+### 应答报文
+```json
+{
+    "updatedAt": "2011-11-07T21:25:10.623Z",
+}
+```
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
-            {
-                "username": "bob",
-                "password": "abda2"
-            }
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "updatedAt": "2011-11-07T21:25:10.623Z"
-            }
-
-+ 请求示例
-
-        curl --include \
-             --request PUT \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"username\": \"bob\",
-            \"password\": \"abda2\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 匿名用户设置手机号和密码 [PUT]
-
+### 匿名用户设置手机号和密码 
+### 业务描述
 与匿名用户设置用户名和密码类似，该接口可以为匿名用户设置手机号和密码，但是需要先调用一次获取短信验证码的接口。
 
-+ Request (application/json)
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|phone|string|是|body|手机号码|
+|password|string|是|body|密码|
+|code|string|是|body|验证码|
 
-    + Header
+### 应答报文
+```json
+{
+    "updatedAt": "2011-11-07T21:25:10.623Z",
+}
+```
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
+## 修改信息
 
-    + Body
+### 业务功能描述
+该接口分别提供修改密码、修改邮箱、修改手机的功能
+### 接口地址
+    http://api.gizwits.com/app/users
+### 请求方式
+    PUT
 
-            {
-                "phone": "1328830223",
-                "password": "123456",
-                "code": "123"
-            }
+### 修改密码Example
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|old_pwd|string|是|body|旧密码|
+|new_pwd|string|是|body|新密码|
 
-+ Response 200 (application/json)
+### 应答报文
+```json
+{
+    "updatedAt": "2011-11-07T21:25:10.623Z",
+}
+```
 
-    + Body
+### 修改 email Example
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|email|string|是|body|邮箱地址|
+### 应答报文
+```json
+{
+    "updatedAt": "2011-11-07T21:25:10.623Z",
+}
+```
 
-            {
-                "updatedAt": "2011-11-07T21:25:10.623Z"
-            }
 
-+ 请求示例
-
-        curl --include \
-             --request PUT \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"phone\": \"1328830223\",
-            \"password\": \"123456\",
-            \"code\": \"123\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 修改密码 [PUT]
-
-+ Request (application/json)
-
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-    
-    + Body
-    
-            {
-                "old_pwd": "123456",
-                "new_pwd": "123456"
-            }
-            
-+ Response 200 (application/json)
-
-    + Body
-    
-            { 
-                "updatedAt": "2011-11-07T21:25:10.623Z"
-            }
-
-+ 请求示例
-
-        curl --include \
-             --request PUT \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"old_pwd\": \"123456\",
-            \"new_pwd\": \"123456\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 修改 email [PUT]
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
-            {
-                "email": "bob@bob.com",
-            }
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "updatedAt": "2011-11-07T21:25:10.623Z"
-            }
-
-+ 请求示例
-
-        curl --include \
-             --request PUT \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"email\": \"bob@bob.com\"
-        }" \
-        'http://api.gizwits.com/app/users'
-
-### 修改手机号 [PUT]
+### 修改手机号 Example
 
 修改手机号需要先调用一次获取短信验证码的接口，给新手机号发送一条短信验证码。
 
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
-            {
-                "phone": "1328830223",
-                "code": "abc"
-            }
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {
-                "updatedAt": "2011-11-07T21:25:10.623Z"
-            }
-
-+ 请求示例
-
-        curl --include \
-             --request PUT \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"phone\": \"1328830223\",
-            \"code\": \"abc\"
-        }" \
-        'http://api.gizwits.com/app/users'
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id  |String|是|header|| 
+|X-Gizwits-User-token  |String|是|header|| 
+|phone|string|是|body|手机号码|
+|code|string|是|body|验证码|
+### 应答报文
+```json
+{
+    "updatedAt": "2011-11-07T21:25:10.623Z",
+}
+```
 
 ## 用户登录 [/app/login]
 
@@ -1355,7 +1188,18 @@ remark 用于设置备注信息。
               }
             }
 
-# 错误代码
+# 接口错误
+
+## 错误信息格式
+```json
+{
+      "error_code": "9015",
+      "error_message": "form invalid!",
+      "detail": ""
+}
+```
+
+## 错误信息表
 
 | status | code | message                                         |
 |--------|:----:|-------------------------------------------------|
