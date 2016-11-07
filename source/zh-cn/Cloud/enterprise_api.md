@@ -10,7 +10,7 @@ title: 企业API
 ## 1、请求方式
 本文档所定义接口基于HTTP/HTTPS协议进行传输，需要注意协议中标注的请求方式，通过GET、PUT、DELETE等进行不同的操作。
 ## 2、接口地址
-接口地址中用\${ }号包含的为变量，需要使用者通过对应的变量替换。例如\${product_key}表示需要将获取的product_key值赋予到接口地址中，\${token值}表示是需要替换为通过授权接口获取的token，${did} 表示是需要替换为具体的did。
+接口地址中用${ }号包含的为变量，需要使用者通过对应的变量替换。例如${product_key}表示需要将获取的product_key值赋予到接口地址中，${token值}表示是需要替换为通过授权接口获取的token，${did} 表示是需要替换为具体的did。
 ##  3、请求参数
 HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请求头中；URL表示是通过url传参；Body表示是Request Body，通常Body中都是JSON格式
 
@@ -21,7 +21,7 @@ HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请
 Content-Type: application/json 
 Authorization: token ${token值}
 ```
-注意：\${token值}是不包括${}号，只需将从获取token接口获得token值放到token之后。例如：Authorization: token  efbekskdklllsF
+注意：${token值}是不包括${}号，只需将从获取token接口获得token值放到token之后。例如：Authorization: token  efbekskdklllsF
 
 ## 5、HTTP响应头部
 本协议中的接口在返回报文头部会输出如下信息：
@@ -231,7 +231,7 @@ MONTHS: "201507"
 |start_ts   |integer   |是|URL|开始时间戳| 
 |end_ts   |integer   |是|URL|结束时间戳| 
 |limit   |integer   |是|URL| |
-|skip   |integer   |是|URL|  |		
+|skip   |integer   |是|URL| |		
 
 ### 应答报文
 ```json
