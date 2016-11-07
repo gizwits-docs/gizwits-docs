@@ -431,72 +431,58 @@ Response 200 (application/json)
 
 ## 绑定设备 [/app/bind_mac]
 
-### 绑定设备 [POST]
-
+### 业务功能描述
 X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟
 X-Gizwits-Signature = MD5(product_secret + X-Gizwits-Timestamp).lower()
+### 接口地址
+     http://api.gizwits.com/app/bind_mac
+### 请求方式
+     POST
 
-+ Request (application/json)
+### 请求报文
+1、 Header
+```json
+    X-Gizwits-Application-Id: {appid}
+    X-Gizwits-User-token: {token}
+    X-Gizwits-Timestamp: {req_ts}
+    X-Gizwits-Signature: {sig}
+```
+2、 Body
+```json
+    {
+        "product_key": "xxx",
+        "mac": "xxx",
+        "remark": "xxx",
+        "dev_alias": "xxx"
+    }
+```
 
-    + Header
+### 应答报文
+Response 201 (application/json)
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-            X-Gizwits-Timestamp: {req_ts}
-            X-Gizwits-Signature: {sig}
+## 获取绑定列表 [GET]
 
-    + Body
+### 业务功能描述
+该接口提供绑定列表
+### 接口地址
+     http://api.gizwits.com/app/bindings
+### 请求方式
+     GET
 
-            {
-               "product_key": "xxx",
-               "mac": "xxx",
-               "remark": "xxx",
-               "dev_alias": "xxx"
-            }
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|X-Gizwits-Application-Id|String|是|header|| 
+|X-Gizwits-User-token|String|是|header|| 
+|limit|String|是|url|limit| 
+|skip|String|是|url|| 
 
-
-+ Response 201 (application/json)
-
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --header "X-Gizwits-Timestamp: {req_ts}" \
-             --header "X-Gizwits-Signature: {sig}" \
-             --data-binary "{
-           \"product_key\": \"xxx\",
-           \"mac\": \"xxx\",
-           \"remark\": \"xxx\",
-           \"dev_alias\": \"xxx\"
-        }" \
-        'http://api.gizwits.com/app/bind_mac'
-
-## 绑定关系 [/app/bindings]
-
-### 获取绑定列表 [GET]
-
-+ 参数列表
-    + limit (optional, number, `20`)
-    + skip (optional, number, `0`)
-
+### limit & skip参数说明
 limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，skip 为跳过多少条数据。
-
 如每页 10 条数据，获取第一页数据：limit=10, skip=0；获取第二页数据：limit=10, skip=10.
 
-+ Request (application/json)
-
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-            
-+ Response 200 (application/json)
-
-    + Body
-    
+### 应答报文
+```json    
             {
                 "devices": [{
                     "product_key": "akdlfkad",
@@ -524,167 +510,137 @@ limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，sk
                     "dev_alias": "dev2"
                 }]
             }
+```
 
-+ 请求示例
+## 绑定设备: 通过 did + passcode 
 
-        curl --include \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-          'http://api.gizwits.com/app/bindings?show_disabled=1&limit=20&skip=0'
-
-### 绑定设备: 通过 did + passcode [POST]
-
+### 业务功能描述
 使用该接口适合知道 did 和 passcode 的情况。
-
 dev_alias 设备别名，用于当前用户对该设备起一个别名，仅该用户可见。
 remark 用于设置备注信息。
+### 接口地址
+     http://api.gizwits.com/app/bindings
+### 请求方式
+     POST
 
-+ Request (application/json)
-
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-            
-    + Body
-    
-            {
+### 请求报文
+1. Header
+X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+2. Body
+```json
+{
                 "devices": [{
                     "did": "gdGn7PzAYf4VrhnVag5x8D",
                     "passcode": "gokit",
                     "remark": ""，      
                     "dev_alias": "my_dev"
                 }]
-            }
-    
-+ Response 200 (application/json)
+}
+```
 
-           {
-                "success": ['abc', 'add'],
-                "failed": ['adad', 'ee']
-           }
+### 应答报文
+```json
+{
+    "success": ['abc', 'add'],
+    "failed": ['adad', 'ee']
+}
+```
 
-+ 请求示例
+## 修改绑定信息
+### 业务功能描述
+修改绑定信息
+### 接口地址
+     http://api.gizwits.com/app/bindings/{did}
+### 请求方式
+     PUT
 
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"devices\": [{
-                \"did\": \"gdGn7PzAYf4VrhnVag5x8D\",
-                \"passcode\": \"gokit\",
-                \"remark\": \"\",
-                \"dev_alias\": \"\"
-            }]
-        }" \
-        'http://api.gizwits.com/app/bindings'
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did|String|是|url|| 
+|X-Gizwits-Application-Id|String|是|header|| 
+|X-Gizwits-User-token|String|是|header|| 
+|remark|String|是|body|limit| 
+|dev_alias|String|是|body|| 
 
-## 修改绑定信息 [/app/bindings/{did}]
+### 应答报文
+```json
+    {
+        "remark": "string",
+        "dev_alias": "string"
+    }
+```
 
-### 修改绑定信息 [PUT]
+### 解除绑定
+### 业务功能描述
+提供解除绑定功能
+### 接口地址
+     http://api.gizwits.com/app/bindings
+### 请求方式
+     DELETE
 
-+ Request (application/json)
+### 请求报文
+1.Header
+X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
 
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-            
-    + Body
-    
-            {
-                "remark": "string",
-                "dev_alias": "string"
-            }
-    
-+ Response 200 (application/json)
-
-            {
-                "remark": "string",
-                "dev_alias": "string"
-            }
-
-### 解除绑定 [DELETE]
-
-+ Request (application/json)
-
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-            
-    + Body
-    
-            {
+2.Body
+```json
+    {
                 "devices": [{
                     "did": "gdGn7PzAYf4VrhnVag5x8D"
                 }]
-            }
-    
-+ Response 200 (application/json)
+    }
+```
 
-           {
-                "success": ['abc', 'add'],
-                "failed": ['adad', 'ee']
-           }
+### 应答报文
+```json
+{
+    "success": ['abc', 'add'],
+    "failed": ['adad', 'ee']
+}
+```
 
-+ 请求示例
+           
 
-        curl --include \
-             --request DELETE \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"devices\": [{
-                \"did\": \"gdGn7PzAYf4VrhnVag5x8D\"
-            }]
-        }" \
-        'http://api.gizwits.com/app/bindings'
 
 # 设备管理
 
-## 获取设备最近上传数据 [/app/devdata/{did}/latest]
-
-### 获取设备最近上传数据点 [GET]
-
+## 获取设备最近上传数据 
+### 业务功能描述
 获取设备最近一次上传的数据，包含所有数据点的键值对。
 
-+ 参数列表
-    + did (required, string, `gdGn7PzAYf4VrhnVag5x8D`)
+### 接口地址
+     http://api.gizwits.com/app/devdata/{did}/latest
+### 请求方式
+     GET
 
-+ Request (application/json)
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did  |String|是|url|| 
+|X-Gizwits-Application-Id  |String|是|header|| 
 
-    + Header
+### 应答报文
+```json
+{
+    "did": "gdGn7PzAYf4VrhnVag5x8D",
+    "updated_at": 148293984328,
+    "attr": {
+      "temp": 10,
+      "humi": 20
+    }
+}
 
-            X-Gizwits-Application-Id: {appid}
+## 远程控制设备
 
-+ Response 200 (application/json)
+### 接口地址
+     http://api.gizwits.com/app/control/{did}
+### 请求方式
+     POST
 
-    + Body
-
-            {
-                "did": "gdGn7PzAYf4VrhnVag5x8D",
-                "updated_at": 148293984328,
-                "attr": {
-                  "temp": 10,
-                  "humi": 20
-                }
-            }
-
-+ 请求示例
-
-        curl --include \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-          'http://api.gizwits.com/app/devdata/gdGn7PzAYf4VrhnVag5x8D/latest'
-
-
-## 远程控制设备 [/app/control/{did}]
-
+### 详情描述
 远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。
 推荐使用设置数据点的方式，通过这种方式控制设备，系统内部自动会生成原始控制指令发送给设备，使用起来更简单。
 
@@ -701,96 +657,39 @@ remark 用于设置备注信息。
   如果 binary 类型本身为字符串，如 "hello world!"，需将字符串每个字符的 ASCII 转成十六进制再发送，本例为 "68656c6c6f20776f726c6421";
   **注意 binary 类型定义了多少长度，就需要发多少长度的数据**。
 
-+ Request (application/json)
+### 请求报文
+1. Header
+X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+2. Body
+```json
+{
+    "attrs": {
+      "temp": 10
+    }
+}
+```
+### 应答报文
+```json
+{}
+```
 
-    + Header
+### 发送原始控制指令 
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
-            {
-                "attrs": {
-                  "temp": 10
-                }
-            }
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {}
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
-            {
-                "attrs": {
-                  "temp": 10,
-                  "humi": 50
-                }
-            }
-
-+ Response 200 (application/json)
-
-    + Body
-
-            {}
-
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"attrs\": {
-                \"temp\": 10
-            }
-        }" \
-        'http://api.gizwits.com/app/control/did'
-
-
-### 发送原始控制指令 [POST]
-
-+ Request (application/json)
-
-    + Header
-    
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-    
-            {
-                "raw": [<byte>, <byte>, ...]
-            }
-            
-+ Response 200 (application/json)
-
-    + Body
-    
-            {}
-
-+ 请求示例
-
-        curl --include \
-             --request POST \
-             --header "Content-Type: application/json" \
-             --header "X-Gizwits-Application-Id: {appid}" \
-             --header "X-Gizwits-User-token: {token}" \
-             --data-binary "{
-            \"raw\": [0, 1, 2, 3]
-        }" \
-        'http://api.gizwits.com/app/control/did'
+### 请求报文
+1. Header
+X-Gizwits-Application-Id: {appid}
+X-Gizwits-User-token: {token}
+2. Body
+```json
+{
+    "raw": [<byte>, <byte>, ...]
+}
+```
+### 应答报文
+```json
+{}
+```
 
 # 定时功能
 
