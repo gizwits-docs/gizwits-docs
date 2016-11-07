@@ -833,6 +833,31 @@ remark 用于设置备注信息。
         }" \
         'http://api.gizwits.com/app/bindings'
 
+## 修改绑定信息 [/app/bindings/{did}]
+
+### 修改绑定信息 [PUT]
+
++ Request (application/json)
+
+    + Header
+    
+            X-Gizwits-Application-Id: {appid}
+            X-Gizwits-User-token: {token}
+            
+    + Body
+    
+            {
+                "remark": "string",
+                "dev_alias": "string"
+            }
+    
++ Response 200 (application/json)
+
+            {
+                "remark": "string",
+                "dev_alias": "string"
+            }
+
 ### 解除绑定 [DELETE]
 
 + Request (application/json)
@@ -1379,4 +1404,7 @@ remark 用于设置备注信息。
 |    400 | 9043 | 'X-Gizwits-Timestamp invalid!                   |
 |    400 | 9044 | X-Gizwits-Signature invalid!                    |
 |    400 | 9045 | API deprecated!                                 |
+|    400 | 9046 | Register already in progress!                   |
+|    400 | 9047 | device encrypt disabled!                        |
+|    400 | 9048 | device encrypt enabled, does not support this api!|
 |    xxx | 9999 | reserved                                        |
