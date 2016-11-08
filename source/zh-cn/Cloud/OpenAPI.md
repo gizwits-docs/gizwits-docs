@@ -20,16 +20,16 @@ http://api.gizwits.com
 ## 请求参数
 HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请求头中；URL表示是通过url传参；Body表示是Request Body，通常Body中都是JSON格式
 
-## HTTP请求头部说明
+## HTTP头部请求说明
 
 调用 API 需要获取 appid，product_key 和 token。appid 和 product_key 可以在产品信息页面获取到，token 通过用户注册和登录获取到。
 下文中的参数统一用 {appid} 来表示，请将你自己的 appid 整个替换掉 {appid} （包括大括号）。
 
-## X-Gizwits-Application-Id
+### X-Gizwits-Application-Id
 
 所有接口都需要设置该头部, 该头部信息的值通过在开发者中心的应用管理中创建应用获得
 
-## X-Gizwits-User-token
+### X-Gizwits-User-token
 
 App用户token值， 生存周期为1个星期有效，调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 > expired_at时间戳，则需要重新获取token, 获取token接口请见“App用户token申请”
 
