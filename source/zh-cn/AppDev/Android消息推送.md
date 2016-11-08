@@ -7,40 +7,40 @@ title:  Android App消息推送集成指南
 
 # 快速集成极光推送
 
-## 1、申请极光AppKey与Master Secret
+## 1.申请极光AppKey与Master Secret
 
 开发者需要根据框架包名在极光官网上创建应用并填写相应信息，如下所示：
 
-1.1、查看框架包名
+1).查看框架包名
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image001.png)
 
-1.2、在极光平台创建应用
+2).在极光平台创建应用
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image002.png)
 
 
-1.3、查看对应的AppKey和Master Secret
+3).查看对应的AppKey和Master Secret
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image003.png)
 
 
-## 2、在云端绑定第三方推送
+## 2.在云端绑定第三方推送
 
-### 2.1 申请开通D3 Engine
+### 2.1.申请开通D3 Engine 
 
-1、查看D3 Engine
+1.查看D3 Engine
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image004.png)
 
 
-2、开通服务
+2.开通服务
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image005.png)
 
 开通D3 Engine需要机智云审核通过，点击开通服务后需要联系机智云FAE协助审核开通。
 
-### 2.2	云端绑定极光推送
+### 2.2.云端绑定极光推送
 
 通过审核后，可以在服务一栏看到D3 Engine，依次点击“配置”->” 编辑推送平台”
 
@@ -54,7 +54,7 @@ title:  Android App消息推送集成指南
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image008.png)
 
-### 2.3	利用D3 Engine创建推送规则
+### 2.3.利用D3 Engine创建推送规则
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image009.png)
 
@@ -83,7 +83,7 @@ title:  Android App消息推送集成指南
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image016.png)
 
-### 2.4修改UIConfig.json代码
+## 3.修改UIConfig.json代码
 
 1、填写机智云app_id与product_key并修改push_type
 
@@ -92,23 +92,23 @@ title:  Android App消息推送集成指南
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image018.png)
 
 
-### 2.5	修改AndroidManifest.xml
+## 4.修改AndroidManifest.xml
 
 将图3中的APP KEY填写到AndroidManifest.xml中的对应的代码中。
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image019.png)
 
-### 2.6启动虚拟设备
+## 5.启动虚拟设备
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image020.png)
 
-### 2.7	部署APP运行
+## 6.部署APP运行
 
 通过以上步骤，该APP已具备了极光推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image021.png)
 
-### 2.8测试推送功能
+## 7.测试推送功能
 
 关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。
 
@@ -116,7 +116,7 @@ title:  Android App消息推送集成指南
 
 # 快速集成百度推送
 
-## 1、申请百度API KEY
+## 1.申请百度API KEY
 
 根据框架包名在百度官网上创建应用并填写相应信息，如下图：
 
@@ -128,13 +128,13 @@ title:  Android App消息推送集成指南
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image024.png)
 
-## 2、在云端绑定第三方登录
+## 2.在云端绑定第三方登录
 
-### 2.1申请开通D3 Engine
+### 2.1.申请开通D3 Engine
 
-该步骤可以参考2.2.2
+该步骤可以参考《快速集成极光推送》的2.1部分。
 
-### 2.2云端绑定百度推送
+### 2.2.云端绑定百度推送
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image006.png)
 
@@ -146,26 +146,26 @@ title:  Android App消息推送集成指南
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image026.png)
 
-### 2.3	利用D3 Engine创建推送规则
+### 2.3.利用D3 Engine创建推送规则
 
-该步骤可以参考2.3
+该步骤可以参考《快速集成极光推送》的2.3部分
 
-### 2.4修改UIConfig.json代码
+## 3.修改UIConfig.json代码
 填写app_id、app_secret、product_key，修改push_type为2，并将图24对应的key填入到对应的位置
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image027.png)
 
-### 2.5启动虚拟设备
+## 4.启动虚拟设备
 
-该步骤可以参考2.5
+该步骤可以参考[这里](#2-6启动虚拟设备)。
 
-### 2.6部署APP运行
+## 5.部署APP运行
 
 通过以上步骤，该APP已具备了百度推送功能，部署到手机上后，申请帐号并登录，通过扫码即可绑定云端的虚拟设备。
 
 ![name](/assets/zh-cn/AppDev/AppFrame/android/push/image021.png)
 
-### 2.7测试推送功能
+## 6.测试推送功能
 
 关闭虚拟设备后，再次开启，即可看到手机收到了推送消息。
  

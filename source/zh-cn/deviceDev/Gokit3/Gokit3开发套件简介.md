@@ -23,7 +23,7 @@ GoKit3的扩展板的模组接口采用双排母的设计，模组的单排针�
 
 ## 1、GoKit3(S)
 
-![](/assets/zh-cn/deviceDev/Gokit3/intro/image3.jpeg)
+![](/assets/zh-cn/deviceDev/Gokit3/intro/image3.jpg)
 
 GoKit3(S)是机智云（GizWits）推出的物联网智能硬件开发套件之一，目的是帮助传统硬件快速接入互联网。完成入网之后，数据可以在产品与云端、制造商与用户之间互联互通，实现智能互联。
 

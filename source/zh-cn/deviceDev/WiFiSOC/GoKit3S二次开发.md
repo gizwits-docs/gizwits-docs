@@ -1,15 +1,15 @@
 title: GoKit3(S) 二次开发--开发环境搭
 ---
-#GoKit3(S)开发环境准备
+# GoKit3(S)开发环境准备
 
-##1.开发环境搭建方式
+## 1 开发环境搭建方式
 GoKit3(S)有两种开发环境的搭建方式：
 
 1) 使用乐鑫官方的ESP8266开发环境 **(推荐方式)**
 
 2) 使用自定义开发环境：虚拟机VMware(12.0版) + Ubuntu系统(14.04 <64位版>)，然后在Ubuntu下配置交叉编译工具编译源码。
 
-###1.1.使用乐鑫官方开发环境(推荐方式)
+### 1.1 使用乐鑫官方开发环境(推荐方式)
 
 1) 下载官方编译环境安装包：
 
@@ -98,7 +98,7 @@ Step 6: 验证编译环境
 https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
 
 
-###1.2 使用自定义开发环境
+### 1.2 使用自定义开发环境
 1)安装VMware(12.0版) + Ubuntu系统，并创建共享目录”D:\share”（方法自行百度）。
 
 2)配置开发环境
@@ -171,7 +171,7 @@ echo $PATH									//显示红框所示表示配置正确
 
 https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
 
-##2.GoKit3(S)源代码
+## 2 GoKit3(S)源代码
 GoKit3(S)源码下载地址：
 
 http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit
@@ -179,7 +179,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image25.png)
 
 
-#GoKit3(S)源码编译
+# GoKit3(S)源码编译
 
 1) 将GoKit3(S)源码解压后放入share共享目录下：
 
@@ -221,8 +221,8 @@ Windows中显示如下
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image30.png)
 
 
-#GoKit3(S)固件下载
-##1.打开烧写软件
+# GoKit3(S)固件下载
+## 1 打开烧写软件
 
 下载程序烧录工具“FLASH_DOWNLOAD_TOOLS_v2.4” ，下载地址：
 
@@ -233,10 +233,10 @@ http://bbs.espressif.com/viewtopic.php?f=57&t=433
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image31.png)
 
 
-##2.设置烧写选项
+## 2 设置烧写选项
 GoKit3(S) 烧写固件分为SOC版和MCU版，开发者应根据GoKit3(S) 的模式烧写对应版本的固件，详细介绍请查看**《GoKit3(S) 开发套件介绍》**中的“2. 了解SOC版与MCU版的区别”一节。
 
-###2.1.GoKit3(S) SOC版
+### 2.1 GoKit3(S) SOC版
 
 SOC版的程序固件名称为：
 
@@ -246,7 +246,7 @@ SOC版的程序固件名称为：
 
 **share/gokit3_SoC_ESP8266_xxx/bin/upgrade**
 
-##2.2.GoKit3(S) MCU版
+### 2.2 GoKit3(S) MCU版
 
 MCU版的程序固件名称为：
 
@@ -258,7 +258,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 详细介绍请查看**《GoKit3(S) 开发套件介绍》**中“5. 使用Gokit的MCU模式”一节。
 
-###2.3.确认烧写选项
+### 2.3 确认烧写选项
 
 烧写选项按如下图所示选择、填写：
 
@@ -266,7 +266,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 
 注：
-1.前三个 ‘.bin’ 文件都在**D:\share\gokit-soc-esp8266\bin** 目录下，选择对应的名称的 ‘.bin’文件即可。
+1).前三个 ‘.bin’ 文件都在**D:\share\gokit-soc-esp8266\bin** 目录下，选择对应的名称的 ‘.bin’文件即可。
 
 最后一个.bin 文件默认为SOC版固件：**user1.4096.new.6.bin**
 
@@ -274,12 +274,12 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 若烧写MCU版固件请选择 **GAgent_00ESP826_04020011_16041419.bin**
 
-2.COM PORT 为TTL转串口的COM号（下边会说明）
+2).COM PORT 为TTL转串口的COM号（下边会说明）
 
-3.BAUDRATE建议为：115200（烧写速度慢但成功率高）
+3).BAUDRATE建议为：115200（烧写速度慢但成功率高）
 
 
-##3.连接TTL转USB接口
+## 3 连接TTL转USB接口
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image33.png)
 
@@ -294,7 +294,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image35.png)
 
 
-##4.给Gokit供电
+## 4 给Gokit供电
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image36.png)
 
@@ -303,7 +303,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 这里USB可连直接接电源，若想查看日志可接电脑（需区别COM号）。
 
 
-##5.烧写程序
+## 5 烧写程序
 
 首先，将拨码开关设为程序烧录模式（下拨位置）
 
@@ -335,7 +335,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image42.png)
 
 
-##6 查看LOG日志
+## 6 查看LOG日志
 
 将USB口（及供电接口）连接计算机便可通过串口（注意**选择对应COM口号**）打印工具查看LOG信息（波特率：115200）
 
@@ -344,9 +344,9 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 注：若LOG信息出现乱码，可重启串口打印软件，即可恢复正常。
 
-#FAQ&总结
+# FAQ&总结
 
-##1.FAQ
+## 1 FAQ
 
 **问：自定义开发环境共享文件夹不成功怎么办？**
 
@@ -362,7 +362,7 @@ sudo ./vmware-install.pl
 
 之后一路回车键确认直到安装完成即可
 
-##2.总结
+## 2 总结
 至此，Gokit3的开发环境搭建、源码编译及固件下载已介绍完毕。
 
 若想深入了解Gokit3的硬件电路说明请查看：

@@ -164,7 +164,7 @@ GoKit天生支持远程连接，您可以将您的手机切换成2G、3G、4G，
 
 # GoKit3(S)的MCU模式
 
-GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看《GoKit3(S) 开发套件介绍》中的“2. 了解SOC版与MCU版的区别”一节，以下介绍如何使用MCU模式。
+GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看[《Gokit3系列开发套件简介》](/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html)中的“3.1. SOC版与MCU版的区别”一节，以下介绍如何使用MCU模式。
 
 ## 1 先确认GoKit3(S)处于SOC模式
 
@@ -186,7 +186,7 @@ GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看《Go
 
 烧写方式：
 
-MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方式请查看[*《GoKit3(S) 开发环境搭建、源码编译及固件下载》*](3_GoKit-SoC-ESP8266%20开发环境搭建、源码编译及固件下载.doc)中“3. GoKit3(S)固件下载”中的“3.2 设置烧写选项”一节。
+MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方式请查看[《机智云GAgent for ESP8266 串口烧写说明》](/zh-cn/deviceDev/ESP8266串口烧写说明.html)。
 
 ## 3 将模组切换到MCU模式
 
@@ -200,14 +200,6 @@ MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方�
 
 # 总结
 
-看完此篇相信你已对机智云的智能硬件开放平台有了一定深入的了解，想要开发真正属于自己的智能硬件吗？那么请继续看下面的文档说明，你会对Gokit3的硬件、程序会有个更加深入的了解：
-
-《GoKit3(S)开发环境搭建、源码编译及固件下载》
-
-《GoKit3(S)硬件手册》
-
-《GoKit3(S)程序开发手册》
-
 若想了解整个机智云的开发框架请查看开发者**文档中心**：
 
-[*http://docs.gizwits.com/hc/*](http://docs.gizwits.com/hc/)
+[*http://docs.gizwits.com*](http://docs.gizwits.com)

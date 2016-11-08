@@ -23,8 +23,8 @@ title: GoKit3(V)二次开发-程序详解
 
 5) 标志位（flag），本产品填写默认0；
 
-6) payload（p0数据区），详细参见p0 数据区约定
-；
+6) payload（p0数据区），详细参见p0 数据区约定；
+
 7) 检验和(checksum)的计算方式为从len～DATA，按字节求和；
 
 8) 所有发送的命令都带有确认,如在200 毫秒内没有收到接收方的响应,发送方；应重发,最多重发3 次；
@@ -652,7 +652,7 @@ GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或
 
 开发者论坛： http://club.gizwits.com/forum.php
 
-文档中心：http://docs.gizwits.com/hc/
+文档中心：http://docs.gizwits.com
 
 ## 2) 如果您是团体
 

@@ -1,45 +1,6 @@
 # 概述
-本文主要介绍了机智云设备接入SDK的功能以及如何快速使用机智云APP开源框架来进行APP的开发与测试。
 
-# 机制云APP开发资源简述
-## 1. 机智云设备接入SDK
-机智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
-
-机智云目前提供3套SDK：iOS平台原生SDK、Android平台原生SDK、APICloud跨平台SDK。开发者可以根据项目需要自行选择，其中APICloud版本SDK可以用H5技术一次开发，同时适配iOS和Android两个平台
-
-![Alt text](/assets/zh-cn/quickstart/iOS/1478078635932.png)
-
-## 2. 机智云APP开源框架
-为了进一步降低开发者的开发难度，机智云推出了APP开源框架。在框架中，已经模块化集成了如下功能：
-
-- 用户部分：用户注册，找回密码、第三方登录（微信登录、QQ登录）用户登录：包括云端用户登录，第三方登录（微信登录、QQ登录）
-- 配置设备入网（Arilink+SoftAP）
-- 设备发现，列表展示
-- 消息推送：极光推送、百度推送
-- 自定义皮肤
-
-APP开源框架将各个模块独立成包，开发者如果想了解其中某一个模块的实现代码与流程，直接参考框架代码即可。下面就将如何使用机智云开源框架快速开发一个APP做详细的讲解。
-
-# 准备工作
-## 1. 创建产品并定义数据点
-![Alt text](/assets/zh-cn/quickstart/iOS/1478078740492.png)
-
-![Alt text](/assets/zh-cn/quickstart/iOS/1478082659923.png)
-
-## 2. 为产品创建安卓和iOS应用
-在服务栏目下，点击“应用配置”，分别添加安卓与iOS应用。
-
-![Alt text](/assets/zh-cn/quickstart/iOS/1478078874904.png)
-
-![Alt text](/assets/zh-cn/quickstart/iOS/1478082682355.png)
-
-## 3. APP ID与App Secret含义与作用
-App ID：应用标识码，当开发者需要为一款智能产品开发应用（包括iOS、Android、Web应用等）时，在机智云开发者中创建应用的时候，后台会自动生成一个AppID，并与此设备进行关联。应用开发时需要填入此AppID。在APP注册的所有用户绑定在该Appid下。
-App Secret：App ID的验证密钥。
-
-如下图所示，为APPID在开发APP过程中的作用
-
-![Alt text](/assets/zh-cn/quickstart/iOS/1478078955535.png)
+本文主要介绍了如何快速使用机智云iOS APP开源框架来进行APP的开发与测试，在阅读本文档之前，请先完成[APP开发准备工作](/zh-cn/quickstart/准备工作.html)
 
 # 10分钟部署调试机智云APP开源框架 
 ## 1. 下载iOS APP开源框架
@@ -55,6 +16,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478079062215.png)
 
 框架目录如下：
+
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478079123727.png)
 
 ## 3. 开源框架包结构说明
@@ -67,32 +29,33 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 
 如上图所示，UIConfig.json文件是一个全局配置文件，在这里可以设置工程的配置信息，逐一介绍：
 
-```
-app_id：机智云app id
-app_secret：机智云app secret
-product_key：机智云 product key
-wifi_type_select：默认配置模块wifi模组选择功能是否开启
-tencent_app_id：qq登录 app id
-wechat_app_id：微信登录 app id
-wechat_app_secret：微信登录 app secret
-push_type：推送类型 【0：关闭，1：极光，2：百度】
-jpush_app_key：极光推送app key
-bpush_app_key：百度推送 app key
-openAPI_URL：openAPI 域名及端口，格式：“api.gizwits.com:80”，不写端口默认80
-site_URL：site 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80
-push_URL：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80
-buttonColor：按钮颜色
-buttonTextColor：按钮文字颜色
-navigationBarColor：导航栏颜色
-navigationBarTextColor：导航栏文字颜色
-configProgressViewColor：配置中界面 progress view颜色
-statusBarStyle：状态栏样子【0：默认的黑色样式， 1：白色样式】
-addDeviceTitle：添加设备界面 导航栏标题文字
-```
+- **app_id：机智云app id**
+- **app_secret：机智云app secret**
+- **product_key：机智云 product key**
+- **wifi_type_select：默认配置模块wifi模组选择功能是否开启**
+- **tencent_app_id：qq登录 app id**
+- **wechat_app_id：微信登录 app id**
+- **wechat_app_secret：微信登录 app secret**
+- **push_type：推送类型 【0：关闭，1：极光，2：百度】**
+- **jpush_app_key：极光推送app key**
+- **bpush_app_key：百度推送 app key**
+- **openAPIDomain：域名及端口，格式：“api.gizwits.com:80”，不写端口默认80**
+- **siteDomain 域名及端口，格式：“site.gizwits.com:80”，不写端口默认80**
+- **pushDomain：推送绑定服务器 域名及端口，格式：“push.gizwits.com:80”，不写端口默认80**
+- **buttonColor：按钮颜色**
+- **buttonTextColor：按钮文字颜色**
+- **navigationBarColor：导航栏颜色**
+- **navigationBarTextColor：导航栏文字颜色**
+- **configProgressViewColor：配置中界面 progress view颜色**
+- **statusBarStyle：状态栏样子【0：默认的黑色样式， 1：白色样式]**
+- **addDeviceTitle：添加设备界面 导航栏标题文字**
+- **qq：登陆界面的QQ登陆按钮【true：显示， false：隐藏】**
+- **wechat：登陆界面的微信登陆按钮【true：显示, flase：隐藏】**
+- **anonymousLogin：登陆界面的跳过按钮【true：显示, flase：隐藏】**
 
 在机智云官网上分别找到产品的Product Key（如《1. 创建产品并定义数据点》中的图），App ID（如《2. 为产品创建安卓和iOS应用》的第二个图）与App Secret分别填入json文件中对应的位置，如下图所示：
 
-![Alt text](./1478080815360.png)
+![Alt text](/assets/zh-cn/quickstart/iOS/1478080815360.png)
 
 ## 5. 控制界面入口
 在框架中若要将控制界面切换为用户自定义的控制界面，而非框架自带的界面，则可以将下图的《GosDeviceController》切换为自定义控制界面即可，即删除图右边红框中的代码，做两步操作：
@@ -108,7 +71,7 @@ addDeviceTitle：添加设备界面 导航栏标题文字
 
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478080908799.png)
 
-![Alt text](./1478080914847.png)
+![Alt text](/assets/zh-cn/quickstart/iOS/1478080914847.png)
 
 ## 7. 注册新用户
 
@@ -171,6 +134,7 @@ addDeviceTitle：添加设备界面 导航栏标题文字
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478081924503.png)
 
 ### 3.2 添加Button控件
+
 1)打开控制器的xib文件 – GosDeviceController.xib，删除Label控件，并到GosDeviceController.m文件中删除所有相关代码
 
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478081956383.png)

@@ -174,7 +174,7 @@ var HEADER_BP = 915;
         timeoutHandler = setTimeout(function() {
           if (pos + $nav.scrollTop() > navHeight) {
             $nav.animate({
-              scrollTop: pos + $nav.scrollTop()
+              scrollTop: pos + $nav.scrollTop() - 120
             })
           } else if (pos - navHeight < 376) {
             $nav.animate({
@@ -247,6 +247,15 @@ var HEADER_BP = 915;
         return text
       }
     })
+  })
+}(jQuery)
+
+
+
+// open doc anchor in new page
++function($) {
+  $(function() {
+    $('.markdown-body a').not('.anchor').attr('target', '_blank')
   })
 }(jQuery)
 
