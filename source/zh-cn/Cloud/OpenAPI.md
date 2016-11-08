@@ -177,12 +177,12 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求方式
     POST
 ### 请求报文
-1. Header
+Header
 ```json
     X-Gizwits-Application-Id: {appid}
 ```
 
-2. Body
+Body
 ```json
     {   
                 "authData": {
@@ -524,10 +524,10 @@ remark 用于设置备注信息。
      POST
 
 ### 请求报文
-1. Header
+Header
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-User-token: {token}
-2. Body
+Body
 ```json
 {
                 "devices": [{
@@ -659,10 +659,10 @@ Body
   **注意 binary 类型定义了多少长度，就需要发多少长度的数据**。
 
 ### 请求报文
-1. Header
+Header
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-User-token: {token}
-2. Body
+Body
 ```json
 {
     "attrs": {
@@ -678,10 +678,10 @@ X-Gizwits-User-token: {token}
 ### 发送原始控制指令 
 
 ### 请求报文
-1. Header
+Header
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-User-token: {token}
-2. Body
+Body
 ```json
 {
     "raw": [<byte>, <byte>, ...]
@@ -736,7 +736,7 @@ X-Gizwits-User-token: {token}
 |X-Gizwits-Application-Id  |String|是|header| | | 
 |X-Gizwits-User-token  |String|是|header| | | 
 |limit  |String|是|url| | | 
-|skip  |String|是|url| |    | 
+|skip  |String|是|url| |&nbsp;&nbsp;| 
 
 2. request body
 ```json
