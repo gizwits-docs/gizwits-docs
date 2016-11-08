@@ -16,6 +16,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 
 ## 2.	导入到Eclipse工程
 导入过程中可能会出现如下错误
+
  ![](/assets/zh-cn/quickstart/错误码.png)
 
 此时需要将proguard-project中的target版本修改为eclipse对应的安卓SDK版本即可。
@@ -76,7 +77,6 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 ## 7.	登录用户
 注册成功后，APP会自动登录，此时将跳转到“我的设备”界面
 
- 
 ![Alt text](/assets/zh-cn/quickstart/用户登录.png)
 
 ## 8.	启动虚拟设备并显示二维码
@@ -116,12 +116,14 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 
 ## 2.	页面UI设计
 根据创建的产品“智能灯”，想实现的UI效果如下：
+
 ![Alt text](/assets/zh-cn/quickstart/UI效果.png)
 
 点击页面中间灯的控件，APP下发命令，控制灯的开关，并将灯的图片显示为开启状态。关闭的时候显示为关闭。
 
 ## 3.	页面布局代码开发
 ### 导入图片文件
+
 ![Alt text](/assets/zh-cn/quickstart/倒入图片.png)
 
 将表示智能灯开关状态的图片拷贝到drawable目录下，如下图所示：
@@ -136,6 +138,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 
 **2）添加Button控件**
 如图所示，将控制页面中多余控件删除，添加一个Button控件
+
 ![Alt text](/assets/zh-cn/quickstart/添加Button控件.png)
 
 **3）使用selector来对Button控件背景进行控制**
