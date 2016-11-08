@@ -2,19 +2,28 @@
 title:  Gizwits Open API
 ---
 
-# 简介
+# 概述
 
+使用机智云提供的Open API（Http / WebSocket），可以快速开发网页或微信应用等基于html的轻应用，用于管理和控制智能设备。
 机智云 Open API 主要帮助开发者通过 HTTP 的方式维护用户、用户与设备之间的绑定关系，以及获取设备数据、发送控制指令给设备。
-
-调用 API 需要获取 appid，product_key 和 token。appid 和 product_key 可以在产品信息页面获取到，token 通过用户注册和登录获取到。
-
-下文中的参数统一用 {appid} 来表示，请将你自己的 appid 整个替换掉 {appid} （包括大括号）。
 
 # 访问地址
 
 http://api.gizwits.com
 
-# HTTP请求头部
+# 协议约定
+
+## 请求方式
+
+本文档所定义接口基于HTTP/HTTPS协议进行传输，需要注意协议中标注的请求方式，通过GET、PUT、DELETE等进行不同的操作。
+
+## 请求参数
+HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请求头中；URL表示是通过url传参；Body表示是Request Body，通常Body中都是JSON格式
+
+## HTTP请求头部说明
+
+调用 API 需要获取 appid，product_key 和 token。appid 和 product_key 可以在产品信息页面获取到，token 通过用户注册和登录获取到。
+下文中的参数统一用 {appid} 来表示，请将你自己的 appid 整个替换掉 {appid} （包括大括号）。
 
 ## X-Gizwits-Application-Id
 
