@@ -872,7 +872,7 @@ Response 200 (application/json)
 ### 请求方式
     GET
 ### 请求报文
-|参数    |类型  |必填    |参数类型     |描述   |备注|
+|参数    |类型  |必填    |参数类型     |描述   |备注    |
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |did  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
@@ -909,7 +909,7 @@ Response 200 (application/json)
 ### 请求方式
     POST
 ### 请求报文
-|参数    |类型  |必填    |参数类型     |描述   |备注|
+|参数    |类型  |必填    |参数类型     |描述   |备注    |
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |did  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
@@ -945,7 +945,7 @@ Body request
 ### 请求方式
     PUT
 ### 请求报文
-|参数    |类型  |必填    |参数类型     |描述   |备注|
+|参数    |类型  |必填    |参数类型     |描述   |备注    |
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |did  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
@@ -1078,7 +1078,7 @@ Response 200 (application/json)
 |    400 | 9040 | bad qrcode content!                             |
 |    429 | 9041 | request was throttled                           |
 |    400 | 9042 | device offline!                                 |
-|    400 | 9043 | 'X-Gizwits-Timestamp invalid!                   |
+|    400 | 9043 | X-Gizwits-Timestamp invalid!                    |
 |    400 | 9044 | X-Gizwits-Signature invalid!                    |
 |    400 | 9045 | API deprecated!                                 |
 |    400 | 9046 | Register already in progress!                   |
