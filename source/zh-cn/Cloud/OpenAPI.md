@@ -429,7 +429,7 @@ Response 200 (application/json)
 
 # 绑定管理
 
-## 绑定设备
+## 根据mac绑定设备
 
 ### 业务功能描述
 X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟
@@ -736,7 +736,7 @@ Body
 |X-Gizwits-Application-Id  |String|是|header| | | 
 |X-Gizwits-User-token  |String|是|header| | | 
 |limit  |String|是|url| | | 
-|skip  |String|是|url| |&nbsp;&nbsp;| 
+|skip  |String|是|url| |跳过条数| 
 
 2. request body
 ```json
