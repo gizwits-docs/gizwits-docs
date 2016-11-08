@@ -724,7 +724,8 @@ X-Gizwits-User-token: {token}
 重复策略通过 retry_task 来设置，全部重试为 "all"，部分重试为 "failed"。
 
 ## 创建定时任务 
-
+### 业务功能描述
+该接口提供定时任务创建功能
 ### 请求地址
     http://api.gizwits.com/app/scheduler
 ### 请求方式
@@ -775,13 +776,12 @@ X-Gizwits-User-token: {token}
 ```
 
 ## 获取定时任务 
-
+### 业务功能描述
+该接口提供定时任务获取功能
 ### 请求地址
     http://api.gizwits.com/app/scheduler
 ### 请求方式
     GET
-### 请求报文
-
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
@@ -851,38 +851,39 @@ X-Gizwits-User-token: {token}
             ]
 ```
 
-## 删除定时任务 [/app/scheduler/{id}]
+## 删除定时任务
+### 业务功能描述
+该接口提供定时任务删除功能
+### 请求地址
+    http://api.gizwits.com/app/scheduler/{id}
+### 请求方式
+    DELETE
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|id  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
 
-+ 参数列表
-  + id (required, string, `sid1`)
+### 应答报文
+Response 200 (application/json)
 
-### 删除定时任务 [DELETE]
+## 获取设备定时任务 
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler
+### 请求方式
+    GET
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|limit  |String|是|url| default:20| | 
+|skip  |String|是|url| default:0| |
 
-+ Request (application/text)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-
-## 获取设备定时任务 [/app/devices/{did}/scheduler]
-
-+ 参数列表
-  + limit (optional, number, `20`)
-  + skip (optional, number, `0`)
-
-+ Request (application/text)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-    
-     + Body
+### 应答报文
+```json
             [
               {
                 "attrs": {"attr": 1},
@@ -900,20 +901,21 @@ X-Gizwits-User-token: {token}
                 "created_at": "2016-11-07"
               }
             ]
+```
 
-## 创建设备定时任务 [/app/devices/{did}/scheduler]
-
-### 创建设备定时任务 [POST]
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
+## 创建设备定时任务 []
+### 业务功能描述
+该接口提供设备定时任务创建功能
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler
+### 请求方式
+    POST
+### 请求报文
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+Body request
+```body
             {
               "attrs": {},
               "date": "2016-11-07",
@@ -927,28 +929,28 @@ X-Gizwits-User-token: {token}
               "enabled": true,
               "remark": ""
             }
-
-+ Response 201 (application/json)
-
-    + Body
-
+```
+### 应答报文
+```json
             {
               "id": "adkle"
             }
+```
 
 ## 修改设备定时任务 [/app/devices/{did}/scheduler]
+### 业务功能描述
+该接口提供设备定时任务修改功能
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler
+### 请求方式
+    PUT
+### 请求报文
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
 
-### 修改设备定时任务 [PUT]
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
+Body request
+```json
             {
               "attrs": {},
               "date": "2016-11-07",
@@ -962,50 +964,46 @@ X-Gizwits-User-token: {token}
               "enabled": true,
               "remark": ""
             }
+```
 
-+ Response 200 (application/json)
-
-    + Body
-
+### 应答报文
+```json
             {
               "id": "adkle"
             }
+```
+
+
 
 ## 删除设备定时任务 [/app/devices/{did}/scheduler/{id}]
 
-+ 参数列表
-  + id (required, string, `sid1`)
+### 业务功能描述
+该接口提供设备定时任务删除功能
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler
+### 请求方式
+    DELETE
+### 请求报文
+|id  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+### 应答报文
+Response 200 (application/json)
 
-### 删除设备定时任务 [DELETE]
+## 定时任务执行日志
 
-+ Request (application/text)
+### 请求地址
+    http://api.gizwits.com/app/scheduler/{id}/logs
+### 请求方式
+    GET
+### 请求报文
+|id  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
 
-    + Header
+### 应答报文
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-
-
-## 定时任务执行日志 [/app/scheduler/{id}/logs]
-
-+ 参数列表
-  + id (required, string, `sid1`)
-
-### 获取最近一次定时任务执行日志 [GET]
-
-+ Request (application/text)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-
-    + Body
-
+```json
             {
               "datetime": "2015-01-02T12:00:00",
               "status": "succeed|failed",
@@ -1014,6 +1012,7 @@ X-Gizwits-User-token: {token}
                 "did2": false
               }
             }
+```
 
 # 接口错误
 
