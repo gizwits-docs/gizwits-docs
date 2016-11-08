@@ -239,7 +239,7 @@ P9接口具有电源输出、共地的功能。
 
 开収者论坛： [http://club.gizwits.com/forum.php](http://club.gizwits.com/forum.php)
 
-文档中心：[http://docs.gizwits.com/hc/](http://docs.gizwits.com/hc/)
+文档中心：[http://docs.gizwits.com/hc/](http://docs.gizwits.com)
 
 # 附录：GoKit 3原理图下载地址
 
