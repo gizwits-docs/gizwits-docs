@@ -2,25 +2,34 @@
 title:  Gizwits Open API
 ---
 
-# 简介
+# 概述
 
+使用机智云提供的Open API（Http / WebSocket），可以快速开发网页或微信应用等基于html的轻应用，用于管理和控制智能设备。
 机智云 Open API 主要帮助开发者通过 HTTP 的方式维护用户、用户与设备之间的绑定关系，以及获取设备数据、发送控制指令给设备。
-
-调用 API 需要获取 appid，product_key 和 token。appid 和 product_key 可以在产品信息页面获取到，token 通过用户注册和登录获取到。
-
-下文中的参数统一用 {appid} 来表示，请将你自己的 appid 整个替换掉 {appid} （包括大括号）。
 
 # 访问地址
 
 http://api.gizwits.com
 
-# HTTP请求头部
+# 协议约定
 
-## X-Gizwits-Application-Id
+## 请求方式
+
+本文档所定义接口基于HTTP/HTTPS协议进行传输，需要注意协议中标注的请求方式，通过GET、PUT、DELETE等进行不同的操作。
+
+## 请求参数
+HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请求头中；URL表示是通过url传参；Body表示是Request Body，通常Body中都是JSON格式
+
+## HTTP头部请求说明
+
+调用 API 需要获取 appid，product_key 和 token。appid 和 product_key 可以在产品信息页面获取到，token 通过用户注册和登录获取到。
+下文中的参数统一用 {appid} 来表示，请将你自己的 appid 整个替换掉 {appid} （包括大括号）。
+
+### X-Gizwits-Application-Id
 
 所有接口都需要设置该头部, 该头部信息的值通过在开发者中心的应用管理中创建应用获得
 
-## X-Gizwits-User-token
+### X-Gizwits-User-token
 
 App用户token值， 生存周期为1个星期有效，调用获取token接口返回的expired_at为失效日期时间戳。若现在时间戳 > expired_at时间戳，则需要重新获取token, 获取token接口请见“App用户token申请”
 
@@ -38,7 +47,7 @@ App用户token值， 生存周期为1个星期有效，调用获取token接口�
 * signature 的算法: signature = MD5(appid+appsecret) 32位小写
 
 ### 请求报文
-1 Header
+Header
 ```json
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-Application-Auth: {signature}
@@ -68,8 +77,8 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|phone_id|string|是|body|phone_id 可以是手机的唯一识别码| 
+|X-Gizwits-Application-Id  |String|是|header| | |
+|phone_id|string|是|body|phone_id 可以是手机的唯一识别码| |
 
 ### 应答报文
 ```json
@@ -88,9 +97,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|username|string|是|body|用户名|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|username|string|是|body|用户名| |
+|password|string|是|body|密码| |
 
 ### 应答报文
 ```json
@@ -112,9 +121,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|email|string|是|body|用户邮箱|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|email|string|是|body|用户邮箱| |
+|password|string|是|body|密码| |
 
 ### 应答报文
 
@@ -137,10 +146,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|password|string|是|body|密码|
-|code|string|是|body|验证码|
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|phone|string|是|body|手机号码| |
+|password|string|是|body|密码| |
+|code|string|是|body|验证码| |
 
 ### 应答报文
 
@@ -177,12 +186,12 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求方式
     POST
 ### 请求报文
-1. Header
+Header
 ```json
     X-Gizwits-Application-Id: {appid}
 ```
 
-2. Body
+Body
 ```json
     {   
                 "authData": {
@@ -214,10 +223,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|username|string|是|body|用户名|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|username|string|是|body|用户名| |
+|password|string|是|body|密码| |
 
 ### 应答报文
 ```json
@@ -237,11 +246,11 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|password|string|是|body|密码|
-|code|string|是|body|验证码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+|phone|string|是|body|手机号码| |
+|password|string|是|body|密码| |
+|code|string|是|body|验证码| |
 
 ### 应答报文
 ```json
@@ -250,10 +259,10 @@ X-Gizwits-Application-Auth: {signature}
 }
 ```
 
-## 修改信息
+## 修改用户信息
 
 ### 业务功能描述
-该接口分别提供修改密码、修改邮箱、修改手机的功能
+该接口分别提供修改用户密码、修改用户邮箱、修改用户手机的功能
 ### 接口地址
     http://api.gizwits.com/app/users
 ### 请求方式
@@ -263,10 +272,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|old_pwd|string|是|body|旧密码|
-|new_pwd|string|是|body|新密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|old_pwd|string|是|body|旧密码| |
+|new_pwd|string|是|body|新密码| |
 
 ### 应答报文
 ```json
@@ -279,9 +288,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|email|string|是|body|邮箱地址|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|email|string|是|body|邮箱地址| |
 ### 应答报文
 ```json
 {
@@ -297,10 +306,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|code|string|是|body|验证码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+|phone|string|是|body|手机号码| |
+|code|string|是|body|验证码| |
 ### 应答报文
 ```json
 {
@@ -319,9 +328,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|username|string|是|body|用户名|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|username|string|是|body|用户名| |
+|password|string|是|body|密码| |
 ### 应答报文
 ```json
 { 
@@ -331,9 +340,9 @@ X-Gizwits-Application-Auth: {signature}
 }
 ```
 
-# 验证码
+## 验证码
 
-## 获取图片验证码
+### 获取图片验证码
 ### 业务功能描述
 该接口提供获取图片验证码
 ### 请求地址
@@ -346,16 +355,16 @@ http://api.gizwits.com/app/verify/codes
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|captcha_url|string|是|body||
-|captcha_id|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+|captcha_url|string|是|body| | |
+|captcha_id|string|是|body| | |
 
 ### 应答报文
 
 Response 201
 
-## 发送手机短信验证码
+### 发送手机短信验证码
 ### 业务功能描述
 发送手机短信验证码
 ### 请求地址
@@ -365,17 +374,17 @@ http://api.gizwits.com/app/verify/codes
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|captcha_url|string|是|body||
-|captcha_id|string|是|body||
-|phone|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|X-Gizwits-User-token  |String|是|header| | |
+|captcha_url|string|是|body| | |
+|captcha_id|string|是|body| | |
+|phone|string|是|body| | |
 
 ### 应答报文
 
 Response 201
 
-## 校验短信验证码
+### 校验短信验证码
 ### 业务功能描述
 该接口校验短信验证码功能
 ### 请求方式
@@ -383,16 +392,16 @@ Response 201
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|sms_code|string|是|body||
-|phone|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|sms_code|string|是|body| | |
+|phone|string|是|body| | |
 ### 应答报文
 Response 200
 
-# 重置密码
+## 重置密码
 
-## 邮箱重置密码
+### 邮箱重置密码
 ### 业务功能描述
 请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。
 ### 接口地址
@@ -402,14 +411,13 @@ Response 200
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|email|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|email|string|是|body| | |
 
 ### 应答报文
 Response 200 (application/json)
 
-## 使用手机号重置密码
-
+### 使用手机号重置密码
 ### 业务功能描述
 使用手机号重置密码需要先调用一次获取短信验证码的接口。
 
@@ -420,10 +428,10 @@ Response 200 (application/json)
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|code|string|是|body|验证码|
-|new_pwd|string|是|body|新密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|phone|string|是|body|手机号码| |
+|code|string|是|body|验证码| |
+|new_pwd|string|是|body|新密码| |
 ### 应答报文
 Response 200 (application/json)
 
@@ -472,10 +480,10 @@ Response 201 (application/json)
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id|String|是|header|| 
-|X-Gizwits-User-token|String|是|header|| 
-|limit|String|是|url|limit| 
-|skip|String|是|url|| 
+|X-Gizwits-Application-Id|String|是|header| | | 
+|X-Gizwits-User-token|String|是|header| | | 
+|limit|String|是|url| | |
+|skip|String|是|url| | | 
 
 ### limit & skip参数说明
 limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，skip 为跳过多少条数据。
@@ -512,41 +520,6 @@ limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，sk
             }
 ```
 
-## 绑定设备
-
-### 业务功能描述
-使用该接口适合知道 did 和 passcode 的情况。
-dev_alias 设备别名，用于当前用户对该设备起一个别名，仅该用户可见。
-remark 用于设置备注信息。
-### 接口地址
-     http://api.gizwits.com/app/bindings
-### 请求方式
-     POST
-
-### 请求报文
-1. Header
-X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-2. Body
-```json
-{
-                "devices": [{
-                    "did": "gdGn7PzAYf4VrhnVag5x8D",
-                    "passcode": "gokit",
-                    "remark": ""，      
-                    "dev_alias": "my_dev"
-                }]
-}
-```
-
-### 应答报文
-```json
-{
-    "success": ['abc', 'add'],
-    "failed": ['adad', 'ee']
-}
-```
-
 ## 修改绑定信息
 ### 业务功能描述
 修改绑定信息
@@ -558,11 +531,11 @@ X-Gizwits-User-token: {token}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|did|String|是|url|| 
-|X-Gizwits-Application-Id|String|是|header|| 
-|X-Gizwits-User-token|String|是|header|| 
-|remark|String|是|body|limit| 
-|dev_alias|String|是|body|| 
+|did|String|是|url| | |
+|X-Gizwits-Application-Id|String|是|header| | | 
+|X-Gizwits-User-token|String|是|header| | |  
+|remark|String|是|body| | | 
+|dev_alias|String|是|body| | | 
 
 ### 应答报文
 ```json
@@ -581,11 +554,11 @@ X-Gizwits-User-token: {token}
      DELETE
 
 ### 请求报文
-1.Header
+Header
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-User-token: {token}
 
-2.Body
+Body
 ```json
     {
                 "devices": [{
@@ -606,33 +579,6 @@ X-Gizwits-User-token: {token}
 
 
 # 设备管理
-
-## 获取设备最近上传数据 
-### 业务功能描述
-获取设备最近一次上传的数据，包含所有数据点的键值对。
-
-### 接口地址
-     http://api.gizwits.com/app/devdata/{did}/latest
-### 请求方式
-     GET
-
-### 请求报文
-|参数    |类型  |必填    |参数类型     |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|did  |String|是|url|| 
-|X-Gizwits-Application-Id  |String|是|header|| 
-
-### 应答报文
-```json
-{
-    "did": "gdGn7PzAYf4VrhnVag5x8D",
-    "updated_at": 148293984328,
-    "attr": {
-      "temp": 10,
-      "humi": 20
-    }
-}
-```
 
 ## 远程控制设备
 
@@ -659,10 +605,10 @@ X-Gizwits-User-token: {token}
   **注意 binary 类型定义了多少长度，就需要发多少长度的数据**。
 
 ### 请求报文
-1. Header
+Header
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-User-token: {token}
-2. Body
+Body
 ```json
 {
     "attrs": {
@@ -678,10 +624,10 @@ X-Gizwits-User-token: {token}
 ### 发送原始控制指令 
 
 ### 请求报文
-1. Header
+Header
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-User-token: {token}
-2. Body
+Body
 ```json
 {
     "raw": [<byte>, <byte>, ...]
@@ -724,7 +670,8 @@ X-Gizwits-User-token: {token}
 重复策略通过 retry_task 来设置，全部重试为 "all"，部分重试为 "failed"。
 
 ## 创建定时任务 
-
+### 业务功能描述
+该接口提供定时任务创建功能
 ### 请求地址
     http://api.gizwits.com/app/scheduler
 ### 请求方式
@@ -732,10 +679,10 @@ X-Gizwits-User-token: {token}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|limit  |String|是|url|| 
-|skip  |String|是|url|| 
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|X-Gizwits-User-token  |String|是|header| | | 
+|limit  |String|是|url| | | 
+|skip  |String|是|url| |跳过条数| 
 
 2. request body
 ```json
@@ -775,21 +722,19 @@ X-Gizwits-User-token: {token}
 ```
 
 ## 获取定时任务 
-
+### 业务功能描述
+该接口提供定时任务获取功能
 ### 请求地址
     http://api.gizwits.com/app/scheduler
 ### 请求方式
     GET
 ### 请求报文
-
-### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|limit  |String|是|url|| 
-|skip  |String|是|url|| 
-
+|X-Gizwits-Application-Id  |String|是|header| |                  |
+|X-Gizwits-User-token  |String|是|header| |                      | 
+|limit  |String|是|url| |                                        | 
+|skip  |String|是|url| |                                         | 
 ### 应答报文
 
 ```json
@@ -851,38 +796,38 @@ X-Gizwits-User-token: {token}
             ]
 ```
 
-## 删除定时任务 [/app/scheduler/{id}]
+## 删除定时任务
+### 业务功能描述
+该接口提供定时任务删除功能
+### 请求地址
+    http://api.gizwits.com/app/scheduler/{id}
+### 请求方式
+    DELETE
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|id  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+### 应答报文
+Response 200 (application/json)
 
-+ 参数列表
-  + id (required, string, `sid1`)
+## 获取设备定时任务 
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler
+### 请求方式
+    GET
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注    |
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|limit  |String|是|url| default:20| | 
+|skip  |String|是|url| default:0| |
 
-### 删除定时任务 [DELETE]
-
-+ Request (application/text)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-
-## 获取设备定时任务 [/app/devices/{did}/scheduler]
-
-+ 参数列表
-  + limit (optional, number, `20`)
-  + skip (optional, number, `0`)
-
-+ Request (application/text)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-    
-     + Body
+### 应答报文
+```json
             [
               {
                 "attrs": {"attr": 1},
@@ -900,20 +845,23 @@ X-Gizwits-User-token: {token}
                 "created_at": "2016-11-07"
               }
             ]
+```
 
-## 创建设备定时任务 [/app/devices/{did}/scheduler]
-
-### 创建设备定时任务 [POST]
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
+## 创建设备定时任务
+### 业务功能描述
+该接口提供设备定时任务创建功能
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler
+### 请求方式
+    POST
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注    |
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+Body request
+```body
             {
               "attrs": {},
               "date": "2016-11-07",
@@ -927,28 +875,30 @@ X-Gizwits-User-token: {token}
               "enabled": true,
               "remark": ""
             }
-
-+ Response 201 (application/json)
-
-    + Body
-
+```
+### 应答报文
+```json
             {
               "id": "adkle"
             }
+```
 
-## 修改设备定时任务 [/app/devices/{did}/scheduler]
+## 修改设备定时任务
+### 业务功能描述
+该接口提供设备定时任务修改功能
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler
+### 请求方式
+    PUT
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注    |
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
 
-### 修改设备定时任务 [PUT]
-
-+ Request (application/json)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-    + Body
-
+Body request
+```json
             {
               "attrs": {},
               "date": "2016-11-07",
@@ -962,50 +912,51 @@ X-Gizwits-User-token: {token}
               "enabled": true,
               "remark": ""
             }
+```
 
-+ Response 200 (application/json)
-
-    + Body
-
+### 应答报文
+```json
             {
               "id": "adkle"
             }
-
-## 删除设备定时任务 [/app/devices/{did}/scheduler/{id}]
-
-+ 参数列表
-  + id (required, string, `sid1`)
-
-### 删除设备定时任务 [DELETE]
-
-+ Request (application/text)
-
-    + Header
-
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
+```
 
 
-## 定时任务执行日志 [/app/scheduler/{id}/logs]
 
-+ 参数列表
-  + id (required, string, `sid1`)
+## 删除设备定时任务
 
-### 获取最近一次定时任务执行日志 [GET]
+### 业务功能描述
+该接口提供设备定时任务删除功能
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/scheduler/{id}
+### 请求方式
+    DELETE
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|id  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+### 应答报文
+Response 200 (application/json)
 
-+ Request (application/text)
+## 定时任务执行日志
+### 业务功能描述
+该接口提供定时任务执行日志功能
+### 请求地址
+    http://api.gizwits.com/app/scheduler/{id}/logs
+### 请求方式
+    GET
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|id  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
 
-    + Header
+### 应答报文
 
-            X-Gizwits-Application-Id: {appid}
-            X-Gizwits-User-token: {token}
-
-+ Response 200 (application/json)
-
-    + Body
-
+```json
             {
               "datetime": "2015-01-02T12:00:00",
               "status": "succeed|failed",
@@ -1014,6 +965,7 @@ X-Gizwits-User-token: {token}
                 "did2": false
               }
             }
+```
 
 # 接口错误
 
@@ -1072,7 +1024,7 @@ X-Gizwits-User-token: {token}
 |    400 | 9040 | bad qrcode content!                             |
 |    429 | 9041 | request was throttled                           |
 |    400 | 9042 | device offline!                                 |
-|    400 | 9043 | 'X-Gizwits-Timestamp invalid!                   |
+|    400 | 9043 | X-Gizwits-Timestamp invalid!                    |
 |    400 | 9044 | X-Gizwits-Signature invalid!                    |
 |    400 | 9045 | API deprecated!                                 |
 |    400 | 9046 | Register already in progress!                   |

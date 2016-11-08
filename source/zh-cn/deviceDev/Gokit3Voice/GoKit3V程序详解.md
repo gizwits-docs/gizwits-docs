@@ -652,7 +652,7 @@ GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或
 
 开发者论坛： http://club.gizwits.com/forum.php
 
-文档中心：http://docs.gizwits.com/hc/
+文档中心：http://docs.gizwits.com
 
 ## 2) 如果您是团体
 

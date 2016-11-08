@@ -54,7 +54,7 @@ WiFi模组（反面）：
 | 13 | OLED接口 | 可复用SPI等其他接口 |
 |   | 预留接口 | 具有电源输出、SWD、Uart TTL、外置Arduino等接口功能 |
 
-注：详细硬件原理图请查看 [《GoKit3.2 硬件手册》](/assets/zh-cn/deviceDev/WiFiSOC/intro/./assets/zh-cn/deviceDev/WiFiSOC/intro/4_GoKit-SoC-ESP8266%20%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C.doc)
+注：详细硬件原理图请查看 [《GoKit3.2 硬件手册》](/zh-cn/deviceDev/WiFiSOC/intro/./assets/zh-cn/deviceDev/WiFiSOC/intro/4_GoKit-SoC-ESP8266%20%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C.doc)
 
 #  GoKit3(S)用法
 
@@ -74,7 +74,7 @@ MCU的方式可得到与GoKit2相同的开发方式，即底板+功能板+wifi�
 
 1、GAgent固件：[http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent) 选择“GAgent for ESP8266”。
 
-2、GAgent固件烧录方法：[http://docs.gizwits.com/hc/kb/article/156881/](http://docs.gizwits.com/hc/kb/article/156881/)
+2、GAgent固件烧录方法：[http://docs.gizwits.com/zh-cn/deviceDev/ESP8266串口烧写说明] (zh-cn/deviceDev/ESP8266串口烧写说明.html)
 
 3、STM32 MCU源码包 [http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit)，选择“微信宠物屋 for GoKit 2 STM”进行下载。
 
