@@ -474,7 +474,7 @@ Response 201 (application/json)
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |X-Gizwits-Application-Id|String|是|header| | | 
 |X-Gizwits-User-token|String|是|header| | | 
-|limit|String|是|url|| | |
+|limit|String|是|url| | |
 |skip|String|是|url| | | 
 
 ### limit & skip参数说明
@@ -558,7 +558,7 @@ X-Gizwits-User-token: {token}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|did|String|是|url|| 
+|did|String|是|url| | |
 |X-Gizwits-Application-Id|String|是|header| | | 
 |X-Gizwits-User-token|String|是|header| | |  
 |remark|String|是|body| | | 
@@ -736,7 +736,7 @@ X-Gizwits-User-token: {token}
 |X-Gizwits-Application-Id  |String|是|header| | | 
 |X-Gizwits-User-token  |String|是|header| | | 
 |limit  |String|是|url| | | 
-|skip  |String|是|url| | | 
+|skip  |String|是|url| |    | 
 
 2. request body
 ```json
