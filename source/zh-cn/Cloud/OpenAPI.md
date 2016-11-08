@@ -68,8 +68,8 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|phone_id|string|是|body|phone_id 可以是手机的唯一识别码| 
+|X-Gizwits-Application-Id  |String|是|header| | |
+|phone_id|string|是|body|phone_id 可以是手机的唯一识别码| |
 
 ### 应答报文
 ```json
@@ -88,9 +88,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|username|string|是|body|用户名|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|username|string|是|body|用户名| |
+|password|string|是|body|密码| |
 
 ### 应答报文
 ```json
@@ -112,9 +112,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|email|string|是|body|用户邮箱|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|email|string|是|body|用户邮箱| |
+|password|string|是|body|密码| |
 
 ### 应答报文
 
@@ -137,10 +137,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|password|string|是|body|密码|
-|code|string|是|body|验证码|
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|phone|string|是|body|手机号码| |
+|password|string|是|body|密码| |
+|code|string|是|body|验证码| |
 
 ### 应答报文
 
@@ -214,10 +214,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|username|string|是|body|用户名|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|username|string|是|body|用户名| |
+|password|string|是|body|密码| |
 
 ### 应答报文
 ```json
@@ -237,11 +237,11 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|password|string|是|body|密码|
-|code|string|是|body|验证码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+|phone|string|是|body|手机号码| |
+|password|string|是|body|密码| |
+|code|string|是|body|验证码| |
 
 ### 应答报文
 ```json
@@ -263,10 +263,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|old_pwd|string|是|body|旧密码|
-|new_pwd|string|是|body|新密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|old_pwd|string|是|body|旧密码| |
+|new_pwd|string|是|body|新密码| |
 
 ### 应答报文
 ```json
@@ -279,9 +279,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|email|string|是|body|邮箱地址|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|email|string|是|body|邮箱地址| |
 ### 应答报文
 ```json
 {
@@ -297,10 +297,10 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|code|string|是|body|验证码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+|phone|string|是|body|手机号码| |
+|code|string|是|body|验证码| |
 ### 应答报文
 ```json
 {
@@ -319,9 +319,9 @@ X-Gizwits-Application-Auth: {signature}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|username|string|是|body|用户名|
-|password|string|是|body|密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|username|string|是|body|用户名| |
+|password|string|是|body|密码| |
 ### 应答报文
 ```json
 { 
@@ -346,10 +346,10 @@ http://api.gizwits.com/app/verify/codes
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|captcha_url|string|是|body||
-|captcha_id|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+|captcha_url|string|是|body| | |
+|captcha_id|string|是|body| | |
 
 ### 应答报文
 
@@ -365,11 +365,11 @@ http://api.gizwits.com/app/verify/codes
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|captcha_url|string|是|body||
-|captcha_id|string|是|body||
-|phone|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|X-Gizwits-User-token  |String|是|header| | |
+|captcha_url|string|是|body| | |
+|captcha_id|string|是|body| | |
+|phone|string|是|body| | |
 
 ### 应答报文
 
@@ -383,10 +383,10 @@ Response 201
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|sms_code|string|是|body||
-|phone|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|sms_code|string|是|body| | |
+|phone|string|是|body| | |
 ### 应答报文
 Response 200
 
@@ -402,8 +402,8 @@ Response 200
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|email|string|是|body||
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|email|string|是|body| | |
 
 ### 应答报文
 Response 200 (application/json)
@@ -420,10 +420,10 @@ Response 200 (application/json)
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|phone|string|是|body|手机号码|
-|code|string|是|body|验证码|
-|new_pwd|string|是|body|新密码|
+|X-Gizwits-Application-Id  |String|是|header| | |
+|phone|string|是|body|手机号码| |
+|code|string|是|body|验证码| |
+|new_pwd|string|是|body|新密码| |
 ### 应答报文
 Response 200 (application/json)
 
@@ -472,10 +472,10 @@ Response 201 (application/json)
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id|String|是|header|| 
-|X-Gizwits-User-token|String|是|header|| 
-|limit|String|是|url|limit| 
-|skip|String|是|url|| 
+|X-Gizwits-Application-Id|String|是|header| | | 
+|X-Gizwits-User-token|String|是|header| | | 
+|limit|String|是|url|| | |
+|skip|String|是|url| | | 
 
 ### limit & skip参数说明
 limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，skip 为跳过多少条数据。
@@ -559,10 +559,10 @@ X-Gizwits-User-token: {token}
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |did|String|是|url|| 
-|X-Gizwits-Application-Id|String|是|header|| 
-|X-Gizwits-User-token|String|是|header|| 
-|remark|String|是|body|limit| 
-|dev_alias|String|是|body|| 
+|X-Gizwits-Application-Id|String|是|header| | | 
+|X-Gizwits-User-token|String|是|header| | |  
+|remark|String|是|body| | | 
+|dev_alias|String|是|body| | | 
 
 ### 应答报文
 ```json
@@ -581,11 +581,11 @@ X-Gizwits-User-token: {token}
      DELETE
 
 ### 请求报文
-1.Header
+Header
 X-Gizwits-Application-Id: {appid}
 X-Gizwits-User-token: {token}
 
-2.Body
+Body
 ```json
     {
                 "devices": [{
@@ -619,8 +619,8 @@ X-Gizwits-User-token: {token}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|did  |String|是|url|| 
-|X-Gizwits-Application-Id  |String|是|header|| 
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
 
 ### 应答报文
 ```json
@@ -732,10 +732,10 @@ X-Gizwits-User-token: {token}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|limit  |String|是|url|| 
-|skip  |String|是|url|| 
+|X-Gizwits-Application-Id  |String|是|header| | | 
+|X-Gizwits-User-token  |String|是|header| | | 
+|limit  |String|是|url| | | 
+|skip  |String|是|url| | | 
 
 2. request body
 ```json
@@ -785,10 +785,10 @@ X-Gizwits-User-token: {token}
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header|| 
-|X-Gizwits-User-token  |String|是|header|| 
-|limit  |String|是|url|| 
-|skip  |String|是|url|| 
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | | 
+|limit  |String|是|url| | | 
+|skip  |String|是|url| | | 
 
 ### 应答报文
 
