@@ -785,10 +785,10 @@ Body
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|X-Gizwits-Application-Id  |String|是|header| | |
-|X-Gizwits-User-token  |String|是|header| | | 
-|limit  |String|是|url| | | 
-|skip  |String|是|url| | | 
+|X-Gizwits-Application-Id  |String|是|header| |                  |
+|X-Gizwits-User-token  |String|是|header| |                      | 
+|limit  |String|是|url| |                                        | 
+|skip  |String|是|url| |                                         | 
 ### 应答报文
 
 ```json
