@@ -340,9 +340,9 @@ Body
 }
 ```
 
-# 验证码
+## 验证码
 
-## 获取图片验证码
+### 获取图片验证码
 ### 业务功能描述
 该接口提供获取图片验证码
 ### 请求地址
@@ -364,7 +364,7 @@ http://api.gizwits.com/app/verify/codes
 
 Response 201
 
-## 发送手机短信验证码
+### 发送手机短信验证码
 ### 业务功能描述
 发送手机短信验证码
 ### 请求地址
@@ -384,7 +384,7 @@ http://api.gizwits.com/app/verify/codes
 
 Response 201
 
-## 校验短信验证码
+### 校验短信验证码
 ### 业务功能描述
 该接口校验短信验证码功能
 ### 请求方式
@@ -399,9 +399,9 @@ Response 201
 ### 应答报文
 Response 200
 
-# 重置密码
+## 重置密码
 
-## 邮箱重置密码
+### 邮箱重置密码
 ### 业务功能描述
 请求成功后用户会收到一封重置密码的邮件, 用户根据邮件的链接进行密码重置。
 ### 接口地址
@@ -417,8 +417,7 @@ Response 200
 ### 应答报文
 Response 200 (application/json)
 
-## 使用手机号重置密码
-
+### 使用手机号重置密码
 ### 业务功能描述
 使用手机号重置密码需要先调用一次获取短信验证码的接口。
 
@@ -438,7 +437,7 @@ Response 200 (application/json)
 
 # 绑定管理
 
-## 根据mac绑定设备
+## 绑定设备
 
 ### 业务功能描述
 X-Gizwits-Timestamp 与服务器相差不能超过 5 分钟
@@ -521,41 +520,6 @@ limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，sk
             }
 ```
 
-## 绑定设备
-
-### 业务功能描述
-使用该接口适合知道 did 和 passcode 的情况。
-dev_alias 设备别名，用于当前用户对该设备起一个别名，仅该用户可见。
-remark 用于设置备注信息。
-### 接口地址
-     http://api.gizwits.com/app/bindings
-### 请求方式
-     POST
-
-### 请求报文
-Header
-X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-Body
-```json
-{
-                "devices": [{
-                    "did": "gdGn7PzAYf4VrhnVag5x8D",
-                    "passcode": "gokit",
-                    "remark": ""，      
-                    "dev_alias": "my_dev"
-                }]
-}
-```
-
-### 应答报文
-```json
-{
-    "success": ['abc', 'add'],
-    "failed": ['adad', 'ee']
-}
-```
-
 ## 修改绑定信息
 ### 业务功能描述
 修改绑定信息
@@ -615,33 +579,6 @@ Body
 
 
 # 设备管理
-
-## 获取设备最近上传数据 
-### 业务功能描述
-获取设备最近一次上传的数据，包含所有数据点的键值对。
-
-### 接口地址
-     http://api.gizwits.com/app/devdata/{did}/latest
-### 请求方式
-     GET
-
-### 请求报文
-|参数    |类型  |必填    |参数类型     |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|did  |String|是|url| | |
-|X-Gizwits-Application-Id  |String|是|header| | |
-
-### 应答报文
-```json
-{
-    "did": "gdGn7PzAYf4VrhnVag5x8D",
-    "updated_at": 148293984328,
-    "attr": {
-      "temp": 10,
-      "humi": 20
-    }
-}
-```
 
 ## 远程控制设备
 
