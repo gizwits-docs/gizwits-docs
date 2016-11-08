@@ -164,7 +164,7 @@ GoKit天生支持远程连接，您可以将您的手机切换成2G、3G、4G，
 
 # GoKit3(S)的MCU模式
 
-GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看[*《Gokit3系列开发套件简介》*](/assets/zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html)中的“3.1. SOC版与MCU版的区别”一节，以下介绍如何使用MCU模式。
+GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看[《Gokit3系列开发套件简介》](zh-cn/deviceDev/Gokit3/Gokit3开发套件简介.html)中的“3.1. SOC版与MCU版的区别”一节，以下介绍如何使用MCU模式。
 
 ## 1 先确认GoKit3(S)处于SOC模式
 
@@ -186,7 +186,7 @@ GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看[*《
 
 烧写方式：
 
-MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方式请查看[*《机智云GAgent for ESP8266 串口烧写说明》*](http://docs.gizwits.com/hc/kb/article/156881/)。
+MCU模式的固件烧写与SOC模式下的固件烧写方式相似，详细方式请查看[《机智云GAgent for ESP8266 串口烧写说明》](/zh-cn/deviceDev/ESP8266串口烧写说明.html)。
 
 ## 3 将模组切换到MCU模式
 
