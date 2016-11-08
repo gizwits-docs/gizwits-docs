@@ -25,8 +25,8 @@ title:  平台概述
 相关链接：
  [APP开源框架](/zh-cn/AppDev/iosframe.html)
  [安卓SDK接入](/zh-cn/AppDev/AndroidSDKA2.html)
- [IOS SDK接入](/zh-cn/AppDev/iossdk.html)
- [微信开发](/zh-cn/WechatDev/微信应用开发教程.html)
+ [IOS SDK接入](/zh-cn/AppDev/iOSSDKA2.html)
+ [微信开发](/zh-cn/WechatDev/WeChatDev.html)
 
 ## 3、企业应用开发
 开发者如果已完成设备接入、APP开发，还需要从机智云PaaS平台获取数据构建一套业务管理系统，或者访问机智云提供的服务，z则需了解以下文档
