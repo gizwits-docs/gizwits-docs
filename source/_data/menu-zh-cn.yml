@@ -113,7 +113,7 @@ APP开发:
     企业API:
       path: /Cloud/enterprise_api.html 
     OpenAPI:
-      path:/Cloud/OpenAPI.html
+      path: /Cloud/OpenAPI.html
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
 
