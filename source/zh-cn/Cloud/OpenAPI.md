@@ -789,7 +789,6 @@ X-Gizwits-User-token: {token}
 |X-Gizwits-User-token  |String|是|header| | | 
 |limit  |String|是|url| | | 
 |skip  |String|是|url| | | 
-
 ### 应答报文
 
 ```json
@@ -864,7 +863,6 @@ X-Gizwits-User-token: {token}
 |id  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
 |X-Gizwits-User-token  |String|是|header| | | 
-
 ### 应答报文
 Response 200 (application/json)
 
@@ -903,7 +901,7 @@ Response 200 (application/json)
             ]
 ```
 
-## 创建设备定时任务 []
+## 创建设备定时任务
 ### 业务功能描述
 该接口提供设备定时任务创建功能
 ### 请求地址
@@ -911,6 +909,8 @@ Response 200 (application/json)
 ### 请求方式
     POST
 ### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |did  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
 |X-Gizwits-User-token  |String|是|header| | |
@@ -937,7 +937,7 @@ Body request
             }
 ```
 
-## 修改设备定时任务 [/app/devices/{did}/scheduler]
+## 修改设备定时任务
 ### 业务功能描述
 该接口提供设备定时任务修改功能
 ### 请求地址
@@ -945,6 +945,8 @@ Body request
 ### 请求方式
     PUT
 ### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |did  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
 |X-Gizwits-User-token  |String|是|header| | |
@@ -975,15 +977,17 @@ Body request
 
 
 
-## 删除设备定时任务 [/app/devices/{did}/scheduler/{id}]
+## 删除设备定时任务
 
 ### 业务功能描述
 该接口提供设备定时任务删除功能
 ### 请求地址
-    http://api.gizwits.com/app/devices/{did}/scheduler
+    http://api.gizwits.com/app/devices/{did}/scheduler/{id}
 ### 请求方式
     DELETE
 ### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |id  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
 |X-Gizwits-User-token  |String|是|header| | |
@@ -991,12 +995,15 @@ Body request
 Response 200 (application/json)
 
 ## 定时任务执行日志
-
+### 业务功能描述
+该接口提供定时任务执行日志功能
 ### 请求地址
     http://api.gizwits.com/app/scheduler/{id}/logs
 ### 请求方式
     GET
 ### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |id  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
 |X-Gizwits-User-token  |String|是|header| | |
