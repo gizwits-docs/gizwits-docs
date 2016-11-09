@@ -231,7 +231,15 @@ Web Config是SoftAP配置模式的一种升级，解决了智能硬件配置上�
 ![Alt text](/assets/zh-cn/deviceDev/Gokit2/20.png)
 
 
-##  第五步：开始您的智能硬件开发之旅
+## 第五步：二次开发
+
+新版本的DEV SDK同样支持GoKit2，二次开发可参考如下文档：
+    
+- 代码自动生成及二次开发请参考 [GoKit3代码自动生成工具](./DevSDK/代码自动生成工具.md)
+- STM32版GoKit2代码介绍请参考 [GoKit3(V)源码详解](./Gokit3Voice/GoKit3V程序详解.md)
+- 暂不支持Arduino版GoKit2。
+    
+##  第六步：开始您的智能硬件开发之旅
 
 到这里，你已经基本上体验了一款基于GoKit开发的智能硬件原型“微信宠物屋”。这仅仅是机智云团队基于GoKit开发的一款Demo产品，而GoKit本身就是一块功能强大的智能硬件开发板，你可以完全根据自己的想法，利用GoKit做出更好玩的产品，这就是你智能硬件创业的第一步。
 
