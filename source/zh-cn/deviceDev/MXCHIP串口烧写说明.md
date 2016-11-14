@@ -1,4 +1,4 @@
-title: HF-LPB100串口烧写说明
+title: MXCHIP串口烧写说明
 ---
 
 #  概述
