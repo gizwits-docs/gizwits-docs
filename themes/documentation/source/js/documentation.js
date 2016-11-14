@@ -1,6 +1,6 @@
 // common variables
-var BODY_BP = 1119;
-var HEADER_BP = 915;
+var BODY_BP = 1119
+var HEADER_BP = 915
 
 
 
@@ -54,61 +54,81 @@ var HEADER_BP = 915;
 
 // index redirect
 +function() {
-  var lang
 
-  function getCookie(name) {
-    var value = '; ' + document.cookie
-    var parts = value.split('; ' + name + '=')
-    if (parts.length == 2) {
-      return parts.pop().split(';').shift()
-    }
-  }
+    // DELETE THIS SHIT BEFORE LONG
+    var lang = 'zh-cn'
+    localStorage.setItem('lang', lang)
 
-  function getLang(prefLang, savePref) {
-    var browserLang = /zh/.test(navigator.userLanguage || navigator.language) ? 'zh-cn' : 'en-us'
-    if (/zh-cn/.test(prefLang) || /en-us/.test(prefLang)) {
-      lang = prefLang
-    } else {
-      lang = browserLang
-      savePref(lang)
-    }
-  }
 
-  if (localStorage) {
-    var prefLang = localStorage.getItem('lang')
-    var setStorage = function(lang) {
-      localStorage.setItem('lang', lang)
-    }
-    getLang(prefLang, setStorage)
-  } else {
-    var prefLang = getCookie('lang')
-    var setCookie = function(lang) {
-      document.cookie = 'lang=' + lang + '; expires=Fri, 31 Dec 9999 23:59:59 GMT'
-    }
-    getLang(prefLang, setCookie)
-  }
+    // THE CODES BELOW ARE TEMP COMMENTED OUT BECAUSE OF MY SHITTY CO-WORKERS
 
-  if (location.pathname === '/') {
-    location.href = lang + '/overview/overview.html'
-  }
+    // var lang
+
+    // function getCookie(name) {
+    //   var value = '; ' + document.cookie
+    //   var parts = value.split('; ' + name + '=')
+    //   if (parts.length == 2) {
+    //     return parts.pop().split(';').shift()
+    //   }
+    // }
+
+    // function getLang(prefLang, savePref) {
+    //   var browserLang = /zh/.test(navigator.userLanguage || navigator.language) ? 'zh-cn' : 'en-us'
+    //   if (/zh-cn/.test(prefLang) || /en-us/.test(prefLang)) {
+    //     lang = prefLang
+    //   } else {
+    //     lang = browserLang
+    //     savePref(lang)
+    //   }
+    // }
+
+    // if (localStorage) {
+    //   var prefLang = localStorage.getItem('lang')
+    //   var setStorage = function(lang) {
+    //     localStorage.setItem('lang', lang)
+    //   }
+    //   getLang(prefLang, setStorage)
+    // } else {
+    //   var prefLang = getCookie('lang')
+    //   var setCookie = function(lang) {
+    //     document.cookie = 'lang=' + lang + '; expires=Fri, 31 Dec 9999 23:59:59 GMT'
+    //   }
+    //   getLang(prefLang, setCookie)
+    // }
+
+    if (location.pathname === '/') {
+      location.href = lang + '/overview/overview.html'
+    }
+  }()
 }()
 
 
 
 // lang switch
+// +function($) {
+//   $(function() {
+//     $('.lang-switch').click(function() {
+//       var lang = $(this).data('lang')
+//       var paths = location.pathname.split('/').slice(2)
+//       paths.unshift(lang)
+//       location.href = '/' + paths.join('/')
+
+//       if (localStorage) {
+//         localStorage.setItem('lang', lang)
+//       } else {
+//         document.cookie = 'lang=' + lang + '; expires=Fri, 31 Dec 9999 23:59:59 GMT'
+//       }
+//     })
+//   })
+// }(jQuery)
+
+
+
+// TEMP LANG SWITCH. KILL THEM ALL PLZ
 +function($) {
   $(function() {
     $('.lang-switch').click(function() {
-      var lang = $(this).data('lang')
-      var paths = location.pathname.split('/').slice(2)
-      paths.unshift(lang)
-      location.href = '/' + paths.join('/')
-
-      if (localStorage) {
-        localStorage.setItem('lang', lang)
-      } else {
-        document.cookie = 'lang=' + lang + '; expires=Fri, 31 Dec 9999 23:59:59 GMT'
-      }
+      location.href = 'https://gizwitsen.kf5.com/hc/'
     })
   })
 }(jQuery)
