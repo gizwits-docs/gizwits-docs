@@ -545,7 +545,7 @@ limit 和 skip 表示分页参数。limit 为一次性返回的最多条数，sk
     }
 ```
 
-### 解除绑定
+## 解除绑定
 ### 业务功能描述
 提供解除绑定功能
 ### 接口地址
@@ -934,6 +934,7 @@ Body request
 ### 请求报文
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did  |String|是|url| | |
 |id  |String|是|url| | |
 |X-Gizwits-Application-Id  |String|是|header| | |
 |X-Gizwits-User-token  |String|是|header| | |
