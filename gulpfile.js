@@ -48,4 +48,4 @@ gulp.task('modifyIndex', function() {
   shell.echo(newHtml).to(indexFile)
 })
 
-gulp.task('default', ['cpAssets', 'cssMinify', 'jsMinify'])
+gulp.task('default', ['cpAssets', 'cssMinify'])
