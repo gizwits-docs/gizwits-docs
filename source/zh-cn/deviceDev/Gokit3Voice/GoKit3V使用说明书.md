@@ -123,3 +123,7 @@ GoKit天生支持远程连接，您可以将您的手机切换成2G、3G、4G，
 若想了解整个机智云的开发框架请查看开发者**文档中心**：
 
 > [*http://docs.gizwits.com*](http://docs.gizwits.com)
+
+更多的开发教程请查看社区**GoKit开源套件**板块
+
+> [*GoKit开源套件*](http://club.gizwits.com/forum-133-1.html)
