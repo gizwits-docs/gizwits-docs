@@ -265,6 +265,9 @@ Web Config是SoftAP配置模式的一种升级，解决了智能硬件配置上�
 
 [加入开发者社区](http://club.gizwits.com/forum.php)
 
+更多的开发教程请查看社区**GoKit开源套件**板块
+
+> [*GoKit开源套件*](http://club.gizwits.com/forum-133-1.html)
 
 **有任何疑问或技术支持，请联系我们：**
 
