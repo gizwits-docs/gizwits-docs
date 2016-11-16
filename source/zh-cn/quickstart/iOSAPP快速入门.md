@@ -208,7 +208,17 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
     }
 }
 ```
-### 4.4 部署测试
+
+### 4.4 解除订阅
+从控制界面退回到设备列表界面时，需要做一个解除订阅的动作，否则会出现不可预见的错误。
+```objectivec
+- (void)dealloc
+{
+    [self.device setSubscribe:NO];
+}
+```
+
+### 4.5 部署测试
 完成上述代码编写之后，就可以部署到手机中测试控制结果了。
 
 **1)下发命令**
