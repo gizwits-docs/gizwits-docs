@@ -117,3 +117,7 @@ APP开发:
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
 
+
+用户手册:
+  OTA使用教程:
+    path: /UserManual/OTA使用教程.html
