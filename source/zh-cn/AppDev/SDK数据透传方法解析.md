@@ -11,7 +11,7 @@ title: SDK数据透传方法解析
 
 ## 1.定义数据点
 
-![Alt text](./1479700129063.png)
+![Alt text](/AppDev/other/translate/1479700129063.png)
 
 在机智云产品管理中的数据点中定义一个拓展类型的数据点，如上图所示：
 定义数据长度为60个byte（透传情况下，数据长度暂时支持900字节内数据传输）。
@@ -20,11 +20,11 @@ title: SDK数据透传方法解析
 
 设备MCU按照数据点的定义格式上报透传数据，在完成新产品的定义后，每个新产品都有相应的串口通信协议文档，文档下载路径如下图所示：
 
-![Alt text](./1479700275592.png)
+![Alt text](/AppDev/other/translate/1479700275592.png)
 
 在串口通信协议文档文档的4.9部分则有MCU上报数据的格式，如下图：
  
- ![Alt text](./1479700373845.png)
+ ![Alt text](/AppDev/other/translate/1479700373845.png)
  
 图中的dev_status(60B)即为需要透传的数据。
 
@@ -142,7 +142,7 @@ FF FF 00 43 03 45 00 00 01 01 11 22 33 44 55 66 77 00 00 00 00 00 00 00 00 00 00
 
 MCU上报数据的格式如下表所示，包长度(len)是指从命令开始一直到校验和的字节长度(包括命令和校验和)。dev_status是需要透传数据，可以设置任意长度，但是暂时支持900B内传输。
 
-![Alt text](./1479701502710.png)
+![Alt text](/AppDev/other/translate/1479701502710.png)
 
 如设备上报指令：FF FF 00 0D 05 00 00 00 06 11 22 33 44 55 66 77 F4  ；那么透传的数据为11 22 33 44 55 66 77
  
@@ -192,7 +192,7 @@ protected void didReceiveData(GizWifiErrorCode result, GizWifiDevice device,Conc
 
 APP在GizWifiDevice类的write接口中，发送的json格式为：{"binary": "xxxxxx"}；MCU接收的数据格式如下：
  
- ![Alt text](./1479702010435.png)
+ ![Alt text](/AppDev/other/translate/1479702010435.png)
 
 **Andriod下发无数据点透传数据代码示例：**
 
