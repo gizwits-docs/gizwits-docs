@@ -42,6 +42,10 @@ APP开发:
   APICloud SDK:
     path: /AppDev/APICloudWifiSDK.html
 
+  更多App开发指南:
+    SDK数据透传方法解析:
+      path: /AppDev/SDK数据透传方法解析.html
+
 
 微信开发:
   了解微信应用开发:
