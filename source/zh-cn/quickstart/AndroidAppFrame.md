@@ -19,7 +19,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 
  ![](/assets/zh-cn/quickstart/错误码.png)
 
-此时需要将proguard-project中的target版本修改为eclipse对应的安卓SDK版本即可。
+此时需要将project.properties中的target版本修改为eclipse对应的安卓SDK版本即可。
  
 ![Alt text](/assets/zh-cn/quickstart/修改proguard-project中的targe.png)
 
