@@ -607,7 +607,7 @@ data内容说明：
 | MAC     | 设备mac地址                              |
 | passcode|设备passcode                            |
 | type|   设备type，当前只可以取noraml或center_control|
-| extra|   16进制格式字符串，长度8bit：<br>1.当最后一位字符转换成二进制的末尾一位为1，则默认设备type为center_control,如果为0，则默认type为norma <br>2当最后一位字符转换成二进制的倒数第二位为1，则默认使用了代码自动生成，如果为0，则默认未使用代码自动生成.|
+| extra|   16进制格式字符串，长度8bit：<br>1.当最后一位字符转换成二进制的末尾一位为1，则默认设备type为center_control,如果为0，则默认type为normal <br>2当最后一位字符转换成二进制的倒数第二位为1，则默认使用了代码自动生成，如果为0，则默认未使用代码自动生成.|
 
 AES加密方法说明：
 AES 补码方式为 pcks7padding
