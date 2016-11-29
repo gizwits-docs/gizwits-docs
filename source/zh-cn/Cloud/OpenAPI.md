@@ -585,7 +585,8 @@ Body
 ### 接口地址
      http://api.gizwits.com/app/control/{did}
 ### 请求方式
-     POST
+
+POST
 
 ### 详情描述
 远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。
@@ -626,8 +627,7 @@ Body
 ### 请求报文
 Header
 X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-Body
+X-Gizwits-User-token: {token}Body
 ```json
 {
     "raw": [<byte>, <byte>, ...]
@@ -637,6 +637,46 @@ Body
 ```json
 {}
 ```
+## 设备加密注册
+
+### 业务描述
+提供设备加密注册功能，当设备使用加密注册接口进行注册后，设备将生成唯一did，且该did无法调用普通的设备注销接口注销，如进行重复加密注册操作，生成的did不会发生变化。
+设备使用加密注册接口注册生成唯一did后，设备之前生成的did会自动被注销。
+设备调用加密注册接口成功后，设备将无法调用非加密的设备注册接口，设备provison接口，以及设备注销接口。
+
+### 接口地址
+   http://api.gizwits.com/dev/{product_key}/device
+### 请求方式
+   POST 
+
+### 请求报文
+Header
+Content-Type：application/x-www-form-urlencoded
+
+ body：
+ data={data}
+ data内容为mac={mac}&passcode={passcode}&type={type}&extra={extra}经过AES加密后的密文。
+
+data内容说明：
+
+| 内容   | 说明   |
+| :-------- | :--------| 
+| MAC     | 设备mac地址                              |
+| passcode|设备passcode                            |
+| type|   设备type，当前只可以取noraml或center_control|
+| extra|   16进制格式字符串，长度8bit：<br>1.当最后一位字符转换成二进制的末尾一位为1，则默认设备type为center_control,如果为0，则默认type为norma <br>2当最后一位字符转换成二进制的倒数第二位为1，则默认使用了代码自动生成，如果为0，则默认未使用代码自动生成.|
+
+AES加密方法说明：
+AES 补码方式为 pcks7padding
+AES key 为 product_secret 转为 16 进制（128 bit）
+AES mode 为 AES.MODE_ECB
+
+### 应答报文
+
+| 响应编码     |  返回内容 |   说明   |
+| :-------- | :--------| :------ |
+| 201   |   adfkkgkljsdfd  |返回结果为did={did}经过AES加密后的密文
+
 
 # 定时功能
 
