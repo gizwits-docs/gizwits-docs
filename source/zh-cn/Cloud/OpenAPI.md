@@ -1011,7 +1011,7 @@ Response 200 (application/json)
             }
 ```
 
-## 设备通信日志,上下线日志查询
+## 设备日志查询
 ### 业务功能描述
 该接口提供设备通信日志,上下线日志查询
 ### 请求地址
@@ -1031,7 +1031,7 @@ Response 200 (application/json)
 |limit|Integer|否|url|返回条目数,默认20|需要小于等于1000|
 |sort|String|否|url|数据按生成时间排序规则 desc降序 asc升序,默认降序||
 
-####时间戳补充说明
+###时间戳补充说明
 1. 终止时间戳必须大于起始时间戳
 2. 终止时间戳与起始时间戳之差必须小于48小时
 3. 终止时间戳需要小于等于当前时间点
@@ -1060,7 +1060,7 @@ Response 200 (application/json)
 	  ]
 }
 ```
-####返回数据objects补充说明
+###返回数据objects补充说明
 1. 查询类型为通信日志时,返回数据的type字段为 app2dev(app到设备的通信), dev2app(设备到app的通信)
 2. 查询类型为上下线日志时,返回数据的type字段为 dev_online(上线), dev_re_online(完成离线流程前再次登陆), dev_offline(离线)
 
