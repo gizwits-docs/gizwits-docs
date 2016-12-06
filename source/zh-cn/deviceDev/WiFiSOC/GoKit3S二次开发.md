@@ -367,7 +367,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 4、OTA固件版本号必须大于运行在模组中的固件版本号
 
-4.2 验证固件
+## 2 验证固件
 
 固件创建完成后，可以看到如下界面：
 
