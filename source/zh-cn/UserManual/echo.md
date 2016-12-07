@@ -16,7 +16,7 @@ title: 接入亚马逊Echo教程
 
 # 接入步骤
 
-## 创建 Alexa Skill
+## 1、创建 Alexa Skill
 
 - 打开[亚马逊开发者平台](https://developer.amazon.com)并登录您的开发者账号
 - 在菜单栏选择 "Alexa"
@@ -24,7 +24,7 @@ title: 接入亚马逊Echo教程
 - 点击 "Add a New Skill"
 - 请仔细阅读亚马逊的 Alexa Skill 开发文档，本文档对 Skill 的开发不做说明
 
-## 账号连接
+## 2、账号连接
 
 假设有一个用户下载了您的 App，并且已经绑定了您开发的基于机智云的智能产品，现在他要使用 Echo 控制您的产品。
 
@@ -43,11 +43,11 @@ title: 接入亚马逊Echo教程
 - 这时，你在 Alexa App 中，选择 "Skills"，点击 "Your Skills"，就能看到你的 Skill 了，点击 "Link Account" 就能进入登录页面了
 - 输入您在自己的 App 中注册的账号和密码，如果最终出现成功连接账号的页面，您就能在 Alexa Skill 的程序中收到 Alexa 发送的用户 token 了
 
-## 使用 Open API 完成 Alexa Skill 开发
+## 3、使用 Open API 完成 Alexa Skill 开发
 
 如何使用 Open API 不在本文范围内，您可以参考其他文档，完成您的 Alexa Skill 开发
 
-## 提交 Skill 审核
+## 4、提交 Skill 审核
 
 如果您已经完成了所 Alexa Skill 开发，那么恭喜您，您可以在 Alexa Skill 设置页面提交发布申请了。
 
