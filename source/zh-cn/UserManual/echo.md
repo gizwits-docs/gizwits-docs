@@ -37,7 +37,7 @@ title: 接入亚马逊Echo教程
 - 选择 "产品互联"，提交申请
 - 申请通过后，机智云将自动为您的产品生成一个 OAuth 2.0 客户端，再次进入 "产品互联" 页面，可以看到 client_id，client_secret 等信息，您可以稍后设置 "Client Name"，"Redirect URL" 等信息
 - 打开您的 Alexa Skill 设置页面，选择 "Configuration"，参考下图进行设置
-![Account Linking](/assets/zh-cn/UserManual/Alexa/account_linking.png)
+![Account Linking](/assets/zh-cn/UserManual/Echo/account_linking.png)
 - 将上面页面的 Redirect URLs 的其中任意一个，设置到机智云 "产品互联" 的 Redirect URL 中，"Client Name" 可以填写 "Alexa"
 - 在 Alexa Skill 设置页面，选择 "Test"，选择 "Enabled"
 - 这时，你在 Alexa App 中，选择 "Skills"，点击 "Your Skills"，就能看到你的 Skill 了，点击 "Link Account" 就能进入登录页面了
