@@ -1,4 +1,4 @@
-title:  Gizwits Notification API
+title:  Notification API
 ---
 # 目的
 为企业提供 SSL 通讯 API，用于实时推送设备与产品相关的事件。
