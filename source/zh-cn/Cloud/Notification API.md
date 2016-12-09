@@ -77,7 +77,7 @@ title:  Gizwits Notification API
 | data.auth_id	| 必须 	| 产品授权ID| 
 | data.auth_secret 	| 必须 	| 产品授权密匙| 
 | data.subkey | 必须 	| subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线| 
-| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault,device.attr_alert,device.online,device.offline   device.status.raw,device.status.kv,d- atapoints.changed|
+| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed|
 
 
 Gizwits Platform 回复：
