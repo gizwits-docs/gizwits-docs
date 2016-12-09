@@ -27,7 +27,7 @@ title: Websocket API 指南
 
 ## 3.2. 云端Web Socket服务地址 
 ```
-ws://&lt;m2m_host&gt;:8080/ws/app/v1 
+ws://<m2m_host>:8080/ws/app/v1 
 ```
 其中的&lt;m2m_host&gt;为绑定设备列表中的host字段的值，如”m2m.gizwits.com”或”sandbox.gizwits.com”，请参考获取绑定设备列表HTTP API。
 
@@ -52,11 +52,11 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
     "cmd": "login_req",
     "data":
     {
-        "appid": &lt;str&gt;, 
-        "uid": &lt;str&gt;,
-        "token": &lt;str&gt;,
+        "appid": <str>, 
+        "uid": <str>,
+        "token": <str>,
         "p0_type": "attrs_v4"|"custom", ("attrs_v4" 指通过标准数据点协议的方式和云端交互，见下文“标准数据点操作”部分。"custom"表示使用自定义业务逻辑协议的方式与云端交互，见下文“浏览器与云端的数据交互”部分。) 
-        "heartbeat_interval": &lt;int&gt; (心跳的时间间隔，单位为秒，值必须小于等于180)
+        "heartbeat_interval": <int> (心跳的时间间隔，单位为秒，值必须小于等于180)
     }
 }
 
@@ -89,9 +89,9 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
     "cmd": "s2c_online_status",
     "data": 
     {
-        "did": &lt;str&gt;,（上下线设备的did）
-        "passcode": &lt;str&gt;,（上下线设备的passcode）
-        "mac": &lt;str&gt;,（上下线设备的mac）
+        "did": <str>,（上下线设备的did）
+        "passcode": <str>,（上下线设备的passcode）
+        "mac": <str>,（上下线设备的mac）
         "online": true | false （true表示设备上线，false表示设备下线）
     }
 }
@@ -112,9 +112,10 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
     "cmd": "c2s_raw",
     "data": 
     {
-        "did": &lt;str&gt;, （目标设备的did）
-        "raw": [&lt;byte&gt;, &lt;byte&gt;, ...] （自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255。该内容必须要以[0, 0, 0, 3, varLen(1~4B), 0, 0, 144]开头）
-    }  
+        "did": <str>, （目标设备的did）
+        "raw": [<byte>, <byte>, ...] （自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255。该内容必须要以[0, 0, 0, 3, varLen(1~4B), 0, 0, 144]开头）
+    }
+
 }
 ```
 
@@ -128,8 +129,8 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
     "cmd": "s2c_raw", 
     "data":
     {
-        "did": &lt;str&gt;,（数据来源设备的did）
-        "raw": [&lt;byte&gt;, &lt;byte&gt;, ...]（自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255）
+        "did": <str>,（数据来源设备的did）
+        "raw": [<byte>, <byte>, ...]（自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255）
     }
 }
 ```
@@ -148,7 +149,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
     "cmd": "c2s_read",
     "data":
     {
-        "did": &lt;str&gt;（目标设备的did）
+        "did": <str>（目标设备的did）
     }
 }
 ```
@@ -161,11 +162,11 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
     "cmd": "c2s_write",
     "data":
     {
-        "did": &lt;str&gt;,（目标设备的did）
+        "did": <str>,（目标设备的did）
         "attrs": 
         {
-            "name1": &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
-            "name2": &lt;value2&gt;,
+            "name1": <value1>, (“name1”指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+            "name2": <value2>,
             ...
         }
     }
@@ -179,11 +180,11 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
     "cmd": "s2c_noti",     
     "data": 
     { 
-        "did": &lt;str&gt;,（数据来源设备的did）         
+        "did": <str>,（数据来源设备的did）         
         "attrs": 
         {
-            "name1": &lt;value1&gt;, (“name1”指数据点的标识名(name)，&lt;value1&gt;指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
-            "name2": &lt;value2&gt;,
+            "name1": <value1>, (“name1”指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+            "name2": <value2>,
              ...          
         }
     } 
@@ -221,7 +222,7 @@ ws://&lt;m2m_host&gt;:8080/ws/app/v1
 ```
 {
     "cmd": "s2c_invalid_msg", 
-    "data": &lt;str&gt; ​(描述文本)
+    "data": <str> ​(描述文本)
 }
 
 ```

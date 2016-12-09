@@ -17,6 +17,9 @@
     iOS App 快速开发:
       path: /quickstart/iOSAPP快速入门.html
 
+  机智云名词定义解释:
+    path: /quickstart/noun.html
+    
 
 APP开发:
   App 开源框架:
@@ -41,6 +44,14 @@ APP开发:
     
   APICloud SDK:
     path: /AppDev/APICloudWifiSDK.html
+
+  更多App开发指南:
+    SDK数据透传方法解析:
+      path: /AppDev/SDK数据透传方法解析.html
+      
+  App开发教学视频:
+    开源框架使用视频教程:
+      path: /AppDev/开源框架视频教程.html
 
 
 微信开发:
@@ -117,3 +128,7 @@ APP开发:
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
 
+
+用户手册:
+  OTA使用教程:
+    path: /UserManual/OTA使用教程.html

@@ -1,13 +1,20 @@
 <div class="header">
   <div class="container pure-g">
     <span class="brand pure-u-5-24">
+
       <a href="http://www.gizwits.com" class="logo">
         <img src="{{ url_for('images/logo.png') }}" alt="logo"> 
       </a>
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
+    
+    <div class="mobile-header"v>
+      <span class="title">{{ __("title") }} {{ __("sub_title") }}</span>
+      <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
+    </div>
+    
 
-    <span class="menu pure-u-14-24">
+    <span class="menu pure-u-16-24">
       <ul class="levelA-wrapper">
         {% for levelA in site.data["menu-" + lang] %}
           {% if levelA.path %}
@@ -36,11 +43,8 @@
         {% endfor %}
       </ul>
     </span>
-    
-    {# for DELETE #}
-    <span class="pure-u-2-24"><a href="https://gizwits.kf5.com" style="color: #faeb00;">返回旧版</a></span>
   
-    <span class="pure-u-3-24">
+    <span class="pure-u-3-24 lang-switch-wrapper">
       <i class="fa fa-globe" aria-hidden="true"></i> 
       {% if lang == "zh-cn" %}
         <button class="lang-switch" data-lang="en-us">English</button>

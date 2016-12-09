@@ -1027,7 +1027,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 };
 ```
 
-#### 4.4.2.	非局域网设备绑定
+#### 4.4.2.	非局域网设备绑定（Wifi设备不需要远程绑定）
 APP可以通过设备的mac、productKey、productSecret完成非局域网设备的绑定,可以用上述信息生成二维码，APP通过扫码方式绑定。GPRS设备、蓝牙设备等都是无法通过Wifi局域网发现的设备，都属于非局域网设备。
 
 【示例代码】

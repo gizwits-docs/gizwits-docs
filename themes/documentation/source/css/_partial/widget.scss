@@ -1,4 +1,7 @@
 .widget-wrapper {
+  @media (max-width: $widget-bp) {
+    display: none;
+  }
   float: left;
   width: 50px;
   &,

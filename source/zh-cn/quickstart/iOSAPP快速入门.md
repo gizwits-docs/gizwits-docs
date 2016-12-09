@@ -1,3 +1,6 @@
+title: iOS App快速开发
+---
+
 # 概述
 
 本文主要介绍了如何快速使用机智云iOS APP开源框架来进行APP的开发与测试，在阅读本文档之前，请先完成[APP开发准备工作](/zh-cn/quickstart/准备工作.html)
@@ -208,7 +211,17 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
     }
 }
 ```
-### 4.4 部署测试
+
+### 4.4 解除订阅
+从控制界面退回到设备列表界面时，需要做一个解除订阅的动作，否则会出现不可预见的错误。
+```objectivec
+- (void)dealloc
+{
+    [self.device setSubscribe:NO];
+}
+```
+
+### 4.5 部署测试
 完成上述代码编写之后，就可以部署到手机中测试控制结果了。
 
 **1)下发命令**
@@ -234,5 +247,4 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS
 此时APP的控制页面中，灯的按钮马上变成了关灯状态，表示APP成功收到了设备的上报数据。
 
 ![Alt text](/assets/zh-cn/quickstart/iOS/1478082493040.png)
-
 

@@ -1,4 +1,8 @@
 .markdown-body {
+  @media (max-width: $body-bp) {
+    width: 100%;
+  }
+  
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
@@ -11,6 +15,10 @@
   position: relative;
   border: 1px solid #e7e7e7;
   box-shadow: 2px 2px 10px #e7e7e7;
+  
+  li {
+    color:#686868;
+  }
 
   h1,
   h2,
@@ -37,25 +45,29 @@
 
   h1,
   h2 {
-    &:before {
-      content: "";
-      display: block;
-      margin-top: -50px;
-      height: 50px;
-      pointer-events: none;
+    @media (min-width: $body-bp + 1) {
+      &:before {
+        content: "";
+        display: block;
+        margin-top: -50px;
+        height: 50px;
+        pointer-events: none;
+      }
     }
   }
 
   h1 {
-    &:first-of-type {
-      &:before {
-        margin-top: -300px;
-        height: 300px;
+    @media (min-width: $body-bp + 1) {
+      &:first-of-type {
+        &:before {
+          margin-top: -300px;
+          height: 300px;
+        }
       }
+      line-height: 2.5em;
+      font-size: 24px;
+      margin: 28px 0 0; 
     }
-    line-height: 2.5em;
-    font-size: 24px;
-    margin: 28px 0 0;
   }
   h2 {
     font-size: 22px;
@@ -83,9 +95,10 @@
     line-height: 1.5em;
   }
   p {
-    color:#686868;
     font-size: 16px;
-    padding-left: 21px;
+    @media (min-width: $body-bp + 1) {
+      padding-left: 21px;
+    }
   }
 
   a {

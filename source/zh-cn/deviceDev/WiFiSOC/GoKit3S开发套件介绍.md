@@ -54,7 +54,7 @@ WiFi模组（反面）：
 | 13 | OLED接口 | 可复用SPI等其他接口 |
 |   | 预留接口 | 具有电源输出、SWD、Uart TTL、外置Arduino等接口功能 |
 
-注：详细硬件原理图请查看 [《GoKit3.2 硬件手册》](/zh-cn/deviceDev/WiFiSOC/intro/./assets/zh-cn/deviceDev/WiFiSOC/intro/4_GoKit-SoC-ESP8266%20%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C.doc)
+注：详细硬件原理图请查看 [《GoKit3.2 硬件手册》](/zh-cn/deviceDev/Gokit3/GoKit3硬件手册.html)
 
 #  GoKit3(S)用法
 

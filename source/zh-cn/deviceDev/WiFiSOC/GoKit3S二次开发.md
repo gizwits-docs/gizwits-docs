@@ -327,6 +327,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 接下来，将拨码开关设为正常使用模式**（上拨位置）**
 
+
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image41.png)
 
 
@@ -343,6 +344,40 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 
 注：若LOG信息出现乱码，可重启串口打印软件，即可恢复正常。
+
+# 固件升级(OTA)
+
+## 1 上传固件
+
+登陆开发者中心，找到需要进行OTA的产品，按下图所示找到固件升级页面
+
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image44.jpg)
+
+点击“创建新固件”按钮，按下图提示填写：
+
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image45.jpg)
+
+**说明：**
+
+1、固件所在的目录是bin/upgrade/*bin
+
+2、自03000003版本后增加了Changelog文件，OTA软件版本号会在Changelog文件中描述。
+
+3、03000001版本软件版本号请使用040200xx
+
+4、OTA固件版本号必须大于运行在模组中的固件版本号
+
+## 2 验证固件
+
+固件创建完成后，可以看到如下界面：
+
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image46.jpg)
+
+点击“验证固件”按钮，会看到如下图的弹框
+
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image47.jpg)
+
+填入MAC，点击“推送”后等待OTA推送结果即可。
 
 # FAQ&总结
 

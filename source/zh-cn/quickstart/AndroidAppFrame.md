@@ -19,7 +19,7 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 
  ![](/assets/zh-cn/quickstart/错误码.png)
 
-此时需要将proguard-project中的target版本修改为eclipse对应的安卓SDK版本即可。
+此时需要将project.properties中的target版本修改为eclipse对应的安卓SDK版本即可。
  
 ![Alt text](/assets/zh-cn/quickstart/修改proguard-project中的targe.png)
 
@@ -197,16 +197,15 @@ https://git.oschina.net/dantang/GizOpenSource_AppKit_Android
 整个GosDeviceControlActivity的参考代码如下：
 
 ```java
+
 package com.gizwits.opensource.appkit.ControlModule;
 
 import java.util.concurrent.ConcurrentHashMap;
-
 import com.gizwits.gizwifisdk.api.GizWifiDevice;
 import com.gizwits.gizwifisdk.enumration.GizWifiErrorCode;
 import com.gizwits.gizwifisdk.listener.GizWifiDeviceListener;
 import com.gizwits.opensource.appkit.CommonModule.GosBaseActivity;
 import com.gizwits.opensource.appkit.R;
-
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
@@ -217,19 +216,14 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class GosDeviceControlActivity extends GosBaseActivity {
-
 	/** 智能灯设备 */
 	private GizWifiDevice device;
-
 	/** 导航栏 */
 	ActionBar actionBar;
-
 	/** 在云端创建的数据点标识名 */
 	public static final String LIGHT_SWITCH = "switch";
-
 	/** 开关灯Button */
 	private Button btnLightSwitch;
-
 	/** 设备监听器 */
 	private GizWifiDeviceListener deviceListener = new GizWifiDeviceListener() {
 		// 接收数据回调
@@ -239,7 +233,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 			if (dataMap.get("data") != null) {
 				ConcurrentHashMap<String, Object> map = (ConcurrentHashMap<String, Object>) dataMap.get("data");
 				// 根据标识名，在回调的map中找到设备上报的值
-				if (map.get(LIGHT_SWITCH)!=null) {
+				if (map.get(LIGHT_SWITCH) != null) {
 					boolean status = (Boolean) map.get(LIGHT_SWITCH);
 					// 根据设备上报的值更改按钮的图标
 					btnLightSwitch.setSelected(status);
@@ -258,8 +252,15 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 		initView();
 	}
 
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		// 退出控制页面，取消设备订阅
+		device.setSubscribe(false);
+	}
+
 	/**
-	 *Description:初始化控件
+	 * Description:初始化控件
 	 */
 	private void initView() {
 		btnLightSwitch = (Button) findViewById(R.id.btn_light_onoff);
@@ -272,7 +273,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 	}
 
 	/**
-	 *Description:初始化设备
+	 * Description:初始化设备
 	 */
 	private void initDevice() {
 		Intent intent = getIntent();
@@ -292,7 +293,7 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 	}
 
 	/**
-	 *Description::控制智能灯
+	 * Description::控制智能灯
 	 */
 	private void controlLight() {
 		if (btnLightSwitch.isSelected()) {
@@ -309,7 +310,8 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 	/**
 	 * Description:下发命令方法
 	 * 
-	 * @param onOff   true表示开灯，false表示关灯
+	 * @param onOff
+	 *            true表示开灯，false表示关灯
 	 */
 	private void sendCommand(boolean onOff) {
 		int sn = 5;
@@ -319,7 +321,6 @@ public class GosDeviceControlActivity extends GosBaseActivity {
 		// 调用write方法即可下发命令
 		device.write(command, sn);
 	}
-
 }
 
 ```

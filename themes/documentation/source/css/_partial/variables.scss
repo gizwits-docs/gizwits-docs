@@ -3,4 +3,8 @@ $yellow: #faeb00;
 $light-gray: #f7f7f7;
 $dark-gray: #e7e7e7;
 
-$break-lg: 898px;
+
+// for max-width; need to add 1 for min-width
+$widget-bp: 1169px;
+$body-bp: 1119px;
+$header-bp: 915px;

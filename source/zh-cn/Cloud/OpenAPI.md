@@ -580,12 +580,54 @@ Body
 
 # 设备管理
 
+## 设备加密注册
+
+### 业务描述
+提供设备加密注册功能，当设备使用加密注册接口进行注册后，设备将生成唯一did，且该did无法调用普通的设备注销接口注销，如进行重复加密注册操作，生成的did不会发生变化。
+设备使用加密注册接口注册生成唯一did后，设备之前生成的did会自动被注销。
+设备调用加密注册接口成功后，设备将无法调用非加密的设备注册接口，设备provison接口，以及设备注销接口。
+
+### 接口地址
+   http://api.gizwits.com/dev/{product_key}/device
+### 请求方式
+   POST 
+
+### 请求报文
+Header
+Content-Type：application/x-www-form-urlencoded
+
+ body：
+ data={data}
+ data内容为mac={mac}&passcode={passcode}&type={type}&extra={extra}经过AES加密后的密文。
+
+data内容说明：
+
+| 内容   | 说明   |
+| :-------- | :--------| 
+| MAC     | 设备mac地址                              |
+| passcode|设备passcode                            |
+| type|   设备type，当前只可以取noraml或center_control|
+| extra|   16进制格式字符串，长度8bit：<br>1.当最后一位字符转换成二进制的末尾一位为1，则默认设备type为center_control,如果为0，则默认type为normal <br>2当最后一位字符转换成二进制的倒数第二位为1，则默认使用了代码自动生成，如果为0，则默认未使用代码自动生成.|
+
+AES加密方法说明：
+AES 补码方式为 pcks7padding
+AES key 为 product_secret 转为 16 进制（128 bit）
+AES mode 为 AES.MODE_ECB
+
+### 应答报文
+
+| 响应编码     |  返回内容 |   说明   |
+| :-------- | :--------| :------ |
+| 201   |   adfkkgkljsdfd  |返回结果为did={did}经过AES加密后的密文
+
+
 ## 远程控制设备
 
 ### 接口地址
      http://api.gizwits.com/app/control/{did}
 ### 请求方式
-     POST
+
+POST
 
 ### 详情描述
 远程控制设备可以通过两种方式，一种是设置数据点，一种是发送原始控制指令。
@@ -626,8 +668,7 @@ Body
 ### 请求报文
 Header
 X-Gizwits-Application-Id: {appid}
-X-Gizwits-User-token: {token}
-Body
+X-Gizwits-User-token: {token}Body
 ```json
 {
     "raw": [<byte>, <byte>, ...]
@@ -637,6 +678,60 @@ Body
 ```json
 {}
 ```
+
+## 设备日志查询
+### 业务功能描述
+该接口提供设备通信日志,上下线日志查询
+### 请求地址
+    http://api.gizwits.com/app/devices/{did}/raw_data
+### 请求方式
+    GET
+### 请求报文
+|参数    |类型  |必填    |参数类型     |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|did  |String|是|url| | |
+|X-Gizwits-Application-Id  |String|是|header| | |
+|X-Gizwits-User-token  |String|是|header| | |
+|type | String|是|url|cmd通信日志查询,online上下线日志查询||
+|start_time|Integer|是|url|查询起始时间戳,单位秒|大于此时间戳的数据将会被查询到|
+|end_time|Integer|是|url|查询终止时间戳,单位秒|小于等于此时间戳的数据会被查询到|
+|skip|Integer|否|url|跳过条目数,默认0|skip+limit需要小于等于5000|
+|limit|Integer|否|url|返回条目数,默认20|需要小于等于1000|
+|sort|String|否|url|数据按生成时间排序规则 desc降序 asc升序,默认降序||
+
+### 时间戳补充说明
+1. 终止时间戳必须大于起始时间戳
+2. 终止时间戳与起始时间戳之差必须小于48小时
+3. 终止时间戳需要小于等于当前时间点
+
+### 应答报文
+
+```json
+{
+	  "meta": {
+		    "start_time": 0,
+		    "end_time": 0,
+		    "type": "string",
+		    "did": "string",
+		    "skip": 0,
+		    "limit": 0,
+		    "sort": "desc"|"asc",
+		    "total": 0
+	  },
+	  "objects": [
+	    {
+		      "type": "string",
+		      "ip": "string",
+		      "timestamp": 0,
+		      "payload_bin": "string"
+	    }
+	  ]
+}
+```
+### 返回数据objects补充说明
+1. 查询类型为通信日志时,返回数据的type字段为 app2dev(app到设备的通信), dev2app(设备到app的通信)
+2. 查询类型为上下线日志时,返回数据的type字段为 dev_online(上线), dev_re_online(完成离线流程前再次登陆), dev_offline(离线)
+
 
 # 定时功能
 
@@ -967,6 +1062,7 @@ Response 200 (application/json)
               }
             }
 ```
+
 
 # 接口错误
 

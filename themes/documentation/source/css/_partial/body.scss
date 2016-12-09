@@ -1,7 +1,9 @@
 .body {
   background: $light-gray;
-  padding: {
-    top: 50px;
+  @media (min-width: $body-bp + 1) {
+    padding: {
+      top: 50px;
+    }
   }
 
   .heading {
@@ -15,6 +17,9 @@
       margin-top: -10px;
     }
     .edit-link {
+      @media (max-width: $header-bp) {
+        display: none;
+      }
       color: #686868;
       position: absolute;
       bottom: 20px;
@@ -31,8 +36,21 @@
   }
 
   .navigation {
+    @media (max-width: $body-bp) {
+      width: 100%;
+      float: none;
+    }
+    float: left;
+    width: 220px;
+    margin: {
+      right: 20px;
+    }
 
     .navigation-inner {
+      @media (max-width: $body-bp) {
+        width: 100%;
+        position: inherit;
+      }
       position: fixed;
       width: 220px;
       background-color: white;
@@ -53,6 +71,9 @@
     }
 
     .nav-control {
+      @media (max-width: $body-bp) {
+        display: none;
+      }
       text-align: center;
       border-top: 2px solid $dark-gray;
       cursor: pointer;
@@ -63,12 +84,6 @@
         top: 10px;
         bottom: 10px;
       }
-    }
-    
-    float: left;
-    width: 220px;
-    margin: {
-      right: 20px;
     }
     
     .nav-title {
@@ -108,7 +123,9 @@
       a {
         padding-left: 33px;
       }
-      display: none;
+      @media (min-width: $body-bp + 1) {
+        display: none;
+      }
     }
   }
 }

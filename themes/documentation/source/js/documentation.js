@@ -1,3 +1,9 @@
+// common variables
+var BODY_BP = 1119
+var HEADER_BP = 915
+
+
+
 // header nav dropdown
 +function($) {
   $(function() {
@@ -8,13 +14,40 @@
   function dropdownToggle(sup, sub) {
     var subWrapper
     $(sup).hover(function() {
+      if ($(window).width() <= HEADER_BP) {
+        return
+      }
       subWrapper = $(this).find(sub + '-wrapper')
       subWrapper.show()
     }, function() {
+      if ($(window).width() <= HEADER_BP) {
+        return
+      }
       subWrapper = $(this).find(sub + '-wrapper')
       subWrapper.hide()
     })
+
+    $(sup).click(function(evt) {
+      if ($(window).width() > HEADER_BP) {
+        return
+      }
+      subWrapper = $(this).find(sub + '-wrapper')
+      evt.stopPropagation()
+      subWrapper.toggle()
+    })
   }
+}(jQuery)
+
+
+
+// mobile header nav menu dropdown
++function($) {
+  $(function() {
+    $('.mobile-header .fa').click(function() {
+      $('.menu').toggle()
+      $('.lang-switch-wrapper').toggle()
+    })
+  })
 }(jQuery)
 
 
@@ -148,6 +181,9 @@
 
     // scrollspy behavior
     $(window).scroll(function() {
+      if ($(window).width() <= BODY_BP) {
+        return
+      }
       var $active = $('.nav .active')
       var pos = $active.position().top
 
