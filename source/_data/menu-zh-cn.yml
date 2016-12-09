@@ -127,6 +127,8 @@ APP开发:
       path: /Cloud/OpenAPI.html
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
+    Notification API:
+      path: /Cloud/NotificationAPI.html
 
 
 用户手册:
