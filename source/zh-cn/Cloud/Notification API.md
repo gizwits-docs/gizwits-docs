@@ -7,11 +7,11 @@ title:  Gizwits Notification API
 
 2.针对每一个 product，都需要新创建一个唯一的 auth_id：
 
-a.对产品拥有者，auth_id 和 auth_secret 需要向机智云获取，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
-b.对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要通过 Http API 对已拥有的设备做关联，关联成功后，才能够获取设备消息和控制设备；
-c.第三方运营商申请 auth_id api：https://m2mv4.iotsdk.com:2018/v1/doc#!/product/post_v1_products_product_key_operator
-d.第三方运营商关联设备 api：https://m2mv4.iotsdk.com:2018/v1/doc#!/product/put_v1_products_product_key_operator
-e.第三方运营商取消关联设备 api：https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_key_operator
+- a.对产品拥有者，auth_id 和 auth_secret 需要向机智云获取，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
+- b.对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要通过 Http API 对已拥有的设备做关联，关联成功后，才能够获取设备消息和控制设备；
+- c.第三方运营商申请 auth_id api：https://m2mv4.iotsdk.com:2018/v1/doc#!/product/post_v1_products_product_key_operator
+- d.第三方运营商关联设备 api：https://m2mv4.iotsdk.com:2018/v1/doc#!/product/put_v1_products_product_key_operator
+- e.第三方运营商取消关联设备 api：https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_key_operator
 
 3.以 product_key+subkey 为唯一主键。其中 subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）。
 
