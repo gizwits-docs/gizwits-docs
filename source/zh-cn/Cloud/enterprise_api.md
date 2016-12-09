@@ -60,6 +60,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 # 接口协议
 ##  1、获取Token
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/授权/post_v1_products_product_key_access_token)
+
 ### 业务功能描述
 该接口提供获取企业API接口访问权限的功能
 ### 接口地址
@@ -85,6 +88,9 @@ Http Response Code ： 201
 ```
 
 ## 2、数据点方式远程控制
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/post_v1_products_product_key_devices_did_control)
+
 ### 业务功能描述
 该接口提供远程设置设备数据点的功能，完成对在线设备的控制操作
 ### 接口地址
@@ -115,7 +121,6 @@ uint8/uint16/uint32 类型的数据点值设置为数字
 binary 类型的数据点值设置为 hex 类型字符串，如发送一串二进制数据 0x01, 0x02, 0x03, 就写成 "010203”
 	例如在机智云开发者中心定义了一个产品的数据点例如是开关，标识名为“switch”，类型为bool类型；如果要关闭该设备，则报文为 "attrs": {"switch": true},可同时传送多个数据点值。
 
-
 ### 应答报文
 ```json
 Http Response Code ： 200	
@@ -123,9 +128,10 @@ Http Response Code ： 200
 {}  
 ```
 
-
-
 ## 3、原始指令方式远程控制
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/post_v1_products_product_key_devices_did_control)
+
 ### 业务功能描述
 该接口提供通过原始控制指令远程控制在线设备的功能。
 ### 接口地址
@@ -159,8 +165,10 @@ Http Response Code ： 200
 ```
 
 
-
 ## 4、单台设备数据聚合查询
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_agg_data)
+
 ### 业务功能描述
 该接口提供查询某个时间周期内某个wifi设备数值型数据点的聚合运算，包括求和、平均、最大、最小的计算。
 ### 接口地址
@@ -218,6 +226,9 @@ MONTHS: "201507"
 
 
 ## 5、设备历史数据查询
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data)
+
 ### 业务功能描述
 该接口提供获取某个产品某台设备的历史数据，如温度值等功能；
 ### 接口地址
