@@ -3,8 +3,10 @@
 # 目的
 为企业提供 SSL 通讯 API，用于实时推送设备与产品相关的事件。
 # 准备工作
-1. 一次可接受多个 Product 的消息。每个 Product 需要 auth_id 和 auth_secret 验证。
-2. 针对每一个 product，都需要新创建一个唯一的 auth_id：
+
+1.一次可接受多个 Product 的消息。每个 Product 需要 auth_id 和 auth_secret 验证。
+
+2.针对每一个 product，都需要新创建一个唯一的 auth_id：
 a. 对产品拥有者，auth_id 和 auth_secret 需要向机智云获取，该 auth_id 拥有获取该
 产品下所有设备消息和控制设备的权限；
 b. 对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要
@@ -19,23 +21,23 @@ operator
 e. 第三方运营商取消关联设备 api：
 https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_k
 ey_operator
-3. 以 product_key+subkey 为唯一主键。其中 subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和_（即[a-zA-Z0-9_]）。
-4. 选取接收信息的 product_key 下的消息类型。一个 product_key 可支持多种消息类型。目前有 7 种，见推送事件消息字段的 event_type。
+3.以 product_key+subkey 为唯一主键。其中 subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和_（即[a-zA-Z0-9_]）。
+4.选取接收信息的 product_key 下的消息类型。一个 product_key 可支持多种消息类型。目前有 7 种，见推送事件消息字段的 event_type。
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
-1. 客户端以 Client 的身份与本接口（Gizwits Platform）建立 SSL 连接。客户端无需提供证书，
+1.客户端以 Client 的身份与本接口（Gizwits Platform）建立 SSL 连接。客户端无需提供证书，
 只需要信任服务器证书即可；
-2. 客户端发送登录指令完成验证；
-3. 客户端实时接受事件消息，并向服务器 ack 事件消息；
-4. 当客户端在一定时间范围内没有向服务器发送任何消息，需要发 ping 心跳请求，服务器回
+2.客户端发送登录指令完成验证；
+3.客户端实时接受事件消息，并向服务器 ack 事件消息；
+4.当客户端在一定时间范围内没有向服务器发送任何消息，需要发 ping 心跳请求，服务器回
 复 pong 心跳响应。
 # 消息推送
 服务端推送消息到客户端。推送工作方式：
-1. 相同 product_key + subkey 的多个客户端登录连接，消息轮流推送到各客户端；
-2. 相同 product_key，不同 subkey 的客户端都能接收该 product 下设备的指定类型的消息副本，客户端之间不会相互干扰；
-3. 当 某客户端未返回的 ack 消息数达到该客户端登录设置的 prefetch_count 值后，消息将不在继续推送给该客户端，但会发送到其他客户端；
-4. 未返回 ack 的消息，服务端会一直等待不会重发，只有在该客户端断开的情况下，未 ack 的消息会重新发送到连接的客户端；
-5. 当所有客户端都断开连接后，后续设备的消息会保存在服务端，等待客户端下次接收。
+1.相同 product_key + subkey 的多个客户端登录连接，消息轮流推送到各客户端；
+2.相同 product_key，不同 subkey 的客户端都能接收该 product 下设备的指定类型的消息副本，客户端之间不会相互干扰；
+3.当 某客户端未返回的 ack 消息数达到该客户端登录设置的 prefetch_count 值后，消息将不在继续推送给该客户端，但会发送到其他客户端；
+4.未返回 ack 的消息，服务端会一直等待不会重发，只有在该客户端断开的情况下，未 ack 的消息会重新发送到连接的客户端；
+5.当所有客户端都断开连接后，后续设备的消息会保存在服务端，等待客户端下次接收。
 # 服务地址
 - 域名：snoti.gizwits.com
 -  SSL 服务端口：2017
@@ -66,8 +68,8 @@ ey_operator
 | data.product_key| 必须 	| 产品 ID| 
 | data.auth_id	| 必须 	| 产品授权 ID| 
 | data.auth_secret	| 必须 	| 产品授权密钥| 
-| data.subkey	| 必须 	| subscription key，为客户端自定义标识。大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和_| 
-| data.events	| 必须 	| 客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型为"device.attr_fault","device.attr_alert","device.online"，"device.offline","device.status.raw","device.status.kv", "datapoints.changed"| 
+| data.subkey	| 必须 	| subscription key，为客户端自定义标识。大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线|
+|data.events	| 必须 	| 客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型为"device.attr_fault","device.attr_alert","device.online"，"device.offline","device.status.raw","device.status.kv", "datapoints.changed"| 
 
 Gizwits Platform 回复：
 ```json
