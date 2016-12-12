@@ -125,6 +125,8 @@ APP开发:
       path: /Cloud/enterprise_api.html 
     OpenAPI:
       path: /Cloud/OpenAPI.html
+    Open API 指南:
+      path: /Cloud/openapi_apps.html
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
     Notification API:
