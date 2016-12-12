@@ -136,3 +136,6 @@ APP开发:
 用户手册:
   OTA使用教程:
     path: /UserManual/OTA使用教程.html
+  接入亚马逊ECho教程:
+    path: /UserManual/echo.html
+    path: /UserManual/OTA使用教程.html
