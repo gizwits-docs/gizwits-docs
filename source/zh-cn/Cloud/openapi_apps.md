@@ -1,6 +1,6 @@
-title:  Gizwits Open API
+title:  Gizwits Open API（新）
 ---
-
+旧版文档可查看：[Open API旧版文档](/zh-cn/Cloud/OpenAPI.html)
 # 简介
 
 ## 什么是机智云 Open API ?
