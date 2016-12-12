@@ -1,0 +1,324 @@
+title:  Gizwits Open API
+---
+
+# 简介
+
+## 什么是机智云 Open API ?
+
+机智云是一个开放的物联网设备平台，它为企业和个人开发者提供设备接入、用户账号管理、用户与设备绑定管理、设备远程监控、定时任务以及设备高级数据等服务。
+
+这些数据都是存储在机智云的数据库中的。那么作为开发者，如何去访问这些数据呢？
+
+Open API 就是机智云对外提供这些数据的访问接口！
+
+## 机智云 Open API 能完成什么功能 ?
+
+根据机智云提供的服务，Open API 提供如下功能:
+
+- 用户管理，比如用户的注册、登录、密码重置等功能
+- 消息中心，比如用户读取、删除系统消息等功
+- 绑定管理，比如用户与设备的绑定、解绑等功能
+- 设备分享，比如用户把自己的绑定设备分享给其他用户，解绑其他用户对自己设备的绑定等
+- 设备远程监控，比如获取设备的当前状态、设备上报的原始数据、设备的上下线记录、设备的远程控制等功能
+- 定时任务管理，设备定时任务的增删改查等
+- 高级数据接口，比如对设备上报的数据按天取最大值、平均值等
+- 系统信息，比如查看当前 Open API 版本，获取所有可能的错误列表等
+
+## 如何调用机智云 Open API ?
+
+机智云 Open API 是 RESTful 风格的 HTTP API，您可以使用任何标准的 HTTP 客户端访问机智云 Open API。
+
+各种编程语言一般都有现成的 HTTP 客户端可以使用。
+
+推荐 HTTP 客户端：
+
+- [GUI 客户端 PostMan](https://www.getpostman.com/)
+- 命令行客户端 curl
+
+## 机智云 Open API 所需要的头部信息
+
+### X-Gizwits-Application-Id
+
+X-Gizwits-Application-Id 简称 AppID，是一个应用在机智云平台中的唯一标识，所有 OpenAPI 接口都需要传入这个头部参数。
+
+在开发者中心的产品页面中，点击左边栏的"应用配置"菜单，创建一个应用即可获得一个 AppID:
+
+![Get AppID](/assets/zh-cn/cloud/get-appid.png)
+
+### X-Gizwits-User-token
+
+X-Gizwits-User-token 简称 UserToken，它代表着接口调用中的用户上下文。
+
+UserToken 具有有效期，默认为 7 天。
+
+可以通过用户注册或者登录接口获取 UserToken，返回字段中的 token 就是 UserToken，expire_at 表示 UserToken 过期的时间戳：
+```
+{
+  "uid": "29db4f0d806e451a84264ba3da64d9de",
+  "token": "86a0ee91548f4971832e371811702316",
+  "expire_at": 13894002020
+}
+```
+
+每次登录可以获取一个新的 UserToken，新旧 UserToken 都可以使用。
+
+因为机智云 Open API 大多数的接口都是与用户相关的，所以一般的接口调用顺序如下：
+
+- 判断本地是否有 UserToken，以及 UserToken 是否过期
+- 如果不存在 UserToken 或者 UserToken 过期，调用用户登录接口，获取并保存 UserToken
+- 使用 UserToken 调用其它接口
+
+## 如何在线调试机智云 Open API ?
+
+我们提供了在线 API 调试工具，在每个接口描述中，都会给出对应的调试接口链接。
+
+下面以用户登录为例，说明 API 调试工具的使用：
+
+- 点击 [用户登录](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_login) 进入接口调试页面
+- 接口右边有个红色叹号，点击后弹出对话框，提示需要输入的头部信息
+- 该接口需要输入 X-Gizwits-Application-Id，根据前面的说明获取 AppID 并填入，点击 "Authorize" 进行授权
+- 页面自动刷新，并且叹号变成蓝色，表示需要输入的头部信息已填写（已填写并不一定表示值是正确的，如果值错误，会反应在接口返回内容中）
+- 在参数输入框中输入参数值（点击参数右边的 Example Value 黄色框框，可以快速输入示例 JSON）
+- 点击 "试一下" 按钮，即可完成接口调用
+- 接口调用完成，会显示本地调用等效的 curl 语句，请求 URL，响应体，响应码和响应头
+
+# 机智云 Open API 指南
+
+机智云所有接口定义可以在[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps)页面中查看。
+
+下面对各分类接口的典型调用场景进行说明。
+
+## 用户管理
+
+### 用户注册
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users)
+
+有以下几种方式可以注册用户：
+
+- 匿名注册，通过唯一的 phone_id 创建用户
+- 普通用户，通过 username 和 passowrd 创建用户
+- 手机用户，通过 phone, password 和 code（短信验证码）创建用户，短信验证码的获取参考下面章节
+- 邮箱用户，通过 email 和 password 创建用户
+- 第三方登录用户，目前支持 QQ、百度、新浪微博，如使用 QQ 第三方登录，请查阅下面章节
+
+### 使用 QQ 登录
+
+TODO
+
+### 短信验证码
+
+短信验证码的主要用途有：
+
+- 手机号用户注册
+- 手机号用户重置密码
+- 其他您认为需要短信验证码的敏感操作
+
+获取短信验证码有两种方式，一种不需要图片验证码，一种需要图片验证码，您可以根据实际的应用场景选择两种不同的方法。
+
+#### 不需要图片验证码
+
+- 调用[获取 App Token](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_request_token)接口获取 App Token
+- 调用[获取短信验证码](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_sms_code)接口发送短信验证码
+
+#### 需要图片验证码
+
+- 调用[获取 App Token](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_request_token)接口获取 App Token
+- 调用[获取图片验证码](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/get_app_verify_codes)接口，返回的 captcha_url 就是图片验证码的 URL，将图片显示给用户
+- 调用[校验图片验证码并发送短信](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_verify_codes)接口，发送短信验证码
+
+#### 校验短信验证码
+
+手机号用户注册和重置密码时，您不需要也不能去验证短信验证码，只需要将用户输入的短信验证码传入对应接口，机智云会自动进行校验。
+
+当您将短信验证码用于其他敏感操作校验时，才需要手动校验。调用 [校验短信验证码](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_sms_code) 接口即可完成校验。
+
+短信验证码正确校验后立即失效，默认有效期为 24 小时。
+
+### 用户登录
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_login)
+
+注意：匿名用户和第三方登录用户调用用户注册接口进行登录。
+
+### 修改用户信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/put_app_users)
+
+您可以修改以下用户信息：
+
+- 匿名用户转普通/手机/邮箱用户
+- 修改密码
+- 修改手机号
+- 设置用户昵称、性别、生日、地址、备注等信息
+
+### 获取用户信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/get_app_users)
+
+该接口可以获取用户详细信息。
+
+### 重置密码
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_reset_password)
+
+手机号用户重置密码需要先获取短信验证码。
+
+## 消息中心
+
+### 获取消息列表
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/消息中心/get_app_messages)
+
+### 标记已读和删除
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/消息中心/put_app_messages_id)
+
+## 绑定管理
+
+### 绑定设备
+
+可以通过一下两种方式绑定设备：
+
+- 通过 product_key 和 MAC 地址绑定设备
+- 通过二维码绑定设备，二维码内容为 product_key 和 MAC 加密后的内容，所以本质上和上面一种方式一样
+
+#### 通过 product_key 和 MAC 地址绑定设备
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac)
+
+#### 通过二维码绑定设备
+
+##### 二维码生成
+
+TODO
+
+##### 绑定设备
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_latest)
+
+把扫描到的二维码内容作为 qr_content 的值入。
+
+### 获取绑定列表
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/get_app_bindings)
+
+### 修改绑定信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/put_app_bindings_did)
+
+用户可以对绑定的设备修改别名和备注。
+
+同一个设备被多个用户绑定，每个用户都可以对该设备设置别名和备注，互不冲突。
+
+### 解除绑定
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/delete_app_bindings)
+
+## 设备分享
+
+第一个绑定设备的用户对设备具有控制权，称为设备 Owner，Owner 可以将设备分享给其他设备。被分享的用户称为 Guest。
+
+Owner 分享设备之后，可以随时取消分享，或者解绑 Guest 对设备的绑定。
+
+Guest 也可以主动解绑设备。
+
+设备分享的主要有两种方式：
+
+- 普通设备分享
+- 通过二维码分享设备
+
+### 普通设备分享
+
+- Owner 选择一个要分享的设备，调用[创建分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing)接口创建分享邀请
+- Guest 将会收到一条设备分享消息
+- Guest 调用[查询分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing)接口，查询分享给自己的邀请
+- Guest 调用[接受分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/put_app_sharing_id)接口接受邀请
+- Owner 和 Guest 都将收到一条设备分享消息
+
+### 通过二维码分享设备
+
+- Owner 选择一个要分享的设备，调用[创建分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing)接口创建分享邀请
+- 接口返回字段中的 qr_url 表示二维码图片的链接，二维码包含邀请码内容，Owner 将二维码图片展示给 Guest
+- Guest 扫描二维码，获取邀请码，调用[根据邀请码查询分享邀请接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing_code_code)接口，查看分享内容
+- Guest 调用[扫码接受分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing_code_code)接口，接受分享邀请
+- Owner 和 Guest 都将收到一条设备分享消息
+
+### Owner 取消设备分享
+
+- Owner 调用[查询分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing)接口，查询分享出去的邀请
+- Owner 选择一个要取消的分享邀请，调用[取消分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/delete_app_sharing_id)接口，取消分享
+- Guest 用户对设备的绑定被取消，同时，Owner 和 Guest 都将收到一条设备分享消息
+
+## 设备远程监控
+
+### 获取设备详情
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devices_did)
+
+### 获取设备最近一次上报的数据
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devdata_did_latest)
+
+该接口获取的是 24 小时内，设备最近一次上报的数据点值。
+
+### 获取设备的通信日志和上下线记录
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devices_did_raw_data)
+
+### 远程控制设备
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/post_app_control_did)
+
+## 定时任务接口
+
+### 创建定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/post_app_devices_did_scheduler)
+
+定时任务分为如下几类：
+
+- 一次性定时任务
+- 按星期重复定时任务
+- 按天重复定时任务
+
+每个定时任务都可以设置使能状态，只有开启状态的定时任务才会被执行。
+
+重复执行的定时任务需要设置开始和结束日志。
+
+一个定时任务可以一次性设置多个数据点。
+
+### 获取定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/get_app_devices_did_scheduler)
+
+### 修改定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/put_app_devices_did_scheduler_id)
+
+### 删除定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/delete_app_devices_did_scheduler_id)
+
+## 高级数据接口
+
+### 获取设备聚合数据
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口//get_app_devdata_did_agg_data)
+
+该接口可以对设备上报的数值型数据点数据进行聚合，可以按小时/天/周/月对数据点数据进行求和/平均值/最大值/最小值进行聚合。
+
+一次可以获取多个数据点的聚合数据。
+
+要使用该接口，必须先请求开通该接口。请求通过的之后上报的数据才会进行聚合运算。
+
+
+## 系统信息
+
+### 查询 Open API 版本
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/系统信息/get_status)
+
+### 获取 Open API 所有的错误码
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/系统信息/get_errors)
