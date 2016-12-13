@@ -2,6 +2,8 @@
 title:  Gizwits Open API
 ---
 
+新版文档可查看：[Open API新版文档](/zh-cn/Cloud/openapi_apps.html)
+
 # 概述
 
 使用机智云提供的Open API（Http / WebSocket），可以快速开发网页或微信应用等基于html的轻应用，用于管理和控制智能设备。
