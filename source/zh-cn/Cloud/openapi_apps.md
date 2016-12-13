@@ -215,6 +215,14 @@ TODO
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/delete_app_bindings)
 
+### Owner 查询与设备绑定的所有 Guest 用户
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/get_app_did_bindings)
+
+### Owner 解除 Guest 用户对设备的绑定
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/delete_app_did_bindings)
+
 ## 设备分享
 
 第一个绑定设备的用户对设备具有控制权，称为设备 Owner，Owner 可以将设备分享给其他设备。被分享的用户称为 Guest。
