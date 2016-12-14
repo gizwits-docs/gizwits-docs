@@ -3,13 +3,13 @@ title: Websocket API 指南
 # Demo
 https://github.com/gizwits/gizwits-wechat-js-sdk
 
-# 1. 通讯模型 
+#  通讯模型 
 
 浏览器（Javascript）可以通过Web Socket API与机智云云端直接通讯。浏览器（Javascript）通过 Web Socket API，可以控制设备和实时接收设备上报的数据。 
 
 ![通信模型](/assets/zh-cn/cloud/通信模型.jpg)
 
-# 2. 通讯流程 
+#  通讯流程 
 
 浏览器（Javascript）通过Web Socket API与云端通讯主要包括以下的通讯过程。
 
@@ -19,31 +19,31 @@ https://github.com/gizwits/gizwits-wechat-js-sdk
 * 心跳：浏览器（Javascript）定期向云端发送心跳，云端回复心跳响应。
 
 
-# 3. 约定 
+#  约定 
 
 
-## 3.1. 协议阅读说明 
+## 1. 协议阅读说明 
 
 ● &lt;str&gt;表示字符串占位符，&lt;int&gt;表示整型数据占位符。
 
 
-## 3.2. 云端Web Socket服务地址 
+## 2. 云端Web Socket服务地址 
 ```
 ws://<m2m_host>:8080/ws/app/v1 
 ```
 其中的&lt;m2m_host&gt;为绑定设备列表中的host字段的值，如”m2m.gizwits.com”或”sandbox.gizwits.com”，请参考获取绑定设备列表HTTP API。
 
 
-## 3.3. 注意事项  
+## 3. 注意事项  
 
 * 在与云端进行Web Socket交互前，用户必须已注册并已绑定了设备。 
 * 与云端交互的数据均为JSON字符串,以UTF-8的方式编码。可以通过JSON.stringify(json)把Javascript对象转化为字符串再发送给云端，或通过var res = JSON.parse(evt.data)把接收到的字符串数据转化成Javascript对象。
 * Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app (​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)， 也可以查看这个网页的源代码作为示例代码参考。
 
 
-# 4. 通讯协议 
+#  通讯协议 
 
-## 4.1. 用户登陆 
+## 1. 用户登陆 
 
 浏览器（Javascript）必须登陆后才能和云端作进一步的交互。 
 
@@ -79,7 +79,7 @@ ws://<m2m_host>:8080/ws/app/v1
 ```
  
  
-## 4.2. 设备上线下线通知 
+## 2. 设备上线下线通知 
 
 当设备上线或下线时，云端会主动发送通知到浏览器。
 
@@ -101,7 +101,7 @@ ws://<m2m_host>:8080/ws/app/v1
 ```
 
 
-## 4.3. 浏览器与云端的数据交互（数据透传）
+## 3. 浏览器与云端的数据交互（数据透传）
 
 浏览器可以和云端交互任意符合协议的数据。协议的格式为请参考其它协议文档。
 当用户在登 陆时参数"p0_type"的值等于"custom"时，只能以这种方式和云端交互数据。
@@ -139,7 +139,7 @@ ws://<m2m_host>:8080/ws/app/v1
 
 若该数据为设备上报的数据，raw的值会带上一个协议前缀，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 145] + 设备数据，其中的varLen为可变长度，定义请参考上文。 
 
-## 4.4. 标准数据点操作（读、写、通知）
+## 4. 标准数据点操作（读、写、通知）
 
 当用户在登陆时参数"p0_type"的值等于"attrs_v4"时，云端会以标准数据点协议的方式和浏览器交互。   
 
@@ -194,7 +194,7 @@ ws://<m2m_host>:8080/ws/app/v1
 ```
 
 
-## 4.5. 心跳
+## 5. 心跳
   
 浏览器和云端建立Web Socket连接后，需要在登陆参数"heartbeat_interval"指定的时间间隔内，定期向云端发送心跳。云端收到后会回复心跳。
     
@@ -214,7 +214,7 @@ ws://<m2m_host>:8080/ws/app/v1
 }
 ```
 
-## 4.6. 非法消息通知
+## 6. 非法消息通知
 
 当浏览器向云端发送的消息不合法或收到设备上报的数据不合法时,云端会下发此消息通知浏览器。
 
