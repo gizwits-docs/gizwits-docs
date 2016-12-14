@@ -1,4 +1,4 @@
-title:  Notification API
+title:  SNoti API
 ---
 # Demo
 https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
