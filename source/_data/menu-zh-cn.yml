@@ -127,7 +127,7 @@ APP开发:
       path: /Cloud/openapi_apps.html
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
-    Notification API:
+    SNoti API:
       path: /Cloud/NotificationAPI.html
 
 
