@@ -14,13 +14,16 @@ Productkey在开发过程中的角色：
 
 ![Alt text](/assets/zh-cn/quickstart/noun/图片2.png)
 
-## 2.DID
+## 2.Product Secret
+定义：产品密钥，在生成Productkey的时候云端会对应生成一个Product Secret，该参数为关键性机密参数，不应向第三方泄露。该参数在绑定远程设备（一般为GPRS接入方案）的时候会使用到。
+
+## 3.DID
 
 定义：设备号，当一个设备初次接入机智云时，机智云自动根据ProductKey以及设备Wi-Fi模块MAC地址为此设备注册一个did，此did全网唯一，用于与用户的绑定及后续操作。
 
 ![Alt text](/assets/zh-cn/quickstart/noun/图片3.png)
 
-## 3.AppID
+## 4.AppID
 
 定义：应用标识码，当开发者需要为一款智能产品开发应用（包括iOS、Android、Web应用等）时，后台会自动生成一个AppID，并与此设备进行关联。应用开发时需要填入此AppID。
 
@@ -31,11 +34,15 @@ Productkey在开发过程中的角色：
 ![Alt text](/assets/zh-cn/quickstart/noun/图片5.png)
 
 
-## 4.小循环
+## 5.App Secret
+
+定义：应用密钥，在云端生成AppID的时候，会对应生成一个App Secret，该参数在APP端SDK注册手机用户时，获取手机短信验证码的时候会用到。
+
+## 5.小循环
 定义：智能设备与手机、智能设备与智能设备之间，通过连接同一个路由器实现局域网内部的通信（查看状态或控制），我们称之为小循环。
 
 
-## 5.大循环
+## 6.大循环
 定义：智能设备通过路由器或直接接入互联网以实现用户的远程监测与控制，我们称为大循环。
 
 ![Alt text](/assets/zh-cn/quickstart/noun/图片6.png)
