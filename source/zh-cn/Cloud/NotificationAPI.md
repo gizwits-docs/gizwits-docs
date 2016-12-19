@@ -46,7 +46,7 @@ https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 # 服务地址
 - 域名：snoti.gizwits.com
 -  SSL 服务端口：2017
--  HTTP API 服务端口：201
+-  HTTP API 服务端口：2018
 # SSL 的接口协议 的接口协议
 
 消息内容为二进制数据，UTF-8 编码。请注意每个消息后都必须添加"\n"作为消息结尾符。
