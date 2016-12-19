@@ -136,5 +136,7 @@ APP开发:
     path: /UserManual/OTA使用教程.html
   D3 Engine使用教程:
     path: /UserManual/D3.html
+  ECE雾计算使用教程:
+    path: /UserManual/ece.html
   接入亚马逊ECho教程:
     path: /UserManual/echo.html
