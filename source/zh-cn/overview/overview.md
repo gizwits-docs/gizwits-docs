@@ -15,7 +15,9 @@ title:  平台概述
 硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统。硬件厂商只需理解如何与GAgent进行通讯即可。
 
 相关链接：
+
  [了解GAgent](../deviceDev/gagent_info.html)
+ 
  [设备如何快速接入](/zh-cn/quickstart/设备快速接入.html)
 
 
@@ -23,21 +25,35 @@ title:  平台概述
 - 机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能
 
 相关链接：
+
  [APP开源框架](/zh-cn/AppDev/iosframe.html)
+ 
  [安卓SDK接入](/zh-cn/AppDev/AndroidSDKA2.html)
+ 
  [IOS SDK接入](/zh-cn/AppDev/iOSSDKA2.html)
+ 
  [微信开发](/zh-cn/WechatDev/WeChatDev.html)
 
 ## 3、企业应用开发
 开发者如果已完成设备接入、APP开发，还需要从机智云PaaS平台获取数据构建一套业务管理系统，或者访问机智云提供的服务，则需了解以下文档
 
 相关链接：
+
  [了解企业应用开发](../Cloud/ent_dev.html)
+ 
  [了解消息代理服务接口](../Cloud/noti1.0.html)
+ 
  [了解企业API](../Cloud/enterprise_api.html)
+ 
+## 4、行业解决方案
+机智云拥有多年的经验积累，可为客户提供各个垂直领域的行业解决方案。下面选择几个比较有代表性的行业解决方案： 
 
-
-
+ [充电桩行业解决方案](http://topic.gizwits.com/zhinengkongqijinghuaqi/)
+ 
+ [空净行业解决方案](http://topic.gizwits.com/zhinengjingshuiqi/)
+ 
+ [净水行业解决方案](http://topic.gizwits.com/zhinengjingshuiqi/)
+ 
 # 机智云优势
 ### 1、高可用平台
  - SLA 99.99%
