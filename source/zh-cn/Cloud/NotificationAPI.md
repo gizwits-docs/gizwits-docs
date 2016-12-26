@@ -1,4 +1,4 @@
-title:  SNoti API
+title:  SNoti API (V2.1.3)
 ---
 # Demo
 https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
@@ -283,3 +283,5 @@ Gizwits Platform 回复：
 ```
 客户端开发者应检查客户端发出的消息内容是否正确（注意：如果客户端没有在消息结尾添加"\n"，服务器端会认为还没有收到完整的消息而继续等待更多的消息内容）。
 
+# 旧版文档记录
+[SNoti API V2.1.2.1](/assets/pdf/SNoti API V2.1.2.pdf)
