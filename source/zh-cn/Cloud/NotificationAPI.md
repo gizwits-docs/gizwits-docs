@@ -11,9 +11,9 @@ https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 
 - a.对产品拥有者，auth_id 和 auth_secret 需要向机智云获取，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
 - b.对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要通过 Http API 对已拥有的设备做关联，关联成功后，才能够获取设备消息和控制设备；
-- c.第三方运营商申请 auth_id api:https://m2mv4.iotsdk.com:2018/v1/doc#!/product/post_v1_products_product_key_operator
-- d.第三方运营商关联设备 api:https://m2mv4.iotsdk.com:2018/v1/doc#!/product/put_v1_products_product_key_operator
-- e.第三方运营商取消关联设备 api:https://m2mv4.iotsdk.com:2018/v1/doc#!/product/delete_v1_products_product_key_operator
+- c.第三方运营商申请 auth_id api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/post_v1_products_product_key_operator
+- d.第三方运营商关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/put_v1_products_product_key_operator
+- e.第三方运营商取消关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/delete_v1_products_product_key_operator
 
 3.以 product_key+subkey 为唯一主键。其中 subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）。
 
@@ -122,12 +122,12 @@ Gizwits Platform 回复：
 "mac": <mac string>,
 "product_key": <product_key string>,
 "attrs": {
-"name1": <value1>,
+"name1": <value1>,("name1"指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
 "name2": <value2>,
 … …
 }(Only used with cmd "write_attrs")
 OR
-"raw": [<byte>, <byte>, <byte>, … ...](Only used with cmd “write“ or “write_v1”)
+"raw": [<byte>, <byte>, <byte>, … ...](Only used with cmd "write" or "write_v1")
 }
 },...] (可一个或多个控制指令)
 }\n
@@ -143,7 +143,7 @@ OR
 | data.data.did 	| 必须 	| 设备 ID| 
 | data.data.mac	| 必须 	| 设备 Mac 地址,长度为 12 的字符串，大小写敏感| 
 | data.data.product_key	| 必须 	|设备所属产品的标识码| 
-| data.data.attrs / data.data.raw	| 必须 	| V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式，选择data.data.raw；V1 产品协议格式，选择 data.data.raw| 
+| data.data.attrs / data.data.raw	| 必须 	| V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式（参考通用数据点协议之透传业务指令），选择data.data.raw；V1 产品协议格式，选择 data.data.raw| 
 
 
 Gizwits Platform 回复：
