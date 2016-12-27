@@ -110,8 +110,8 @@ APP开发:
       path: /deviceDev/MXCHIP串口烧写说明.html
     ESP8266串口烧写说明:
       path: /deviceDev/ESP8266串口烧写说明.html
-    产测工具使用文档:
-      path: /deviceDev/产测工具使用文档.html
+    广和通G510模组烧写方法:
+      path: /deviceDev/debug/G510.html
     日志抓取教程文档:
       path: /deviceDev/日志抓取教程文档.html
  
@@ -134,6 +134,8 @@ APP开发:
 用户手册:
   OTA使用教程:
     path: /UserManual/OTA使用教程.html
+  产测工具使用文档:
+    path: /deviceDev/产测工具使用文档.html
   D3 Engine使用教程:
     path: /UserManual/D3.html
   ECE雾计算使用教程:
