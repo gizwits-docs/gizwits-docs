@@ -72,7 +72,7 @@ anonymousLogin：是否打开匿名登录【true：打开】
 
 1.极光推送的appid需要在AndroidManifest.xml 中填写见243行。
 
-2.微信登录需要进行在腾讯api中设置自己的md5值否者无法正常运行
+2.微信登录需要进行在腾讯api中设置自己的md5值否则无法正常运行
 
 3.tencent\_app\_id需要在AndroidManifest.xml中89行填写
 
