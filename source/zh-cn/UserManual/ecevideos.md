@@ -68,19 +68,26 @@ ECE开通后如下图
 4. 使用串口方式一烧写固件
 >拿到支持ECE的ESP8266机智云WiFi固件
 请务必依次对照下图所选的地方进行相应的填写：
-
 ![ececonfig.png-64.1kB][24]
 
-5. 固件烧写操作
+固件烧写操作：
  步骤一、当串口连接成功之后，点击如上图的“START”按钮，
+ 
 ![image_1b378f7tf1cmac031gvf1lb0rng2n.png-4.9kB][25]
+
 会出现
+
 ![image_1b378fqrj2q16bd1n45e38v0o34.png-5.1kB][26]
+
 步骤二、将ESP8266进行复位（按下1节原理图所示的KEY1后松开）将会出现如下信息表示模块正在进行烧写。
+
 ![image_1b378iqa41kbpobn1kc01g766343h.png-10.6kB][27]
+
 步骤三、等待一段时间后，出现“FINISH”字样表示烧写成功。
+
 ![image_1b378jlisb9jpq51khd1h3kft83u.png-10.3kB][28]
-6. 产品初始化信息烧录。
+
+5. 产品初始化信息烧录。
 - 到产品页面找到对应产品的**product key**,如下图：
 ![image_1b54goudp1mv3113418pp2g5s553g.png-58.7kB][29]
 - 把**product key**保存到init.lua脚本里面，格式如下：
