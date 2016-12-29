@@ -29,11 +29,10 @@
 点击《登陆》，跳转到开发者类型选择界面，企业开发者必须选择《企业开发者》类型，方便后续产品的开发和支持,这里我们选择企业开发者。然后完善信息
 ![image_1b372bquop6v62k42npemtg02n.png-69kB][7]
 接着创建一个产品
+![image_1b372h81musb916biemcb1u6m34.png-64.9kB][8]
 注意：**需要在企业用户里面创建企业产品才能体验ECE 个人产品目前不支持**
 ![image_1b54k3vvucr5h6v1adp1itt19ta4n.png-64.5kB][8]
-![image_1b372h81musb916biemcb1u6m34.png-64.9kB][9]
-如下图
-![image_1b372kiq1th3s2n7qk19p41c3c3h.png-30.5kB][10]
+![image_1b5507vufs80vgl1hubvih1ltj54.png-49.8kB][9]
 ![image_1b372oaie170moj31laahbaitk3u.png-66.6kB][11]
 添加ECE服务
 ![image_1b54gedde1qo11j7l1ajdmk6ju61f.png-89.7kB][12]
