@@ -110,14 +110,14 @@ ECE开通后如下图
 - WiFi发送控制指令给mcu **cmd=4**：
  命令: ```wifi2mcu&cmd=4&LedSwitchOnOff=1或者MotorSwitchOnOff=1```
 
-**实现该协议的固件见机智云下载中心 [ECE雾计算esp8266固件包][32] 里面的```gokit_mcu_stm32_ece.hex```**
+**实现该协议的固件见机智云下载中心 [ECE雾计算esp8266固件包][32] 里面的```gokit_mcu_stm32_ece.hex```**  
 ###**4.脚本编译及推送**
 - - -
 ####**脚本格式及编写规则**
-请参照demo.lua这个脚本为模板编写自己的lua应用程序，该demo脚本需配套gokit套件及上面提到的模组及MCU固件使用，实现了下列功能：
-1、当检测到上报温度大于27度时，通知MCU打开电机；
-2、当红外对管检测到障碍物时，打开红灯；
-下面我们通过注释区定义了几大块：
+请参照demo.lua这个脚本为模板编写自己的lua应用程序，该demo脚本需配套gokit套件及上面提到的模组及MCU固件使用，实现了下列功能：  
+1、当检测到上报温度大于27度时，通知MCU打开电机;  
+2、当红外对管检测到障碍物时，打开红灯;  
+下面我们通过注释区定义了几大块：  
 应用程序初始化部分，程序请写到luaInit内容区，这部分的代码在整个脚本生命周期只会运行一次，比如分配应用的内存大小，请把lua应用程序需要初始化一次的部分放在这个区域内。
 ```
 ----------luaInit----------
@@ -155,19 +155,29 @@ Lua SDK标准库：其中string和table为sdk5.1.4标准库，```core,math，C A
 GAgent封装给lua使用的API:　请查看```gagent_esp8266_api```文档。
 ####**验证lua应用程序的语法**
 编写好的lua应用程序，可以先用本地的IDE先进行语法编译验证，确保语法编译没有问题，对于调用到的GAgent API，可以先打桩。Window平台推荐LUA本地编译的IDE工具：SciTE或 LuaForWindows:
+
 ![image_1b52ecj9g1tsp1vli471qan1j3u9.png-206.5kB][33]
 
 **Ubuntu安装lua环境：**```sudo apt-get install lua、sudo apt-get install lua5.1-0-dev```
+
 ![image_1b52ee4viuqs1q5jcp8bf314vgm.png-44kB][34]
+
 ####**脚本推送**
 把lua脚本拷贝到lua脚本录入处做推送：
+
 ![image_1b52efl9u4m61s98144016fj2v413.png-96.7kB][35]
+
 可以通过指向mac地址对某台或某几台设备进行脚本推送：
+
 ![image_1b52eg53l1vnn19q810qepb5be91g.png-66.8kB][36]
+
 推送结果反馈：
 **推送成功：**
+
 ![image_1b52egm5f1q3951nla12lg1apm1t.png-61kB][37]
+
 **Mac地址出错或设备未上线提示的推送失败：**
+
 ![image_1b52eh3j657kvm6177i1k1epd42a.png-66.4kB][38]
 
 
