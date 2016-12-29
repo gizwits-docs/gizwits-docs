@@ -87,7 +87,7 @@ ECE开通后如下图
 
 ![image_1b378jlisb9jpq51khd1h3kft83u.png-10.3kB][28]
 
-5. 产品初始化信息烧录。
+产品初始化信息烧录：
 - 到产品页面找到对应产品的**product key**,如下图：
 ![image_1b54goudp1mv3113418pp2g5s553g.png-58.7kB][29]
 - 把**product key**保存到init.lua脚本里面，格式如下：
