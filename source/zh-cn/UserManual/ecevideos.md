@@ -94,9 +94,11 @@ ECE开通后如下图
 ![image_1b54grort2v01nums0s4gq8103t.png-7.8kB][29]
 - 把该文件烧录到**0xb0000**地址，烧录步骤跟**第五部分固件烧写操作**一样
 - ![init.lua烧录][30]
+
 #观看链接：
 [2.固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
 [3.pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
+
 ###**3.MCU协议介绍**
 ####**MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：**
 - - - 
@@ -116,6 +118,7 @@ ECE开通后如下图
 **固件烧录教程:**http://club.gizwits.com/forum.php?mod=viewthread&tid=3311&highlight=gokit%2B%E7%83%A7%E5%BD%95
 #观看链接：
 [4.MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)
+
 ###**4.脚本编译及推送**
 - - -
 ####**脚本格式及编写规则**
