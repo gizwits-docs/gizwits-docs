@@ -97,6 +97,7 @@ ECE开通后如下图
 
 #观看链接：
 [2.固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
+
 [3.pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
 
 ###**3.MCU协议介绍**
@@ -228,4 +229,5 @@ GAgent封装给lua使用的API:　请查看```gagent_esp8266_api```文档。
   [37]: http://static.zybuluo.com/AlexLin/s1oj1xyj90avz3lippw7syzw/image_1b52eh3j657kvm6177i1k1epd42a.png
 #观看链接
 [5.lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
+
 [6.gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
