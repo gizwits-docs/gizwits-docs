@@ -94,7 +94,9 @@ ECE开通后如下图
 ![image_1b54grort2v01nums0s4gq8103t.png-7.8kB][29]
 - 把该文件烧录到**0xb0000**地址，烧录步骤跟**第五部分固件烧写操作**一样
 - ![init.lua烧录][30]
-
+#观看链接：
+[2.固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
+[3.pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
 ###**3.MCU协议介绍**
 ####**MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：**
 - - - 
@@ -112,6 +114,8 @@ ECE开通后如下图
 
 **实现该协议的固件见机智云下载中心 [ECE雾计算esp8266固件包][31] 里面的```gokit_mcu_stm32_ece.hex```**
 **固件烧录教程:**http://club.gizwits.com/forum.php?mod=viewthread&tid=3311&highlight=gokit%2B%E7%83%A7%E5%BD%95
+#观看链接：
+[4.MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)
 ###**4.脚本编译及推送**
 - - -
 ####**脚本格式及编写规则**
@@ -219,3 +223,6 @@ GAgent封装给lua使用的API:　请查看```gagent_esp8266_api```文档。
   [35]: http://static.zybuluo.com/AlexLin/sqvaal69sat4ygwgchxcaz4a/image_1b52eg53l1vnn19q810qepb5be91g.png
   [36]: http://static.zybuluo.com/AlexLin/yu6scxcs2zdzlsb92n5q5gi8/image_1b52egm5f1q3951nla12lg1apm1t.png
   [37]: http://static.zybuluo.com/AlexLin/s1oj1xyj90avz3lippw7syzw/image_1b52eh3j657kvm6177i1k1epd42a.png
+#观看链接
+[5.lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
+[6.gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
