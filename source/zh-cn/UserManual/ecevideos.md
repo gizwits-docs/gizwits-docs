@@ -6,8 +6,7 @@
 ##[ECE 介绍][1]
 >**ECE（Edge Computing Engine）边缘计算引擎**，是 一个运行在设备通信模组或近场通信网关上的微应用容器，提供雾计算的运行环境，协调程序和底层硬件环境的关系。ECE和云端微应用管理及分发机制组成了机智云的“雾计算”层。微应用由开发者自行定义，以轻量级对脚本语言（JavaScript，Lua，Python等）构成。脚本可以根据云端的管理机制实 时更新和加载，无需重启设备和OTA固件升级。开发者可以直接在云端编写各种脚本，ECE下载到微应用容器中，动态加载这些脚本代码，实时应用到设备和数 据上，从而改变设备行为，进行多样化的本地的运算和决策，让“端”变得更加聪明，反应速度更加快，把日渐流行的“软件定义硬件Software Defined Device”升级到“云端定义硬件Cloud Defined Device”。
 ##ECE 入门准备
-本教程分为4大部分
-
+本教程分为4大部分,每部分介绍后都附有视频教程，你可以观看视频
  - **机智云账号注册**
  - **硬件准备**
  - **MCU协议介绍**
@@ -42,7 +41,7 @@
 ECE开通后如下图
 ![image_1b54glnol15d9aporv6t611eo33.png-55.5kB][15]
 #观看链接：
-[1.企业账号注册](http://v.qq.com/x/page/l0361rcmzqp.html)
+[企业账号注册](http://v.qq.com/x/page/l0361rcmzqp.html)
 ###**2.硬件准备**
 机智云ECE功能现在基于GAgent ESP8266 **4M Flash** 硬件平台；
 第一步我们得找到一个ESP8266的WiFi模组；
@@ -96,9 +95,9 @@ ECE开通后如下图
 - ![init.lua烧录][30]
 
 #观看链接：
-[2.固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
+[固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
 
-[3.pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
+[pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
 
 ###**3.MCU协议介绍**
 ####**MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：**
@@ -118,7 +117,7 @@ ECE开通后如下图
 **实现该协议的固件见机智云下载中心 [ECE雾计算esp8266固件包][31] 里面的```gokit_mcu_stm32_ece.hex```**
 **固件烧录教程:**http://club.gizwits.com/forum.php?mod=viewthread&tid=3311&highlight=gokit%2B%E7%83%A7%E5%BD%95
 #观看链接：
-[4.MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)
+[MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)
 
 ###**4.脚本编译及推送**
 - - -
