@@ -14,6 +14,7 @@
 
 ###**1. [机智云账号注册][2]**
 目前ECE的功能只有注册了机智云的企业账号，在企业账号下的企业产品项目下创建的产品才能体验。
+
 **步骤一：**点击注册链接https://accounts.gizwits.com/zh-cn/register/
 
 
@@ -25,6 +26,7 @@
 ![image_1b371qqh5rbj1voqlncrnah5t1t.png-98.5kB][5]
 **步骤三：**登陆您的邮箱，选中机智云账号激活邮件
 ![image_1b37251i91pq21q610dos8uhic2a.png-141.2kB][6]
+
 点击《登陆》，跳转到开发者类型选择界面，企业开发者必须选择《企业开发者》类型，方便后续产品的开发和支持,这里我们选择企业开发者。然后完善信息
 ![image_1b372bquop6v62k42npemtg02n.png-69kB][7]
 接着完善企业信息
@@ -227,6 +229,6 @@ GAgent封装给lua使用的API:　请查看```gagent_esp8266_api```文档。
   [36]: http://static.zybuluo.com/AlexLin/yu6scxcs2zdzlsb92n5q5gi8/image_1b52egm5f1q3951nla12lg1apm1t.png
   [37]: http://static.zybuluo.com/AlexLin/s1oj1xyj90avz3lippw7syzw/image_1b52eh3j657kvm6177i1k1epd42a.png
 #观看链接
-[5.lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
+[lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
 
-[6.gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
+[gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
