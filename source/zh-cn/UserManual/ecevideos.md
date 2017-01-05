@@ -43,7 +43,7 @@
 ECE开通后如下图
 ![image_1b54glnol15d9aporv6t611eo33.png-55.5kB][15]
 #观看链接：
-[企业账号注册](http://v.qq.com/x/page/l0361rcmzqp.html)
+[企业账号注册](https://v.qq.com/x/page/n0362u2fgws.html)
 ###**2.硬件准备**
 机智云ECE功能现在基于GAgent ESP8266 **4M Flash** 硬件平台；
 第一步我们得找到一个ESP8266的WiFi模组；
