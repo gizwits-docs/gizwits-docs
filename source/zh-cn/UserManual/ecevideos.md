@@ -151,12 +151,8 @@ MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：
 
 ```
 mcu2wifi&cmd=2&mode=0/1
-```
-  
-- 解释:
-
-```
-mode:0 softap配置模式; mode:1 airlink配网模式
+//解释:
+//mode:0 softap配置模式; mode:1 airlink配网模式
 ```
 
 -  WiFi回复配网:
