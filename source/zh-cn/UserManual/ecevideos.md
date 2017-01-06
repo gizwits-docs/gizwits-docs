@@ -147,31 +147,31 @@ ECE开通后如下图：
 ## 3.MCU协议介绍
 MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：
 - MCU 通知 WiFi进入airlink配网 **cmd=2**:
-  命令: 
-  ```
-  mcu2wifi&cmd=2&mode=0/1
-  ```
+命令: 
+```
+mcu2wifi&cmd=2&mode=0/1
+```
   
-  解释:
-  ```
-  mode:0 softap配置模式; mode:1 airlink配网模式
-  ```
+解释:
+```
+mode:0 softap配置模式; mode:1 airlink配网模式
+```
 -  WiFi回复配网:
+命令:
+```
+mcu2wifi&cmd=2&result=0/1
+```
 
- 命令:
- ```
- mcu2wifi&cmd=2&result=0/1
- ```
 - MCU上传设备数据给WiFi **cmd=3**:
- 命令:
- ```
- mcu2wifi&cmd=3&Infrared=1&LedSwitchOnOff=1&MotorSwitchOnOff=1&Temperature=05
- ```
+命令:
+```
+mcu2wifi&cmd=3&Infrared=1&LedSwitchOnOff=1&MotorSwitchOnOff=1&Temperature=05
+```
 - WiFi发送控制指令给mcu **cmd=4**：
- 命令:
- ```
- wifi2mcu&cmd=4&LedSwitchOnOff=1或者MotorSwitchOnOff=1
- ```
+命令:
+```
+wifi2mcu&cmd=4&LedSwitchOnOff=1或者MotorSwitchOnOff=1
+```
 
 实现该协议的固件见机智云下载中心 [ECE雾计算esp8266固件包][31] 里面的
 
@@ -333,7 +333,7 @@ sudo apt-get install lua、sudo apt-get install lua5.1-0-dev
   [35]: http://static.zybuluo.com/AlexLin/sqvaal69sat4ygwgchxcaz4a/image_1b52eg53l1vnn19q810qepb5be91g.png
   [36]: http://static.zybuluo.com/AlexLin/yu6scxcs2zdzlsb92n5q5gi8/image_1b52egm5f1q3951nla12lg1apm1t.png
   [37]: http://static.zybuluo.com/AlexLin/s1oj1xyj90avz3lippw7syzw/image_1b52eh3j657kvm6177i1k1epd42a.png
-# 观看链接
+# 视频观看链接
 
 [lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
 
