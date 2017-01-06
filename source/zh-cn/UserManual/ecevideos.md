@@ -148,27 +148,34 @@ ECE开通后如下图：
 MCU与WiFi通讯以字符串形式通讯，具体命令规范如下：
 - MCU 通知 WiFi进入airlink配网 **cmd=2**:
 命令: 
+
 ```
 mcu2wifi&cmd=2&mode=0/1
 ```
   
 解释:
+
 ```
 mode:0 softap配置模式; mode:1 airlink配网模式
 ```
+
 -  WiFi回复配网:
 命令:
+
 ```
 mcu2wifi&cmd=2&result=0/1
 ```
 
 - MCU上传设备数据给WiFi **cmd=3**:
 命令:
+
 ```
 mcu2wifi&cmd=3&Infrared=1&LedSwitchOnOff=1&MotorSwitchOnOff=1&Temperature=05
 ```
+
 - WiFi发送控制指令给mcu **cmd=4**：
 命令:
+
 ```
 wifi2mcu&cmd=4&LedSwitchOnOff=1或者MotorSwitchOnOff=1
 ```
