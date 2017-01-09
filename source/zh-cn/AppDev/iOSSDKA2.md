@@ -51,8 +51,8 @@ title: iOS SDK 2.0集成指南
 
 5.5.1.	导入动态SDK
 
-动态库加载，请注意按照下图进行设置，否则应用运行后会立即崩溃。
-![Alt text](assets/zh-cn/AppDev/iOSSDK/image13.png)
+动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image13.png)
 
 5.5.2.	导入静态SDK
 
