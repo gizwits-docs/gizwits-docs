@@ -114,6 +114,9 @@ APP开发:
       path: /deviceDev/debug/G510.html
     日志抓取教程文档:
       path: /deviceDev/日志抓取教程文档.html
+      
+  ECE Demo开发教程:
+    path: /UserManual/ecevideos.html
  
  
 云平台:
@@ -138,8 +141,6 @@ APP开发:
     path: /deviceDev/产测工具使用文档.html
   D3 Engine使用教程:
     path: /UserManual/D3.html
-  ECE雾计算入门教程:
-    path: /UserManual/ecevideos.html
   ECE雾计算使用教程:
     path: /UserManual/ece.html
   接入亚马逊ECho教程:
