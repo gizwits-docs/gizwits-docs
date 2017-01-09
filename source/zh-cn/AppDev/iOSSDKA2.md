@@ -52,26 +52,23 @@ title: iOS SDK 2.0集成指南
 5.5.1.	导入动态SDK
 
 动态库加载，请注意按照下图进行设置，否则应用运行后会立即崩溃。
-
+![Alt text](assets/zh-cn/AppDev/iOSSDK/image13.png)
 
 5.5.2.	导入静态SDK
 
 第一步，将解压后的文件添加到指定的工程中：
-  ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image3.png)
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image3.png)
   
 第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
 ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image4.png)
 
-  ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image5.png)
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image5.png)
   
 第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
- ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image6.png)
-
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image6.png)
 
 第五步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
 ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image7.png)
-
-
 
 最后，确保工程里面有这些链接库，SDK就添加完成了:
  ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image8.png)
