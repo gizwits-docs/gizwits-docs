@@ -47,9 +47,16 @@ title: iOS SDK 2.0集成指南
  ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image2.png)
 
 ### 5.5.	导入SDK
-第一步，双击解开压缩包 GizWifiSDK-iOS-xxx.zip。
+首先双击解开压缩包 GizWifiSDK-iOS-xxx.zip。按照App开发的需要，可以选择使用动态库或者静态库。以下分别为动态库和静态库的加载方式：
 
-第二步，将解压后的文件添加到指定的工程中：
+5.5.1.	导入动态SDK
+
+动态库加载，请注意按照下图进行设置，否则应用运行后会立即崩溃。
+
+
+5.5.2.	导入静态SDK
+
+第一步，将解压后的文件添加到指定的工程中：
   ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image3.png)
   
 第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
