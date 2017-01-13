@@ -9,7 +9,8 @@ JavaScript网页远程控制设备，是调用了机智云开放的Open API和We
 
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片2.png)
 
-# 准备工作：调用OPEN API匿名登录用户和绑定设备
+# 准备工作
+调用OPEN API匿名登录用户和绑定设备
 
 ## 1.获取phone_id
 phone_id 可以是手机的唯一识别码。或者您已经有了自己的用户系统，不希望用户再次注册一次机智云帐号，您也可以使用该接口，为您的每一个用户创建一个对应的机智云匿名帐号。这时，phone_id 可以是用户在您的系统中的唯一识别码。如在与微信应用做对接时，phone_id 可以设置成微信用户的 openid。
@@ -84,15 +85,18 @@ https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html
 
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片13.png)
 
-### 1.3.选择一个要进行控制的设备did，创建websocket连接
+### 1.3.创建Websocket连接
+选择一个要进行控制的设备did，创建websocket连接
 
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片14.png)
 
-### 1.4.选择已连接的设备，读取设备的当前状态
+### 1.4.读取设备当前状态
+选择已连接的设备，读取设备的当前状态
 
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片15.png)
 
-### 1.5.选择已连接的设备，下发控制指令
+### 1.5.控制设备
+选择已连接的设备，下发控制指令
 如下发控制指令{"Swicth":true}，如下图：
 
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片16.png)
