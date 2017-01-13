@@ -1,3 +1,5 @@
+title: SOC快速入门
+---
 ###机智云平台概述
 机智云平台是机智云物联网公司经过多年行业内的耕耘及对物联网行业的深刻理解，而推出的面向个人、企业开发者的一站式智能硬件开发及云服务平台。平台提供了从定义产品、设备端开发调试、应用开发、产测、云端开发、运营管理、数据服务等覆盖智能硬件接入到运营管理全生命周期服务的能力。
 机智云平台为开发者提供了自助式智能硬件开发工具与开放的云端服务。通过傻瓜化的自助工具、完善的SDK与API服务能力最大限度降低了物联网硬件开发的技术门槛，降低开发者的研发成本，提升开发者的产品投产速度，帮助开发者进行硬件智能化升级，更好的连接、服务最终消费者。
@@ -47,8 +49,8 @@
 
 注册完成后，登陆至机智云开发者中心后台后，点击开发者中心后台右上角的**“创建新产品”**菜单，在跳转页面新建一个名为**“GizLamp”**的产品，选择**“Wi-Fi/移动网络方案”**方式接入，并完成产品创建。如下图：
 
-![Alt text](./1483410297895.png)
-![Alt text](./1483410303591.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410297895.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410303591.png)
 
 
 **3）云端数据点（产品功能点）**
@@ -57,18 +59,18 @@
 
 **数据点：**即设备产品的功能的抽象，用于描述产品功能及其参数。创建数据点后，设备与云端通讯的数据格式即可确定，设备、机智云可以相互识别设备与机智云互联互通的数据。更多的解析和新建指引，可以在开发者中心数据点页面右上角“定义数据点教程”中查看找到帮助，以建立属于你自己产品的数据点，如下图：
 
-![Alt text](./1483410323764.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410323764.png)
 
 **3.2）新建数据点：**
 
 然后以本次的项目“GizLamp”为例，简单描述一下云端数据点和产品的功能点的关系，本次的项目“GizLamp”，它需要实现的功能是远程开灯和关灯，那我们只需在云端建立一个“布尔值”的数据点即可完成这件事，如下图：
 
-![Alt text](./1483410463103.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410463103.png)
 
 
 添加数据点完成之后，点击下图的“应用”即可，完成整个产品的数据点的新建工作。
 
-![Alt text](./1483410483137.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410483137.png)
 
 **4）云端自动生成源码**
 
@@ -84,7 +86,7 @@
 
 完成产品的数据点新建之后，点击页面的左侧菜单栏的“MCU开发”根据页面提示选择“SOC方案”，目前SOC方案机智云云端默认的“硬件平台”为esp8266，选择完成之后下拉至页面底部，点击“生成代码包”，等待大概30秒左右即可生成基于esp8266的本次项目（GizLamp）代码包，下载下来即可，由于下载下来的文件名过于长，并且在文件名里包含了产品的ProductKey，所以本次项目将下载下来的文件名修改为“GizLamp”如下图：
 
-![Alt text](./1483410499518.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410499518.png)
 
 
 **补充说明：SOC方案自动生成代码工具目前仅支持esp8266。**
@@ -110,8 +112,8 @@ App通过云端下发控制事件处理，可以在
 
 **“微信宠物屋 for GoKit3(S) ESP8266 V03000003”**这个是机智云工程师使用GoKit3（S）板，基于esp8266硬件平台写的案例，案例里面包含了红外传感器，温湿度传感器，小电机，RGB灯，用户按键等几个外设的驱动，可以直接复制到任何一个GoKit3（S）的板子上使用，也可以移植至其他的8266板子上去使用，获取源码方式如下图：
 
-![Alt text](./1483410520403.png)
-![Alt text](./1483410527525.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410520403.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410527525.png)
 
 
 **备注：如需深入了解这个“微信宠物屋”这个实例源码的解析可以参考以下链接：**
@@ -123,12 +125,12 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%
 - 将**“gokit3_SoC_ESP8266_03000003_2016120711\app\driver”**文件目录下的
    **“hal_rgb_led.c”**的c文件复制至**“gizlamp\app\driver”**下
    
-![Alt text](./1483410538947.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410538947.png)
 
 
 - 将**“gokit3_SoC_ESP8266_03000003_2016120711\app\include\driver”**文件目录下的   **“hal_rgb_led.h”**的h文件复制至**“gizlamp\app\include\driver”**下
 
-![Alt text](./1483410551854.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410551854.png)
 
 完成以上动作之后就完成SOC文件的准备工作，下面进行修改相应的c文件。
 
@@ -146,7 +148,7 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%
 
 - 程序修改部分说明如下图：
 
-![Alt text](./1483410564904.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410564904.png)
 
 
 
@@ -162,20 +164,20 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%
 
 用于reset wifi和使模块进入产测模式
 - reset wifi -> 长按key1
- ![Alt text](./1483410609968.png)
+ ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410609968.png)
 
 - 进入产测模式 -> 短按key1
-![Alt text](./1483410698977.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410698977.png)
 
 
 **- Key2**
 
 用于触发模块进入airlink和softap的配置模式
 - airlink配置模式 -> 长按key1
-![Alt text](./1483410739993.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410739993.png)
 
 - softap配置模式 -> 短按key1
-![Alt text](./1483410747091.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410747091.png)
 
 
 首先在**“user_main.c”**文件里面添加以下头文件
@@ -190,10 +192,10 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%
 @
 
 - 添加**“#include "driver/hal_rgb_led.h"”**头文件
-![Alt text](./1483410801710.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410801710.png)
 
 - 在**“user_main（）”**函数里添加rgb灯的驱动函数
-![Alt text](./1483410831716.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410831716.png)
 
 然后在**“gizwits_product.c”**文件里面添加以下头文件
 
@@ -208,10 +210,10 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%
 @
 
 -  添加**“#include "driver/hal_rgb_led.h"”**头文件
-![Alt text](./1483410953054.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410953054.png)
 
 - 在**“gizwitsEventProcess（）”**函数添加灯的开关事件
-![Alt text](./1483410973316.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410973316.png)
 
 完成以上动作之后，进行SoC编译开发环境的搭建，请参考 >> 第6）点
 
@@ -220,7 +222,7 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%
 - 请参考这里：
 http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备
 	
-![Alt text](./1483410993024.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410993024.png)
 
 
 **补充说明：新手入门建议使用virtualbox+乐鑫官方的开发环境，进行二次开发**
@@ -231,7 +233,7 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%
 - 请参考这里：
 http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译
 
-![Alt text](./1483411008805.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411008805.png)
 
 
 **4.8）固件烧写**
@@ -239,7 +241,7 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%
 - 请参考这里：
 http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载
 
-![Alt text](./1483411027642.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411027642.png)
 
 
 
@@ -248,13 +250,13 @@ http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%
 - 产品调试请参考这里：
 http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试
 
-![Alt text](./1483411043890.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411043890.png)
 
 
 - 产品发布请参考这里：
 http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品
 
-![Alt text](./1483411051018.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411051018.png)
 
 
 
