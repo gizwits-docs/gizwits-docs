@@ -77,7 +77,7 @@ title: SOC快速入门
 
 **自动生成代码工具：**是机智云为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上。
 
-- **关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：** [自动生成代码工具](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
+- **关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：** [自动生成代码工具](/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
 
 
 **获取本次（GizLamp）项目，云端自动生成基于esp8266的SoC源码：**
@@ -115,7 +115,7 @@ App通过云端下发控制事件处理，可以在
 
 
 **备注：如需深入了解这个“微信宠物屋”这个实例源码的解析可以参考以下链接：**
-[微信宠物屋实例源码的解析](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
+[微信宠物屋实例源码的解析](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
 
 
 #### 2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“GizLamp”项目所需要的led驱动的.c和.h文件。
@@ -217,7 +217,7 @@ App通过云端下发控制事件处理，可以在
 
 #### 2.4.6 搭建SoC源码编译开发环境
 
-- 请参考这里：[开发环境准备](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
+- 请参考这里：[开发环境准备](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
 	
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410993024.png)
 
@@ -227,13 +227,13 @@ App通过云端下发控制事件处理，可以在
 
 #### 2.4.7 SOC源码编译
 
-- 请参考这里：[源码编译](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译)
+- 请参考这里：[源码编译](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译)
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411008805.png)
 
 #### 2.4.8 固件烧写
 
-- 请参考这里：[固件下载](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载)
+- 请参考这里：[固件下载](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载)
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411027642.png)
 
@@ -241,12 +241,12 @@ App通过云端下发控制事件处理，可以在
 
 ## 3. 调试与发布
 
-- 产品调试请参考这里：[调试](http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试)
+- 产品调试请参考这里：[调试](/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试)
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411043890.png)
 
 
-- 产品发布请参考这里：[发布产品](http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品)
+- 产品发布请参考这里：[发布产品](/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品)
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411051018.png)
 
