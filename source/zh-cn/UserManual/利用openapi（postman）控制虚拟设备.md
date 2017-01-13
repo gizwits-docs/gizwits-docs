@@ -1,6 +1,6 @@
 title: 利用openapi（postman）控制虚拟设备
 ---
-# 概述：
+# 概述
 本文档介绍了机智云云端提供api接口（openapi），应用端（PC）利用工具（postman）发送HTTP请求实现用户登陆，设备绑定，设备远程控制等功能。
 
 ![Alt text](/assets/zh-cn/UserManual/OpenAPI/1484202039422.png)
