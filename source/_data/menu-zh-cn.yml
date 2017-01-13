@@ -85,6 +85,9 @@ APP开发:
       path: /deviceDev/WiFiSOC/GoKit3S二次开发.html
     Gokit3(S)源码详解:
       path: /deviceDev/WiFiSOC/GoKit3S程序详解.html
+      
+  SOC快速入门:
+    path: /deviceDev/UseSOC.html
     
   Gokit3语音开发:
     GoKit3(V)使用说明书:
@@ -145,3 +148,5 @@ APP开发:
     path: /UserManual/ece.html
   接入亚马逊ECho教程:
     path: /UserManual/echo.html
+  利用OpenAPI控制虚拟设备:
+    path: /UserManual/UseOpenAPI.html
