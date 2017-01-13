@@ -111,6 +111,7 @@ App通过云端下发控制事件处理，可以在
 **“微信宠物屋 for GoKit3(S) ESP8266 V03000003”**这个是机智云工程师使用GoKit3（S）板，基于esp8266硬件平台写的案例，案例里面包含了红外传感器，温湿度传感器，小电机，RGB灯，用户按键等几个外设的驱动，可以直接复制到任何一个GoKit3（S）的板子上使用，也可以移植至其他的8266板子上去使用，获取源码方式如下图：
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410520403.png)
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410527525.png)
 
 
@@ -162,9 +163,11 @@ App通过云端下发控制事件处理，可以在
 
 用于reset wifi和使模块进入产测模式
 - reset wifi -> 长按key1
- ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410609968.png)
+
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410609968.png)
 
 - 进入产测模式 -> 短按key1
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410698977.png)
 
 
@@ -172,9 +175,11 @@ App通过云端下发控制事件处理，可以在
 
 用于触发模块进入airlink和softap的配置模式
 - airlink配置模式 -> 长按key1
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410739993.png)
 
 - softap配置模式 -> 短按key1
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410747091.png)
 
 
@@ -190,9 +195,11 @@ App通过云端下发控制事件处理，可以在
 @
 
 - 添加**“#include "driver/hal_rgb_led.h"”**头文件
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410801710.png)
 
 - 在**“user_main（）”**函数里添加rgb灯的驱动函数
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410831716.png)
 
 然后在**“gizwits_product.c”**文件里面添加以下头文件
@@ -208,9 +215,11 @@ App通过云端下发控制事件处理，可以在
 @
 
 -  添加**“#include "driver/hal_rgb_led.h"”**头文件
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410953054.png)
 
 - 在**“gizwitsEventProcess（）”**函数添加灯的开关事件
+
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410973316.png)
 
 完成以上动作之后，进行SoC编译开发环境的搭建，请参考 >> 第6）点
