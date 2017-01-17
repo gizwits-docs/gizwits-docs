@@ -12,7 +12,7 @@ title: 利用openapi（postman）控制虚拟设备
 参考文档：openapi指南
 辅助工具链接：
 [Unix时间戳](http://tool.chinaz.com/Tools/unixtime.aspx)
-[MD5加密](http://tool.chinaz.com/Tools/unixtime.aspx)
+[MD5加密](http://tool.chinaz.com/Tools/md5.aspx)
 
 # 云端创建产品
 
@@ -106,10 +106,12 @@ https://www.getpostman.com/collections/c76186e38f06e3f4a46a
 
 ![Alt text](/assets/zh-cn/UserManual/OpenAPI/1484202323986.png)
 
-### 4.4 通过MAC的POST请求绑定设备（注：第4步成功后，这步骤可跳过）
+### 4.4 通过MAC的POST请求绑定设备（注：第3步成功后，这步骤可跳过）
 我们这里选择用MAC的绑定方式的POST请求来绑定设备，在Headers填入之前获取的Appid和User_token，Timestamp为Unix时间戳（有效时间为五分钟），Signature的算法利用MD5加密的方法{MD5(product_secret+X-Gizwits-Timestamp).lower()}，Body填入product_key和设备的mac，点击send，发现设备在线则成功，如下图
 
-注：Timestamp和Signature获取的链接为：Unix时间戳 SignatureMD5加密
+注：Timestamp和Signature获取的链接为：
+[Unix时间戳](http://tool.chinaz.com/Tools/unixtime.aspx)
+[MD5加密](http://tool.chinaz.com/Tools/md5.aspx)
 
 ![Alt text](/assets/zh-cn/UserManual/OpenAPI/1484202337484.png)
 
