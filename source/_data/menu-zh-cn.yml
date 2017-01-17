@@ -150,3 +150,5 @@ APP开发:
     path: /UserManual/echo.html
   利用OpenAPI控制虚拟设备:
     path: /UserManual/UseOpenAPI.html
+  利用Websocket 网页控制设备:
+    path: /UserManual/UseWebsocket.html
