@@ -7,7 +7,10 @@
     path: /quickstart/5分钟了解机智云.html
     
   设备快速接入机智云:
-    path: /quickstart/设备快速接入.html
+    独立MCU方案快速入门:
+      path: /quickstart/设备快速接入.html
+    SOC方案快速入门:
+      path: /quickstart/UseSOC.html
 
   App快速接入机智云:
     App开发准备工作:
@@ -85,9 +88,6 @@ APP开发:
       path: /deviceDev/WiFiSOC/GoKit3S二次开发.html
     Gokit3(S)源码详解:
       path: /deviceDev/WiFiSOC/GoKit3S程序详解.html
-      
-  SOC快速入门:
-    path: /deviceDev/UseSOC.html
     
   Gokit3语音开发:
     GoKit3(V)使用说明书:
