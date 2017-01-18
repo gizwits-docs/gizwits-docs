@@ -253,7 +253,7 @@ example的部份, 我们使用 "File" -> "Examples" -> "AmebaMQTTClient" -> "ama
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626694113.png)
 
-## 4.2.1  event部分代码解析（Echo音箱逻辑处理）
+### 4.2.1  event部分代码解析（Echo音箱逻辑处理）
 在onIntent函式里, 会比对intent的名字, 这边我们会比对我们设定的intent名字 “ControlLight”, 并且返回 light_control的处理函数
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626706311.png)
@@ -263,7 +263,7 @@ example的部份, 我们使用 "File" -> "Examples" -> "AmebaMQTTClient" -> "ama
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626714763.png)
 
-## 4.2.2  调用机智云openAPI控制设备
+### 4.2.2  调用机智云openAPI控制设备
 在swtich_action_fun里面，调用机智云的OpenApi进行控制设备
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626727043.png)
