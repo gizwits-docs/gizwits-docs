@@ -148,6 +148,8 @@ APP开发:
     path: /UserManual/ece.html
   接入亚马逊ECho教程:
     path: /UserManual/echo.html
+  实时大数据使用教程:
+    path: /UserManual/rtbd.html
   利用OpenAPI控制虚拟设备:
     path: /UserManual/UseOpenAPI.html
   利用Websocket 网页控制设备:
