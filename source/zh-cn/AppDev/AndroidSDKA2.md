@@ -1192,8 +1192,8 @@ GizWifiDeviceListener mListener = new GizWifiDeviceListener() {
 public void didReceiveData(GizWifiErrorCode result, GizWifiDevice device, ConcurrentHashMap<String, Object> dataMap, int sn) {
 if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 
-// 已定义的设备数据点，有布尔、数值和枚举型数据 
-if (dataMap.get("data") != null) {
+    // 已定义的设备数据点，有布尔、数值和枚举型数据 
+    if (dataMap.get("data") != null) {
 	ConcurrentHashMap<String, Object> map = (ConcurrentHashMap<String, Object>) dataMap.get("data");
 
 		// 普通数据点，打印对应的key和value 
@@ -1211,7 +1211,7 @@ if (dataMap.get("data") != null) {
 				string, Toast.LENGTH_SHORT).show();
 	}
 
-// 已定义的设备故障数据点，设备发生故障后该字段有内容，没有发生故障则没内容
+        // 已定义的设备故障数据点，设备发生故障后该字段有内容，没有发生故障则没内容
 	if (dataMap.get("faults") != null) {
 	ConcurrentHashMap<String, Object> map =  (ConcurrentHashMap<String, Object>)dataMap.get("faults");
 		StringBuilder sb = new StringBuilder();
@@ -1223,7 +1223,7 @@ if (dataMap.get("data") != null) {
 		}
 	}
 
-// 已定义的设备报警数据点，设备发生报警后该字段有内容，没有发生报警则没内容
+        // 已定义的设备报警数据点，设备发生报警后该字段有内容，没有发生报警则没内容
 	if (dataMap.get("alerts") != null) {
 	ConcurrentHashMap<String, Object> map =  (ConcurrentHashMap<String, Object>)dataMap.get("alerts");
 		StringBuilder sb = new StringBuilder();
@@ -1235,13 +1235,13 @@ if (dataMap.get("data") != null) {
 		}
 	}
 
-// 透传数据，无数据点定义，适合开发者自行定义协议自行解析
+        // 透传数据，无数据点定义，适合开发者自行定义协议自行解析
 	if (dataMap.get("binary") != null) {
 		byte[] binary = (byte[]) dataMap.get("binary");
 		Log.i("", "Binary data:"
 				+ bytesToHex(binary, 0, binary.length));
 	}
-}
+    }
 }
 };
 ```
@@ -1258,26 +1258,28 @@ mDevice.getDeviceStatus();
 
 // 实现回调
 GizWifiDeviceListener mListener = new GizWifiDeviceListener() {
-@Override
-public  void didReceiveData(GizWifiErrorCode result, GizWifiDevice device, ConcurrentHashMap<String, Object> dataMap, int sn) {
-if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
-// 数据解析与3.5.3相同
-} else {
-// 查询失败
-}
-}
+    @Override
+    public  void didReceiveData(GizWifiErrorCode result, GizWifiDevice device, ConcurrentHashMap<String, Object> dataMap, int sn) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 数据解析与3.5.3相同
+        } else {
+            // 查询失败
+        }
+    }
 };
 ```
 ## 6. 设备定时任务
-    通过给设备设置定时任务，可以让设备在预定的日期和时间执行某些操作。这些操作可以在一个月内的某几天重复，也可以在一周内的某几天重复。定时任务可以先设定好，然后在任何时候开始执行或停止执行。定时任务创建时默认开启。
+    通过给设备设置定时任务，可以让设备在预定的日期和时间执行某些操作。这些操作可以在一个月内的某几天重复，也可以在一周内的某几天重复。
+    定时任务可以先设定好，然后在任何时候开始执行或停止执行。定时任务创建时默认开启。
 
 ## 6.1. 创建定时任务
-    定时任务可以重复执行，也可以只执行一次，重复执行分为按月重复和按周重复。但同时只能指定一种重复方式，即或者不重复或者按周重复或者按月重复。使用SDK接口时，按周重复时给变量weekDays传值，按月重复时给monthDays传值，但如果两个变量都传值则只会处理weekDays。
+    定时任务可以重复执行，也可以只执行一次，重复执行分为按月重复和按周重复。但同时只能指定一种重复方式，即或者不重复或者按周重复或者按月重复。
+    使用SDK接口时，按周重复时给变量weekDays传值，按月重复时给monthDays传值，但如果两个变量都传值则只会处理weekDays。
     下面分别以这三种情况举例说明。
 
 ### 6.1.1. 创建一次性定时任务
-
-    假设我们需要在2017年1月16日早上6点30分开灯。如下代码中，日期和时间想要设置为几月几日几时几分，就设定为对应的值，比如我们希望设定的是2017年1月16日早上6点30分，那么date为2017-01-16，time为06:30，其中time是24小时制，date按照示例代码格式传值即可。
+    假设我们需要在2017年1月16日早上6点30分开灯。如下代码中，日期和时间想要设置为几月几日几时几分，就设定为对应的值。
+    比如我们希望设定的是2017年1月16日早上6点30分，那么date为2017-01-16，time为06:30，其中time是24小时制，date按照示例代码格式传值即可。
 
 【示例代码】
 
@@ -1310,8 +1312,7 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 ```
 
 ### 6.1.2. 创建按周重复的定时任务
-
-我们现在让定时任务按周重复执行，现在要每周的周一至周五早上6点30分都开灯。
+    我们现在让定时任务按周重复执行，现在要每周的周一至周五早上6点30分都开灯。
 
 【示例代码】
 
@@ -1351,8 +1352,8 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 ```
 
 ### 6.1.3. 创建按月重复的定时任务
-
-我们现在让定时任务按周重复执行，现在要每个月的1号、15号早上6点30分都开灯。注意不要同时设置按周重复，如果同时设置了按周重复，按月重复会被忽略。
+    我们现在让定时任务按周重复执行，现在要每个月的1号、15号早上6点30分都开灯。
+    注意，不要同时设置按周重复，如果同时设置了按周重复，按月重复会被忽略。
 
 【示例代码】
 
