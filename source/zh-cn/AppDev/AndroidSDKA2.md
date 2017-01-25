@@ -1268,5 +1268,125 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 }
 };
 ```
+## 6. 设备定时任务
+    通过给设备设置定时任务，可以让设备在预定的日期和时间执行某些操作。这些操作可以在一个月内的某几天重复，也可以在一周内的某几天重复。定时任务可以先设定好，然后在任何时候开始执行或停止执行。定时任务创建时默认开启。
+
+## 6.1. 创建定时任务
+    定时任务可以重复执行，也可以只执行一次，重复执行分为按月重复和按周重复。但同时只能指定一种重复方式，即或者不重复或者按周重复或者按月重复。使用SDK接口时，按周重复时给变量weekDays传值，按月重复时给monthDays传值，但如果两个变量都传值则只会处理weekDays。
+    下面分别以这三种情况举例说明。
+
+### 6.1.1. 创建一次性定时任务
+
+    假设我们需要在2017年1月16日早上6点30分开灯。如下代码中，日期和时间想要设置为几月几日几时几分，就设定为对应的值，比如我们希望设定的是2017年1月16日早上6点30分，那么date为2017-01-16，time为06:30，其中time是24小时制，date按照示例代码格式传值即可。
+
+【示例代码】
+
+```
+// 设置定时任务监听
+GizDeviceSchedulerCenter.setListener(mListener);
+
+// 一次性定时任务，在2017年1月16日早上6点30分开灯
+GizDeviceScheduler scheduler = new GizDeviceScheduler();
+scheduler.setDate("2017-01-16");
+scheduler.setTime("06:30");
+scheduler.setRemark("开灯任务");
+ConcurrentHashMap<String, Object> attrs = new ConcurrentHashMap<String, Object>();
+attrs.put("LED_OnOff", true);
+scheduler.setAttrs(attrs);
+
+// 创建设备的定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+GizDeviceSchedulerCenter.createScheduler("your_uid", "your_token", mDevice, scheduler);
+
+GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListener() {
+    @Override
+    public void didUpdateSchedulers(GizWifiErrorCode result, GizWifiDevice schedulerOwner, List<GizDeviceScheduler> schedulerList) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 定时任务创建成功
+        } else {
+            // 创建失败
+        }
+    }
+};
+```
+
+### 6.1.2. 创建按周重复的定时任务
+
+我们现在让定时任务按周重复执行，现在要每周的周一至周五早上6点30分都开灯。
+
+【示例代码】
+
+```
+// 设置定时任务监听
+GizDeviceSchedulerCenter.setListener(mListener);
+
+// 把之前创建好的一次性定时任务修改成每月1号和15号重复执行的定时任务，scheduler是定时任务列表中要修改的定时任务对象
+scheduler.setDate("2017-01-16");
+scheduler.setTime("06:30");
+scheduler.setRemark("开灯任务");
+ConcurrentHashMap<String, Object> attrs = new ConcurrentHashMap<String, Object>();
+attrs.put("LED_OnOff", true);
+scheduler.setAttrs(attrs);
+List<GizScheduleWeekday> weekDays = new ArrayList<GizScheduleWeekday>();
+weekDays.add(GizScheduleWeekday.GizScheduleMonday);
+weekDays.add(GizScheduleWeekday.GizScheduleTuesday);
+weekDays.add(GizScheduleWeekday.GizScheduleWednesday);
+weekDays.add(GizScheduleWeekday.GizScheduleThursday);
+weekDays.add(GizScheduleWeekday.GizScheduleFriday);
+scheduler.setMonthDays(monthDays);
+
+// 修改设备的定时任务，mDevice是设备列表中要创建定时任务的设备对象
+GizDeviceSchedulerCenter.editScheduler("your_uid", "your_token", mDevice, scheduler);
+
+// 实现回调
+GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListener() {
+    @Override
+    public void didUpdateSchedulers(GizWifiErrorCode result, GizWifiDevice schedulerOwner, List<GizDeviceScheduler> schedulerList) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 定时任务修改成功
+        } else {
+            // 修改失败
+        }
+    }
+};
+```
+
+### 6.1.3. 创建按月重复的定时任务
+
+我们现在让定时任务按周重复执行，现在要每个月的1号、15号早上6点30分都开灯。注意不要同时设置按周重复，如果同时设置了按周重复，按月重复会被忽略。
+
+【示例代码】
+
+```
+// 设置定时任务监听
+GizDeviceSchedulerCenter.setListener(mListener);
+
+// 把之前创建好的一次性定时任务修改成每月1号和15号重复执行的定时任务，scheduler是定时任务列表中要修改的定时任务对象
+scheduler.setDate("2017-01-16");
+scheduler.setTime("06:30");
+scheduler.setRemark("开灯任务");
+ConcurrentHashMap<String, Object> attrs = new ConcurrentHashMap<String, Object>();
+attrs.put("LED_OnOff", true);
+scheduler.setAttrs(attrs);
+List<Integer> monthDays = new ArrayList<Integer>();
+monthDays.add(1);
+monthDays.add(15);
+scheduler.setMonthDays(monthDays);
+
+// 修改设备的定时任务，mDevice是设备列表中要创建定时任务的设备对象
+GizDeviceSchedulerCenter.editScheduler("your_uid", "your_token", mDevice, scheduler);
+
+// 实现回调
+GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListener() {
+    @Override
+    public void didUpdateSchedulers(GizWifiErrorCode result, GizWifiDevice schedulerOwner, List<GizDeviceScheduler> schedulerList) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 定时任务修改成功
+        } else {
+            // 修改失败
+        }
+    }
+};
+```
+
 
 
