@@ -854,6 +854,98 @@ mDevice.delegate = self;
 }
 ```
 
+## 6. 设备定时任务
+通过设定定时任务，可以让自己的设备在预定的日期和时间执行某些操作。这些操作可以在一个月内的某几天重复，也可以在一周内的某几天重复。定时任务可以先设定好，然后在任何时候开始执行或停止执行。
 
+## 6.1. 创建定时任务
+定时任务可以重复执行，也可以只执行一次，重复执行分为按月重复和按周重复。但同时只能指定一种重复方式，即或者不重复或者按周重复或者按月重复。使用SDK接口时，按周重复时给变量weekDays传值，按月重复时给monthDays传值，但如果两个变量都传值则只会处理weekDays。
 
+下面分别以这三种情况举例说明：
+
+### 6.1.1. 创建一次性定时任务
+
+假设我们需要在2017年1月16日早上6点30分开灯。如下代码中，日期和时间想要设置为几月几日几时几分，就设定为对应的值，比如我们希望设定的是2017年1月16日早上6点30分，那么date为2017-01-16，time为06:30，其中time是24小时制，date按照示例代码格式传值即可。
+
+【示例代码】
+
+```objectivec
+GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
+scheduler.date = @"2017-01-16";
+scheduler.time = @"06:30";
+scheduler.remark = @"一次性开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 创建设备的定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+[GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
+
+### 6.1.2. 创建按周重复的定时任务
+
+我们现在让定时任务按周重复执行，现在要每周的周一至周五早上6点30分都开灯。
+
+【示例代码】
+
+```objectivec
+GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
+scheduler.time = @"06:30";
+scheduler.weekDays = @[@GizScheduleMonday, @GizScheduleTuesday, @GizScheduleWednesday, @GizScheduleThursday, @GizScheduleFriday];
+scheduler.remark = @"按周重复执行的开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 创建设备的定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+[GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
+
+### 6.1.2. 创建按月重复的定时任务
+
+我们现在让定时任务按周重复执行，现在要每个月的1号、15号早上6点30分都开灯。
+
+【示例代码】
+
+```objectivec
+GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
+scheduler.time = @"06:30";
+scheduler.monthDays = @[@1, @15];
+scheduler.remark = @"按月重复执行的开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 创建设备的定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+[GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
 
