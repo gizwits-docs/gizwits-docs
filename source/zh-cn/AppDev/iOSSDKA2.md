@@ -870,16 +870,17 @@ mDevice.delegate = self;
 【示例代码】
 
 ```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 一次性定时任务，在2017年1月16日早上6点30分开灯
 GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
 scheduler.date = @"2017-01-16";
 scheduler.time = @"06:30";
 scheduler.remark = @"一次性开灯任务";
 scheduler.attrs = @{@"LED_OnOff": @YES};
 
-// 设置定时任务委托
-[GizDeviceSchedulerCenter setDelegate:self];
-
-// 创建设备的定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+// 创建设备定时任务，mDevice为在设备列表中得到的设备对象
 [GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
 
 // 实现回调
@@ -898,16 +899,17 @@ scheduler.attrs = @{@"LED_OnOff": @YES};
 【示例代码】
 
 ```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 每周一到周五重复执行的定时任务
 GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
 scheduler.time = @"06:30";
 scheduler.weekDays = @[@GizScheduleMonday, @GizScheduleTuesday, @GizScheduleWednesday, @GizScheduleThursday, @GizScheduleFriday];
 scheduler.remark = @"按周重复执行的开灯任务";
 scheduler.attrs = @{@"LED_OnOff": @YES};
 
-// 设置定时任务委托
-[GizDeviceSchedulerCenter setDelegate:self];
-
-// 创建设备的定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+// 创建设备的定时任务，mDevice为在设备列表中得到的设备对象
 [GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
 
 // 实现回调
@@ -927,16 +929,17 @@ scheduler.attrs = @{@"LED_OnOff": @YES};
 【示例代码】
 
 ```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 每月1号和15号重复执行的定时任务
 GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
 scheduler.time = @"06:30";
 scheduler.monthDays = @[@1, @15];
 scheduler.remark = @"按月重复执行的开灯任务";
 scheduler.attrs = @{@"LED_OnOff": @YES};
 
-// 设置定时任务委托
-[GizDeviceSchedulerCenter setDelegate:self];
-
-// 创建设备的定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+// 创建设备的定时任务，mDevice为在设备列表中得到的设备对象
 [GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
 
 // 实现回调
@@ -948,4 +951,81 @@ scheduler.attrs = @{@"LED_OnOff": @YES};
     }
 }
 ```
+
+## 6.2. 获取定时任务列表
+
+    创建定时任务后，可以通过查询得到已经创建好的所有定时任务列表。得到定时任务列表后，可以对已经创建好的定时任务做修改或删除。
+
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 同步更新设备的定时任务列表，mDevice为在设备列表中得到的设备对象
+[GizDeviceSchedulerCenter updateSchedulers:@"your_uid" token:@"your_token" schedulerOwner:mDevice]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务列表同步更新成功
+    } else {
+        // 同步更新失败
+    }
+}
+```
+
+## 6.3. 修改定时任务
+    
+    可以修改已经创建好的定时任务。修改时，从获取到的定时任务列表中取出定时任务对象，编辑好要修改的内容。
+    注意，一旦定时任务创建好之后，就被分配了一个ID，这个ID是不能被修改的。
+    
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 把之前创建好的一次性定时任务修改成每月1号和15号重复执行的定时任务，scheduler是定时任务列表中要修改的定时任务对象
+scheduler.time = @"06:30";
+scheduler.remark = @"开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+scheduler.monthDays = @[@1, @15];
+
+// 修改设备的定时任务，mDevice为在设备列表中得到的设备对象
+[GizDeviceSchedulerCenter editScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务修改成功
+    } else {
+        // 修改失败
+    }
+}
+```
+
+## 6.4. 删除定时任务
+
+    在得到的定时任务列表中，找到要删除的定时任务ID，删除定时任务。
+    
+【示例代码】
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 删除设备的定时任务列表，mDevice为在设备列表中得到的设备对象，your_scheduler_id是要删除的定时任务ID
+[GizDeviceSchedulerCenter deleteScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice schedulerID:@"your_scheduler_id"]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务删除成功
+    } else {
+        // 删除失败
+    }
+}
+```
+
+
 
