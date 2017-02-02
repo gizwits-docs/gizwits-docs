@@ -1412,9 +1412,9 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
     @Override
     public void didUpdateSchedulers(GizWifiErrorCode result, GizWifiDevice schedulerOwner, List<GizDeviceScheduler> schedulerList) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
-            // 定时任务同步成功
+            // 定时任务列表获取成功
         } else {
-            // 同步失败
+            // 获取失败
         }
     }
 };
