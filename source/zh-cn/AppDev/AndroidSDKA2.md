@@ -1299,7 +1299,7 @@ ConcurrentHashMap<String, Object> attrs = new ConcurrentHashMap<String, Object>(
 attrs.put("LED_OnOff", true);
 scheduler.setAttrs(attrs);
 
-// 创建设备定时任务，mDevice为从设备列表中取到的要创建定时任务的设备对象
+// 创建设备的定时任务，mDevice为在设备列表中得到的设备对象
 GizDeviceSchedulerCenter.createScheduler("your_uid", "your_token", mDevice, scheduler);
 
 GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListener() {
@@ -1339,7 +1339,7 @@ weekDays.add(GizScheduleWeekday.GizScheduleThursday);
 weekDays.add(GizScheduleWeekday.GizScheduleFriday);
 scheduler.setMonthDays(monthDays);
 
-// 创建设备定时任务，mDevice是设备列表中要创建定时任务的设备对象
+// 创建设备的定时任务，mDevice为在设备列表中得到的设备对象
 GizDeviceSchedulerCenter.createScheduler("your_uid", "your_token", mDevice, scheduler);
 
 // 实现回调
@@ -1378,7 +1378,7 @@ monthDays.add(1);
 monthDays.add(15);
 scheduler.setMonthDays(monthDays);
 
-// 创建设备定时任务，mDevice是设备列表中要创建定时任务的设备对象
+// 创建设备的定时任务，mDevice为在设备列表中得到的设备对象
 GizDeviceSchedulerCenter.createScheduler("your_uid", "your_token", mDevice, scheduler);
 
 // 实现回调
@@ -1432,7 +1432,6 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 GizDeviceSchedulerCenter.setListener(mListener);
 
 // 把之前创建好的一次性定时任务修改成每月1号和15号重复执行的定时任务，scheduler是定时任务列表中要修改的定时任务对象
-scheduler.setDate("2017-01-16");
 scheduler.setTime("06:30");
 scheduler.setRemark("开灯任务");
 ConcurrentHashMap<String, Object> attrs = new ConcurrentHashMap<String, Object>();
@@ -1468,7 +1467,7 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 // 设置定时任务监听
 GizDeviceSchedulerCenter.setListener(mListener);
 
-// 同步更新设备的定时任务列表，mDevice为在设备列表中得到的设备对象，your_scheduler_id是要删除的定时任务ID
+// 删除设备的定时任务列表，mDevice为在设备列表中得到的设备对象，your_scheduler_id是要删除的定时任务ID
 GizDeviceSchedulerCenter.deleteScheduler("your_uid", "your_token", mDevice, "your_scheduler_id"); 
 
 // 实现回调
