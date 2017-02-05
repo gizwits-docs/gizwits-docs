@@ -1486,3 +1486,74 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 };
 ```
 
+## 7. 设备分享
+用户绑定设备后，可以通过设备分享的方式让其他人使用设备。设备分享提供了更好的设备权限管理，在多用户使用同一个设备时提供了更安全、更便捷的设备绑定方式。设备绑定权限分为四种：
+
+* Owner：设备的主账号，可以分享设备；
+* Guest：设备的分享账号，可以接受分享邀请，不能再分享设备给其他人；
+* Special：最早绑定设备但还未分享设备的账号，分享设备后即成为设备的主账号；
+* Normal：其他已绑定了设备的账号，不能分享设备，也不能成为设备的主账号；
+    
+只有最早绑定设备的账号或设备的主账号才能分享设备。一旦设备有了主账号，其他人就无法再绑定了。主账号可以查看设备的当前已绑定用户，可以解绑其他用户。在设备没有主账号时，其他用户仍然可以绑定这个设备。
+        
+### 7.1. 流程图
+ ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/image16_Android.png)
+ 
+### 7.2. 创建设备分享邀请
+分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些设备分享权限为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
+
+有两种方式可以创建分享邀请：账号分享和二维码分享。
+    
+#### 7.2.1. 账号分享
+账号分享时，对方账号可以是手机号、邮箱、普通用户名或者匿名账号，但必须是已经在机智云注册过的用户。如果该用户已经是这个设备的Guest账号或者已经绑定了这个设备，分享邀请会创建失败。账号分享邀请的有效期为24小时，即对方必须在24小时内作出响应，否则账号邀请会过期失效。
+    
+账号分享时要指定账号类型，匿名账号的guestUser参数填匿名账号的uid。账号分享创建成功时，回调参数中会返回sharingID，但不会返回QRCodeImage。下面仅以手机号分享举例：
+    
+【示例代码】
+```objectivec
+// 设置设备分享监听
+GizDeviceSharing.setListener(mListener);
+
+// 在设备列表中找到可以分享的设备
+
+// 通过手机号分享设备
+GizDeviceSharing.getDeviceSharingInfos("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByNormal, "guest_phone_number", GizUserAccountType.GizUserPhone);
+
+GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
+    @Override
+    public void didSharingDevice(GizWifiErrorCode result, String deviceID, String sharingID, Bitmap QRCodeImage) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 分享成功
+        } else {
+            // 分享失败
+        }
+    }
+};
+```
+
+#### 7.2.2. 二维码分享
+二维码分享时，二维码有效期为15分钟，即对方必须在15分钟内扫描生成的二维码并作出响应，否则二维码邀请会过期失效。二维码分享邀请创建成功时，回调参数中会返回sharingID，同时还会返回对应的二维码图片QRCodeImage，App直接加载图片即可。
+    
+【示例代码】
+
+```objectivec
+// 设置设备分享监听
+GizDeviceSharing.setListener(mListener);
+
+// 在设备列表中找到可以分享的设备
+
+// 二维码分享设备
+GizDeviceSharing.getDeviceSharingInfos("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByQRCode, null, null);
+
+// 实现回调
+GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
+    @Override
+    public void didSharingDevice(GizWifiErrorCode result, String deviceID, String sharingID, Bitmap QRCodeImage) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 分享成功
+        } else {
+            // 分享失败
+        }
+    }
+};
+```
