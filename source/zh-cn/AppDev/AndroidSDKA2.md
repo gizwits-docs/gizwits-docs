@@ -1560,7 +1560,7 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 ### 7.3. 接受分享邀请
 Guest账号可以查询发给自己的设备分享邀请，只有Guest账号可以接受分享邀请。
     
-#### 7.2.1. 接受账号分享邀请
+#### 7.3.1. 接受账号分享邀请
 Guest查询到的分享邀请如果是还未接受的状态，可以接受或者拒绝邀请。
     
 【示例代码】
@@ -1576,13 +1576,21 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
     @Override
     public void didGetDeviceSharingInfos(GizWifiErrorCode result, String deviceID, List<GizDeviceSharingInfo> deviceSharingInfos) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
-            // 找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
-	    String your_sharing_id = "your_sharing_id";
-	    
+	
+            // 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
+	    String your_sharing_id;
+	    for (int i = 0; i < deviceSharingInfos.size(); i++) {
+	        GizDeviceSharingInfo mDeviceSharing = deviceSharingInfos.get(i);
+		if (mDeviceSharing.getStatus() == GizDeviceSharingStatus.GizDeviceSharingNotAccepted) {
+		    your_sharing_id = mDeviceSharing.getId();
+		    break;
+		}
+	    }	
+    
 	    // 接受邀请
             GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
         } else {
-            // 查询失败
+            // 获取失败
         }
     }
     
