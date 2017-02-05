@@ -138,6 +138,8 @@ APP开发:
 
 
 用户手册:
+  个人项目产品转企业项目产品:
+    path: /UserManual/change.html
   OTA使用教程:
     path: /UserManual/OTA使用教程.html
   产测工具使用文档:
