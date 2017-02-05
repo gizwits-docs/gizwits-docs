@@ -1500,10 +1500,10 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/image16_Android.png)
  
 ### 7.2. 创建设备分享邀请
-分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些设备分享权限为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
+分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些设备分享账号为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
 
-有两种方式可以创建分享邀请：账号分享和二维码分享。
-    
+有两种方式可以创建分享邀请：账号分享和二维码分享。只有Owner和Special账号可以创建分享邀请。
+    
 #### 7.2.1. 账号分享
 账号分享时，对方账号可以是手机号、邮箱、普通用户名或者匿名账号，但必须是已经在机智云注册过的用户。如果该用户已经是这个设备的Guest账号或者已经绑定了这个设备，分享邀请会创建失败。账号分享邀请的有效期为24小时，即对方必须在24小时内作出响应，否则账号邀请会过期失效。
     
@@ -1557,3 +1557,43 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
     }
 };
 ```
+### 7.3. 接受分享邀请
+Guest账号可以查询发给自己的设备分享邀请，只有Guest账号可以接受分享邀请。
+    
+#### 7.2.1. 接受账号分享邀请
+Guest查询到的分享邀请如果是还未接受的状态，可以接受或者拒绝邀请。
+    
+【示例代码】
+```objectivec
+// 设置设备分享监听
+GizDeviceSharing.setListener(mListener);
+
+// 查询发给自己的分享邀请列表
+GizDeviceSharing.getDeviceSharingInfos("your_token", GizDeviceSharingType.GizDeviceSharingToMe, "your_device_id");
+
+// 实现回调
+GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
+    @Override
+    public void didGetDeviceSharingInfos(GizWifiErrorCode result, String deviceID, List<GizDeviceSharingInfo> deviceSharingInfos) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
+	    String your_sharing_id = "your_sharing_id";
+	    
+	    // 接受邀请
+            GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
+        } else {
+            // 查询失败
+        }
+    }
+    
+    @Override
+    public void didRevokeDeviceSharing(GizWifiErrorCode result, String sharingID) {
+        if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
+            // 接受成功
+        } else {
+            // 接受失败
+        }
+    }
+};
+```
+
