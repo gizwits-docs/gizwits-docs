@@ -1579,16 +1579,17 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 	
             // 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
 	    String your_sharing_id;
-	    for (int i = 0; i < deviceSharingInfos.size(); i++) {
-	        GizDeviceSharingInfo mDeviceSharing = deviceSharingInfos.get(i);
-		if (mDeviceSharing.getStatus() == GizDeviceSharingStatus.GizDeviceSharingNotAccepted) {
-		    your_sharing_id = mDeviceSharing.getId();
+	    for (int i = 0; i < deviceSharingInfos.size(); i++) {
+	    	GizDeviceSharingInfo mDeviceSharing = deviceSharingInfos.get(i);
+	    	if (mDeviceSharing.getStatus() == GizDeviceSharingStatus.GizDeviceSharingNotAccepted) {
+	    	    your_sharing_id = mDeviceSharing.getId();
 		    break;
 		}
-	    }	
+	    }
     
 	    // 接受邀请
-            GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
+	    GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
+	    
         } else {
             // 获取失败
         }
