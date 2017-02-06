@@ -1577,7 +1577,7 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
     public void didGetDeviceSharingInfos(GizWifiErrorCode result, String deviceID, List<GizDeviceSharingInfo> deviceSharingInfos) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 	
-            // 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
+	    	// 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
 	    	String your_sharing_id;
 	    	for (int i = 0; i < deviceSharingInfos.size(); i++) {
 	    		GizDeviceSharingInfo mDeviceSharing = deviceSharingInfos.get(i);
@@ -1587,10 +1587,10 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 	    		}
 	    	}
     
-	   	// 找到了要接受的分享邀请，接受邀请
-		if (your_sharing_id != null) {
+	    	// 接受邀请
+	    	if (your_sharing_id != null) {
 	    		GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
-		}
+	    	}
 		
         } else {
             // 获取失败
