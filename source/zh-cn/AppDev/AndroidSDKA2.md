@@ -1520,8 +1520,9 @@ GizDeviceSharing.setListener(mListener);
 GizDeviceSharing.getDeviceSharingInfos("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByNormal, "guest_phone_number", GizUserAccountType.GizUserPhone);
 
 GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
-    @Override
-    public void didSharingDevice(GizWifiErrorCode result, String deviceID, String sharingID, Bitmap QRCodeImage) {
+    // 实现设备分享的回调
+    @Override
+    public void didSharingDevice(GizWifiErrorCode result, String deviceID, int sharingID, Bitmap QRCodeImage) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
             // 分享成功
         } else {
@@ -1545,10 +1546,10 @@ GizDeviceSharing.setListener(mListener);
 // 二维码分享设备
 GizDeviceSharing.getDeviceSharingInfos("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByQRCode, null, null);
 
-// 实现回调
 GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
+    // 实现设备分享的回调
     @Override
-    public void didSharingDevice(GizWifiErrorCode result, String deviceID, String sharingID, Bitmap QRCodeImage) {
+    public void didSharingDevice(GizWifiErrorCode result, String deviceID, int sharingID, Bitmap QRCodeImage) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
             // 分享成功
         } else {
@@ -1571,14 +1572,15 @@ GizDeviceSharing.setListener(mListener);
 // 查询发给自己的分享邀请列表
 GizDeviceSharing.getDeviceSharingInfos("your_token", GizDeviceSharingType.GizDeviceSharingToMe, "your_device_id");
 
-// 实现回调
 GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
+
+    // 实现获取分享邀请列表的回调	
     @Override
     public void didGetDeviceSharingInfos(GizWifiErrorCode result, String deviceID, List<GizDeviceSharingInfo> deviceSharingInfos) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 	
 	    	// 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
-	    	String your_sharing_id;
+	    	int your_sharing_id = -1;
 	    	for (int i = 0; i < deviceSharingInfos.size(); i++) {
 	    		GizDeviceSharingInfo mDeviceSharing = deviceSharingInfos.get(i);
 	    		if (mDeviceSharing.getStatus() == GizDeviceSharingStatus.GizDeviceSharingNotAccepted) {
@@ -1588,7 +1590,7 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 	    	}
     
 	    	// 接受邀请
-	    	if (your_sharing_id != null) {
+	    	if (your_sharing_id != -1) {
 	    		GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
 	    	}
 		
@@ -1597,8 +1599,9 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
         }
     }
     
+    // 实现接受分享邀请的回调	
     @Override
-    public void didRevokeDeviceSharing(GizWifiErrorCode result, String sharingID) {
+    public void didAcceptDeviceSharing(GizWifiErrorCode result, int sharingID) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
             // 接受成功
         } else {
