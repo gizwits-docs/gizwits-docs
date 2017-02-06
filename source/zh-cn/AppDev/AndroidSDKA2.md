@@ -1500,7 +1500,7 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/image16_Android.png)
  
 ### 7.2. 创建设备分享邀请
-分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些设备分享账号为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
+分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些绑定权限为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
 
 有两种方式可以创建分享邀请：账号分享和二维码分享。只有Owner和Special账号可以创建分享邀请。
     
