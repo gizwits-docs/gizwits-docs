@@ -1587,9 +1587,11 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 	    		}
 	    	}
     
-	   		// 接受邀请
-	    	GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
-	    
+	   	// 找到了要接受的分享邀请，接受邀请
+		if (your_sharing_id != null) {
+	    		GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
+		}
+		
         } else {
             // 获取失败
         }
