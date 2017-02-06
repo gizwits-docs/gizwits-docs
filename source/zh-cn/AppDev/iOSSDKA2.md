@@ -1031,7 +1031,7 @@ scheduler.monthDays = @[@1, @15];
 }
 ```
 
-## 6. 设备分享
+## 7. 设备分享
 用户绑定设备后，可以通过设备分享的方式让其他人使用设备。设备分享提供了更好的设备权限管理，在多用户使用同一个设备时提供了更安全、更便捷的设备绑定方式。设备绑定权限分为四种：
 
 * Owner：设备的主账号，可以分享设备；
@@ -1041,15 +1041,15 @@ scheduler.monthDays = @[@1, @15];
     
 只有最早绑定设备的账号或设备的主账号才能分享设备。一旦设备有了主账号，其他人就无法再绑定了。主账号可以查看设备的当前已绑定用户，可以解绑其他用户。在设备没有主账号时，其他用户仍然可以绑定这个设备。
         
-### 6.1. 流程图
+### 7.1. 流程图
  ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image16.png)
  
-### 6.2. 创建设备分享邀请
-分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些设备分享权限为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
+### 7.2. 创建设备分享邀请
+分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些绑定权限为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
 
 有两种方式可以创建分享邀请：账号分享和二维码分享。
     
-#### 6.2.1. 账号分享
+#### 7.2.1. 账号分享
 账号分享时，对方账号可以是手机号、邮箱、普通用户名或者匿名账号，但必须是已经在机智云注册过的用户。如果该用户已经是这个设备的Guest账号或者已经绑定了这个设备，分享邀请会创建失败。账号分享邀请的有效期为24小时，即对方必须在24小时内作出响应，否则账号邀请会过期失效。
     
 账号分享时要指定账号类型，匿名账号的guestUser参数填匿名账号的uid。账号分享创建成功时，回调参数中会返回sharingID，但不会返回QRCodeImage。下面仅以手机号分享举例：
@@ -1075,7 +1075,7 @@ scheduler.monthDays = @[@1, @15];
 }
 ```
 
-#### 6.2.2. 二维码分享
+#### 7.2.2. 二维码分享
 二维码分享时，二维码有效期为15分钟，即对方必须在15分钟内扫描生成的二维码并作出响应，否则二维码邀请会过期失效。二维码分享邀请创建成功时，回调参数中会返回sharingID，同时还会返回对应的二维码图片QRCodeImage，App直接加载图片即可。
     
 【示例代码】
@@ -1095,6 +1095,51 @@ scheduler.monthDays = @[@1, @15];
         // 分享邀请创建成功
     } else {
         // 创建失败
+    }
+}
+```
+### 7.3. 接受分享邀请
+Guest账号可以查询发给自己的设备分享邀请，只有Guest账号可以接受分享邀请。
+    
+#### 7.3.1. 接受账号分享邀请
+Guest查询到的分享邀请如果是还未接受的状态，可以接受或者拒绝邀请。
+    
+【示例代码】
+```objectivec
+// 设置设备分享委托
+[GizDeviceSharing setDelegate:self];
+
+// 查询发给自己的分享邀请列表
+[GizDeviceSharing getDeviceSharingInfos:@"your_token" sharingType: GizDeviceSharingToMe deviceID: @"your_device_id"];
+
+// 实现获取分享邀请列表的回调
+- (void)didGetDeviceSharingInfos:(NSError*)result deviceID:(NSString*)deviceID deviceSharingInfos:(NSArray*)deviceSharingInfos {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
+        NSInteger your_sharing_id = -1;
+        for (int i = 0; i < deviceSharingInfos.count; i++) {
+            GizDeviceSharingInfo* mDeviceSharing = [deviceSharingInfos objectAtIndex:i];
+            if (mDeviceSharing.status == GizDeviceSharingNotAccepted) {
+                your_sharing_id = mDeviceSharing.id;
+                break;
+            }
+        }
+           
+        // 接受邀请
+        if (your_sharing_id != -1) {
+            [GizDeviceSharing acceptDeviceSharing:@"your_token" sharingID: @"your_sharing_id" accept:YES];
+        }
+    } else {
+        // 获取失败
+    }
+}
+
+// 实现接受分享邀请的回调	
+- (void)didAcceptDeviceSharing:(NSError*)result sharingID:(NSInteger)sharingID {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 接受成功
+    } else {
+        // 接受失败
     }
 }
 ```
