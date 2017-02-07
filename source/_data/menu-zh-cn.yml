@@ -5,7 +5,10 @@
 快速入门:
   5分钟了解机智云:
     path: /quickstart/5分钟了解机智云.html
-    
+
+  机智云名词定义解释:
+    path: /quickstart/noun.html
+
   设备快速接入机智云:
     独立MCU方案快速入门:
       path: /quickstart/设备快速接入.html
@@ -19,10 +22,7 @@
       path: /quickstart/AndroidAppFrame.html    
     iOS App 快速开发:
       path: /quickstart/iOSAPP快速入门.html
-
-  机智云名词定义解释:
-    path: /quickstart/noun.html
-    
+   
 
 APP开发:
   App 开源框架:
