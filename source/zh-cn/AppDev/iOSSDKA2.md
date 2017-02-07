@@ -1127,7 +1127,7 @@ Guest查询到的分享邀请如果是还未接受的状态，可以接受或者
            
         // 接受邀请
         if (your_sharing_id != -1) {
-            [GizDeviceSharing acceptDeviceSharing:@"your_token" sharingID: @"your_sharing_id" accept:YES];
+            [GizDeviceSharing acceptDeviceSharing:@"your_token" sharingID:your_sharing_id accept:YES];
         }
     } else {
         // 获取失败
