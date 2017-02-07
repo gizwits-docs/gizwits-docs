@@ -10,6 +10,8 @@ https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 2.针对每一个 product，都需要新创建一个唯一的 auth_id：
 
 - a.对产品拥有者，auth_id 和 auth_secret 需要在机智云开发者中心，成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
+![添加](/assets/zh-cn/cloud/添加api.png)
+
 - b.对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要通过 Http API 对已拥有的设备做关联，关联成功后，才能够获取设备消息和控制设备；
 - c.第三方运营商申请 auth_id api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/post_v1_products_product_key_operator
 - d.第三方运营商关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/put_v1_products_product_key_operator
