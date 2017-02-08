@@ -48,9 +48,9 @@ title:  平台概述
 ## 4、行业解决方案
 机智云拥有多年的经验积累，可为客户提供各个垂直领域的行业解决方案。下面选择几个比较有代表性的行业解决方案： 
 
- [充电桩行业解决方案](http://topic.gizwits.com/zhinengkongqijinghuaqi/)
+ [充电桩行业解决方案](http://topic.gizwits.com/chongdianzhuang/)
  
- [空净行业解决方案](http://topic.gizwits.com/zhinengjingshuiqi/)
+ [空净行业解决方案](http://topic.gizwits.com/zhinengkongqijinghuaqi/)
  
  [净水行业解决方案](http://topic.gizwits.com/zhinengjingshuiqi/)
  
