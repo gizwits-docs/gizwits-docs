@@ -13,9 +13,7 @@ Gizwits为个人开发者带来了福音，在设备节点小于一定数量时�
 
 # 本文将介绍Arduino Uno WiFi 板ESP8266固件烧写流程与方法。
 
-![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536567292.png)     
-
-![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536575753.png)
+![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536567292.png)     ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486536575753.png)
 
                                                            
 
@@ -32,7 +30,7 @@ Gizwits为个人开发者带来了福音，在设备节点小于一定数量时�
 ## 按照下列步骤进行镜像上传：
  - 使用Arduino IDE工具下载Blink.ino到ATMega328p
  
-![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486537111742.jpeg)
+![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/Tutorial/1486537111742.png)
 
  - 使用USB2Serial工具的Tx Rx GND管脚分别接至Arduino Uno WiFi的Tx Rx GND管脚
  - 将USB2Serial工具USB接口接至PC，并保证驱动已安装，PC可识别串口
