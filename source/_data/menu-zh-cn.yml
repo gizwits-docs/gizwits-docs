@@ -121,7 +121,16 @@ APP开发:
       
   ECE Demo开发教程:
     path: /UserManual/ecevideos.html
-
+    
+  ArduinoUno开发教程:
+    ArduinoUNOWiFi接入机智云介绍:
+      path: /deviceDev/ArduinoUNO/intro.html
+    ArduinoUnoWiFi 之ESP8266固件烧写教程:
+      path: /deviceDev/ArduinoUNO/Tutorial.html
+    ArduinoUnoWiFi SDK之API介绍:
+      path: /deviceDev/ArduinoUNO/sdk.html
+    Arduino Uno WiFi智能小夜灯:
+      path: /deviceDev/ArduinoUNO/example.html
  
 云平台:
     企业应用开发:
