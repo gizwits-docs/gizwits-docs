@@ -165,5 +165,5 @@ APP开发:
       path: /UserManual/UseOpenAPI.html
     使用Websocket 网页控制设备教程:
       path: /UserManual/UseWebsocket.html
-    使用聚合API使用教程:
+    使用聚合API教程:
       path: /UserManual/DataAPI.html
