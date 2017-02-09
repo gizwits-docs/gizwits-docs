@@ -141,19 +141,29 @@ APP开发:
 用户手册:
   个人项目产品转企业项目产品:
     path: /UserManual/change.html
+    
   OTA使用教程:
     path: /UserManual/OTA使用教程.html
+    
   产测工具使用文档:
     path: /deviceDev/产测工具使用文档.html
+    
   D3 Engine使用教程:
     path: /UserManual/D3.html
+    
   ECE雾计算使用教程:
     path: /UserManual/ece.html
+    
   接入亚马逊ECho教程:
     path: /UserManual/echo.html
+    
   实时大数据使用教程:
     path: /UserManual/rtbd.html
-  利用OpenAPI控制虚拟设备:
-    path: /UserManual/UseOpenAPI.html
-  利用Websocket 网页控制设备:
-    path: /UserManual/UseWebsocket.html
+    
+  API使用教程:
+    使用OpenAPI控制虚拟设备教程:
+      path: /UserManual/UseOpenAPI.html
+    使用Websocket 网页控制设备教程:
+      path: /UserManual/UseWebsocket.html
+    使用聚合API使用教程:
+      path: /UserManual/DataAPI.html
