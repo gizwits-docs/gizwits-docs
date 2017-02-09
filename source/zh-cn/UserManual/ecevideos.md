@@ -226,13 +226,13 @@ http://club.gizwits.com/forum.php?mod=viewthread&tid=3311&highlight=gokit%2B%E7%
 ----------luaHandleDataFromApp end----
 ```
 
-从MCU设备过来的数据处理，程序请写到luaHandleDataFromApp内容区。
+从MCU设备过来的数据处理，程序请写到luaHandleDataFromDev内容区。
 
 ```
 ----------luaHandleDataFromDev----------
 ---------------------内容---------------
 
-----------luaHandleDataFromApp end----
+----------luaHandleDataFromDev end----
 ```
 
 **注意：**由于esp8266资源紧缺，编写的lua应用程序脚本大小不能大于10Kbytes，一次性定义的变量（table\string）不宜超过300个，总变量不宜超过500个。
