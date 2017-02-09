@@ -82,5 +82,7 @@ Content-Type	application/json
 #4.相关支持
 聚合接口是面向企业开发者使用的，如果要申请开通，请通过官网的联系方式联系我们。
 网站地址：http://www.gizwits.com/about-us
+
 官方二维码：
+
 ![Alt text](/assets/zh-cn/UserManual/DataAPI/1486544134249.png)
