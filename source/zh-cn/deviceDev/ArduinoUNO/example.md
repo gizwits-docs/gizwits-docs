@@ -126,24 +126,24 @@ ArduinoUNOWiFi 云端自动生成源码，创建之后在项目如图所示的�
 应该大体有个理解啦吧！其实你会发现所有你要操作的事件都完成好了！！好，那我们开始修改程序，首先从“2.4.2引用部分开始”
 
 ### 2.4.2 引用部分
- - 1）添加WS2812驱动H文件
+1）添加WS2812驱动H文件
 
 `#include <Adafruit_NeoPixel.h>`
 ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547101769.png)
 
- - 2）定义WS2812的数据通信引脚，以及RGB灯数量。
+2）定义WS2812的数据通信引脚，以及RGB灯数量。
 `#define PIN 9`         //使用arduino uno wifi的9号引脚
 `#define NUM_LEDS 8`    //WS2812小板的数量是8个
 ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547108566.png)
 
- - 3）初始化LED数量、通信引脚号和驱动模式
+3）初始化LED数量、通信引脚号和驱动模式
 
 `Adafruit_NeoPixel strip = Adafruit_NeoPixel(NUM_LEDS, PIN, NEO_GRB + NEO_KHZ800);`
 ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547114920.png)
 
- - 1）该函数中NUM_LEDS，表示控制的点亮多少个全彩灯珠，如果你想改变灯珠点亮的个数你可以	在	这里进行修改。
- - 2）PIN表示的是与开发板所连的第几个端口，我们这里使用的是第9个端口，你可根	据自己的需要	修改对应的端口。
- - 3）关于NEO_GRB+NEO_KHZ800，这包括了与开发板所连的具体类型。具体的介绍可以参考文本最	后	Adafruit_NeoPixel库文件的解析，以及根据指导完成更多的案例。
+1）该函数中NUM_LEDS，表示控制的点亮多少个全彩灯珠，如果你想改变灯珠点亮的个数你可以	在	这里进行修改。
+2）PIN表示的是与开发板所连的第几个端口，我们这里使用的是第9个端口，你可根	据自己的需要	修改对应的端口。
+3）关于NEO_GRB+NEO_KHZ800，这包括了与开发板所连的具体类型。具体的介绍可以参考文本最	后	Adafruit_NeoPixel库文件的解析，以及根据指导完成更多的案例。
 
 引用部分完整修改参考如下
 
@@ -152,7 +152,7 @@ ArduinoUNOWiFi 云端自动生成源码，创建之后在项目如图所示的�
 
 接着修改“2.4.3 void setup(){}部分”
 
-######2.4.3 void setup(){}部分
+### 2.4.3 void setup(){}部分
 将以下代码添加到“void setup（）{}”函数里面用于初始化
 
 `strip.begin();`
