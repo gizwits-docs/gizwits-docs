@@ -14,9 +14,9 @@ Open API的高级数据接口，就是获取设备聚合数据。
 如图2_1为创建匿名登录
 ![Alt text](/assets/zh-cn/UserManual/DataAPI/1486538498852.png)
 图2_1
-##2.2.登录用户
+## 2.2.登录用户
 匿名创建接口和匿名登录接口一样。
-##2.3.绑定设备
+## 2.3.绑定设备
 [http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac](http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%BB%91%E5%AE%9A%E7%AE%A1%E7%90%86/post_app_bind_mac)
 ![Alt text](/assets/zh-cn/UserManual/DataAPI/1486542205826.png)
 
