@@ -74,13 +74,12 @@ APP开发:
     GoKit3 DEV SDK Common版移植说明:
       path: /deviceDev/GoKit3 DEV SDK Common版移植说明.html
       
-  Gokit3介绍:
+  Gokit资料:
     Gokit3系列开发套件简介:
       path: /deviceDev/Gokit3/Gokit3开发套件简介.html
     Gokit3硬件手册:
       path: /deviceDev/Gokit3/GoKit3硬件手册.html
-      
-  Gokit3 SOC方案:
+
     GoKit3(S)使用说明书:
       path: /deviceDev/WiFiSOC/GoKit3S使用说明书.html
     Gokit3(S)开发套件介绍:
@@ -89,8 +88,7 @@ APP开发:
       path: /deviceDev/WiFiSOC/GoKit3S二次开发.html
     Gokit3(S)源码详解:
       path: /deviceDev/WiFiSOC/GoKit3S程序详解.html
-    
-  Gokit3语音开发:
+
     GoKit3(V)使用说明书:
       path: /deviceDev/Gokit3Voice/GoKit3V使用说明书.html
     Gokit3(V)开发指南:
@@ -100,8 +98,8 @@ APP开发:
     Gokit3(V)源码详解:
       path: /deviceDev/Gokit3Voice/GoKit3V程序详解.html
            
-  Gokit2 使用指南:
-    path: /deviceDev/Gokit2使用指南.html
+    Gokit2 使用指南:
+      path: /deviceDev/Gokit2使用指南.html
  
   调试与烧写:
     串口工具使用文档:
