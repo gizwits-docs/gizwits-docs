@@ -173,11 +173,11 @@ App通过云端下发控制事件处理，可以在
 **- Key2**
 
 用于触发模块进入airlink和softap的配置模式
-- airlink配置模式 -> 长按key1
+- airlink配置模式 -> 长按key2
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410739993.png)
 
-- softap配置模式 -> 短按key1
+- softap配置模式 -> 短按key2
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410747091.png)
 
