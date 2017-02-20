@@ -258,6 +258,33 @@ Guest 也可以主动解绑设备。
 - Owner 选择一个要取消的分享邀请，调用[取消分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/delete_app_sharing_id)接口，取消分享
 - Guest 用户对设备的绑定被取消，同时，Owner 和 Guest 都将收到一条设备分享消息
 
+## 设备联动
+
+创建设备联动的规则，实现一个或多个设备的状态变化时，自动控制一个或多个设备的状态改变。
+
+联动的设备需要绑定同一个用户，不同产品下的设备需要先进行产品关联。
+
+联动规则创建后，可以随时进行修改，或者删除。
+
+### 创建联动规则
+
+- 用户与参加联动的设备进行绑定
+- 用户调用[获取可用数据点信息](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules_params)接口查询可用的数据点标识名
+- 用户选择一个设备作为触发规则的设备，调用[创建设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/post_app_rules)接口创建联动规则
+- 当满足联动规则设定的条件时，规则中设定的触发动作便会被触发
+
+### 查询联动规则
+- 用户调用[查询设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules)查询自己创建的联动规则
+
+### 修改联动规则
+- 用户调用[查询设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules)查询自己创建的联动规则
+- 用户选择一个需要修改的规则id，调用[修改设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/put_app_rules_rule_id)接口修改联动规则
+- 当满足修改后的联动规则设定的条件时，规则中设定的触发动作便会被触发
+
+### 删除联动规则
+- 用户调用[查询设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules)查询自己创建的联动规则
+- 用户选择一个需要删除的规则id，调用[删除设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/delete_app_rules_rule_id)接口删除联动规则
+
 ## 设备远程监控
 
 ### 获取设备详情
