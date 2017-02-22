@@ -144,8 +144,8 @@ ControlLight Turn the light {LightState}
 
 将下图页面的 Redirect URLs 设置到机智云 “产品互联” 的 Redirect URL 中，”Client Name” 可以填写 “Alexa”，填入机智云“产品互联”的Client ID和Client Secret作为请求身份验证的公共字符串。
 
-Authorization URL(https://oauth.gizwits.com/oauth/authorize)获取权限
-Access Token URL(https://oauth.gizwits.com/oauth/token)获取access_token
+Authorization URL (https://oauth.gizwits.com/oauth/authorize) 获取权限
+Access Token URL (https://oauth.gizwits.com/oauth/token) 获取access_token
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/图片1.png)
 ![Alt text](/assets/zh-cn/UserManual/Echo/图片2.png)
