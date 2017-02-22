@@ -58,7 +58,6 @@ AWS Lambda：AWS Lambda是Amazon提供的计算服务, 它目前提供的程式�
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484637706571.png)
 
-详情配置请参考接入教程（[点击此处跳转](http://docs.gizwits.com/zh-cn/UserManual/echo.html)）
 
 # 3、AlexaSkill配置
 
@@ -145,13 +144,15 @@ ControlLight Turn the light {LightState}
 
 将下图页面的 Redirect URLs 设置到机智云 “产品互联” 的 Redirect URL 中，”Client Name” 可以填写 “Alexa”，填入机智云“产品互联”的Client ID和Client Secret作为请求身份验证的公共字符串。
 
-![Alt text](/assets/zh-cn/UserManual/Echo/1484706885988.png)
+Authorization URL(https://oauth.gizwits.com/oauth/authorize)获取权限
+Access Token URL(https://oauth.gizwits.com/oauth/token)获取access_token
 
-
+![Alt text](/assets/zh-cn/UserManual/Echo/图片1.png)
+![Alt text](/assets/zh-cn/UserManual/Echo/图片2.png)
 
 有需要的用户可以填入隐私权限链接保护你的Alexa Skill，本教程选择不填，点击Next下一步。
 
-![Alt text](/assets/zh-cn/UserManual/Echo/1484626335480.png)
+![Alt text](/assets/zh-cn/UserManual/Echo/1484706885988.png)
 
 # 4、Lambda配置
 
