@@ -74,7 +74,7 @@ MCU的方式可得到与GoKit2相同的开发方式，即底板+功能板+wifi�
 
 1、GAgent固件：[http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent) 选择“GAgent for ESP8266”。
 
-2、GAgent固件烧录方法：[http://docs.gizwits.com/zh-cn/deviceDev/ESP8266串口烧写说明](zh-cn/deviceDev/ESP8266串口烧写说明.html)
+2、GAgent固件烧录方法：[http://docs.gizwits.com/zh-cn/deviceDev/ESP8266串口烧写说明](/zh-cn/deviceDev/ESP8266串口烧写说明.html)
 
 3、STM32 MCU源码包 [http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit)，选择“微信宠物屋 for GoKit 2 STM”进行下载。
 
