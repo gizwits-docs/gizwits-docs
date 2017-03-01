@@ -237,7 +237,7 @@ P9接口具有电源输出、共地的功能。
 
 机智云官方网站：[http://www.gizwits.com/](http://www.gizwits.com/)
 
-开収者论坛： [http://club.gizwits.com/forum.php](http://club.gizwits.com/forum.php)
+开发者论坛： [http://club.gizwits.com/forum.php](http://club.gizwits.com/forum.php)
 
 文档中心：[http://docs.gizwits.com](http://docs.gizwits.com)
 
