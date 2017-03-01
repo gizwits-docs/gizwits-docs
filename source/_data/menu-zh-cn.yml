@@ -174,3 +174,5 @@ APP开发:
       path: /UserManual/UseWebsocket.html
     使用聚合API教程:
       path: /UserManual/DataAPI.html
+    设备联动API使用教程:
+      path: /UserManual/LinkageAPI.html
