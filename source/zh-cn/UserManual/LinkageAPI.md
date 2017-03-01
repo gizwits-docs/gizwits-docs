@@ -1,19 +1,19 @@
-title:设备联动API使用教程
+title: 设备联动API使用教程
 ----
-#1.概述
+# 1.概述
    单品WiFi设备之间联动关系，通过创建设备间联动规则，当设备触发规则后，由云端给要联动的设备推送控制指令。例如：客户有一个智能灯和一个智能空调，可以根据云端提供设备联动功能，创建一个规则，当打开智能灯后，就把智能空调打开。关系图如下
  
  ![Alt text](/assets/zh-cn/UserManual/LinkageAPI/1488352531568.png)
 
 （注意：创建两个产品联动关系的时候，两个产品一定要关联同一个appid，不然，请求的时候就会报appid不存在问题。）
-#2.设备联动流程
+# 2.设备联动流程
 条件：原设备和联动设备必须绑定在同一个用户下，然后再在该用户下设定设备联动的规则才能进行设备间的联动功能。
 如下就是设备联动的流程图：
 
 ![Alt text](/assets/zh-cn/UserManual/LinkageAPI/1488352498616.png)
 
-#3.设备联动规则
-##3.1.获取可用变量
+# 3.设备联动规则
+## 3.1.获取可用变量
 功能描述：获取可以在创建规则时使用的、跟appid关联的pk下的所有数据点标识名以及设备和产品相关变量。
 1.请求URL:  [http://api.gizwits.com/app/rules/params?product_key=pk1,pk2 ](http://api.gizwits.com/app/rules/params?product_key=pk1,pk2)
 2.请求方式:	GET
@@ -25,7 +25,7 @@ title:设备联动API使用教程
 |X-Gizwits-Application-Id|String|是|header|机智云APPID|
 |X-Gizwits-User-Token|String|是|header|用户token|
 
-##3.2.创建规则
+## 3.2.创建规则
 功能描述：创建一个设备联动规则。
 1.请求URL: [http://api.gizwits.com/app/rules](http://api.gizwits.com/app/rules)
 2.请求方式:POST
@@ -260,7 +260,7 @@ title:设备联动API使用教程
 ```
 
 
-##3.3.获取用户规则
+## 3.3.获取用户规则
 功能描述：获取某个用户创建的所有规则
 
 1.请求UR: [ http://api.gizwits.com/app/rules](http://api.gizwits.com/app/rules)
@@ -272,7 +272,7 @@ title:设备联动API使用教程
 |X-Gizwits-Application-Id|String|是|Header|机智云APPID|
 |X-Gizwits-User-Token|String|是|Header|用户token|
 
-##3.4.修改规则
+## 3.4.修改规则
 功能描述：根据rule_id，修改该rule_id下的规则
 1.请求URL:[http://api.gizwits.com/app/rules/{rule_id}](http://api.gizwits.com/app/rules/%7Brule_id%7D)
 2.请求方式:PUT
@@ -418,7 +418,7 @@ title:设备联动API使用教程
 }
 ```
 
-##3.5.删除规则
+## 3.5.删除规则
 功能描述：根据rule_id，删除该rule_id下的规则
 1.请求URL: [http://api.gizwits.com/app/rules/{rule_id}](http://api.gizwits.com/app/rules/%7Brule_id%7D)
 2.请求方式: DELETE
