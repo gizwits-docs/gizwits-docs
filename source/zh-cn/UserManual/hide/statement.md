@@ -52,6 +52,7 @@ We use statistical data that does not specifically identify you (non-personal da
 
 - When you first use and activate your Gizwits device, the device’s unique identification code and approximate geographical information may be collected.
 ​
+
 # You have control over your information!
  
 We recognise that privacy concerns differ from person to person. Therefore, we provide examples of ways we make available for you to choose to restrict the collection, use, disclosure or processing of your personal data and control your privacy settings, such as controlling the settings under the User Experience Improvement Program, Location Access functions, and your Gizwits Account.
