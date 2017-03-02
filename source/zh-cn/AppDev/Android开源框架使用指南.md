@@ -6,7 +6,8 @@ title: Android开源框架使用指南（含源码）
 
 Android开源框架工程源码链接：
 
-<https://git.oschina.net/dantang/GizOpenSource_AppKit_Android>
+Eclipse 版本:<https://git.oschina.net/dantang/GizOpenSource_AppKit_Android>
+Android Studio版本：<https://github.com/gizwits/GOpenSource_AppKit_Android_AS>
 
 Android Gokit App是使用开源框架工程的源码范例，源码链接：
 
