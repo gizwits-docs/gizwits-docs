@@ -1517,7 +1517,7 @@ GizDeviceSharing.setListener(mListener);
 // 在设备列表中找到可以分享的设备
 
 // 通过手机号分享设备
-GizDeviceSharing.getDeviceSharingInfos("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByNormal, "guest_phone_number", GizUserAccountType.GizUserPhone);
+GizDeviceSharing.sharingDevice("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByNormal, "guest_phone_number", GizUserAccountType.GizUserPhone);
 
 GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
     // 实现设备分享的回调
