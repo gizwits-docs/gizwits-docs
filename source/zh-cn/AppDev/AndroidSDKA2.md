@@ -1544,7 +1544,7 @@ GizDeviceSharing.setListener(mListener);
 // 在设备列表中找到可以分享的设备
 
 // 二维码分享设备
-GizDeviceSharing.getDeviceSharingInfos("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByQRCode, null, null);
+GizDeviceSharing.sharingDevice("your_token", "your_device_id", GizDeviceSharingWay.GizDeviceSharingByQRCode, null, null);
 
 GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
     // 实现设备分享的回调
