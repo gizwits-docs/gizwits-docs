@@ -48,7 +48,7 @@ title:  开发文档
 
 # 设备开发（硬件接入）
 
-## 1 可接入机智云模组固件烧写教程
+## 1 固件烧写教程
  - [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
  - [ESP8266串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
  - [HF-LPT120串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)
@@ -69,7 +69,7 @@ title:  开发文档
 
 ## 4 ECE雾计算
 - [ECE雾计算入门教程](http://docs.gizwits.com/zh-cn/UserManual/ecevideos.html)
-相关视频：
+- 相关视频：
  - [企业账号注册](https://v.qq.com/x/page/n0362u2fgws.html)
  - [固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
  - [pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
@@ -77,11 +77,11 @@ title:  开发文档
  - [lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
  - [gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
 
-## 5 Arduino UNO WiFi开发教程
- - [ArduinoUNOWiFi接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
- - [ArduinoUnoWiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
- - [ArduinoUnoWiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
- - [Arduino Uno WiFi智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
+## 5 Arduino UNO
+ - [Arduino UNO WiFi 接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
+ - [Arduino Uno WiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
+ - [Arduino Uno WiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
+ - [Arduino Uno WiFi 智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
 
 # 云平台
 开发者如果已完成设备接入、APP开发，还需要从机智云PaaS平台获取数据构建一套业务管理系统，或者访问机智云提供的服务，则需了解以下文档:
