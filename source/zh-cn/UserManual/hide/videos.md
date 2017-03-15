@@ -31,26 +31,25 @@ http://v.qq.com/page/d/c/8/d0342cuq3c8.html
 
 ## 6 GoKit3(V)配置入网及APP控制
 http://v.qq.com/page/n/6/d/n0342s3oc6d.html
-## 7 GoKit3代码自动生成工具	
-http://v.qq.com/x/page/z0343uhrvis.html
 
-## 8 GoKit3 DEV SDK Common版移植说明	
-http://v.qq.com/x/page/j0343youjqw.html
-
-## 9 GoKit3(S)二次开发-程序详解	
+## 7 GoKit3(S)二次开发-程序详解	
 http://v.qq.com/x/page/f03438iug4b.html
 
-## 10 GoKit3(S)源码详解	
+## 8 GoKit3(S)源码详解	
 http://v.qq.com/x/page/a0344o3b9yt.html
 
-## 11 GoKit3(V)二次开发-程序详解	
+## 9 GoKit3(V)二次开发-程序详解	
 http://v.qq.com/x/page/w03411dulvm.html
 
-## 12 GoKit3(V)源码详解	
+## 10 GoKit3(V)源码详解	
 http://v.qq.com/x/page/e03433vgpkj.html
 
-## 13 MCU代码自动生成-通用平台版移植说明	
-http://v.qq.com/x/page/u0341288ek0.html
+
+## 7 MCU代码自动生成工具	
+http://v.qq.com/x/page/z0343uhrvis.html
+
+## 8 通用版MCU代码自动生成及移植
+http://v.qq.com/x/page/j0343youjqw.html
 
 
 # ECE雾计算入门教程
