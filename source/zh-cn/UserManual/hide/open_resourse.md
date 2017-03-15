@@ -46,7 +46,7 @@ title:  开发文档
  - [开源框架视频教程](http://docs.gizwits.com/zh-cn/AppDev/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B.html)
 
 
-# 设备开发
+# 设备开发（硬件接入）
 
 ## 1 可接入机智云模组固件烧写教程
  - [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
@@ -55,7 +55,7 @@ title:  开发文档
  - [庆科3162串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
  - [广和通G510串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)
  
-## 2 Gokit 资料：
+## 2 Gokit 资料
  
  - [Gokit 3 系列开发套件简介](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/Gokit3%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E7%AE%80%E4%BB%8B.html)
  - [GoKit 3 硬件手册](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/GoKit3%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C.html)
@@ -63,12 +63,11 @@ title:  开发文档
  - [GoKit3(S) 二次开发--开发环境搭](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html)
  - [GoKit3(S) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
 
-## 3 MCU代码自动生成：
-
+## 3 MCU代码自动生成
   - [MCU代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
   - [DEV SDK Common版移植说明（通用平台）](http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html)
 
-## 4 ECE雾计算入门教程
+## 4 ECE雾计算
 - [ECE雾计算入门教程](http://docs.gizwits.com/zh-cn/UserManual/ecevideos.html)
 相关视频：
  - [企业账号注册](https://v.qq.com/x/page/n0362u2fgws.html)
@@ -79,19 +78,17 @@ title:  开发文档
  - [gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
 
 ## 5 Arduino UNO WiFi开发教程
-  - [ArduinoUNOWiFi接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
-  - [ArduinoUnoWiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
-  - [ArduinoUnoWiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
-  - [Arduino Uno WiFi智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
+ - [ArduinoUNOWiFi接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
+ - [ArduinoUnoWiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
+ - [ArduinoUnoWiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
+ - [Arduino Uno WiFi智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
 
 # 云平台
 开发者如果已完成设备接入、APP开发，还需要从机智云PaaS平台获取数据构建一套业务管理系统，或者访问机智云提供的服务，则需了解以下文档:
-- [了解企业应用开发](../Cloud/ent_dev.html)
-- [了解消息代理服务接口](../Cloud/noti1.0.html)
-- [了解企业API](../Cloud/enterprise_api.html)
-- [消息代理1.0（Noti服务）](http://docs.gizwits.com/zh-cn/Cloud/noti1.0.html)
+- [了解企业应用开发](http://docs.gizwits.com/zh-cn/Cloud/ent_dev.html)
+- [了解消息消息代理服务接口（Noti服务）](http://docs.gizwits.com/zh-cn/Cloud/noti1.0.html)
+- [了解企业API](http://docs.gizwits.com/zh-cn/Cloud/enterprise_api.html)
 - [SNoti API (V2.1.3)](http://docs.gizwits.com/zh-cn/Cloud/NotificationAPI.html)
-- [企业API](http://docs.gizwits.com/zh-cn/Cloud/enterprise_api.html)
 - [Gizwits Open API（新）](http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html)
 - [Websocket API 指南](http://docs.gizwits.com/zh-cn/Cloud/WebsocketAPI.html)
 
@@ -103,9 +100,7 @@ title:  开发文档
  - [ECE雾计算使用教程](http://docs.gizwits.com/zh-cn/UserManual/ece.html)
  - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
  - [实时大数据使用说明](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html)
- 
-## API使用教程
-
+ - API使用教程
    - [利用openapi（postman）控制虚拟设备](http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html)
    - [Websocket 网页控制设备](http://docs.gizwits.com/zh-cn/UserManual/UseWebsocket.html)
    - [聚合API使用教程](http://docs.gizwits.com/zh-cn/UserManual/DataAPI.html)
