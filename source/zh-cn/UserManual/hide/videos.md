@@ -1,6 +1,6 @@
 title: 视频教程
 ---
-# 机智云开源框架App使用教程
+# 开源框架App使用教程
 ## 1 App开发前传	
 http://v.qq.com/x/page/p0344jspddv.html	
 开发者中心产品及设备应用创建（App开发前传）
@@ -74,7 +74,7 @@ http://v.qq.com/x/page/d03617dbq8p.html
 http://v.qq.com/x/page/y0361kmy887.html
 
 
-# 旧版本的Gokit开发视频（2015）
+# Gokit 开发视频（2015）
 ## 1 机智云Gokit入门:《Demo MCU程序修改及烧录》
 http://v.qq.com/boke/gplay/e93106a715b9724ba25e9827b38c171e_p8u0000012ab6fm_1_s0151wvtsvu.html
 
