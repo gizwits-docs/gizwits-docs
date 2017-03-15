@@ -1,6 +1,6 @@
 title:  开发文档
 ---
-[专题热点](http://topic.gizwits.com/) 、 [热门下载](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
+[专题热点](http://topic.gizwits.com/) 、 [本周热门下载](http://docs.gizwits.com/zh-cn/UserManual/hide/download.html)
 
 # 快速入门
 ## 1 机智云平台概述
