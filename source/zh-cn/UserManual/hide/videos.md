@@ -1,5 +1,17 @@
 title: 视频教程
 ---
+# 机智云开源框架App使用教程
+## 1 App开发前传	
+http://v.qq.com/x/page/p0344jspddv.html	
+开发者中心产品及设备应用创建（App开发前传）
+## 2 iOS APP开发	
+http://v.qq.com/x/page/b0350blmgcf.html	
+使用开源框架快速开发一个功能简单的iOS App
+
+## 3 Android APP开发	
+http://v.qq.com/x/page/p03512if92n.html	
+使用开源框架快速开发一个功能简单的Android App
+
 # Gokit3入门视频（2016）
 Gokit3是GoKit产品系列的第三代，支持MCU、SoC、BLE、语音、模式切换等特性。目前支持的SoC方案模组有ESP8266、Hi3518E模组、宇音天下模组等。详情请点击：[详细介绍](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/Gokit3%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E7%AE%80%E4%BB%8B.html)
 ## 1 GoKit3介绍	
