@@ -29,7 +29,7 @@ title:  开发文档
 # 手机应用开发（APP）
 机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能。
 
-## 1 SDk接入
+## 1 SDK 接入
 智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略
 - [安卓SDK接入](/zh-cn/AppDev/AndroidSDKA2.html)
 - [IOS SDK接入](/zh-cn/AppDev/iOSSDKA2.html)
@@ -40,7 +40,7 @@ title:  开发文档
 - [了解微信应用开发](http://docs.gizwits.com/zh-cn/WechatDev/%E4%BA%86%E8%A7%A3%E5%BE%AE%E4%BF%A1%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html)
 - [微信开发教程](http://docs.gizwits.com/zh-cn/WechatDev/WeChatDev.html)
 
-## 3 APP开源框架
+## 3 APP 开源框架
 机智云APP开源框架是使用机智云SDK开发的APP模板，实现了SDK的加载、初始化、用户注册、用户登陆、设备配置、设备发现、设备连接、设备列表等基本的功能。APP开源框架是一个可以编译的源码工程，对所有开发者开源，目前提供iOS和Android版本。APP开发者可以在框架上实现具体产品的控制页面就可以生成一个完整的APP。
  - [iOS开源框架使用指南（含源码)](http://docs.gizwits.com/zh-cn/AppDev/iosframe.html)
  - [iOS App消息推送集成](http://docs.gizwits.com/zh-cn/AppDev/iOS%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
@@ -77,7 +77,7 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [GoKit3(V) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit3V%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
  - [GoKit3(V) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit3V%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
  - [Gokit 2 使用指南](http://docs.gizwits.com/zh-cn/deviceDev/Gokit2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
-## 3 MCU代码自动生成
+## 3 MCU 代码自动生成
 
 使用MCU代码自动生成工具，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。
   - [MCU代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
