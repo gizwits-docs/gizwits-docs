@@ -7,7 +7,6 @@ title:  开发文档
 机智云平台是机智云物联网公司经过多年行业内的耕耘及对物联网行业的深刻理解，而推出的面向个人、企业开发者的一站式智能硬件开发及云服务平台。平台提供了从定义产品、设备端开发调试、应用开发、产测、云端开发、运营管理、数据服务等覆盖智能硬件接入到运营管理全生命周期服务的能力。
 
 机智云平台为开发者提供了自助式智能硬件开发工具与开放的云端服务。通过傻瓜化的自助工具、完善的SDK与API服务能力最大限度降低了物联网硬件开发的技术门槛，降低开发者的研发成本，提升开发者的产品投产速度，帮助开发者进行硬件智能化升级，更好的连接、服务最终消费者。
-## 机智云系统概述图
 ![机智云平台图片](http://club.gizwits.com/EDMimages/marstest/gizwitspingtai.png)
 
 ## 2 机智云平台架构
@@ -44,25 +43,31 @@ title:  开发文档
  - [Android开源框架使用指南（含源码）](http://docs.gizwits.com/zh-cn/AppDev/Android%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
  - [Android App消息推送](http://docs.gizwits.com/zh-cn/AppDev/Android%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
  - [Android App集成第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
- -[开源框架视频教程](http://docs.gizwits.com/zh-cn/AppDev/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B.html)
+ - [开源框架视频教程](http://docs.gizwits.com/zh-cn/AppDev/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B.html)
 
 
 # 设备开发
+
 ## 1 可接入机智云模组固件烧写教程
-  - [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
+ - [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
  - [ESP8266串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
  - [HF-LPT120串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)
  - [庆科3162串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
  - [广和通G510串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)
+ 
 ## 2 Gokit 资料：
+ 
  - [Gokit 3 系列开发套件简介](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/Gokit3%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E7%AE%80%E4%BB%8B.html)
  - [GoKit 3 硬件手册](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/GoKit3%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C.html)
  - [GoKit3(S) 开发套件介绍](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%BB%8D.html)
  - [GoKit3(S) 二次开发--开发环境搭](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html)
  - [GoKit3(S) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
+
 ## 3 MCU代码自动生成：
+
   - [MCU代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
   - [DEV SDK Common版移植说明（通用平台）](http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html)
+
 ## 4 ECE雾计算入门教程
 - [ECE雾计算入门教程](http://docs.gizwits.com/zh-cn/UserManual/ecevideos.html)
 相关视频：
@@ -72,6 +77,7 @@ title:  开发文档
  - [MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)
  - [lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
  - [gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
+
 ## 5 Arduino UNO WiFi开发教程
   - [ArduinoUNOWiFi接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
   - [ArduinoUnoWiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
@@ -99,6 +105,7 @@ title:  开发文档
  - [实时大数据使用说明](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html)
  
 ## API使用教程
+
    - [利用openapi（postman）控制虚拟设备](http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html)
    - [Websocket 网页控制设备](http://docs.gizwits.com/zh-cn/UserManual/UseWebsocket.html)
    - [聚合API使用教程](http://docs.gizwits.com/zh-cn/UserManual/DataAPI.html)
