@@ -35,7 +35,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
  1 [iOS SDK](http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m)
  2 [Android SDK](http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m)
  3 [APICloud SDK](http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m)
- 4 BT/BLE设备接入SDK for iOS](http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m)
+ 4 [BT/BLE设备接入SDK for iOS](http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m)
  5 [BT/BLE设备接入SDK for Android](http://dev.gizwits.com/zh-cn/developer/resource/sdk?service=m2m)
 
 # 4 统计分析SDK
