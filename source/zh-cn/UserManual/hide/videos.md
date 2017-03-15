@@ -1,6 +1,6 @@
 title: 视频教程
 ---
-# Gokit3入门视频（2016）：
+# Gokit3入门视频（2016）
 Gokit3是GoKit产品系列的第三代，支持MCU、SoC、BLE、语音、模式切换等特性。目前支持的SoC方案模组有ESP8266、Hi3518E模组、宇音天下模组等。详情请点击：[详细介绍](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/Gokit3%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E7%AE%80%E4%BB%8B.html)
 ## 1 GoKit3介绍	
 http://v.qq.com/page/c/i/7/c0342fr44i7.html
@@ -41,7 +41,7 @@ http://v.qq.com/x/page/e03433vgpkj.html
 http://v.qq.com/x/page/u0341288ek0.html
 
 
-# ECE雾计算入门教程：
+# ECE雾计算入门教程
 机智云ECE雾计算主要对接智能设备用的通信模组和手机，采取编译性语言（C语言）和解析性语言（Lua）相结合的方式，使用解析性脚本，将适配策略在云端进行配置，配置后通过推送的方式发送到模组或手机，设备收到新的配置策略后，立即执行；配置策略分别负责适配传输层协议适配、业务层协议适配、数据的计算方法等。详情请点击：http://docs.gizwits.com/zh-cn/UserManual/ece.html
 
 ## 1 企业账号注册	
@@ -98,7 +98,7 @@ http://v.qq.com/boke/gplay/e93106a715b9724ba25e9827b38c171e_p8u0000012ab6fm_10_y
 http://v.qq.com/boke/gplay/e93106a715b9724ba25e9827b38c171e_p8u0000012ab6fm_11_t0151u0kupl.html
 
 
-# 2016年机智云开发者大会主题分享：
+# 2016年机智云开发者大会主题分享
 ## 1 机智云4.0	
 http://v.qq.com/x/page/l03423njkot.html
 
