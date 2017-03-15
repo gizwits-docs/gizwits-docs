@@ -2,20 +2,20 @@ title:  开发文档
 ---
 [专题热点](http://topic.gizwits.com/) 、 [下载中心](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
 
-# 机智云平台概述
+# 快速入门
+## 1 机智云机智云平台概述
 机智云平台是机智云物联网公司经过多年行业内的耕耘及对物联网行业的深刻理解，而推出的面向个人、企业开发者的一站式智能硬件开发及云服务平台。平台提供了从定义产品、设备端开发调试、应用开发、产测、云端开发、运营管理、数据服务等覆盖智能硬件接入到运营管理全生命周期服务的能力。
 
 机智云平台为开发者提供了自助式智能硬件开发工具与开放的云端服务。通过傻瓜化的自助工具、完善的SDK与API服务能力最大限度降低了物联网硬件开发的技术门槛，降低开发者的研发成本，提升开发者的产品投产速度，帮助开发者进行硬件智能化升级，更好的连接、服务最终消费者。
-
+## 机智云系统概述图
 ![机智云平台图片](http://club.gizwits.com/EDMimages/marstest/gizwitspingtai.png)
 
-# 机智云平台架构
+## 2 机智云平台架构
 
 ![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/架构.png)
 
 
-# 快速入门
-
+## 3 设备如何快速接入机智云
 硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统，可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。
 产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫LPB100](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[乐鑫8266](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[汉枫LPT120](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)、高通4004 、RealTek 8711AM 、[庆科3162](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[广和通G510](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)等。
 
@@ -175,4 +175,3 @@ title:  开发文档
 ![@机智云全球联网报告04](/assets/zh-cn/OverVeiw/GlobalReport_04.png)
 
 （PS：由于网络的不稳定性，即存在一定小范围的响应速度误差）
-
