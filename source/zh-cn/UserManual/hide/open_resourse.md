@@ -71,7 +71,12 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [GoKit3(S) 开发套件介绍](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%BB%8D.html)
  - [GoKit3(S) 二次开发--开发环境搭](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html)
  - [GoKit3(S) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
-
+ - [GoKit3(V) 使用说明书](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit3V%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6.html)
+ - [GoKit3(V) 二次开发--开发指南](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit3V%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.html)
+ - [GoKit3(V) 支持词条介绍](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit3V%E8%AF%8D%E6%9D%A1.html)
+ - [GoKit3(V) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit3V%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
+ - [GoKit3(V) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit3V%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
+ - [Gokit 2 使用指南](http://docs.gizwits.com/zh-cn/deviceDev/Gokit2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
 ## 3 MCU代码自动生成
 
 使用MCU代码自动生成工具，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。
