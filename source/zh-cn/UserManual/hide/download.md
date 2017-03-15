@@ -73,7 +73,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
  - [智能插座](http://club.gizwits.com/thread-3029-1-1.html)
  - [智慧宿舍](http://club.gizwits.com/thread-2997-1-1.html)
  - [智能鞋柜](http://club.gizwits.com/thread-3381-1-1.html)
- - [PM25监测智能插座方案]（http://club.gizwits.com/thread-4348-1-1.html）
+ - [PM25监测智能插座方案](http://club.gizwits.com/thread-4348-1-1.html)
 
 ## 2 医疗健康
 
