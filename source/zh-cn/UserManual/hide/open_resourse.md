@@ -17,7 +17,8 @@ title:  开发文档
 
 ## 3 设备如何快速接入机智云
 硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统，可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。
-产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫LPB100](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[乐鑫8266](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[汉枫LPT120](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)、高通4004 、RealTek 8711AM 、[庆科3162](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[广和通G510](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)等。
+产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
+目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫LPB100](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[乐鑫8266](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[汉枫LPT120](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)、高通4004 、RealTek 8711AM 、[庆科3162](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[广和通G510](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)等。
 
 相关链接：
 - [了解GAgent](../deviceDev/gagent_info.html)
@@ -28,6 +29,7 @@ title:  开发文档
 机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能。
 
 ## 1 SDk接入
+智云的设备接入SDK（以下简称SDK）封装了手机（包括PAD等设备）与机智云智能硬件的通讯过程，以及手机与云端的通讯过程。这些过程包括配置入网、发现、连接、控制、心跳、状态上报、报警通知等。使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略
 - [安卓SDK接入](/zh-cn/AppDev/AndroidSDKA2.html)
 - [IOS SDK接入](/zh-cn/AppDev/iOSSDKA2.html)
 - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
@@ -38,6 +40,7 @@ title:  开发文档
 - [微信开发教程](http://docs.gizwits.com/zh-cn/WechatDev/WeChatDev.html)
 
 ## 3 APP开源框架
+机智云APP开源框架是使用机智云SDK开发的APP模板，实现了SDK的加载、初始化、用户注册、用户登陆、设备配置、设备发现、设备连接、设备列表等基本的功能。APP开源框架是一个可以编译的源码工程，对所有开发者开源，目前提供iOS和Android版本。APP开发者可以在框架上实现具体产品的控制页面就可以生成一个完整的APP。
  - [iOS开源框架使用指南（含源码)](http://docs.gizwits.com/zh-cn/AppDev/iosframe.html)
  - [iOS App消息推送集成](http://docs.gizwits.com/zh-cn/AppDev/iOS%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
  - [iOS App集成第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
@@ -50,14 +53,18 @@ title:  开发文档
 # 设备开发（硬件接入）
 
 ## 1 固件烧写教程
- - [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
- - [ESP8266串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
- - [HF-LPT120串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)
- - [庆科3162串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
- - [广和通G510串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)
+GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。
+
+部分模组固件烧写教程：
+
+ - [汉枫 LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
+ - [乐鑫 ESP8266串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
+ - [汉枫 LPT120串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)
+ - [庆科 3162串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
+ - [广和通 G510串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)
  
 ## 2 Gokit 资料
- 
+ Gokit3是GoKit产品系列的第三代，支持MCU、SoC、BLE、语音、模式切换等特性。目前支持的SoC方案模组有ESP8266、Hi3518E模组、宇音天下模组等。
  - [Gokit 3 系列开发套件简介](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/Gokit3%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E7%AE%80%E4%BB%8B.html)
  - [GoKit 3 硬件手册](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3/GoKit3%E7%A1%AC%E4%BB%B6%E6%89%8B%E5%86%8C.html)
  - [GoKit3(S) 开发套件介绍](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%BB%8D.html)
@@ -65,7 +72,9 @@ title:  开发文档
  - [GoKit3(S) 二次开发-程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
 
 ## 3 MCU代码自动生成
-  - [MCU代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
+
+使用MCU代码自动生成工具，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。
+  - [MCU代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
   - [DEV SDK Common版移植说明（通用平台）](http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html)
 
 ## 4 ECE雾计算
