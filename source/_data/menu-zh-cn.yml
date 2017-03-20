@@ -133,6 +133,8 @@ APP开发:
 云平台:
     企业应用开发:
       path: /Cloud/ent_dev.html
+    SNoti API:
+      path: /Cloud/NotificationAPI.html
     消息代理服务:
       path: /Cloud/noti1.0.html
     企业API:
@@ -141,8 +143,15 @@ APP开发:
       path: /Cloud/openapi_apps.html
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
-    SNoti API:
-      path: /Cloud/NotificationAPI.html
+    API使用教程:
+      使用OpenAPI控制虚拟设备教程:
+        path: /UserManual/UseOpenAPI.html
+      使用Websocket 网页控制设备教程:
+        path: /UserManual/UseWebsocket.html
+      使用聚合API教程:
+        path: /UserManual/DataAPI.html
+      设备联动API使用教程:
+        path: /UserManual/LinkageAPI.html
 
 
 用户手册:
@@ -166,13 +175,3 @@ APP开发:
     
   实时大数据使用教程:
     path: /UserManual/rtbd.html
-    
-  API使用教程:
-    使用OpenAPI控制虚拟设备教程:
-      path: /UserManual/UseOpenAPI.html
-    使用Websocket 网页控制设备教程:
-      path: /UserManual/UseWebsocket.html
-    使用聚合API教程:
-      path: /UserManual/DataAPI.html
-    设备联动API使用教程:
-      path: /UserManual/LinkageAPI.html
