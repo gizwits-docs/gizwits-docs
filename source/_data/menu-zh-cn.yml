@@ -133,16 +133,22 @@ APP开发:
 云平台:
     企业应用开发:
       path: /Cloud/ent_dev.html
-    SNoti API:
-      path: /Cloud/NotificationAPI.html
-    消息代理服务:
-      path: /Cloud/noti1.0.html
+      
     企业API:
       path: /Cloud/enterprise_api.html 
+      
+    消息代理服务:
+      path: /Cloud/noti1.0.html
+      
+    SNoti API:
+      path: /Cloud/NotificationAPI.html
+      
     Open API 指南:
       path: /Cloud/openapi_apps.html
+      
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
+      
     API使用教程:
       使用OpenAPI控制虚拟设备教程:
         path: /UserManual/UseOpenAPI.html
