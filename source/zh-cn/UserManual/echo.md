@@ -365,16 +365,7 @@ example的部份, 我们使用 "File" -> "Examples" -> "AmebaMQTTClient" -> "ama
 
 测试成功后，可以将自己编写的AlexaSkill发布提供给其他的Alexa用户使用，在Publishing information里可以填入自己Skill的一些基础信息，并点击Submit for Certification提交。
 
-**注：当Skill发布成功后，Skill的信息和参数等不可二次修改，请谨慎发布。**
-
-**注意事项：**
-亚马逊对启用了 “Account Linking” 的 Skill 有如下要求：”Authorization URL” 的域名必须属于您，并且该链接必须是 https 链接。
-
-**这就需要您完成如下几点：**
-    1）拥有一个自己品牌的域名
-   2）添加一个二级域名，并且 CNAME 到 “oauth.gizwits.com”
-    3）购买一个 https 证书，并将证书文件（包括证书文件和 key 文件）发送给我们，我们将您的证书配置在我们的服务器
-    4）在 “Account Linking” 页面，将 “Authorization URL” 和 “Access Token URI” 中的域名修改为您的二级域名
+**注：当Skill发布成功后，Skill的一些信息和参数等不可二次修改，请谨慎发布。**
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626992489.png)
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626997903.png)
@@ -382,6 +373,8 @@ example的部份, 我们使用 "File" -> "Examples" -> "AmebaMQTTClient" -> "ama
 若发布成功后，其他用户就可以在Alexa应用端的Skills-All Skills里搜索到
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484627004661.png)
+
+如在发布过程中遇到相关问题，可以联系机智云，我们将帮您发布你的skill
 
 # 7、相关支持
 
