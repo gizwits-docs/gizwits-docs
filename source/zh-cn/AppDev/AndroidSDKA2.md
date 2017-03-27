@@ -275,8 +275,7 @@ Intent intent = new Intent();
 	sendOrderedBroadcast(intent, null);
 ```
 
-- 另外一种，是在Activity中通过bindService获取到Service对象，直接调用Service方法获取想要的
-
+- 另外一种，是在Activity中通过bindService获取到Service对象，直接调用Service方法获取想要的设备对象
 ## 3.	混淆打包配置
 
 如果您的项目使用了Proguard混淆打包，为了避免SDK被二次混淆导致无法正常使用SDK，请务必在 proguard-project.txt中添加以下代码：
