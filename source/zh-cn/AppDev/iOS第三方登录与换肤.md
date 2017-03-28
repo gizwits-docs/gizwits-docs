@@ -2,9 +2,9 @@ title: iOS App集成第三方登录与换肤指南
 ---
 
 # 概述
-本文主要是介绍了如何通过开源框架快速支持QQ和微信登陆，并介绍了如何实现app快速换肤
-# QQ登陆接入
-APP要支持QQ登陆，需要先到腾讯开放平台创建一个应用，获取应用的APPID，并设置到开源框架中即可。
+本文主要是介绍了如何通过开源框架快速支持QQ和微信登录，并介绍了如何实现app快速换肤
+# QQ登录接入
+APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取应用的APPID，并设置到开源框架中即可。
 ## 1. 创建腾讯开发者账号
 已有腾讯开发者账号可跳过这部分
 
@@ -12,11 +12,10 @@ APP要支持QQ登陆，需要先到腾讯开放平台创建一个应用，获取
  
  ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083850757.png)
 
-点击《登陆》，填写账号密码登陆
-
+点击《登录》，填写账号密码登录
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083866404.png)
 
-登陆成功后跳转到注册界面，开发者可根据自己的需要选择个人或者公司类型。
+登录成功后跳转到注册界面，开发者可根据自己的需要选择个人或者公司类型。
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083885241.png)
 
@@ -33,20 +32,20 @@ APP要支持QQ登陆，需要先到腾讯开放平台创建一个应用，获取
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083948783.png)
 
-完善应用信息，并提交审核。审核通过后，即可使用红框部分的APP ID 和 APP KEY来创建QQ登陆入口。
+完善应用信息，并提交审核。审核通过后，即可使用红框部分的APP ID 和 APP KEY来创建QQ登录入口。
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083965470.png)
 
 ## 3. 绑定QQ应用到机智云
-登陆机智云开发者中心：http://dev.gizwits.com/zh-cn/developer/product/，选中需要绑定第三方登陆的产品
+登录机智云开发者中心：http://dev.gizwits.com/zh-cn/developer/product/，选中需要绑定第三方登录的产品
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478084000620.png)
 
-进入产品设置界面，选择需要关联QQ登陆的应用，如下图：
+进入产品设置界面，选择需要关联QQ登录的应用，如下图：
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478084015885.png)
 
-点击《关联第三方登陆》进入关联界面，填写从腾讯开放平台申请到的APPID，并点击确定，即完成了机智云应用于QQ应用的绑定。
+点击《关联第三方登录》进入关联界面，填写从腾讯开放平台申请到的APPID，并点击确定，即完成了机智云应用于QQ应用的绑定。
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478084031585.png)
 
