@@ -25,6 +25,9 @@
    
 
 APP开发:
+  App代码自动生成服务介绍:
+    path: /UserManual/devApp.html
+    
   App 开源框架:
     iOS 开源框架说明(含源码):
       path: /AppDev/iosframe.html
@@ -163,9 +166,6 @@ APP开发:
 用户手册:
   个人项目产品转企业项目产品:
     path: /UserManual/change.html
-    
-  App代码自动生成服务介绍:
-    path: /UserManual/devApp.html
     
   OTA使用教程:
     path: /UserManual/OTA使用教程.html
