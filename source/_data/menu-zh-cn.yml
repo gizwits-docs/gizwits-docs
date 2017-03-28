@@ -164,6 +164,9 @@ APP开发:
   个人项目产品转企业项目产品:
     path: /UserManual/change.html
     
+  App代码自动生成服务介绍:
+    path: /UserManual/devApp.html
+    
   OTA使用教程:
     path: /UserManual/OTA使用教程.html
     
