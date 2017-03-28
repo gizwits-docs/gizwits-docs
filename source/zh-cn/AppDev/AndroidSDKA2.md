@@ -1,5 +1,5 @@
 
-title: 设备接入SDK V4A2集成指南
+title: Android SDK 2.0集成指南
 ---
 # SDK_API参考手册
 附件：[Android_SDK2.0_API参考手册](/assets/pdf/Android_SDK2.0_API参考手册.pdf)
