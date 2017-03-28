@@ -236,18 +236,6 @@ Lambda预先设计了一些使用情境, 这些情境提供了一些sample code�
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626655908.png)
 
-这里我们暂停AWS Lambda的设定, 并且设定好AWS IoT相关的设定
-
-请参考之前的文章将Ameba与AWS IoT Shadow的设定完成:
-http://www.amebaiot.com/ameba-arduino-amazon-aws-iot/
-example的部份, 我们使用 "File" -> "Examples" -> "AmebaMQTTClient" -> "amazon_awsiot_with_ack"
-因为Alexa的限制需要将region改成us-east-1, 这部份需要特别注意:
-
-![Alt text](/assets/zh-cn/UserManual/Echo/1484626676552.png)
-
-完成之后, 我们点选ameba的thing, 让右边的资讯栏出现, 其中REST API endpoint里, 这个字串“xxxxxxxxx.iot.us-east-1.amazonaws.com”是AWS IoT提供给其它服务使用的endpoint, 这个endpoint我们会拿来填入Lambda所需的资讯里
-
-![Alt text](/assets/zh-cn/UserManual/Echo/1484626686257.png)
 
 ## 4.2  Lambda中所对应skill的代码
 回到Lambda的设定页面, 点选 “code”页签
