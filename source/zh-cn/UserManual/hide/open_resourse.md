@@ -11,7 +11,7 @@ title:  开发文档
 ## 2 机智云平台架构
 
 ![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/架构.png)
-![机智云平台图片](http://club.gizwits.com/EDMimages/marstest/gizwitspingtai.png)
+
 
 ## 3 设备快速接入机智云
 硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统，可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。
@@ -98,12 +98,12 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 ## 4 ECE雾计算
 - [ECE雾计算入门教程](http://docs.gizwits.com/zh-cn/UserManual/ecevideos.html)
 - 相关视频：
- - [企业账号注册](https://v.qq.com/x/page/n0362u2fgws.html)
- - [固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
- - [pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
- - [MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)
- - [lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
- - [gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
+  - [企业账号注册](https://v.qq.com/x/page/n0362u2fgws.html)
+  - [固件烧录](http://v.qq.com/x/page/r03612h7pr0.html)
+  - [pk烧录](http://v.qq.com/x/page/p0361baxn9z.html)
+  - [MCU协议介绍](http://v.qq.com/x/page/a03619wrrqr.html)
+  - [lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
+  - [gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
 
 ## 5 Arduino UNO
  - [Arduino UNO WiFi 接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
