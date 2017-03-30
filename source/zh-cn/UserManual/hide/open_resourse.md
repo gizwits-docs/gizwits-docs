@@ -33,8 +33,8 @@ title:  开发文档
 [APP代码自动生成 开发指南](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)
 
 ## 2 Echo控制
-[接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
-[使用Echo音箱控制GoKit2](http://docs.gizwits.com/zh-cn/deviceDev/Gokit2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html#使用Echo音箱控制GoKit2)
+- [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
+- [使用Echo音箱控制GoKit2](http://docs.gizwits.com/zh-cn/deviceDev/Gokit2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html#使用Echo音箱控制GoKit2)
 
 ## 3 微信开发
 - [了解微信应用开发](http://docs.gizwits.com/zh-cn/WechatDev/%E4%BA%86%E8%A7%A3%E5%BE%AE%E4%BF%A1%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html)
