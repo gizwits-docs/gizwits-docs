@@ -11,7 +11,7 @@ title:  开发文档
 ## 2 机智云平台架构
 
 ![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/架构.png)
-
+![机智云平台图片](http://club.gizwits.com/EDMimages/marstest/gizwitspingtai.png)
 
 ## 3 设备快速接入机智云
 硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统，可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。
@@ -22,7 +22,7 @@ title:  开发文档
 - [了解GAgent](../deviceDev/gagent_info.html)
 - [设备如何快速接入](/zh-cn/quickstart/设备快速接入.html)
 
-![机智云平台图片](http://club.gizwits.com/EDMimages/marstest/gizwitspingtai.png)
+
 
  
 
