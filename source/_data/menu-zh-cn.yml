@@ -161,6 +161,8 @@ APP开发:
         path: /UserManual/DataAPI.html
       设备联动API使用教程:
         path: /UserManual/LinkageAPI.html
+      Snoti 数据实时同步服务demo使用教程:
+        path: /UserManual/UseSNoti.html
 
 
 用户手册:
