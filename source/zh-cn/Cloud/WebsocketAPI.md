@@ -1,5 +1,7 @@
 title: Websocket API 指南
 ---
+v1.0.6
+
 # Demo
 https://github.com/gizwits/gizwits-wechat-js-sdk
 
@@ -29,9 +31,10 @@ https://github.com/gizwits/gizwits-wechat-js-sdk
 
 ## 2. 云端Web Socket服务地址 
 ```
-ws://<m2m_host>:8080/ws/app/v1 
+ws://<host>:<ws_port>/ws/app/v1 (非加密连接)
+wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 ```
-其中的&lt;m2m_host&gt;为绑定设备列表中的host字段的值，如”m2m.gizwits.com”或”sandbox.gizwits.com”，请参考获取绑定设备列表HTTP API。
+其中的&lt;host&gt;为绑定设备列表中的host字段的值，&lt;ws_port&gt;为绑定设备列表中的ws_port字段的值，&lt;wss_port&gt;为绑定设备列表中的wss_port字段的值，请参考获取绑定设备列表HTTP API。
 
 
 ## 3. 注意事项  
@@ -125,7 +128,7 @@ ws://<m2m_host>:8080/ws/app/v1
 若想云端往设备转发数据，raw的值需要加上以下的协议前缀再接上发往设备的数据，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 144] + 发往设备的数据，其中的varLen为可变长度，由1~4个字节(B)表示本可变长度字段后一直到数据包结尾的字节数 ，如长度小于128B，直接用一个字节(B)表示长度即可，长度大于等于128B的编码解码方式请参考MQTT V3.1协议的可变长度（Remaining Length）定义。  
 
 
-云端 ⇒ 浏览器。当云端收到设备上传的数据后，云端向浏览器转发以下的JSON字符串，数据放在raw字段中。登陆参数​"p0_type"​的值等于​"attrs_v4"​时,设备以“透传业务指令”上报的数据会以本指令发往浏览器。
+云端 ⇒ 浏览器。当云端收到设备上传的数据后，云端向浏览器转发以下的JSON字符串，数据放在raw字段中。注意，即使是登陆参数​"p0_type"​的值等于​"attrs_v4"​时，设备以“透传业务指令”上报的数据指令或中控相关的操作指令也会以本指令发往浏览器。
 ```
 {
     "cmd": "s2c_raw", 
@@ -225,7 +228,10 @@ ws://<m2m_host>:8080/ws/app/v1
 ```
 {
     "cmd": "s2c_invalid_msg", 
-    "data": <str> ​(描述文本)
+    "data": 
+    {
+        "error_code": <int> ​(错误码)
+        "msg": <str> ​(描述文本)
+    }
 }
-
 ```
