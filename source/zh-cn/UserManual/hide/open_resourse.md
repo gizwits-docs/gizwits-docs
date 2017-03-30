@@ -29,21 +29,26 @@ title:  开发文档
 # APP开发
 机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能。
 
--  1 智能硬件APP代码自动生成
+## 1 智能硬件APP代码自动生成
    - [APP代码自动生成 开发指南](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)
--  2 Echo控制
+## 2 Echo控制
    - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
    - [使用Echo音箱控制GoKit2](http://docs.gizwits.com/zh-cn/deviceDev/Gokit2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html#使用Echo音箱控制GoKit2)
-- 3 微信开发
+## 3 微信开发
    - [了解微信应用开发](http://docs.gizwits.com/zh-cn/WechatDev/%E4%BA%86%E8%A7%A3%E5%BE%AE%E4%BF%A1%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html)
    - [微信开发教程](http://docs.gizwits.com/zh-cn/WechatDev/WeChatDev.html)
-- 4 SDK 接入
+## 4 SDK 接入
+
+使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
    - [安卓SDK接入](/zh-cn/AppDev/AndroidSDKA2.html)
    - [IOS SDK接入](/zh-cn/AppDev/iOSSDKA2.html)
    - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
    - [SDK数据透传方法解析](http://docs.gizwits.com/zh-cn/AppDev/SDK%E6%95%B0%E6%8D%AE%E9%80%8F%E4%BC%A0%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90.html)
-   - 使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略
-- 5 APP 开源框架
+   
+## 5 APP 开源框架
+
+APP开发者可以在框架上实现具体产品的控制页面就可以生成一个完整的APP。
+
    - [iOS开源框架使用指南（含源码)](http://docs.gizwits.com/zh-cn/AppDev/iosframe.html)
    - [iOS App消息推送集成](http://docs.gizwits.com/zh-cn/AppDev/iOS%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
    - [iOS App集成第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
@@ -51,7 +56,7 @@ title:  开发文档
    - [Android App消息推送](http://docs.gizwits.com/zh-cn/AppDev/Android%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
    - [Android App集成第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
    - [开源框架视频教程](http://docs.gizwits.com/zh-cn/AppDev/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B.html)
-   - APP开发者可以在框架上实现具体产品的控制页面就可以生成一个完整的APP。
+  
 
 
 # 设备开发（硬件接入）
@@ -71,8 +76,7 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 ## 2 MCU 代码自动生成
 
 使用MCU代码自动生成工具，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。支持STM32（多型号）、Arduino uno、ESP8266 SOC方案的代码自动生成。
-
-  - [MCU代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
+  - [MCU代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
   - [DEV SDK Common版移植说明（通用平台）](http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html)
 
   
