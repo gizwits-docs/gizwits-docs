@@ -174,7 +174,7 @@ Boolean isOnline = OpenApi.getDeviceOnlineStatus(wechatOpenId, gizwitsAppId, giz
 | ------------- |:-------------:|    -------------    |  
   |  wechatOpenId	  |  String	  |  微信中的OpenId，也就是机智云中注册的匿名用户
   |  gizwitsAppId	  |  String	  |  机智云产品所绑定的APP的id
-  |  gizwitsDid	  |  String	  |  机智云中的设备ID，对应Mac，设备重置时会重新注册
+  |  gizwitsDid	  |  String	  |  机智云中的设备ID，设备重置时会重新注册
 
 # 代码样例
 
