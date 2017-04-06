@@ -23,6 +23,7 @@ title:  开发文档
 - [设备如何快速接入](/zh-cn/quickstart/设备快速接入.html)
 - [设备快速接入机智云]( http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html)
 - [SOC快速入门](http://docs.gizwits.com/zh-cn/deviceDev/UseSOC.html)
+
 硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统，可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。
 产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
 目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫LPB100](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[乐鑫8266](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[汉枫LPT120](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)、高通4004 、RealTek 8711AM 、[庆科3162](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[广和通G510](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)等。
