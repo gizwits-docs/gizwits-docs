@@ -690,7 +690,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 【示例代码】
 
 ```
-// 匿名转手机用户
+// 匿名转普通用户
 GizWifiSDK.sharedInstance().setListener(mListener);
 GizWifiSDK.sharedInstance().transAnonymousUser("your_token", "your_user_name", "your_password", null, GizUserAccountType.GizUserNormal);
 
