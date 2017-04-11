@@ -116,7 +116,9 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
   - 更新信息
      1. 第一次对外发布，版本号04020010； 
      2. 配置入网支持softAP、AirKiss、SmartLink三种配置方式； 
-     3. 支持WiFi OTA； 4.支持大小循环控制； 5.支持云端掉线重连； 
+     3. 支持WiFi OTA； 
+     4.支持大小循环控制； 
+     5.支持云端掉线重连； 
      4. 支持路由掉线重连； 
      5. 暂不支持MCU OTA； 
      6. 暂不支持MCU 大数据上传
@@ -182,7 +184,8 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 ## GAgent for QCA4004 
 - [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/GAgent%2FGAgent_00QC4004_04020007_15120914_UART.bin)
 - 发布时间：2015.12.16 11:13
-- 更新信息：版本号04020007
+- 更新信息
+   1. 版本号04020007
    1. SmartConfig配置支持（不支持中文SSID）。  
    2. 优化DNS解析定时器。  
    3. 优化云端MQTT心跳策略。  
@@ -191,20 +194,23 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 GAgent for RealTek 8711AM 
 - [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/GAgent%2FGAgent_1DRTL001_04020001_15120910_UART.bin)
 - 发布时间：2015.12.16 11:16 
-- 更新信息： 版本号04020001
+- 更新信息
+   1. 版本号04020001
    1. Simple config配置优化，提高配置成功率。
 
 
 GAgent for 联盛德 TLN13SP01
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_1H010001_04020010.bin)
 - 发布时间：2017.2.21 14:36 
-- 更新信息：版本号04020010 
+- 更新信息
+   1. 版本号04020010 
    1. 首次发布，支持接入机智云
 
 GAgent for 锐凌微 TinyCon3350-M26
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_0GRLWM26_04020018_2017022011.bin)
 - 发布时间：2017.3.29 11:09  
-- 更新信息：版本号04020018 
+- 更新信息
+   1. 版本号04020018 
    1. 首次发布，支持接入机智云
 
 # GoKit MCU示例工程
@@ -218,33 +224,35 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000003_2016120711.zip)
 - 发布时间：2016.12.01 19:46 
 - 更新信息
-       1. 更新GAgent库为04020320版本(对应ESP8266固件版本号为04020020)  
-       2. 增加产测支持(短按Key1进入产测模式)  
-       3. 增加获取时间API  
-       5. OTA硬件版本号为00ESP826，软件版本号为040203xx 
-       6. 其他优化 
-- **旧版本下载**
-   1. 版本号: V03000002  / 更新时间: 2016.7.23 18:03  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000002_2016071817.zip)
-     - 更新信息:  对应gagent版本号为04020013
+   1. 更新GAgent库为04020320版本(对应ESP8266固件版本号为04020020)  
+   2. 增加产测支持(短按Key1进入产测模式)  
+   3. 增加获取时间API  
+   5. OTA硬件版本号为00ESP826，软件版本号为040203xx 
+   6. 其他优化 
+
+** 旧版本下载 **
+- 版本号: V03000002  / 更新时间: 2016.7.23 18:03  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000002_2016071817.zip)
+   - 更新信息:  
+     - 对应gagent版本号为04020013
 
 ## GoKit 2/3 STM32
 微信宠物屋 for GoKit 2/3 STM32 V03010101
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010101_2016120118.zip)
 - 发布时间：2016.12.01 19:10
 - 更新信息
-       1. 增加产测支持(短按Key1进入产测模式)  
-       2. 增加获取时间API  
-       3. 其他优化
+   1. 增加产测支持(短按Key1进入产测模式)  
+   2. 增加获取时间API  
+   3. 其他优化
 
-- **旧版本下载**
-   - 版本号: V03010100  / 更新时间: 2016.7.19 15:58  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010100_2016071910.zip)
-     - 更新信息:  
-       1. 采用新的源码框架，封装协议处理，简化API，数据点转换为对应事件处理。 
-       2. 去掉智能宠物屋product key，需用户添加自定义产品product key。
+**旧版本下载**
+- 版本号: V03010100  / 更新时间: 2016.7.19 15:58  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010100_2016071910.zip)
+   - 更新信息:  
+     1. 采用新的源码框架，封装协议处理，简化API，数据点转换为对应事件处理。 
+     2. 去掉智能宠物屋product key，需用户添加自定义产品product key。
 
-   - 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
-     - 更新信息:  
-       1. v2.3.2 1、修复STV2.1底板温湿度不规则报0的问题；
+- 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
+   - 更新信息:  
+     1. v2.3.2 1、修复STV2.1底板温湿度不规则报0的问题；
 
 
 ## GoKit 2 Arduino
@@ -252,9 +260,9 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_arduino_V2.3.1.zip)
 - 发布时间：2016.1.04 12:19
 - 更新信息
-       1. V2.3.1 
-       2. 修改进入AirLink模式时，RGB灯为绿色. 
-       3. 取消key1键的RGB灯指示.
+   1. V2.3.1 
+   2. 修改进入AirLink模式时，RGB灯为绿色. 
+   3. 取消key1键的RGB灯指示.
 
 
 ## GoKit 1.0
@@ -275,33 +283,34 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000003_2016120711.zip)
 - 发布时间：2016.12.01 19:46 
 - 更新信息
-       1. 更新GAgent库为04020320版本(对应ESP8266固件版本号为04020020)  
-       2. 增加产测支持(短按Key1进入产测模式)  
-       3. 增加获取时间API  
-       5. OTA硬件版本号为00ESP826，软件版本号为040203xx 
-       6. 其他优化 
-- **旧版本下载**
-   1. 版本号: V03000002  / 更新时间: 2016.7.23 18:03  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000002_2016071817.zip)
-     - 更新信息:  对应gagent版本号为04020013
+   1. 更新GAgent库为04020320版本(对应ESP8266固件版本号为04020020)  
+   2. 增加产测支持(短按Key1进入产测模式)  
+   3. 增加获取时间API  
+   5. OTA硬件版本号为00ESP826，软件版本号为040203xx 
+   6. 其他优化 
+** 旧版本下载 **
+- 版本号: V03000002  / 更新时间: 2016.7.23 18:03  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000002_2016071817.zip)
+- 更新信息:  对应gagent版本号为04020013
 
 ## GoKit 2/3 STM32
 微信宠物屋 for GoKit 2/3 STM32 V03010101
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010101_2016120118.zip)
 - 发布时间：2016.12.01 19:10
 - 更新信息
-       1. 增加产测支持(短按Key1进入产测模式)  
-       1. 增加获取时间API  
-       1. 其他优化
+   1. 增加产测支持(短按Key1进入产测模式)  
+   1. 增加获取时间API  
+   1. 其他优化
 
-- **旧版本下载**
-   1. 版本号: V03010100  / 更新时间: 2016.7.19 15:58  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010100_2016071910.zip)
-     - 更新信息:  
-       1. 采用新的源码框架，封装协议处理，简化API，数据点转换为对应事件处理。 
-       1. 去掉智能宠物屋product key，需用户添加自定义产品product key。
+**旧版本下载**
+- 版本号: V03010100  / 更新时间: 2016.7.19 15:58  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010100_2016071910.zip)
+   - 更新信息:  
+     1. 采用新的源码框架，封装协议处理，简化API，数据点转换为对应事件处理。 
+     1. 去掉智能宠物屋product key，需用户添加自定义产品product key。
 
-   1. 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
-     - 更新信息:  
-       1. v2.3.2 1、修复STV2.1底板温湿度不规则报0的问题；
+- 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
+     - 更新信息:  
+       1. 版本号v2.3.2 1
+       2. 修复STV2.1底板温湿度不规则报0的问题；
 
 
 ## GoKit 2 Arduino
@@ -334,21 +343,22 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [框架下载>>](https://git.oschina.net/dantang/GizOpenSource_AppKit_iOS)
 - 发布时间：2016.11.07 16:01    
 - 更新信息 
-       1. 包括智能硬件app通用的5个模块，分别是：初始化模块、用户模块、配置模块、设备列表模块、控制模块。
+    1. 包括智能硬件app通用的5个模块，分别是：初始化模块、用户模块、配置模块、设备列表模块、控制模块。
 
 ** 开源框架 for Android V2.5.0 **
 - [框架下载>>](https://git.oschina.net/dantang/GizOpenSource_AppKit_Android)
 - 发布时间：2017.3.17 18:37      
 - 更新信息 
-     - 版本号：2.5.0 
-     - 除Eclipse外，还提供Android Studio版本： https://git.oschina.net/dantang/GOpenSource_AppKit_Android_AS  
-     - 在使用时请注意以下问题：
-          - 为避免工程加载出错，工程绝对路径不要太长； 
-          - JDK请使用1.7以上版本； 
-          - 此AS工程需要使用最新AS环境编译，如果AS版本过低将会遇到编译错误。开发者请对照以下说明，修改为符合自己编译环境的版本： 
-1. 在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip 
-2. 在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion '25.0.2' targetSdkVersion 25 compile 'com.android.support:appcompat-v7:25.1.0' 
-3. 在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath 'com.android.tools.build:gradle:2.5.0' 此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。  特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。
+   - 版本号：2.5.0 
+   - 除Eclipse外，还提供Android Studio版本： https://git.oschina.net/dantang/GOpenSource_AppKit_Android_AS  
+   - 在使用时请注意以下问题：
+      - 为避免工程加载出错，工程绝对路径不要太长； 
+      - JDK请使用1.7以上版本； 
+      - 此AS工程需要使用最新AS环境编译，如果AS版本过低将会遇到编译错误。开发者请对照以下说明，修改为符合自己编译环境的版本： 
+        1. 在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip 
+        2. 在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion '25.0.2' targetSdkVersion 25 compile 'com.android.support:appcompat-v7:25.1.0' 
+        3. 在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath 'com.android.tools.build:gradle:2.5.0' 此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。
+	4.举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。 特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。
 
 
 ## 设备接入SDK
@@ -364,72 +374,70 @@ GAgent for 锐凌微 TinyCon3350-M26
 - SDK下载   http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.1.zip
 - 发布时间：2017.2.22 19:32
 - 更新信息
-     - 版本号：2.06.06.1  
-     - 更新日志： 
-          - 优化手机流量消耗 
-          - 纠正数据点浮点数值精度损失 
-          - 延长云端访问的超时时间，提高访问成功率  
-          - 其他优化
--  ** 旧版本下载**
-   1. 版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.zip)
-     - 更新信息
-       - 版本号：2.06.06  
-       - 更新日志： 
-         - 支持新的设备定时任务功能 
-         - 新增设备分享功能
-         - 支持变长数据点控制和上报 
-         - 支持bitcode开启  
-         - 优化设备时区的精确校准
-         - 优化App在后台回前台时的设备搜索速度
+   - 版本号：2.06.06.1  
+   - 更新日志： 
+     - 优化手机流量消耗 
+     - 纠正数据点浮点数值精度损失 
+     - 延长云端访问的超时时间，提高访问成功率  
+     - 其他优化
+** 旧版本下载 **
+- 版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.zip)
+  - 更新信息
+    - 版本号：2.06.06  
+    - 更新日志： 
+       - 支持新的设备定时任务功能 
+       - 新增设备分享功能
+       - 支持变长数据点控制和上报 
+       - 支持bitcode开启  
+       - 优化设备时区的精确校准
+       - 优化App在后台回前台时的设备搜索速度
 
-   1. 版本号: 2.05.05.21618  /  更新时间: 2016.12.16 19:51  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.21618.zip)
-     - 更新信息
-       - 版本号：2.05.05.21618  
-       - 更新日志： 	
-         - 支持ATS开启 
-         - 优化日志上传 
-         - 保持旧的SDK启动接口功能兼容
+- 版本号: 2.05.05.21618  /  更新时间: 2016.12.16 19:51  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.21618.zip)
+  - 更新信息
+     - 版本号：2.05.05.21618  
+     - 更新日志： 	
+       - 支持ATS开启 
+       - 优化日志上传 
+       - 保持旧的SDK启动接口功能兼容
 
-   1. 版本号: 2.05.05.2916  /   更新时间: 2016.11.30 10:59   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.2916.zip)
-     - 更新信息
-       - 版本号：2.05.05.2916  
-       - 功能更新： 
-          - 支持设备服务域名的自动设置功能 
-          - 支持设备解除订阅后仍可收到设备在线状态变化通知 
-          - 增加私有部署某些功能的兼容  
-       - 接口变更： 
-          - startWithAppId：新增开启设备服务域名自动设置参数 
-          - setDeviceServerInfo：参数mac使用变更。mac传空时可设置当前可设置的所有小循环设备域名 
+- 版本号: 2.05.05.2916  /   更新时间: 2016.11.30 10:59   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.2916.zip)
+  - 更新信息
+    - 版本号：2.05.05.2916  
+    - 功能更新： 
+      - 支持设备服务域名的自动设置功能 
+      - 支持设备解除订阅后仍可收到设备在线状态变化通知 
+      - 增加私有部署某些功能的兼容  
+    - 接口变更： 
+      - startWithAppId：新增开启设备服务域名自动设置参数 
+      - setDeviceServerInfo：参数mac使用变更。mac传空时可设置当前可设置的所有小循环设备域名 
 
-   1. 版本号: 2.05.05  /   更新时间: 2016.11.10 10:50   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.zip)
-     - 更新信息
-       - 版本号：2.05.05  
-       - 功能更新： 
-          - 1、可为设备或者手机App设置机智云统一部署的服务域名 
-          - 2、可为设备更新时区信息 
-          - 3、支持私有云用户切换  
-       - 接口变更： 
-          - 1、getDevicesToSetServerInfo：新增接口。为设备设置域名之前先查看哪些设备支持域名设置
-          - 2、setDeviceServerInfo：新增接口。接口调用时，若不传域名参数，则为指定的设备设置机智云统一部署的服务域名 
-          - 3、startWithAppId：接口参数（cloudServiceInfo）使用变更。若cloudServiceInfo不传参，则为App设置机智云统一部署的服务域名 
-          - 4、新的定时任务接口变更至下个版本推出  
-       - 其他改进和修复： 
-          - 1、优化获取绑定设备列表请求 
+- 版本号: 2.05.05  /   更新时间: 2016.11.10 10:50   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.05.05.zip)
+  - 更新信息
+    - 版本号：2.05.05  
+    - 功能更新： 
+      - 1、可为设备或者手机App设置机智云统一部署的服务域名 
+      - 2、可为设备更新时区信息 
+      - 3、支持私有云用户切换  
+    - 接口变更： 
+      - 1、getDevicesToSetServerInfo：新增接口。为设备设置域名之前先查看哪些设备支持域名设置
+      - 2、setDeviceServerInfo：新增接口。接口调用时，若不传域名参数，则为指定的设备设置机智云统一部署的服务域名 
+      - 3、startWithAppId：接口参数（cloudServiceInfo）使用变更。若cloudServiceInfo不传参，则为App设置机智云统一部署的服务域名 
+      - 4、新的定时任务接口变更至下个版本推出  
+     - 其他改进和修复： 
+      - 1、优化获取绑定设备列表请求 
 
-   1. 版本号: 2.04.04  /  更新时间: 2016.10.26 14:12   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.04.04.zip)
-     - 更新信息
-       - 版本号：2.04.04  
-       - 发布日志： 
-          - 1、发布了SDK动态库，便于排查崩溃堆栈，准确定位崩溃原因。发布包中同时发布了SDK的动态库和静态库，发布包目录结构有变更，请开发者注意阅读发布包中的readme文档，注意使用正确的库文件进行开发。 
-          - 2、为满足用户的定时任务需求，我们将在2.05.05版本中提供新接口，现有的定时任务接口已不推荐使用了 
-          - 3、SDK启动接口有新增参数的变更，开发者在启动SDK时可以设置域名、指定产品过滤。原有启动接口保持兼容 
-          - 4、设备配置接口的模组类型参数，增加GizGAgentOther枚举值，允许开发者使用自己的配置库            - 5、改进SDK遇到运行错误时的自动恢复能力
-          - 6、提高SDK域名解析成功率 
-          - 7、优化云端访问请求超时时间，20秒无应答则请求超时
-          - 8、提高手机与设备之间的连接稳定性和可靠性 
-          - 9、改善设备Softap配置发包的成功率
-
-
+- 版本号: 2.04.04  /  更新时间: 2016.10.26 14:12   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.04.04.zip)
+   - 更新信息
+      - 版本号：2.04.04  
+      - 发布日志： 
+         - 1、发布了SDK动态库，便于排查崩溃堆栈，准确定位崩溃原因。发布包中同时发布了SDK的动态库和静态库，发布包目录结构有变更，请开发者注意阅读发布包中的readme文档，注意使用正确的库文件进行开发。 
+         - 2、为满足用户的定时任务需求，我们将在2.05.05版本中提供新接口，现有的定时任务接口已不推荐使用了 
+         - 3、SDK启动接口有新增参数的变更，开发者在启动SDK时可以设置域名、指定产品过滤。原有启动接口保持兼容 
+         - 4、设备配置接口的模组类型参数，增加GizGAgentOther枚举值，允许开发者使用自己的配置库            - 5、改进SDK遇到运行错误时的自动恢复能力
+         - 6、提高SDK域名解析成功率 
+         - 7、优化云端访问请求超时时间，20秒无应答则请求超时
+         - 8、提高手机与设备之间的连接稳定性和可靠性 
+         - 9、改善设备Softap配置发包的成功率
 
 
 #### Wi-Fi/移动通信产品SDK for Android 2.06.06.1 
@@ -437,22 +445,22 @@ GAgent for 锐凌微 TinyCon3350-M26
 - SDK下载   http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.06.06.1.zip
 - 发布时间：2017.2.22 19:32
 - 更新信息
-       - 版本号：2.06.06.1  
-       - 更新日志： 
-          - 优化手机流量消耗 
-          - 纠正数据点浮点数值精度损失 
-          - 延长云端访问的超时时间，提高访问成功率  
-          - 其他优化
+   - 版本号：2.06.06.1  
+     - 更新日志： 
+       - 优化手机流量消耗 
+       - 纠正数据点浮点数值精度损失 
+       - 延长云端访问的超时时间，提高访问成功率  
+       - 其他优化
 ** 旧版本下载**
-   1. 版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.06.06.zip)
-     - 更新信息
-       - 版本号：2.06.06  
-       - 更新日志： 
-         - 支持新的设备定时任务功能 
-         - 新增设备分享功能
-         - 支持变长数据点控制和上报 
-         - 优化设备时区的精确校准
-         - 优化App在后台回前台时的设备搜索速度
+- 版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.06.06.zip)
+   - 更新信息
+     - 版本号：2.06.06  
+     - 更新日志： 
+       - 支持新的设备定时任务功能 
+       - 新增设备分享功能
+       - 支持变长数据点控制和上报 
+       - 优化设备时区的精确校准
+       - 优化App在后台回前台时的设备搜索速度
  
    1. 版本号: 2.05.05.21618  /  更新时间: 2016.12.16 19:51  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.05.05.21618.zip)
      - 更新信息
