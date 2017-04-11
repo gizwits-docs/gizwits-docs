@@ -21,6 +21,7 @@ WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼�
 
 ### GoKit在系统中的位置
 GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。
+
 ![输入图片说明](https://static.oschina.net/uploads/img/201704/07182036_VDft.png "在这里输入图片标题")
 
 
