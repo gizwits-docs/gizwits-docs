@@ -114,7 +114,7 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 
 # STM32开发应用
 
-
+常见案例：
 - [STM32 NucleoL496ZG智能灯案例](http://club.gizwits.com/thread-5426-1-1.html)
 - [STM32L432 Nucleo-32案例-3分钟打造手机APP远程空气质量监测应用](http://club.gizwits.com/thread-3876-1-1.html)
 - [史上最详细UCOS-II移植教程，基于Gokit STM32F103C8T6](http://club.gizwits.com/thread-5355-1-1.html)
@@ -122,7 +122,7 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 - [用 ESP8266 做一个网络插座 (SOC方案)](http://club.gizwits.com/thread-4519-1-1.html)
 - [ 基于ESP8266 SOC 车库照明系统](http://club.gizwits.com/thread-4703-1-1.html)
 
-# 开源项目
+## 开源项目
 - [智能家居应用模型One](http://gizwits.com/article/320/)
 - [智能药盒](http://club.gizwits.com/thread-2685-1-1.html)	
 - [智能婴儿摇篮](http://club.gizwits.com/thread-2794-1-1.html)
@@ -136,7 +136,7 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 - [智能仓鼠管家（语音版）](http://club.gizwits.com/thread-3016-1-1.html)
 - [无线工业粉尘监测仪](http://club.gizwits.com/thread-3242-1-1.html)
 
-# 商用项目
+## 商用项目
 
 部分商用项目：
 
