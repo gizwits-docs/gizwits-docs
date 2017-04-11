@@ -26,7 +26,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
    3. 优化与MCU握手重发的串口数据包错误的问题 
    4. 特定情况下OTA升级优化
 
-** 旧版本下载 **
+**旧版本下载**
 - 版本号: 04020021   /  更新时间: 2016.12.28 18:37   /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00ESP826_04020021_16122717.tar) 
    - 更新信息
       1. 修改版本号为04020021 
@@ -191,7 +191,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
    3. 优化云端MQTT心跳策略。  
    4. 删除周期性的日志输出。
 
-GAgent for RealTek 8711AM 
+## GAgent for RealTek 8711AM 
 - [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/GAgent%2FGAgent_1DRTL001_04020001_15120910_UART.bin)
 - 发布时间：2015.12.16 11:16 
 - 更新信息
@@ -199,14 +199,14 @@ GAgent for RealTek 8711AM
    1. Simple config配置优化，提高配置成功率。
 
 
-GAgent for 联盛德 TLN13SP01
+## GAgent for 联盛德 TLN13SP01
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_1H010001_04020010.bin)
 - 发布时间：2017.2.21 14:36 
 - 更新信息
    1. 版本号04020010 
    1. 首次发布，支持接入机智云
 
-GAgent for 锐凌微 TinyCon3350-M26
+## GAgent for 锐凌微 TinyCon3350-M26
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_0GRLWM26_04020018_2017022011.bin)
 - 发布时间：2017.3.29 11:09  
 - 更新信息
@@ -288,7 +288,8 @@ GAgent for 锐凌微 TinyCon3350-M26
    3. 增加获取时间API  
    5. OTA硬件版本号为00ESP826，软件版本号为040203xx 
    6. 其他优化 
-** 旧版本下载 **
+
+**旧版本下载**
 - 版本号: V03000002  / 更新时间: 2016.7.23 18:03  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000002_2016071817.zip)
 - 更新信息:  对应gagent版本号为04020013
 
@@ -308,9 +309,9 @@ GAgent for 锐凌微 TinyCon3350-M26
      1. 去掉智能宠物屋product key，需用户添加自定义产品product key。
 
 - 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
-     - 更新信息:  
-       1. 版本号v2.3.2 1
-       2. 修复STV2.1底板温湿度不规则报0的问题；
+   - 更新信息:  
+     1. 版本号v2.3.2 1
+     2. 修复STV2.1底板温湿度不规则报0的问题；
 
 
 ## GoKit 2 Arduino
@@ -318,9 +319,9 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_arduino_V2.3.1.zip)
 - 发布时间：2016.1.04 12:19
 - 更新信息
-       1. V2.3.1 
-       1. 修改进入AirLink模式时，RGB灯为绿色. 
-       1. 取消key1键的RGB灯指示.
+   1. 版本号 V2.3.1 
+   1. 修改进入AirLink模式时，RGB灯为绿色. 
+   1. 取消key1键的RGB灯指示.
 
 
 ## GoKit 1.0
@@ -355,10 +356,10 @@ GAgent for 锐凌微 TinyCon3350-M26
       - 为避免工程加载出错，工程绝对路径不要太长； 
       - JDK请使用1.7以上版本； 
       - 此AS工程需要使用最新AS环境编译，如果AS版本过低将会遇到编译错误。开发者请对照以下说明，修改为符合自己编译环境的版本： 
-        1. 在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip 
-        2. 在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion '25.0.2' targetSdkVersion 25 compile 'com.android.support:appcompat-v7:25.1.0' 
-        3. 在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath 'com.android.tools.build:gradle:2.5.0' 此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。
-	4.举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。 特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。
+        - 1\在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip 
+        - 2\在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion '25.0.2' targetSdkVersion 25 compile 'com.android.support:appcompat-v7:25.1.0' 
+        - 3\在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath 'com.android.tools.build:gradle:2.5.0' 此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。
+        - 4\举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。 特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。
 
 
 ## 设备接入SDK
@@ -380,7 +381,8 @@ GAgent for 锐凌微 TinyCon3350-M26
      - 纠正数据点浮点数值精度损失 
      - 延长云端访问的超时时间，提高访问成功率  
      - 其他优化
-** 旧版本下载 **
+
+**旧版本下载**
 - 版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.zip)
   - 更新信息
     - 版本号：2.06.06  
@@ -446,12 +448,12 @@ GAgent for 锐凌微 TinyCon3350-M26
 - 发布时间：2017.2.22 19:32
 - 更新信息
    - 版本号：2.06.06.1  
-     - 更新日志： 
-       - 优化手机流量消耗 
-       - 纠正数据点浮点数值精度损失 
-       - 延长云端访问的超时时间，提高访问成功率  
-       - 其他优化
-** 旧版本下载**
+   - 更新日志： 
+     - 优化手机流量消耗 
+     - 纠正数据点浮点数值精度损失 
+     - 延长云端访问的超时时间，提高访问成功率  
+     - 其他优化
+**旧版本下载**
 - 版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.06.06.zip)
    - 更新信息
      - 版本号：2.06.06  
@@ -462,52 +464,53 @@ GAgent for 锐凌微 TinyCon3350-M26
        - 优化设备时区的精确校准
        - 优化App在后台回前台时的设备搜索速度
  
-   1. 版本号: 2.05.05.21618  /  更新时间: 2016.12.16 19:51  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.05.05.21618.zip)
-     - 更新信息
-       - 版本号：2.05.05.21618  
-       - 更新日志： 	
-         - 支持ATS开启 
-         - 优化日志上传 
-         - 保持旧的SDK启动接口功能兼容
+- 版本号: 2.05.05.21618  /  更新时间: 2016.12.16 19:51  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.05.05.21618.zip)
+   - 更新信息
+     - 版本号：2.05.05.21618  
+     - 更新日志： 	
+       - 支持ATS开启 
+       - 优化日志上传 
+       - 保持旧的SDK启动接口功能兼容
 
-   1. 版本号: 2.05.05.2916  /   更新时间: 2016.11.30 10:59   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.05.05.2916.zip)
-     - 更新信息
-       - 版本号：2.05.05.2916  
-       - 功能更新： 
-          - 支持设备服务域名的自动设置功能 
-          - 支持设备解除订阅后仍可收到设备在线状态变化通知 
-          - 增加私有部署某些功能的兼容  
-       - 接口变更： 
-          - startWithAppId：新增开启设备服务域名自动设置参数 
-          - setDeviceServerInfo：参数mac使用变更。mac传空时可设置当前可设置的所有小循环设备域名 
+- 版本号: 2.05.05.2916  /   更新时间: 2016.11.30 10:59   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.05.05.2916.zip)
+   - 更新信息
+     - 版本号：2.05.05.2916  
+     - 功能更新： 
+       - 支持设备服务域名的自动设置功能 
+       - 支持设备解除订阅后仍可收到设备在线状态变化通知 
+       - 增加私有部署某些功能的兼容  
+     - 接口变更： 
+       - startWithAppId：新增开启设备服务域名自动设置参数 
+       - setDeviceServerInfo：参数mac使用变更。mac传空时可设置当前可设置的所有小循环设备域名 
 
-   1. 版本号: 2.05.05  /   更新时间: 2016.11.10 10:50   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.05.05.zip)
-     - 更新信息
-       - 版本号：2.05.05  
-       - 功能更新： 
-          - 1、可为设备或者手机App设置机智云统一部署的服务域名 
-          - 2、可为设备更新时区信息 
-          - 3、支持私有云用户切换  
-       - 接口变更： 
-          - 1、getDevicesToSetServerInfo：新增接口。为设备设置域名之前先查看哪些设备支持域名设置
-          - 2、setDeviceServerInfo：新增接口。接口调用时，若不传域名参数，则为指定的设备设置机智云统一部署的服务域名 
-          - 3、startWithAppId：接口参数（cloudServiceInfo）使用变更。若cloudServiceInfo不传参，则为App设置机智云统一部署的服务域名 
-          - 4、新的定时任务接口变更至下个版本推出  
-       - 其他改进和修复： 
-          - 1、优化获取绑定设备列表请求 
+- 版本号: 2.05.05  /   更新时间: 2016.11.10 10:50   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.05.05.zip)
+   - 更新信息
+     - 版本号：2.05.05  
+     - 功能更新： 
+       - 1、可为设备或者手机App设置机智云统一部署的服务域名 
+       - 2、可为设备更新时区信息 
+       - 3、支持私有云用户切换  
+     - 接口变更： 
+       - 1、getDevicesToSetServerInfo：新增接口。为设备设置域名之前先查看哪些设备支持域名设置
+       - 2、setDeviceServerInfo：新增接口。接口调用时，若不传域名参数，则为指定的设备设置机智云统一部署的服务域名 
+       - 3、startWithAppId：接口参数（cloudServiceInfo）使用变更。若cloudServiceInfo不传参，则为App设置机智云统一部署的服务域名 
+       - 4、新的定时任务接口变更至下个版本推出  
+     - 其他改进和修复： 
+       - 1、优化获取绑定设备列表请求 
 
-   1. 版本号: 2.04.04  /  更新时间: 2016.10.26 14:12   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.04.04.zip)
-     - 更新信息
-       - 版本号：2.04.04  
-       - 发布日志： 
-          - 1、发布了SDK动态库，便于排查崩溃堆栈，准确定位崩溃原因。发布包中同时发布了SDK的动态库和静态库，发布包目录结构有变更，请开发者注意阅读发布包中的readme文档，注意使用正确的库文件进行开发。 
-          - 2、为满足用户的定时任务需求，我们将在2.05.05版本中提供新接口，现有的定时任务接口已不推荐使用了 
-          - 3、SDK启动接口有新增参数的变更，开发者在启动SDK时可以设置域名、指定产品过滤。原有启动接口保持兼容 
-          - 4、设备配置接口的模组类型参数，增加GizGAgentOther枚举值，允许开发者使用自己的配置库            - 5、改进SDK遇到运行错误时的自动恢复能力
-          - 6、提高SDK域名解析成功率 
-          - 7、优化云端访问请求超时时间，20秒无应答则请求超时
-          - 8、提高手机与设备之间的连接稳定性和可靠性 
-          - 9、改善设备Softap配置发包的成功率
+- 版本号: 2.04.04  /  更新时间: 2016.10.26 14:12   /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.04.04.zip)
+   - 更新信息
+     - 版本号：2.04.04  
+     - 发布日志： 
+       - 1、发布了SDK动态库，便于排查崩溃堆栈，准确定位崩溃原因。发布包中同时发布了SDK的动态库和静态库，发布包目录结构有变更，请开发者注意阅读发布包中的readme文档，注意使用正确的库文件进行开发。 
+       - 2、为满足用户的定时任务需求，我们将在2.05.05版本中提供新接口，现有的定时任务接口已不推荐使用了 
+       - 3、SDK启动接口有新增参数的变更，开发者在启动SDK时可以设置域名、指定产品过滤。原有启动接口保持兼容 
+       - 4、设备配置接口的模组类型参数，增加GizGAgentOther枚举值，允许开发者使用自己的配置库            
+       - 5、改进SDK遇到运行错误时的自动恢复能力
+       - 6、提高SDK域名解析成功率 
+       - 7、优化云端访问请求超时时间，20秒无应答则请求超时
+       - 8、提高手机与设备之间的连接稳定性和可靠性 
+       - 9、改善设备Softap配置发包的成功率
 
 
 
@@ -518,19 +521,19 @@ GAgent for 锐凌微 TinyCon3350-M26
 - SDK下载   http://gizwits.oss.aliyuncs.com/sdk/APICloudModule-1.3.1_2.06.06.1.zip
 - 发布时间：2017.3.07 14:05
 - 更新信息
-       - 版本号：1.3.1  
-       - 更新日志： 
-          - 1、SDK启动接口：startWithAppID，新增自动设置设备域名参数（autoSetDeviceDomain） 
-          - 2、新增接口：setDeviceServerInfo，手动设置设备域名 
-          - 3、新增接口：getDevicesToSetServerInfo，获取可以设置域名的设备
+   - 版本号：1.3.1  
+   - 更新日志： 
+     - 1、SDK启动接口：startWithAppID，新增自动设置设备域名参数（autoSetDeviceDomain） 
+     - 2、新增接口：setDeviceServerInfo，手动设置设备域名 
+     - 3、新增接口：getDevicesToSetServerInfo，获取可以设置域名的设备
 
 #### BT/BLE设备接入SDK for iOS 1.3.1.170103 
 - 集成文档  http://dev.gizwits.com/zh-cn/document/openplatform/i_03_iosblesdk/ 
 - SDK下载   http://gizwits.oss.aliyuncs.com/sdk/GizDataAccess.framework-1.3.1.170103.zip
 - 发布时间：2017.1.05 11:55
 - 更新信息
-       - 版本号： 1.3.1.170103 
-       - 更新日志： （1）支持iOS10 ；（2）支持bitcode
+   - 版本号： 1.3.1.170103 
+   - 更新日志： （1）支持iOS10 ；（2）支持bitcode
 
 #### BT/BLE设备接入SDK for Android 1.1.0.150427  
 - 集成文档  http://dev.gizwits.com/zh-cn/document/openplatform/i_04_androidblesdk/
@@ -569,102 +572,102 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [机智云 App下载>>>]( http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_Release_20170222.ipa)
 - 发布时间：2017.2.22 19:21 
 - 更新信息
-     - 版本号：1.9.1  
-     - 更新日志： 
-         - 1、SDK版本更新为2.06.06.1 
-         - 2、修改一键配置时模组类型选择方式
+   - 版本号：1.9.1  
+   - 更新日志： 
+     - 1、SDK版本更新为2.06.06.1 
+     - 2、修改一键配置时模组类型选择方式
 
 - **旧版本下载**
-    1. 版本号: 1.9.0   /   更新时间: 2017.1.25 16:10   /   [机智云 App下载>>> ](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_Release_20170124.ipa)
-      - 更新日志： 
-          - 版本号：1.9.0  
-          -  1、SDK版本更新为2.06.06 
-          -  2、增加消息中心 
-          -  3、增加个人中心 
-          -  4、支持设备分享 
-          -  5、支持模组商城 
-          -  6、优化设备配置用户体验 
-          -  7、优化设备列表刷新
+- 版本号: 1.9.0   /   更新时间: 2017.1.25 16:10   /   [机智云 App下载>>> ](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_Release_20170124.ipa)
+   - 更新日志： 
+     - 版本号：1.9.0  
+     -  1、SDK版本更新为2.06.06 
+     -  2、增加消息中心 
+     -  3、增加个人中心 
+     -  4、支持设备分享 
+     -  5、支持模组商城 
+     -  6、优化设备配置用户体验 
+     -  7、优化设备列表刷新
 	
-    1. 版本号: 1.8.2  /   更新时间: 2016.12.16 19:44  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_Release_20161216.ipa)
-      - 更新信息
-          - 版本号：1.8.2  
-          - 更新日志： 1、SDK版本更新为2.05.05.21618
+ - 版本号: 1.8.2  /   更新时间: 2016.12.16 19:44  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_Release_20161216.ipa)
+   - 更新信息
+     - 版本号：1.8.2  
+     - 更新日志： 1、SDK版本更新为2.05.05.21618
 
-    1. 版本号: 1.8.1  /   更新时间: 2016.11.30 11:04  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_20161129.ipa)
-      - 更新信息
-          - 版本号：1.8.1  
-          - 更新内容： 1、SDK版本更新为2.05.05.2916 2、修复友盟消息推送问题
+ - 版本号: 1.8.1  /   更新时间: 2016.11.30 11:04  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_20161129.ipa)
+   - 更新信息
+     - 版本号：1.8.1  
+     - 更新内容： 1、SDK版本更新为2.05.05.2916 2、修复友盟消息推送问题
 
-    1. 版本号: 1.8.0  /   更新时间: 2016.11.15 17:08  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_20161115.ipa)
-      - 更新信息
-          - 版本号：1.8.0  
-          -  更新日志：  
-            - 1、SDK版本更新为2.05.05  
-            - 2、增加友盟事件统计功能  
-            - 3、优化独立部署页面用户体验
+  - 版本号: 1.8.0  /   更新时间: 2016.11.15 17:08  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_20161115.ipa)
+   - 更新信息
+     - 版本号：1.8.0  
+     -  更新日志：  
+     - 1、SDK版本更新为2.05.05  
+     - 2、增加友盟事件统计功能  
+     - 3、优化独立部署页面用户体验
 
-    1. 版本号: 1.7.0  /   更新时间: 2016.10.20 09:36  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_20161019.ipa)
-      - 更新信息
-          - 版本号：1.7.0  
-          - 发布日志： 
-            - 1、SDK版本更新为2.04.04 
-            - 2、修复某些情况下不会自动登录的问题 
-            - 3、修复设备断开时，断开提示不消失的问题 
-            - 4、改进设备配置退出时的用户体验 
-            - 5、改进独立部署设置的用户交互 
-            - 6、设备一键配置方式增加了“其他”选项，便于开发者调试设备的配置上线功能 
-            - 7、适配iOS10系统。iOS从这个版本开始，将只支持iOS8.0及以上系统。支持iOS7.0系统的版本仍然可以下载，但不再维护。
+ - 版本号: 1.7.0  /   更新时间: 2016.10.20 09:36  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_20161019.ipa)
+   - 更新信息
+     - 版本号：1.7.0  
+     - 发布日志： 
+       - 1、SDK版本更新为2.04.04 
+       - 2、修复某些情况下不会自动登录的问题 
+       - 3、修复设备断开时，断开提示不消失的问题 
+       - 4、改进设备配置退出时的用户体验 
+       - 5、改进独立部署设置的用户交互 
+       - 6、设备一键配置方式增加了“其他”选项，便于开发者调试设备的配置上线功能 
+       - 7、适配iOS10系统。iOS从这个版本开始，将只支持iOS8.0及以上系统。支持iOS7.0系统的版本仍然可以下载，但不再维护。
 
 
 ####  机智云Wi-Fi/移动通信产品调试App for Android 1.9.1
 - [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20170222.apk)
 - 发布时间：2017.2.22 19:21 
 - 更新信息
-     - 版本号：1.9.1  
-     - 更新日志： 
-         - 1、SDK版本更新为2.06.06.1 
-         - 2、修改一键配置时模组类型选择方式
-- **旧版本下载**
-    1. 版本号: 1.9.0   /   更新时间: 2017.1.25 16:10   /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20170125.apk) 
-      - 更新日志： 
-          - 版本号：1.9.0  
-          -  1、SDK版本更新为2.06.06 
-          -  2、增加消息中心 
-          -  3、增加个人中心 
-          -  4、支持设备分享 
-          -  5、支持模组商城 
-          -  6、优化设备配置用户体验 
-          -  7、优化设备列表刷新
+   - 版本号：1.9.1  
+   - 更新日志： 
+     - 1、SDK版本更新为2.06.06.1 
+     - 2、修改一键配置时模组类型选择方式
+
+**旧版本下载**
+- 版本号: 1.9.0   /   更新时间: 2017.1.25 16:10   /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20170125.apk) 
+   - 更新日志： 
+     - 版本号：1.9.0  
+     - 1、SDK版本更新为2.06.06 
+     - 2、增加消息中心 
+     - 3、增加个人中心 
+     - 4、支持设备分享 
+     - 5、支持模组商城 
+     - 6、优化设备配置用户体验 
+     - 7、优化设备列表刷新
 	
-    1. 版本号: 1.8.2  /   更新时间: 2016.12.16 19:44  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161216.apk)
-      - 更新信息
-          - 版本号：1.8.2  
-          - 更新日志： 1、SDK版本更新为2.05.05.21618
+- 版本号: 1.8.2  /   更新时间: 2016.12.16 19:44  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161216.apk)
+   - 更新信息
+     - 版本号：1.8.2  
+     - 更新日志： 1、SDK版本更新为2.05.05.21618
 
-    1. 版本号: 1.8.1  /   更新时间: 2016.11.30 11:04  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161129.apk)
-      - 更新信息
-          - 版本号：1.8.1  
-          - 更新内容： 1、SDK版本更新为2.05.05.2916 2、修复友盟消息推送问题
+- 版本号: 1.8.1  /   更新时间: 2016.11.30 11:04  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161129.apk)
+   - 更新信息
+     - 版本号：1.8.1  
+     - 更新内容： 1、SDK版本更新为2.05.05.2916 2、修复友盟消息推送问题
 
-    1. 版本号: 1.8.0  /   更新时间: 2016.11.15 17:08  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161115.apk)
-      - 更新信息
-          - 版本号：1.8.0  
-          -  更新日志：  
-            - 1、SDK版本更新为2.05.05  
-            - 2、增加友盟事件统计功能  
-            - 3、优化独立部署页面用户体验
+- 版本号: 1.8.0  /   更新时间: 2016.11.15 17:08  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161115.apk)
+   - 更新信息
+     - 版本号：1.8.0  
+     - 更新日志：  
+       - 1、SDK版本更新为2.05.05  
+       - 3、优化独立部署页面用户体验
 
-    1. 版本号: 1.7.0  /   更新时间: 2016.10.20 09:36  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161019.apk)
-      - 更新信息
-          - 版本号：1.7.0  
-          - 发布日志： 
-            - 1、SDK版本更新为2.04.04 
-            - 2、修复部分Android手机（如：三星）获取热点会崩溃 
-            - 3、修复6.0系统的机型上，softap设备热点连不上的问题 
-            - 4、修复某些特定情况下进入设备列表页面转圈不消失的问题 
-            - 5、改进独立部署设置的用户交互 
-            - 6、设备一键配置方式增加了“Other”选项，便于开发者调试设备的配置上线功能
+- 版本号: 1.7.0  /   更新时间: 2016.10.20 09:36  /   [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20161019.apk)
+   - 更新信息
+     - 版本号：1.7.0  
+     - 发布日志： 
+       - 1、SDK版本更新为2.04.04 
+       - 2、修复部分Android手机（如：三星）获取热点会崩溃 
+       - 3、修复6.0系统的机型上，softap设备热点连不上的问题 
+       - 4、修复某些特定情况下进入设备列表页面转圈不消失的问题 
+       - 5、改进独立部署设置的用户交互 
+       - 6、设备一键配置方式增加了“Other”选项，便于开发者调试设备的配置上线功能
 
 ## 产测工具
 
@@ -676,18 +679,18 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [App下载>>>](http://gizwits.oss.aliyuncs.com/phone_app/V4ProductionTesting_V2.1.apk)
 - 发布时间：2016.12.28 11:57
 - 更新信息
-          - 1、增加了只读数据点产测功能 
-          - 2、其他优化  
-          - 说明：只读数据点如果是数值型的，上报的数据如果在0.9-1.1倍之间也认为测试成功。比如自读数据产测设定值为100，那么设备上报数据在90-110之间都认为成功。
-- ** 旧版本下载**
-    1. 版本号: 2.0  /   更新时间: 2016.10.25 16:09   /   [App 下载](http://gizwits.oss.aliyuncs.com/phone_app/V4ProductionTesting_V2.0.apk)
-- 更新信息
-          - V2.0  
-          - 1、更新界面UI，改善用户体验 
-          - 2、添加了“重测”功能 
-          - 3、添加了扫码下载配置文件的同时自动切换服务器域名 
-          - 4、使用2.04.04版本的SDK重新编写测试流程，保证测试稳定性
-    1. 版本号: 1.0  /   更新时间: 2015.7.22 18:58   /   [App 下载](http://gizwits.oss-cn-hangzhou.aliyuncs.com/DemoApp/V4ProductionTesting_V1.0.apk)
+   - 1、增加了只读数据点产测功能 
+   - 2、其他优化  
+   - 说明：只读数据点如果是数值型的，上报的数据如果在0.9-1.1倍之间也认为测试成功。比如自读数据产测设定值为100，那么设备上报数据在90-110之间都认为成功。
+**旧版本下载**
+- 版本号: 2.0  /   更新时间: 2016.10.25 16:09   /   [App 下载](http://gizwits.oss.aliyuncs.com/phone_app/V4ProductionTesting_V2.0.apk)
+  - 更新信息
+     - V2.0  
+     - 1、更新界面UI，改善用户体验 
+     - 2、添加了“重测”功能 
+     - 3、添加了扫码下载配置文件的同时自动切换服务器域名 
+     - 4、使用2.04.04版本的SDK重新编写测试流程，保证测试稳定性
+- 版本号: 1.0  /   更新时间: 2015.7.22 18:58   /   [App 下载](http://gizwits.oss-cn-hangzhou.aliyuncs.com/DemoApp/V4ProductionTesting_V1.0.apk)
 - 暂无更新信息
 
 
