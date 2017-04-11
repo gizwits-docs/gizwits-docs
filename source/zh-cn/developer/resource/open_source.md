@@ -27,8 +27,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
       3. 优化与MCU握手重发的串口数据包错误的问题 
       4. 特定情况下OTA升级优化
 
-
-- **旧版本下载 **
+**旧版本下载 **
 
    1. 版本号: 04020021   /  更新时间: 2016.12.28 18:37   /   [模板   ：ESP8266开发概述](${domain}?v=${version}&t=174997) 资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00ESP826_04020021_16122717.tar) 
      - 更新信息
@@ -83,8 +82,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 ## GAgent for HFLPT120/LPB120
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAGENT_00HFT120_04020021_17011015.zip)
 - 发布时间：2017.1.11 
-- 更新信息
-       版本号更新为04020021 
+- 更新信息：版本号更新为04020021 
        1. 添加路由断连恢复策略 
        2. 添加DNS解析异常重试处理  
        3. 添加支持全球域名统一固件 
@@ -96,11 +94,10 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
        9. 支持使用加密的云端注册接口 
        10. 其它优化
 
-- **旧版本下载**
+**旧版本下载**
 
    1. 版本号: 04020014  / 更新时间: 2016.11.09 18:29    /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00HFT120_04020014_16110719.tar)
-     - 更新信息
-       版本号更新为04020014 
+     - 更新信息：版本号更新为04020014 
        1. 优化结构,提高数据接收的响应速度 
        2. 增加tcp和串口收发队列，增强数据缓存处理能力 
        3. 增加http协议对Chunked/Content-Length两种传输方式的支持 
@@ -130,8 +127,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 ## GAgent for HF LPB100
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00HFLPB1_04020018_16122717.tar)
 - 发布时间：2016.12.28 18:49 
-- 更新信息
-       软件版本号更新为04020018 
+- 更新信息：软件版本号更新为04020018 
        1. 支持全球统一固件 
        2. 支持设置显示当地时区时间 
        3. 提高ntp时间精度 
@@ -142,7 +138,6 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
        9. 其它优化
 
 - **旧版本下载**
-
    1. 版本号: 04020017  / 更新时间: 2016.11.24 17:21  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00HFLPB1_04020017_16112118.tar)
      - 更新信息
        1. 软件版本号更新为04020017 
@@ -189,8 +184,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 ## GAgent for QCA4004 
 - [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/GAgent%2FGAgent_00QC4004_04020007_15120914_UART.bin)
 - 发布时间：2015.12.16 11:13
-- 更新信息
-       版本号04020007
+- 更新信息：版本号04020007
        1. SmartConfig配置支持（不支持中文SSID）。  
        2. 优化DNS解析定时器。  
        3. 优化云端MQTT心跳策略。  
@@ -199,23 +193,20 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 GAgent for RealTek 8711AM 
 - [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/GAgent%2FGAgent_1DRTL001_04020001_15120910_UART.bin)
 - 发布时间：2015.12.16 11:16 
-- 更新信息
-       版本号04020001
+- 更新信息： 版本号04020001
        1. Simple config配置优化，提高配置成功率。
 
 
 GAgent for 联盛德 TLN13SP01
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_1H010001_04020010.bin)
 - 发布时间：2017.2.21 14:36 
-- 更新信息
-       版本号04020010 
+- 更新信息：版本号04020010 
        1. 首次发布，支持接入机智云
 
 GAgent for 锐凌微 TinyCon3350-M26
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_0GRLWM26_04020018_2017022011.bin)
 - 发布时间：2017.3.29 11:09  
-- 更新信息
-       版本号04020018 
+- 更新信息：版本号04020018 
        1. 首次发布，支持接入机智云
 
 # GoKit MCU示例工程
@@ -248,12 +239,12 @@ GAgent for 锐凌微 TinyCon3350-M26
        3. 其他优化
 
 - **旧版本下载**
-   1. 版本号: V03010100  / 更新时间: 2016.7.19 15:58  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010100_2016071910.zip)
+   - 版本号: V03010100  / 更新时间: 2016.7.19 15:58  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010100_2016071910.zip)
      - 更新信息:  
        1. 采用新的源码框架，封装协议处理，简化API，数据点转换为对应事件处理。 
        2. 去掉智能宠物屋product key，需用户添加自定义产品product key。
 
-   1. 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
+   - 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
      - 更新信息:  
        1. v2.3.2 1、修复STV2.1底板温湿度不规则报0的问题；
 
@@ -347,20 +338,19 @@ GAgent for 锐凌微 TinyCon3350-M26
 - 更新信息 
        1. 包括智能硬件app通用的5个模块，分别是：初始化模块、用户模块、配置模块、设备列表模块、控制模块。
 
-** 开源框架 for Android V2.5.0**
+** 开源框架 for Android V2.5.0 **
 - [框架下载>>](https://git.oschina.net/dantang/GizOpenSource_AppKit_Android)
 - 发布时间：2017.3.17 18:37      
 - 更新信息 
-       - 版本号：2.5.0 
-       - 除Eclipse外，还提供Android Studio版本： https://git.oschina.net/dantang/GOpenSource_AppKit_Android_AS  
-       - 在使用时请注意以下问题：
+     - 版本号：2.5.0 
+     - 除Eclipse外，还提供Android Studio版本： https://git.oschina.net/dantang/GOpenSource_AppKit_Android_AS  
+     - 在使用时请注意以下问题：
           - 为避免工程加载出错，工程绝对路径不要太长； 
           - JDK请使用1.7以上版本； 
           - 此AS工程需要使用最新AS环境编译，如果AS版本过低将会遇到编译错误。开发者请对照以下说明，修改为符合自己编译环境的版本： 
-              1. 在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip 
-              2. 在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion '25.0.2' targetSdkVersion 25 compile 'com.android.support:appcompat-v7:25.1.0' 
-              3. 在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath 'com.android.tools.build:gradle:2.5.0'  
-             此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。  特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。
+1. 在gradle-wrapper.properties中，找到以下内容，修改为自己的AS环境支持的版本：distributionUrl=https\://services.gradle.org/distributions/gradle-3.3-all.zip 
+2. 在build.gradle（Moudle : app）中，找到以下内容，修改为自己AS环境支持的版本号： compileSdkVersion 25 buildToolsVersion '25.0.2' targetSdkVersion 25 compile 'com.android.support:appcompat-v7:25.1.0' 
+3. 在build.gradle（project）中，找到以下内容，修改为自己的AS环境支持的版本号： classpath 'com.android.tools.build:gradle:2.5.0' 此外，请初学的小伙伴注意AS编译器给出的错误信息提示，依据错误信息调整自己的AS开发环境。举个例子：如果在build.gradle（Moudle : app）中指定了buildToolsVersion是25.0.2，但小伙伴的AS环境中没有这个版本，编译器会提示如下信息： Error: Failed to find Build Tools revision 25.0.2, Install Build Tools 25.0.2 and sync project 意思是小伙伴需要安装25.0.2版本的Build Tools。  特在此友情提示初学开发者，希望可以帮助您更轻松的解决编译环境问题。
 
 
 ## 设备接入SDK
@@ -376,8 +366,8 @@ GAgent for 锐凌微 TinyCon3350-M26
 - SDK下载   http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-iOS-2.06.06.1.zip
 - 发布时间：2017.2.22 19:32
 - 更新信息
-       - 版本号：2.06.06.1  
-       - 更新日志： 
+     - 版本号：2.06.06.1  
+     - 更新日志： 
           - 优化手机流量消耗 
           - 纠正数据点浮点数值精度损失 
           - 延长云端访问的超时时间，提高访问成功率  
@@ -455,7 +445,7 @@ GAgent for 锐凌微 TinyCon3350-M26
           - 纠正数据点浮点数值精度损失 
           - 延长云端访问的超时时间，提高访问成功率  
           - 其他优化
--  ** 旧版本下载**
+** 旧版本下载**
    1. 版本号: 2.06.06  /   更新时间: 2017.1.25 15:35  /  [SDK下载](http://gizwits.oss.aliyuncs.com/sdk/GizWifiSDK-Android-2.06.06.zip)
      - 更新信息
        - 版本号：2.06.06  
@@ -573,9 +563,9 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [机智云 App下载>>>]( http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_iOS_Release_20170222.ipa)
 - 发布时间：2017.2.22 19:21 
 - 更新信息
-      - 版本号：1.9.1  
-      - 更新日志： 
-          - 1、SDK版本更新为2.06.06.1 
+     - 版本号：1.9.1  
+     - 更新日志： 
+         - 1、SDK版本更新为2.06.06.1 
          - 2、修改一键配置时模组类型选择方式
 
 - **旧版本下载**
@@ -625,8 +615,8 @@ GAgent for 锐凌微 TinyCon3350-M26
 - [机智云 App下载>>>](http://gizwits.oss.aliyuncs.com/demo_app/IOEDemo_Android_20170222.apk)
 - 发布时间：2017.2.22 19:21 
 - 更新信息
-      - 版本号：1.9.1  
-      - 更新日志： 
+     - 版本号：1.9.1  
+     - 更新日志： 
          - 1、SDK版本更新为2.06.06.1 
          - 2、修改一键配置时模组类型选择方式
 - **旧版本下载**
