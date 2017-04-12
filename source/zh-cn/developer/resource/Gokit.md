@@ -170,7 +170,12 @@ GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发�
 - 无源智能墙壁开关
 
 # FAQ
+Gokit社区：http://club.gizwits.com/forum-133-1.html
 STM32社区：http://club.gizwits.com/forum-228-1.html
+Gokit试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
+兑换GoKit开发板：http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha
+Gokit购买： 在淘宝搜索“机智云”  或者是点击此链接： https://shop159680395.taobao.com/
+
 技术支持/项目接入咨询：400-6565-488
 
 
@@ -179,8 +184,9 @@ STM32社区：http://club.gizwits.com/forum-228-1.html
 
 公司拥有完整的技术研发团队、安全团队和人工智能团队，为有志于进军物联网开发者和企业提供安全、可靠的一站式物联网开发工具和云端运维服务，涵盖终端管理、连接管理、应用支持和业务分析等主要功能，已服务车联网、新能源、工业互联、医疗健康、消费类电子产品等众多行业。
 
-模块化开发工具含：
+## 模块化开发工具
 
+以下是机智云提供的模块化开发工具：
 - 标准GAgent串口通讯协议
 - MCU代码自动生成工具 
 - APP代码自动生成工具
@@ -192,7 +198,9 @@ STM32社区：http://club.gizwits.com/forum-228-1.html
 - 企业API、OPEN API
 - RTDB实时大数据统计
 
-解决方案含：
+## 解决方案
+
+以下是机智云提供的解决方案：
 - 信息家电/大家电智能化/小家电智能化/
 - 厨电信息化解决方案
 - 智能净水器/智能空气净化器/
@@ -203,8 +211,11 @@ STM32社区：http://club.gizwits.com/forum-228-1.html
 - 智能电网
 - 医疗/保健/卫生
 
+机智云服务的客户：
 
-官方技术交流群：
+
+## 官方技术交流群
+
 - G1机智云物联网云服务 104975951
 - G2机智云物联网云服务 491509598
 - G3机智云物联网云服务 287087942
@@ -212,7 +223,8 @@ STM32社区：http://club.gizwits.com/forum-228-1.html
 - G5-APP代码自动生成公测 599735135
 - G6机智云-Arduino iot开发 378683984
 
-联系我们：
+## 联系我们
+
 - 地址: 广州天河区天平架陶庄路5号众创空间8-9层 研发中心
 - 电话: 020-6224-0080
 - 邮箱: service@gizwits.com
