@@ -1,7 +1,7 @@
 title: Gokit开发概述和试用申请
 ---
 
-[Gokit试用申请](http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization)  、  [兑换GoKit开发板](http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha)
+[Gokit免费试用申请](http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization)  、  [免费兑换GoKit开发板](http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha)
 
 # Gokit3
 Gokit3是GoKit产品系列的第三代，支持MCU、SoC、BLE、语音、模式切换等特性。目前支持的SoC方案模组有esp8266、Hi3518E模组、宇音天下模组等。
@@ -133,9 +133,9 @@ GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发�
 
 已停产。
 
-# Gokit试用申请
- - Gokit试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
- - 兑换GoKit开发板：http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha
+# Gokit免费试用申请
+ - Gokit免费试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
+ - 免费兑换GoKit开发板：http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha
  
 # 开源硬件项目
 
