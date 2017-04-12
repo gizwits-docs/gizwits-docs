@@ -109,7 +109,7 @@ GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能�
    - [SOC 方案](http://docs.gizwits.com/zh-cn/deviceDev/UseSOC.html)
 
 
-#### MCU方案与SOC方案区别：
+#### MCU方案与SOC方案区别
 
 MCU方案：模组负责与云端信息的交互，通过串口与主控板（即MCU）进行通信，需要在MCU上进行协议解析与外设控制的开发。
 SoC方案：节省一颗MCU芯片，利用模组内部资源完成传感器操作和产品逻辑。
@@ -118,7 +118,8 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 
 # STM32开发应用
 
-## 常见案例：
+## 常见案例
+
 - [STM32 NucleoL496ZG智能灯案例](http://club.gizwits.com/thread-5426-1-1.html)
 - [STM32L432 Nucleo-32案例-3分钟打造手机APP远程空气质量监测应用](http://club.gizwits.com/thread-3876-1-1.html)
 - [史上最详细UCOS-II移植教程，基于Gokit STM32F103C8T6](http://club.gizwits.com/thread-5355-1-1.html)
@@ -212,14 +213,17 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 - 智能电网
 - 医疗/保健/卫生
 
+官方技术交流群：
+- G1机智云物联网云服务 104975951
+- G2机智云物联网云服务 491509598
+- G3机智云物联网云服务 287087942
+- G4机智云-STM32 iot开发 289447077
+- G5-APP代码自动生成公测 599735135
+- G6机智云-Arduino iot开发 378683984
 
 联系我们：
-
-地址: 广州天河区天平架陶庄路5号众创空间8-9层 研发中心
-
-电话: 020-6224-0080
-
-邮箱: service@gizwits.com
-
-NewYork   646.201.9357
+- 地址: 广州天河区天平架陶庄路5号众创空间8-9层 研发中心
+- 电话: 020-6224-0080
+- 邮箱: service@gizwits.com
+- NewYork   646.201.9357
 
