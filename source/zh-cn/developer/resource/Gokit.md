@@ -212,9 +212,6 @@ GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发�
 - 智能电网
 - 医疗/保健/卫生
 
-机智云客户：
-![机智云客户Logo墙](http://club.gizwits.com/EDMimages/marstest/gizwitslogoqiang.png "在这里输入图片标题")
-
 
 ## 官方技术交流群
 
