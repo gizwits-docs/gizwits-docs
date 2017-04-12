@@ -216,8 +216,6 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 - 智能电网
 - 医疗/保健/卫生
 
-机智云客户：
-![机智云客户Logo墙](http://club.gizwits.com/EDMimages/marstest/gizwitslogoqiang.png "在这里输入图片标题")
 
 
 ## 官方技术交流群
