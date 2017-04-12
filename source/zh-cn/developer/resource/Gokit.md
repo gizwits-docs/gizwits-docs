@@ -26,6 +26,7 @@ Gokit3 的三个版本：
 GoKit3(S)采用一体式SOC解决方案，并具有一定的拓展性，图如下：
 
 ![GOkit3s](https://static.oschina.net/uploads/img/201704/12112821_aEB7.jpg "在这里输入图片标题")
+
 Gokit3S支持两种开发模式：
 - SoC开发模式：
    - 即功能板+wifi模组的连接方式，是GoKit3(S)的默认方式，发货固件即为MCU版本固件，可直接使用，用法与GoKit2相同。需要注意的是SoC方式不能接底板，否则不能正常运行。
@@ -170,13 +171,13 @@ GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发�
 - 无源智能墙壁开关
 
 # FAQ
-Gokit社区：http://club.gizwits.com/forum-133-1.html
-STM32社区：http://club.gizwits.com/forum-228-1.html
-Gokit试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
-兑换GoKit开发板：http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha
-Gokit购买： 在淘宝搜索“机智云”  或者是点击此链接： https://shop159680395.taobao.com/
 
-技术支持/项目接入咨询：400-6565-488
+- Gokit社区：http://club.gizwits.com/forum-133-1.html
+- STM32社区：http://club.gizwits.com/forum-228-1.html
+- Gokit试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
+- 兑换GoKit开发板：http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha
+- Gokit购买： 在淘宝搜索“机智云”  或者是点击此链接： https://shop159680395.taobao.com/
+- 技术支持/项目接入咨询：400-6565-488
 
 
 # 关于机智云
