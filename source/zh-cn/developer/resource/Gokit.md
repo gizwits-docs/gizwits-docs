@@ -127,7 +127,8 @@ GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发�
 
 
 # Gokit1
---
+
+已停产。
 
 # Gokit试用申请
  - Gokit试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
