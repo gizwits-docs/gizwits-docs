@@ -25,8 +25,7 @@ Gokit3 的三个版本：
 ## Gokit 3S
 GoKit3(S)采用一体式SOC解决方案，并具有一定的拓展性，图如下：
 
-![输入图片说明](https://gizwits.kf5.com/attachments/download/857320/001578db9084be11a67953ab668b89f/ "在这里输入图片标题")
-
+![GOkit3s](https://static.oschina.net/uploads/img/201704/12112821_aEB7.jpg "在这里输入图片标题")
 Gokit3S支持两种开发模式：
 - SoC开发模式：
    - 即功能板+wifi模组的连接方式，是GoKit3(S)的默认方式，发货固件即为MCU版本固件，可直接使用，用法与GoKit2相同。需要注意的是SoC方式不能接底板，否则不能正常运行。
