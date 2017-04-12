@@ -3,6 +3,7 @@ title: Gokit开发概述和试用申请
 
 # Gokit3
 Gokit3是GoKit产品系列的第三代，支持MCU、SoC、BLE、语音、模式切换等特性。目前支持的SoC方案模组有esp8266、Hi3518E模组、宇音天下模组等。
+
 ![Gokit3](https://static.oschina.net/uploads/img/201704/10123316_3zpC.png "在这里输入图片标题")
 
 具备以下特性：
@@ -23,6 +24,7 @@ Gokit3 的三个版本：
 
 ## Gokit 3S
 GoKit3(S)采用一体式SOC解决方案，并具有一定的拓展性，图如下：
+
 ![输入图片说明](https://gizwits.kf5.com/attachments/download/857320/001578db9084be11a67953ab668b89f/ "在这里输入图片标题")
 
 Gokit3S支持两种开发模式：
@@ -131,8 +133,6 @@ GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发�
 
 # Gokit1
 --
-
-
 
 
 # 开源项目
