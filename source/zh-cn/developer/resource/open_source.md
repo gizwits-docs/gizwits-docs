@@ -642,7 +642,7 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 这是一款可以帮助开发者快速使用GizWifiSDK，连接到机智云的开源物联示例APP。该APP针对的是智能家电中的灯泡类产品，此款产品已满足用户基本功能需求，其中包括：1.用户登录；2.配置入网；3. 搜索设备列表；4.绑定或解绑设备；5.灯开关；6.色彩和色温切换；7.色彩和色温连续调节；8.亮度调节；9.修改设备别名；10.倒计时开关；11.云端定时预约，不限次数等等。
 
 - 源码链接 for iOS     https://git.oschina.net/dantang/Gizwits-SmartBuld_iOS
-- 源码链接 for Androi  https://git.oschina.net/dantang/Gizwits-SmartBuld_Android
+- 源码链接 for Android  https://git.oschina.net/dantang/Gizwits-SmartBuld_Android
 
 ### 公版App开源计划
 #### Demo Gokit App for iOS & Android
@@ -650,7 +650,7 @@ Gokit App是与Gokit硬件配套的App。开发者可以通过该App源码学习
 Gokit App是使用开源框架开发出来的App，功能包含：用户注册登录、配置入网、搜索设备列表、绑定或解绑设备、设备状态查询、设备远程控制等。
 
 - 源码链接 for iOS     https://git.oschina.net/dantang/GoKit_Demo_iOS
-- 源码链接 for Androi  https://git.oschina.net/dantang/GoKit_Demo_Android
+- 源码链接 for Android  https://git.oschina.net/dantang/GoKit_Demo_Android
 
 #### APICloud GoKit App for iOS & Android
 APICloud GoKit是使用机智云针对APICloud发布的SDK而开发的HTML5版本的GoKit APP，其包含iOS版本和Android版本。与原生的iOS和Android APP不一样的是，APICloud GoKit用JS写成，大大降低了手机APP开发的门槛，并且通过APICloud，可以一次开发出两个版本。APICloud GoKit的功能与原生的APP的功能相同，包含配置入网、设备搜索、设备绑定、设备登陆、设备控制、远程控制、状态更新、本地远程切换等。所用的APICloud SDK可以在APICloud官网上下载。（搜索“Gizwits”或“机智云”）
