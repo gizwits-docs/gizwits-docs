@@ -93,12 +93,15 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 
 ## 1 APP代码自动生成
    - [APP代码自动生成 开发指南](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)
+   
 ## 2 Echo控制
    - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
    - [使用Echo音箱控制GoKit2](http://docs.gizwits.com/zh-cn/deviceDev/Gokit2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html#使用Echo音箱控制GoKit2)
+   
 ## 3 微信开发
    - [了解微信应用开发](http://docs.gizwits.com/zh-cn/WechatDev/%E4%BA%86%E8%A7%A3%E5%BE%AE%E4%BF%A1%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html)
    - [微信开发教程](http://docs.gizwits.com/zh-cn/WechatDev/WeChatDev.html)
+   
 ## 4 SDK 接入
 
 使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
