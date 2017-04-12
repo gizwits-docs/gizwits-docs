@@ -87,10 +87,6 @@ GoKit3(V)开发套件，此套件支持语音识别、语音控制传感器。�
 - 11-GoKit3(V)二次开发-程序详解	http://v.qq.com/x/page/w03411dulvm.html
 - 12-GoKit3(V)源码详解	http://v.qq.com/x/page/e03433vgpkj.html
 
-# Gokit3 试用申请
- - Gokit试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
- - 兑换GoKit开发板：http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha
-
 # Gokit2
 GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发板。用于帮助开发者快速实现智能硬件的原型开发。GoKit支持开发者将产品接入目前行业中各大流行的模组方案，帮助他们与高通、庆科、博通、 汉枫等对接，开发者只需扫一下相应的二维码就可以连接机智云2.0，通过机智云后台定义产品，产品通过WiFi模块上的GAgent接入机智云M2M服务 器，扫描二维码直接控制设备。GoKit上还集成了马达、1600万色的LED、Wifi模块、红外光感、温湿度等传感器。
 
@@ -134,8 +130,12 @@ GoKit2代为机智云于2015年推出的一款面向智能家居场景的开发�
 # Gokit1
 --
 
+# Gokit试用申请
+ - Gokit试用申请：http://dev.gizwits.com/zh-cn/developer/activity/gokit/request/organization
+ - 兑换GoKit开发板：http://dev.gizwits.com/zh-cn/developer/activity/gokit/gotcha
+ 
+# 开源硬件项目
 
-# 开源项目
 - [智能家居应用模型One](http://gizwits.com/article/320/)
 - [智能药盒](http://club.gizwits.com/thread-2685-1-1.html)	
 - [智能婴儿摇篮](http://club.gizwits.com/thread-2794-1-1.html)
@@ -204,9 +204,18 @@ STM32社区：http://club.gizwits.com/forum-228-1.html
 - 医疗/保健/卫生
 
 
+官方技术交流群：
+- G1机智云物联网云服务 104975951
+- G2机智云物联网云服务 491509598
+- G3机智云物联网云服务 287087942
+- G4机智云-STM32 iot开发 289447077
+- G5-APP代码自动生成公测 599735135
+- G6机智云-Arduino iot开发 378683984
+
 联系我们：
-地址: 广州天河区天平架陶庄路5号众创空间8-9层 研发中心
-电话: 020-6224-0080
-邮箱: service@gizwits.com
-NewYork   646.201.9357
+- 地址: 广州天河区天平架陶庄路5号众创空间8-9层 研发中心
+- 电话: 020-6224-0080
+- 邮箱: service@gizwits.com
+- NewYork   646.201.9357
+
 
