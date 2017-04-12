@@ -1,4 +1,5 @@
-title: 这里是标题
+title: 下载中心
+
 ---
 # GAgent
 GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。
@@ -6,16 +7,6 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
 
 该固件遵循以下协议《机智云平台标准接入协议之MCU与WiFi模组通讯》、《机智云平台标准接入协议之设备与云端通讯》、《机智云平台标准接入协议之App与设备通讯》。
-
-
-## ECE雾计算esp8266固件包 试用版
-- [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/ECE%E9%9B%BE%E8%AE%A1%E7%AE%978266%E5%9B%BA%E4%BB%B6%E5%8C%85.zip)
-- 发布时间：2017.1.11 15:59 
-- 更新信息  :该demo实现了下列功能：
-   1. 当检测到上报温度大于27度时，通知MCU打开电机;
-   2. 当红外对管检测到障碍物时，打开红灯;
-- 旧版本下载(无)
-
 
 ## GAgent for ESP8266
 - [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00ESP826_04020023_17032418.rar)
@@ -213,63 +204,13 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
    1. 版本号04020018 
    1. 首次发布，支持接入机智云
 
-# GoKit MCU示例工程
-
-微信宠物屋是用GoKit开发板开发出的一款智能硬件产品，这款产品可以采集温湿度，开关风机，检测红外遮挡，开关彩色LED灯；并可在手机APP或者微信服务号上实时监测与调节宠物屋环境、掌握宠物活动动向。通过微信宠物屋这个产品，可以帮助开发者了解机智云的智能硬件体系，更快的完成智能硬件产品的开发。
-
-以下的资源为针对不同Gokit开发底板的宠物屋的MCU代码实现。
-
-## GoKit3(S) ESP8266
-微信宠物屋 for GoKit3(S) ESP8266 V03000003
-- [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000003_2016120711.zip)
-- 发布时间：2016.12.01 19:46 
-- 更新信息
-   1. 更新GAgent库为04020320版本(对应ESP8266固件版本号为04020020)  
-   2. 增加产测支持(短按Key1进入产测模式)  
-   3. 增加获取时间API  
-   5. OTA硬件版本号为00ESP826，软件版本号为040203xx 
-   6. 其他优化 
-
-** 旧版本下载 **
-- 版本号: V03000002  / 更新时间: 2016.7.23 18:03  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit3_SoC_ESP8266_03000002_2016071817.zip)
-   - 更新信息:  
-     - 对应gagent版本号为04020013
-
-## GoKit 2/3 STM32
-微信宠物屋 for GoKit 2/3 STM32 V03010101
-- [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010101_2016120118.zip)
-- 发布时间：2016.12.01 19:10
-- 更新信息
-   1. 增加产测支持(短按Key1进入产测模式)  
-   2. 增加获取时间API  
-   3. 其他优化
-
-**旧版本下载**
-- 版本号: V03010100  / 更新时间: 2016.7.19 15:58  /   [资源下载:戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/gokit_mcu_stm32_V03010100_2016071910.zip)
-   - 更新信息:  
-     1. 采用新的源码框架，封装协议处理，简化API，数据点转换为对应事件处理。 
-     2. 去掉智能宠物屋product key，需用户添加自定义产品product key。
-
-- 版本号: 2.3.2  / 更新时间: 2016.1.04 12:20   /   [资源下载:戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_stm32_V2.3.2.zip)
-   - 更新信息:  
-     1. v2.3.2 1、修复STV2.1底板温湿度不规则报0的问题；
-
-
-## GoKit 2 Arduino
-微信宠物屋 for GoKit 2 Arduino 2.3.1
-- [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres%2Fgokit_mcu_arduino_V2.3.1.zip)
-- 发布时间：2016.1.04 12:19
-- 更新信息
-   1. V2.3.1 
-   2. 修改进入AirLink模式时，RGB灯为绿色. 
-   3. 取消key1键的RGB灯指示.
-
-
-## GoKit 1.0
-微信宠物屋 for GoKit 1.0.20141116
-- [资源下载 :戳我>>](http://gizwits.oss-cn-hangzhou.aliyuncs.com/hardwareres/%E6%99%BA%E8%83%BD%E5%AE%A0%E7%89%A9%E5%B1%8B_GoKit.zip)
-- 发布时间：2015.4.22 17:38
-- 暂无更新信息
+## ECE雾计算esp8266固件包 试用版
+- [资源下载 :戳我>>](http://gizwits.oss.aliyuncs.com/hardware_resource/ECE%E9%9B%BE%E8%AE%A1%E7%AE%978266%E5%9B%BA%E4%BB%B6%E5%8C%85.zip)
+- 发布时间：2017.1.11 15:59 
+- 更新信息  :该demo实现了下列功能：
+   1. 当检测到上报温度大于27度时，通知MCU打开电机;
+   2. 当红外对管检测到障碍物时，打开红灯;
+- 旧版本下载(无)
 
 
 # GoKit MCU示例工程
