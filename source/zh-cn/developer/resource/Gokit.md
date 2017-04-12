@@ -210,7 +210,8 @@ Gokit购买： 在淘宝搜索“机智云”  或者是点击此链接： http
 - 智能电网
 - 医疗/保健/卫生
 
-机智云服务的客户：
+机智云客户：
+![机智云客户Logo墙](http://club.gizwits.com/EDMimages/marstest/gizwitslogoqiang.png "在这里输入图片标题")
 
 
 ## 官方技术交流群
