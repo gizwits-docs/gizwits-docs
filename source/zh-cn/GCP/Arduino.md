@@ -189,4 +189,4 @@ GAgent模组固件烧写教程：
 - 邮箱: service@gizwits.com
 - NewYork   646.201.9357
 
-
+![输入图片说明](http://club.gizwits.com/EDMimages/marstest/E1.jpg "马上注册成为机智云开发者，创建您的智能产品吧！")
