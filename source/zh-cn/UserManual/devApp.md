@@ -23,6 +23,8 @@ title: APP代码自动生成服务介绍
 
 ![Alt text](/assets/zh-cn/UserManual/App/1490684715654.png)
 
+**注意数据点的命名不能为程序的常用关键字，比如switch、static、enum、native等等，否则生成的代码会有错误！**
+
 1.2.在应用配置界面中添加新应用
 
 ![Alt text](/assets/zh-cn/UserManual/App/1490684847946.png)
