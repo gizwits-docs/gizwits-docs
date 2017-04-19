@@ -101,7 +101,7 @@ title: Android SDK 2.0集成指南
 **5.7.	Android6.0系统文件读写权限设置**
 Android 6.0新增了运行时权限动态检测，GizWifiSDK中使用的以下权限需要在运行时判断：
 
-WRITE_EXTERNAL_STORAGE。
+ACCESS_FINE_LOCATION。
 
 Android6.0系统为targetSdkVersion小于23的应用默认授予了所申请的所有权限，所以如果App使用的targetSdkVersion低于23，可以正常运行。但如果用户在设置中取消了授予的权限，或者App使用的targetSdkVersion为23以上，需要在App代码中处理。以下以Android Studio举例：
 
@@ -111,30 +111,30 @@ Android6.0系统为targetSdkVersion小于23的应用默认授予了所申请的�
 
 ```
 android {
-compileSdkVersion 23 
-buildToolsVersion "23.0.1" 
-defaultConfig {
-applicationId "com.yourcomany.app     
-minSdkVersion 18     
-targetSdkVersion 23     
-versionCode 1     
-versionName "1.0" 
-} 
-buildTypes {
-release { 
-minifyEnabled false 
-proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' 
-} 
-} 
+	compileSdkVersion 23 
+	buildToolsVersion "23.0.1" 
+	defaultConfig {
+		applicationId "com.yourcomany.app     
+		minSdkVersion 18     
+		targetSdkVersion 23     
+		versionCode 1     
+		versionName "1.0" 
+	} 
+	buildTypes {
+		release { 
+			minifyEnabled false 
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' 
+		} 
+	} 
 }
 ```
 
 - 检查并申请权限
-需要检查APP是否已经拥有WRITE_EXTERNAL_STORAGE权限，没有则申请权限：
+需要检查APP是否已经拥有ACCESS_FINE_LOCATION权限，没有则申请权限：
 
 ```
-if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {          
-ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.WRITE_EXTERNAL_STORAGE }, WRITE_EXTERNAL_STORAGE_REQUEST_CODE);      
+if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {          
+	ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.ACCESS_FINE_LOCATION }, ACCESS_FINE_LOCATION_REQUEST_CODE);      
 }
 ```
 
@@ -147,18 +147,19 @@ ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.WRITE
 onActivityResult  
 Override  
 public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {      
-super.onRequestPermissionsResult(requestCode, permissions, grantResults);      
-doNext(requestCode,grantResults);  
+	super.onRequestPermissionsResult(requestCode, permissions, grantResults);      
+	doNext(requestCode,grantResults);  
 }
-	接着根据requestCode和grantResults(授权结果)做相应的后续处理：
+
+// 接着根据requestCode和grantResults(授权结果)做相应的后续处理：
 private void doNext(int requestCode, int[] grantResults) {
-if (requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE) {
-if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-              // Permission Granted          
-} else {
-              // Permission Denied
-}
-}
+	if (requestCode == ACCESS_FINE_LOCATION_REQUEST_CODE) {
+		if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+              		// Permission Granted          
+		} else {
+              		// Permission Denied
+		}
+	}
 }
 ```
 
@@ -171,14 +172,15 @@ Fragment中运行时权限的特殊处理
 ```
 Override  
 public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-List<Fragment> fragments = getChildFragmentManager().getFragments();      
-if (fragments != null) {
-for (Fragment fragment : fragments) {
-if (fragment != null) {
-fragment.onRequestPermissionsResult(requestCode,permissions,grantResults);    }          
-  }      
- }  
+	super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+	List<Fragment> fragments = getChildFragmentManager().getFragments();      
+	if (fragments != null) {
+		for (Fragment fragment : fragments) {
+			if (fragment != null) {
+				fragment.onRequestPermissionsResult(requestCode,permissions,grantResults);    
+			}          
+  		}      
+ 	}  
 }
 ```
 
