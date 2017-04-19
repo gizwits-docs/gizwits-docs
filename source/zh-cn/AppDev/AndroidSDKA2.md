@@ -99,9 +99,10 @@ title: Android SDK 2.0集成指南
 |CHANGE_WIFI_MULTICAST_STATE	|允许程序改变WiFi多播状态|
 
 **5.7.	Android6.0系统文件读写权限设置**
-Android 6.0新增了运行时权限动态检测，GizWifiSDK中使用的以下权限需要在运行时判断：
 
-ACCESS_FINE_LOCATION。
+Android 6.0新增了运行时权限动态检测，GizWifiSDK中使用的以下权限需要在运行时判断：ACCESS_FINE_LOCATION，通过这个权限可以检测到手机当前wifi和可连接的wifi列表。
+
+下面以这个权限申请举例说明如何编写动态检测代码：
 
 Android6.0系统为targetSdkVersion小于23的应用默认授予了所申请的所有权限，所以如果App使用的targetSdkVersion低于23，可以正常运行。但如果用户在设置中取消了授予的权限，或者App使用的targetSdkVersion为23以上，需要在App代码中处理。以下以Android Studio举例：
 
