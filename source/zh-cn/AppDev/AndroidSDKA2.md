@@ -140,7 +140,8 @@ if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCAT
 ```
 
 - 请求权限后，系统会弹出请求权限的对话框：
-![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089519041.png)
+
+![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089519041.jpg)
  
 - 用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：
 
