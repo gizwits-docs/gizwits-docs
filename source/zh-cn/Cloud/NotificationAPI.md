@@ -1,27 +1,48 @@
 title:  SNoti API
 ---
-v2.1.4
+v2.1.5
 
 # Demo
 https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 # 目的
 为企业提供 SSL 通讯 API，用于实时推送设备与产品相关的事件。
-# 准备工作
-1.一次可接受多个 Product 的消息。每个 Product 需要 auth_id 和 auth_secret 验证。
+# 关键术语
+1.auth_id & auth_secret: 产品授权ID和密钥，一个产品可创建多个auth_id，一个auth_id对应唯一的一个产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；
 
-2.针对每一个 product，都需要新创建一个唯一的 auth_id：
+2.subkey：消息分发机制，以ProductKey + subkey作为唯一主键，不同主键之间，消息互不影响（即同一个ProductKey使用不同的subkey，可产生消息副本）；subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）；
 
-- a.对产品拥有者，auth_id 和 auth_secret 需要在机智云开发者中心，成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
+3.产品的7种消息类型（event_type）分别为：
+- device.online：设备上线消息
+- device.offline：设备下线消息
+- device.status.raw：设备上报自定义透传业务指令
+- device.status.status.kv：设备上报数据点业务指令
+- device.attr_fault：设备故障事件
+- device.attr_alert：设备报警事件
+- datapoints.changed：数据点编辑事件
+
+# 企业auth_id申请流程
+
+1.企业开发者登陆开发者中心，选择添加服务，如下图
+![添加](/assets/zh-cn/cloud/添加SNoti服务.png)
+
+2.点击上图箭头指向的SNoti服务，进入下一步，申请开通服务
+![添加](/assets/zh-cn/cloud/开通SNoti服务.png)
+
+3.成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
 ![添加](/assets/zh-cn/cloud/添加api.png)
 
-- b.对第三方运营商，通过使用 Http API 获取 auth_id 和 auth_secret，获取后，还需要通过 Http API 对已拥有的设备做关联，关联成功后，SNoti客户端需要重新登陆，才能够获取新关联的设备消息和控制设备；
-- c.第三方运营商申请 auth_id api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/post_v1_products_product_key_operator
-- d.第三方运营商关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/put_v1_products_product_key_operator
-- e.第三方运营商取消关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/delete_v1_products_product_key_operator
+# 运营商auth_id申请流程（企业用户可略过此章节）
 
-3.以 product_key+subkey 为唯一主键。其中 subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）。
+1.通过使用 Http API 获取 auth_id 和 auth_secret
+- 申请 auth_id api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/post_v1_products_product_key_operator
 
-4.选取接收信息的 product_key 下的消息类型。一个 product_key 可支持多种消息类型。目前有 7 种，见推送事件消息字段的 event_type。
+2.获取后，还需要通过 Http API 对已拥有的设备做关联
+- 关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/put_v1_products_product_key_operator
+
+3.关联成功后，SNoti客户端需要重新登陆，才能够获取新关联的设备消息和控制设备
+
+4.如需取消设备关联，可通过下面Http API，同样的，取消关联成功，需要重新登陆SNoti客户端
+- 取消关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/delete_v1_products_product_key_operator
 
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
@@ -51,6 +72,7 @@ https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 - 域名：snoti.gizwits.com
 -  SSL 服务端口：2017
 -  HTTP API 服务端口：2018
+
 # SSL 的接口协议
 
 消息内容为二进制数据，UTF-8 编码。请注意每个消息后都必须添加"\n"作为消息结尾符。
