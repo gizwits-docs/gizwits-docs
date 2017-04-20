@@ -139,9 +139,8 @@ APP开发:
       
     企业API:
       path: /Cloud/enterprise_api.html 
-      
-    消息代理服务:
-      path: /Cloud/noti1.0.html
+     
+    
       
     SNoti API:
       path: /Cloud/NotificationAPI.html
