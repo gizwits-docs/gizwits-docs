@@ -2,10 +2,25 @@ title:  SNoti API
 ---
 v2.1.5
 
-# Demo
-https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 # 目的
-为企业提供 SSL 通讯 API，用于实时推送设备与产品相关的事件。
+企业客户可通过SNoti提供的安全数据传输通道，实时的接收设备的数据，用于设备信息归类整理，设备状态统计，设备监控等；也可以通过远程控制功能，实时发送业务指令控制在线设备。
+
+# Demo
+1.代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0
+
+2.登陆参数配置：请在src/main/resources/application.properties文件中，修改相应的参数，如：productKey, authId, authSecret
+
+# SNoti申请流程
+
+1.企业开发者登陆开发者中心，选择添加服务，如下图
+![添加](/assets/zh-cn/cloud/添加SNoti服务.png)
+
+2.点击上图箭头指向的SNoti服务，进入下一步，申请开通服务
+![添加](/assets/zh-cn/cloud/开通SNoti服务.png)
+
+3.成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
+![添加](/assets/zh-cn/cloud/添加api.png)
+
 # 关键术语
 1.auth_id & auth_secret: 产品授权ID和密钥，一个产品可创建多个auth_id，一个auth_id对应唯一的一个产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；
 
@@ -20,30 +35,6 @@ https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 - device.attr_alert：设备报警事件
 - datapoints.changed：数据点编辑事件
 
-# 企业auth_id申请流程
-
-1.企业开发者登陆开发者中心，选择添加服务，如下图
-![添加](/assets/zh-cn/cloud/添加SNoti服务.png)
-
-2.点击上图箭头指向的SNoti服务，进入下一步，申请开通服务
-![添加](/assets/zh-cn/cloud/开通SNoti服务.png)
-
-3.成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
-![添加](/assets/zh-cn/cloud/添加api.png)
-
-# 运营商auth_id申请流程（企业用户可略过此章节）
-
-1.通过使用 Http API 获取 auth_id 和 auth_secret
-- 申请 auth_id api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/post_v1_products_product_key_operator
-
-2.获取后，还需要通过 Http API 对已拥有的设备做关联
-- 关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/put_v1_products_product_key_operator
-
-3.关联成功后，SNoti客户端需要重新登陆，才能够获取新关联的设备消息和控制设备
-
-4.如需取消设备关联，可通过下面Http API，同样的，取消关联成功，需要重新登陆SNoti客户端
-- 取消关联设备 api:http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/delete_v1_products_product_key_operator
-
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
 
@@ -51,29 +42,20 @@ https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 
 2.客户端发送登录指令完成验证；
 
-3.客户端实时接受事件消息，并向服务器 ack 事件消息；
+3.服务端推送消息到客户端。推送工作方式：
+- 相同 product_key + subkey 的多个客户端登录连接，消息轮流推送到各客户端；
+- 相同 product_key，不同 subkey 的客户端都能接收该 product 下设备的指定类型的消息副本，客户端之间不会相互干扰；
+- 当某客户端未返回的 ack 消息数达到该客户端登录设置的 prefetch_count 值后，消息将不在继续推送给该客户端，但会发送到其他客户端；
+- 未返回 ack 的消息，服务端会一直等待不会重发，只有在该客户端断开的情况下，未 ack 的消息会重新发送到连接的客户端；
+- 当所有客户端都断开连接后，后续设备的消息会保存在服务端，等待客户端下次接收。
 
-4.当客户端在一定时间范围内没有向服务器发送任何消息，需要发 ping 心跳请求，服务器回复 pong 心跳响应。
+4.客户端实时接受事件消息，并向服务器 ack 事件消息；
 
-# 消息推送
-服务端推送消息到客户端。推送工作方式：
+5.当客户端在一定时间范围内没有向服务器发送任何消息，需要发 ping 心跳请求，服务器回复 pong 心跳响应。
 
-1.相同 product_key + subkey 的多个客户端登录连接，消息轮流推送到各客户端；
-
-2.相同 product_key，不同 subkey 的客户端都能接收该 product 下设备的指定类型的消息副本，客户端之间不会相互干扰；
-
-3.当 某客户端未返回的 ack 消息数达到该客户端登录设置的 prefetch_count 值后，消息将不在继续推送给该客户端，但会发送到其他客户端；
-
-4.未返回 ack 的消息，服务端会一直等待不会重发，只有在该客户端断开的情况下，未 ack 的消息会重新发送到连接的客户端；
-
-5.当所有客户端都断开连接后，后续设备的消息会保存在服务端，等待客户端下次接收。
-
-# 服务地址
+# 接口协议
 - 域名：snoti.gizwits.com
--  SSL 服务端口：2017
--  HTTP API 服务端口：2018
-
-# SSL 的接口协议
+- SSL 服务端口：2017
 
 消息内容为二进制数据，UTF-8 编码。请注意每个消息后都必须添加"\n"作为消息结尾符。
 ## 1.  连接与登陆
@@ -333,6 +315,3 @@ a. SNoti不区分产品类型是否为中控产品，只需要对产品申请aut
 b. 需要接收中控网关的数据，就使用中控网关产品对应的auth_id；
 
 c. 需要接收子设备的数据，就使用子设备产品对应的auth_id。
-
-# 旧版文档记录
-[SNoti API V2.1.2.1](/assets/pdf/SNoti API V2.1.2.pdf)
