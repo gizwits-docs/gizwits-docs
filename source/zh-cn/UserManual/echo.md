@@ -252,10 +252,6 @@ Lambda预先设计了一些使用情境, 这些情境提供了一些sample code�
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626714763.png)
 
-### 4.2.2  调用机智云openAPI控制设备
-在swtich_action_fun里面，调用机智云的OpenApi进行控制设备
-
-![Alt text](/assets/zh-cn/UserManual/Echo/1484626727043.png)
 
 # 5、Alexa应用端配置
 本节要点：Echo音箱配置入网，AlexaSkill与亚马逊账号绑定，Alexa与机智云账号绑定。
