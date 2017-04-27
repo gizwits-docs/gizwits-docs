@@ -618,7 +618,7 @@ if(result.code == GIZ_SDK_SUCCESS) {
 
 ## 4.	设备发现和订阅部分
 ### 4.1.	设备发现和订阅流程图
- ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image12.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image13.png)
 
 ### 4.2.	设备发现
 APP设置好委托，启动SDK后，就可以收到SDK的设备列表推送。每次局域网设备或者用户绑定设备发生变化时，SDK都会主动上报最新的设备列表。设备断电再上电、有新设备上线等都会触发设备列表发生变化。用户登录后，SDK会主动把用户已绑定的设备列表上报给APP，绑定设备在不同的手机上登录帐号都可获取到。
