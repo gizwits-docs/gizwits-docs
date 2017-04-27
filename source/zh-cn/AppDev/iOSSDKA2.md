@@ -161,6 +161,7 @@ NSLog(@"token %@ expired: %@", (NSString*)eventSource, eventMessage);
 
 以下流程中涉及到的监听器注册方法是用子类继承基类的方式实现的。
 ### 2.1.	用户部分主要流程图
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image11.png)
  
 用户的注册方式有多种，比如手机号、普通用户名、邮箱等，APP可以根据需要采取不同的方式。其他流程比如登录、密码修改、个人信息修改等部分，请直接阅读下面的流程文档。
 ### 2.2.	用户注册
@@ -563,7 +564,7 @@ SDK的设备配置接口如果超时时间还未结束，无法进行下一次�
 需要注意的是，如果配置上线的设备不是APP要获取的产品类型，该设备就不会出现在设备列表中。
 
 ### 3.1.	设备配置流程图
- ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image11.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image12.png)
 
 ### 3.2.	AirLink配置
 AirLink使⽤UDP广播方式，由手机端发出含有目标路由器名称和密码的广播，设备上的Wifi模块接收到广播包后自动连接目标路由器，连上路由器后发出配置成功广播，通知手机配置已完成。
