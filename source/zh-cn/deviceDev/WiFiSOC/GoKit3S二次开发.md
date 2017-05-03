@@ -13,7 +13,7 @@ GoKit3(S)有两种开发环境的搭建方式：
 
 1) 下载官方编译环境安装包：
 
-链接: http://pan.baidu.com/s/1eSbSsQQ 密码: 46vf
+链接: https://pan.baidu.com/s/1kVn12Iz
 
 安装包说明：
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image3.png)
