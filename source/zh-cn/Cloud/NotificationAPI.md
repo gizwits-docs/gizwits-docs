@@ -340,9 +340,9 @@ AES mode为AES.MODE_ECB
 - Http API端口：2018
 
 ## 1. 获取subkey
-http://swagger.gizwits.com/doc/index/snoti_api_inner#!/product/get_v1_products_product_key_subkey
+http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/get_v1_products_product_key_subkey
 ## 2. 删除subkey
-http://swagger.gizwits.com/doc/index/snoti_api_inner#!/product/delete_v1_products_product_key_subkey
+http://swagger.gizwits.com/doc/index/snoti_api_operator#!/product/delete_v1_products_product_key_subkey
 
 # FAQ
 
