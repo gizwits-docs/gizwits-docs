@@ -1,6 +1,6 @@
 title:  SNoti API
 ---
-v2.1.5
+v2.1.6
 
 # 目的
 企业客户可通过SNoti提供的安全数据传输通道，实时的接收设备的数据，用于设备信息归类整理，设备状态统计，设备监控等；也可以通过远程控制功能，实时发送业务指令控制在线设备。
@@ -34,6 +34,8 @@ v2.1.5
 - device.attr_fault：设备故障事件
 - device.attr_alert：设备报警事件
 - datapoints.changed：数据点编辑事件
+- center_control.sub_device_added: 中控添加子设备事件
+- center_control.sub_device_deleted: 中控删除子设备事件
 
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
@@ -87,7 +89,7 @@ v2.1.5
 | data.auth_id	| 必须 	| 产品授权ID| 
 | data.auth_secret 	| 必须 	| 产品授权密匙| 
 | data.subkey | 必须 	| subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线| 
-| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed|
+| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed   center_control.sub_device_added;center_control.sub_device_deleted|
 
 
 Gizwits Platform 回复：
@@ -122,9 +124,9 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "remote_control_req",
+"msg_id": <msg id string>,
 "data": [{
 “cmd": "write_attrs" | "write" | "write_v1",
-"source": "noti",
 "data": {
 "did": <did string>,
 "mac": <mac string>,
@@ -145,7 +147,8 @@ OR
 | 字段      | 是否必须         |             描述           | 
 | ------------- |:-------------:|    -------------    |  
 | cmd     | 必须   | 控制设备，必须为 remote_control_req| 
-| data  | 	必须     | 控制指令，数组类型| 
+| msg_id  | 可选  | 可用于标识本消息，将会在回复指令中返回|
+| data  | 必须 	| 控制指令，数组类型| 
 | data.cmd| 必须 	| V4 产品数据点协议格式，填写write_attrs；V4 产品自定义协议格式，填写 write；V1 产品协议格式，填写 write_v1| 
 | data.source	| 必须 	| 固定填写 noti| 
 | data.data.did 	| 必须 	| 设备 ID| 
@@ -158,6 +161,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "remote_control_res”,
+"msg_id": <msg id string>,
 “result": {
 "succeed": ["did1", "did2", … …]
 "failed": [
@@ -169,6 +173,7 @@ Gizwits Platform 回复：
 }\n
 ```
 
+其中msg_id的内容为请求消息中msg_id字段的内容，如请求消息中不存在该字段，回复消息中将不会出现该字段。
 如协议自身引起的错误，Gizwits Platform 回复 错误响应消息，该消息格式参见下文。
 
 ## 4.  推送事件
@@ -269,6 +274,44 @@ Gizwits Platform 回复：
 }
 }
 ```
+#### 中控添加子设备事件
+
+```json
+{
+"cmd": "event_push",
+"delivery_id": <delivery_id>，(用于ACK)
+"event_type": "sub_device_added",
+"product_key": <product_key string>,
+"did": <did string>,
+"mac": <mac string>,
+"child_product_key": <product_key string>,
+"child_did": <did string>,
+"child_mac": <mac string>,
+"child_passcode": <str, AES encrypted, see below>,
+"created_at"：<timestamp in seconds, float>
+}\n
+```
+其中child_passcode采用AES加密，
+AES补码方式为pcks7padding
+AES key为中控passcode的md5值（16 bytes）
+AES mode为AES.MODE_ECB
+
+#### 中控删除子设备事件
+
+```json
+{
+"cmd": "event_push",
+"delivery_id": <delivery_id>，(用于ACK)
+"event_type": “sub_device_deleted”,
+"product_key": <product_key string>,
+"did": <did string>,
+"mac": <mac string>,
+            "child_product_key": <product_key string>,
+"child_did": <did string>,
+"child_mac": <mac string>,
+"created_at"：<timestamp in seconds, float>
+}\n
+```
 #### 事件 ACK
 
 客户端每收到一事件消息都需要回复以下 ACK 消息：
@@ -290,6 +333,16 @@ Gizwits Platform 回复：
 }\n
 ```
 客户端开发者应检查客户端发出的消息内容是否正确（注意：如果客户端没有在消息结尾添加"\n"，服务器端会认为还没有收到完整的消息而继续等待更多的消息内容）。
+
+# subkey管理
+用户使用过程中，需要关注当前使用到的subkey有哪些，并且对不再使用的subkey，要尽快清理，避免不必要的资源浪费。subkey的获取和删除，采用Http API的方式请求。
+- 域名：snoti.gizwits.com
+- Http API端口：2018
+
+## 1. 获取subkey
+http://swagger.gizwits.com/doc/index/snoti_api_inner#!/product/get_v1_products_product_key_subkey
+## 2. 删除subkey
+http://swagger.gizwits.com/doc/index/snoti_api_inner#!/product/delete_v1_products_product_key_subkey
 
 # FAQ
 
