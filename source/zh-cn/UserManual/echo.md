@@ -252,13 +252,15 @@ Lambda预先设计了一些使用情境, 这些情境提供了一些sample code�
 
 ![Alt text](/assets/zh-cn/UserManual/Echo/1484626714763.png)
 
+之后再调用机智云的openapi对设备进行控制，详情请参考openapi的使用指南
+（http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html）
 
 # 5、Alexa应用端配置
 本节要点：Echo音箱配置入网，AlexaSkill与亚马逊账号绑定，Alexa与机智云账号绑定。
 
 ## 5.1  配置Echo音箱入网
 
-用笔记本电脑点击链接http://alexa.amazon.com/spa/index.html配置
+用笔记本电脑点击链接http://alexa.amazon.com/spa/index.html 配置
 或用手机App来进行配置：下载链接
 （https://www.amazon.com/gp/help/customer/display.html?nodeId=201602060）
 登陆亚马逊账号，进入Alexa配置页面，选择Echo音箱
