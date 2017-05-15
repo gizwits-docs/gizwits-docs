@@ -41,6 +41,8 @@ APP开发:
       path: /AppDev/Android消息推送.html
     Android 第三方登录与换肤:
       path: /AppDev/Android第三方登录与换肤.html
+    APICloud开源框架使用指南(含源码):
+      path: /AppDev/APICloudFrame.html
   
   iOS SDK:
     path: /AppDev/iOSSDKA2.html
