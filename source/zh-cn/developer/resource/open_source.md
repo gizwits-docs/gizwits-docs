@@ -742,7 +742,7 @@ BT/BLE设备接入机智云iOS客户端示例源码，包含蓝牙设备数据�
 - 医疗/保健/卫生
 
 机智云客户：
-![机智云客户Logo墙](http://club.gizwits.com/EDMimages/marstest/gizwitslogoqiang.png "在这里输入图片标题")
+![机智云客户Logo墙](http://club.gizwits.com/EDMimages/github/g510-2.png "机智云客户Logo墙")
 
 
 ## 官方技术交流群
