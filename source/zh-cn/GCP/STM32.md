@@ -17,13 +17,13 @@ WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼�
 借助机智云的 Gokit套件，开发者可快速开发新产品。
 
 #### GoKit背后是一个完整的产品体系
-![输入图片说明](https://static.oschina.net/uploads/img/201704/07181948_VgIS.png "在这里输入图片标题")
+![GoKit背后是一个完整的产品体系](http://club.gizwits.com/EDMimages/github/STM32-1.png "GoKit背后是一个完整的产品体系")
 这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛 [club.gizwits.com](http://club.gizwits.com/)。
 
 #### GoKit在系统中的位置
 GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。
 
-![输入图片说明](https://static.oschina.net/uploads/img/201704/07182036_VDft.png "在这里输入图片标题")
+![GoKit在系统中的位置](http://club.gizwits.com/EDMimages/github/STM32-2.png "GoKit在系统中的位置")
 
 
 ####  历代Gokit
@@ -85,14 +85,14 @@ GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能�
  - [串口工具使用文档](http://docs.gizwits.com/zh-cn/deviceDev/%E4%B8%B2%E5%8F%A3%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html)
  - [日志抓取教程文档](http://docs.gizwits.com/zh-cn/deviceDev/%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3.html)
 
-![输入图片说明](https://static.oschina.net/uploads/img/201704/07184844_aV2T.png "在这里输入图片标题")
+![输入图片说明](http://club.gizwits.com/EDMimages/github/STM32-3.png "在这里输入图片标题")
 
 #  STM32代码自动生成
 为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。使用自动生成的代码开发产品，就不必再处理协议相关的部分了，开发者可以将节省出来的精力集中在产品的核心功能开发上
 
 自动生成的代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的API，且提供了多种平台的实例代码。当设备收到云端或APP端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，就可以完成产品的开发。
 
-![输入图片说明](https://static.oschina.net/uploads/img/201704/09134202_4Bns.png "在这里输入图片标题")
+![STM32代码自动生成](http://club.gizwits.com/EDMimages/github/STM32-4.png "STM32代码自动生成")
 
 #### 代码自动生成工具文档：
   - [MCU（STM32）代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
