@@ -234,4 +234,4 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 - 邮箱: service@gizwits.com
 - NewYork   646.201.9357
 
-![输入图片说明](http://club.gizwits.com/EDMimages/marstest/E1.jpg "马上注册成为机智云开发者，创建您的智能产品吧！")
+[![马上注册成为机智云开发者，创建您的智能产品吧！](http://club.gizwits.com/EDMimages/marstest/E1.jpg "马上注册成为机智云开发者，创建您的智能产品吧！")](https://accounts.gizwits.com/zh-cn/register/)
