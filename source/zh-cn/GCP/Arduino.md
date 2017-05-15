@@ -14,13 +14,13 @@ WiFi模块方面，目前已经有二十几家国内厂商为机智云做了兼�
 借助机智云的 Gokit套件，开发者可快速开发新产品。
 
 #### GoKit背后是一个完整的产品体系
-![输入图片说明](https://static.oschina.net/uploads/img/201704/07181948_VgIS.png "在这里输入图片标题")
+![GoKit背后是一个完整的产品体系](http://club.gizwits.com/EDMimages/github/STM32-1.png "GoKit背后是一个完整的产品体系")
 这个体系包含设备、APP、M2M服务、业务服务、以及云对接等各种环节,详细说来,还有很多很多,如果您有兴趣,可以参考我们的论坛 [club.gizwits.com](http://club.gizwits.com/)。
 
 #### GoKit在系统中的位置
 GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能硬件。
 
-![输入图片说明](https://static.oschina.net/uploads/img/201704/07182036_VDft.png "在这里输入图片标题")
+![GoKit在系统中的位置](http://club.gizwits.com/EDMimages/github/STM32-2.png "GoKit在系统中的位置")
 
 
 #### 历代Gokit
@@ -70,7 +70,7 @@ GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能�
 什么是GAent? GAent是机智云开发用于快速搭建物联网框架的固件，主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。目前机智云提供由机智云移植的WiFi模组对应固件有：汉枫LPB100、乐鑫8266、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162等。以上设备只需刷入GAgent，即可快速接入机智云。可应用在智能家居 \ 智能家电 \ 智慧公寓 \ 智慧安防 \ 物联网M2M \ 单品类解决方案（净水器、空气净化器、照明、卫浴、厨电等） \ 商用租赁 \ 智能充电桩 \ 工业控制 \ 农业大棚 \ 资产管理等领域 。
 
 
-![输入图片说明](https://static.oschina.net/uploads/img/201704/11153242_gA0a.png "在这里输入图片标题")
+![输入图片说明](http://club.gizwits.com/EDMimages/github/STM32-3.png "在这里输入图片标题")
 
 GAgent模组固件烧写教程：
  - [汉枫 LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
@@ -170,7 +170,7 @@ GAgent模组固件烧写教程：
 - 医疗/保健/卫生
 
 机智云客户：
-![机智云客户Logo墙](http://club.gizwits.com/EDMimages/marstest/gizwitslogoqiang.png "在这里输入图片标题")
+![机智云客户Logo墙](http://club.gizwits.com/EDMimages/github/g510-2.png "机智云客户Logo墙")
 
 
 ## 官方技术交流群
