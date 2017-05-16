@@ -2,7 +2,7 @@ title: Arduino开发指南（IoT）
 ---
 # Arduino开发指南
 
-Arduino是一款便捷灵活、方便上手的开源电子原型平台，包含硬件（各种型号开发板）和软件（arduino IDE）,它适合爱好者，艺术家，和设计师的快速开发，把你的灵感快速实现。
+Arduino是一款便捷灵活、方便上手的开源电子原型平台，包含硬件（各种型号开发板）和软件（arduino IDE）,它适合爱好者，艺术家，和设计师的快速开发，把你的灵感快速实现。[机智云Arduino中文论坛](http://club.gizwits.com/forum-227-1.html)
 
 作为国内第一个智能硬件自助开发(PaaS)及云服务(SaaS)平台和Arduino战略合作伙伴,机智云率先开发出了基**于Arduino的物联网开源套件 Gokit 和 Arduino代码自动生成工具**，帮助创客快速实现智能化产品开发。
 
