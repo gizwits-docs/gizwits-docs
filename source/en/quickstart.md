@@ -1,8 +1,5 @@
-title:  这里是标题
+title:  Gizwits QuickStart
 ---
-机智云
-
-Gizwits
 
 
 ## Company Profile
