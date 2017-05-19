@@ -1,0 +1,319 @@
+/* 逸创-云客服 官方样式 */
+.content-sidebar .category-nav {
+  background: #fff;
+  border-radius: 3px;
+  padding: 15px;
+  border: 1px solid #e2eaec;
+  margin-bottom: 20px;
+}
+.content-sidebar .category-nav h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e2eaec;
+}
+.content-sidebar .category-nav a {
+  color: #428bca;
+}
+.content-sidebar .category-nav a:hover {
+  color: #569fde;
+}
+.content-sidebar .category-nav li {
+  margin-bottom: 15px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+/* 自定义样式 */
+.category-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.category-nav ul {
+  padding: 7px 20px 0;
+  font-size: 14px;
+}
+.category-nav .category-nav-zones {
+  padding: 0;
+}
+.category-nav .zone-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+.category-nav .cate-title {
+  font-weight: 600;
+}
+.category-nav li.category-nav-cate,
+.category-nav li.category-nav-zone {
+  margin-bottom: 0;
+}
+.content-sidebar .category-nav a.selected-article {
+  color: #21D376;
+}
+.content-sidebar .category-nav li {
+  margin-bottom: 7px;
+}
+
+
+/* 缩小文档正文字体字号，减小行距 */
+.article-content p{
+  line-height: 1.5em;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+
+/* 调整文档h1~h3样式 */
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  line-height: 1.5em;
+  font-weight:bold;
+  padding: 5px 0;
+  margin-top: 20px;
+}
+.article-content h1 {
+  font-size:20px;
+  margin-bottom: 25px;
+}
+.article-content h2 {
+  font-size: 18px;
+  border: 0;
+  margin-bottom: 20px;
+}
+.article-content h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+#article-nav ul>li {
+  list-style-type: square;
+}
+#article-nav ul>li:before {
+  background: none;
+}
+
+
+
+/*首页相关样式调整*/
+
+/*setting based font family*/
+* {
+  font-family: "Hiragino Sans GB","Microsoft YaHei","黑体",Helvetica,Arial,Tahoma,sans-serif,iconfont;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*index main section*/
+.content {
+  padding-bottom: 0;
+}
+
+/*header section*/
+.header,
+.footer {
+  background: #2a2d30;
+}
+.header li {
+  border: 0;
+}
+.header li a,
+.search-box p,
+.search-box p a {
+  color: #fff;
+}
+.header li a:hover,
+.footer li a:hover,
+.search-box p span a:hover {
+  color: #dee400;
+  text-decoration: none;
+}
+.hader-inner {
+  height: 40px;
+}
+.header-nav-list {
+  position: relative;
+  top: -12px;
+}
+.header-nav-list li:last-child {
+  margin-left: 25px;
+}
+
+/*logo section*/
+@font-face {
+  font-family: 'iconfont';
+  src: url('https://at.alicdn.com/t/font_1459332919_3852491.eot'); /* IE9*/
+  src: url('https://at.alicdn.com/t/font_1459332919_3852491.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('https://at.alicdn.com/t/font_1459332919_3852491.woff') format('woff'), /* chrome、firefox */
+  url('https://at.alicdn.com/t/font_1459332919_3852491.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('https://at.alicdn.com/t/font_1459332919_3852491.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.logo {
+  display: inline-block;
+  padding: 10px 0 3px;
+}
+#logoImg {
+  font-family: "iconfont";
+  font-size: 35px;
+  line-height: 1em;
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+}
+#logoText {
+  border-left: 1px solid #dee400;
+  padding: 9px 0 9px 20px;
+  position: relative;
+  left: 20px;
+  top: -8px;
+  display: inline-block;
+}
+#logoImg a,
+#logoText a {
+  text-decoration: none;
+}
+#logoImg a,
+#logoText a {
+  color: #dee400;
+}
+
+/*footer section*/
+.footer {
+  height: 120px;
+  margin-top: 0;
+}
+
+.footer ul {
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 350px;
+  max-width: 100%;
+}
+.footer-in li {
+  display: inline-block;
+  padding-left: 10px;
+  margin-left: 10px;
+  border-left: 1px solid #808080;
+}
+.footer-in li:first-child {
+  border-left: 0;
+}
+.footer p {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+.footer p,
+.footer li a {
+  color: #808080;
+}
+
+/*search engine*/
+.main-header,
+.search-box {
+  background-image: url("https://dev.gizwits.com/docs/imgs/search_background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.search-box {
+  height: 170px;
+}
+.search-box p {
+  position: relative;
+  top: 15px;
+  left: -220px;
+}
+.search-box p span {
+  padding: 8px;
+}
+#search-keyword {
+ position: relative;
+ left: -195px;
+}
+
+/*index icons*/
+.index-icon {
+  background-image: url("https://dev.gizwits.com/docs/imgs/index_icons.png");
+  width: 206px;
+  height: 206px;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 51.2px;
+  margin-top: 30px;
+}
+#index-icon-1:hover {
+  background-position: -206px 0;
+}
+#index-icon-2 {
+  background-position: -412px 0;
+}
+#index-icon-2:hover {
+  background-position: -618px 0; 
+}
+#index-icon-3 {
+  background-position: -824px 0;  
+}
+#index-icon-3:hover {
+  background-position: -1030px 0; 
+}
+#index-icon-4 {
+  background-position: -1236px 0;   
+}
+#index-icon-4:hover {
+  background-position: -1442px 0;   
+}
+.index-icon span {
+  position: relative;
+  top: 130px;
+  left: 68px;
+  color: #3f6175;
+  font-size: 18px;
+}
+.index-icon:hover span {
+  color: #fff;
+}
+
+/*content nav list section*/
+.content-nav-list {
+  display: inline-block;
+  width: 270px;
+  margin: 50px 0 50px 80px;
+  vertical-align: top;
+}
+.content-nav-list-container {
+  background: #fcfcfc;
+  margin-top: 50px; 
+}
+ .content-nav-list p {
+  font-size: 18px;
+  padding-bottom: 15px;
+  color: #3f6175;
+}
+.content-nav-list li {
+  margin-bottom: 5px;
+}
+.content-nav-list a {
+  color:  #5188e1;
+}
+.content-nav-list li:before {
+  content: '\2022';
+  color: #e4e3e6;
+  padding-right: 0.5em;
+  font-size: 20px;
+}
+.content-nav-list ul {
+  margin-bottom: 10px;
+}
+.content-nav-list span a {
+  color: #3f6175;
+  font-size: 12px;
+}
+
+
+/* other pages */
+.share-list {
+  position: relative;
+  top: -25px;
+}
