@@ -153,7 +153,7 @@ APP开发:
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
       
-    API使用教程:
+    API／SDK使用教程:
       使用OpenAPI控制虚拟设备教程:
         path: /UserManual/UseOpenAPI.html
       使用Websocket 网页控制设备教程:
