@@ -47,7 +47,7 @@
     <span class="pure-u-3-24 lang-switch-wrapper">
       <i class="fa fa-globe" aria-hidden="true"></i> 
       {% if lang == "zh-cn" %}
-      <a href="http://docsen.gizwits.com/">English</a>
+      <a href="http://docsen.gizwits.com/" class="lang-switch">English</a>
       {% else %}
         <button class="lang-switch" data-lang="zh-cn">中文</button>
       {% endif %}
