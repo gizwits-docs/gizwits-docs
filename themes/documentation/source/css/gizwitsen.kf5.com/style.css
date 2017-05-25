@@ -117,7 +117,7 @@
 .header li a:hover,
 .footer li a:hover,
 .search-box p span a:hover {
-  color: #dee400;
+  color: #f0e900;
   text-decoration: none;
 }
 .hader-inner {
@@ -153,7 +153,7 @@
   display: inline-block;
 }
 #logoText {
-  border-left: 1px solid #dee400;
+  border-left: 1px solid #f0e900;
   padding: 9px 0 9px 20px;
   position: relative;
   left: 20px;
@@ -166,7 +166,7 @@
 }
 #logoImg a,
 #logoText a {
-  color: #dee400;
+  color: #f0e900;
 }
 
 /*footer section*/
