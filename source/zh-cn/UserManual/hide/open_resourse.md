@@ -48,6 +48,14 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [串口工具使用文档](http://docs.gizwits.com/zh-cn/deviceDev/%E4%B8%B2%E5%8F%A3%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html)
  - [日志抓取教程文档](http://docs.gizwits.com/zh-cn/deviceDev/%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3.html)
  
+ 相关开发指南：
+ - [乐鑫ESP8266开发指南](http://docs.gizwits.com/zh-cn/GCP/wmodule/ESP8266.html)
+ - [汉枫HF-LPB100/HB-LPB120开发指南](http://docs.gizwits.com/zh-cn/GCP/wmodule/LPB100.html)
+ - [广和通G510开发指南](http://docs.gizwits.com/zh-cn/GCP/gmodule/G510.html)
+ - [STM32开发指南（IoT）](http://docs.gizwits.com/zh-cn/GCP/STM32.html)	
+ - [Arduino开发指南（IoT）](http://docs.gizwits.com/zh-cn/GCP/Arduino.html)
+ - [Gokit开发概述和试用申请](http://docs.gizwits.com/zh-cn/developer/resource/Gokit.html)
+ - [下载中心的页面Gagent](http://docs.gizwits.com/zh-cn/developer/resource/open_source.html)
 
 ## 2 MCU 代码自动生成
 
@@ -158,3 +166,4 @@ APP开发者可以在框架上实现具体产品的控制页面就可以生成�
 - [空净行业解决方案](http://topic.gizwits.com/zhinengkongqijinghuaqi/)
 - [净水行业解决方案](http://topic.gizwits.com/zhinengjingshuiqi/)
  
+
