@@ -3,6 +3,7 @@
 {{ js("js/jquery.hashchange.min.js") }}
 {{ js("js/clipboard.min.js") }}
 {{ js("js/scrollspy.js") }}
+{{ js("js/social-share.min.js") }}
 {{ js("js/documentation.js") }}
 
 {# 咨询客服 #}
