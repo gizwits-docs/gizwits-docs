@@ -63,7 +63,7 @@ title: APP绑定设备二维码生成教程
 
 在APP开发中需要调用机智云APP SDK中通过二维码绑定设备的接口绑定设备，扫描二维码需要通过第三方框架(比如zxing)来实现，可以参考机智云开源框架代码来实现，SKD中具体绑定设备接口调用如下，以安卓为例：
 
-`
+```java
 	//绑定接口
 	GizWifiSDK.sharedInstance().bindDeviceByQRCode(用户id,用户token,二维码内容);
 	//绑定回调接口
@@ -73,5 +73,5 @@ title: APP绑定设备二维码生成教程
 	        super.didBindDevice(result, did);
 		//绑定成功回调
 	    }
-	};
-	`
+	}
+```
