@@ -399,21 +399,6 @@ AirLink配置就是说明书上介绍的方法，实现过程就是：通过按�
 
 4）等待30秒到一分钟，当GoKit上WiFi模组的指示灯交叉闪烁时，表示配置完成。
 
-### Web Config配置模式
-
-Web Config是SoftAP配置模式的一种升级，解决了智能硬件配置上网对独立专用App的依赖问题。实现原理与SoftAP类似，但直接使用手机自带的浏览器即可配置。具体步骤如下：
-
-1）GoKit正常供电情况下，短按［KEY2］，［RGB LED］亮红灯，表示GoKit已经初始化，而GoKit在初始状态下将自动进入“SoftAP”模式。
-
-2）手机进入“系统设置”中的“WiFi设置”，找到“XPG-GAgent-XXXX”（XXXX是你的GoKit MAC地址后4位）并连接此WiFi网络，如需密码请输入：123456789 。
-
-3）打开手机浏览器，并在地址栏输入“10.10.100.254”即可访问GoKit配置页面，根据提示输入可用WiFi网络SSID及密码，点击配置。
-
-![Alt text](/assets/zh-cn/deviceDev/Gokit2/16.png)
-
-
-4）等待30秒到一分钟，当GoKit上WiFi模组的指示灯交叉闪烁时，表示配置完成。
-
 ##  第三步：使用IoE Demo控制GoKit
 
 完成GoKit的网络配置后，GoKit已经通过路由器连接互联网，你可以使用“IoE Demo”对GoKit进行状态的查询以及控制（包括局域网和远程）。
