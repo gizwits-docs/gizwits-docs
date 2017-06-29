@@ -515,7 +515,7 @@ additialInfo.birthday = @"1990-1-1";
 additialInfo.address = @"Beijing";
 additialInfo.remark = @"home";
 
-[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:nil SMSVerifyCode:nil userType:GizUserEmail additionalInfo:additialInfo]; 
+[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_email_address" SMSVerifyCode:nil userType:GizUserEmail additionalInfo:additialInfo]; 
 
 // 实现回调
 - (void)wifiSDK:(GizWifiSDK *)wifiSDK didChangeUserInfo:(NSError *)result {
@@ -542,7 +542,7 @@ additialInfo.birthday = @"1990-1-1";
 additialInfo.address = @"Beijing";
 additialInfo.remark = @"home";
 
-[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_phone_number" SMSVerifyCode: @"your_verify_code" userType:GizUserPhone additionalInfo:nil];
+[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_phone_number" SMSVerifyCode: @"your_verify_code" userType:GizUserPhone additionalInfo:additialInfo];
 
 // 实现回调
 - (void)wifiSDK:(GizWifiSDK *)wifiSDK didChangeUserInfo:(NSError *)result {
