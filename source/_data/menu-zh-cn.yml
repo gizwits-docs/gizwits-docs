@@ -73,7 +73,7 @@ APP开发:
   GAgent详解:
     path: /deviceDev/gagent_info.html
     
-  MCU开发框架使用说明:
+  MCU代码自动生成使用说明:
     GoKit3代码自动生成工具:
       path: /deviceDev/DevSDK/代码自动生成工具.html
     GoKit3 DEV SDK Common版移植说明:
