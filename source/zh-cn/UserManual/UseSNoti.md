@@ -24,10 +24,7 @@ Productkey和产品名称。
 ![Alt text](/assets/zh-cn/UserManual/SNotiAPI/1490857126972.png)
 ![Alt text](/assets/zh-cn/UserManual/SNotiAPI/1490857171212.png)
 
-## 3.2.添加IP白名单
-![Alt text](/assets/zh-cn/UserManual/SNotiAPI/1490857201516.png)
-
-## 3.3.新建授权
+## 3.2.新建授权
 ![Alt text](/assets/zh-cn/UserManual/SNotiAPI/1490857211637.png)
 
 # 4.运行demo流程
