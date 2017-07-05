@@ -30,7 +30,7 @@ APP开发:
       path: /AppDev/iOS消息推送.html
     iOS 第三方登录与换肤:
       path: /AppDev/iOS第三方登陆与换肤.html
-    基于iOS开源框架的快速开发实例:
+    iOS开源框架的快速开发实例:
       path: /quickstart/iOSAPP快速入门.html
     Android 开源框架说明（含源码）:
       path: /AppDev/Android开源框架使用指南.html
@@ -38,10 +38,10 @@ APP开发:
       path: /AppDev/Android消息推送.html
     Android 第三方登录与换肤:
       path: /AppDev/Android第三方登录与换肤.html
+    Android开源框架的快速开发实例:
+      path: /quickstart/AndroidAppFrame.html 
     APICloud开源框架使用指南(含源码):
-      path: /AppDev/APICloudFrame.html
-    基于Android开源框架的快速开发实例:
-      path: /quickstart/AndroidAppFrame.html  
+      path: /AppDev/APICloudFrame.html 
   
   App 开发 SDK: 
     iOS SDK:
