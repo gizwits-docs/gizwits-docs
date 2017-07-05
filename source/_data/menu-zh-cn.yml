@@ -129,8 +129,6 @@ APP开发:
       path: /deviceDev/Gokit2使用指南.html   
       
   更多教程:
-    Echo音箱控制GoKit开发教程:
-      path: /deviceDev/echo.html
     ECE Demo开发教程:
       path: /UserManual/ecevideos.html
       
@@ -187,7 +185,10 @@ APP开发:
     path: /UserManual/ece.html
     
   接入亚马逊ECho教程:
-    path: /UserManual/echo.html
+    接入ECho开发教程
+      path: /UserManual/echo.html
+    使用Echo音箱控制GoKit:
+      path: /deviceDev/echo.html
     
   实时大数据使用教程:
     path: /UserManual/rtbd.html
