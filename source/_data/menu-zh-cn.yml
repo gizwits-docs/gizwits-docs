@@ -14,17 +14,12 @@
       path: /quickstart/设备快速接入.html
     SOC方案快速入门:
       path: /deviceDev/UseSOC.html
-
-  App快速接入机智云:
-    App开发准备工作:
-      path: /quickstart/准备工作.html
-    Android App 快速开发:
-      path: /quickstart/AndroidAppFrame.html    
-    iOS App 快速开发:
-      path: /quickstart/iOSAPP快速入门.html
    
 
 APP开发:
+  App开发准备工作及向导:
+    path: /quickstart/准备工作.html
+
   App代码自动生成服务介绍:
     path: /UserManual/devApp.html
     
@@ -35,6 +30,8 @@ APP开发:
       path: /AppDev/iOS消息推送.html
     iOS 第三方登录与换肤:
       path: /AppDev/iOS第三方登陆与换肤.html
+    基于iOS开源框架的快速开发实例:
+      path: /quickstart/iOSAPP快速入门.html
     Android 开源框架说明（含源码）:
       path: /AppDev/Android开源框架使用指南.html
     Android 消息推送:
@@ -43,21 +40,20 @@ APP开发:
       path: /AppDev/Android第三方登录与换肤.html
     APICloud开源框架使用指南(含源码):
       path: /AppDev/APICloudFrame.html
+    基于Android开源框架的快速开发实例:
+      path: /quickstart/AndroidAppFrame.html  
   
-  iOS SDK:
-    path: /AppDev/iOSSDKA2.html
-    
-  Android SDK:
-    path: /AppDev/AndroidSDKA2.html
-    
-  APICloud SDK:
-    path: /AppDev/APICloudWifiSDK.html
+  App 开发 SDK: 
+    iOS SDK:
+      path: /AppDev/iOSSDKA2.html  
+    Android SDK:
+      path: /AppDev/AndroidSDKA2.html
+    APICloud SDK:
+      path: /AppDev/APICloudWifiSDK.html
 
   更多App开发指南:
     SDK数据透传方法解析:
       path: /AppDev/SDK数据透传方法解析.html
-      
-  App开发教学视频:
     开源框架使用视频教程:
       path: /AppDev/开源框架视频教程.html
 
