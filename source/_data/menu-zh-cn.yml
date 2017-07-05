@@ -121,10 +121,7 @@ APP开发:
       path: /deviceDev/debug/G510.html
     日志抓取教程文档:
       path: /deviceDev/日志抓取教程文档.html
-      
-  ECE Demo开发教程:
-    path: /UserManual/ecevideos.html
-    
+          
   ArduinoUno开发教程:
     ArduinoUNOWiFi接入机智云介绍:
       path: /deviceDev/ArduinoUNO/intro.html
@@ -134,6 +131,13 @@ APP开发:
       path: /deviceDev/ArduinoUNO/sdk.html
     Arduino Uno WiFi智能小夜灯:
       path: /deviceDev/ArduinoUNO/example.html
+      
+  更多教程:
+    Echo音箱控制GoKit开发教程:
+      path: deviceDev/echo.html
+    ECE Demo开发教程:
+      path: /UserManual/ecevideos.html
+      
  
 云平台:
     企业应用开发:
