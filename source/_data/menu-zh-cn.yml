@@ -8,12 +8,6 @@
 
   机智云名词定义解释:
     path: /quickstart/noun.html
-
-  设备快速接入机智云:
-    独立MCU方案快速入门:
-      path: /quickstart/设备快速接入.html
-    SOC方案快速入门:
-      path: /deviceDev/UseSOC.html
    
 
 APP开发:
@@ -66,9 +60,12 @@ APP开发:
 
 
 设备开发:
-  GAgent详解:
-    path: /deviceDev/gagent_info.html
-    
+  设备快速接入机智云:
+    独立MCU方案快速入门:
+      path: /quickstart/设备快速接入.html
+    SOC方案快速入门:
+      path: /deviceDev/UseSOC.html
+  
   MCU代码自动生成使用说明:
     GoKit3代码自动生成工具:
       path: /deviceDev/DevSDK/代码自动生成工具.html
@@ -102,6 +99,9 @@ APP开发:
     Gokit2 使用指南:
       path: /deviceDev/Gokit2使用指南.html
  
+  GAgent详解:
+    path: /deviceDev/gagent_info.html
+  
   调试与烧写:
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
@@ -187,7 +187,7 @@ APP开发:
   接入亚马逊ECho教程:
       接入Echo开发教程:
          path: /UserManual/echo.html
-      Echo音箱控制GoKit开发教程:
+      使用Echo音箱控制GoKit:
          path: /deviceDev/echo.html
     
   实时大数据使用教程:
