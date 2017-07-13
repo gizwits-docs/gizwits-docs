@@ -3,7 +3,7 @@ title:  GAgent详解
 
 # GAgent功能概述
 
-GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫LPB100](http://topic.gizwits.com/hf-lpb100/)/[LPB120](http://topic.gizwits.com/hf-lpb120/)/[LPT120](http://topic.gizwits.com/hf-lpb120/)/LPT220、[乐鑫8266](http://topic.gizwits.com/esp8266/)、高通4004 、RealTek 8711AM 、联盛德 TLN13SP01、锐凌微 TinyCon3350-M26、庆科3162等；GPRS模组对应固件有：广和通G510等。
+GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫 LPB100](http://topic.gizwits.com/hf-lpb100/)/ [LPB120](http://topic.gizwits.com/hf-lpb120/)/ [LPT120](http://topic.gizwits.com/hf-lpb120/)/ LPT220、[乐鑫8266](http://topic.gizwits.com/esp8266/)、高通4004 、RealTek 8711AM 、联盛德 TLN13SP01、锐凌微 TinyCon3350-M26、庆科3162等；GPRS模组对应固件有：广和通G510等。
 
 ![GAgent功能概述](/assets/zh-cn/deviceDev/GAgent/1478078696133.png)
 
