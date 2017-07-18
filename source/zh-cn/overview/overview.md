@@ -17,28 +17,116 @@ title:  平台概述
 
 ![@机智云PaaS平台架构](/assets/zh-cn/OverVeiw/架构.png)
 
- #  快速入门
-## 五分钟了解机智云接入流程
- - [五分钟了解机智云接入流程](http://docs.gizwits.com/zh-cn/quickstart/5%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E6%9C%BA%E6%99%BA%E4%BA%91.html)
+## 3 机智云优势
+
+### 1、高可用平台
+ - SLA 99.99%
+ - EB级海量数据支持
+ - 弹性可伸缩架构
+  
+### 2、快速接入
+ - 0.5天快速接入
+ - 提供每个开发环节的SDK
+ - 提供自动生成代码工具
+ - 提供ECE能力，通过云端配置脚本自动适配私有协议
+ - 提供行业完整解决方案
+ 
+### 3、专业服务
+ - 专业傻瓜工具支持
+ - 专业方案架构团队支持
+ - 专业运维支持
+ 
+### 4、行业积累深厚
+ - 700+企业客户验证
+ - 5W + 社区开发者
+ 
+### 5、安全性
+ - 遵循X.509 证书标准
+ - 企业数据云端加密存储
+ - 关键业务数据加密
+ - 专业安全公司渗透测试
+ - 遵循ISO20007安全管理规范
+
+
+### 6、多层次云端数据服务
+  - 消息代理服务: 按需订阅企业设备数据
+  - 企业API：提供设备控制、设备管理、设备位置服务、设备数据等服务
+  - D3 Engine：灵活、强大的数据编排引擎
+
+### 7、开放性
+  - 全球最开放的物联网自助开发平台
+  - 开放互联AWS ECHO、微信、JD、Nest、苹果HomeKit、苏宁云等各大平台
+
+### 8、国际化
+
+- 全球覆盖: 在国内、欧洲、美洲、东南亚建立独立数据中心与云平台，能覆盖客户全球大部分国家与地区的设备、用户接入
+- 智能连接: 提供设备自动适配就近云服务能力
+
+
+## 机智云全球联网报告
+
+1.广州、深圳、广西、湖南、福建等城市/地区的网络响应速度均小于20ms（即0.02秒）；国内其他城市/地区的网络响应时间总体小于40ms（即0.04秒）；新加坡、马来西亚、印度尼西亚等城市/地区均小于20ms（即0.02秒）；亚洲其他城市/地区小于70ms（即0.07秒）。
+
+![@机智云全球联网报告01](/assets/zh-cn/OverVeiw/GlobalReport_01.png)
+
+2.中东地区响应速度均小于70ms（即0.07秒）；大洋洲的平均在98ms左右；非洲的平均为150ms左右（即0.15秒）；总体较为良好。
+
+![@机智云全球联网报告02](/assets/zh-cn/OverVeiw/GlobalReport_02.png)
+
+3.欧洲等地区的网络响应时间总体小于40ms（即0.04秒）。
+
+![@机智云全球联网报告03](/assets/zh-cn/OverVeiw/GlobalReport_03.png)
+
+4.北美洲等地区的网络响应时间总体小于40ms（即0.04秒）；南美洲的城市/地区响应速度平均146ms（即0.146秒）;总体相对较为良好。
+
+![@机智云全球联网报告04](/assets/zh-cn/OverVeiw/GlobalReport_04.png)
+
+（PS：由于网络的不稳定性，即存在一定小范围的响应速度误差）
+
+ # 快速入门
+ 
+## 五分钟了解机智云
+ - [五分钟了解机智云](http://docs.gizwits.com/zh-cn/quickstart/5%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E6%9C%BA%E6%99%BA%E4%BA%91.html)
  - [机智云名词定义解释](http://docs.gizwits.com/zh-cn/quickstart/noun.html)
 
+# 应用开发（App、微信）
+机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能。
 
-##  设备快速接入机智云
-- [了解GAgent](../deviceDev/gagent_info.html)
-- [设备如何快速接入](/zh-cn/quickstart/设备快速接入.html)
-- [设备快速接入机智云]( http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html)
-- [SOC快速入门](http://docs.gizwits.com/zh-cn/deviceDev/UseSOC.html)
+## 1 App开发准备工作及向导
 
-硬件厂商对硬件智能化的第一步是让设备能够联网，GAgent是机智云提供的一款兼容国内主流Wi-Fi模块、移动网络模块的模组系统，可以提供上层应用（手机APP等控制端、云端）到产品设备的双向数据通讯，此外，还提供对设备的配置入网、发现绑定、程序升级等功能。
-产品开发者使用GAgent后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
-目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫LPB100](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[乐鑫8266](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[汉枫LPT120](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)、高通4004 、RealTek 8711AM 、[庆科3162](http://docs.gizwits.com/zh-cn/deviceDev/MXCHIP%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)、[广和通G510](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)等。
+   - [App开发准备工作及向导](http://docs.gizwits.com/zh-cn/quickstart/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C.html)
+   
+## 2 APP代码自动生成服务介绍
+   - [APP代码自动生成服务介绍](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)
 
-##  APP快速接入机智云
-- [App开发准备工作](http://docs.gizwits.com/zh-cn/quickstart/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C.html)
-- [Android App快速开发](http://docs.gizwits.com/zh-cn/quickstart/AndroidAppFrame.html)
-- [iOS App快速开发](http://docs.gizwits.com/zh-cn/quickstart/iOSAPP%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.html)
+## 3 App 开源框架
+   - [IOS开源框架说明（含源码）](http://docs.gizwits.com/zh-cn/AppDev/iosframe.html)
+   - [IOS消息推送](http://docs.gizwits.com/zh-cn/AppDev/iOS%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
+   - [IOS第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
+   - [IOS开源框架的快速开发实例](http://docs.gizwits.com/zh-cn/quickstart/iOSAPP%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8.html)
+   - [Android 开源框架说明（含源码）](http://docs.gizwits.com/zh-cn/AppDev/Android%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
+   - [Android 消息推送](http://docs.gizwits.com/zh-cn/AppDev/Android%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
+   - [Android 第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
+   - [Android 开源框架的快速开发实例](http://docs.gizwits.com/zh-cn/quickstart/AndroidAppFrame.html)
+   - [APICloud 开源框架使用指南（含源码）](http://docs.gizwits.com/zh-cn/AppDev/APICloudFrame.html)
+   
+## 4 App 开发 SDK 接入
 
-# 设备开发（硬件接入）
+使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
+   - [Android SDK接入](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
+   - [IOS SDK接入](http://docs.gizwits.com/zh-cn/AppDev/iOSSDKA2.html)
+   - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
+ 
+## 5 更多App开发指南
+   - [SDK数据透传方法解析](http://docs.gizwits.com/zh-cn/AppDev/SDK%E6%95%B0%E6%8D%AE%E9%80%8F%E4%BC%A0%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90.html) 
+   - [开源框架视频教程](http://docs.gizwits.com/zh-cn/AppDev/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B.html)
+ 
+## 6 微信开发
+- [了解微信应用开发](http://docs.gizwits.com/zh-cn/WechatDev/%E4%BA%86%E8%A7%A3%E5%BE%AE%E4%BF%A1%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html)
+- [微信应用开发教程](http://docs.gizwits.com/zh-cn/WechatDev/WeChatDev.html)
+
+
+# 设备接入
 
 ## 1 固件烧写教程
 GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。
@@ -101,43 +189,6 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [Arduino Uno WiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
  - [Arduino Uno WiFi 智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
 
-# APP开发
-机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能。
-
-## 1 APP代码自动生成
-   - [APP代码自动生成 开发指南](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)
-   
-## 2 Echo控制
-   - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
-   - [使用Echo音箱控制GoKit2](http://docs.gizwits.com/zh-cn/deviceDev/Gokit2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html#使用Echo音箱控制GoKit2)
-   
-## 3 微信开发
-   - [了解微信应用开发](http://docs.gizwits.com/zh-cn/WechatDev/%E4%BA%86%E8%A7%A3%E5%BE%AE%E4%BF%A1%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html)
-   - [微信开发教程](http://docs.gizwits.com/zh-cn/WechatDev/WeChatDev.html)
-   
-## 4 SDK 接入
-
-使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
-   - [安卓SDK接入](/zh-cn/AppDev/AndroidSDKA2.html)
-   - [IOS SDK接入](/zh-cn/AppDev/iOSSDKA2.html)
-   - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
-   - [SDK数据透传方法解析](http://docs.gizwits.com/zh-cn/AppDev/SDK%E6%95%B0%E6%8D%AE%E9%80%8F%E4%BC%A0%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90.html)
-   
-## 5 APP 开源框架
-
-APP开发者可以在框架上实现具体产品的控制页面就可以生成一个完整的APP。
-
-   - [iOS开源框架使用指南（含源码)](http://docs.gizwits.com/zh-cn/AppDev/iosframe.html)
-   - [iOS App消息推送集成](http://docs.gizwits.com/zh-cn/AppDev/iOS%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
-   - [iOS App集成第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
-   - [Android开源框架使用指南（含源码）](http://docs.gizwits.com/zh-cn/AppDev/Android%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
-   - [Android App消息推送](http://docs.gizwits.com/zh-cn/AppDev/Android%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
-   - [Android App集成第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
-   - [开源框架视频教程](http://docs.gizwits.com/zh-cn/AppDev/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B.html)
-  
-
-
-
 
 # 云端开发
 开发者如果已完成设备接入、APP开发，还需要从机智云PaaS平台获取数据构建一套业务管理系统，或者访问机智云提供的服务，则需了解以下文档:
@@ -163,79 +214,5 @@ APP开发者可以在框架上实现具体产品的控制页面就可以生成�
  - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
  - [实时大数据使用说明](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html)
 
-
-
-# 行业解决方案
-机智云拥有多年的经验积累，可为客户提供各个垂直领域的行业解决方案。下面选择几个比较有代表性的行业解决方案： 
-- [充电桩行业解决方案](http://topic.gizwits.com/chongdianzhuang/)
-- [空净行业解决方案](http://topic.gizwits.com/zhinengkongqijinghuaqi/)
-- [净水行业解决方案](http://topic.gizwits.com/zhinengjingshuiqi/)
  
-
-
- 
-# 机智云优势
-### 1、高可用平台
- - SLA 99.99%
- - EB级海量数据支持
- - 弹性可伸缩架构
-  
-### 2、快速接入
- - 0.5天快速接入
- - 提供每个开发环节的SDK
- - 提供自动生成代码工具
- - 提供ECE能力，通过云端配置脚本自动适配私有协议
- - 提供行业完整解决方案
- 
-### 3、专业服务
- - 专业傻瓜工具支持
- - 专业方案架构团队支持
- - 专业运维支持
- 
-### 4、行业积累深厚
- - 700+企业客户验证
- - 5W + 社区开发者
- 
-### 5、安全性
- - 遵循X.509 证书标准
- - 企业数据云端加密存储
- - 关键业务数据加密
- - 专业安全公司渗透测试
- - 遵循ISO20007安全管理规范
-
-
-### 6、多层次云端数据服务
-  - 消息代理服务: 按需订阅企业设备数据
-  - 企业API：提供设备控制、设备管理、设备位置服务、设备数据等服务
-  - D3 Engine：灵活、强大的数据编排引擎
-
-### 7、开放性
-  - 全球最开放的物联网自助开发平台
-  - 开放互联AWS ECHO、微信、JD、Nest、苹果HomeKit、苏宁云等各大平台
-
-### 8、国际化
-
-- 全球覆盖: 在国内、欧洲、美洲、东南亚建立独立数据中心与云平台，能覆盖客户全球大部分国家与地区的设备、用户接入
-- 智能连接: 提供设备自动适配就近云服务能力
-
-
-# 机智云全球联网报告
-
-1.广州、深圳、广西、湖南、福建等城市/地区的网络响应速度均小于20ms（即0.02秒）；国内其他城市/地区的网络响应时间总体小于40ms（即0.04秒）；新加坡、马来西亚、印度尼西亚等城市/地区均小于20ms（即0.02秒）；亚洲其他城市/地区小于70ms（即0.07秒）。
-
-![@机智云全球联网报告01](/assets/zh-cn/OverVeiw/GlobalReport_01.png)
-
-2.中东地区响应速度均小于70ms（即0.07秒）；大洋洲的平均在98ms左右；非洲的平均为150ms左右（即0.15秒）；总体较为良好。
-
-![@机智云全球联网报告02](/assets/zh-cn/OverVeiw/GlobalReport_02.png)
-
-3.欧洲等地区的网络响应时间总体小于40ms（即0.04秒）。
-
-![@机智云全球联网报告03](/assets/zh-cn/OverVeiw/GlobalReport_03.png)
-
-4.北美洲等地区的网络响应时间总体小于40ms（即0.04秒）；南美洲的城市/地区响应速度平均146ms（即0.146秒）;总体相对较为良好。
-
-![@机智云全球联网报告04](/assets/zh-cn/OverVeiw/GlobalReport_04.png)
-
-（PS：由于网络的不稳定性，即存在一定小范围的响应速度误差）
 
