@@ -88,8 +88,9 @@ APP开发:
       path: /deviceDev/ESP8266串口烧写说明.html
     广和通G510模组烧写方法:
       path: /deviceDev/debug/G510.html
-    日志抓取教程文档:
-      path: /deviceDev/日志抓取教程文档.html
+    wifi模组日志抓取教程:
+      path: /deviceDev/模组日志抓取教程.html
+    
           
   ArduinoUno开发教程:
     ArduinoUNOWiFi接入机智云介绍:
