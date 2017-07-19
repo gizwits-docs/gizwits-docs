@@ -17,12 +17,12 @@
 步骤二、
 用USB数据线将手机连接上电脑，并在我的电脑中打开手机SD卡目录
 
-  ![name](/assets/zh-cn/deviceDev/debug/Journal/1478087896447.png)
+  ![name](/assets/zh-cn/AppDev/debug/Journal/1478087896447.png)
 
 步骤三、找到GizWifiSDK文件并双击打开即可看到你开发的应用的包名，如果你同时在该手机上开发多个应用，则该目录下将会有多个包名文件夹。 
 步骤四、根据出现问题的应用，找到该应用对应的包名的文件夹，并将此文件夹里面的全部内容提供给机智云FAE即可。
 
- ![name](/assets/zh-cn/deviceDev/debug/Journal/1478087908649.png)
+ ![name](/assets/zh-cn/AppDev/debug/Journal/1478087908649.png)
 
 ## 2.获取iOS SDK日志
 获取iOS SDK日志要区分两种情况，iOS10以下的系统和iOS10系统
@@ -38,14 +38,14 @@
 步骤三、
 用USB数据线将手机连接到电脑上，打开同步助手，按下图操作，并将最终拷贝的文件夹交给机智云FAE即可。
 
- ![name](/assets/zh-cn/deviceDev/debug/Journal/1478087955905.png)
+ ![name](/assets/zh-cn/AppDev/debug/Journal/1478087955905.png)
 
 2）iOS10系统的日志获取
 
 步骤一、
 在项目的info.plist中添加一个key值：Application supports iTunes file sharing，value值为YES,如下图所示：
 
- ![name](/assets/zh-cn/deviceDev/debug/Journal/1480644269434.png)
+ ![name](/assets/zh-cn/AppDev/debug/Journal/1480644269434.png)
 
 步骤二、
 将APP运行到手机上
@@ -55,7 +55,7 @@
 
    用USB数据线将手机连接到电脑上，打开iTurns，找到项目下的日志文件导出即可，如下图：
     
-  ![name](/assets/zh-cn/deviceDev/debug/Journal/1480644288613.png)
+  ![name](/assets/zh-cn/AppDev/debug/Journal/1480644288613.png)
   
-  ![name](/assets/zh-cn/deviceDev/debug/Journal/1480644430368.png)
+  ![name](/assets/zh-cn/AppDev/debug/Journal/1480644430368.png)
   
