@@ -123,32 +123,28 @@
       path: /deviceDev/串口工具使用文档.html
 
 云API:
-    企业应用开发:
-      path: /Cloud/ent_dev.html
-
-    企业API:
-      path: /Cloud/enterprise_api.html
-
-    SNoti API:
-      path: /Cloud/NotificationAPI.html
-
     Open API 指南:
       path: /Cloud/openapi_apps.html
-
+    企业应用开发:
+      path: /Cloud/ent_dev.html
+    企业API:
+      path: /Cloud/enterprise_api.html
+    SNoti API:
+      path: /Cloud/NotificationAPI.html
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
 
     API／SDK使用教程:
       使用OpenAPI控制虚拟设备教程:
         path: /UserManual/UseOpenAPI.html
+      Snoti 数据实时同步服务demo使用教程:
+        path: /UserManual/UseSNoti.html
       使用Websocket 网页控制设备教程:
         path: /UserManual/UseWebsocket.html
       使用聚合API教程:
         path: /UserManual/DataAPI.html
       设备联动API使用教程:
         path: /UserManual/LinkageAPI.html
-      Snoti 数据实时同步服务demo使用教程:
-        path: /UserManual/UseSNoti.html
       设备分享功能SDK使用流程:
         path: /Cloud/SharingSDK.html
       APP绑定设备二维码生成教程:
