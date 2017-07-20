@@ -57,6 +57,8 @@
 
 
 设备接入:
+  设备接入准备工作以及向导:
+      path: /deviceDev/设备接入准备工作以及向导.html
   设备快速接入机智云:
     独立MCU方案接入教程:
       path: /quickstart/设备快速接入.html
