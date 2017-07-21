@@ -12,7 +12,6 @@ title:  平台概述
 
 
 ![@平台接入示意图](/assets/zh-cn/OverVeiw/平台接入示意图.png)
-![@平台概述导航图](/assets/zh-cn/OverVeiw/平台概述导航图.png)
 
 ## 2 机智云平台架构
 
@@ -89,6 +88,9 @@ title:  平台概述
 ## 五分钟了解机智云
  - [五分钟了解机智云](http://docs.gizwits.com/zh-cn/quickstart/5%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E6%9C%BA%E6%99%BA%E4%BA%91.html)
  - [机智云名词定义解释](http://docs.gizwits.com/zh-cn/quickstart/noun.html)
+### 快速接入向导
+![@文档中心导航图](/assets/zh-cn/OverVeiw/平台概述导航图.png)
+
 
 # 应用开发（App、微信）
 机智云提供了APP SDK、开源框架、微信SDK，便于开发者快速构建手机应用端系统，只需根据工具指引实现业务功能，无需实现底层功能。
