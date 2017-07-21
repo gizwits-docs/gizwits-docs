@@ -167,13 +167,13 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 - [Gokit3(S)开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html)
 - [Gokit3(S)程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
 
-##5.ArduinoUnoWIFI接入教程
+## 5.ArduinoUnoWIFI接入教程
  - [ArduinoUNOWIFI接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
  - [ArduinoUNOWiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
  - [ArduinoUNOWiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
  - [ArduinoUNOWiFi智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
  
-##6.更多设备接入指南
+## 6.更多设备接入指南
 - [ECE Demo开发教程](http://docs.gizwits.com/zh-cn/UserManual/ecevideos.html)
 - [机智云串口工具使用文档](http://docs.gizwits.com/zh-cn/deviceDev/%E4%B8%B2%E5%8F%A3%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html)
 
