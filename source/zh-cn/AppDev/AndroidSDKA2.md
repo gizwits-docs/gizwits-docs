@@ -60,14 +60,14 @@ title: Android SDK 2.0集成指南
 **5.4.	下载SDK**
 
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088957775.png)
- 
+
 **5.5.	导入SDK**
 第一步，双击解开压缩包 GizWifiSDK-Android-xxx.zip。
 
 第二步，将解压后的libs目录下所有内容拷贝到指定工程的libs目录，保证下图红框中的文件都加载到了工程中：
 
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478088998492.png)
- 
+
 **5.6.	配置AndroidManifest.xml**
 
 请将下面权限配置代码复制到 AndroidManifest.xml 文件中：
@@ -112,21 +112,21 @@ Android6.0系统为targetSdkVersion小于23的应用默认授予了所申请的�
 
 ```
 android {
-	compileSdkVersion 23 
-	buildToolsVersion "23.0.1" 
+	compileSdkVersion 23
+	buildToolsVersion "23.0.1"
 	defaultConfig {
 		applicationId "com.yourcomany.app     
 		minSdkVersion 18     
 		targetSdkVersion 23     
 		versionCode 1     
-		versionName "1.0" 
-	} 
+		versionName "1.0"
+	}
 	buildTypes {
-		release { 
-			minifyEnabled false 
-			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro' 
-		} 
-	} 
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+		}
+	}
 }
 ```
 
@@ -142,7 +142,7 @@ if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCAT
 - 请求权限后，系统会弹出请求权限的对话框：
 
 ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089519041.jpg)
- 
+
 - 用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：
 
 ```
@@ -187,9 +187,7 @@ public void onRequestPermissionsResult(int requestCode, String[] permissions, in
 ```
 
 **5.8.	如何在AndroidStudio上使用GizWifiSDK**
-第一步、下载sdk
-
-下载地址 ：http://site.gizwits.com/zh-cn/developer/resource/sdk?service=m2m
+第一步、下载sdk [下载地址](http://download.gizwits.com/zh-cn/p/95/97)
 
 下载完成以后请自行解压。
 
@@ -198,7 +196,7 @@ public void onRequestPermissionsResult(int requestCode, String[] permissions, in
 第二步、导入jar包到Android Studio
 
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089651398.png)
- 
+
 第三步、把jar包导成库文件
 
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089673059.png)
@@ -227,7 +225,7 @@ public void onRequestPermissionsResult(int requestCode, String[] permissions, in
 ## 1.	通用流程图
 
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/1478089762043.png)
- 
+
 ## 2.	关键点说明
 
 1)SDK已经封装了所有的用户、配置、发现、连接、控制的过程，开发者使用这些API可以完成上述流程中的功能开发，不需要再自行实现通讯协议。
@@ -239,7 +237,7 @@ public void onRequestPermissionsResult(int requestCode, String[] permissions, in
 - 如果是在activity之间传递对象的话可以用intent来传递
 
 （传递）
-	
+
 
 ```
 Intent intent = new Intent(Context, A.class);
@@ -258,7 +256,7 @@ Intent intent = getIntent();
 - 在activity和service之间传递对象
 - 可以通过广播来传递数据，由一方发送数据另一方接收。
 
-（注册广播）	
+（注册广播）
 
 ```
 IntentFilter filter = new IntentFilter();//创建IntentFilter对象
@@ -268,12 +266,12 @@ IntentFilter filter = new IntentFilter();//创建IntentFilter对象
 	registerReceiver(cmdReceiver, filter);  
 ```
 
-（发送广播）	
+（发送广播）
 
 ```
 Intent intent = new Intent();  
 	intent.setAction("AAAAAAA");  
-	Bundle bundle = new Bundle();	
+	Bundle bundle = new Bundle();
 	bundle.putParcelable(“参数名”,  设备类对象);
 	intent.putExtras(bundle);
 	sendOrderedBroadcast(intent, null);
@@ -285,9 +283,9 @@ Intent intent = new Intent();
 如果您的项目使用了Proguard混淆打包，为了避免SDK被二次混淆导致无法正常使用SDK，请务必在 proguard-project.txt中添加以下代码：
 
 ```
--libraryjars libs/GizWifiSDK.jar 
+-libraryjars libs/GizWifiSDK.jar
 -dontwarn com.gizwits.**
--keep class com.gizwits.**{ 
+-keep class com.gizwits.**{
     *;
 }
 ```
@@ -332,7 +330,7 @@ super.onCreate();
 // 注册监听器
 GizWifiSDK.sharedInstance().setListener(mListener);
 // 调用SDK的手机号注册接口
-GizWifiSDK.sharedInstance().registerUser("HelloGizwits", "12345678"); 
+GizWifiSDK.sharedInstance().registerUser("HelloGizwits", "12345678");
 }
 ```
 
@@ -355,9 +353,9 @@ public void didRegisterUser(GizWifiErrorCode result, String uid, String token)
 // 实现逻辑
 }
 
-Override 
+Override
 protected void onCreate(Bundle savedInstanceState) {
-super.onCreate(savedInstanceState); 
+super.onCreate(savedInstanceState);
 
 //每次启动activity都要注册一次sdk监听器，保证sdk状态能正确回调
 GizWifiSDK.sharedInstance().setListener(mListener);
@@ -366,7 +364,7 @@ GizWifiSDK.sharedInstance().setListener(mListener);
 
 //子类继承基类，实现基类的回调接口。
 public class TestActivity extends BaseActivity {
-    protected void onCreate(android.os.Bundle savedInstanceState) { 
+    protected void onCreate(android.os.Bundle savedInstanceState) {
         //调用父类方法
         super.onCreate(savedInstanceState);
         //调用用户注册方法
@@ -397,7 +395,7 @@ SDK的日志可以帮助开发者发现APP运行时发生的问题，SDK默认�
 public void onCreate() {
 super.onCreate();
 GizWifiSDK.sharedInstance().setListener(mListener);
-GizWifiSDK.sharedInstance().startWithAppID(getApplicationContext(), "your_app_id"); 
+GizWifiSDK.sharedInstance().startWithAppID(getApplicationContext(), "your_app_id");
 
 GizWifiSDKListener mListener = new GizWifiSDKListener() {
 @Override
@@ -467,7 +465,7 @@ GizWifiSDK.sharedInstance().registerUser("your_phone_number", "your_password", "
 
 // 实现回调
 GizWifiSDKListener mListener = new GizWifiSDKListener() {
-@Override 
+@Override
 public void didRegisterUser(GizWifiErrorCode result, String uid,  String token) {
 if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 // 注册成功
@@ -868,7 +866,7 @@ GizWifiSDK.sharedInstance().changeUserInfo("your_token", "your_phone_number", "y
 
 // 实现回调
 GizWifiSDKListener mListener = new GizWifiSDKListener() {
-@Override 
+@Override
 public  void didChangeUserPassword(GizWifiErrorCode result) {
 if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 // 修改成功
@@ -1037,7 +1035,7 @@ APP可以通过设备的mac、productKey、productSecret完成非局域网设备
 
 ```
 GizWifiSDK.sharedInstance().setListener(mListener);
-GizWifiSDK.sharedInstance().bindRemoteDevice ("your_uid", "your_token", "your_device_mac", "your_device_product_key", "your_product_secret"); 
+GizWifiSDK.sharedInstance().bindRemoteDevice ("your_uid", "your_token", "your_device_mac", "your_device_product_key", "your_product_secret");
 
 // 实现回调
 GizWifiSDKListener mListener = new GizWifiSDKListener() {
@@ -1081,7 +1079,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 
 ```
 GizWifiSDK.sharedInstance().setListener(mListener);
-GizWifiSDK.sharedInstance().unbindDevice("your_uid", "your_token", "your_device_did"); 
+GizWifiSDK.sharedInstance().unbindDevice("your_uid", "your_token", "your_device_did");
 
 // 实现回调
 GizWifiSDKListener mListener = new GizWifiSDKListener() {
@@ -1122,12 +1120,12 @@ sb.append("MCU Software Version:" + hardwareInfo.get("mcuSoftVersion")
 						+ "\r\n");
 sb.append("Firmware Id:" + hardwareInfo.get("wifiFirmwareId") + "\r\n");
 sb.append("Firmware Version:" + hardwareInfo.get("wifiFirmwareVer")
-						+ "\r\n"); 
+						+ "\r\n");
 sb.append("Product Key:" + hardwareInfo.get("productKey") + "\r\n");
 sb.append("Device ID:" + device.getDid() + "\r\n");
 sb.append("Device IP:" + device.getIPAddress() + "\r\n");
 sb.append("Device MAC:" + device.getMacAddress() + "\r\n");
-			
+
 }else{
 sb.append("获取失败，错误号：" + result);
 }
@@ -1195,11 +1193,11 @@ GizWifiDeviceListener mListener = new GizWifiDeviceListener() {
 public void didReceiveData(GizWifiErrorCode result, GizWifiDevice device, ConcurrentHashMap<String, Object> dataMap, int sn) {
 if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 
-    // 已定义的设备数据点，有布尔、数值和枚举型数据 
+    // 已定义的设备数据点，有布尔、数值和枚举型数据
     if (dataMap.get("data") != null) {
 	ConcurrentHashMap<String, Object> map = (ConcurrentHashMap<String, Object>) dataMap.get("data");
 
-		// 普通数据点，打印对应的key和value 
+		// 普通数据点，打印对应的key和value
 		StringBuilder sb = new StringBuilder();
 		for (String key : map.keySet()) {
 			sb.append(key + "  :" + map.get(key) + "\r\n");
@@ -1280,13 +1278,13 @@ GizWifiDeviceListener mListener = new GizWifiDeviceListener() {
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/image15_Android.png)
 
 ### 6.2. 创建定时任务
-    
+
     定时任务可以重复执行，也可以只执行一次，重复执行分为按月重复和按周重复。但同时只能指定一种重复方式，即或者不重复或者按周重复或者按月重复。
     使用SDK接口时，按周重复时给变量weekDays传值，按月重复时给monthDays传值，但如果两个变量都传值则只会处理weekDays。
     下面分别以这三种情况举例说明。
 
 #### 6.2.1. 创建一次性定时任务
-    
+
     假设我们需要在2017年1月16日早上6点30分开灯。如下代码中，日期和时间想要设置为几月几日几时几分，就设定为对应的值。
     比如我们希望设定的是2017年1月16日早上6点30分，那么date为2017-01-16，time为06:30，其中time是24小时制，date按照示例代码格式传值即可。
 
@@ -1425,7 +1423,7 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
     }
 };
 ```
-    
+
 ### 6.4. 修改定时任务
     
     可以修改已经创建好的定时任务。修改时，从获取到的定时任务列表中取出定时任务对象，编辑好要修改的内容。
@@ -1463,18 +1461,18 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
     }
 };
 ```
-        
+
 ### 6.5. 删除定时任务
 
     在得到的定时任务列表中，找到要删除的定时任务ID，删除定时任务。
-    
+
 【示例代码】
 ```
 // 设置定时任务监听
 GizDeviceSchedulerCenter.setListener(mListener);
 
 // 删除设备的定时任务列表，mDevice为在设备列表中得到的设备对象，your_scheduler_id是要删除的定时任务ID
-GizDeviceSchedulerCenter.deleteScheduler("your_uid", "your_token", mDevice, "your_scheduler_id"); 
+GizDeviceSchedulerCenter.deleteScheduler("your_uid", "your_token", mDevice, "your_scheduler_id");
 
 // 实现回调
 GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListener() {
@@ -1496,12 +1494,12 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 * Guest：设备的分享账号，可以接受分享邀请，不能再分享设备给其他人；
 * Special：最早绑定设备但还未分享设备的账号，分享设备后即成为设备的主账号；
 * Normal：其他已绑定了设备的账号，不能分享设备，也不能成为设备的主账号；
-    
+
 只有最早绑定设备的账号或设备的主账号才能分享设备。一旦设备有了主账号，其他人就无法再绑定了。主账号可以查看设备的当前已绑定用户，可以解绑其他用户。在设备没有主账号时，其他用户仍然可以绑定这个设备。
         
 ### 7.1. 流程图
  ![Alt text](/assets/zh-cn/AppDev/AndroidSDK/image16_Android.png)
- 
+
 ### 7.2. 创建设备分享邀请
 分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些绑定权限为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
 
@@ -1511,7 +1509,7 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 账号分享时，对方账号可以是手机号、邮箱、普通用户名或者匿名账号，但必须是已经在机智云注册过的用户。如果该用户已经是这个设备的Guest账号或者已经绑定了这个设备，分享邀请会创建失败。账号分享邀请的有效期为24小时，即对方必须在24小时内作出响应，否则账号邀请会过期失效。
     
 账号分享时要指定账号类型，匿名账号的guestUser参数填匿名账号的uid。账号分享创建成功时，回调参数中会返回sharingID，但不会返回QRCodeImage。下面仅以手机号分享举例：
-    
+
 【示例代码】
 ```objectivec
 // 设置设备分享监听
@@ -1537,7 +1535,7 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 
 #### 7.2.2. 二维码分享
 二维码分享时，二维码有效期为15分钟，即对方必须在15分钟内扫描生成的二维码并作出响应，否则二维码邀请会过期失效。二维码分享邀请创建成功时，回调参数中会返回sharingID，同时还会返回对应的二维码图片QRCodeImage，App直接加载图片即可。
-    
+
 【示例代码】
 
 ```objectivec
@@ -1566,7 +1564,7 @@ Guest账号可以查询发给自己的设备分享邀请，只有Guest账号可�
     
 #### 7.3.1. 接受账号分享邀请
 Guest查询到的分享邀请如果是还未接受的状态，可以接受或者拒绝邀请。
-    
+
 【示例代码】
 ```objectivec
 // 设置设备分享监听
@@ -1577,11 +1575,11 @@ GizDeviceSharing.getDeviceSharingInfos("your_token", GizDeviceSharingType.GizDev
 
 GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 
-    // 实现获取分享邀请列表的回调	
+    // 实现获取分享邀请列表的回调
     @Override
     public void didGetDeviceSharingInfos(GizWifiErrorCode result, String deviceID, List<GizDeviceSharingInfo> deviceSharingInfos) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
-	
+
 	    	// 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
 	    	int your_sharing_id = -1;
 	    	for (int i = 0; i < deviceSharingInfos.size(); i++) {
@@ -1596,13 +1594,13 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 	    	if (your_sharing_id != -1) {
 	    		GizDeviceSharing.acceptDeviceSharing("your_token", your_sharing_id, true);
 	    	}
-		
+
         } else {
             // 获取失败
         }
     }
-    
-    // 实现接受分享邀请的回调	
+
+    // 实现接受分享邀请的回调
     @Override
     public void didAcceptDeviceSharing(GizWifiErrorCode result, int sharingID) {
         if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
@@ -1613,4 +1611,3 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
     }
 };
 ```
-
