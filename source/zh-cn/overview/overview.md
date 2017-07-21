@@ -186,11 +186,11 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 5). [Gizwits Open API（新）](http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html)
 6). [Websocket API 指南](http://docs.gizwits.com/zh-cn/Cloud/WebsocketAPI.html)
 7). API使用教程
-- [使用openapi（postman）控制虚拟设备](http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html)
-- [使用Websocket 网页控制设备](http://docs.gizwits.com/zh-cn/UserManual/UseWebsocket.html)
-- [使用聚合API使用教程](http://docs.gizwits.com/zh-cn/UserManual/DataAPI.html)
-- [设备联动API使用教程](http://docs.gizwits.com/zh-cn/UserManual/LinkageAPI.html)
-- [Snoti 数据实时同步服务demo使用教程](http://docs.gizwits.com/zh-cn/UserManual/UseSNoti.html)
+ - [使用openapi（postman）控制虚拟设备](http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html)
+ - [使用Websocket 网页控制设备](http://docs.gizwits.com/zh-cn/UserManual/UseWebsocket.html)
+ - [使用聚合API使用教程](http://docs.gizwits.com/zh-cn/UserManual/DataAPI.html)
+ - [设备联动API使用教程](http://docs.gizwits.com/zh-cn/UserManual/LinkageAPI.html)
+ - [Snoti 数据实时同步服务demo使用教程](http://docs.gizwits.com/zh-cn/UserManual/UseSNoti.html)
 
 # 用户手册
  - [个人项目产品转企业项目产品](http://docs.gizwits.com/zh-cn/UserManual/change.html)
