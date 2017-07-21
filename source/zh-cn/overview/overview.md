@@ -12,6 +12,7 @@ title:  平台概述
 
 
 ![@平台接入示意图](/assets/zh-cn/OverVeiw/平台接入示意图.png)
+![@平台概述导航图](/assets/zh-cn/OverVeiw/平台概述导航图.png)
 
 ## 2 机智云平台架构
 
