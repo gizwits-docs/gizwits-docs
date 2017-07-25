@@ -4,11 +4,10 @@ title: SDK错误码表
 本文为主要列出了调用机智云SDK的时候，SDK回调返回的错误码信息
 
 # 错误码定义
-
-|枚举ID|枚举定义|描述|
+|枚举ID|枚举定义|描述
 |-- |- |
-|0|GIZ_SDK_SUCCESS|Client 发出的请求执行成功|
-|8001|GIZ_SDK_PARAM_FORM_INVALID|Client 发给 Daemon 的 json 格式错误|
+|0|GIZ_SDK_SUCCESS|Client 发出的请求执行成功
+|8001|GIZ_SDK_PARAM_FORM_INVALID|Client 发给 Daemon 的 json 格式错误
 |8002|GIZ_SDK_CLIENT_NOT_AUTHEN|Client与Daemon之间如果没有通过握手认证，任何数据交互都无效
 |8003|GIZ_SDK_CLIENT_VERSION_INVALID|Client 版本号无效
 |8004|GIZ_SDK_UDP_PORT_BIND_FAILED|udp 端口绑定失败
