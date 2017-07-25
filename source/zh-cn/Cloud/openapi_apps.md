@@ -358,7 +358,7 @@ Guest 也可以主动解绑设备。
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/系统信息/get_errors)
 
-# 附录：openapi错误码表
+# 附录：Open API 错误码表
 
 |枚举ID|枚举定义|描述
 |:--|:--|
