@@ -36,7 +36,7 @@ title:  GoKit3(S)使用说明书
 
 接下来，点击右上角选择在浏览器中打开，并点击安装。
 
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image3.png) 
+![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image3.png)
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image4.png)
 
@@ -46,9 +46,7 @@ title:  GoKit3(S)使用说明书
 
 ##### 方式二：在**机智云下载中心**中下载
 
-在手机浏览器中登录机智云下载中心：
-
-[*http://site.gizwits.com/zh-cn/developer/resource/demo\_app?protoc=WIFI*](http://site.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI)
+在手机浏览器中登录机智云[下载中心](http://download.gizwits.com/zh-cn/p/98/99)
 
 根据您手机系统选择对应的下载，将鼠标放到下图二维码位置，即可放大二维码。打开手机的“扫一扫”功能app软件，对准二维码进行扫描，按照提示进行下载并安装即可。（**安装过程与方式一相同**）
 
@@ -92,13 +90,13 @@ title:  GoKit3(S)使用说明书
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image13.png)
 
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image14.png) 
+![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image14.png)
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image15.png)
 
 ##### 在APP上点击**配置**按钮，等待不超过一分钟，APP就可以提示配置成功（下图）
 
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image16.png) 
+![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image16.png)
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image17.png)
 
@@ -116,7 +114,7 @@ title:  GoKit3(S)使用说明书
 
 > 选择形如“XPG-GAgent-XXXX”的WiFi热点**密码：123456789**（如下图）
 
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image19.png) 
+![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image19.png)
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image20.png)
 
@@ -152,9 +150,9 @@ title:  GoKit3(S)使用说明书
 需要注意的几点：
 
 > i. 如果您在设定LED组合颜色中，选择了自定义，您可以分别设定R、G、B的颜色；
-> 
+>
 > ii. 如果您在设定LED组合颜色中，选择了具体的颜色，您就不可以再对R、G、B进行设置；
-> 
+>
 > iii. 红外探测和温湿度上报都属于用户触发行为，都是在GoKit上进行触发，在APP上显示；
 
 即使GoKit不在身边依然近在咫尺
@@ -174,11 +172,9 @@ GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看[《G
 
 ## 2 烧写ESP8266对应的Gagent程序
 
-使用MCU模式时，ESP8266(WiFi模组)只负责信息的接收与发送，所以WiFi模组需要烧写Gagent源码固件。**Gagent**是机智云开发的可运行在各种通讯模组上的一款应用程序，开发者使用**Gagent**后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
+使用MCU模式时，ESP8266(WiFi模组)只负责信息的接收与发送，所以WiFi模组需要烧写Gagent源码固件。**Gagent** 是机智云开发的可运行在各种通讯模组上的一款应用程序，开发者使用 **Gagent** 后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
 
- 新版Gagent程序下载地址：
-
- [*http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent*](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
+ 新版Gagent程序[下载地址](http://download.gizwits.com)
 
  注：要下载ESP8266对应的最新版本，如下图：
 

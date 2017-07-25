@@ -1,6 +1,6 @@
 title: Arduino Uno WiFi智能小夜灯
 ----
-		
+
 
 # 1. 前文需知
 ## 1.1 项目说明
@@ -40,7 +40,7 @@ WS2812 5050 RGB LED Arduino 库文件
 
 然后把小灯板的VCC、GND、DIN引脚分别按照下图图片所展示的效果图，将杜邦线的另一端接到GoKit2拓展版的扩展接口排针上。
  - DIN -> D9
- 
+
 ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547468263.png)
 
 
@@ -182,10 +182,9 @@ ArduinoUNOWiFi 云端自动生成源码，创建之后在项目如图所示的�
 
 # 3.项目调试
 ## 3.1 下载Demo App
-前往机智云下载中心，根据下图提示实用手机扫描下载调试产品的Demo App，调试产品体验产品。
+前往机智云[下载中心](http://download.gizwits.com/zh-cn/p/98/99)，根据下图提示实用手机扫描下载调试产品的Demo App，调试产品体验产品。
 
-下载中心
-http://dev.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI
+
 ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/example/1486547212305.png)
 
 ## 3.2 产品体验

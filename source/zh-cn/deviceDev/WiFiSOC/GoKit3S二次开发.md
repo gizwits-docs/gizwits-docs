@@ -32,7 +32,7 @@ Step 1: 选择 "Preferences" 选项
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image4.png)
 
 
-Step 2: 选择 "General" 创建VM默认虚拟机路径，例如： D:\vm 
+Step 2: 选择 "General" 创建VM默认虚拟机路径，例如： D:\vm
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image5.png)
 
@@ -172,9 +172,8 @@ echo $PATH									//显示红框所示表示配置正确
 https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
 
 ## 2 GoKit3(S)源代码
-GoKit3(S)源码下载地址：
+GoKit3(S)源码下载地址，[点击下载中](http://download.gizwits.com/zh-cn/p/92/93)
 
-http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image25.png)
 
@@ -202,7 +201,7 @@ vim gen_misc.sh
 :wq!					//这是vim命令，非添加的内容
 
 4) 运行编译脚本：
-./gen_misc.sh 
+./gen_misc.sh
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image28.png)
 
@@ -252,9 +251,8 @@ MCU版的程序固件名称为：
 
 **GAgent_00ESP826_04020011_16041419.bin**
 
-下载地址：
+[点击下载](http://download.gizwits.com/zh-cn/p/92/94))
 
-http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent 
 
 详细介绍请查看**《GoKit3(S) 开发套件介绍》**中“5. 使用Gokit的MCU模式”一节。
 
@@ -387,7 +385,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 答：使用如下命令重新安装VMware Tools
 
-sudo apt-get autoremove open-vm-dkms open-vm-tools --purge 
+sudo apt-get autoremove open-vm-dkms open-vm-tools --purge
 
 点击“虚拟机”—— 重新安装VMware Tools ——在终端中进入相应目录
 

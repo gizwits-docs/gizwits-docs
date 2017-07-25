@@ -52,13 +52,13 @@ GoKit在系统逻辑上,位于右下角的MCU的位置,即：GoKit代表智能�
 您可以根据 GoKit 的电机控制功能,开发出电动窗帘的 APP；
 您也可以根据温湿度传感器,开发出家庭的温湿度检测的 APP；
 您也可以自定义 LED 的颜色和亮度,来开发出更多功能的 APP；
-当然,如果您愿意,也可以和GizWits的合作伙伴一起,针对您想实现的产品定制GoKit,合作完成一款优秀的产品。 
+当然,如果您愿意,也可以和GizWits的合作伙伴一起,针对您想实现的产品定制GoKit,合作完成一款优秀的产品。
 3. 如果您是一个嵌入式开发者
 如果您是一个嵌入式开发者,您可能不太了解APP开发以及云端处理,您可以这样玩GoKit：
 在我们的网页上,参照 GoKit 的模版,用图形化的方式定义您的产品功能;
 参考系统生成的协议和源码,以及 GoKit 工程,二次开发 GoKit 并烧写 MCU;
 下载系统为您的产品生成的DemoAPP,即可完成对您的产品发现、控制、远程控制;
-如果您愿意,也可以研究您的产品是如何被APP发现的、如何连接云端的,因为这些基本上都开源; 
+如果您愿意,也可以研究您的产品是如何被APP发现的、如何连接云端的,因为这些基本上都开源;
 
 4. 如果您就想讲一个故事
 如果您有一个非常好的想法,能讲一个很好的故事,这个故事可以为您找到投资,可以这样玩GoKit：
@@ -129,7 +129,7 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 
 ## 开源项目
 - [智能家居应用模型One](http://gizwits.com/article/320/)
-- [智能药盒](http://club.gizwits.com/thread-2685-1-1.html)	
+- [智能药盒](http://club.gizwits.com/thread-2685-1-1.html)
 - [智能婴儿摇篮](http://club.gizwits.com/thread-2794-1-1.html)
 - [智能灯](http://club.gizwits.com/thread-2830-1-1.html)
 - [智能温控器](http://club.gizwits.com/thread-3332-1-1.html)
@@ -174,7 +174,7 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
    - TI	CC3200、NXP QFN-1、上海移远M26
    - 广和通G510、 中兴ME3610 、中兴ME3630
 
-1. [GAgent for 汉枫LPB100、乐鑫ESP8266固件下载地址](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
+1. [GAgent for 汉枫LPB100、乐鑫ESP8266固件下载地址](http://download.gizwits.com)
 
 1. [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
 
@@ -193,7 +193,7 @@ MCU方案中除了支持STM32平台，还可以将我们生成好的通用平台
 
 以下是机智云提供的模块化开发工具：
 - 标准GAgent串口通讯协议
-- MCU代码自动生成工具 
+- MCU代码自动生成工具
 - APP代码自动生成工具
 - 自动化产测工具
 - OTA固件升级

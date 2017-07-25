@@ -7,13 +7,13 @@ GAgent是运行在各种通讯模组上的一款应用程序（固件）,可以�
 
 本周热门下载：
 
- 1 [乐鑫ESP8266 联网固件](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
- 2 [汉枫LPT120/LPB120 联网固件](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
- 3 [汉枫LPB100 联网固件](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
- 4 [高通QCA4004 联网固件](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
- 5 [RealTek 8711AM  联网固件](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
- 6 [联盛德 TLN13SP01 联网固件](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
- 7 [MXCHIP 联网固件](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
+ 1 [乐鑫ESP8266 联网固件](http://download.gizwits.com/zh-cn/p/92/94)
+ 2 [汉枫LPT120/LPB120 联网固件](http://download.gizwits.com/zh-cn/p/92/94)
+ 3 [汉枫LPB100 联网固件](http://download.gizwits.com/zh-cn/p/92/94)
+ 4 [高通QCA4004 联网固件](http://download.gizwits.com/zh-cn/p/92/94)
+ 5 [RealTek 8711AM  联网固件](http://download.gizwits.com/zh-cn/p/92/94)
+ 6 [联盛德 TLN13SP01 联网固件](http://download.gizwits.com/zh-cn/p/92/94)
+ 7 [MXCHIP 联网固件](http://download.gizwits.com/zh-cn/p/92/94)
 
 
 # 开源框架
