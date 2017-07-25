@@ -49,6 +49,8 @@
       path: /AppDev/SDK数据透传方法解析.html
     SDK调试日志抓取教程:
       path: /AppDev/SDK调试日志抓取教程.html
+    SDK错误码列表:
+      path: /AppDev/sdk_error.html        
 
   微信应用开发流程:
     path: /WechatDev/了解微信应用开发.html
