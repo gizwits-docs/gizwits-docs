@@ -89,7 +89,7 @@ title:  平台概述
  - [五分钟了解机智云](http://docs.gizwits.com/zh-cn/quickstart/5%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E6%9C%BA%E6%99%BA%E4%BA%91.html)
  - [机智云名词定义解释](http://docs.gizwits.com/zh-cn/quickstart/noun.html)
 ### 快速接入向导
-![@文档中心导航图](/assets/zh-cn/OverVeiw/平台概述导航图.png)
+![@文档中心导航图](/assets/zh-cn/OverVeiw/平台概述导航竖版.png)
 
 
 # 应用开发（App、微信）
