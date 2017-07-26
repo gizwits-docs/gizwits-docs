@@ -309,11 +309,3 @@ var HEADER_BP = 915
     var spinner = new Spinner(opts).spin(target)
   }
 }()
-
-
-$(function() {
-  $('body').on('click', '#sub-title', function(e) {
-    e.preventDefault()
-    $('#sub-title-menu').toggle()
-  })
-})

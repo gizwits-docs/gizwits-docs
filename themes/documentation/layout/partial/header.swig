@@ -5,13 +5,7 @@
       <a href="http://www.gizwits.com" class="logo">
         <img src="{{ url_for('images/logo.png') }}" alt="logo"> 
       </a>
-      <a class="text" href="/" id="sub-title">{{ __("sub_title") }} <i class="fa fa-clone"></i></a>
-
-      <div class="sub-title-menu" id="sub-title-menu">
-        <a href="http://dev.gizwits.com" target="_blank">{{ __("dev_center") }}</a>
-        <a href="http://download.gizwits.com" target="_blank">{{ __("res_center") }}</a>
-        <a href="/" target="_blank">{{ __("sub_title") }}</a>
-      </div>
+      <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
     
     <div class="mobile-header"v>
