@@ -1,3 +1,5 @@
+/* global $ */
+
 // common variables
 var BODY_BP = 1119
 var HEADER_BP = 915
@@ -309,3 +311,28 @@ var HEADER_BP = 915
     var spinner = new Spinner(opts).spin(target)
   }
 }()
+
+
+
+$(function() {
+  $('#header-search-btn').click(function(e) {
+    if ($('#header-search-panel').is(':visible')) {
+      return
+    }
+    $('#header-search-panel').css('display', 'block')
+    setTimeout(function() {
+      $('#header-search-panel').addClass('in')
+      $(document).one('click', function(e) {
+        if (!$(e.target).closest('#header-search-panel').length) {
+          var $panel = $('#header-search-panel')
+          if ($panel.is(':visible')) {
+            $panel.removeClass('in')
+            setTimeout(function() {
+              $panel.css('display', 'none')
+            }, 500)
+          }
+        }
+      })
+    }, 50)
+  })
+})
