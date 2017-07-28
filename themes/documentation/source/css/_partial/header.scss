@@ -21,6 +21,7 @@
     }
 
     &-panel {
+      line-height: initial;
       background: white;
       position: fixed;
       top: 80px;
@@ -67,6 +68,36 @@
         margin-right: 50px;
         cursor: pointer;
         color: #aaa;
+      }
+    }
+
+    &-result {
+      padding: 15px;
+      overflow: auto;
+
+      &-head {
+        color: #aaa;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      &-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+
+        &-title {
+          font-weight: bold;
+
+          > a {
+            color: #333;
+          }
+        }
+
+        .hl {
+          font-weight: bold;
+          color: #111;
+          background: $yellow;
+        }
       }
     }
 
