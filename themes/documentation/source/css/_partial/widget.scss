@@ -2,7 +2,18 @@
   @media (max-width: $widget-bp) {
     display: none;
   }
-  float: left;
+
+  @media (min-width: 1170px) {
+    float: left;
+  }
+
+  @media (min-width: 1235px) {
+    float: none;
+  }
+
+  @media (min-width: 1285px) {
+    float: left;
+  }
   width: 50px;
   &,
   .widget {
