@@ -315,7 +315,7 @@ var HEADER_BP = 915
 
 
 $(function() {
-  var resultHeight = $(window).height() - 80 - $('#header-search-input-wrap').outerHeight(true)
+  var resultHeight = $(window).height() - 100 - 80 - $('#header-search-input-wrap').outerHeight(true)
   $('#header-search-result').height(resultHeight)
 
   var SEARCH_DATA = []
