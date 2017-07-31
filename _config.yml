@@ -76,5 +76,5 @@ deploy:
     gitlab: git@gitlab.gizwits.com:gizwits-site/gizwits-doc-static.git
 
 search:
-  path: search.xml
-  field: post
+  path: search.json
+  field: all
