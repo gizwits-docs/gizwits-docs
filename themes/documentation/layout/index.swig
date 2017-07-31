@@ -1,4 +1,5 @@
 <div class="body">
+  <div>{{site.date.fileHash.css}}</div>
   
   <div class="container clearfix">
     <div class="navigation">

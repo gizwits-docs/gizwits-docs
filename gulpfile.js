@@ -3,6 +3,10 @@ var shell = require('shelljs')
 var path = require('path')
 var cssMinify = require('gulp-cssnano')
 var jsMinify = require('gulp-uglify')
+var md5 = require('md5')
+var fs = require('fs')
+var sass = require('node-sass')
+var os = require('os')
 
 var publicDir = path.resolve(__dirname, 'public')
 
@@ -46,6 +50,17 @@ gulp.task('modifyIndex', function() {
   shell.rm(indexFile)
   shell.touch(indexFile)
   shell.echo(newHtml).to(indexFile)
+})
+
+gulp.task('genHash', function() {
+  sass.render({
+    file: path.resolve(__dirname, 'themes/documentation/source/css/documentation.scss')
+  }, function(err, result) {
+    var cssHash = md5(result.css)
+    var jsHash = md5(fs.readFileSync(path.resolve(__dirname, 'themes/documentation/source/js/documentation.js')))
+    var content = `css: ${cssHash}${os.EOL}js: ${jsHash}`
+    shell.echo(content).to(path.resolve(__dirname, 'source/_data/fileHash.yml'))
+  })
 })
 
 gulp.task('default', ['cpAssets', 'cssMinify'])
