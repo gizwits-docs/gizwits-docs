@@ -315,7 +315,7 @@ var HEADER_BP = 915
 
 
 $(function() {
-  var resultHeight = $(window).height() - 100 - 80 - $('#header-search-input-wrap').outerHeight(true)
+  var resultHeight = $(window).height() - 250
   $('#header-search-result').height(resultHeight)
 
   var SEARCH_DATA = []
@@ -382,6 +382,7 @@ $(function() {
       return
     }
     $('#header-search-panel').css('display', 'block')
+    $('body').css('overflow', 'hidden')
     setTimeout(function() {
       $('#header-search-panel').one('transitionend', function() {
         $('#header-search-input').focus()
@@ -392,6 +393,7 @@ $(function() {
               $panel.removeClass('in')
               setTimeout(function() {
                 $panel.css('display', 'none')
+                $('body').css('overflow', 'auto')
                 $(document).off('click.searchpanel')
               }, 500)
             }
