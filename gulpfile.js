@@ -49,7 +49,8 @@ gulp.task('modifyIndex', function() {
   var newHtml = header + body + scripts
   shell.rm(indexFile)
   shell.touch(indexFile)
-  shell.echo(newHtml).to(indexFile)
+  // shell.echo(newHtml).to(indexFile)
+  fs.writeFileSync(indexFile, newHtml)
 })
 
 gulp.task('genHash', function() {

@@ -318,7 +318,12 @@ $(function() {
   $('#header-search-result').height(resultHeight)
 
   var SEARCH_DATA = []
-  $.get('/search.json', function(data) {
+  var d = new Date()
+  d.setHours(0)
+  d.setMinutes(0)
+  d.setSeconds(0)
+  d.setMilliseconds(0)
+  $.get('/search.json?t=' + d.getTime(), function(data) {
     SEARCH_DATA = data
   })
 
