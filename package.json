@@ -6,10 +6,11 @@
     "version": "3.3.8"
   },
   "scripts": {
-    "build": "gulp rmPublic && gulp genHash && hexo g && gulp resetHash && gulp && gulp moveFiles && gulp modifyIndex",
+    "build": "gulp before && hexo g && gulp && gulp after && gulp search",
     "deploy": "hexo deploy"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "gulp": "^3.9.1",
     "gulp-cssnano": "^2.1.2",
     "gulp-uglify": "^2.0.0",
@@ -23,6 +24,7 @@
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-sass": "^0.2.0",
     "hexo-server": "^0.2.0",
+    "marked": "^0.3.6",
     "md5": "^2.2.1",
     "moment": "^2.16.0",
     "node-sass": "^4.5.3",

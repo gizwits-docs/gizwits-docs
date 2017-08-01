@@ -7,6 +7,8 @@ var md5 = require('md5')
 var fs = require('fs')
 var sass = require('node-sass')
 var os = require('os')
+var marked = require('marked')
+var cheerio = require('cheerio')
 
 var publicDir = path.resolve(__dirname, 'public')
 
@@ -72,4 +74,34 @@ gulp.task('rmPublic', function() {
   shell.rm('-rf', path.resolve(__dirname, 'public'))
 })
 
-gulp.task('default', ['cpAssets', 'cssMinify'])
+gulp.task('reduceSearch', function() {
+  var data = require('./public/search.json')
+  
+  data = data.filter(function(item) {
+    return item.url && item.title && item.content
+  }).map(function(item) {
+    var html = marked(item.content)
+    var $ = cheerio.load('<div id="body">' + html + '</div>')
+
+    return Object.assign({}, item, {
+      content: $('#body').text()
+    })
+  })
+
+  data = JSON.stringify(data)
+
+  var searchHash = md5(data)
+  var jsFile = path.resolve(__dirname, 'public/js/documentation.js')
+  var jsCode = fs.readFileSync(jsFile, 'utf-8')
+  jsCode = jsCode.replace('{{searchjsonmd5}}', searchHash)
+  fs.writeFileSync(jsFile, jsCode)
+  fs.writeFileSync(path.resolve(__dirname, 'public/search.json'), data)
+})
+
+gulp.task('before', ['rmPublic', 'genHash'])
+
+gulp.task('default', ['resetHash', 'cpAssets', 'cssMinify', 'jsMinify'])
+
+gulp.task('after', ['moveFiles', 'modifyIndex'])
+
+gulp.task('search', ['reduceSearch'])

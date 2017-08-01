@@ -28,6 +28,7 @@
       line-height: initial;
       background: white;
       position: fixed;
+      z-index: 99;
       top: 80px;
       left: 0;
       right: 0;
@@ -216,6 +217,7 @@
       white-space: nowrap;
       display: none;
       position: absolute;
+      z-index: 999;
       background: white;
       border: 1px solid $dark-gray;
       box-shadow: 2px 2px 10px $light-gray;
