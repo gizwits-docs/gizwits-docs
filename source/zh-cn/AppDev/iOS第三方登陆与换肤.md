@@ -8,8 +8,8 @@ APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取
 ## 1. 创建腾讯开发者账号
 已有腾讯开发者账号可跳过这部分
 
- 点击http://open.qq.com进入腾讯开放平台
- 
+ 点击http://open.qq.com ,进入腾讯开放平台
+
  ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083850757.png)
 
 点击《登录》，填写账号密码登录
@@ -24,7 +24,7 @@ APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083900437.png)
 
 ## 2. 创建腾讯应用
-点击http://open.qq.com进入腾讯开放平台，选择《应用接入》
+点击http://open.qq.com ,进入腾讯开放平台，选择《应用接入》
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478083936437.png)
 
@@ -59,7 +59,7 @@ APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取
 选择QQ登陆跳转到QQ授权登陆界面，登陆成功后需要跳转回我们的APP，此时需要给QQ SDK一个跳转路径，这个路径就是通过URL Schemes来设置的。
 
    选择Targets -> Info 选择URL Types可以看到如下界面
-   
+
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478084102806.png)
 
 红框部分中必须修改的有两个部分：URL Schemes和Identifier。
@@ -73,7 +73,7 @@ APP要实现微信登陆，必须前往微信开放平台申请一个应用，�
 ## 1. 创建微信开发者账号
 已有开发者账号可以直接跳过这部分
 
-点击https://open.weixin.qq.com进入微信开放平台
+点击https://open.weixin.qq.com ,进入微信开放平台
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478084183604.png)
 
@@ -90,7 +90,7 @@ APP要实现微信登陆，必须前往微信开放平台申请一个应用，�
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478084253920.png)
 
 ## 2. 创建微信应用
-点击https://open.weixin.qq.com进入微信开发平台，选中图13的《管理中心》跳转到应用创建界面
+点击https://open.weixin.qq.com，进入微信开发平台，选中图13的《管理中心》跳转到应用创建界面
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478084280247.png)
 
@@ -179,34 +179,3 @@ statusBarStyle：状态栏颜色
 实际效果图：
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/change/1478096529940.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
