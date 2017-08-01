@@ -63,4 +63,8 @@ gulp.task('genHash', function() {
   })
 })
 
+gulp.task('resetHash', function() {
+  shell.echo(`css: 0${os.EOL}js: 0`).to(path.resolve(__dirname, 'source/_data/fileHash.yml'))
+})
+
 gulp.task('default', ['cpAssets', 'cssMinify'])

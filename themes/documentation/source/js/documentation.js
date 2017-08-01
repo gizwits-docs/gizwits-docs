@@ -314,7 +314,7 @@ var HEADER_BP = 915
 
 
 $(function() {
-  var resultHeight = $(window).height() - 100 - 80 - $('#header-search-input-wrap').outerHeight(true)
+  var resultHeight = $(window).height() - 250
   $('#header-search-result').height(resultHeight)
 
   var SEARCH_DATA = []
@@ -367,11 +367,19 @@ $(function() {
 
         var h = ''
         h += '<div class="header-search-result-item">\n'
-        h += '<div class="header-search-result-item-title"><a href="' + item.url + '">' + item.title.replace(sReg, '<span class="hl">$1</span>') + '</a></div>\n'
+        h += '<div class="header-search-result-item-title"><a href="' + item.url + '" target="_blank">' + item.title.replace(sReg, '<span class="hl">$1</span>') + '</a></div>\n'
         h += '<div class="header-search-result-item-content">' + content + '</div>'  
         h += '</div>'
         return h
-      }).join('\n')
+      })
+
+      if (sData.length === 0) {
+        sData = '<div class="header-search-result-empty">未找到相关文档</div>'
+      }
+      else {
+        sData = sData.join('\n')
+      }
+
       $('#header-search-result-items').html(sData)
     }
   })
@@ -381,6 +389,7 @@ $(function() {
       return
     }
     $('#header-search-panel').css('display', 'block')
+    $('body').addClass('header-search-open')
     setTimeout(function() {
       $('#header-search-panel').one('transitionend', function() {
         $('#header-search-input').focus()
@@ -391,6 +400,7 @@ $(function() {
               $panel.removeClass('in')
               setTimeout(function() {
                 $panel.css('display', 'none')
+                $('body').removeClass('header-search-open')
                 $(document).off('click.searchpanel')
               }, 500)
             }
