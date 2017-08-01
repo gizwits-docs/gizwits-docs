@@ -6,7 +6,7 @@
     "version": "3.3.8"
   },
   "scripts": {
-    "build": "gulp genHash && hexo g && gulp resetHash && gulp && gulp moveFiles && gulp modifyIndex",
+    "build": "gulp rmPublic && gulp genHash && hexo g && gulp resetHash && gulp && gulp moveFiles && gulp modifyIndex",
     "deploy": "hexo deploy"
   },
   "dependencies": {
