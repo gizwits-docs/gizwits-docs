@@ -63,17 +63,21 @@
       <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
     </div>
 
-    <div class="header-search-trend">
+    <div class="header-search-trend" id="header-search-trend">
       <div class="header-search-trend-title">热搜词</div>
-      <div class="header-search-trend-items">
-        <div class="header-search-trend-item">item</div>
-        <div class="header-search-trend-item">item</div>
-        <div class="header-search-trend-item">item</div>
-        <div class="header-search-trend-item">item</div>
-        <div class="header-search-trend-item">item</div>
-        <div class="header-search-trend-item">item</div>
-        <div class="header-search-trend-item">item</div>
+      <div class="header-search-trend-items clearfix">
+        {% for k in site.data.searchTrend %}
+        <div class="header-search-trend-item" data-word="{{k}}">{{k}}</div>
+        {% endfor %}
       </div>  
+    </div>
+
+    <div class="header-search-result hidden" id="header-search-result">
+      <div class="header-search-result-head">
+        搜索结果 &gt; <span id="header-search-keyword"></span>
+      </div>
+      <div class="header-search-result-items" id="header-search-result-items">
+      </div>
     </div>
   </div>
 </div>

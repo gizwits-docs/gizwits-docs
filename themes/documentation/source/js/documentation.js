@@ -313,26 +313,91 @@ var HEADER_BP = 915
 }()
 
 
-
 $(function() {
-  $('#header-search-btn').click(function(e) {
+  var resultHeight = $(window).height() - 100 - 80 - $('#header-search-input-wrap').outerHeight(true)
+  $('#header-search-result').height(resultHeight)
+
+  var SEARCH_DATA = []
+  $.get('/search.json', function(data) {
+    SEARCH_DATA = data
+  })
+
+  var $searchTrend = $('#header-search-trend')
+  var $searchResult = $('#header-search-result')
+  var $searchInput = $('#header-search-input')
+
+  $('.header-search-trend-item').on('click', function() {
+    $searchInput.val($(this).data('word'))
+    $searchInput.trigger('keyup')
+  })
+
+  $searchInput.on('keyup', function(e) {
+    var $this = $(this)
+    var v = $this.val()
+    if (!v) {
+      $searchTrend.removeClass('hidden')
+      $searchResult.addClass('hidden')
+    }
+    else {
+      $searchTrend.addClass('hidden')
+      $searchResult.removeClass('hidden')
+      $('#header-search-keyword').text(v)
+
+      var sVal = v.toLowerCase()
+      var sReg = new RegExp('(' + sVal + ')', 'gi')
+      var sData = SEARCH_DATA.filter(function(item) {
+        if (!item.title || !item.content) {
+          return false
+        }
+
+        var contentIndex = item.content.toLowerCase().indexOf(sVal)
+
+        if (
+          (item.title && item.title.toLowerCase().indexOf(sVal) !== -1) ||
+          (item.content && contentIndex !== -1)
+          ) {
+          item.first_occur = contentIndex === -1 ? 0 : contentIndex
+          return true
+        }
+        return false
+      }).map(function(item) {
+        var content = item.content
+        content = content.slice(item.first_occur, item.first_occur + 100)
+        content = content.replace(sReg, '<span class="hl">$1</span>')
+
+        var h = ''
+        h += '<div class="header-search-result-item">\n'
+        h += '<div class="header-search-result-item-title"><a href="' + item.url + '">' + item.title.replace(sReg, '<span class="hl">$1</span>') + '</a></div>\n'
+        h += '<div class="header-search-result-item-content">' + content + '</div>'  
+        h += '</div>'
+        return h
+      }).join('\n')
+      $('#header-search-result-items').html(sData)
+    }
+  })
+
+  $('#header-search-btn').click(function() {
     if ($('#header-search-panel').is(':visible')) {
       return
     }
     $('#header-search-panel').css('display', 'block')
     setTimeout(function() {
-      $('#header-search-panel').addClass('in')
-      $(document).one('click', function(e) {
-        if (!$(e.target).closest('#header-search-panel').length) {
-          var $panel = $('#header-search-panel')
-          if ($panel.is(':visible')) {
-            $panel.removeClass('in')
-            setTimeout(function() {
-              $panel.css('display', 'none')
-            }, 500)
+      $('#header-search-panel').one('transitionend', function() {
+        $('#header-search-input').focus()
+        $(document).on('click.searchpanel', function(e) {
+          if (!$(e.target).closest('#header-search-panel').length) {
+            var $panel = $('#header-search-panel')
+            if ($panel.is(':visible')) {
+              $panel.removeClass('in')
+              setTimeout(function() {
+                $panel.css('display', 'none')
+                $(document).off('click.searchpanel')
+              }, 500)
+            }
           }
-        }
+        })
       })
+      $('#header-search-panel').addClass('in')
     }, 50)
   })
 })
