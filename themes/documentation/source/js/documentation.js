@@ -362,7 +362,13 @@ $(function() {
         return false
       }).map(function(item) {
         var content = item.content
-        content = content.slice(item.first_occur, item.first_occur + 100)
+        var start = 0
+        
+        if (item.first_occur - 10 > 0) {
+          start = item.first_occur - 10
+        }
+
+        content = content.slice(start, start + 100)
         content = content.replace(sReg, '<span class="hl">$1</span>')
 
         var h = ''
