@@ -1,4 +1,5 @@
 .header {
+  position: relative;
   @media (min-width: $body-bp + 1) {
     position: fixed;
   }
@@ -8,6 +9,162 @@
   width: 100%;
   z-index: 999999;
   font-size: 14px;
+
+  &-search {
+
+    &-close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      color: #999;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    &-open {
+      overflow: hidden;
+    }
+
+    &-btn {
+      color: $yellow;
+      float: right;
+      margin-right: 25px;
+      font-size: 20px;
+      cursor: pointer;
+      display: none;
+
+      @media (min-width: 916px) {
+        display: block;
+      }
+    }
+
+    &-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      outline: 0;
+      background: rgba(0,0,0,0.5);
+    }
+
+    &-panel {
+      line-height: initial;
+      background: white;
+      position: fixed;
+      z-index: 99;
+      top: 80px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 1200px;
+      margin: auto;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      
+      display: none;
+      opacity: 0;
+      // transform: scale(1.5);
+      transition: all 0.3s ease;
+
+      &.in {
+        display: block;
+        opacity: 1;
+        // transform: scale(1);
+      }
+    }
+
+    &-trend {
+      width: 70%;
+      position: relative;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 50px;
+      line-height: initial;
+
+      &-title {
+        border-left: 3px solid $yellow;
+        color: #111;
+        padding: 5px 10px;
+        font-weight: bold;
+      }
+
+      &-items {
+        margin-top: 20px;
+      }
+
+      &-item {
+        float: left;
+        margin-right: 50px;
+        cursor: pointer;
+        color: #aaa;
+      }
+    }
+
+    &-result {
+      padding: 15px;
+      overflow: auto;
+      margin-top: 15px;
+
+      &-empty {
+        padding: 30px;
+        font-size: 18px;
+        text-align: center;
+        color: #aaa;
+      }
+
+      &-head {
+        color: #aaa;
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      &-item {
+        padding: 10px 0;
+        border-bottom: 1px solid #ddd;
+
+        &-title {
+          font-weight: bold;
+
+          > a {
+            color: #333;
+          }
+        }
+
+        .hl {
+          font-weight: bold;
+          color: #111;
+          background: $yellow;
+        }
+      }
+    }
+
+    &-input {
+      font-size: 16px;
+      outline: 0;
+      width: 100%;
+      box-shadow: 0 2px 3px rgba(0,0,0,0.06);
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      padding-left: 50px;
+      border-radius: 3px;
+
+      &-icon {
+        position: absolute;
+        font-size: 24px;
+        top: 4px;
+        left: 15px;
+        color: #999;
+      }
+
+      &-wrap {
+        width: 70%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+      }
+    }
+  }
   
   .brand {
     @media (max-width: $header-bp) {
@@ -84,6 +241,7 @@
       white-space: nowrap;
       display: none;
       position: absolute;
+      z-index: 999;
       background: white;
       border: 1px solid $dark-gray;
       box-shadow: 2px 2px 10px $light-gray;
@@ -197,3 +355,12 @@
     }
   }
 }
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+

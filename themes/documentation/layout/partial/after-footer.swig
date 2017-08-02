@@ -4,7 +4,7 @@
 {{ js("js/clipboard.min.js") }}
 {{ js("js/scrollspy.js") }}
 {{ js("js/social-share.min.js") }}
-{{ js("js/documentation.js") }}
+{{ js("js/documentation.js?v=" + site.data.fileHash.js) }}
 
 {# 咨询客服 #}
 <script type="text/javascript" src="http://webchat.7moor.com/javascripts/7moorInit.js?accessId=b01e0430-943a-11e6-8ad7-636675d9e71f&autoShow=true" async='async'></script>
