@@ -339,7 +339,7 @@ $(function() {
   $('#header-search-result').height(resultHeight)
 
   var SEARCH_DATA = []
-  $.get('/search.json?t={{searchjsonmd5}}', function(data) {
+  $.getJSON('/search.json?t={{searchjsonmd5}}', function(data) {
     SEARCH_DATA = data
   })
 
