@@ -314,6 +314,27 @@ var HEADER_BP = 915
 
 
 $(function() {
+
+  function measureScrollbar() {
+    var scrollDiv = document.createElement('div')
+    scrollDiv.className = 'modal-scrollbar-measure'
+    $('body').append(scrollDiv)
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
+    $('body')[0].removeChild(scrollDiv)
+    return scrollbarWidth
+  }
+
+  var scrollbarWidth = measureScrollbar()
+  $(window).on('resize', function() {
+    scrollbarWidth = measureScrollbar()
+    if ($('#header-search-panel').is(':visible')) {
+      $('body').css('padding-right', scrollbarWidth)
+      $('.header').css('padding-right', scrollbarWidth)
+      $('#chatBtn').css('margin-right', scrollbarWidth)
+    }
+  })
+
+
   var resultHeight = $(window).height() - 250
   $('#header-search-result').height(resultHeight)
 
@@ -394,8 +415,12 @@ $(function() {
     if ($('#header-search-panel').is(':visible')) {
       return
     }
+    $searchInput.val('').trigger('keyup')
     $('#header-search-panel').css('display', 'block')
     $('body').addClass('header-search-open')
+    $('body').css('padding-right', scrollbarWidth)
+    $('.header').css('padding-right', scrollbarWidth)
+    $('#chatBtn').css('margin-right', scrollbarWidth)
     setTimeout(function() {
       $('#header-search-panel').one('transitionend', function() {
         $('#header-search-input').focus()
@@ -407,6 +432,9 @@ $(function() {
               setTimeout(function() {
                 $panel.css('display', 'none')
                 $('body').removeClass('header-search-open')
+                $('body').css('padding-right', '0')
+                $('.header').css('padding-right', '0')
+                $('#chatBtn').css('margin-right', '0')
                 $(document).off('click.searchpanel')
               }, 500)
             }

@@ -14,11 +14,6 @@
 
     &-open {
       overflow: hidden;
-      padding-right: 15px;
-
-      .header {
-        padding-right: 15px;
-      }
     }
 
     &-btn {
@@ -350,5 +345,13 @@
       display: block;
     }
   }
+}
+
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
 }
 
