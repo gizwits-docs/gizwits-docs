@@ -58,6 +58,7 @@
   </div>
 
   <div class="header-search-panel" id="header-search-panel">
+    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
     <div class="header-search-input-wrap" id="header-search-input-wrap">
       <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
       <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
