@@ -13,10 +13,8 @@
       <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
     </div>
     
+
     <span class="menu pure-u-16-24">
-      <span class="header-search-btn" id="header-search-btn">
-        <i class="fa fa-search"></i>
-      </span>
       <ul class="levelA-wrapper">
         {% for levelA in site.data["menu-" + lang] %}
           {% if levelA.path %}
@@ -47,7 +45,6 @@
     </span>
   
     <span class="pure-u-3-24 lang-switch-wrapper">
-      
       <i class="fa fa-globe" aria-hidden="true"></i> 
       {% if lang == "zh-cn" %}
       <a href="http://docsen.gizwits.com/hc/" class="lang-switch">English</a>
@@ -55,30 +52,6 @@
         <button class="lang-switch" data-lang="zh-cn">中文</button>
       {% endif %}
     </span>
-  </div>
 
-  <div class="header-search-panel" id="header-search-panel">
-    <span class="header-search-close" id="header-search-close"><i class="fa fa-times" aria-hidden="true"></i></span>
-    <div class="header-search-input-wrap" id="header-search-input-wrap">
-      <input type="text" class="header-search-input" id="header-search-input" placeholder="请输入关键字">
-      <span class="header-search-input-icon"><i class="fa fa-search"></i></span>
-    </div>
-
-    <div class="header-search-trend" id="header-search-trend">
-      <div class="header-search-trend-title">热搜词</div>
-      <div class="header-search-trend-items clearfix">
-        {% for k in site.data.searchTrend %}
-        <div class="header-search-trend-item" data-word="{{k}}">{{k}}</div>
-        {% endfor %}
-      </div>  
-    </div>
-
-    <div class="header-search-result hidden" id="header-search-result">
-      <div class="header-search-result-head">
-        搜索结果 &gt; <span id="header-search-keyword"></span>
-      </div>
-      <div class="header-search-result-items" id="header-search-result-items">
-      </div>
-    </div>
   </div>
 </div>
