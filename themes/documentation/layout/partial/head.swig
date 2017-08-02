@@ -14,6 +14,6 @@
 
   {{ css("css/pure.min.css") }}
   {{ css("css/font-awesome.min.css") }}
-  {{ css("css/documentation.css?v=" + site.data.fileHash.css) }}
+  {{ css("css/documentation.css") }}
   {{ css("css/share.min.css") }}
 </head>

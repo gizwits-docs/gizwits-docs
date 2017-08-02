@@ -74,7 +74,3 @@ deploy:
   repo: 
     github: git@github.com:gizwits-docs/gizwits-docs.github.io.git
     gitlab: git@gitlab.gizwits.com:gizwits-site/gizwits-doc-static.git
-
-search:
-  path: search.json
-  field: all
