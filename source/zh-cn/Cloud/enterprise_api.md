@@ -296,19 +296,19 @@ Body：
 
 |参数    |类型  |必填    |参数类型    |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|gid    |String|是|query|设备id| 
-|country|String|是|query|国家| 
-|region|String|是|query|省| 
-|city|String|是|query|城市| 
-|is_online|integer|是|query|是否在线,在线为1,不在线为0| 
-|is_faulty|integer|是|query|是否故障,故障为1,无故障为0| 
-|is_alert|integer|是|query|是否报警,报警为1,无报警为0|
-|show_disabled|integer|是|query|显示注销为1，过滤注销为0|
-|liveness_start|integer|是|query|最近活跃时间戳|
-|type|String|是|query|可以为 did、mac、uid|
-|val|String|是|query|搜索的值|
-|limit|integer|是|query|
-|skip|integer|是|query|
+|gid    |String|是|query|设备id| |
+|country|String|是|query|国家| |
+|region|String|是|query|省| |
+|city|String|是|query|城市| |
+|is_online|integer|是|query|是否在线,在线为1,不在线为0|| 
+|is_faulty|integer|是|query|是否故障,故障为1,无故障为0| |
+|is_alert|integer|是|query|是否报警,报警为1,无报警为0||
+|show_disabled|integer|是|query|显示注销为1，过滤注销为0||
+|liveness_start|integer|是|query|最近活跃时间戳||
+|type|String|是|query|可以为 did、mac、uid||
+|val|String|是|query|搜索的值||
+|limit|integer|是|query|||
+|skip|integer|是|query|||
 
 
 
