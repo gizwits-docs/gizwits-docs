@@ -307,7 +307,7 @@ Body：
 |liveness_start|integer|是|query|最近活跃时间戳||
 |type|String|是|query|可以为 did、mac、uid||
 |val|String|是|query|搜索的值||
-|limit|integer|是|query||||
+|limit|integer|是|query|||
 |skip|integer|是|query||||
 
 
