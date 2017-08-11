@@ -148,9 +148,9 @@
       使用聚合API教程:
         path: /UserManual/DataAPI.html
       设备联动API使用教程:
-        path: /UserManual/使用设备分组API教程.html
+        path: /UserManual/LinkageAPI.html.html
       设备分组API使用教程:
-        path: /UserManual/
+        path: /UserManual/使用设备分组API教程.html
       设备分享功能SDK使用流程:
         path: /Cloud/SharingSDK.html
       APP绑定设备二维码生成教程:
