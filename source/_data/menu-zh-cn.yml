@@ -50,7 +50,7 @@
     SDK调试日志抓取教程:
       path: /AppDev/SDK调试日志抓取教程.html
     SDK错误码列表:
-      path: /AppDev/sdk_error.html        
+      path: /AppDev/sdk_error.html
 
   微信应用开发流程:
     path: /WechatDev/了解微信应用开发.html
@@ -148,7 +148,9 @@
       使用聚合API教程:
         path: /UserManual/DataAPI.html
       设备联动API使用教程:
-        path: /UserManual/LinkageAPI.html
+        path: /UserManual/使用设备分组API教程.html
+      设备分组API使用教程:
+        path: /UserManual/
       设备分享功能SDK使用流程:
         path: /Cloud/SharingSDK.html
       APP绑定设备二维码生成教程:
