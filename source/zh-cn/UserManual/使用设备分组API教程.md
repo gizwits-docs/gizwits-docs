@@ -44,7 +44,7 @@ Open API的设备分组接口，就是对多个设备分组并进行控制。当
 
 ![根据MAC绑定设备2](/assets/zh-cn/UserManual/Dev_GroupAPI/11.png)
 
-#### Timestamp获取链接http://tool.chinaz.com/Tools/unixtime.aspx
+#### [Timestamp获取链接](http://tool.chinaz.com/Tools/unixtime.aspx)
 
 ![Timestamp获取](/assets/zh-cn/UserManual/Dev_GroupAPI/12.png)
 
