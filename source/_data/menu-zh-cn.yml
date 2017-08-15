@@ -63,7 +63,7 @@
       path: /deviceDev/设备接入准备工作及向导.html
   设备快速接入机智云:
     独立MCU接入方案:
-      path: /quickstart/设备快速接入.html
+      path: /quickstart/独立mcu接入方案.html
     SOC接入方案:
       path: /deviceDev/UseSOC.html
 
