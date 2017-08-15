@@ -356,8 +356,8 @@ Body：
 
 |参数    |类型  |必填    |参数类型    |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|product_key  |String|是|path|| 
-|mac   |String|是|query|mac 地址| 
+|product_key  |String|是|path||| 
+|mac   |String|是|query|mac 地址|| 
 
 
 
