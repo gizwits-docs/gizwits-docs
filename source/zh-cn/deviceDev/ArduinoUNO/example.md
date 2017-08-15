@@ -67,7 +67,7 @@ WS2812 5050 RGB LED Arduino 库文件
 ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/example/1486546640454.png)
 
 本次项目数据点Excel表格下载链接：
-链接：http://pan.baidu.com/s/1pLAnMTd 密码：c4an
+链接：https://pan.baidu.com/s/1bLznVw 密码: ustg
 
 手动添加数据点参考一下链接：[手动添加数据点教程](http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#创建数据点)
 ![Alt text](/assets/zh-cn/deviceDev/ArduinoUNO/example/1486546762858.png)
