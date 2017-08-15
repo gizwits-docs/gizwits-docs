@@ -20,7 +20,7 @@ Open API的设备分组接口，就是对多个设备分组并进行控制。当
 
 ![创建分组](/assets/zh-cn/UserManual/Dev_GroupAPI/3.png)
 
-#### 3.点击创建分组->感叹号，填写App ID和token，这两个参数可以参考文档《利用openapi（postman）控制虚拟设备》中“2.3新建应用配置”和“3. Postman安装和导入”，[参考文档链接](http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html)
+#### 3.点击创建分组->感叹号，填写App ID和token，这两个参数可以参考文档《利用openapi（postman）控制虚拟设备》中“2.3新建应用配置”和“3. Postman安装和导入”，参考文档链接http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html
 
 ![填写App ID和token 1](/assets/zh-cn/UserManual/Dev_GroupAPI/4.png)
 
@@ -44,11 +44,11 @@ Open API的设备分组接口，就是对多个设备分组并进行控制。当
 
 ![根据MAC绑定设备2](/assets/zh-cn/UserManual/Dev_GroupAPI/11.png)
 
-#### [Timestamp获取链接](http://tool.chinaz.com/Tools/unixtime.aspx)
+#### Timestamp获取链接http://tool.chinaz.com/Tools/unixtime.aspx
 
 ![Timestamp获取](/assets/zh-cn/UserManual/Dev_GroupAPI/12.png)
 
-#### [Signature获取链接](http://tool.chinaz.com/Tools/md5.aspx)
+#### Signature获取链接http://tool.chinaz.com/Tools/md5.aspx
 
 ![Signature获取](/assets/zh-cn/UserManual/Dev_GroupAPI/13.png)
 
