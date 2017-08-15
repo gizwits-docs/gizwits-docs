@@ -278,6 +278,104 @@ Body：
 
 
 
+## 6、搜索设备
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_search)
+
+### 业务功能描述
+该接口提供查询产品的设备列表，包括了设备的地理位置信息（如国家，省，市，经纬度），上下线记录，活跃时间，设备是否报警，是否发生故障等。
+### 接口地址
+     http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/search
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path||
+|gid    |String|否|query|设备id| 
+|country|String|否|query|国家| 
+|region|String|否|query|省| 
+|city|String|否|query|城市| 
+|is_online|integer|否|query|是否在线,在线为1,不在线为0| 
+|is_faulty|integer|否|query|是否故障,故障为1,无故障为0| 
+|is_alert|integer|否|query|是否报警,报警为1,无报警为0|
+|show_disabled|integer|否|query|显示注销为1，过滤注销为0|
+|liveness_start|integer|否|query|最近活跃时间戳|
+|type|String|否|query|可以为 did、mac|uid|
+|val|String|否|query|搜索的值|
+|limit|integer|否|query|
+|skip|integer|否|query|
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "meta": {
+    "total": 0,
+    "limit": 0,
+    "skip": 0,
+    "next": "string",
+    "previous": "string"
+  },
+  "objects": {
+    "did": "string",
+    "mac": "string",
+    "is_online": 0,
+    "country": "string",
+    "region": "string",
+    "city": "string",
+    "longitude": "string",
+    "latitude": "string",
+    "is_faulty": 0,
+    "is_alert": 0,
+    "latest_online": 0,
+    "created_at": 0
+  }
+}  
+```
+
+## 7、获取设备详情
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备管理)
+
+### 业务功能描述
+该接口提供查询设备的最新的注册信息。
+### 接口地址
+     http://enterpriseapi.gizwits.com//v1/products/{product_key}/device_detail
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path|| 
+|mac   |String|是|query|mac 地址| 
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "product_key": "string",
+  "mac": "string",
+  "did": "string",
+  "is_online": true,
+  "is_disabled": true,
+  "type": "string"
+}
+```
+
+
 
 # 接口错误
 
