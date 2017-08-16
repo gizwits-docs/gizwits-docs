@@ -10,7 +10,7 @@ title: 独立MCU方案接入机智云
 
 以一款空调为例。空调厂家开发者开发空调电控板的时候，使用移植机智云GAgent的WiFi/GPRS模组建立桥梁，使空调设备的数据与机智云互联互通。设备与机智云数据交互的基本数据流如下图。
 
-![设备与机智云数据交互流程图](/assets/zh-cn/quickstart/dev/new2.png)
+![设备与机智云数据交互流程图](/assets/zh-cn/quickstart/dev/new1.png)
 
 # 在机智云官网创建设备产品.
 
