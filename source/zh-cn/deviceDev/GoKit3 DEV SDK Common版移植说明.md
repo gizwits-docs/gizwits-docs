@@ -566,7 +566,7 @@ GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或
 
 2)    如果您是团体
 
-GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得到GoKit以及技术支持；
+Gizwits针对团体有很多支持计划，您可以和Gizwits联系，快速得到GoKit以及技术支持；
 
 网站地址： [http://www.gizwits.com/about-us](http://www.gizwits.com/about-us)
 
