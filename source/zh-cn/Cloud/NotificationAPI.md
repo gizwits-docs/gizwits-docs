@@ -30,7 +30,7 @@ v2.1.6
 - device.online：设备上线消息
 - device.offline：设备下线消息
 - device.status.raw：设备上报自定义透传业务指令
-- device.status.status.kv：设备上报数据点业务指令
+- device.status.kv：设备上报数据点业务指令
 - device.attr_fault：设备故障事件
 - device.attr_alert：设备报警事件
 - datapoints.changed：数据点编辑事件
