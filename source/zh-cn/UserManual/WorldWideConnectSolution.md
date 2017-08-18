@@ -1,15 +1,14 @@
 title: 机智云全球部署方案说明
 ---
-
-#全球化方案介绍
+# 全球化方案介绍
 为满足机智云客户销售到海外的的硬件和硬件产品的消费者能更好的体验机智云平台带来的便利性，机智云在国外设有独立部署平台，以期从网络距离上缩短销售到海外的设备连接到国内长距离的网络延时问题，提供更好的交互体验。
 目前机智云海外部署节点分布在美国东部、欧洲中部（法兰克福），都使用AWS 云计算服务。如下图所示：
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024906729.png)
 美东节点覆盖范围：北美、南美地区；
 欧洲节点覆盖范围：欧洲地区
 关于各节点的服务器的响应速度报告可以参阅[《机智云全球联网报告》](http://docs.gizwits.com/zh-cn/overview/overview.html)(本文主要介绍开发者接入机智云全球化方案流程。
-#前期准备工作
-##确认模组使用固件版本
+# 前期准备工作
+## 确认模组使用固件版本
 目前支持全球一体化方案模组固件如下
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024937640.png)
 WIFI模组上烧录的固件为上图中发布时间之后的固件版本均可使用全球一体化方案，不过建议使用最新版本的固件来开发全球一体化的设备。
@@ -17,7 +16,7 @@ WIFI模组上烧录的固件为上图中发布时间之后的固件版本均可�
 ##确认APP使用的SDK版本
 APP支持全球一体化建议使用以下及其之后发布的SDK版本。
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024974568.png)
-##一体化方案产品数据同步部署
+## 一体化方案产品数据同步部署
 确定产品使用全球一体化方案后，开发者需要联系机智云技术支持，提供产品如下的对应信息。
 |内容|示例|
 |--|--|
@@ -33,7 +32,7 @@ APP支持全球一体化建议使用以下及其之后发布的SDK版本。
 取《安卓与iOS APPID》如下图：
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503025170676.png)
 
-#设备端开发
+# 设备端开发
 设备要支持全球一体化，除了需要使用支持的固件外，还需要在《3.1获取设备信息》协议中，回复一个Product Secret，具体协议如下图所示：
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503025196192.png)
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503025200577.png)
@@ -45,7 +44,7 @@ APP支持全球一体化建议使用以下及其之后发布的SDK版本。
 方案二：根据机智云的服务器划分，分别开发相对应的APP，也就是总共三套APP。
 下面先介绍一下全球一体化使用到的启动接口。
 
-##Andriod端
+## Andriod端
 启动方法：
 ```java
 public void startWithAppID(Context context, String appID, String appSecret, List<String>
@@ -62,7 +61,7 @@ autoSetDeviceDomain)
 |autoSetDeviceDomain|是否要开启设备域名的自动设置功能。此参数默认值为false，即不开启自动设置。参数值传true，则开启设备域名的自动设置功能。如果开启了设备域名的自动设置，小循环设备将被连接到App 当前使用的云服务域名上|
 注意：cloudServiceInfo和autoSetDeviceDomain是没有任何关联的，当autoSetDeviceDomain设置为true的时候，启动SDK以后，APP需要能连上外网，让SDK去云端获取当前APP的APPID与ProudctKey列表的关联关系，只有与APPID关联的ProductKey，APP才有权限去修改其设备的域名。
 APP去修改设备域名的时机是：当设备与APP连到同一个局域网内时，APP发现局域网的设备与APP连的服务器不同，就会通过TCP给设备发送域名信息，切换设备连接的服务器。
-##iOS端
+## iOS端
 启动接口：
 ```objectivec
 +(void)startWithAppID:(NSString*)appID appSecret:(NSString*)appSecret specialProductKeys:(NSArray*)specialProductKeys cloudServiceInfo:(NSDictionary *)cloudSeviceInfo autoSetDeviceDomain:(BOOL)autoSetDeviceDomain;
@@ -108,7 +107,7 @@ APP也按这三大服务器划分为三套：中国APP，美东APP，欧洲APP
 使用该方式的优点: 用户根据所在位置下载相对应的APP，之后设备就是固定连接相对应的服务器了，运行相对稳定，APP和设备都不会出现在各个服务器之间切换的问题。
 缺点：较繁琐，需要开发和上架三套APP。
 
-#问题说明
+# 问题说明
 1、	APP有消息推送功能，使用全球一体化方案的时候该怎么处理？
 解答：待机智云在国内外服务器上同步好产品的数据信息后，开发者需要使用同一帐号密码登录国外服务器，找到对应的产品，申请开通D3服务，并创建与国内一致的规则。
 国外服务器的访问地址：
