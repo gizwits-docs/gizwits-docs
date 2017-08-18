@@ -6,10 +6,8 @@ title: 机智云全球部署方案说明
 目前机智云海外部署节点分布在美国东部、欧洲中部（法兰克福），都使用AWS 云计算服务。如下图所示：
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024906729.png)
 
-美东节点覆盖范围：北美、南美地区；
-
-欧洲节点覆盖范围：欧洲地区 
-
+美东节点覆盖范围：北美、南美地区；<br>
+欧洲节点覆盖范围：欧洲地区 <br>
 关于各节点的服务器的响应速度报告可以参阅[《机智云全球联网报告》](http://docs.gizwits.com/zh-cn/overview/overview.html)(本文主要介绍开发者接入机智云全球化方案流程。
 
 # 前期准备工作
