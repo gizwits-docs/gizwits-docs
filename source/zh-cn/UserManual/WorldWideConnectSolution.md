@@ -18,6 +18,7 @@ title: 机智云全球部署方案说明
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024937640.png)
 
 WIFI模组上烧录的固件为上图中发布时间之后的固件版本均可使用全球一体化方案，不过建议使用最新版本的固件来开发全球一体化的设备。
+
 如果开发者无法确认模组的固件是否支持全球一体化方案，可咨询机智云FAE确认。
 ## 确认APP使用的SDK版本
 APP支持全球一体化建议使用以下及其之后发布的SDK版本。
@@ -52,8 +53,11 @@ APP支持全球一体化建议使用以下及其之后发布的SDK版本。
 
 # APP开发
 全球一体化方案的APP开发分两种方案：
+
 方案一：只开发一套APP适应全球设备
+
 方案二：根据机智云的服务器划分，分别开发相对应的APP，也就是总共三套APP。
+
 下面先介绍一下全球一体化使用到的启动接口。
 
 ## Andriod端
@@ -74,6 +78,7 @@ autoSetDeviceDomain)
 |autoSetDeviceDomain|是否要开启设备域名的自动设置功能。此参数默认值为false，即不开启自动设置。参数值传true，则开启设备域名的自动设置功能。如果开启了设备域名的自动设置，小循环设备将被连接到App 当前使用的云服务域名上|
 
 注意：cloudServiceInfo和autoSetDeviceDomain是没有任何关联的，当autoSetDeviceDomain设置为true的时候，启动SDK以后，APP需要能连上外网，让SDK去云端获取当前APP的APPID与ProudctKey列表的关联关系，只有与APPID关联的ProductKey，APP才有权限去修改其设备的域名。
+
 APP去修改设备域名的时机是：当设备与APP连到同一个局域网内时，APP发现局域网的设备与APP连的服务器不同，就会通过TCP给设备发送域名信息，切换设备连接的服务器。
 ## iOS端
 启动接口：
@@ -101,11 +106,15 @@ iOS端：
 [GizWifiSDK startWithAppID:APPID appSecret:APPSECRET specialProductKeys: ProductKeyList cloudServiceInfo:nil autoSetDeviceDomain:YES];
 ```
 该方案的优点：只需要一套APP就可适应所有地区的设备
+
 缺点：SDK自动根据时区去切换对应服务器，用户会较为被动，当APP与设备不是处于同一网络下，APP切换到另一个服务器，可能会导致找不到原来的账号和设备。
 ## 三套APP适配全球设备
 该方案是根据机智云的服务器划分对应的APP。
+
 机智云主要划分出三大服务器：中国服务器，美东服务器、欧洲服务器
+
 APP也按这三大服务器划分为三套：中国APP，美东APP，欧洲APP
+
 这三大APP基本内容相同，只在启动接口这里有差别，下面以iOS为例:
 
 中国APP的启动接口：
@@ -121,7 +130,7 @@ APP也按这三大服务器划分为三套：中国APP，美东APP，欧洲APP
 [GizWifiSDK startWithAppID:APP_ID appSecret:APP_SECRET specialProductKeys:[GosCommon sharedInstance].productKey cloudServiceInfo:@{@"openAPIInfo" : @"euapi.gizwits.com" , @"siteInfo": @"eusite.gizwits.com", @"pushInfo": @" eupush.gizwits.com
 "} autoSetDeviceDomain:YES];
 ```
-使用该方式的优点: 用户根据所在位置下载相对应的APP，之后设备就是固定连接相对应的服务器了，运行相对稳定，APP和设备都不会出现在各个服务器之间切换的问题。
+使用该方式的优点: 用户根据所在位置下载相对应的APP，之后设备就是固定连接相对应的服务器了，运行相对稳定，APP和设备都不会出现在各个服务器之间切换的问题。<br>
 缺点：较繁琐，需要开发和上架三套APP。
 
 # 问题说明
