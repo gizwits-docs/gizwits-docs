@@ -421,7 +421,7 @@ esp_init_data_default.bin 中的第 107 byte，命名为 ”vdd33_const”， �
 
 # 6. 封装信息
 
-![图 6-1. ESP8266EX 封](/source/en/25.png)
+![图 6-1. ESP8266EX 封装](/source/en/25.png)
 
 ###### 图 6-1. ESP8266EX 封装
 
