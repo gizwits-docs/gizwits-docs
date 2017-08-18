@@ -99,7 +99,7 @@ title:  ESP8266EX_Datasheet
 
 ###### 表 2-1. 管脚定义
 
-![表 2-1. 管脚定义](//assets/en-us/esp_8266datasheet/4.png)
+![表 2-1. 管脚定义](/assets/en-us/esp_8266datasheet/4.png)
  
 # 3.功能描述
 
