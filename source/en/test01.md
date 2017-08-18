@@ -59,7 +59,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 1-1. 主要技术参数 
 
-![表 1-1. 主要技术参数 ](C:\Users\Administrator\Desktop\esp\1.png)
+![表 1-1. 主要技术参数 ](/gizwits-docs/source/en/1.png)
 
 ## 1.3.	应用
 
