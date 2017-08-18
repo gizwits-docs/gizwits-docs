@@ -23,23 +23,23 @@ title:  平台概述
  - SLA 99.99%
  - EB级海量数据支持
  - 弹性可伸缩架构
-  
+
 ### 2)快速接入
  - 0.5天快速接入
  - 提供每个开发环节的SDK
  - 提供自动生成代码工具
  - 提供ECE能力，通过云端配置脚本自动适配私有协议
  - 提供行业完整解决方案
- 
+
 ### 3)专业服务
  - 专业傻瓜工具支持
  - 专业方案架构团队支持
  - 专业运维支持
- 
+
 ### 4)行业积累深厚
  - 700+企业客户验证
  - 5W + 社区开发者
- 
+
 ### 5)安全性
  - 遵循X.509 证书标准
  - 企业数据云端加密存储
@@ -84,7 +84,7 @@ title:  平台概述
 （PS：由于网络的不稳定性，即存在一定小范围的响应速度误差）
 
  # 快速入门
- 
+
 ## 五分钟了解机智云
  - [五分钟了解机智云](http://docs.gizwits.com/zh-cn/quickstart/5%E5%88%86%E9%92%9F%E4%BA%86%E8%A7%A3%E6%9C%BA%E6%99%BA%E4%BA%91.html)
  - [机智云名词定义解释](http://docs.gizwits.com/zh-cn/quickstart/noun.html)
@@ -98,7 +98,7 @@ title:  平台概述
 ## 1.App开发准备工作及向导
 
    - [App开发准备工作及向导](http://docs.gizwits.com/zh-cn/quickstart/%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C.html)
-   
+
 ## 2.APP代码自动生成服务介绍
    - [APP代码自动生成服务介绍](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)
 
@@ -112,18 +112,18 @@ title:  平台概述
    - [Android 第三方登录与换肤](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
    - [Android 开源框架的快速开发实例](http://docs.gizwits.com/zh-cn/quickstart/AndroidAppFrame.html)
    - [APICloud 开源框架使用指南（含源码）](http://docs.gizwits.com/zh-cn/AppDev/APICloudFrame.html)
-   
+
 ## 4.App 开发 SDK 接入
 
 使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
    - [Android SDK接入](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
    - [IOS SDK接入](http://docs.gizwits.com/zh-cn/AppDev/iOSSDKA2.html)
    - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
- 
+
 ## 5.更多App开发指南
-   - [SDK数据透传方法解析](http://docs.gizwits.com/zh-cn/AppDev/SDK%E6%95%B0%E6%8D%AE%E9%80%8F%E4%BC%A0%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90.html) 
+   - [SDK数据透传方法解析](http://docs.gizwits.com/zh-cn/AppDev/SDK%E6%95%B0%E6%8D%AE%E9%80%8F%E4%BC%A0%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90.html)
    - [开源框架视频教程](http://docs.gizwits.com/zh-cn/AppDev/%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E8%A7%86%E9%A2%91%E6%95%99%E7%A8%8B.html)
- 
+
 ## 6.微信开发
 - [了解微信应用开发](http://docs.gizwits.com/zh-cn/WechatDev/%E4%BA%86%E8%A7%A3%E5%BE%AE%E4%BF%A1%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91.html)
 - [微信应用开发教程](http://docs.gizwits.com/zh-cn/WechatDev/WeChatDev.html)
@@ -175,7 +175,7 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [ArduinoUNOWiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
  - [ArduinoUNOWiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
  - [ArduinoUNOWiFi智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
- 
+
 ## 6.更多设备接入指南
 - [ECE Demo开发教程](http://docs.gizwits.com/zh-cn/UserManual/ecevideos.html)
 - [机智云串口工具使用文档](http://docs.gizwits.com/zh-cn/deviceDev/%E4%B8%B2%E5%8F%A3%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html)
@@ -183,12 +183,11 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 # 云API
 开发者如果已完成设备接入、APP开发，还需要从机智云PaaS平台获取数据构建一套业务管理系统，或者访问机智云提供的服务，则需了解以下文档:
 1). [了解企业应用开发](http://docs.gizwits.com/zh-cn/Cloud/ent_dev.html)
-2). [了解消息消息代理服务接口（Noti服务）](http://docs.gizwits.com/zh-cn/Cloud/noti1.0.html)
-3). [了解企业API](http://docs.gizwits.com/zh-cn/Cloud/enterprise_api.html)
-4). [SNoti API (V2.1.3)](http://docs.gizwits.com/zh-cn/Cloud/NotificationAPI.html)
-5). [Gizwits Open API（新）](http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html)
-6). [Websocket API 指南](http://docs.gizwits.com/zh-cn/Cloud/WebsocketAPI.html)
-7). API使用教程
+2). [了解企业API](http://docs.gizwits.com/zh-cn/Cloud/enterprise_api.html)
+3). [SNoti API (V2.1.3)](http://docs.gizwits.com/zh-cn/Cloud/NotificationAPI.html)
+4). [Gizwits Open API（新）](http://docs.gizwits.com/zh-cn/Cloud/openapi_apps.html)
+5). [Websocket API 指南](http://docs.gizwits.com/zh-cn/Cloud/WebsocketAPI.html)
+6). API使用教程
  - [使用openapi（postman）控制虚拟设备](http://docs.gizwits.com/zh-cn/UserManual/UseOpenAPI.html)
  - [使用Websocket 网页控制设备](http://docs.gizwits.com/zh-cn/UserManual/UseWebsocket.html)
  - [使用聚合API使用教程](http://docs.gizwits.com/zh-cn/UserManual/DataAPI.html)
@@ -203,6 +202,3 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [ECE雾计算使用教程](http://docs.gizwits.com/zh-cn/UserManual/ece.html)
  - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
  - [实时大数据使用说明](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html)
-
- 
-
