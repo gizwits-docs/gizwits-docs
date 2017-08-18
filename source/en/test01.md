@@ -1,4 +1,4 @@
-title: esp8266-atasheet
+title: esp8266-datasheet
 
 # 1.	概述 
 #### ESP8266EX 由乐鑫公司开发，提供了一套高度集成的 Wi-Fi SoC 解决方案，其低功耗、紧凑设计和高稳定性可以满足用户的需求。
@@ -59,7 +59,7 @@ title: esp8266-atasheet
 
 ###### 表 1-1. 主要技术参数 
 
-![表 1-1. 主要技术参数 ](/assets/en-us/esp_8266datasheet/1.png)
+![表 1-1. 主要技术参数 ](/assets/en-us/esp_8266datasheet/1.pg)
 
 ## 1.3.	应用
 
