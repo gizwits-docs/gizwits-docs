@@ -2,22 +2,28 @@ title: 机智云全球部署方案说明
 ---
 # 全球化方案介绍
 为满足机智云客户销售到海外的的硬件和硬件产品的消费者能更好的体验机智云平台带来的便利性，机智云在国外设有独立部署平台，以期从网络距离上缩短销售到海外的设备连接到国内长距离的网络延时问题，提供更好的交互体验。
+
 目前机智云海外部署节点分布在美国东部、欧洲中部（法兰克福），都使用AWS 云计算服务。如下图所示：
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024906729.png)
+
 美东节点覆盖范围：北美、南美地区；
 欧洲节点覆盖范围：欧洲地区
 关于各节点的服务器的响应速度报告可以参阅[《机智云全球联网报告》](http://docs.gizwits.com/zh-cn/overview/overview.html)(本文主要介绍开发者接入机智云全球化方案流程。
+
 # 前期准备工作
 ## 确认模组使用固件版本
 目前支持全球一体化方案模组固件如下
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024937640.png)
+
 WIFI模组上烧录的固件为上图中发布时间之后的固件版本均可使用全球一体化方案，不过建议使用最新版本的固件来开发全球一体化的设备。
 如果开发者无法确认模组的固件是否支持全球一体化方案，可咨询机智云FAE确认。
 ##确认APP使用的SDK版本
 APP支持全球一体化建议使用以下及其之后发布的SDK版本。
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024974568.png)
+
 ## 一体化方案产品数据同步部署
 确定产品使用全球一体化方案后，开发者需要联系机智云技术支持，提供产品如下的对应信息。
+
 |内容|示例|
 |--|--|
 |产品名称|《一体化方案产品》|
@@ -34,10 +40,14 @@ APP支持全球一体化建议使用以下及其之后发布的SDK版本。
 
 # 设备端开发
 设备要支持全球一体化，除了需要使用支持的固件外，还需要在《3.1获取设备信息》协议中，回复一个Product Secret，具体协议如下图所示：
+
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503025196192.png)
+
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503025200577.png)
+
 上图所需产品密钥获取如下：
 ![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503025212893.png)
+
 # APP开发
 全球一体化方案的APP开发分两种方案：
 方案一：只开发一套APP适应全球设备
@@ -52,6 +62,7 @@ specialProductKeys, ConcurrentHashMap<String, String> cloudServiceInfo, boolean
 autoSetDeviceDomain)
 ```
 参数解析：
+
 |context|上下文对象|
 |--|--|
 |appID|接入产品绑定的appID，在开发者中心上获取|
@@ -59,6 +70,7 @@ autoSetDeviceDomain)
 |specialProductKeys|要过滤的设备产品类型productKey 列表，为String 数组|
 |cloudServiceInfo|要切换的服务器域名信息。此参数默认值为null，此时SDK 将根据用户手机的地理位置信息为App 设置机智云统一部署的云服务域名。若App 希望使用独立部署的私有云服务域名，需按照以下字典<br>{key: value}格式传值：<br>{<br>"openAPIInfo": "xxx", // String类型，api服务域名<br>"siteInfo": "xxx" // String类型，site服务域名<br>"pushInfo": "xxx" // String类型，推送服务域名<br>}<br>其中，openAPIInfo 和siteInfo 必须传值，pushInfo 可选。可以不指定端口号，SDK 会使用默认的服务端口。此时形如：<br>api.gizwits.com<br>指定端口号时，需同时指定Http 和Https 端口。此时形如：<br>xxx.gizwits.com:81&8443|
 |autoSetDeviceDomain|是否要开启设备域名的自动设置功能。此参数默认值为false，即不开启自动设置。参数值传true，则开启设备域名的自动设置功能。如果开启了设备域名的自动设置，小循环设备将被连接到App 当前使用的云服务域名上|
+
 注意：cloudServiceInfo和autoSetDeviceDomain是没有任何关联的，当autoSetDeviceDomain设置为true的时候，启动SDK以后，APP需要能连上外网，让SDK去云端获取当前APP的APPID与ProudctKey列表的关联关系，只有与APPID关联的ProductKey，APP才有权限去修改其设备的域名。
 APP去修改设备域名的时机是：当设备与APP连到同一个局域网内时，APP发现局域网的设备与APP连的服务器不同，就会通过TCP给设备发送域名信息，切换设备连接的服务器。
 ## iOS端
@@ -66,12 +78,14 @@ APP去修改设备域名的时机是：当设备与APP连到同一个局域网�
 ```objectivec
 +(void)startWithAppID:(NSString*)appID appSecret:(NSString*)appSecret specialProductKeys:(NSArray*)specialProductKeys cloudServiceInfo:(NSDictionary *)cloudSeviceInfo autoSetDeviceDomain:(BOOL)autoSetDeviceDomain;
 ```
+
 |appID|接入产品绑定的appID，在开发者中心上获取|
 |--|--|
 |appSecret|APPID对应的appSecret，在开发者中心上获取|
 |specialProductKeys|要过滤的设备产品类型productKey 列表，为NSString 数组|
 |cloudServiceInfo|要切换的服务器域名信息。此参数默认值为null，此时SDK 将根据用户手机的地理位置信息为App 设置机智云统一部署的云服务域名。若App 希望使用独立部署的私有云服务域名，需按照以下字典<br>{key: value}格式传值：<br>@{<br>@"openAPIInfo": @"xxx", // String类型，api服务域名<br>@"siteInfo": @"xxx" // String类型，site服务域名<br>@"pushInfo": @"xxx" // String类型，推送服务域名<br>}<br>其中，openAPIInfo 和siteInfo 必须传值，pushInfo 可选。可以不指定端口号，SDK 会使用默认的服务端口。此时形如：<br>api.gizwits.com<br>指定端口号时，需同时指定Http 和Https 端口。此时形如：<br>xxx.gizwits.com:81&8443|
 |autoSetDeviceDomain|是否要开启设备域名的自动设置功能。此参数默认值为false，即不开启自动设置。参数值传true，则开启设备域名的自动设置功能。如果开启了设备域名的自动设置，小循环设备将被连接到App 当前使用的云服务域名上|
+
 iOS的cloudServiceInfo和autoSetDeviceDomain功能同安卓相同。
 ##一套APP适配全球设备
 该方案是让SDK自动根据时区切换连接的服务器域名，此时的启动接口调用方式如下：
