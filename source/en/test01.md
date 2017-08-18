@@ -1,4 +1,4 @@
-title: 0A_ESP8266EX_Datasheet
+title:  ESP8266EX_Datasheet
 
 # 1.	概述 
 #### ESP8266EX 由乐鑫公司开发，提供了一套高度集成的 Wi-Fi SoC 解决方案，其低功耗、紧凑设计和高稳定性可以满足用户的需求。
@@ -59,7 +59,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 1-1. 主要技术参数 
 
-![表 1-1. 主要技术参数 ](C:\Users\Administrator\Desktop\esp\1.png)
+![表 1-1. 主要技术参数 ](/source/en/1.png)
 
 ## 1.3.	应用
 
@@ -91,7 +91,7 @@ title: 0A_ESP8266EX_Datasheet
 
 #### 管脚布局如图 2-1 所示。
 
-![图 2-1. 管脚布局](C:\Users\Administrator\Desktop\esp\2.png)
+![图 2-1. 管脚布局](/source/en/2.png)
 
 ###### 图 2-1. 管脚布局
 
@@ -99,13 +99,13 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 2-1. 管脚定义
 
-![表 2-1. 管脚定义](C:\Users\Administrator\Desktop\esp\4.png)
+![表 2-1. 管脚定义](/source/en/4.png)
  
 # 3.功能描述
 
 #### ESP8266EX 的功能原理如图 3-1 所示。
 
-![图 3-1. 功能原理图](C:\Users\Administrator\Desktop\esp\5.png)
+![图 3-1. 功能原理图](/source/en/5.png)
 
 ###### 图 3-1. 功能原理图
 
@@ -160,14 +160,14 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 3-1. 高频时钟参数
 
-![表 3-1. 高频时钟参数](C:\Users\Administrator\Desktop\esp\6.png)
+![表 3-1. 高频时钟参数](/source/en/6.png)
 
 ### 3.3.2. 外部时钟参考要求
 #### 外部时钟的频率在 24 MHz 到 52 MHz 之间。为了使射频性能良好，时钟需满足要求如表3-2 所示
 
 ###### 表 3-2. 外部时钟参考要求
 
-![表 3-2. 外部时钟参考要求](C:\Users\Administrator\Desktop\esp\7.png)
+![表 3-2. 外部时钟参考要求](/source/en/7.png)
 
 ## 3.4. 射频
 
@@ -191,7 +191,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 3-3. 频率信道
 
-![表 3-3. 频率信道](C:\Users\Administrator\Desktop\esp\8.png)
+![表 3-3. 频率信道](/source/en/8.png)
 
 ### 3.4.2. 2.4 GHz 接收器
 
@@ -241,7 +241,7 @@ title: 0A_ESP8266EX_Datasheet
 
 #### 节能模式共有三种：激活模式、睡眠模式和深度睡眠模式。 ESP8266EX 在深度睡眠模式下（RTC 时钟仍处于工作状态）消耗的电流约为 20 μA；处于连接状态时消耗的电流少于1.0 mA (DTIM = 3) 或 0.6 mA (DTIM = 10)。
 
-![图 3-2. 低功耗管理](C:\Users\Administrator\Desktop\esp\9.png)
+![图 3-2. 低功耗管理](/source/en/9.png)
 
 ###### 图 3-2. 低功耗管理
 
@@ -275,7 +275,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 4-1. SDIO 管脚定义
 
-![表 4-1. SDIO 管脚定义](C:\Users\Administrator\Desktop\esp\10.png)
+![表 4-1. SDIO 管脚定义](/source/en/10.png)
 
 ## 4.3. 串行外设接口 (SPI/HSPI)
 
@@ -285,7 +285,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 4-2. SPI 接口定义
 
-![表 4-2. SPI 接口定义](C:\Users\Administrator\Desktop\esp\11.png)
+![表 4-2. SPI 接口定义](/source/en/11.png)
 
 说明：SPI 模式可由软件编程实现。时钟频率最⼤为 80 MHz。
 
@@ -293,7 +293,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 4-3. HSPI（从机）管脚定义
 
-![表 4-3. HSPI（从机）管脚定义](C:\Users\Administrator\Desktop\esp\12.png)
+![表 4-3. HSPI（从机）管脚定义](/source/en/12.png)
 
 ## 4.4. I2C 接口
 
@@ -301,7 +301,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 4-4. I2C 管脚定义
 
-![表 4-4. I2C 管脚定义](C:\Users\Administrator\Desktop\esp\13.png)
+![表 4-4. I2C 管脚定义](/source/en/13.png)
 
 #### ESP8266EX 既支持 I2C 主机也支持 I2C 从机功能。 I2C 接口功能可由软件编程实现，时钟频率最高约为 100 kHz，需高于从设备最慢速的时钟频率。
 
@@ -311,7 +311,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 4-5. I2S 管脚定义
 
-![表 4-5. I2S 管脚定义](C:\Users\Administrator\Desktop\esp\14.png)
+![表 4-5. I2S 管脚定义](/source/en/14.png)
 
 ## 4.6. 通用异步收发器 (UART)
 
@@ -319,7 +319,7 @@ title: 0A_ESP8266EX_Datasheet
 
 ###### 表 4-6. UART 管脚定义
 
-![表 4-6. UART 管脚定义](C:\Users\Administrator\Desktop\esp\15.png)
+![表 4-6. UART 管脚定义](/source/en/15.png)
 
 #### 2 个 UART 接口的数据传输均由硬件实现。数据传输速度可达 115200*40 (4.5 Mbps)。
 
@@ -335,7 +335,7 @@ UART0 默认会在上电启动期间输出一些打印，此期间打印内容�
 
 ###### 表 4-7. PWM 管脚定义
 
-![表 4-7. PWM 管脚定义](C:\Users\Administrator\Desktop\esp\16.png)
+![表 4-7. PWM 管脚定义](/source/en/16.png)
 
 #### PWM 接口功能由软件实现。例如，在 LED 智能照明的示例中， PWM 通过定时器的中断实现，最小分辨率可达 44 ns。 PWM 频率的可调节范围为 1000μs 到 10000μs，即 100Hz 到 1 kHz 之间。当 PWM 频率为 1 kHz，占空⽐为 1/22727， 1 kHz 的刷新率下可达超过 14-bit 的分辨率。
 
@@ -345,7 +345,7 @@ UART0 默认会在上电启动期间输出一些打印，此期间打印内容�
 
 ###### 表 4-8. IR 红外遥控管脚定义
 
-![表 4-8. IR 红外遥控管脚定义](C:\Users\Administrator\Desktop\esp\24.png)
+![表 4-8. IR 红外遥控管脚定义](/source/en/24.png)
 
 #### IR 红外遥控接口由软件实现，接口使用 NEC 编码及调制解调，采用 38 kHz 的调制载波，占空比为 1/3 的方波。传输范围在 1m 左右，传输范围由 2 个因素决定，一个是 GPIO 口的最大额定电流，另一个是红外接收管内部的限流电阻的大小。电阻越大，电流越小，功耗也越小，反之亦然。传输半⻆度为 15° 到 30°，取决于红外接收管的辐射⽅向。
 
@@ -355,17 +355,17 @@ UART0 默认会在上电启动期间输出一些打印，此期间打印内容�
 
 ###### 表 4-9. ADC 管脚定义
 
-![表 4-9. ADC 管脚定义](C:\Users\Administrator\Desktop\esp\17.png)
+![表 4-9. ADC 管脚定义](/source/en/17.png)
 
 #### ADC 端口（管脚 6 TOUT）可提供以下两种应用，但不可同时使用。
 
 ##### • 测量 VDD3P3（管脚 3 和 4）上的电源电压。
 
-![测量 VDD3P3（管脚 3 和 4）上的电源电压](C:\Users\Administrator\Desktop\esp\18.png)
+![测量 VDD3P3（管脚 3 和 4）上的电源电压](/source/en/18.png)
 
 ##### • 测量 TOUT（管脚 6）的输入电压。
 
-![测量 VDD3P3（管脚 3 和 4）上的电源电压](C:\Users\Administrator\Desktop\esp\19.png)
+![测量 VDD3P3（管脚 3 和 4）上的电源电压](/source/en/19.png)
 
 说明：
 
@@ -385,7 +385,7 @@ esp_init_data_default.bin 中的第 107 byte，命名为 ”vdd33_const”， �
 
 ###### 表 4-10. LED 和 Button 管脚定义
 
-![表 4-10. LED 和 Button 管脚定义](C:\Users\Administrator\Desktop\esp\20.png)
+![表 4-10. LED 和 Button 管脚定义](/source/en/20.png)
 
 #### 上述共定义了一个 Button 和 2 个 LED 的接口。通用情况下，MTCK 作为复位按键的控制；GPIO0 koi作 Wi-Fi 用作状态指示灯；MTDI 用作与服务器通信的指示灯。
 
@@ -395,13 +395,13 @@ esp_init_data_default.bin 中的第 107 byte，命名为 ”vdd33_const”， �
 
 ###### 表 5-1. 电气特性
 
-![表 5-1. 电气特性](C:\Users\Administrator\Desktop\esp\21.png)
+![表 5-1. 电气特性](/source/en/21.png)
 
 ## 5.2. 功耗
 
 ###### 表 5-2. 功耗
 
-![表 5-2. 功耗](C:\Users\Administrator\Desktop\esp\22.png)
+![表 5-2. 功耗](/source/en/22.png)
 
 说明：
 
@@ -417,11 +417,11 @@ esp_init_data_default.bin 中的第 107 byte，命名为 ”vdd33_const”， �
 
 ###### 表 5-3. Wi-Fi 射频特征
 
-![表 5-3. Wi-Fi 射频特征](C:\Users\Administrator\Desktop\esp\23.png)
+![表 5-3. Wi-Fi 射频特征](/source/en/23.png)
 
 # 6. 封装信息
 
-![图 6-1. ESP8266EX 封装](C:\Users\Administrator\Desktop\esp\25.png)
+![图 6-1. ESP8266EX 封装](/source/en/25.png)
 
 ###### 图 6-1. ESP8266EX 封装
 
