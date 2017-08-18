@@ -59,7 +59,7 @@ title:  ESP8266EX_Datasheet
 
 ###### 表 1-1. 主要技术参数 
 
-![表 1-1. 主要技术参数 ](/assets/en-us/esp_8266datasheet/)
+![表 1-1. 主要技术参数 ](/assets/en-us/esp_8266datasheet/1.png)
 
 ## 1.3.	应用
 
