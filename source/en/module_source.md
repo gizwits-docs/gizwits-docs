@@ -15,7 +15,7 @@ title:  模块硬件资料
 
 - ### 汉枫模块系列
 
-[HFLPB100 Datasheet](/assets/pdf/HF-LPB100用户手册-V1.9(20150720))
+[HFLPB100 Datasheet](/assets/pdf/HF-LPB100用户手册)
 
 ...
 
