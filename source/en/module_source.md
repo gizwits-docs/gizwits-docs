@@ -15,13 +15,10 @@ title:  模块硬件资料
 
 - ### 汉枫模块系列
 
-[HFLPB100 Datasheet](/assets/pdf/HF-LPB100用户手册-V1.9(20150720).pdf)
-
-[HFLPB120 Datasheet](/assets/pdf/HF-LPB120用户手册-V1.7(20161226).pdf)
-
-[HFLPT120 Datasheet](/assets/pdf/HF-LPT120&HF-LPT120A用户手册-V1.6(20161221).pdf)
-
-[HFLPT220 Datasheet](/assets/pdf/HF-LPT220用户手册V1.5(20161226).pdf)
+[HFLPB100 Datasheet](/assets/pdf/HF-LPB100用户手册-V1.9(20150720))
+[HFLPB120 Datasheet](/assets/pdf/HF-LPB120用户手册-V1.7(20161226))
+[HFLPT120 Datasheet](/assets/pdf/HF-LPT120&HF-LPT120A用户手册-V1.6(20161221))
+[HFLPT220 Datasheet](/assets/pdf/HF-LPT220用户手册V1.5(20161226))
 
 ## 2.GPRS模块的Datasheet，硬件介绍
 
