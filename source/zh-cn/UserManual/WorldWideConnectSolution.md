@@ -67,11 +67,11 @@ autoSetDeviceDomain)
 |--|--|
 |appID|接入产品绑定的appID，在开发者中心上获取|
 |appSecret|APPID对应的appSecret，在开发者中心上获取|
-|specialProductKeys|要过滤的设备产品类型productKey 列表，为String 数组|
+|specialProductKeys|要过滤的设备产品类型productKey 列表，为String 数组。开启全球一体化的功能，该参数必填，不可填NULL。|
 |cloudServiceInfo|要切换的服务器域名信息。此参数默认值为null，此时SDK 将根据用户手机的地理位置信息为App 设置机智云统一部署的云服务域名。若App 希望使用独立部署的私有云服务域名，需按照以下字典<br>{key: value}格式传值：<br>{<br>"openAPIInfo": "xxx", // String类型，api服务域名<br>"siteInfo": "xxx" // String类型，site服务域名<br>"pushInfo": "xxx" // String类型，推送服务域名<br>}<br>其中，openAPIInfo 和siteInfo 必须传值，pushInfo 可选。可以不指定端口号，SDK 会使用默认的服务端口。此时形如：<br>api.gizwits.com<br>指定端口号时，需同时指定Http 和Https 端口。此时形如：<br>xxx.gizwits.com:81&8443|
 |autoSetDeviceDomain|是否要开启设备域名的自动设置功能。此参数默认值为false，即不开启自动设置。参数值传true，则开启设备域名的自动设置功能。如果开启了设备域名的自动设置，小循环设备将被连接到App 当前使用的云服务域名上|
 
-注意：cloudServiceInfo和autoSetDeviceDomain是没有任何关联的，当autoSetDeviceDomain设置为true的时候，启动SDK以后，APP需要能连上外网，让SDK去云端获取当前APP的APPID与ProudctKey列表的关联关系，只有与APPID关联的ProductKey，APP才有权限去修改其设备的域名。
+注意：cloudServiceInfo和autoSetDeviceDomain是没有任何关联的，当autoSetDeviceDomain设置为true的时候，启动SDK以后，APP需要能连上外网，让SDK去云端获取当前APP的APPID与ProudctKey列表的关联关系，只有与APPID关联的ProductKey，APP才有权限去修改其设备的域名。所以，当APP需要实现全球一体化的功能时，ProudctKey参数必填，SDK才可拿到参数值，去云端核对APPID和ProductKey的关联关系。
 APP去修改设备域名的时机是：当设备与APP连到同一个局域网内时，APP发现局域网的设备与APP连的服务器不同，就会通过TCP给设备发送域名信息，切换设备连接的服务器。
 ## iOS端
 启动接口：
@@ -82,7 +82,7 @@ APP去修改设备域名的时机是：当设备与APP连到同一个局域网�
 |appID|接入产品绑定的appID，在开发者中心上获取|
 |--|--|
 |appSecret|APPID对应的appSecret，在开发者中心上获取|
-|specialProductKeys|要过滤的设备产品类型productKey 列表，为NSString 数组|
+|specialProductKeys|要过滤的设备产品类型productKey 列表，为NSString 数组。开启全球一体化的功能，该参数必填，不可填nil|
 |cloudServiceInfo|要切换的服务器域名信息。此参数默认值为null，此时SDK 将根据用户手机的地理位置信息为App 设置机智云统一部署的云服务域名。若App 希望使用独立部署的私有云服务域名，需按照以下字典<br>{key: value}格式传值：<br>@{<br>@"openAPIInfo": @"xxx", // String类型，api服务域名<br>@"siteInfo": @"xxx" // String类型，site服务域名<br>@"pushInfo": @"xxx" // String类型，推送服务域名<br>}<br>其中，openAPIInfo 和siteInfo 必须传值，pushInfo 可选。可以不指定端口号，SDK 会使用默认的服务端口。此时形如：<br>api.gizwits.com<br>指定端口号时，需同时指定Http 和Https 端口。此时形如：<br>xxx.gizwits.com:81&8443|
 |autoSetDeviceDomain|是否要开启设备域名的自动设置功能。此参数默认值为false，即不开启自动设置。参数值传true，则开启设备域名的自动设置功能。如果开启了设备域名的自动设置，小循环设备将被连接到App 当前使用的云服务域名上|
 
@@ -136,8 +136,9 @@ APP也按这三大服务器划分为三套：中国APP，美东APP，欧洲APP
 
 3、	如果APP开启了域名修改功能，但是发现局域网的设备都无法根据APP去自动切换到相应的服务器，该怎么做？
 解答：
-   a. 确认APP是否能连上外网，因为从2.07.07.2版本开始的SDK需要去云端确认APPID和Productkey的关联关系之后，才会去修改设备域名。
-   b. 上机智云官网确认，APPID是否和ProductKey关联了。
+   a. 确认启动接口的ProductKey参数是否有传，不可传空。
+   b. 确认APP是否能连上外网，因为从2.07.07.2版本开始的SDK需要去云端确认APPID和Productkey的关联关系之后，才会去修改设备域名。
+   c. 上机智云官网确认，APPID是否和ProductKey关联了。
 
 4、	当在测试全球化设备时，若出现设备列表的设备出现闪烁状态，一会出现，一会消失的状态，会是什么原因导致的？
 解答：查看同一个局域网下，是否开启了多个有权设置设备域名的APP，并且各自连的不同的服务器。
