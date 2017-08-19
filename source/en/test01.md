@@ -36,19 +36,18 @@ title: 0a-esp8266ex_datasheet_cn
 
 ##### • 分散 DMA，实现数据传输操作时 Zero Copy，优化 CPU 负载。
 
-##### • 天线分集与选择（软件控制硬件）。
-
 ##### • 自适应速率回退算法基于实际信噪比(SNR) 和丢包信息来控制最佳传输速率和发射功耗。
 
 ##### • MAC 层上的自动动重传和回复以防止在慢速主机环境中的数据包丢弃。
 
 ## 1.2.	技术参数 
 
-###### 表 1-1. 主要技术参数 
+###### 表 1-1 主要技术参数 
 
 ![表 1-1. 主要技术参数 ](/assets/en-us/esp_8266datasheet/1.png)
 
 ## 1.3.	应用
+
 ##### • 家庭自动化
 
 ##### • 智能插座、智能灯
@@ -103,7 +102,7 @@ title: 0a-esp8266ex_datasheet_cn
 
 #### 芯片内无可编程存储器，用户程序必须由外部 Flash 存储。
 
-### 3.1.1. 外置 Flash
+### 3.1.3. 外置 Flash
 
 #### ESP8266EX 使用外置 SPI Flash 存储用户程序。理论上最大可支持 16 MB 的存储。建议按照如下所示来分配 SPI Flash 容量。
 
@@ -329,7 +328,7 @@ esp_init_data_default.bin 中的第 107 byte，命名为 ”vdd33_const”， �
 
 ##### • 当 vdd33_const < 18 或 36 < vdd33_const < 255 时，ESP8266EX 使用默认值 2.5V 来校准和优化射频电路工作状态。
 
-4.10. LED Light 和 Button 接口
+## 4.10. LED Light 和 Button 接口
 
 #### ESP8266EX拥有多达 17 个 GPIO 接口，均可定义作为 LED 与 Button 的控制接口。基于目前 ESP8266EX 一些示例设计的应用，我们对 LED 与 Button 的 GPIO 接口定义如表 4-10 所示。
 
