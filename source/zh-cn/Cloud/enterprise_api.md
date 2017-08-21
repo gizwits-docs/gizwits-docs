@@ -535,7 +535,7 @@ Body：
 
 
 ## 11、获取设备地理位置分布（实时）
-### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_locations)
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_locations)
 
 ### 业务功能描述
 该接口提供了通过查询设备的product_key和gid等参数，来获取最新的设备地理位置分布的功能。
@@ -570,7 +570,7 @@ Body：
 
 
 ## 12、用户新增报表（大数据）
-### [调试地址](http://swagger.gizwits.com/doc/index/enterprise_api#!/用户报表/get_v1_products_product_key_users_report_new)
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new)
 
 ### 业务功能描述
 该接口提供了通过查询设备的product_key和设置起始周期、结束周期等参数，按日、周、月等三种统计方式来获取绑定了该PK下产品的新增用户的功能。
