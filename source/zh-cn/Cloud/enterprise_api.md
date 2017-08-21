@@ -407,6 +407,170 @@ Body：
 }
 ```
 
+## 9、设备上下线记录
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online)
+
+### 业务功能描述
+
+**设备上下线记录 ** 
+- 按 ts 降序排序。  
+- 设备的心跳统计信息，在设备上下线记录的 Payload 中。  
+- 设备上线记录中，payload 记录了设备设备指定的心跳时间间隔（KeepAlive），单位为秒，此 KeepAlive 的值等于设备上传的心跳时间间隔再加上5秒。  
+- 设备下线记录中，payload 记录了设备的在线时长（duration），以及在线时发送的心跳次数（heartbeat/count），相邻两个心跳的最大间隔时间（heartbeat/max），最小间隔时间（heartbeat/min），平均间隔时间（heartbeat/avg）, 最后一次收到心跳时刻与下线时刻的间隔时间（heartbeat/last），单位为秒  
+- 心跳的间隔时间，为m2m收到第n次心跳的时间点（时间戳）与第n-1次心跳的时间点（时间戳）之差，其中n >= 2；当n < 2时，max，min，avg的值固定为0  
+- max，min：计算客户端从接到第一次心跳开始，到最后一次接到心跳为止的时间段内，相邻两个心跳时间差的最大，最小值；  
+- avg：客户端与云端建立链接开始，到最后一次接到心跳为止的时间段，除以心跳次数；    
+- 设备下线记录中，payload记录了设备的下线原因（reason），说明各种reason的意义：
+- mqtt_disconnect：设备主动断开与mqtt的连接  
+- no_heartbeat：m2m在KeepAlive时段内，没有收到设备心跳  
+- tcp_closed：设备主动断开tcp连接  
+- ssl_closed：设备主动断开ssl连接  
+- offline_force：设备重复上线，原有的连接断开  
+- offline_reset：设备注销，断开连接  
+- offline_exception：异常断开连接  
+- offline_sending_density_overflow：客户端发送信息的频率过大，断开链接  
+- offline_sending_data_size_overflow：客户端发送信息的流量过大，断开链接  
+**ChangeLog**  
+- 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录  
+- 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内  
+- 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序  
+### 接口地址
+     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/{did}/online
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path||
+|did    |String|是|query|设备id| 
+|start_ts|integer|否|query|开始时间戳| 
+|end_ts|intege|否|query|开始时间戳| 
+|sort|String|否|query|desc、asc| 
+|limit|integer|否|query|
+|skip|integer|否|query|
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "meta": {
+    "total": 0,
+    "limit": 0,
+    "skip": 0,
+    "next": "string",
+    "previous": "string"
+  },
+  "objects": [
+    {
+      "timestamp": 0,
+      "type": "string",
+      "payload": "string"
+    }
+  ]
+} 
+```
+
+
+## 10、设备通信日志
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd)
+
+### 业务功能描述
+设备通信日志  
+- 按 ts 降序排序。  
+- payload 为二进制进行 base64 编码后的结果。  
+ChangeLog  
+- 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录  
+- 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内  
+- 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序  
+
+### 接口地址
+     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/{did}/cmd
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path||
+|did    |String|是|query|设备id| 
+|start_ts|integer|否|query|开始时间戳| 
+|end_ts|intege|否|query|开始时间戳| 
+|sort|String|否|query|desc、asc| 
+|limit|integer|否|query|
+|skip|integer|否|query|
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "meta": {
+    "total": 0,
+    "limit": 0,
+    "skip": 0,
+    "next": "string",
+    "previous": "string"
+  },
+  "objects": [
+    {
+      "timestamp": 0,
+      "type": "string",
+      "payload": "string"
+    }
+  ]
+} 
+```
+
+
+## 11、获取设备地理位置分布（实时）
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备管理/get_v1_products_product_key_devices_locations)
+
+### 业务功能描述
+该接口提供了通过查询设备的product_key和gid等参数，来获取最新的设备地理位置分布的功能。
+### 接口地址
+     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/locations
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path|| 
+|gid   |String|是|query|设备组 id| 
+|is_online |integer|否|query|是否在线| 
+|is_faulty|integer|否|query|是否故障| 
+|is_alert|integer|是|query|是否报警| 
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "gid": "string",
+  "total": 0,
+  "location": {}
+}
+```
+
+
+
+
 
 # 接口错误
 
