@@ -376,6 +376,36 @@ Body：
 }
 ```
 
+## 8、获取设备信息
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备管理)
+
+### 业务功能描述
+该接口提供了通过查询设备的product_key和mac等参数，来获取最新的设备did和passcode的功能。
+### 接口地址
+     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path|| 
+|mac   |String|是|query|mac 地址| 
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "did": "string",
+  "passcode": "string"
+}
+```
 
 
 # 接口错误
