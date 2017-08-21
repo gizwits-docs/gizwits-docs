@@ -550,10 +550,10 @@ Body：
 |参数    |类型  |必填    |参数类型    |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |product_key  |String|是|path|| 
-|gid   |String|是|query|设备组 id| 
+|gid   |String|否|query|设备组 id| 
 |is_online |integer|否|query|是否在线| 
 |is_faulty|integer|否|query|是否故障| 
-|is_alert|integer|是|query|是否报警| 
+|is_alert|integer|否|query|是否报警| 
 
 
 
