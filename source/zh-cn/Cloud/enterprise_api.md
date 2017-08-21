@@ -448,7 +448,7 @@ Body：
 |product_key  |String|是|path||
 |did    |String|是|query|设备id| 
 |start_ts|integer|否|query|开始时间戳| 
-|end_ts|intege|否|query|开始时间戳| 
+|end_ts|intege|否|query|结束时间戳| 
 |sort|String|否|query|desc、asc| 
 |limit|integer|否|query|
 |skip|integer|否|query|
