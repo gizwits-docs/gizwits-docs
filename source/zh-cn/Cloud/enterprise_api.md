@@ -569,6 +569,119 @@ Body：
 ```
 
 
+## 12、用户新增报表（大数据）
+### [调试地址](http://swagger.gizwits.com/doc/index/enterprise_api#!/用户报表/get_v1_products_product_key_users_report_new)
+
+### 业务功能描述
+该接口提供了通过查询设备的product_key和设置起始周期、结束周期等参数，按日、周、月等三种统计方式来获取绑定了该PK下产品的新增用户的功能。
+### 接口地址
+     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/users/report/new
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path|| 
+|gid   |String|否|query|设备组 id| 
+|cycle|String|否|query|统计周期，可以为 date、week、month| 
+|start|String|是|query|起始周期，为起始日期、起始周或起始月| 
+|end|String|是|query|结束周期，为结束日期、结束周或结束月| 
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "gid": "string",
+  "cycle": "string",
+  "start": "string",
+  "end": "string",
+  "data": [
+    {
+      "date": "string",
+      "count": 0,
+      "location": {}
+    }
+  ]
+}
+```
+
+
+## 13、搜索用户
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户管理/get_v1_products_product_key_users_search)
+
+### 业务功能描述
+该接口查询的是绑定用户信息
+### 接口地址
+     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/users/search
+
+### 请求方式
+    GET
+
+### 请求报文
+
+|参数    |类型  |必填    |参数类型    |描述   |备注|
+| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
+|product_key  |String|是|path|| 
+|gid   |String|否|query|设备组 id| 
+|type   |String|否|query|可以是uid、username、phone、email、did、mac、device_sn| 
+|val|String|否|query|查询条件值| 
+|limit|	integer|否|query|每次返回的条数| 
+|skip|integer|否|query|每次跳过的条数| 
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200	
+Body：
+{
+  "meta": {
+    "total": 0,
+    "limit": 0,
+    "skip": 0,
+    "next": "string",
+    "previous": "string"
+  },
+  "objects": [
+    {
+      "uid": "string",
+      "username": "string",
+      "phone": "string",
+      "email": "string",
+      "name": "string",
+      "gender": "string",
+      "birthday": "string",
+      "address": "string",
+      "remark": "string",
+      "created_at": 0,
+      "is_anomymous": true,
+      "auth_src": {}
+    }
+  ]
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
