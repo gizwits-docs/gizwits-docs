@@ -343,7 +343,7 @@ Body：
 
 ## 7、获取设备详情
 
-### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理)
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_device_detail)
 
 ### 业务功能描述
 该接口提供查询设备的最新的注册信息。
@@ -378,7 +378,7 @@ Body：
 
 ## 8、获取设备信息
 
-### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理)
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices)
 
 ### 业务功能描述
 该接口提供了通过查询设备的product_key和mac等参数，来获取最新的设备did和passcode的功能。
