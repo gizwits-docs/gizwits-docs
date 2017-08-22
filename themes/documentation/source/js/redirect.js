@@ -11,7 +11,9 @@ var redirectMap = {
 }
 
 var pathname = decodeURI(window.location.pathname)
+// var hash = window.location.hash
 
+// if (redirectMap[pathname + hash]) {
 if (redirectMap[pathname]) {
   window.location.href = encodeURI(redirectMap[pathname])
 }
