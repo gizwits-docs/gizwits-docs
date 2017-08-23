@@ -87,7 +87,44 @@ Http Response Code ： 201
 }  
 ```
 
-## 2、数据点方式远程控制
+## 2、原始指令方式远程控制
+
+### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/post_v1_products_product_key_devices_did_control)
+
+### 业务功能描述
+该接口提供通过原始控制指令远程控制在线设备的功能。
+### 接口地址
+     http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/control
+### 请求方式
+    POST
+### 请求报文
+1. Header
+```json
+Content-Type: application/json
+Authorization: token ${token值}
+```
+
+2. Body
+```json
+{
+    "raw": [<byte>, <byte>, ...]
+}  	
+```
+
+
+原始控制指令，以byte数组方式传送，每个byte的范围必须为0~255，十六进制的格式需要转换为十进制。假设要发送的原始控制指令为：01020304ffff（十六进制），那么 raw 的值为 [1, 2, 3, 4, 255, 255]。
+若带有数据点，建议直接使用数据点方式发送。 调用方式请见“数据点方式远程控制”。
+
+
+
+### 应答报文
+```json
+Http Response Code ： 200
+返回报文：
+{}  
+```
+
+## 3、数据点方式远程控制
 
 ### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/post_v1_products_product_key_devices_did_control)
 
@@ -128,41 +165,7 @@ Http Response Code ： 200
 {}  
 ```
 
-## 3、原始指令方式远程控制
 
-### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/post_v1_products_product_key_devices_did_control)
-
-### 业务功能描述
-该接口提供通过原始控制指令远程控制在线设备的功能。
-### 接口地址
-     http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/control
-### 请求方式
-    POST
-### 请求报文
-1. Header
-```json
-Content-Type: application/json
-Authorization: token ${token值}
-```
-
-2. Body
-```json
-{
-    "raw": [<byte>, <byte>, ...]
-}  	
-```
-
-原始控制指令，以byte数组方式传送，每个byte的范围必须为0~255，十六进制的格式需要转换为十进制。假设要发送的原始控制指令为：01020304ffff（十六进制），那么 raw 的值为 [1, 2, 3, 4, 255, 255]。
-往设备转发数据，raw的值需要加上以下的协议前缀再接上发往设备的数据，即[0, 0, 0, 3, varLen(1~4B), 0, 0, 144] + 发往设备的数据，其中的varLen为可变长度，由1~4个字节(B)表示本可变长度字段后一直到数据包结尾的字节数 ，如长度小于128B，直接用一个字节(B)表示长度即可，长度大于等于128B的编码解码方式请参考MQTT V3.1协议的可变长度（Remaining Length）定义。
-
-
-
-### 应答报文
-```json
-Http Response Code ： 200
-返回报文：
-{}  
-```
 
 
 ## 4、单台设备数据聚合查询
