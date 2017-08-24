@@ -299,7 +299,7 @@ Body：
 |      参数      |  类型   | 必填 | 参数类型 |            描述            | 备注 |
 |:-------------- | -------:|:----:|:-------- |:-------------------------- |:---- |
 | product_key    |  String |  是  | path     |                            |      |
-| gid            |  String |  否  | query    | 设备id                     |      |
+| did            |  String |  否  | query    | 设备id                     |      |
 | country        |  String |  否  | query    | 国家                       |      |
 | region         |  String |  否  | query    | 省                         |      |
 | city           |  String |  否  | query    | 城市                       |      |
