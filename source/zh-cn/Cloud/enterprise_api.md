@@ -386,7 +386,7 @@ Body：
 ### 业务功能描述
 该接口提供了通过查询设备的product_key和mac等参数，来获取最新的设备did和passcode的功能。
 ### 接口地址
-     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices
 
 ### 请求方式
     GET
@@ -439,7 +439,7 @@ Body：
 - 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内  
 - 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序  
 ### 接口地址
-     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/{did}/online
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/online
 
 ### 请求方式
     GET
@@ -495,7 +495,7 @@ ChangeLog
 - 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序  
 
 ### 接口地址
-     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/{did}/cmd
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/{did}/cmd
 
 ### 请求方式
     GET
@@ -543,7 +543,7 @@ Body：
 ### 业务功能描述
 该接口提供了通过查询设备的product_key和gid等参数，来获取最新的设备地理位置分布的功能。
 ### 接口地址
-     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/devices/locations
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
 
 ### 请求方式
     GET
@@ -578,7 +578,7 @@ Body：
 ### 业务功能描述
 该接口提供了通过查询设备的product_key和设置起始周期、结束周期等参数，按日、周、月等三种统计方式来获取绑定了该PK下产品的新增用户的功能。
 ### 接口地址
-     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/users/report/new
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/new
 
 ### 请求方式
     GET
@@ -621,7 +621,7 @@ Body：
 ### 业务功能描述
 该接口查询的是绑定用户信息
 ### 接口地址
-     http://enterpriseapi.gizwits.com/GET /v1/products/{product_key}/users/search
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/search
 
 ### 请求方式
     GET
