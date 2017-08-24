@@ -28,13 +28,13 @@ title: 独立MCU方案接入机智云
 
 ## 3.填写设备产品基本信息
 
-![填写设备产品基本信息图](/assets/zh-cn/quickstart/dev/new4.png)
+![填写设备产品基本信息图](/assets/zh-cn/quickstart/dev/new5.png)
 
 ## 4.项目基本信息
 
 在机智云官网上已成功创建智能灯产品，机智云为该产品分配Product Key和Product Secret参数。Product Key参数由开发者写入设备MCU（设备主控板），并告知WiFi/GPRS模块，WiFi/GPRS模块登录机智云后，机智云将会识别该Product Key的产品。Product Secret参数是APP开发或服务器对接时所使用的参数。
 
-![项目基本信息图](/assets/zh-cn/quickstart/dev/new5.png)
+![项目基本信息图](/assets/zh-cn/quickstart/dev/new4.png)
 # 创建数据点
 数据点即设备产品的功能的抽象，用于描述产品功能及其参数。创建数据点后，设备与云端通讯的数据格式即可确定，设备、机智云可以相互识别设备与机智云互联互通的数据。
 
