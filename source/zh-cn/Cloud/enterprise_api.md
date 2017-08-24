@@ -289,7 +289,7 @@ Body：
 ### 业务功能描述
 该接口提供查询产品的设备列表，包括了设备的地理位置信息（如国家，省，市，经纬度），上下线记录，活跃时间，设备是否报警，是否发生故障等。
 ### 接口地址
-     http://enterpriseapi.gizwits.com/v1/products/${product_key}/devices/${did}/search
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/search
 
 ### 请求方式
     GET
@@ -299,7 +299,7 @@ Body：
 |      参数      |  类型   | 必填 | 参数类型 |            描述            | 备注 |
 |:-------------- | -------:|:----:|:-------- |:-------------------------- |:---- |
 | product_key    |  String |  是  | path     |                            |      |
-| did            |  String |  否  | query    | 设备id                     |      |
+| gid            |  String |  否  | query    | 设备组gid                     |      |
 | country        |  String |  否  | query    | 国家                       |      |
 | region         |  String |  否  | query    | 省                         |      |
 | city           |  String |  否  | query    | 城市                       |      |
@@ -351,7 +351,7 @@ Body：
 ### 业务功能描述
 该接口提供查询设备的最新的注册信息。
 ### 接口地址
-     http://enterpriseapi.gizwits.com//v1/products/{product_key}/device_detail
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_detail
 
 ### 请求方式
     GET
