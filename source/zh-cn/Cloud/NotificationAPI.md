@@ -5,10 +5,28 @@ v2.1.6
 # 目的
 企业客户可通过SNoti提供的安全数据传输通道，实时的接收设备的数据，用于设备信息归类整理，设备状态统计，设备监控等；也可以通过远程控制功能，实时发送业务指令控制在线设备。
 
-# Demo
-1.代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0
+# 客户端示例（开源社区版本）
+用户可根据需要，适当选择以下任意一种开发语言的客户端版本，基于此做二次开发，或者作为参考。
 
-2.登陆参数配置：请在src/main/resources/application.properties文件中，修改相应的参数，如：productKey, authId, authSecret
+1.Java版客户端
+
+  代码仓库：https://github.com/Bestfeel/noti-netty-client
+  
+2.Ruby版客户端
+
+  代码仓库：https://github.com/AbelLai/gizwits_sac_rb
+  
+3.Python版客户端
+
+  代码仓库：https://github.com/wangzhenandy/snoti_client_python
+  
+4.Java版Demo（基础版）
+  
+  代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0
+  
+5.Java版Demo（Netty框架版）
+  
+  代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 
 # SNoti申请流程
 
