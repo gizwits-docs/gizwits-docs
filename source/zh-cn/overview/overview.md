@@ -116,7 +116,7 @@ title:  平台概述
 ## 4.App 开发 SDK 接入
 
 使用SDK，可以使得开发者快速完成APP开发，开发者仅需关注APP的UI和UE设计即可，而相对复杂的协议与错误处理等事项可忽略。
-   - [Android SDK接入](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
+   - [Android SDK接入](http://docs.gizwits.com/zh-cn/AppDev/AndroidSDKA2.html)
    - [IOS SDK接入](http://docs.gizwits.com/zh-cn/AppDev/iOSSDKA2.html)
    - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
 
