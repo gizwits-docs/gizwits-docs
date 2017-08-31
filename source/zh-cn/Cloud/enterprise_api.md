@@ -308,10 +308,10 @@ Body：
 | is_alert       | integer |  否  | query    | 是否报警,报警为1,无报警为0 |      |
 | show_disabled  | integer |  否  | query    | 显示注销为1，过滤注销为0   |      |
 | liveness_start | integer |  否  | query    | 最近活跃时间戳             |      |
-| type           |  String |  否  | query    | 可以为 did、mac            | uid  |
+| type           |  String |  否  | query    | 可以为 did、mac、uid |  |
 | val            |  String |  否  | query    | 搜索的值                   |      |
 | limit          | integer |  否  | query    |                            |      |
-| skip           | integer |  否  | query    |                            |      ||
+| skip           | integer |  否  | query    |                            |      |
 
 
 
@@ -572,7 +572,7 @@ Body：
 ```
 
 
-## 12、用户新增报表（大数据）
+## 12、用户新增报表
 ### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new)
 
 ### 业务功能描述
