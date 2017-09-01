@@ -1,6 +1,8 @@
 title: iOS App集成第三方登录与换肤指南
 ---
 
+查看[Android第三方登录与换肤指南](/zh-cn/AppDev/Android第三方登陆与换肤.html)
+
 # 概述
 本文主要是介绍了如何通过开源框架快速支持QQ和微信登录，并介绍了如何实现app快速换肤
 # QQ登录接入
