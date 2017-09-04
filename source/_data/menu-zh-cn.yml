@@ -63,7 +63,7 @@
       path: /deviceDev/设备接入准备工作及向导.html
   设备快速接入机智云:
     独立MCU接入方案:
-      path: /quickstart/独立mcu接入方案.html
+      path: /quickstart/UseMCU.html
     SOC接入方案:
       path: /deviceDev/UseSOC.html
 
@@ -150,7 +150,7 @@
       设备联动API使用教程:
         path: /UserManual/LinkageAPI.html
       设备分组API使用教程:
-        path: /UserManual/使用设备分组API教程.html
+        path: /UserManual/devgroup_API.html
       设备分享功能SDK使用流程:
         path: /Cloud/SharingSDK.html
       APP绑定设备二维码生成教程:
