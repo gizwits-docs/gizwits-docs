@@ -115,9 +115,11 @@ title: iOS App消息推送集成指南
   ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504698885850.png)
   
 选择APP推送方块（上图红框部分）：
+
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504698991318.png)
 
 点击《显示json样例》:
+
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504699699583.png)
 
 Example的具体内容如下：
@@ -158,6 +160,7 @@ Example的具体内容如下：
 ```
 
 具体如图：
+
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504699964358.png)
 
 点击《确定》保存设置即完成推送声音的设置
@@ -284,6 +287,7 @@ BPushModeDevelopment：设置百度推送环境为开发环境
 }
 ```
 设置完成如下：
+
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504700958335.png)
 
 点击《确定》保存，即完成推送声音的设置
