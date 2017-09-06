@@ -341,7 +341,7 @@ development表示开发环境
 
 **3、极光推送如何设置角标的值**
 
-解答：[JPUSHService setBadge:0]; 
+解答：[JPUSHService setBadge:0];  
 
 
 
