@@ -1,6 +1,6 @@
 title:  SNoti API
 ---
-v2.1.6
+v2.1.7
 
 # 目的
 企业客户可通过SNoti提供的安全数据传输通道，实时的接收设备的数据，用于设备信息归类整理，设备状态统计，设备监控等；也可以通过远程控制功能，实时发送业务指令控制在线设备。
@@ -44,7 +44,7 @@ v2.1.6
 
 2.subkey：消息分发机制，以ProductKey + subkey作为唯一主键，不同主键之间，消息互不影响（即同一个ProductKey使用不同的subkey，可产生消息副本）；subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）；
 
-3.产品的7种消息类型（event_type）分别为：
+3.产品的12种消息类型（event_type）分别为：
 - device.online：设备上线消息
 - device.offline：设备下线消息
 - device.status.raw：设备上报自定义透传业务指令
@@ -54,6 +54,9 @@ v2.1.6
 - datapoints.changed：数据点编辑事件
 - center_control.sub_device_added: 中控添加子设备事件
 - center_control.sub_device_deleted: 中控删除子设备事件
+- device.bind：设备绑定消息
+- device.unbind: 设备解绑消息
+- device.reset：设备重置消息
 
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
@@ -107,7 +110,7 @@ v2.1.6
 | data.auth_id	| 必须 	| 产品授权ID| 
 | data.auth_secret 	| 必须 	| 产品授权密匙| 
 | data.subkey | 必须 	| subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线| 
-| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed   center_control.sub_device_added;center_control.sub_device_deleted|
+| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed   center_control.sub_device_added;center_control.sub_device_deleted   device.bind;device.unbind;device.reset|
 
 
 Gizwits Platform 回复：
@@ -330,6 +333,38 @@ AES mode为AES.MODE_ECB
 "created_at"：<timestamp in seconds, float>
 }\n
 ```
+
+#### 设备绑定/解绑事件
+
+```json
+{
+"cmd": "event_push",
+"delivery_id": <delivery_id>，(用于ACK)
+"event_type": "device_bind" | "device_unbind",
+"product_key": <product_key string>,
+"did": <did string>,
+"mac": <mac string>,
+"app_id": <app_id string>,
+"uid": <uid string>,
+"group_id": <group_id string>,
+"created_at"：<timestamp in seconds, float>
+}\n
+```
+
+#### 设备重置事件
+
+```json
+{
+"cmd": "event_push",
+"delivery_id": <delivery_id>，(用于ACK)
+"event_type": "device_reset",
+"product_key": <product_key string>,
+"did": <did string>,
+"mac": <mac string>,
+"created_at"：<timestamp in seconds, float>
+}\n
+```
+
 #### 事件 ACK
 
 客户端每收到一事件消息都需要回复以下 ACK 消息：
