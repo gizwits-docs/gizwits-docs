@@ -41,7 +41,7 @@ title: 模块硬件资料
 
 [获取乐鑫ESP 8266 Gagent日志](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html#1-获取乐鑫ESP-8266-Gagent日志)
 
-[GAgent for ESP8266 04020024下载](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00ESP826_04020024_17062808.zip)
+[GAgent for ESP8266 04020025下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020025_17083019-1504231974149.tar)
 
 - ### 汉枫模块系列
 
@@ -51,7 +51,7 @@ title: 模块硬件资料
 
 [获取汉枫LPB100 Gagent日志](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html#2-获取汉枫LPB100-Gagent日志)
 
-[GAgent for HF LPB100 04020021](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00HFLPB1_04020021.zip)
+[GAgent for HF LPB100 04020022下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00HFLPB1_04020022_17082814-1504232026164.tar)
 
 #### 2.HF-LPB120/LPT120
 
@@ -59,7 +59,7 @@ title: 模块硬件资料
 
 [获取汉枫LPB120/LPT120 Gagent日志](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html#3-获取汉枫LPB120-Gagent日志)
 
-[GAgent for HFLPT120/LPB120/LPT220 04020025](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00HFB120&00HFT120&00HFT220_04020025_17082110-1503557904310.zip)
+[GAgent for HFLPT120/LPB120/LPT220 04020025下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00HFB120&00HFT120&00HFT220_04020025_17082110-1503557904310.zip)
 
 - ### 广和通模块系列
 
@@ -67,7 +67,7 @@ title: 模块硬件资料
 
 [获取广和通G510 Gagent日志](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html#4-获取广和通G510-Gagent日志)
 
-[GAgent for 广和通Fibocom G510 04020027](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00FBG510_04020027_17041911_bps9600.zip)
+[GAgent for 广和通Fibocom G510 04020027下载](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00FBG510_04020027_17041911_bps9600.zip)
 
 - ### 锐凌微模块系列
 
