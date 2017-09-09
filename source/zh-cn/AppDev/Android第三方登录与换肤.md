@@ -3,6 +3,8 @@ title: Android App集成第三方登录与换肤指南
 
 查看[iOS第三方登录与换肤指南](/zh-cn/AppDev/iOS第三方登陆与换肤.html)
 
+查看[第三方登录平台申请流程](/zh-cn/AppDev/third-party.html)
+
 
 # 概述
 本文主要是介绍了如何通过开源框架快速支持QQ和微信登录，并介绍了如何实现app快速换肤
@@ -11,54 +13,10 @@ title: Android App集成第三方登录与换肤指南
 
 APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取应用的APPID，并设置到开源框架中即可。
 
-## 1.创建腾讯开发者账号
+## 获取APP ID 并绑定应用
+查看[QQ开放平台应用申请教程](http://docs.gizwits.com/zh-cn/AppDev/third-party.html#腾讯QQ)获取APP ID和绑定机智云应用
 
-   点击http://open.qq.com ,进入腾讯开放平台
-
- ![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478074977472.png)
-
-   点击《登录》，填写账号密码登录
-  
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075035627.png)
-
-登录成功后跳转到注册界面，开发者可根据自己的需要选择个人或者公司类型。
-
- ![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075057029.png)
-
-下图是选择个人注册的跳转界面，需填写完整的资料，并完成邮箱验证，即成功创建腾讯开发者账号。
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075072214.png)
-
-## 2.创建腾讯应用
-
-点击http://open.qq.com ,进入腾讯开放平台，选择《应用接入》
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075093037.png)
-
-   选择《移动应用 安卓》，点击《创建应用》
-
- ![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075148169.png)
-
-完善应用信息，并提交审核。审核通过后，即可使用红框部分的APP ID 和 APP KEY来创建QQ登录入口。
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075167275.png)
-
-## 3.绑定QQ应用到机智云
-
-登录机智云开发者中心：http://dev.gizwits.com/zh-cn/developer/product/，选中需要绑定第三方登录的产品
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075216544.png)
-
-进入产品设置界面，选择需要关联QQ登录的应用，如下图：
-
- ![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075231726.png)
-
-点击《关联第三方登录》进入关联界面，填写从腾讯开放平台申请到的APPID，并点击确定，即完成了机智云应用于QQ应用的绑定。
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075247601.png)
-
-
-## 4.修改UIConfig.json文件
+## 修改UIConfig.json文件
 
 将在腾讯开发平台申请到的APPID填写到开源框架的配置文件UIConfig.json中
 
@@ -70,42 +28,11 @@ APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取
 
 APP要实现微信登录，必须前往微信开放平台申请一个应用，获取应用的APPID和APPSecret并且配置到开源框架中即可。
 
-## 1.创建微信开发者账号
-
-点击https://open.weixin.qq.com ,进入微信开放平台
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075315152.png)
-
-点击《注册》进入以下界面，编辑基本信息
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075324515.png)
+## 获取APPID和APPSecret
+查看[微信开放平台应用申请教程](http://docs.gizwits.com/zh-cn/AppDev/third-party.html#微信)获取APPID和APPSecret
 
 
-点击下一步，微信会往你的注册邮箱发送一份激活邮件
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075342437.png)
-
-
-点击激活链接，跳转到完善资料界面，填写资料，点击完成即成功创建了微信开放平台开发者账号。
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075352683.png)
-
-## 2.创建微信应用
-
-   点击https://open.weixin.qq.com ,进入微信开发平台，选中图13的《管理中心》跳转到应用创建界面
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075448378.png)
-
-点击《创建移动应用》按钮，进入以下界面，填写基本信息。
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075458348.png)
-
-填写完成，点击《下一步》，进入《填写平台信息界面》，选择需要的应用平台（一般iOS和Android都要），填写完毕信息，点击《提交审核》即可，提交审核成功，7天内微信会给出审核结果。审核通过后，应用的APPID 和APPKey就可以使用了。
-
-![name](/assets/zh-cn/AppDev/AppFrame/android/change/1478075465698.png)
-
-
-## 3.修改UIConfig.json文件
+## 修改UIConfig.json文件
 
 将在微信开发平台申请到的APPID和APPSecret填写到开源框架的配置文件UIConfig.json中，如下图
 
