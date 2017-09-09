@@ -7,8 +7,7 @@ var redirectMap = {
 '/zh-cn/quickstart/独立mcu接入方案.html':'/zh-cn/quickstart/UseMCU.html',
 '/zh-cn/quickstart/设备快速接入.html':'/zh-cn/quickstart/UseMCU.html',
 '/zh-cn/UserManual/使用设备分组API教程.html':'/zh-cn/UserManual/devgroup_API.html',
-'/zh-cn/UserManual/OTA.html':'/zh-cn/UserManual/OTA使用教程.html',
-'/zh-cn/AppDev/third-party.html':'/zh-cn/AppDev/iOS第三方登陆与换肤.html'
+'/zh-cn/UserManual/OTA.html':'/zh-cn/UserManual/OTA使用教程.html'
 }
 
 var pathname = decodeURI(window.location.pathname)
