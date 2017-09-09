@@ -111,18 +111,18 @@ IOS客户端（需要在美国地区注册的账号登陆App Store进行下载�
 
 ## 4.2		唤醒Action和账户关联
 
-###4.2.1 用Google Home唤醒Action
+### 4.2.1 用Google Home唤醒Action
 * 保持Google Home处于麦克风打开状态，对Google Home说"Ok,Google.Talk to gokit"，之后DISCOVER页面会弹出GOKIT的用户条款还有账户链接，滑动到账户链接，点击"LINK"进入账户关联页面
 
 ![Alt text](/assets/zh-cn/UserManual/GoogleHome/1504585109265.png)![Alt text](/assets/zh-cn/UserManual/GoogleHome/1504585089779.png)
 
-###4.2.2 用手机唤醒Action
+### 4.2.2 用手机唤醒Action
 
 * 进入Google页面，长按Home键，弹出Google Assistantd的对话框，在对话框文字或者语音输入"Talk to gokit"，就会弹出Link Gokit to Google的一个对话框，点击进入账户关联页面
 
 ![Alt text](/assets/zh-cn/UserManual/GoogleHome/1504592818018.png)![Alt text](/assets/zh-cn/UserManual/GoogleHome/1504592886416.png)
 
-###4.2.3 账户关联
+### 4.2.3 账户关联
 * 进入账户关联页面，登陆刚刚通过GOKIT App注册的机智云账号，然后点击yes，之后回到Home页面之后，就可以开始说控制指令了
 
 ![Alt text](/assets/zh-cn/UserManual/GoogleHome/1504682852526.png)![Alt text](/assets/zh-cn/UserManual/GoogleHome/1504585196188.png)
