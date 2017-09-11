@@ -406,7 +406,7 @@ Http Response Code ： 200
 Body：
 {
   "did": "string",
-  "passcode": "string"
+  
 }
 ```
 
