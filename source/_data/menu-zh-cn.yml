@@ -37,8 +37,7 @@
       path: /AppDev/APICloudFrame.html
     开源框架使用视频教程:
       path: /AppDev/开源框架视频教程.html
-    第三方登录平台申请流程:
-      path: /AppDev/third-party.html
+
 
   App 开发 SDK:
     iOS SDK:
@@ -59,6 +58,11 @@
   微信应用开发教程:
     path: /WechatDev/WeChatDev.html
 
+  更多教程:
+    设备分享功能SDK使用流程:
+      path: /Cloud/SharingSDK.html
+    第三方登录平台申请流程:
+      path: /AppDev/third-party.html
 
 设备接入:
   设备接入准备工作及向导:
@@ -141,10 +145,10 @@
     WebSocketAPI:
       path: /Cloud/WebsocketAPI.html
 
-    API／SDK使用教程:
+    API使用教程:
       使用OpenAPI控制虚拟设备教程:
         path: /UserManual/UseOpenAPI.html
-      Snoti 数据实时同步服务demo使用教程:
+      Snoti数据实时同步服务demo使用教程:
         path: /UserManual/UseSNoti.html
       使用Websocket 网页控制设备教程:
         path: /UserManual/UseWebsocket.html
@@ -154,8 +158,6 @@
         path: /UserManual/LinkageAPI.html
       设备分组API使用教程:
         path: /UserManual/devgroup_API.html
-      设备分享功能SDK使用流程:
-        path: /Cloud/SharingSDK.html
       APP绑定设备二维码生成教程:
         path: /UserManual/UseQRCode.html
 
