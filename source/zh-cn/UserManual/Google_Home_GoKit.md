@@ -4,7 +4,7 @@ title:  使用Google Home音箱控制GoKit
 
 * 本教程说明了用户使用Gokit除App和微信两种控制方式外第三种控制方式使用说明：Google Home音箱控制。
 
-* Google Home音箱：Amazon Echo是一款结合Google Assistant语音助理的音箱，我们可以通过这位助理获得大多数的帮助，比如计时器、播放音乐或者回答简单的问题，同时也可以控制我们的智能家居。
+* Google Home音箱：Google Home音箱是一款结合Google Assistant语音助理的音箱，我们可以通过这位助理获得大多数的帮助，比如计时器、播放音乐或者回答简单的问题，同时也可以控制我们的智能家居。
 * Google Assistant：Google Assistant是一款语音助手，它并不是一种单独的程序，这款新的技术会和谷歌不同的设备以及操作系统机密结合，旨在让用户通过“流畅”的语音和设备相互沟通。它也能够使用在第三方的应用和服务中，例如流媒体音乐服务、打车服务等。
 * Action and Google：Action是在Google Assistant上建立应用程序，你的程序可以让用户通过Google Home，支持Google的安卓手机，iphone去唤Action的名字，然后与你的程序进行交互。
 
