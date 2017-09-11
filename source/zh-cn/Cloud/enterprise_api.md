@@ -628,14 +628,15 @@ Body：
 
 ### 请求报文
 
-|参数    |类型  |必填    |参数类型    |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|product_key  |String|是|path|| 
-|gid   |String|否|query|设备组 id| 
-|type   |String|否|query|可以是uid、username、phone、email、did、mac、device_sn| 
-|val|String|否|query|查询条件值| 
-|limit|	integer|否|query|每次返回的条数| 
-|skip|integer|否|query|每次跳过的条数| 
+| 参数          |      类型 | 必填  | 参数类型  | 描述                                            | 备注 |
+|:------------|--------:|:---:|:------|:----------------------------------------------|:---|
+| product_key |  String |  是  | path  |                                               |    |
+| gid         |  String |  否  | query | 设备组 id                                        |    |
+| type        |  String |  否  | query | 可以是uid、username、phone、email、did、mac、device_sn |    |
+| val         |  String |  否  | query | 查询条件值                                         |    |
+| limit       | integer |  否  | query | 每次返回的条数                                       |    |
+| skip        | integer |  否  | query | 每次跳过的条数                                       |    |
+---
 
 
 
@@ -669,24 +670,6 @@ Body：
   ]
 }
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 # 接口错误
 

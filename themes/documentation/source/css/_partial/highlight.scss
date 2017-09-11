@@ -1,10 +1,10 @@
 .highlight {
   border: 1px solid #ddd;
   font-size: 14px;
-  background: $light-gray;
+  background: #f8f8f8;
   padding: 10px 20px;
   position: relative;
-  color: #4d4d4c;
+  color: #333;
   margin: 21px;
   pre {
     overflow: visible;
@@ -21,6 +21,7 @@
   .code {
     pre {
       position: relative;
+      font-weight: bold;
     }
   }
 
@@ -40,8 +41,9 @@
 pre,
 code {
   font-family: font-mono;
-  color: #4d4d4c;
-  font-size: 0.95em;
+  color: #333;
+  // font-size: 0.95em;
+  font-size: 15px;
 }
 
 code {
@@ -85,7 +87,7 @@ pre code {
 
 pre .comment,
 pre .title {
-  color: #8e908c;
+  color: #998;
 }
 
 pre .variable,
@@ -100,7 +102,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c82829;
+  color: #009926;
 }
 
 pre .number,
@@ -109,13 +111,13 @@ pre .built_in,
 pre .literal,
 pre .params,
 pre .constant {
-  color: #f5871f;
+  color: #0086b3;
 }
 
 pre .class,
 pre .ruby .class .title,
 pre .css .rules .attribute {
-  color: #718c00;
+  color: #458;
 }
 
 pre .string,
@@ -124,11 +126,11 @@ pre .inheritance,
 pre .header,
 pre .ruby .symbol,
 pre .xml .cdata {
-  color: #718c00;
+  color: #d14;
 }
 
 pre .css .hexcolor {
-  color: #3e999f;
+  color: #458;
 }
 
 pre .function,
@@ -139,10 +141,10 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #4271ae;
+  color: #900;
 }
 
 pre .keyword,
 pre .javascript .function {
-  color: #8959a8;
+  color: #990073;
 }
