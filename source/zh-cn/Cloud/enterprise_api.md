@@ -384,7 +384,7 @@ Body：
 ### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices)
 
 ### 业务功能描述
-该接口提供了通过查询设备的product_key和mac等参数，来获取最新的设备did和passcode的功能。
+该接口提供了通过查询设备的product_key和mac等参数，来获取最新的设备did。
 ### 接口地址
      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices
 
