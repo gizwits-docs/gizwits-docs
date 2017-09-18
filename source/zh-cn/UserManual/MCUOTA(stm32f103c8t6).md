@@ -61,7 +61,7 @@ title: MCU OTA教程
 
 ![图8](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/8.png)
 
-## 3.2.编译器设置
+## 3.2.App 分区编译器设置
 
 #### 同样，因为硬件 FLASH 空间限定，我们需要对 APP 分区的固件大小做严格的限制。本方案，针对 GOKIT 我们可允许的最大固件为 26KB。需要升级的新固件同样最大可支持 26KB。
 
@@ -70,6 +70,8 @@ title: MCU OTA教程
 ![图9](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/9.png)
 
 ![图10](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/10.png)
+
+## 3.2.App 分区OTA功能代码移植
 
 #### 3.2.2.中断向量偏移地址
 
