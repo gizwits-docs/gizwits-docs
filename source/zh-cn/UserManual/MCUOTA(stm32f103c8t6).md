@@ -1,11 +1,11 @@
-title: MCUOTA教程
+title: MCU OTA教程
 ---
 
 ### [源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA-V2.0.1.zip)
 
 # 概述
 
-#### MCUOTA可以对MCU程序进行无线远程升级。例如原本MCU程序中，RGB灯只能亮Red，现在想亮Blue，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCUOTA。
+#### MCU OTA可以对MCU程序进行无线远程升级。本文以STM32F103C8T6实现OTA作为例子。例如原本MCU程序中，RGB灯只能亮Red，现在想亮Blue，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCU OTA。
 
 #### 源代码中有BootLoader和App两部分。
 
@@ -188,4 +188,4 @@ title: MCUOTA教程
 
 ###### 图31
 
-#### 本文档主要写移植OTA功能移植过程，想要了解MCUOTA详细过程（例如mcu启动流程检查有无OTA任务，OTAflash分区等等），请看源文档。
+#### 本文档主要写移植OTA功能移植过程，想要了解MCU OTA详细过程（例如mcu启动流程检查有无OTA任务，OTA flash分区等等），请看源文档。
