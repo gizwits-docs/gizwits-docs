@@ -71,17 +71,33 @@ title: MCU OTA教程
 
 ![图10](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/10.png)
 
-## 3.2.App 分区OTA功能代码移植
+### 3.2.2.设置keil烧写方式为st-link
 
-#### 3.2.2.中断向量偏移地址
+![图23](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/23.png)
 
-![图11](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/11.png)
+### 3.2.3.通过编译优化等级控制APP 分区固件大小
 
-#### 3.2.3.往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h
+![图24](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/24.png)
+
+### 3.2.4.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）
+
+![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25.png)
+
+### 3.2.5.设置按区域擦除
+
+![图26](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/26.png)
+
+### 3.2.6.往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h
 
 ![图12](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/12.png)
 
-#### 3.2.4.接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。
+## 3.3.App 分区OTA功能代码移植
+
+### 3.3.1.中断向量偏移地址
+
+![图11](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/11.png)
+
+### 3.3.2.接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。
 
 ![图13](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/13.png)
 
@@ -103,39 +119,25 @@ title: MCU OTA教程
 
 ![图22](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/22.png)
 
-#### 3.2.5.设置keil烧写方式为st-link
-
-![图23](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/23.png)
-
-#### 3.2.6.通过编译优化等级控制APP 分区固件大小
-
-![图24](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/24.png)
-
-#### 3.2.7.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）
-
-![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25.png)
-
-#### 3.2.8.设置按区域擦除
-
-![图26](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/26.png)
-
-#### 3.2.9、编译和烧程序
+### 3.3.3.编译和烧程序
 
 ![图27](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/27.png)
 
-#### 3.2.10.第一次用stlink烧录mcu代码后，mcu日志
+# 4.效果
+
+## 4.1.第一次用stlink烧录mcu代码后，mcu日志如图
 
 ![图28](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/28.png)
 
-#### 3.2.11.准备OTA，先让设备连上机智云。
+## 4.2准备OTA，先让设备连上机智云。
 
 ![图29](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/29.png)
 
-#### 3.2.12.改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
+## 4.3改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
 
 ![图30](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/30.png)
 
-#### 3.2.13.OTA成功
+## 4.4OTA成功
 
 ![图31](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/31.png)
 
