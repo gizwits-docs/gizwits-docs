@@ -11,7 +11,9 @@ title: MCU OTA教程
 
 #### BootLoader稍作设置就可以编译烧写到MCU中。
 
-#### App的OTA功能相关代码移植需要到我们自己的产品自动生成代码中，再编译烧写到MCU中，就可以移植OTA。下文分别是BootLoader和App的详细移植步骤。
+#### App的OTA功能相关代码复制到mcu方案自动生成代码中，再编译烧写到MCU中，mcu程序就具有OTA功能。
+
+#### 下文分别是BootLoader和App的详细移植步骤。
 
 ## 开始 Bootloader
 
