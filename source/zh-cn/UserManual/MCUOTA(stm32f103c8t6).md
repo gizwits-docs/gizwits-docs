@@ -21,7 +21,7 @@ title: MCU OTA教程
 
 #### 下文分别是BootLoader和APP 分区的详细移植步骤。
 
-# 2.开始 Bootloader
+# 2.开始 Bootloader 分区部分
 
 ## 2.1.Bootloader 程序流程
 
@@ -49,7 +49,7 @@ title: MCU OTA教程
 
 ![图7](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/7.png)
 
-# 3.开始写 （移植）APP 分区固件升级部分
+# 3.开始APP 分区固件升级部分
 
 ## 3.1.固件接收流程
 
