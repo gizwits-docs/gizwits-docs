@@ -17,11 +17,7 @@ title: MCU OTA教程
 
 #### APPBAK 分区:临时存储云端下发的新固件，升级固件的一个过渡存储区。
 
-#### 源代码中有BootLoader和APP 分区两部分。
-
-#### BootLoader稍作设置就可以编译烧写到MCU中。
-
-#### APP 分区的OTA功能相关代码复制到mcu方案自动生成代码中，再编译烧写到MCU中，mcu程序就具有OTA功能。
+#### 源代码中有BootLoader和APP 分区两部分。BootLoader稍作编译设置，不需要改动代码，就可以编译烧写到MCU中；APP 分区的OTA功能相关代码复制到mcu方案自动生成代码中，再编译烧写到MCU中，mcu程序就具有OTA功能。
 
 #### 下文分别是BootLoader和APP 分区的详细移植步骤。
 
