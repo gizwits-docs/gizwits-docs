@@ -33,7 +33,7 @@ title: MCU OTA教程
 
 ![图5](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/5.png)
 
-#### 3、设置STMLINK 按块擦除 FLASH 区间和烧写程序
+#### 3、设置ST-LINK 按块擦除 FLASH 区间和烧写程序
 
 ![图6](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/6.png)
 
@@ -91,7 +91,7 @@ title: MCU OTA教程
 
 ![图22](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/22.png)
 
-#### 5、设置keil烧写方式为stmlink
+#### 5、设置keil烧写方式为st-link
 
 ![图23](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/23.png)
 
