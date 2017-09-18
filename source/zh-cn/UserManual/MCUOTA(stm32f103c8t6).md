@@ -21,8 +21,6 @@ title: MCU OTA教程
 
 ![图3](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/3.png)
 
-###### 图3
-
 ### Bootloader 编译设置
 
 #### 按照 Bootloader 流程编写好代码，需要我们对 KEIL 工程做相应配置，需要注意的是编译的 Bootloader 固件大小不超过最大可允许的 11KB。Keil 编译器需要设置如下：
@@ -31,27 +29,17 @@ title: MCU OTA教程
 
 ![图4](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/4.png)
 
-###### 图4
-
 #### 2、Flash 烧写地址设置生效
 
 ![图5](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/5.png)
-
-###### 图5
 
 #### 3、设置STMLINK 按块擦除 FLASH 区间和烧写程序
 
 ![图6](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/6.png)
 
-###### 图6
-
 ![图6-1](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/6-1.png)
 
-###### 图6-1
-
 ![图7](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/7.png)
-
-###### 图7
 
 ## 开始写 （移植）APP 关于固件升级部分
 
@@ -60,8 +48,6 @@ title: MCU OTA教程
 #### 做好 BOOTLOADER 工作后，我们开始写 APP 的代码。APP 固件的编写要注意硬件版本号和软件版本号，软件版号作为升级迭代很重要的标志。APP 代码我们只需要在 GOKIT 微信宠物屋代码基础上增加大数据接受即接受云端新固件功能即可。需要注意的是，中断向量地址偏移的定义，这个地方需要我们尤其注意，我在开发过程中在这个地方排查了好长时间。STM32 标准库默认中断向量地址偏移为 0x0,但是我们 APP 实际的偏移是 0x3000。如果不修改，APP 也可以正常加载运行，但是不会相应中断。所以，我们需要根据实际 APP 下载的起始地址，对中断向量地址偏移做定义。按照协议规定，我们去实现大数据整个流程，具体如下：
 
 ![图8](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/8.png)
-
-###### 图8
 
 ### 此处开始，设置mcu自动生成代码的编译器设置，以及将源App代码OTA相关功能代码（下文红框代码）复制到mcu自动生成代码中
 
@@ -73,119 +59,72 @@ title: MCU OTA教程
 
 ![图9](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/9.png)
 
-###### 图9
-
 ![图10](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/10.png)
-
-###### 图10
 
 #### 2、中断向量偏移地址
 
 ![图11](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/11.png)
 
-###### 图11
-
 #### 3、往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h
 
 ![图12](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/12.png)
-
-###### 图12
 
 #### 4、接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。
 
 ![图13](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/13.png)
 
-###### 图13
-
 ![图14](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/14.png)
-
-###### 14
 
 ![图](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/15.png)
 
-###### 图15
-
 ![图16](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/16.png)
-
-###### 图16
 
 ![图17](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/17.png)
 
-###### 图17
-
 ![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/18.png)
-
-###### 图18
 
 ![图19](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/19.png)
 
-###### 图19
-
 ![图20](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/20.png)
-
-###### 图20
 
 ![图21](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/21.png)
 
-###### 图21
-
 ![图22](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/22.png)
-
-###### 图22
 
 #### 5、设置keil烧写方式为stmlink
 
 ![图23](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/23.png)
 
-
-###### 图23
-
 #### 6、通过编译优化等级控制App固件大小
 
 ![图24](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/24.png)
-
-###### 图24
 
 #### 7、设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）
 
 ![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25.png)
 
-###### 图25
-
 #### 8、设置按区域擦除
 
 ![图26](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/26.png)
-
-###### 图26
 
 #### 9、编译和烧程序
 
 ![图27](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/27.png)
 
-###### 图27
-
 #### 10、第一次用stmlimk烧录mcu代码后，mcu日志
 
 ![图28](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/28.png)
-
-###### 图28
 
 #### 11、准备OTA，先让设备连上机智云。
 
 ![图29](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/29.png)
 
-###### 图29
-
 #### 12、改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
 
 ![图30](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/30.png)
 
-###### 图30
-
 #### 7、OTA成功
 
 ![图31](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/31.png)
-
-###### 图31
 
 #### 本文档主要写移植OTA功能移植过程，想要了解MCU OTA详细过程（例如mcu启动流程检查有无OTA任务，OTA flash分区等等），请看源文档。
