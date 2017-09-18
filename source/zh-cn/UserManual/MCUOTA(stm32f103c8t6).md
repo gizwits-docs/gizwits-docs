@@ -11,9 +11,9 @@ title: MCU OTA教程
 
 #### Bootloader:存储 Bootloader 固件，MCU 上电后首先运行该固件。
 
-#### FLAG:存储有关升级的相关标志位，Bootloader 和 APP 分区 都需要操作该区域。
+#### FLAG:存储有关升级的相关标志位，Bootloader 和 APP 分区都需要操作该区域。
 
-#### APP 分区：存储用户程序固件。
+#### APP 分区:存储用户程序固件。
 
 #### APPBAK 分区:临时存储云端下发的新固件，升级固件的一个过渡存储区。
 
@@ -29,7 +29,7 @@ title: MCU OTA教程
 
 ## 2.1.Bootloader 程序流程
 
-#### Bootloader 的主要职能是在有升级任务的时候将 APPBAK 分区 里面的固件拷贝到 APP 区域。当然，这期间需要做很多的工作，比如升级失败的容错等等。具体的流程可以参考图示。需要注意的是，在校验 MD5 正确后开始搬运固件数据期间，MCU 出现故障（包括突然断电），MCU 应发生复位操作（FLAG 区域数据未破坏），复位后重新开始执行 Bootloader，从而避免 MCU 刷成板砖。
+#### Bootloader 的主要职能是在有升级任务的时候将 APPBAK 分区里面的固件拷贝到 APP 区域。当然，这期间需要做很多的工作，比如升级失败的容错等等。具体的流程可以参考图示。需要注意的是，在校验 MD5 正确后开始搬运固件数据期间，MCU 出现故障（包括突然断电），MCU 应发生复位操作（FLAG 区域数据未破坏），复位后重新开始执行 Bootloader，从而避免 MCU 刷成板砖。
 
 ![图3](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/3.png)
 
@@ -53,17 +53,17 @@ title: MCU OTA教程
 
 ![图7](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/7.png)
 
-# 3.开始写 （移植）APP 分区 关于固件升级部分
+# 3.开始写 （移植）APP 分区固件升级部分
 
 ## 3.1.固件接收流程
 
-#### 做好 BOOTLOADER 工作后，我们开始写 APP 分区 的代码。APP 分区 固件的编写要注意硬件版本号和软件版本号，软件版号作为升级迭代很重要的标志。APP 分区 代码我们只需要在 GOKIT 微信宠物屋代码基础上增加大数据接受即接受云端新固件功能即可。需要注意的是，中断向量地址偏移的定义，这个地方需要我们尤其注意，我在开发过程中在这个地方排查了好长时间。STM32 标准库默认中断向量地址偏移为 0x0,但是我们 APP 分区 实际的偏移是 0x3000。如果不修改，APP 分区 也可以正常加载运行，但是不会相应中断。所以，我们需要根据实际 APP 分区 下载的起始地址，对中断向量地址偏移做定义。按照协议规定，我们去实现大数据整个流程，具体如下：
+#### 做好 BOOTLOADER 工作后，我们开始写 APP 分区的代码。APP 分区固件的编写要注意硬件版本号和软件版本号，软件版号作为升级迭代很重要的标志。APP 分区代码我们只需要在 GOKIT 微信宠物屋代码基础上增加大数据接受即接受云端新固件功能即可。需要注意的是，中断向量地址偏移的定义，这个地方需要我们尤其注意，我在开发过程中在这个地方排查了好长时间。STM32 标准库默认中断向量地址偏移为 0x0,但是我们 APP 分区实际的偏移是 0x3000。如果不修改，APP 分区也可以正常加载运行，但是不会相应中断。所以，我们需要根据实际 APP 分区下载的起始地址，对中断向量地址偏移做定义。按照协议规定，我们去实现大数据整个流程，具体如下：
 
 ![图8](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/8.png)
 
 ## 3.2.编译器设置
 
-#### 同样，因为硬件 FLASH 空间限定，我们需要对 APP 分区 的固件大小做严格的限制。本方案，针对 GOKIT 我们可允许的最大固件为 26KB。需要升级的新固件同样最大可支持 26KB。
+#### 同样，因为硬件 FLASH 空间限定，我们需要对 APP 分区的固件大小做严格的限制。本方案，针对 GOKIT 我们可允许的最大固件为 26KB。需要升级的新固件同样最大可支持 26KB。
 
 #### 3.2.1.设置 FLASH 固件下载地址
 
@@ -85,7 +85,7 @@ title: MCU OTA教程
 
 ![图14](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/14.png)
 
-![图](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/15.png)
+![图15](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/15.png)
 
 ![图16](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/16.png)
 
