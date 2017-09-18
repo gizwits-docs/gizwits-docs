@@ -111,7 +111,7 @@ title: MCU OTA教程
 
 ![图27](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/27.png)
 
-#### 10、第一次用stmlimk烧录mcu代码后，mcu日志
+#### 10、第一次用stlink烧录mcu代码后，mcu日志
 
 ![图28](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/28.png)
 
