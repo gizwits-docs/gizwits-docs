@@ -1,66 +1,17 @@
-# 简述 STM32 启动
+title: MCUOTA教程
+---
 
-#### ARM7/ARM9 内核的控制器在复位后，CPU 会从存储空间的绝对地址 0x000000 取出第一条指令执行复位中断服务程序的方式启动，即固定了复位后的起始地址为 0x000000（PC = 0x000000）同时中断向量表的位置并不是固定的。然而，Cortex-M3 内核启动有 3 种情况：
+### [源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA-V2.0.1.zip)
 
-##### 1、 通过 boot 引脚设置可以将中断向量表定位于 SRAM 区，即起始地址为 0x2000000，同时复位后 PC 指针位于 0x2000000 处;
+# 概述
 
-##### 2、 通过 boot 引脚设置可以将中断向量表定位于 FLASH 区，即起始地址为 0x8000000，同时复位后 PC 指针位于 0x8000000 处;
+#### MCUOTA可以对MCU程序进行无线远程升级。例如原本MCU程序中，RGB灯只能亮Red，现在想亮Blue，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCUOTA。
 
-##### 3、 通过 boot 引脚设置可以将中断向量表定位于内置 Bootloader 区;
+#### 源代码中有BootLoader和App两部分。
 
-#### Cortex-M3 内核规定，起始地址必须存放堆顶指针，而第二个地址则必须存放复位中断入口向量地址，这样在 Cortex-M3 内核复位后，会自动从起始地址的下一个 32 位空间取出复位中断入口向量，跳转执行复位中断服务程序。对比 ARM7/ARM9 内核，Cortex-M3 内核则是固定了中断向量表的位置而起始地址是可变化的。
+#### BootLoader稍作设置就可以编译烧写到MCU中。
 
-#### 总结一下 STM32 的启动文件和启动过程。首先对栈和堆的大小进行定义，并在代码区的起始处建立中断向量表，其第一个表项是栈顶地址，第二个表项是复位中断服务入口地址。然后在复位中断服务程序中跳转 C/C++标准实时库的 main 函数，完成用户堆栈等的初始化后，跳转.c 文件中的 main 函数开始执行 C 程序。假设 STM32 被设置为从内部 FLASH 启动（这也是最常见的一种情况），中断向量表起始地位为 0x8000000，则栈顶地址存放于 0x8000000处，而复位中断服务入口地址存放于 0x8000004 处。当 STM32 遇到复位信号后，则从0x80000004 处取出复位中断服务入口地址，继而执行复位中断服务程序，然后跳转 main 函数，最后进入 mian 函数。
-
-#### 分析下 GOKIT_OTA 需求，我们将建立两个工程，分别是 Bootloader 还有 APP，我们将Bootloader 下载到 FLASH 空间 0x8000000 地址处，那么 STM32 启动后会首先执行我们的Bootloader 程序，然后就可以按照我们意愿实现 OTA 了。
-
-# FLASH 区间划分
-
-#### 根据需求，我们将 STM32F103C8T6 这个芯片（GOKIT2 代）Flash 空间划分出 4 个区域：Bootloader、FLAG、APP、APPBAK。四个区间作用描述如下：
-
-##### Bootloader:存储 Bootloader 固件，MCU 上电后首先运行该固件。
-
-##### FLAG:存储有关升级的相关标志位，Bootloader 和 APP 都需要操作该区域。
-
-##### APP：存储用户程序固件。
-
-##### APPBAK:临时存储云端下发的新固件，升级固件的一个过渡存储区。
-
-#### Gokit 分区方案如下图所示：
-
-![图1](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/1.png)
-
-###### 图1
-
-GOKIT_OTA 方案
-
-![图2](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/2.png)
-
-###### 图2
-
-#### 正常启动流程：
-
-##### 1、上电进入 Bootloader 区域运行,检测 FLAG 区域标识选择是否需要进行升级，若无升级任务,则运行 2
-
-##### 2、跳转到 APP 区域运行应用程序
-
-#### 有升级任务执行流程
-
-##### 3、APP 区域运行应用程序时接收到模组升级命令,接收固件分片数据,写数据到APP_BAK 区域，接收完成，执行 4
-
-##### 4、写入 FLAG 区域升级标识，并写入 MD5 加密数据,执行 5
-
-##### 5、MCU 重启，开始执行 1
-
-##### 1、检测到 FLAG 区域有升级任务,读出 APP_BAK 区域数据，验证固件有效性，若固件有效，执行 6
-
-##### 6、读出 APP_BAK 区域数据，写入 APP 区域，检验新固件 MD5，若校验成功则执行 7，若校验失败，则 MCU 重启
-
-##### 7、擦除 FLAG 区域有效升级标志，执行 8
-
-##### 8、MCU 重启，进入 Bootloader 区域,未检测到升级任务，执行 2
-
-##### 2、执行新固件，OTA 完成
+#### App的OTA功能相关代码移植需要到我们自己的产品自动生成代码中，再编译烧写到MCU中，就可以移植OTA。下文分别是BootLoader和App的详细移植步骤。
 
 ## 开始 Bootloader
 
@@ -112,6 +63,8 @@ GOKIT_OTA 方案
 
 ###### 图8
 
+### 此处开始，设置mcu自动生成代码的编译器设置，以及将源App代码OTA相关功能代码（下文红框代码）复制到mcu自动生成代码中
+
 ### 编译器设置
 
 #### 同样，因为硬件 FLASH 空间限定，我们需要对 APP 的固件大小做严格的限制。本方案，针对 GOKIT 我们可允许的最大固件为 26KB。需要升级的新固件同样最大可支持 26KB。
@@ -125,8 +78,6 @@ GOKIT_OTA 方案
 ![图10](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/10.png)
 
 ###### 图10
-
-#### 2、设置STMLINK 按块擦除 FLASH 区间和烧写程序
 
 #### 2、中断向量偏移地址
 
@@ -162,7 +113,7 @@ GOKIT_OTA 方案
 
 ###### 图17
 
-![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/9.png)
+![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/18.png)
 
 ###### 图18
 
@@ -182,39 +133,50 @@ GOKIT_OTA 方案
 
 ###### 图22
 
+#### 5、设置keil烧写方式为stmlink
+
 ![图23](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/23.png)
 
+
 ###### 图23
+
+#### 6、通过编译优化等级控制App固件大小
 
 ![图24](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/24.png)
 
 ###### 图24
 
+#### 7、设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）
+
 ![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25.png)
 
 ###### 图25
+
+#### 8、设置按区域擦除
 
 ![图26](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/26.png)
 
 ###### 图26
 
+#### 9、编译和烧程序
+
 ![图27](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/27.png)
 
 ###### 图27
 
-#### 4、第一次用stmlimk烧录mcu代码后，mcu日志
+#### 10、第一次用stmlimk烧录mcu代码后，mcu日志
 
 ![图28](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/28.png)
 
 ###### 图28
 
-#### 5、准备OTA，先让设备连上机智云。
+#### 11、准备OTA，先让设备连上机智云。
 
 ![图29](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/29.png)
 
 ###### 图29
 
-#### 6、改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
+#### 12、改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
 
 ![图30](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/30.png)
 
@@ -226,6 +188,4 @@ GOKIT_OTA 方案
 
 ###### 图31
 
-[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA-V2.0.1.zip)
-
-注：将源参考代码中部分代码如上述步骤移植到自动生成代码中，就可以实现OTA
+#### 本文档主要写移植OTA功能移植过程，想要了解MCUOTA详细过程（例如mcu启动流程检查有无OTA任务，OTAflash分区等等），请看源文档。
