@@ -1,8 +1,6 @@
 title:  OTA使用教程
 ---
 
-### [MCU OTA教程](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA(stm32f103c8t6).html )
-
 # OTA功能概述
 
 OTA 英文全称是Over-the-Air Technology，即空间下载技术。当设备连上云端时会收到OTA升级通知，再通过HTTP完成固件升级。机智云的OTA服务主要提供以下功能：
@@ -19,6 +17,8 @@ OTA 英文全称是Over-the-Air Technology，即空间下载技术。当设备�
 
 Wifi产品OTA服务是在开发者中心网站上实现的，由5部分组成：分别是添加固件、验证固件、添加规则、开始推送、推送完成（查询结果）。
 ## 添加固件
+
+注：以下是GAgent固件OTA教程，要看[MCU OTA教程](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA(stm32f103c8t6).html)请点击跳转
 
 如将设备的模组烧写的固件为：GAgent_00ESP826_04020019_16101715.bin，其中硬件版本号为：00ESP826，软件版本号为：04020019
 步骤一、进入【服务】固件升级（OTA）模块，点击【创建新固件】
