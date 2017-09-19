@@ -167,7 +167,10 @@
     path: /UserManual/change.html
 
   OTA使用教程:
-    path: /UserManual/OTA使用教程.html
+    GAgent OTA教程:
+      path: /UserManual/OTA使用教程.html
+    MCU OTA教程:
+      path: /UserManual/MCUOTA.html
 
   产测工具使用文档:
     path: /deviceDev/产测工具使用文档.html
