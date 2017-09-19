@@ -23,7 +23,7 @@ title: MCU OTA教程
 
 #### 下文分别是BootLoader和APP 分区的详细移植步骤。
 
-# 2. Bootloader 分区部分
+# 2.Bootloader 分区部分
 
 ## 2.1.Bootloader 程序流程
 
@@ -123,19 +123,19 @@ title: MCU OTA教程
 
 # 4.MCU OTA验证
 
-## 4.1.第一次用stlink烧录mcu代码后，mcu日志如图
+### 4.1.第一次用stlink烧录mcu代码后，mcu日志如图
 
 ![图28](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/28.png)
 
-## 4.2准备OTA，先让设备连上机智云。
+### 4.2准备OTA，先让设备连上机智云。
 
 ![图29](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/29.png)
 
-## 4.3改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
+### 4.3改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
 
 ![图30](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/30.png)
 
-## 4.4OTA成功
+### 4.4OTA成功
 
 ![图31](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/31.png)
 
