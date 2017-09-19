@@ -1,6 +1,8 @@
 title:  OTA使用教程
 ---
 
+### [MCU OTA教程](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA(stm32f103c8t6).html)
+
 # OTA功能概述
 
 OTA 英文全称是Over-the-Air Technology，即空间下载技术。当设备连上云端时会收到OTA升级通知，再通过HTTP完成固件升级。机智云的OTA服务主要提供以下功能：
