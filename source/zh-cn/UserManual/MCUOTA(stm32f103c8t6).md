@@ -51,7 +51,7 @@ title: MCU OTA教程
 
 ![图7](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/7.png)
 
-# 3.APP 分区固件升级部分
+# 3.APP 分区部分
 
 ## 3.1.固件接收流程
 
