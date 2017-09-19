@@ -1,7 +1,7 @@
 title:  OTA使用教程
 ---
 
-### [MCU OTA教程](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA(stm32f103c8t6).html)
+### [MCU OTA教程](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA(stm32f103c8t6).html )
 
 # OTA功能概述
 
