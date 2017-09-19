@@ -127,15 +127,15 @@ title: MCU OTA教程
 
 ![图28](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/28.png)
 
-### 4.2准备OTA，先让设备连上机智云。
+### 4.2.准备OTA，先让设备连上机智云。
 
 ![图29](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/29.png)
 
-### 4.3改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
+### 4.3.改mcu代码里面的软件版本号，要比原来的高，选择编译出来的.bin文件。（注意：如果图中有手动/静默，请选择静默，没有则忽略注意）
 
 ![图30](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/30.png)
 
-### 4.4OTA成功
+### 4.4.OTA成功
 
 ![图31](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/31.png)
 
