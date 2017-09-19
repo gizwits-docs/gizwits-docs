@@ -9,6 +9,8 @@ title: MCU OTA教程
 
 #### STM32F103C8T6 芯片（GOKIT2 代）Flash 空间划分出 4 个区域：Bootloader、FLAG、APP 分区、APPBAK 分区。
 
+![图1](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/1.png)
+
 #### Bootloader:存储 Bootloader 固件，MCU 上电后首先运行该固件。
 
 #### FLAG:存储有关升级的相关标志位，Bootloader 和 APP 分区都需要操作该区域。
