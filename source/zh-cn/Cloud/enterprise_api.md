@@ -179,15 +179,15 @@ Http Response Code ： 200
 ### 请求方式
     GET
 ### 请求报文
-|    参数    |  类型   | 必填 | 参数类型 |                            描述                             | 备注 |
-|:---------- | -------:|:----:|:-------- |:------------------------------------------------------- | ---- |
-| token      |  String |  是  | header   | 获取授权返回的token值, For example: Authorization:token xxx |      |
-| did        |  String |  是  | URL      | 设备id                                                   |      |
-| start_ts   | integer |  是  | URL      | 开始时间戳                                                |      |
-| end_ts     | integer |  是  | URL      | 结束时间戳                                                |      |
-| attrs      |  String |  是  | URL      | 只能为数值类型的数据点，对应为数据点标识名                  |      |
-| aggregator |  String |  是  | URL      | sum,avg,max,min                                             |      |
-| unit       |  String |  是  | URL      | 展示时间维度的单位，包括：HOURS,DAYS,WEEKS,MONTHS           |      ||
+|    参数    |  类型   | 必填 | 参数类型 |                            描述                             | 
+|:---------- | -------:|:----:|:-------- |:------------------------------------------------------- |
+| token      |  String |  是  | header   | 获取授权返回的token值, For example: Authorization:token xxx |    
+| did        |  String |  是  | URL      | 设备id                                                   |     
+| start_ts   | integer |  是  | URL      | 开始时间戳                                                |     
+| end_ts     | integer |  是  | URL      | 结束时间戳                                                |     
+| attrs      |  String |  是  | URL      | 只能为数值类型的数据点，对应为数据点标识名                  |      
+| aggregator |  String |  是  | URL      | sum,avg,max,min                                             |     
+| unit       |  String |  是  | URL      | 展示时间维度的单位，包括：HOURS,DAYS,WEEKS,MONTHS           |      
 
 
 
@@ -296,22 +296,22 @@ Body：
 
 ### 请求报文
 
-|      参数      |  类型   | 必填 | 参数类型 |            描述            | 备注 |
-|:-------------- | -------:|:----:|:-------- |:-------------------------- |:---- |
-| product_key    |  String |  是  | path     |                            |      |
-| gid            |  String |  否  | query    | 设备组gid                     |      |
-| country        |  String |  否  | query    | 国家                       |      |
-| region         |  String |  否  | query    | 省                         |      |
-| city           |  String |  否  | query    | 城市                       |      |
-| is_online      | integer |  否  | query    | 是否在线,在线为1,不在线为0 |      |
-| is_faulty      | integer |  否  | query    | 是否故障,故障为1,无故障为0 |      |
-| is_alert       | integer |  否  | query    | 是否报警,报警为1,无报警为0 |      |
-| show_disabled  | integer |  否  | query    | 显示注销为1，过滤注销为0   |      |
-| liveness_start | integer |  否  | query    | 最近活跃时间戳             |      |
-| type           |  String |  否  | query    | 可以为 did、mac、uid |  |
-| val            |  String |  否  | query    | 搜索的值                   |      |
-| limit          | integer |  否  | query    |                            |      |
-| skip           | integer |  否  | query    |                            |      |
+|      参数      |  类型   | 必填 | 参数类型 |            描述            | 
+|:-------------- | -------:|:----:|:-------- |:-------------------------- |
+| product_key    |  String |  是  | path     |                            |     
+| gid            |  String |  否  | query    | 设备组gid                     |     
+| country        |  String |  否  | query    | 国家                       |      
+| region         |  String |  否  | query    | 省                         |      
+| city           |  String |  否  | query    | 城市                       |      
+| is_online      | integer |  否  | query    | 是否在线,在线为1,不在线为0 |      
+| is_faulty      | integer |  否  | query    | 是否故障,故障为1,无故障为0 |      
+| is_alert       | integer |  否  | query    | 是否报警,报警为1,无报警为0 |      
+| show_disabled  | integer |  否  | query    | 显示注销为1，过滤注销为0   |     
+| liveness_start | integer |  否  | query    | 最近活跃时间戳             |      
+| type           |  String |  否  | query    | 可以为 did、mac、uid |  
+| val            |  String |  否  | query    | 搜索的值                   |      
+| limit          | integer |  否  | query    |                            |      
+| skip           | integer |  否  | query    |                            |      
 
 
 
@@ -358,10 +358,10 @@ Body：
 
 ### 请求报文
 
-|参数    |类型  |必填    |参数类型    |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- |
-|product_key  |String|是|path|||
-|mac   |String|是|query|mac 地址|| |
+|参数    |类型  |必填    |参数类型    |描述   |
+| :-------- | --------:| :--: |:-------- | :-------- | 
+|product_key  |String|是|path|
+|mac   |String|是|query|mac 地址|
 
 
 
@@ -384,7 +384,7 @@ Body：
 ### [调试地址](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices)
 
 ### 业务功能描述
-该接口提供了通过查询设备的product_key和mac等参数，来获取最新的设备did和passcode的功能。
+该接口提供了通过查询设备的product_key和mac等参数，来获取最新的设备did。
 ### 接口地址
      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices
 
@@ -393,9 +393,9 @@ Body：
 
 ### 请求报文
 
-|参数    |类型  |必填    |参数类型    |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|product_key  |String|是|path|| 
+|参数    |类型  |必填    |参数类型    |描述   |
+| :-------- | --------:| :--: |:-------- | :-------- |
+|product_key  |String|是|path||
 |mac   |String|是|query|mac 地址| 
 
 
@@ -446,9 +446,9 @@ Body：
 
 ### 请求报文
 
-|参数    |类型  |必填    |参数类型    |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|product_key  |String|是|path||
+|参数    |类型  |必填    |参数类型    |描述   |
+| :-------- | --------:| :--: |:-------- | :-------- |
+|product_key  |String|是|path|
 |did    |String|是|query|设备id| 
 |start_ts|integer|否|query|开始时间戳| 
 |end_ts|intege|否|query|结束时间戳| 
@@ -502,9 +502,9 @@ ChangeLog
 
 ### 请求报文
 
-|参数    |类型  |必填    |参数类型    |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|product_key  |String|是|path||
+|参数    |类型  |必填    |参数类型    |描述   |
+| :-------- | --------:| :--: |:-------- | :-------- | 
+|product_key  |String|是|path|
 |did    |String|是|query|设备id| 
 |start_ts|integer|否|query|开始时间戳| 
 |end_ts|intege|否|query|开始时间戳| 
@@ -550,9 +550,9 @@ Body：
 
 ### 请求报文
 
-|参数    |类型  |必填    |参数类型    |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|product_key  |String|是|path|| 
+|参数    |类型  |必填    |参数类型    |描述   |
+| :-------- | --------:| :--: |:-------- | :-------- | 
+|product_key  |String|是|path| 
 |gid   |String|否|query|设备组 id| 
 |is_online |integer|否|query|是否在线| 
 |is_faulty|integer|否|query|是否故障| 
@@ -585,9 +585,9 @@ Body：
 
 ### 请求报文
 
-|参数    |类型  |必填    |参数类型    |描述   |备注|
-| :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
-|product_key  |String|是|path|| 
+|参数    |类型  |必填    |参数类型    |描述   |
+| :-------- | --------:| :--: |:-------- | :-------- | 
+|product_key  |String|是|path| 
 |gid   |String|否|query|设备组 id| 
 |cycle|String|否|query|统计周期，可以为 date、week、month| 
 |start|String|是|query|起始周期，为起始日期、起始周或起始月| 
@@ -628,15 +628,15 @@ Body：
 
 ### 请求报文
 
-| 参数          |      类型 | 必填  | 参数类型  | 描述                                            | 备注 |
-|:------------|--------:|:---:|:------|:----------------------------------------------|:---|
-| product_key |  String |  是  | path  |                                               |    |
-| gid         |  String |  否  | query | 设备组 id                                        |    |
-| type        |  String |  否  | query | 可以是uid、username、phone、email、did、mac、device_sn |    |
-| val         |  String |  否  | query | 查询条件值                                         |    |
-| limit       | integer |  否  | query | 每次返回的条数                                       |    |
-| skip        | integer |  否  | query | 每次跳过的条数                                       |    |
----
+
+|参数    |类型  |必填    |参数类型    |描述   |
+| :-------- | --------:| :--: |:-------- | :-------- | 
+|product_key  |String|是|path| 
+|gid   |String|否|query|设备组 id| 
+|type   |String|否|query|可以是uid、username、phone、email、did、mac、device_sn| 
+|val|String|否|query|查询条件值| 
+|limit|	integer|否|query|每次返回的条数| 
+|skip|integer|否|query|每次跳过的条数| 
 
 
 

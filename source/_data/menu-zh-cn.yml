@@ -24,7 +24,7 @@
     iOS 第三方登录与换肤:
       path: /AppDev/iOS第三方登陆与换肤.html
     iOS开源框架的快速开发实例:
-      path: /quickstart/iOSAPP快速入门.html
+      path: /quickstart/iOSAPPFrame.html
     Android 开源框架说明（含源码）:
       path: /AppDev/Android开源框架使用指南.html
     Android 消息推送:
@@ -167,7 +167,10 @@
     path: /UserManual/change.html
 
   OTA使用教程:
-    path: /UserManual/OTA使用教程.html
+    GAgent OTA教程:
+      path: /UserManual/OTA.html
+    MCU OTA教程:
+      path: /UserManual/MCUOTA.html
 
   产测工具使用文档:
     path: /deviceDev/产测工具使用文档.html
