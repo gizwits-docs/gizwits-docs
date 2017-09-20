@@ -9,7 +9,8 @@ var redirectMap = {
 '/zh-cn/UserManual/使用设备分组API教程.html':'/zh-cn/UserManual/devgroup_API.html',
 '/zh-cn/UserManual/OTA使用教程.html':'/zh-cn/UserManual/OTA.html',
 '/zh-cn/quickstart/iOSAPP快速入门.html':'/zh-cn/quickstart/iOSAPPFrame.html',
-'/zh-cn/quickstart/5分钟了解机智云.html':'/zh-cn/quickstart/README.html'
+'/zh-cn/quickstart/5分钟了解机智云.html':'/zh-cn/quickstart/README.html',
+'/zh-cn/quickstart/定义数据点.html':'/zh-cn/quickstart/datapoint_tutorial.html'
 
 }
 
