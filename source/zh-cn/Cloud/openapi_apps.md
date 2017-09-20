@@ -52,7 +52,7 @@ X-Gizwits-User-token 简称 UserToken，它代表着接口调用中的用户上�
 UserToken 具有有效期，默认为 7 天。
 
 可以通过用户注册或者登录接口获取 UserToken，返回字段中的 token 就是 UserToken，expire_at 表示 UserToken 过期的时间戳：
-```
+```json
 {
   "uid": "29db4f0d806e451a84264ba3da64d9de",
   "token": "86a0ee91548f4971832e371811702316",
@@ -360,71 +360,71 @@ Guest 也可以主动解绑设备。
 
 # 附录：Open API 错误码表
 
-|枚举ID|枚举定义|描述
-|:--|:--|
-|9001|GIZ_OPENAPI_MAC_ALREADY_REGISTERED|mac already registered!
-|9002|GIZ_OPENAPI_PRODUCT_KEY_INVALID|product_key invalid
-|9003|GIZ_OPENAPI_APPID_INVALID|appid invalid
-|9004|GIZ_OPENAPI_TOKEN_INVALID|token invalid
-|9005|GIZ_OPENAPI_USER_NOT_EXIST|user not exist
-|9006|GIZ_OPENAPI_TOKEN_EXPIRED|token expired
-|9007|GIZ_OPENAPI_M2M_ID_INVALID|m2m_id invalid
-|9008|GIZ_OPENAPI_SERVER_ERROR|server error
-|9009|GIZ_OPENAPI_CODE_EXPIRED|code expired
-|9010|GIZ_OPENAPI_CODE_INVALID|code invalid
-|9011|GIZ_OPENAPI_SANDBOX_SCALE_QUOTA_EXHAUSTED|sandbox scale quota exhausted!
-|9012|GIZ_OPENAPI_PRODUCTION_SCALE_QUOTA_EXHAUSTED|production scale quota exhausted!
-|9013|GIZ_OPENAPI_PRODUCT_HAS_NO_REQUEST_SCALE|product has no request scale!
-|9014|GIZ_OPENAPI_DEVICE_NOT_FOUND|device not found!
-|9015|GIZ_OPENAPI_FORM_INVALID|form invalid!
-|9016|GIZ_OPENAPI_DID_PASSCODE_INVALID|did or passcode invalid!
-|9017|GIZ_OPENAPI_DEVICE_NOT_BOUND|device not bound!
-|9018|GIZ_OPENAPI_PHONE_UNAVALIABLE|phone unavailable!
-|9019|GIZ_OPENAPI_USERNAME_UNAVALIABLE|username unavailable!
-|9020|GIZ_OPENAPI_USERNAME_PASSWORD_ERROR|username or password error!
-|9021|GIZ_OPENAPI_SEND_COMMAND_FAILED|send command failed!
-|9022|GIZ_OPENAPI_EMAIL_UNAVALIABLE|email unavailable!
-|9023|GIZ_OPENAPI_DEVICE_DISABLED|device is disabled!
-|9024|GIZ_OPENAPI_FAILED_NOTIFY_M2M|fail to notify m2m!
-|9025|GIZ_OPENAPI_ATTR_INVALID|attr invalid!
-|9026|GIZ_OPENAPI_USER_INVALID|user invalid!
-|9027|GIZ_OPENAPI_FIRMWARE_NOT_FOUND|firmware not found!
-|9028|GIZ_OPENAPI_JD_PRODUCT_NOT_FOUND|JD product info not found!
-|9029|GIZ_OPENAPI_DATAPOINT_DATA_NOT_FOUND|datapoint data not found!
-|9030|GIZ_OPENAPI_SCHEDULER_NOT_FOUND|scheduler not found!
-|9031|GIZ_OPENAPI_QQ_OAUTH_KEY_INVALID|qq oauth key invalid!
-|9032|GIZ_OPENAPI_OTA_SERVICE_OK_BUT_IN_IDLE|ota upgrade service OK, but in idle or disable!
-|9033|GIZ_OPENAPI_BT_FIRMWARE_UNVERIFIED|bt firmware unverified,except verify device!
-|9034|GIZ_OPENAPI_BT_FIRMWARE_NOTHING_TO_UPGRADE|bt firmware is OK, but nothing to upgrade!
-|9035|GIZ_OPENAPI_SAVE_KAIROSDB_ERROR|Save kairosdb error!
-|9036|GIZ_OPENAPI_EVENT_NOT_DEFINED|event not defined!
-|9037|GIZ_OPENAPI_SEND_SMS_FAILED|send sms failed!
-|9038|GIZ_OPENAPI_APPLICATION_AUTH_INVALID|X-Gizwits-Application-Auth invalid!
-|9039|GIZ_OPENAPI_NOT_ALLOWED_CALL_API|Not allowed to call deprecated API!
-|9040|GIZ_OPENAPI_BAD_QRCODE_CONTENT|bad qrcode content!
-|9041|GIZ_OPENAPI_REQUEST_THROTTLED|request was throttled
-|9042|GIZ_OPENAPI_DEVICE_OFFLINE|device offline!
-|9043|GIZ_OPENAPI_TIMESTAMP_INVALID|X-Gizwits-Timestamp invalid!
-|9044|GIZ_OPENAPI_SIGNATURE_INVALID|X-Gizwits-Signature invalid!
-|9045|GIZ_OPENAPI_DEPRECATED_API|API deprecated!
-|9046|GIZ_OPENAPI_REGISTER_IS_BUSY|Register already in progress!
-|9080|GIZ_OPENAPI_CANNOT_SHARE_TO_SELF|can not share device to self!
-|9081|GIZ_OPENAPI_ONLY_OWNER_CAN_SHARE|guest or normal user can not share device!
-|9082|GIZ_OPENAPI_NOT_FOUND_GUEST|guest user not found!
-|9083|GIZ_OPENAPI_GUEST_ALREADY_BOUND|guest user alread bound!
-|9084|GIZ_OPENAPI_NOT_FOUND_SHARING_INFO|sharing record not found!
-|9085|GIZ_OPENAPI_NOT_FOUND_THE_MESSAGE|message record not found!
-|9087|GIZ_OPENAPI_SHARING_IS_WAITING_FOR_ACCEPT|sharing alread created,waiting for the guest to accept!
-|9088|GIZ_OPENAPI_SHARING_IS_EXPIRED|sharing record expired!
-|9089|GIZ_OPENAPI_SHARING_IS_COMPLETED|sharing record status is not unaccept!
-|9090|GIZ_OPENAPI_INVALID_SHARING_BECAUSE_UNBINDING|owner binding disabled!
-|9092|GIZ_OPENAPI_ONLY_OWNER_CAN_BIND|owner exist, guest can not bind!
-|9093|GIZ_OPENAPI_ONLY_OWNER_CAN_OPERATE|permission denied, you are not owner!
-|9094|GIZ_OPENAPI_SHARING_ALREADY_CANCELLED|sharing already canceled!
-|9095|GIZ_OPENAPI_OWNER_CANNOT_UNBIND_SELF|can not unbind self!
-|9096|GIZ_OPENAPI_ONLY_GUEST_CAN_CHECK_QRCODE|permission denied, you are not guest!
-|9098|GIZ_OPENAPI_MESSAGE_ALREADY_DELETED|notify delele binding failed!
-|9099|GIZ_OPENAPI_BINDING_NOTIFY_FAILED|notify delele binding failed!
-|9100|GIZ_OPENAPI_ONLY_SELF_CAN_MODIFY_ALIAS|permission denied, you are not owner or guest!
-|9101|GIZ_OPENAPI_ONLY_RECEIVER_CAN_MARK_MESSAGE|permission denied, you are not the receiver!
-|9999|GIZ_OPENAPI_RESERVED|reserved
+| 枚举ID | 枚举定义                                          | 描述                                                      |
+|:-----|:----------------------------------------------|:--------------------------------------------------------|
+| 9001 | GIZ_OPENAPI_MAC_ALREADY_REGISTERED            | mac already registered!                                 |
+| 9002 | GIZ_OPENAPI_PRODUCT_KEY_INVALID               | product_key invalid                                     |
+| 9003 | GIZ_OPENAPI_APPID_INVALID                     | appid invalid                                           |
+| 9004 | GIZ_OPENAPI_TOKEN_INVALID                     | token invalid                                           |
+| 9005 | GIZ_OPENAPI_USER_NOT_EXIST                    | user not exist                                          |
+| 9006 | GIZ_OPENAPI_TOKEN_EXPIRED                     | token expired                                           |
+| 9007 | GIZ_OPENAPI_M2M_ID_INVALID                    | m2m_id invalid                                          |
+| 9008 | GIZ_OPENAPI_SERVER_ERROR                      | server error                                            |
+| 9009 | GIZ_OPENAPI_CODE_EXPIRED                      | code expired                                            |
+| 9010 | GIZ_OPENAPI_CODE_INVALID                      | code invalid                                            |
+| 9011 | GIZ_OPENAPI_SANDBOX_SCALE_QUOTA_EXHAUSTED     | sandbox scale quota exhausted!                          |
+| 9012 | GIZ_OPENAPI_PRODUCTION_SCALE_QUOTA_EXHAUSTED  | production scale quota exhausted!                       |
+| 9013 | GIZ_OPENAPI_PRODUCT_HAS_NO_REQUEST_SCALE      | product has no request scale!                           |
+| 9014 | GIZ_OPENAPI_DEVICE_NOT_FOUND                  | device not found!                                       |
+| 9015 | GIZ_OPENAPI_FORM_INVALID                      | form invalid!                                           |
+| 9016 | GIZ_OPENAPI_DID_PASSCODE_INVALID              | did or passcode invalid!                                |
+| 9017 | GIZ_OPENAPI_DEVICE_NOT_BOUND                  | device not bound!                                       |
+| 9018 | GIZ_OPENAPI_PHONE_UNAVALIABLE                 | phone unavailable!                                      |
+| 9019 | GIZ_OPENAPI_USERNAME_UNAVALIABLE              | username unavailable!                                   |
+| 9020 | GIZ_OPENAPI_USERNAME_PASSWORD_ERROR           | username or password error!                             |
+| 9021 | GIZ_OPENAPI_SEND_COMMAND_FAILED               | send command failed!                                    |
+| 9022 | GIZ_OPENAPI_EMAIL_UNAVALIABLE                 | email unavailable!                                      |
+| 9023 | GIZ_OPENAPI_DEVICE_DISABLED                   | device is disabled!                                     |
+| 9024 | GIZ_OPENAPI_FAILED_NOTIFY_M2M                 | fail to notify m2m!                                     |
+| 9025 | GIZ_OPENAPI_ATTR_INVALID                      | attr invalid!                                           |
+| 9026 | GIZ_OPENAPI_USER_INVALID                      | user invalid!                                           |
+| 9027 | GIZ_OPENAPI_FIRMWARE_NOT_FOUND                | firmware not found!                                     |
+| 9028 | GIZ_OPENAPI_JD_PRODUCT_NOT_FOUND              | JD product info not found!                              |
+| 9029 | GIZ_OPENAPI_DATAPOINT_DATA_NOT_FOUND          | datapoint data not found!                               |
+| 9030 | GIZ_OPENAPI_SCHEDULER_NOT_FOUND               | scheduler not found!                                    |
+| 9031 | GIZ_OPENAPI_QQ_OAUTH_KEY_INVALID              | qq oauth key invalid!                                   |
+| 9032 | GIZ_OPENAPI_OTA_SERVICE_OK_BUT_IN_IDLE        | ota upgrade service OK, but in idle or disable!         |
+| 9033 | GIZ_OPENAPI_BT_FIRMWARE_UNVERIFIED            | bt firmware unverified,except verify device!            |
+| 9034 | GIZ_OPENAPI_BT_FIRMWARE_NOTHING_TO_UPGRADE    | bt firmware is OK, but nothing to upgrade!              |
+| 9035 | GIZ_OPENAPI_SAVE_KAIROSDB_ERROR               | Save kairosdb error!                                    |
+| 9036 | GIZ_OPENAPI_EVENT_NOT_DEFINED                 | event not defined!                                      |
+| 9037 | GIZ_OPENAPI_SEND_SMS_FAILED                   | send sms failed!                                        |
+| 9038 | GIZ_OPENAPI_APPLICATION_AUTH_INVALID          | X-Gizwits-Application-Auth invalid!                     |
+| 9039 | GIZ_OPENAPI_NOT_ALLOWED_CALL_API              | Not allowed to call deprecated API!                     |
+| 9040 | GIZ_OPENAPI_BAD_QRCODE_CONTENT                | bad qrcode content!                                     |
+| 9041 | GIZ_OPENAPI_REQUEST_THROTTLED                 | request was throttled                                   |
+| 9042 | GIZ_OPENAPI_DEVICE_OFFLINE                    | device offline!                                         |
+| 9043 | GIZ_OPENAPI_TIMESTAMP_INVALID                 | X-Gizwits-Timestamp invalid!                            |
+| 9044 | GIZ_OPENAPI_SIGNATURE_INVALID                 | X-Gizwits-Signature invalid!                            |
+| 9045 | GIZ_OPENAPI_DEPRECATED_API                    | API deprecated!                                         |
+| 9046 | GIZ_OPENAPI_REGISTER_IS_BUSY                  | Register already in progress!                           |
+| 9080 | GIZ_OPENAPI_CANNOT_SHARE_TO_SELF              | can not share device to self!                           |
+| 9081 | GIZ_OPENAPI_ONLY_OWNER_CAN_SHARE              | guest or normal user can not share device!              |
+| 9082 | GIZ_OPENAPI_NOT_FOUND_GUEST                   | guest user not found!                                   |
+| 9083 | GIZ_OPENAPI_GUEST_ALREADY_BOUND               | guest user alread bound!                                |
+| 9084 | GIZ_OPENAPI_NOT_FOUND_SHARING_INFO            | sharing record not found!                               |
+| 9085 | GIZ_OPENAPI_NOT_FOUND_THE_MESSAGE             | message record not found!                               |
+| 9087 | GIZ_OPENAPI_SHARING_IS_WAITING_FOR_ACCEPT     | sharing alread created,waiting for the guest to accept! |
+| 9088 | GIZ_OPENAPI_SHARING_IS_EXPIRED                | sharing record expired!                                 |
+| 9089 | GIZ_OPENAPI_SHARING_IS_COMPLETED              | sharing record status is not unaccept!                  |
+| 9090 | GIZ_OPENAPI_INVALID_SHARING_BECAUSE_UNBINDING | owner binding disabled!                                 |
+| 9092 | GIZ_OPENAPI_ONLY_OWNER_CAN_BIND               | owner exist, guest can not bind!                        |
+| 9093 | GIZ_OPENAPI_ONLY_OWNER_CAN_OPERATE            | permission denied, you are not owner!                   |
+| 9094 | GIZ_OPENAPI_SHARING_ALREADY_CANCELLED         | sharing already canceled!                               |
+| 9095 | GIZ_OPENAPI_OWNER_CANNOT_UNBIND_SELF          | can not unbind self!                                    |
+| 9096 | GIZ_OPENAPI_ONLY_GUEST_CAN_CHECK_QRCODE       | permission denied, you are not guest!                   |
+| 9098 | GIZ_OPENAPI_MESSAGE_ALREADY_DELETED           | notify delele binding failed!                           |
+| 9099 | GIZ_OPENAPI_BINDING_NOTIFY_FAILED             | notify delele binding failed!                           |
+| 9100 | GIZ_OPENAPI_ONLY_SELF_CAN_MODIFY_ALIAS        | permission denied, you are not owner or guest!          |
+| 9101 | GIZ_OPENAPI_ONLY_RECEIVER_CAN_MARK_MESSAGE    | permission denied, you are not the receiver!            |
+| 9999 | GIZ_OPENAPI_RESERVED                          | reserved                                                |
