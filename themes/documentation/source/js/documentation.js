@@ -209,7 +209,7 @@ var HEADER_BP = 915
       if (!$('.nav-control').data().show) {
         var activeGroup = $active.data().group
         $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
-        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
+      //hohuiking  $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
       }
     })
   })
@@ -220,14 +220,15 @@ var HEADER_BP = 915
       if (!$('.nav-control').data().show) {
         var activeGroup = $(this).data().group
         $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
-        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
+      //hohuiking  $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
       }
     })
   })
 
   // nav's sub-menu show/hide
   $(function() {
-    $('.nav-control').click(function() {
+    //$('.nav-control').click(function() {
+      $(document).ready(function() {
       var $this = $(this)
       var langIsEn = localStorage.getItem('lang') === 'en-us'
       if ($this.data().show) {
@@ -235,12 +236,13 @@ var HEADER_BP = 915
         $this.text(langIsEn ? 'Show' : '展开全部')
         $this.data('show', false)
         $('.nav > ul > .h1[data-group=' + activeGroup + ']').addClass('active')
-        $('.nav .h2').removeClass('active').hide()
-      } else {
-        $this.text(langIsEn ?  'Hide' : '折叠全部')
-        $this.data('show', true)
-        $('.nav .h2').show()
+        //hohuiking  $('.nav .h2').removeClass('active').hide()
       }
+      //else {
+      //  $this.text(langIsEn ?  'Hide' : '折叠全部')
+      //  $this.data('show', true)
+      //  $('.nav .h2').show()
+      //}
     })
   })
 }(jQuery)
@@ -276,7 +278,7 @@ var HEADER_BP = 915
 // open doc anchor in new page
 +function($) {
   $(function() {
-    $('.markdown-body a').not('.anchor').attr('target', '_blank')
+    $('.markdown-body a').not('.anchor').attr('target') //, '_blank')
   })
 }(jQuery)
 
