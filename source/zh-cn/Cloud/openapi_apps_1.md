@@ -773,7 +773,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#!/绑定管理/delete_app_bindings)
 
-用户已绑定的设备进行解绑
+
 
 请求地址及方式
 
