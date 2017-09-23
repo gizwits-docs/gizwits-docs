@@ -1,25 +1,25 @@
 Tutorial:
   Intro in 5 mins:
-    path: /path/to/article
+    path: /quickstart.html
   Device Accessing:
-    path: /path/to/article
+    path: /quickstart.html
   App Development:
-    path: /path/to/article
+    path: /quickstart.html
 Device:
-  path: /path/to/article
+  path: /quickstart.html
 App:
   ios SDK:
-    path: /path/to/article
+    path: /quickstart.html
   Android SDK:
-    path: /path/to/article
+    path: /quickstart.html
   Wechat SDK:
-    path: /path/to/article
+    path: /quickstart.html
 Cloud:
   Business Cloud:
-    path: /path/to/article
+    path: /quickstart.html
   D3:
-    path: /path/to/article
+    path: /quickstart.html
   Global Deployment:
-    path: /path/to/article
+    path: /quickstart.html
 API:
-  path: /path/to/article
+  path: /quickstart.html
