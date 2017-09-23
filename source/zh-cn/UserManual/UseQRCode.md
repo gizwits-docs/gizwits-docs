@@ -47,9 +47,7 @@ title: APP绑定设备二维码生成教程
 
 ## 6.下载二维码
 
-在浏览器输入完整 URL（http://qrcode.gizwitsapi.com:1800/+上图中的URL） 下载生成的二维码图片
-
-本次下载的URL组合起来：http://qrcode.gizwitsapi.com:1800/static/zipfiles/1474.zip
+在浏览器输入完整 URL（http://qrcode.gizwitsapi.com:1800/+上图中的URL）下载生成的二维码图片，本次下载的URL组合起来是：http://qrcode.gizwitsapi.com:1800/static/zipfiles/1474.zip
 
 ![Alt text](/assets/zh-cn/UserManual/qrcode/1495600383938.png)
 

@@ -17,7 +17,7 @@ Open API 就是机智云对外提供这些数据的访问接口！
 
 根据机智云提供的服务，Open API 提供如下功能:
 
-* [用户管理](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理)：用户的注册、登录、密码重置等功能
+* [用户管理](#用户管理)：用户的注册、登录、密码重置等功能
 
 | API列表                                  | 描述               |
 | ---------------------------------------- | ------------------ |
@@ -25,63 +25,95 @@ Open API 就是机智云对外提供这些数据的访问接口！
 | [post_app_users](#创建用户)              | 创建新用户         |
 | [put_app_users](#修改用户信息)           | 修改用户信息       |
 | [post_app_login](#用户登录)              | 用户登录           |
-| [post_app_request_token](#获取APP Token) | 获取APP Token      |
+| [post_app_request_token](#获取APP-Token) | 获取APP Token      |
 | [post_app_reset_password](#请求重置密码) | 请求重置密码       |
-| [post_app_sms_code](#验证码的获取及校验) | 验证码的获取及校验 |
+| [post_app_sms_code](#验证码的获取和校验) | 验证码的获取和校验 |
 | [get_app_verify_codes](#获取图片验证码)  | 获取图片验证码     |
-| [post_app_verify_codes](#图片验证码校验) | 图片验证码校验     |
-| [put_app_verify_codes](#短信验证码校验)  | 短信验证码校验     |
+| [post_app_verify_codes](#校验图片验证码) | 校验图片验证码     |
+| [put_app_verify_codes](#校验短信验证码)  | 校验短信验证码     |
 
-* [消息中心](http://swagger.gizwits.com/doc/index/openapi_apps#/消息中心)：用户查看消息、标记已读和删除系统消息等功能
+* [消息中心](#消息中心)：用户查看消息、标记已读和删除系统消息等功能
 
 | API列表                                  | 描述               |
 | ---------------------------------------- | ------------------ |
 | [get_app_messages](#查询消息列表)    | 查询消息列表       |
-| [put_app_messages](#标记消息已读、删除) | 标记消息已读、删除 |
+| [put_app_messages](#标记消息已读和删除) | 标记消息已读和删除 |
 
 
-* [绑定管理](http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理)：用户与设备的绑定、解绑等功能
+* [绑定管理](#绑定管理)：用户与设备的绑定、解绑等功能
 
 | API列表                                       | 描述                 |
 | --------------------------------------------- | -------------------- |
-| [post_app_bind_mac](#根据 MAC 绑定设备)       | 根据 MAC 绑定设备    |
-| [delete_app_bindings](#解除绑定)              | 解除绑定             |
+| [post_app_bind_mac](#通过-MAC-地址绑定设备)       | 通过 MAC 地址绑定设备    |
+| [delete_app_bindings](#解除设备)              | 解除设备             |
 | [get_app_bindings](#获取绑定列表)             | 获取绑定列表         |
-| [post_app_bind_latest](#通过 QRCode 绑定设备) | 通过 QRCode 绑定设备 |
+| [post_app_bind_latest](#通过二维码绑定设备) | 通过二维码绑定设备 |
 | [put_app_bindings_did](#修改绑定信息)         | 修改绑定信息         |
-| [get_app_did_bindings](#解绑 Guest 用户 )     | 解绑 Guest 用户      |
+| [get_app_did_bindings](#解绑-Guest-用户 )     | 解绑 Guest 用户      |
 
-* [设备远程监控](http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控):获取设备的当前状态、设备上报的原始数据、设备的上下线记录、设备的远程控制等功能
+* [设备远程监控](#设备远程监控):获取设备的当前状态、设备上报的原始数据、设备的上下线记录、设备的远程控制等功能
 
-| API列表                                                                      | 描述                                        |
-| ---------------------------------------------------------------------------- | ------------------------------------------- |
-| [get_app_devdata_did_latest](#获取设备最新状态)                              | 获取设备最新状态                            |
-| [get_app_datapoint](#获取产品数据点定义)                                     | 获取产品数据点定义                          |
-| [get_app_devices_did](#获取设备详情)                                         | 获取设备详情                                |
-| [get_app_devices_did_raw_data](#获取设备在指定时间段内的通信日志,上下线记录) | 获取设备在指定时间段内的通信日志,上下线记录 |
-| [post_app_control_did](#远程控制设备)                                        | 远程控制设备                                |
+| API列表                                                         | 描述                           |
+| --------------------------------------------------------------- | ------------------------------ |
+| [get_app_devdata_did_latest](#获取设备最新状态)                 | 获取设备最新状态               |
+| [get_app_datapoint](#获取产品数据点定义)                        | 获取产品数据点定义             |
+| [get_app_devices_did](#获取设备详情)                            | 获取设备详情                   |
+| [get_app_devices_did_raw_data](#获取设备的通信日志和上下线记录) | 获取设备的通信日志和上下线记录 |
+| [post_app_control_did](#远程控制设备)                           | 远程控制设备                   |
+
+* [设备分享](#设备分享):比如用户把自己的绑定设备分享给其他用户，解绑其他用户对自己设备的绑定等
+
+| API列表                                          | 描述               |
+| ------------------------------------------------ | ------------------ |
+| [get_app_sharing](#查询分享邀请)                 | 查询分享邀请       |
+| [post_app_sharing](#创建分享邀请)                | 创建分享邀请       |
+| [delete_app_sharing_id](#取消-收回分享)          | 取消/收回分享      |
+| [put_app_sharing_id](#接受/拒绝分享)             | 接受/拒绝分享      |
+| [get_app_sharing_code](#获取二维码分享信息)      | 获取二维码分享信息 |
+| [post_app_sharing_code](#接受二维码分享邀请)     | 接受二维码分享邀请 |
+| [put_app_sharing_idalias](#修改用户备注信息)     | 修改用户备注信息   |
+| [post_app_sharing_did_transfer](#owner-权限转移) | owner 权限转移     |
+
+* [设备分组](#设备分组):对多个设备进行分组，发送一次指令就能控制分组下的多个设备
+
+| API列表                                                  | 描述                       |
+| -------------------------------------------------------- | -------------------------- |
+| [get_app_group](#查询用户所有的分组)                     | 查询用户所有的分组         |
+| [post_app_group](#创建分组)                              | 创建分组                   |
+| [delete_app_group_id](#删除设备分组)                     | 删除设备分组               |
+| [put_app_group_id](#修改分组信息)                        | 修改分组信息               |
+| [get_app_group_id_devices](#查询分组的设备信息)          | 查询分组的设备信息         |
+| [post_app_group_id_devices](#将设备列表添加到分组)       | 将设备列表添加到分组       |
+| [delete_app_group_id_devices](#将设备列表从分组移除)     | 将设备列表从分组移除       |
+| [post_app_group_id_control](#对设备分组内的设备统一控制) | 对设备分组内的设备统一控制 |
 
 
-GET /app/devdata/{did}/latest 获取设备最新状态
-GET /app/datapoint 获取产品数据点定义
-GET /app/devices/{did} 获取设备详情
-GET /app/devices/{did}/raw_data 获取设备在指定时间段内的通信日志,上下线记录
-POST /app/control/{did} 远程控制设备
 
-* [设备分组](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组):对多个设备进行分组，发送一次指令就能控制分组下的多个设备
-* [设备联动](http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动):通过创建设备间联动规则，当设备触发规则后，联动控制其他设备。
-* [设备分享](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享):比如用户把自己的绑定设备分享给其他用户，解绑其他用户对自己设备的绑定等
-* [定时任务](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理):设备定时任务的增删改查等
-* [通用定时任务](http://swagger.gizwits.com/doc/index/openapi_apps#/通用定时任务):可对单个设备、设备分组和场景设置定时任务。
-* [高级数据接口](http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口):比如对设备上报的数据按天取最大值、平均值等
-* [系统信息](http://swagger.gizwits.com/doc/index/openapi_apps#/系统信息):比如查看当前 Open API 版本，获取所有可能的错误列表等
+* [设备联动](#设备联动):通过创建设备间联动规则，当设备触发规则后，联动控制其他设备。
+
+| API列表                                   | 描述             |
+| ----------------------------------------- | ---------------- |
+| [get_app_rules_params](#查询规则可用变量) | 查询规则可用变量 |
+| [get_app_rules](#查询联动规则列表)        | 查询联动规则列表 |
+| [post_app_rules](#创建联动规则)           | 创建联动规则     |
+| [delete_app_rules](#删除联动规则)         | 删除联动规则     |
+| [put_app_rules](#修改联动规则)            | 修改联动规则     |
+
+
+
+
+* [用户场景](#用户场景):用户可通过场景功能预设的一系列设备动作并在需要时触发。
+
+* [定时任务管理](#定时任务管理):设备定时任务的增删改查等
+* [通用定时任务](#通用定时任务):可对单个设备、设备分组和场景设置定时任务。
+* [高级数据接口](#高级数据接口):比如对设备上报的数据按天取最大值、平均值等
+* [系统信息](#系统信息):比如查看当前 Open API 版本，获取所有可能的错误列表等
 
 | API列表                   | 描述             |
 | ------------------------- | ---------------- |
 | [get_status](#get_status) | 查询服务状态信息 |
 | [get_errors](#get_errors) | 错误状态码列表   |
 
-* [用户场景](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景):用户可通过场景功能预设的一系列设备动作并在需要时触发。
 
 
 # 协议约定
@@ -313,7 +345,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 
 |   参数    |  类型  |   描述   |
 |:--------- |:------ |:-------- |
-| updatedAt | string | 修改时间UTC |
+| updatedAt | string | 修改时间(UTC时间) |
 
 
 返回例子
@@ -428,7 +460,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 
 
 
-## <span id = "post_app_sms_code">获取及校验短信验证码</span>
+## <span id = "post_app_sms_code">验证码的获取和校验</span>
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_sms_code)
 
 短信验证码的主要用途有：
@@ -557,7 +589,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 
 # 消息中心
 
-## <span id = "post_app_users">获取消息列表</span>
+## <span id = "post_app_users">查询消息列表</span>
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/消息中心/get_app_messages)
 
@@ -647,6 +679,19 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 
 
 # 绑定管理
+
+当设备与用户之间绑定后，设备与用户之间就会存在对应的“绑定角色”关系。
+
+绑定角色分为4种类，首绑用户: special ；拥有者: owner ；访客: guest ；普通用户: normal
+
+#### 角色场景说明：
+* 当设备没有分享过且设备没有任何用户绑定过。A用户绑定该设备，A用户成为 special ， B用户再绑定该设备，B用户成为normal 。
+* 设当前A用户为 special ，B用户为 normal 。当A用户解除绑定，B用户成为 special ，A用户与该设备之间没有“绑定角色”关系。
+* 设当前A用户为 special ，B用户为 normal 。产品开启了[设备分享](#设备分享)，A用户将设备分享给C用户，无论C用户是否接受，A用户成为 owner，B用户变成 guest。
+* 当开启分享功能且设备没有任何用户绑定。A用户绑定该设备，A用户成为 owner ，其他用户无法再绑定该设备。
+* 设当前A用户为 owner ，C用户未绑定过该设备 。A用户将设备分享给C用户，且C用户接受分享。A用户成仍是 owner，C用户为 guest。
+* 设当前A用户为 owner ，B用户为 guest 。A用户将设备解除绑定，A用户和B用户与该设备之间没有“绑定角色”关系。
+* 除 owner 用户，其他用户无法分享设备，一个设备只有一个owner
 
 ## 绑定设备
 
@@ -972,7 +1017,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 | username   | string | 账号username,中间4个字母*替代 |
 | phone      | string | 账号phone,中间4个数字*替代    |
 | created_at | string | Guest 用户接受分享的时间（UTC时间）  |
-| uid        | string | guest用户的UID                |
+| uid        | string | Guest用户的UID                |
 | email      | string | 账号email,@前面4个字符*替代   |
 
 返回例子
@@ -1386,31 +1431,21 @@ objects:
 }
 ```
 
-
-
-
-
-
-
-
-
-
-
 ## 远程控制设备
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/post_app_control_did)
 
 通过云端对设备进行控制
 
-原始指令(raw):
+#### 原始指令(raw):
 发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
 ```json
 {
-"raw": [1, 2, 3]
+  "raw": [1, 2, 3]
 }
 ```
 
-数据点方式(attrs):
+#### 数据点方式(attrs):
 设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度：
 ```json
 {
@@ -1442,47 +1477,708 @@ objects:
 
     无
 
-
-
-
-
-
-
-
 # 设备分享
 
-第一个绑定设备的用户对设备具有控制权，称为设备 Owner，Owner 可以将设备分享给其他设备。被分享的用户称为 Guest。
+开启设备分享功能后，[“绑定角色”](#绑定管理)就会有 Owner 和 Guest。
 
-Owner 分享设备之后，可以随时取消分享，或者解绑 Guest 对设备的绑定。
-
-Guest 也可以主动解绑设备。
-
-设备分享的主要有两种方式：
-
+#### 设备分享的主要有两种方式：
 - 普通设备分享
 - 通过二维码分享设备
 
-## 普通设备分享
+#### 分享使用场景
+#### 普通设备分享
+- Owner 选择一个要分享的设备，调用[创建分享邀请](#创建分享邀请)接口创建分享邀请
+- Owner 和 Guest 都将收到一条设备分享消息
+- 被分享的用户调用[查询分享邀请](#查询分享列表)接口，查询分享给自己的邀请
+- 被分享的用户调用[接受分享邀请](#接受/拒绝分享)接口接受邀请，被分享的用户成为 Guest
+- Owner 和 Guest 都将收到一条设备接受分享消息
 
-- Owner 选择一个要分享的设备，调用[创建分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing)接口创建分享邀请
-- Guest 将会收到一条设备分享消息
-- Guest 调用[查询分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing)接口，查询分享给自己的邀请
-- Guest 调用[接受分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/put_app_sharing_id)接口接受邀请
+#### 通过二维码分享设备
+- Owner 选择一个要分享的设备，调用[创建分享邀请](#创建分享邀请)接口创建分享邀请
+- 接口返回字段中的 qr_content 生成二维码信息，Owner 将二维码图片展示给需要分享的用户
+- 用户扫描二维码，获取邀请码，调用[查询二维码分享信息](#查询二维码分享信息)接口，查看分享内容
+- 再调用[接受二维码分享邀请](#接受二维码分享邀请)接口，接受分享邀请，被分享的用户成为 Guest
 - Owner 和 Guest 都将收到一条设备分享消息
 
-## 通过二维码分享设备
+#### 取消设备分享
+- Owner 调用[取消/收回分享](#取消/收回分享)接口，取消分享出去的邀请取消，及收回已经接受的邀请
+- Guest 用户若还没有接受，Owner 将收到一条设备取消分享消息
+- Guest 用户对设备的绑定被取消，同时，Owner 和 Guest 都将收到一条设备取消分享消息
 
-- Owner 选择一个要分享的设备，调用[创建分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing)接口创建分享邀请
-- 接口返回字段中的 qr_url 表示二维码图片的链接，二维码包含邀请码内容，Owner 将二维码图片展示给 Guest
-- Guest 扫描二维码，获取邀请码，调用[根据邀请码查询分享邀请接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing_code_code)接口，查看分享内容
-- Guest 调用[扫码接受分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing_code_code)接口，接受分享邀请
-- Owner 和 Guest 都将收到一条设备分享消息
+#### Owner 权限转移
+- Owner 调用[权限转移](#Owner 权限转移)接口，填写需要转移的设备和需要成为owner用户的ID
+- 原 Owner 用户解绑设备，原 Guest 用户成为新的 Owner
 
-## Owner 取消设备分享
 
-- Owner 调用[查询分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing)接口，查询分享出去的邀请
-- Owner 选择一个要取消的分享邀请，调用[取消分享邀请](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/delete_app_sharing_id)接口，取消分享
-- Guest 用户对设备的绑定被取消，同时，Owner 和 Guest 都将收到一条设备分享消息
+## 创建分享邀请
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing)
+
+此接口只有设备主账号可以调用
+
+* 如果 type 为普通分享，uid/username/email/phone 四选一，为是被分享者的用户信息；
+* 如果 type 为二维码分享，uid、username、email、phone 设置为空，若设置不会生效；
+* 普通分享24小时过期，二维码分享15分钟过期；
+* 针对二维码分享，客户端收到返回的二维码内容之后，本地生成二维码图片；
+
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/sharing
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                                                              |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------------------------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                                                             |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                                                         |
+| type                     | integer |  是  | body     | 分享类型，0：普通分享，1：二维码分享                                               |
+| did                      | string  |  否  | body     | 设备ID                                                                                            |
+| uid                      | string  |  否  | body     | 普通分享类型，被分享的用户ID                                                                      |
+| username                 | string  |  否  | body     | 普通分享类型，被分享的用户名                                                                      |
+| email                    | string  |  否  | body     | 普通分享类型，被分享的用户邮箱地址                                                                |
+| phone                    | string  |  否  | body     | 普通分享类型，被分享的用户手机号码                                                                |
+| duration                 | integer |  否  | body     | 持续分享时间，guest 接受分享之后可使用设备的时长，单位：分钟。最小时长 1 分钟，最大时长 1440 分钟 |
+
+
+响应参数
+
+| 参数       | 类型    | 描述                               |
+| ---------- | ------- | ---------------------------------- |
+| id         | string  | 分享记录id，针对普通分享才有       |
+| qr_content | integer | 二维码图片内容，针对二维码分享才有 |
+
+
+返回例子
+
+```json
+{
+    "qr_content": "type=share&code=60a6cacabe4046f4aa25ac1f79d81a4f",
+    "id": null
+}
+```
+
+
+## 查询分享邀请
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing)
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/sharing?sharing_type={sharing_type}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                                       |
+|:------------------------ |:------- |:----:|:-------- |:-------------------------------------------------------------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                                      |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                                  |
+| sharing_type             | integer |  是  | query    | 分享类型，0：我分享的设备，1：分享给我的设备                               |
+| status                   | string  |  否  | query    | 分享状态，0：未接受分享，1：已接受分享，2：拒绝分享，3：取消分享 |
+| did                      | string  |  否  | query    | 指定的设备did，只有owner用户可查询指定did的分享信息                        |
+| limit                    | integer |  否  | query    | 返回的条数，默认20                                                                 |
+| skip                     | integer |  否  | query    | 跳过的条数，默认0                                                                 |
+
+
+响应参数
+
+| 参数         | 类型    | 描述                                                                |
+| ------------ | ------- | ------------------------------------------------------------------- |
+| total        | integer | 总条数                                                              |
+| limit        | integer | 返回的条数                                                          |
+| skip         | integer | 跳过的条数                                                          |
+| previous     | string  | 上一页的请求地址                                                    |
+| next         | string  | 下一页的请求地址                                                    |
+| id           | integer | 分享记录id                                                          |
+| type         | integer | 分享类型，0：普通分享，1：二维码分享                                |
+| uid          | string  | 用户ID                                                              |
+| username     | string  | 用户名,中间4个字母*替代                                             |
+| user_alias   | string  | 用户别名                                                            |
+| email        | string  | 用户邮箱地址,@前面4个字符*替代                                      |
+| phone        | string  | 用户手机号码,中间4个数字*替代                                       |
+| did          | string  | 设备id                                                              |
+| product_name | string  | 产品名称                                                            |
+| dev_alias    | string  | 设备别名                                                            |
+| status       | integer | 当前分享状态 0：未接受分享，1：已接受分享，2：拒绝分享，3：取消分享 |
+| created_at   | string  | 创建分享时间 （UTC时间）                                            |
+| updated_at   | string  | 分享状态更新时间 （UTC时间）                                        |
+| expired_at   | string  | 分享超时时间 （UTC时间）                                            |
+
+注：
+* 若 sharing_type 为 0，表示以 Owner 身份查询自己发出的分享邀请，返回结果中用户信息为 Guest 的信息
+* 若 sharing_type 为 1，表示以 Guest 身份查询收到的分享邀请，返回结果中的用户信息为 Owner 的信息
+
+返回例子
+
+```json
+{
+  "meta": {
+    "previous": null,
+    "skip": 0,
+    "total": 1,
+    "limit": 20,
+    "next": null
+  },
+  "objects": [
+    {
+      "status": 0,
+      "username": "G****s",
+      "uid": "f082f4e235974cfeb6a1b2346024f47e",
+      "did": "gKufzxZwYeyd3Skbsb6mza",
+      "created_at": "2017-07-21T09:46:56Z",
+      "updated_at": "2017-07-21T09:46:56Z",
+      "email": "G****s@gizwits.com",
+      "phone": null,
+      "dev_alias": "设备别名",
+      "id": 10411,
+      "user_alias": "gizwits",
+      "type": 0,
+      "product_name": "微信宠物屋",
+      "expired_at": "2017-07-22T09:46:56Z"
+    }
+  ]
+}
+```
+
+## 取消/收回分享
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/delete_app_sharing_id)
+
+二维码分享的设备无法收回
+
+请求地址及方式
+
+      DELETE
+      https://api.gizwits.com/app/sharing/{id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述       |
+|:------------------------ |:------- |:----:|:-------- |:---------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid      |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token  |
+| id                       | integer |  是  | path         | 分享记录id |
+
+
+响应参数
+
+| 参数 | 类型    | 描述       |
+| ---- | ------- | ---------- |
+| id   | integer | 分享记录id |
+
+
+返回例子
+
+```json
+{
+    "id": 10471
+}
+```
+
+## 接受/拒绝分享
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/put_app_sharing_id)
+
+二维码分享的设备无法收回
+
+请求地址及方式
+
+      PUT
+      https://api.gizwits.com/app/sharing/{id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                    |
+|:------------------------ |:------- |:----:|:-------- |:--------------------------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                   |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                               |
+| id                       | integer |  是  | path     | 分享记录id                              |
+| status                   | integer |  是  | query    | 接受/拒绝分享，1：接受分享，2：拒绝分享 |
+
+
+响应参数
+
+| 参数 | 类型    | 描述       |
+| ---- | ------- | ---------- |
+| id   | integer | 分享记录id |
+
+
+返回例子
+
+```json
+{
+    "id": 10471
+}
+```
+
+## 获取二维码分享信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/get_app_sharing)
+
+设备拥有者 owner 无法使用此接口
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/sharing/code/{code}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                   |
+|:------------------------ |:------- |:----:|:-------- |:---------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                  |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token              |
+| code                     | integer |  是  | path     | 二维码分享的qr_content |
+
+
+响应参数
+
+| 参数         | 类型   | 描述                                   |
+| ------------ | ------ | -------------------------------------- |
+| owner        | string | 设备拥有者信息，手机号/邮箱/用户名/uid |
+| product_name | string | 产品名称                               |
+| dev_alias    | string | 设备别名                               |
+| expired_at   | string | 分享超时时间（UTC时间）                |
+
+
+返回例子
+
+```json
+{
+  "owner": "G****s",
+  "product_name": "微信宠物屋",
+  "dev_alias": "设备别名",
+  "expired_at": "2017-08-21T12:22:58Z"
+}
+```
+
+
+## 接受二维码分享邀请
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing_code_code)
+
+设备拥有者 owner 无法使用此接口
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/sharing/code/{code}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                   |
+|:------------------------ |:------- |:----:|:-------- |:---------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                  |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token              |
+| code                     | integer |  是  | path     | 二维码分享的qr_content |
+
+
+响应参数
+
+    无
+
+
+
+## 修改用户备注信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/put_app_sharing_id_alias)
+
+
+请求地址及方式
+
+      PUT
+      https://api.gizwits.com/app/sharing/{id}/alias?user_alias={user_alias}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述       |
+|:------------------------ |:------- |:----:|:-------- |:---------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid      |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token  |
+| id                       | integer |  是  | path     | 分享记录id |
+| user_alias               | string  |  是  | query    |            |
+
+
+响应参数
+
+    无
+
+
+## owner 权限转移
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分享/post_app_sharing_did_transfer)
+
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/sharing/1/transfer?uid=1
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述                  |
+|:------------------------ |:------ |:----:|:-------- |:--------------------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid                 |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token             |
+| did                      | string |  是  |          | 设备ID                |
+| uid                      | string |  是  | query    | 需要成为owner用户的ID |
+
+
+响应参数
+
+    无
+
+
+
+
+# 设备分组
+
+#### 设备分组常用场景：
+1、将多个设备归类到某一个物理空间，如：房间、客厅。方便管理
+* 首先调用[创建分组](#创建分组)接口创建分组，输入分组名称
+* 创建成功后对分组内的设备进行批量添加/删除，调用[将设备列表添加到分组](#将设备列表添加到分组)接口和[将设备列表从分组移除](#将设备列表从分组移除)接口
+* 通过[查询分组的设备信息](#查询分组的设备信息)接口可以查看分组下的全部设备
+
+2、对相同产品的多个设备进行统一控制，如：走廊的全部灯开关
+* 首先调用[创建分组](#创建分组)接口创建分组，输入分组名称和产品PK
+* 创建成功后对分组内的设备进行批量添加/删除，调用[将设备列表添加到分组](#将设备列表添加到分组)接口和[将设备列表从分组移除](#将设备列表从分组移除)接口
+* 通过[对设备分组内的设备统一控制](#对设备分组内的设备统一控制)接口对设备发送统一的控制指令，从而进行对设备的批量控制
+
+
+
+## 查询用户所有的分组
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/get_app_group)
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/group
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                   |
+|:------------------------ |:------- |:----:|:-------- |:---------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                  |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token              |
+
+响应参数
+
+| 参数         | 类型   | 描述                                 |
+| ------------ | ------ | ------------------------------------ |
+| created_at   | string | 设备分组创建时间（UTC 时间）         |
+| updated_at   | string | 设备分组更新时间（UTC 时间）         |
+| product_key  | string | 产品 product_key，单PK的分组才会有值 |
+| group_name   | string | 设备分组名称                         |
+| verbose_name | string | 产品名称，单PK的分组才会有值         |
+| id           | string | 设备分组 id                          |
+
+返回例子
+
+```json
+[
+  {
+    "created_at": "2017-09-22T09:57:44Z",
+    "updated_at": "2017-09-22T09:57:44Z",
+    "product_key": "4214b12d79694a259232431b6f2ef46a",
+    "group_name": "分组名称1",
+    "verbose_name": "微信宠物屋",
+    "id": "59c4de98dc348f001a08feba"
+  },
+  {
+    "created_at": "2017-09-22T09:58:18Z",
+    "updated_at": "2017-09-22T09:58:18Z",
+    "product_key": "",
+    "group_name": "分组名称2",
+    "verbose_name": "",
+    "id": "59c4deba8c7d50001ba06df3"
+  }
+]
+```
+
+## 创建分组
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/post_app_group)
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/group
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述                               |
+|:------------------------ |:------ |:----:|:-------- |:---------------------------------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid                              |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token                          |
+| product_key              | string |  否  | body     | 产品PK，对单个pk分组需要输入此参数 |
+| group_name               | string |  是  | body     | 设备分组名称                       |
+
+响应参数
+
+| 参数 | 类型   | 描述        |
+| ---- | ------ | ----------- |
+| id   | string | 设备分组 id |
+
+返回例子
+
+```json
+{
+  "id": "59c4deba8c7d50001ba06df3"
+}
+```
+
+## 删除设备分组
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/delete_app_group_id)
+
+请求地址及方式
+
+      DELETE
+      https://api.gizwits.com/app/group/{id}
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述        |
+|:------------------------ |:------ |:----:|:-------- |:----------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid       |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token   |
+| id                       | string |  是  | path     | 设备分组 id |
+
+响应参数
+
+    无
+
+## 修改分组信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/delete_app_group_id)
+
+请求地址及方式
+
+      PUT
+      https://api.gizwits.com/app/group/{id}
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述         |
+|:------------------------ |:------ |:----:|:-------- |:------------ |
+| X-Gizwits-Application-Id | string |  是  | header   | appid        |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token    |
+| id                       | string |  是  | path     | 设备分组 id  |
+| group_name               | string |  是  | body     | 设备分组名称 |
+
+响应参数
+
+    无
+
+
+
+## 查询分组的设备信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/get_app_group_id_devices)
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/group/{id}/devices
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述        |
+|:------------------------ |:------ |:----:|:-------- |:----------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid       |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token   |
+| id                       | string |  是  | path     | 设备分组 ID |
+
+
+响应参数
+
+| 参数         | 类型   | 描述                                                                       |
+| ------------ | ------ | -------------------------------------------------------------------------- |
+| did          | string | 该分组下的设备ID                                                           |
+| type         | string | 设备类型：普通设备：noramal；中控设备：center_control；中控子设备：sub_dev |
+| verbose_name | string | 产品名称，单PK的分组才会有值                                               |
+| dev_alias    | string | 设备别名                                                                   |
+| product_key  | string | 产品 product_key，单PK的分组才会有值                                       |
+
+返回例子
+
+```json
+[
+  {
+    "did": "WCWGkbS4Ttynzwx9brzpEa",
+    "type": "normal",
+    "verbose_name": "微信宠物屋",
+    "dev_alias": "设备别名",
+    "product_key": "4234bf2d79694a259232431b6f2ef46a"
+  }
+]
+```
+
+
+## 将设备列表添加到分组
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/post_app_group)
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/group/{id}/devices?show_detail={show_detail}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                                                         |
+|:------------------------ |:------- |:----:|:-------- |:-------------------------------------------------------------------------------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                                                        |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                                                    |
+| id                       | string  |  是  | path     | 设备分组 ID                                                                                  |
+| show_detail              | integer |  否  | query    | 返回错误信息，1：添加失败的did返回详细错误信息，0(默认值)：添加失败的did，不返回详细错误信息 |
+| dids                     | Array   |  是  | body     | 需要添加到分组的设备ID数组                                                                     |
+
+
+响应参数
+
+| 参数          | 类型    | 描述                                           |
+| ------------- | ------- | ---------------------------------------------- |
+| failed        | Array   | 添加成功的设备ID 数组                          |
+| detail        | Array   | 添加失败原因，show_detail为1时候才会返回此信息 |
+| success       | Array   | 添加失败的设备ID 数组                          |
+| did           | string  | 添加的失败的设备ID                             |
+| error_message | string  | 失败错误信息                                   |
+| error_code    | integer | 失败错误码                                     |
+| detail_msg    | string  | 详细错误信息                                   |
+
+返回例子
+
+```json
+{
+  "failed": [
+      "WCWGkbS4Ttynz123czpEa"
+    ],
+  "detail": [
+      {
+        "did": "WCWGkbS123cynzwxrzpEa",
+        "error_message": "device not found!",
+        "error_code": 9014,
+        "detail_msg": null
+      }
+    ],
+  "success": [
+    "XD3GkbS21tynzwx9brzpEa"
+  ]
+}
+```
+
+
+
+## 将设备列表从分组移除
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/delete_app_group_id_devices)
+
+请求地址及方式
+
+      DELETE
+      https://api.gizwits.com/app/group/{id}/devices
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述                     |
+|:------------------------ |:------ |:----:|:-------- |:------------------------ |
+| X-Gizwits-Application-Id | string |  是  | header   | appid                    |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token                |
+| id                       | string |  是  | path     | 设备分组 ID              |
+| dids                     | Array  |  是  | body     | 需要移出分组的设备ID数组 |
+
+
+响应参数
+
+| 参数    | 类型   | 描述                  |
+| ------- | ------ | --------------------- |
+| failed  | Array  | 添加成功的设备ID 数组 |
+| success | Array  | 添加失败的设备ID 数组 |
+| did     | string | 添加的失败的设备ID    |
+
+返回例子
+
+```json
+{
+  "failed": [],
+  "success": [
+    "WCWGkb234tynzwx9brzpEa"
+  ]
+}
+```
+
+
+## 对设备分组内的设备统一控制
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备分组/post_app_group_id_control)
+
+通过云端对分组内的所有设备进行控制，该接口只能统一控制单PK分组的设备。
+
+#### 原始指令(raw):
+发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+```json
+{
+  "raw": [1, 2, 3]
+}
+```
+
+#### 数据点方式(attrs):
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度：
+```json
+{
+  "attrs": {
+    "binary": "1234567000"
+  }
+}
+```
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/group/{id}/control
+
+请求参数
+
+| 参数                     | 类型           | 必填 | 参数类型 | 描述        |
+|:------------------------ |:-------------- |:----:|:-------- |:----------- |
+| X-Gizwits-Application-Id | string         |  是  | header   | appid       |
+| X-Gizwits-User-token     | string         |  是  | header   | 用户token   |
+| id                       | string         |  是  | path     | 设备分组 ID |
+| raw                      | Array[integer] |  否  | body     |             |
+| attrs                    | object         |  否  | body     |             |
+
+响应参数
+
+| 参数   | 类型    | 描述                                  |
+| ------ | ------- | ------------------------------------- |
+| did    | string  | 分组下的设备ID                        |
+| result | boolean | 是否控制成功，true：成功；false：失败 |
+
+返回例子
+
+```json
+[
+  {
+    "did": "WCWGkbS4Tty123x9brzpEa",
+    "result": true
+  },
+  {
+    "did": "gKufzxZw43dd3Skbsb6mzz",
+    "result": false
+  }
+]
+```
+
+
+
+
+
+
+
+
 
 # 设备联动
 
