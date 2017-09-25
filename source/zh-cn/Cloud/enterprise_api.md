@@ -819,7 +819,8 @@ ChangeLog
 
 
 # 用户报表
-##<span id = "get_v1_products_product_key_users_report_new">用户新增报表</span>
+
+## <span id = "get_v1_products_product_key_users_report_new">用户新增报表</span>
 
 实现备注：
 这里指的是绑定了该 PK 下产品的新增用户
@@ -827,6 +828,7 @@ ChangeLog
 * cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
 * cycle 为 week 时，start,end的格式是年-周，example:2016-51
 * cycle 为 month 时，start,end的格式为年-月，example:2016-12
+
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new)
 
 
