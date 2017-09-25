@@ -619,7 +619,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online)
 
-* ChangeLog
+ChangeLog
 * 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
 * 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
 * 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
