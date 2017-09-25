@@ -1327,6 +1327,59 @@ ChangeLog
 }
 ```
 
+## <span id = "get_v1_products_product_key_devices_report_rt">设备实时统计报表</span>
+实现备注
+* 获取设备实时统计报表
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_report_rt)
+
+
+请求类型及地址
+
+      GET  
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/report/devices/report/rt
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+| product_key				| string |  是  | path   | 产品标识码  |
+| gid          | string |  否  | query     | 设备组 id |
+
+
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| gid        | string | 设备组 id                   |
+| activated     | integer | 激活数  |
+| faulty        | integer | 故障数        |
+| end    | integer  | 报警数           |
+
+             
+
+返回例子
+```json
+{
+  "gid": "string",
+  "count": {
+    "activated": 0,
+    "faulty": 0,
+    "alert": 0
+  },
+  "location": {
+    "China": {
+      "count": {
+        "activated": 0,
+        "faulty": 0,
+        "alert": 0
+      }
+    }
+  }
+
+```
 
 
 ## <span id = "get_v1_products_product_key_fault_report_devices">获取故障设备台数报表</span>
