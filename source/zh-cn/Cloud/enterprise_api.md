@@ -152,11 +152,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key	| string |  是  | path   | 产品标识符     |
-| enterprise_id  | string |  是  | body  | 企业id |      
-| enterprise_secret    | string |  是 | 企业id 密码   |  
-| product_secret       | string |  是 | body    | 	 
-
+| product_key				| string |  是  | path   | 产品标识符     |
+| enterprise_id  			| string |  是  | body  | 企业id |      
+| enterprise_secret   		 | string |  是 |  body  |  企业id 密码 |  
+| product_secret       		| string |  是 | body    | 	 产品密匙 |  
 
 
 响应参数
