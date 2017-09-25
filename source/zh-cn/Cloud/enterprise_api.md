@@ -433,7 +433,6 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```json
 {
   "did": "string",
-  "passcode": "string"
 }
 ```
 
