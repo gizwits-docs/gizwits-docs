@@ -181,7 +181,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_search">搜索注册用户</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是注册用户信息
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户管理/get_v1_users_search)
@@ -264,9 +264,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_users_search">搜索绑定用户</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是绑定用户信息
-*说明：只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限
+* 说明：只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户管理/get_v1_products_product_key_users_search)
 
@@ -565,12 +565,12 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "post_v1_products_product_key_devices_did_control">远程控制</span>
 
 远程控制设备可以通过两种方式
-*原始指令: raw
+* 原始指令: raw
 二进制转 byte 数组，如要发送 010203，就是
 {
 "raw": [1, 2, 3]
 }
-*数据点方式: attrs
+* 数据点方式: attrs
 设备产品必须定义了数据点，比如要设置温度 temp 为 30 度
 {
 "attrs": {
@@ -619,10 +619,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online)
 
-*ChangeLog
-*0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-*0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-*0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+* ChangeLog
+* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -687,12 +687,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd)
 
-*按 ts 降序排序。
-*payload 为二进制进行 base64 编码后的结果。
-*ChangeLog
-*0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-*0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-*0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+ChangeLog
+* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -755,10 +753,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data)
 
-*ChangeLog
-*0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-*0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-*0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+ChangeLog
+* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -826,9 +824,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 实现备注：
 这里指的是绑定了该 PK 下产品的新增用户
 日期查询说明：
-*cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
-*cycle 为 week 时，start,end的格式是年-周，example:2016-51
-*cycle 为 month 时，start,end的格式为年-月，example:2016-12
+* cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
+* cycle 为 week 时，start,end的格式是年-周，example:2016-51
+* cycle 为 month 时，start,end的格式为年-月，example:2016-12
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new)
 
 
@@ -883,7 +881,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_liveness_total">企业活跃用户人数</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是企业活跃用户人数
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total)
@@ -931,7 +929,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_location">用户地理分布</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是企业用户地理分布
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location)
@@ -979,7 +977,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_users_report_total">用户总数报表</span>
 
 
-*实现备注
+* 实现备注
 查询用户空间表，获取曾经绑定过该 pk 设备的用户总数
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total)
@@ -1021,7 +1019,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_devices_locations">获取设备地理位置分布</span>
 
 
-*实现备注
+* 实现备注
 获取设备地理位置分布报表
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations)
@@ -1065,7 +1063,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_summary">设备概览</span>
 
 
-*实现备注
+* 实现备注
 获取最近的激活和活跃设备数报表
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations)
@@ -1118,10 +1116,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_incr_devices">设备激活详情</span>
 
 实现备注
-*获取设备激活详情报表
+* 获取设备激活详情报表
 日期查询说明
-*start,end 的格式是年-月-日，example:2016-08-01,
-*注意：蓝牙设备响应返回的结果为device_sn字段
+* start,end 的格式是年-月-日，example:2016-08-01,
+* 注意：蓝牙设备响应返回的结果为device_sn字段
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_incr_devices)
 
@@ -1193,10 +1191,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_active_devices">设备活跃详情</span>
 
 实现备注
-*获取设备活跃详情报表
+* 获取设备活跃详情报表
 日期查询说明
-*start,end 的格式是年-月-日，example:2016-08-01,
-*注意：蓝牙设备响应返回的结果为device_sn字段
+* start,end 的格式是年-月-日，example:2016-08-01,
+* 注意：蓝牙设备响应返回的结果为device_sn字段
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_active_devices)
 
@@ -1269,13 +1267,13 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 实现备注
 活跃设备：一天之内有数据上报的设备
-*日报表最多查询 30 天。
-*周报表最多查询 53 周。
-*月报表最多查询 12 月。
+* 日报表最多查询 30 天。
+* 周报表最多查询 53 周。
+* 月报表最多查询 12 月。
 日期查询说明
-*cycle 为 date 时，start,end 的格式是年-月-日，example:2016-08-01,
-*cycle 为 week 时，start,end 的格式是年-周，example:2016-51
-*cycle 为 month 时，start,end 的格式为年-月，example:2016-12
+* cycle 为 date 时，start,end 的格式是年-月-日，example:2016-08-01,
+* cycle 为 week 时，start,end 的格式是年-周，example:2016-51
+* cycle 为 month 时，start,end 的格式为年-月，example:2016-12
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_report_liveness_history)
 
@@ -1332,7 +1330,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_fault_report_devices">获取故障设备台数报表</span>
 
 实现备注
-*获取故障设备台数报表
+* 获取故障设备台数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_devices)
@@ -1379,7 +1377,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_alert_report_devices">获取报警设备台数报表</span>
 
 实现备注
-*获取报警设备台数报表
+* 获取报警设备台数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_alert_report_devices)
@@ -1425,7 +1423,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_fault_report_events">获取故障次数报表</span>
 
 实现备注
-*获取故障次数报表
+* 获取故障次数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_events)
@@ -1475,7 +1473,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_fault_alert_events">获取报警次数报表</span>
 
 实现备注
-*获取报警次数报表
+* 获取报警次数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_alert_events)
