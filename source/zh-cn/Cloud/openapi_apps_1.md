@@ -2188,37 +2188,473 @@ objects:
 
 联动规则创建后，可以随时进行修改，或者删除。
 
+[点击查看详细使用教程](http://docs.gizwits.com/zh-cn/UserManual/LinkageAPI.html)
+
+
+## 查询规则可用变量
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动/get_app_rules_params)
+
+通过该接口可以查询appid所绑定的全部产品的数据点。
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/rules/params?product_key={product_key}
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述        |
+|:------------------------ |:------ |:----:|:-------- |:----------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid       |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token   |
+| product_key              | string |  是  | query     | 多个pk用“,”隔开，参数为空时默认选中与appid绑定的所有pk，填入与appid无绑定的pk时该pk无效 |
+
+
+响应参数
+
+| 参数         | 类型   | 描述                                                          |
+| ------------ | ------ | ------------------------------------------------------------- |
+| display_name | string | 数据点显示名称                                                |
+| enum         | Array  | 枚举值                                                        |
+| type         | string | 数据类型，数值型:int；布尔型:bool；枚举型:enum;扩展型：binary |
+| name         | string | 数据点名称                                                    |
+
+返回例子
+
+```json
+{
+  "4214b435f9694a259232431b6f2ef46a": [
+    {
+      "display_name": "开关",
+      "enum": [],
+      "type": "bool",
+      "name": "switch"
+    },
+    {
+      "display_name": "倒计时开机",
+      "enum": [],
+      "type": "int",
+      "name": "on_timing"
+    },
+    {
+      "display_name": "倒计时关机",
+      "enum": [],
+      "type": "int",
+      "name": "off_timing"
+    }
+  ]
+}
+```
+
+
+
+
+## 查询联动规则列表
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动/get_app_rules)
+
+通过该接口可以查询appid所绑定的全部产品的数据点。
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/rules?limit=20&skip=0
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                         |
+|:------------------------ |:------- |:----:|:-------- |:---------------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                        |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                    |
+| limit                    | integer |  否  | query    | 返回的结果条数               |
+| skip                     | integer |  否  | query    | 表示跳过的条数，间接表示页数 |
+
+响应参数
+
+| 参数           | 类型    | 描述                                                                     |
+| -------------- | ------- | ------------------------------------------------------------------------ |
+| remark         | string  | 联动规则备注                                                             |
+| name           | string  | 联动规则名称                                                             |
+| did            | string  | 设备ID                                                                   |
+| interval       | integer | 最小触发间隔(单位:秒)                                                    |
+| product_key    | string  | 产品PK                                                                   |
+| rule_id        | integer | 联动规则ID                                                               |
+| event          | string  | 触发方式                                                                 |
+| event_attr     | object  | 当触发方式为alert(报警)/fault(故障)，[RulesEventAttr]                    |
+| input          | Array   | 规则中需要用到的设备数据 [RulesInput]                                    |
+| condition      | Array   | 条件判断 [RulesCondition]                                                |
+| output         | Array   | 触发动作 [RulesOutput]                                                   |
+| RulesEventAttr | ——————  | ——————————————————————————————————————                                   |
+| attr_name      | string  | 发生这个报警/故障的数据点                                                |
+| value          | string  | 报警/故障的发生/取消, 1表示发生, 0表示取消                               |
+| RulesOutput    | ——————  | ——————————————————————————————————————                                   |
+| did            | string  | 被控制的设备id                                                           |
+| type           | string  | 触发类型，devctrl:控制设备；delay：延时                                  |
+| attrs          | object  | 数据点方式控制设备                                                       |
+| raw            | Array   | 原始指令控制设备                                                         |
+| delay          | integer | 延时时长, 单位:秒                                                        |
+| RulesInput     | ——————  | ——————————————————————————————————————                                   |
+| did            | string  | 规则数据的来源的设备id                                                   |
+| prefix         | string  | 用于在条件及输出中引用这个设备的数据点值的前缀                           |
+| product_key    | string  | 规则数据的来源的设备对应的产品PK                                         |
+| RulesCondition | ——————  | ——————————————————————————————————————                                   |
+| opt            | string  | 比较运算符, 可选值有: >, >=, <, <=, ==, != (注:只有数值类型才能比较大小) |
+| right          | string  | 右比较参数                                                               |
+| left           | string  | 左比较参数                                                               |
+
+
+
+返回例子
+
+
+```json
+{
+    "rules": [
+        {
+            "remark": "",
+            "name": "打开开关，三灯100值",
+            "did": "WCWGkbS4Ttynzwx9brzpEa",
+            "interval": 0,
+            "product_key": "4214bf2d123194a259232431b6f2ef46a",
+            "event": "data",
+            "output": [
+                [
+                    {
+                        "did": "WCWGk43ftynzwx9brzpEa",
+                        "type": "devctrl",
+                        "attrs": {
+                            "LED_R": 100,
+                            "LED_G": 100,
+                            "LED_B": 100
+                        }
+                    }
+                ],
+                [
+                    {
+                        "did": "WCWGk43ftynzwx9brzpEa",
+                        "type": "devctrl",
+                        "attrs": {
+                            "fan_swing": 1
+                        }
+                    }
+                ]
+            ],
+            "input": [
+                {
+                    "did": "WCWGk43ftynzwx9brzpEa",
+                    "prefix": "device1",
+                    "product_key": "4214bf2d123194a259232431b6f2ef46a"
+                },
+                {
+                    "did": "WCWGk43ftynzwx9brzpEa",
+                    "prefix": "device2",
+                    "product_key": "4214bf2d123194a259232431b6f2ef46a"
+                }
+            ],
+            "rule_id": 8826,
+            "condition": [
+                [
+                    {
+                        "opt": "==",
+                        "right": "1",
+                        "left": "device1.switch"
+                    }
+                ]
+            ]
+        }
+    ]
+}
+```
+
+
 ## 创建联动规则
 
-- 用户与参加联动的设备进行绑定
-- 用户调用[获取可用数据点信息](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules_params)接口查询可用的数据点标识名
-- 用户选择一个设备作为触发规则的设备，调用[创建设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/post_app_rules)接口创建联动规则
-- 当满足联动规则设定的条件时，规则中设定的触发动作便会被触发
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动/post_app_rules)
 
-## 查询联动规则
-- 用户调用[查询设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules)查询自己创建的联动规则
+### product_key与did:
 
-## 修改联动规则
-- 用户调用[查询设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules)查询自己创建的联动规则
-- 用户选择一个需要修改的规则id，调用[修改设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/put_app_rules_rule_id)接口修改联动规则
-- 当满足修改后的联动规则设定的条件时，规则中设定的触发动作便会被触发
+当触发方式为online/offline/alert/fault/data时, 产生这个触发方式的设备由该参数指定, 以下把指定的这个设备称为主设备
+
+### event参数
+表示该规则的触发方式,以下是可选值的意义:
+
+```
+online  - 设备上线
+offline - 设备下线
+alert   - 设备某个报警数据点发生报警
+fault   - 设备某个故障数据点发生故障
+data    - 设备上报状态
+```
+
+### event_attr参数
+表示当触发方式为alert(报警)/fault(故障)时, 发生这个报警/故障的数据点,以及报警/故障的发生/恢复,由该参数指定
+```
+"event_attr": {
+    "attr_name": "datapoint_alert",  //发生这个报警/故障的数据点
+    "value": "1" //报警/故障的发生/取消, 值为1时表示发生, 值为0时表示取消
+}
+```
+#### 注:
+* 这里提到的报警/故障的"发生"指的是－设备上一次上报的报警/故障数据点的值为0, 这一次上报的为1, 那么报警/故障发生
+* 这里提到的报警/故障的"恢复"指的是－设备上一次上报的报警/故障数据点的值为1, 这一次上报的为0, 那么报警/故障恢复
+* 其他情况均不属于"发生"和"恢复"
+
+
+### input参数
+指定规则中需要用到的设备数据,数组中每一个对象代表一个设备的数据,不需要使用设备数据时可忽略此参数:
+```
+[{
+    "product_key": "pk1", //设备所属Product key
+    "did": "did1",        //设备did
+    "prefix": "device1"   //用于在条件及输出中引用这个设备的数据点值的前缀, 如设置了这个参数为device1时,则device1.datapoint1表示引用这个设备的标识名为datapoint1的数据点
+}]
+```
+
+### condition参数
+指定触发规则需要满足的条件, 云端处理时将逐组检查数组内的条件, 任意一组条件满足时触发输出
+```
+[
+    [{
+        "left": "device1.datapoint1",//左比较参数, 参数的值类型需要和右比较参数一致
+        "opt": "==", //比较运算符, 可选值有: >, >=, <, <=, ==, != (注:只有数值类型才能比较大小)
+        "right": "1" //右比较参数, 参数的值类型需要和左比较参数一致,使用常数时注意,"1"代表数字1,"'1'"或"\"1\""才是字符串"1"
+    }],
+    [{// 每个数组表示一组条件，当这个组里的所有条件都满足时，这一组条件满足
+        "left": "device1.datapoint1",
+        "opt": "==",
+        "right": "1"
+    },{
+        "left": "device2.datapoint2",
+        "opt": ">",
+        "right": "25"
+    }]
+]
+```
+
+### output参数
+指定当条件满足时, 需要做的事情，可认为云端同时执行各组动作，各组之间互不影响
+
+#### 原始指令(raw):
+发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+```JSON
+{
+  "raw": [1, 2, 3]
+}
+```
+
+#### 数据点方式(attrs):
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度：
+
+```JSON
+{
+  "attrs": {
+    "binary": "1234567000"
+  }
+}
+```
+#### output参数示例：
+
+```
+[
+    [{ // 每个数组表示一组输出动作，按顺序执行，前面的动作执行失败时，后面不会执行
+        "type": "devctrl",   // output的类型, devctrl表示控制设备
+        "did": "did1",       // 指定被控制的设备的did
+        "attrs": {           // key-value形式
+            "datapoint1": 1, // 设置datapoint1值为1
+            "datapoint2": 25,
+            "datapoint3": "黄色"
+        }
+    },{
+        "type": "delay", // output的类型, delay表示延时
+        "delay": 5       // 延时时长, 单位:秒
+    },{
+        "type": "devctrl",
+        "did": "QxP6E9qFwwzsqKb2UYf4uw",
+        "raw": [1, 2, 3] // raw形式
+    }],
+    [{
+        "type": "devctrl",
+        "did": "QxP6E9qFwwzsqKb2UYf4uw",
+        "attrs": {
+            "datapoint1": 1,
+            "datapoint2": 25,
+            "datapoint3": "黄色"
+        }
+    }]
+]
+```
+
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/rules
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                                     |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                                    |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                                |
+| remark                   | string  |  否  | body     | 联动规则备注                                                             |
+| name                     | string  |  是  | body     | 联动规则名称                                                             |
+| did                      | string  |  是  | body     | 设备ID                                                                   |
+| interval                 | integer |  否  | body     | 最小触发间隔(单位:秒)                                                    |
+| product_key              | string  |  是  | body     | 产品PK                                                                   |
+| event                    | string  |  是  | body     | 触发方式                                                                 |
+| event_attr               | object  |  否  | body     | 当触发方式为alert(报警)/fault(故障)，[RulesEventAttr]                    |
+| input                    | Array   |  是  | body     | 规则中需要用到的设备数据 [RulesInput]                                    |
+| condition                | Array   |  是  | body     | 条件判断 [RulesCondition]                                                |
+| output                   | Array   |  是  | body     | 触发动作 [RulesOutput]                                                   |
+| RulesEventAttr           | ——————  |  否  | body     | ——————————————————————————————————————                                   |
+| attr_name                | string  |  否  | body     | 发生这个报警/故障的数据点                                                |
+| value                    | string  |  否  | body     | 报警/故障的发生/取消, 1表示发生, 0表示取消                               |
+| RulesOutput              | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| did                      | string  |  是  | body     | 被控制的设备id                                                           |
+| type                     | string  |  是  | body     | 触发类型，devctrl:控制设备；delay：延时                                  |
+| attrs                    | object  |  否  | body     | 数据点方式控制设备                                                       |
+| raw                      | Array   |  否  | body     | 原始指令控制设备                                                         |
+| delay                    | integer |  否  | body     | 延时时长, 单位:秒                                                        |
+| RulesInput               | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| did                      | string  |  是  | body     | 规则数据的来源的设备id                                                   |
+| prefix                   | string  |  是  | body     | 用于在条件及输出中引用这个设备的数据点值的前缀                           |
+| product_key              | string  |  是  | body     | 规则数据的来源的设备对应的产品PK                                         |
+| RulesCondition           | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| opt                      | string  |  是  | body     | 比较运算符, 可选值有: >, >=, <, <=, ==, != (注:只有数值类型才能比较大小) |
+| right                    | string  |  是  | body     | 右比较参数                                                               |
+| left                     | string  |  是  | body     | 左比较参数                                                               |
+
+
+响应参数
+
+| 参数   | 类型    | 描述                                  |
+| ------ | ------- | ------------------------------------- |
+| rule_id    | integer  | 联动规则ID                        |
+
+
+返回例子
+
+```json
+{
+  "rule_id": 1213
+}
+```
 
 ## 删除联动规则
-- 用户调用[查询设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/get_app_rules)查询自己创建的联动规则
-- 用户选择一个需要删除的规则id，调用[删除设备联动规则](http://swagger.gizwits.com/doc/index/openapi_apps#!/设备联动/delete_app_rules_rule_id)接口删除联动规则
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动/delete_app_rules_rule_id)
+
+请求地址及方式
+
+      DELETE
+      https://api.gizwits.com/app/rules/{rule_id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                 |
+|:------------------------ |:------- |:----:|:-------- |:-------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token            |
+| rule_id                  | integer |  是  | path     | 需要删除的联动规则ID |
+
+
+响应参数
+
+| 参数    | 类型    | 描述       |
+| ------- | ------- | ---------- |
+| rule_id | integer | 联动规则ID |
+
+
+返回例子
+
+```json
+{
+  "rule_id": 1234
+}
+```
+
+## 修改联动规则
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动/put_app_rules_rule_id)
+
+请求地址及方式
+
+      PUT
+      https://api.gizwits.com/app/rules/{rule_id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                                     |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                                    |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                                |
+| remark                   | string  |  否  | body     | 联动规则备注                                                             |
+| name                     | string  |  是  | body     | 联动规则名称                                                             |
+| did                      | string  |  是  | body     | 设备ID                                                                   |
+| interval                 | integer |  否  | body     | 最小触发间隔(单位:秒)                                                    |
+| product_key              | string  |  是  | body     | 产品PK                                                                   |
+| rule_id                  | integer |  是  | body     | 联动规则ID                                                               |
+| event                    | string  |  是  | body     | 触发方式                                                                 |
+| event_attr               | object  |  否  | body     | 当触发方式为alert(报警)/fault(故障)，[RulesEventAttr]                    |
+| input                    | Array   |  是  | body     | 规则中需要用到的设备数据 [RulesInput]                                    |
+| condition                | Array   |  是  | body     | 条件判断 [RulesCondition]                                                |
+| output                   | Array   |  是  | body     | 触发动作 [RulesOutput]                                                   |
+| RulesEventAttr           | ——————  |  否  | body     | ——————————————————————————————————————                                   |
+| attr_name                | string  |  否  | body     | 发生这个报警/故障的数据点                                                |
+| value                    | string  |  否  | body     | 报警/故障的发生/取消, 1表示发生, 0表示取消                               |
+| RulesOutput              | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| did                      | string  |  是  | body     | 被控制的设备id                                                           |
+| type                     | string  |  是  | body     | 触发类型，devctrl:控制设备；delay：延时                                  |
+| attrs                    | object  |  否  | body     | 数据点方式控制设备                                                       |
+| raw                      | Array   |  否  | body     | 原始指令控制设备                                                         |
+| delay                    | integer |  否  | body     | 延时时长, 单位:秒                                                        |
+| RulesInput               | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| did                      | string  |  是  | body     | 规则数据的来源的设备id                                                   |
+| prefix                   | string  |  是  | body     | 用于在条件及输出中引用这个设备的数据点值的前缀                           |
+| product_key              | string  |  是  | body     | 规则数据的来源的设备对应的产品PK                                         |
+| RulesCondition           | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| opt                      | string  |  是  | body     | 比较运算符, 可选值有: >, >=, <, <=, ==, != (注:只有数值类型才能比较大小) |
+| right                    | string  |  是  | body     | 右比较参数                                                               |
+| left                     | string  |  是  | body     | 左比较参数                                                               |
+
+
+响应参数
+
+| 参数    | 类型    | 描述       |
+| ------- | ------- | ---------- |
+| rule_id | integer | 联动规则ID |
+
+
+返回例子
+
+```json
+{
+  "rule_id": 1234
+}
+```
 
 
 
 
-| [get_app_rules_params](#查询规则可用变量) | 查询规则可用变量 |
-| ----------------------------------------- | ---------------- |
-| [get_app_rules](#查询联动规则列表)        | 查询联动规则列表 |
-| [post_app_rules](#创建联动规则)           | 创建联动规则     |
-| [delete_app_rules](#删除联动规则)         | 删除联动规则     |
-| [put_app_rules](#修改联动规则)            | 修改联动规则     |
-|                                           |                  |
-|                                           |                  |
-|                                           |                  |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # 定时任务接口
 
