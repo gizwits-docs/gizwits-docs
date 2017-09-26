@@ -779,17 +779,6 @@ ChangeLog
 
 
 
-<<<<<<< HEAD
-
-|参数    |类型  |必填    |参数类型    |描述   |
-| :-------- | --------:| :--: |:-------- | :-------- | 
-|product_key  |String|是|path| 
-|gid   |String|否|query|设备组 id| 
-|cycle|String|否|query|统计周期，可以为 date、week、month| 
-|start|String|是|query|起始周期，为起始日期、起始周或起始月| 
-|end|String|是|query|结束周期，为结束日期、结束周或结束月| 
-=======
->>>>>>> 204c7b967d01e6a1e67a94d2ae6663209056a815
 
 响应参数
 
