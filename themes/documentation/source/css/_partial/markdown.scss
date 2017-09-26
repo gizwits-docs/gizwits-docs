@@ -2,7 +2,7 @@
   @media (max-width: $body-bp) {
     width: 100%;
   }
-  
+
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
@@ -15,7 +15,7 @@
   position: relative;
   border: 1px solid #e7e7e7;
   box-shadow: 2px 2px 10px #e7e7e7;
-  
+
   li {
     color:#686868;
   }
@@ -28,7 +28,7 @@
   h6 {
     color:#484848;
     font: {
-      weight: bold;
+        weight: bold;
     }
 
     a.anchor {
