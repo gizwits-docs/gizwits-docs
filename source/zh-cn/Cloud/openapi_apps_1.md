@@ -1,7 +1,8 @@
 title:  Gizwits Open API（新）
 ---
 
-旧版文档可查看：[Open API旧版文档](/zh-cn/Cloud/OpenAPI.html)
+* Windows 平台按 Ctrl + F 打开快捷搜索
+* Mac 平台按 command + F 打开快捷搜索
 
 # 概述
 
@@ -87,8 +88,6 @@ Open API 就是机智云对外提供这些数据的访问接口！
 | [delete_app_group_id_devices](#将设备列表从分组移除)     | 将设备列表从分组移除       |
 | [post_app_group_id_control](#对设备分组内的设备统一控制) | 对设备分组内的设备统一控制 |
 
-
-
 * [设备联动](#设备联动):通过创建设备间联动规则，当设备触发规则后，联动控制其他设备。
 
 | API列表                                   | 描述             |
@@ -99,14 +98,44 @@ Open API 就是机智云对外提供这些数据的访问接口！
 | [delete_app_rules](#删除联动规则)         | 删除联动规则     |
 | [put_app_rules](#修改联动规则)            | 修改联动规则     |
 
-
-
-
 * [用户场景](#用户场景):用户可通过场景功能预设的一系列设备动作并在需要时触发。
 
+| API列表                                        | 描述                 |
+| ---------------------------------------------- | -------------------- |
+| [get_app_scene](#查询用户所有的场景)           | 查询用户所有的场景   |
+| [post_app_scene](#创建场景)                    | 创建场景             |
+| [delete_app_scene_id](#删除场景)               | 删除场景             |
+| [put_app_scene_id](#修改场景信息)              | 修改场景信息         |
+| [get_app_scene_id_task](#查询场景任务执行状态) | 查询场景任务执行状态 |
+| [post_app_scene_id_task](#执行场景任务)        | 执行场景任务         |
+
+
 * [定时任务管理](#定时任务管理):设备定时任务的增删改查等
+
+| API列表                                       | 描述         |
+| --------------------------------------------- | ------------ |
+| [get_app_devices_scheduler](#获取定时任务)    | 获取定时任务 |
+| [post_app_devices_scheduler](#创建定时任务)   | 创建定时任务 |
+| [delete_app_devices_scheduler](#删除定时任务) | 删除定时任务 |
+| [put_app_devices_scheduler](#修改定时任务)    | 修改定时任务 |
+
+
 * [通用定时任务](#通用定时任务):可对单个设备、设备分组和场景设置定时任务。
+
+| API列表                                       | 描述         |
+| --------------------------------------------- | ------------ |
+| [get_app_common_scheduler](#获取定时任务-1)    | 获取定时任务 |
+| [post_app_common_scheduler](#创建定时任务-1)   | 创建定时任务 |
+| [delete_app_common_scheduler](#删除定时任务-1) | 删除定时任务 |
+| [put_app_common_scheduler](#修改定时任务-1)    | 修改定时任务 |
+
+
 * [高级数据接口](#高级数据接口):比如对设备上报的数据按天取最大值、平均值等
+
+| API列表                               | 描述             |
+| ------------------------------------- | ---------------- |
+| [get_app_bindings](#获取设备聚合数据) | 获取设备聚合数据 |
+
 * [系统信息](#系统信息):比如查看当前 Open API 版本，获取所有可能的错误列表等
 
 | API列表                   | 描述             |
@@ -172,8 +201,9 @@ UPPER：大写
 示例：
 lower(md5(product_secret + X-Gizwits-Timestamp ))
 
-选择md5，32位[小]进行加密，填入product_secret和X-Gizwits-Timestamp，无需“+”号
+选择md5，32位[小]进行加密，填入product_secret和X-Gizwits-Timestamp，无需“+”号，如下图所示
 
+![photo](/assets/zh-cn/cloud/加密.png)
 
 
 
@@ -1146,16 +1176,16 @@ API 调用限制
 | protocolType   | string         | 固定值：standard                                                                          |
 | product_key    | string         | 产品product_key                                                                           |
 | packetVersion  | string         | 固定值：4                                                                                 |
-| ui             | inline_model_7 | 手机客户端 UI 定义                                                                                          |
-| EntityItem     | -------------- | -------------------------------------------------------                                   |
+| ui             | inline_model_7 | 手机客户端 UI 定义                                                                        |
+| EntityItem     | ——————         | ——————                                                                                    |
 | id             | integer        | 固定值：0                                                                                 |
 | name           | string         | 固定值：entity0                                                                           |
 | display_name   | string         | 固定值：机智云开发套件                                                                    |
 | attrs          | Array          | [AttrItem]                                                                                |
-| inline_model_7 | -------------- | -------------------------------------------------------                                   |
+| inline_model_7 | ——————         | ——————                                                                                    |
 | object         | inline_model_1 |                                                                                           |
 | sections       | Array          | UI 片段列表:[SectionItem]                                                                 |
-| AttrItem       | -------------- | -------------------------------------------------------                                   |
+| AttrItem       | ——————         | ——————                                                                                    |
 | id             | integer        | 数据点顺序                                                                                |
 | name           | string         | 数据点标示名                                                                              |
 | display_name   | string         | 数据点显示名                                                                              |
@@ -1164,23 +1194,23 @@ API 调用限制
 | data_type      | string         | 数据类型，bool：布尔;'uint8','uint16','uint32'：数值型;enum：枚举;binary:扩展型]          |
 | uint_spec      | inline_model_4 | 当 data_type 为 uint8/uint16/uint32 时，有该字段                                          |
 | enum           | Array          | 当 data_type 为 enum 时，有该字段                                                         |
-| position       | inline_model_5 | 字节与比特位描述                                                                                          |
-| inline_model_1 | -------------- | -------------------------------------------------------                                   |
+| position       | inline_model_5 | 字节与比特位描述                                                                          |
+| inline_model_1 | ——————         | ——————                                                                                    |
 | version        | integer        | 固定值：4                                                                                 |
 | showEditButton | boolean        | 固定值：false                                                                             |
-| SectionItem    | -------------- | -------------------------------------------------------                                   |
+| SectionItem    | ——————         | ——————                                                                                    |
 | elements       | Array          | [ElementItem]                                                                             |
-| inline_model_4 | -------------- | -------------------------------------------------------                                   |
+| inline_model_4 | ——————         | ——————                                                                                    |
 | min            | integer        | 最少值                                                                                    |
 | max            | integer        | 最大值                                                                                    |
 | ratio          | number         | 分辨率k                                                                                   |
-| addition       | integer        | 增量                                                                                          |
-| inline_model_5 | -------------- | -------------------------------------------------------                                   |
+| addition       | integer        | 增量                                                                                      |
+| inline_model_5 | ——————         | ——————                                                                                    |
 | bit_offset     | integer        | 位索引，如果为变长协议，固定为 0                                                          |
 | len            | integer        | 长度                                                                                      |
 | unit           | string         | 单位，'bit', 'byte'                                                                       |
 | byte_offset    | integer        | 字节索引，如果为变长协议，固定为 0                                                        |
-| ElementItem    | -------------- | -------------------------------------------------------                                   |
+| ElementItem    | ——————         | ——————                                                                                    |
 | title          | string         | 数据点显示名                                                                              |
 | key            | string         | entity0.{数据点标示名}                                                                    |
 | type           | string         | 'QBooleanElement', 'QFloatElement', 'QRadioElement', 'QMultilineElement', 'QLabelElement' |
@@ -1193,14 +1223,14 @@ API 调用限制
 | minimumValue   | number         | type 为 QFloatElement 才有该字段，最少值                                                  |
 | value          | integer        | type 为 QFloatElement 才有该字段，固定值：0                                               |
 | object         | inline_model_6 |                                                                                           |
-| inline_model_6 | -------------- | -------------------------------------------------------                                   |
+| inline_model_6 | ——————         | ——————                                                                                    |
 | action         | string         | 固定值:entity0                                                                            |
 | bind           | Array[string]  | 固定值:entity0.{数据点标示名}                                                             |
 | perm           | string         | 读写类型：W: 读写,R: 只读,N: 报警,E: 故障                                                 |
 | unit_spec      | inline_model_2 | type 为 QFloatElement 才有该字段                                                          |
-| inline_model_2 | -------------- | -------------------------------------------------------                                   |
+| inline_model_2 | ——————         | ——————                                                                                    |
 | max            | integer        | 最大值                                                                                    |
-| step           | integer        | 步进                                                                                         |
+| step           | integer        | 步进                                                                                      |
 | min            | integer        | 最小值                                                                                    |
 
 
@@ -1468,7 +1498,7 @@ objects:
 | X-Gizwits-Application-Id | string         |  是  | header   | appid     |
 | X-Gizwits-User-token     | string         |  是  | header   | 用户token |
 | did                      | string         |  是  | path     | 设备ID    |
-| raw                      | Array[integer] |  否  | body     |           |
+| raw                      | Array[integer] |  否  | body     |原始控制指令|
 | attrs                    | object         |  否  | body     |           |
 
 注：body的参数最少填写输入一个
@@ -2126,10 +2156,11 @@ objects:
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度：
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
 ```json
 {
   "attrs": {
+    "boolean":true,
     "binary": "1234567000"
   }
 }
@@ -2147,7 +2178,7 @@ objects:
 | X-Gizwits-Application-Id | string         |  是  | header   | appid       |
 | X-Gizwits-User-token     | string         |  是  | header   | 用户token   |
 | id                       | string         |  是  | path     | 设备分组 ID |
-| raw                      | Array[integer] |  否  | body     |             |
+| raw                      | Array[integer] |  否  | body     |原始控制指令|
 | attrs                    | object         |  否  | body     |             |
 
 响应参数
@@ -2285,20 +2316,20 @@ objects:
 | input          | Array   | 规则中需要用到的设备数据 [RulesInput]                                    |
 | condition      | Array   | 条件判断 [RulesCondition]                                                |
 | output         | Array   | 触发动作 [RulesOutput]                                                   |
-| RulesEventAttr | ——————  | ——————————————————————————————————————                                   |
+| RulesEventAttr | ——————  | ——————                                                                   |
 | attr_name      | string  | 发生这个报警/故障的数据点                                                |
 | value          | string  | 报警/故障的发生/取消, 1表示发生, 0表示取消                               |
-| RulesOutput    | ——————  | ——————————————————————————————————————                                   |
+| RulesOutput    | ——————  | ——————                                                                   |
 | did            | string  | 被控制的设备id                                                           |
 | type           | string  | 触发类型，devctrl:控制设备；delay：延时                                  |
 | attrs          | object  | 数据点方式控制设备                                                       |
-| raw            | Array   | 原始指令控制设备                                                         |
+| raw            | Array   | 原始控制指令                                                         |
 | delay          | integer | 延时时长, 单位:秒                                                        |
-| RulesInput     | ——————  | ——————————————————————————————————————                                   |
+| RulesInput     | ——————  | ——————                                                                   |
 | did            | string  | 规则数据的来源的设备id                                                   |
 | prefix         | string  | 用于在条件及输出中引用这个设备的数据点值的前缀                           |
 | product_key    | string  | 规则数据的来源的设备对应的产品PK                                         |
-| RulesCondition | ——————  | ——————————————————————————————————————                                   |
+| RulesCondition | ——————  | ——————                                                                   |
 | opt            | string  | 比较运算符, 可选值有: >, >=, <, <=, ==, != (注:只有数值类型才能比较大小) |
 | right          | string  | 右比较参数                                                               |
 | left           | string  | 左比较参数                                                               |
@@ -2378,18 +2409,17 @@ objects:
 
 ### event参数
 表示该规则的触发方式,以下是可选值的意义:
-
 ```
-online  - 设备上线
-offline - 设备下线
-alert   - 设备某个报警数据点发生报警
-fault   - 设备某个故障数据点发生故障
-data    - 设备上报状态
+online  : 设备上线
+offline : 设备下线
+alert   : 设备某个报警数据点发生报警
+fault   : 设备某个故障数据点发生故障
+data    : 设备上报状态
 ```
 
 ### event_attr参数
 表示当触发方式为alert(报警)/fault(故障)时, 发生这个报警/故障的数据点,以及报警/故障的发生/恢复,由该参数指定
-```
+```c
 "event_attr": {
     "attr_name": "datapoint_alert",  //发生这个报警/故障的数据点
     "value": "1" //报警/故障的发生/取消, 值为1时表示发生, 值为0时表示取消
@@ -2403,7 +2433,7 @@ data    - 设备上报状态
 
 ### input参数
 指定规则中需要用到的设备数据,数组中每一个对象代表一个设备的数据,不需要使用设备数据时可忽略此参数:
-```
+```c
 [{
     "product_key": "pk1", //设备所属Product key
     "did": "did1",        //设备did
@@ -2413,7 +2443,7 @@ data    - 设备上报状态
 
 ### condition参数
 指定触发规则需要满足的条件, 云端处理时将逐组检查数组内的条件, 任意一组条件满足时触发输出
-```
+```c
 [
     [{
         "left": "device1.datapoint1",//左比较参数, 参数的值类型需要和右比较参数一致
@@ -2444,18 +2474,19 @@ data    - 设备上报状态
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度：
-
-```JSON
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+```json
 {
   "attrs": {
+    "boolean":true,
     "binary": "1234567000"
   }
 }
 ```
-#### output参数示例：
 
-```
+
+#### output参数示例：
+```python
 [
     [{ // 每个数组表示一组输出动作，按顺序执行，前面的动作执行失败时，后面不会执行
         "type": "devctrl",   // output的类型, devctrl表示控制设备
@@ -2507,20 +2538,20 @@ data    - 设备上报状态
 | input                    | Array   |  是  | body     | 规则中需要用到的设备数据 [RulesInput]                                    |
 | condition                | Array   |  是  | body     | 条件判断 [RulesCondition]                                                |
 | output                   | Array   |  是  | body     | 触发动作 [RulesOutput]                                                   |
-| RulesEventAttr           | ——————  |  否  | body     | ——————————————————————————————————————                                   |
+| RulesEventAttr           | ——————  |  否  | body     | ——————                                                                   |
 | attr_name                | string  |  否  | body     | 发生这个报警/故障的数据点                                                |
 | value                    | string  |  否  | body     | 报警/故障的发生/取消, 1表示发生, 0表示取消                               |
-| RulesOutput              | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| RulesOutput              | ——————  |  是  | body     | ——————                                                                   |
 | did                      | string  |  是  | body     | 被控制的设备id                                                           |
 | type                     | string  |  是  | body     | 触发类型，devctrl:控制设备；delay：延时                                  |
 | attrs                    | object  |  否  | body     | 数据点方式控制设备                                                       |
-| raw                      | Array   |  否  | body     | 原始指令控制设备                                                         |
+| raw                      | Array   |  否  | body     | 原始控制指令                                                         |
 | delay                    | integer |  否  | body     | 延时时长, 单位:秒                                                        |
-| RulesInput               | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| RulesInput               | ——————  |  是  | body     | ——————                                                                   |
 | did                      | string  |  是  | body     | 规则数据的来源的设备id                                                   |
 | prefix                   | string  |  是  | body     | 用于在条件及输出中引用这个设备的数据点值的前缀                           |
 | product_key              | string  |  是  | body     | 规则数据的来源的设备对应的产品PK                                         |
-| RulesCondition           | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| RulesCondition           | ——————  |  是  | body     | ——————                                                                   |
 | opt                      | string  |  是  | body     | 比较运算符, 可选值有: >, >=, <, <=, ==, != (注:只有数值类型才能比较大小) |
 | right                    | string  |  是  | body     | 右比较参数                                                               |
 | left                     | string  |  是  | body     | 左比较参数                                                               |
@@ -2600,20 +2631,20 @@ data    - 设备上报状态
 | input                    | Array   |  是  | body     | 规则中需要用到的设备数据 [RulesInput]                                    |
 | condition                | Array   |  是  | body     | 条件判断 [RulesCondition]                                                |
 | output                   | Array   |  是  | body     | 触发动作 [RulesOutput]                                                   |
-| RulesEventAttr           | ——————  |  否  | body     | ——————————————————————————————————————                                   |
+| RulesEventAttr           | ——————  |  否  | body     | ——————                                                                   |
 | attr_name                | string  |  否  | body     | 发生这个报警/故障的数据点                                                |
 | value                    | string  |  否  | body     | 报警/故障的发生/取消, 1表示发生, 0表示取消                               |
-| RulesOutput              | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| RulesOutput              | ——————  |  是  | body     | ——————                                                                   |
 | did                      | string  |  是  | body     | 被控制的设备id                                                           |
 | type                     | string  |  是  | body     | 触发类型，devctrl:控制设备；delay：延时                                  |
 | attrs                    | object  |  否  | body     | 数据点方式控制设备                                                       |
-| raw                      | Array   |  否  | body     | 原始指令控制设备                                                         |
+| raw                      | Array   |  否  | body     | 原始控制指令                                                         |
 | delay                    | integer |  否  | body     | 延时时长, 单位:秒                                                        |
-| RulesInput               | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| RulesInput               | ——————  |  是  | body     | ——————                                                                   |
 | did                      | string  |  是  | body     | 规则数据的来源的设备id                                                   |
 | prefix                   | string  |  是  | body     | 用于在条件及输出中引用这个设备的数据点值的前缀                           |
 | product_key              | string  |  是  | body     | 规则数据的来源的设备对应的产品PK                                         |
-| RulesCondition           | ——————  |  是  | body     | ——————————————————————————————————————                                   |
+| RulesCondition           | ——————  |  是  | body     | ——————                                                                   |
 | opt                      | string  |  是  | body     | 比较运算符, 可选值有: >, >=, <, <=, ==, != (注:只有数值类型才能比较大小) |
 | right                    | string  |  是  | body     | 右比较参数                                                               |
 | left                     | string  |  是  | body     | 左比较参数                                                               |
@@ -2634,33 +2665,287 @@ data    - 设备上报状态
 }
 ```
 
+# 用户场景
+## 查询用户所有的场景
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/get_app_scene)
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/scene
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述      |
+|:------------------------ |:------ |:----:|:-------- |:--------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid     |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token |
+
+
+
+响应参数
+
+| 参数         | 类型    | 描述                                                                                                                 |
+| ------------ | ------- | -------------------------------------------------------------------------------------------------------------------- |
+| id           | string  | 场景 id                                                                                                              |
+| scene_name   | string  | 场景名称                                                                                                             |
+| created_at   | string  | 场景创建时间（UTC 时间）                                                                                             |
+| updated_at   | string  | 场景更新时间（UTC 时间）                                                                                             |
+| remark       | string  | 场景备注                                                                                                             |
+| task_type    | string  | 场景任务类型："delay": 延时任务，"device": 控制当个设备任务，"group": 控制设备分组任务（仅可控制单 product_key 分组) |
+| did          | string  | 针对单品控制任务，设备 did                                                                                           |
+| product_key  | string  | 针对非延时任务，产品 product_key                                                                                     |
+| group_name   | string  | 针对设备分组控制任务，设备分组名称                                                                                   |
+| raw          | string  | 针对非延时任务，原始控制指令，base64 编码                                                                            |
+| attrs        | object  | 针对非延时任务，数据点控制命令，枚举型数据点传序号，扩展型数据点传 base64 编码字符串                                 |
+| dev_remark   | string  | 针对设备控制任务，设备备注                                                                                           |
+| time         | integer | 针对延时任务，延时时间，以秒为单位，最大值： 3600 秒                                                                 |
+| group_id     | string  | 针对设备分组控制任务，设备分组 id                                                                                    |
+| verbose_name | string  | 针对非延时任务，产品名称                                                                                             |
+| dev_alias    | string  | 针对设备控制任务，设备别名                                                                                           |
 
 
 
 
+返回例子
+
+```json
+[
+  {
+    "remark": "备注",
+    "tasks": [
+      {
+        "task_type": "device",
+        "did": "WCWGkbS4Ttynzw123rzpEa",
+        "product_key": "4214bf2d79321259232431b6f2ef46a",
+        "group_name": "",
+        "raw": "",
+        "attrs": {
+          "switch": true
+        },
+        "dev_remark": "",
+        "time": 0,
+        "group_id": "",
+        "verbose_name": "微信宠物屋",
+        "dev_alias": ""
+      }
+    ],
+    "created_at": "2017-09-25T10:09:07Z",
+    "updated_at": "2017-09-25T10:09:07Z",
+    "scene_name": "场景名",
+    "id": "59c8d5c3234d50001a21c872"
+  }
+]
+```
+
+## 创建场景
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/post_app_scene)
+
+#### 原始指令(raw):
+发送 0090 命令，只需要包括 payload 即可;格式为 base64 字符串，如要发送 payload 为 010203，就是
+
+```json
+{
+  "raw": "AQID"
+}
+```
+
+#### 数据点方式(attrs):
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+```json
+{
+  "attrs": {
+    "boolean":true,
+    "binary": "1234567000"
+  }
+}
+```
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/scene
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                                                 |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                                                |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                                            |
+| scene_name               | string  |  是  | body     | 场景名称                                                                             |
+| remark                   | string  |  否  | body     | 场景备注                                                                             |
+| task_type                | string  |  是  | body     | 场景任务类型： "delay": 延时任务，"device": 控制当个设备任务，"group": 控制设备分组任务（仅可控制单 product_key 分组)|
+| time                     | integer |  否  | body     | 针对延时任务，延时时间，以秒为单位，最大值： 3600 秒                                 |
+| did                      | string  |  否  | body     | 针对单品控制任务，设备 did                                                           |
+| group_id                 | string  |  否  | body     | 针对设备分组控制任务，设备分组 id                                                    |
+| attrs                    | object  |  否  | body     | 针对非延时任务，数据点控制命令，枚举型数据点传序号，扩展型数据点传 base64 编码字符串 |
+| raw                      | string  |  否  | body     | 针对非延时任务，原始控制指令，base64 编码                                            |
+
+
+
+响应参数
+
+| 参数 | 类型   | 描述    |
+| ---- | ------ | ------- |
+| id   | string | 场景 id |
+
+
+
+返回例子
+
+```json
+{
+  "id": "59c8d5c38c7d50001a21c872"
+}
+```
 
 
 
 
+## 删除场景
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/delete_app_scene_id)
+
+请求地址及方式
+
+      DELETE
+      https://api.gizwits.com/app/scene/{id}
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述      |
+|:------------------------ |:------ |:----:|:-------- |:--------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid     |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token |
+| id                       | string |  是  | path     | 场景ID    |
+
+
+响应参数
+
+    无
+
+
+
+## 修改场景信息
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/post_app_scene)
+
+#### 原始指令(raw):
+发送 0090 命令，只需要包括 payload 即可;格式为 base64 字符串，如要发送 payload 为 010203，就是
+
+```json
+{
+  "raw": "AQID"
+}
+```
+
+#### 数据点方式(attrs):
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+```json
+{
+  "attrs": {
+    "boolean":true,
+    "binary": "1234567000"
+  }
+}
+```
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/scene/{id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                                                 |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                                                |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                                            |
+| id                       | string |  是  | path     | 场景ID    |
+| scene_name               | string  |  是  | body     | 场景名称                                                                             |
+| remark                   | string  |  否  | body     | 场景备注                                                                             |
+| task_type                | string  |  是  | body     | 场景任务类型： "delay": 延时任务，"device": 控制当个设备任务，"group": 控制设备分组任务（仅可控制单 product_key 分组)|
+| time                     | integer |  否  | body     | 针对延时任务，延时时间，以秒为单位，最大值： 3600 秒                                 |
+| did                      | string  |  否  | body     | 针对单品控制任务，设备 did                                                           |
+| group_id                 | string  |  否  | body     | 针对设备分组控制任务，设备分组 id                                                    |
+| attrs                    | object  |  否  | body     | 针对非延时任务，数据点控制命令，枚举型数据点传序号，扩展型数据点传 base64 编码字符串 |
+| raw                      | string  |  否  | body     | 针对非延时任务，原始控制指令，base64 编码                                            |
+
+
+
+响应参数
+
+    无
+
+
+
+## 查询场景任务执行状态
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/get_app_scene)
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/scene/{id}/task
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述      |
+|:------------------------ |:------ |:----:|:-------- |:--------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid     |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token |
+| id                       | string |  是  | path     | 场景ID    |
+
+
+
+响应参数
+
+| 参数   | 类型    | 描述                                                                |
+| ------ | ------- | ------------------------------------------------------------------- |
+| status | integer | 场景任务执行状态,0：进行中;1：执行完成;2：执行失败;3：任务未在执行 |
+
+
+
+返回例子
+
+```json
+{
+  "status": 1
+}
+```
+
+
+## 执行场景任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/get_app_scene)
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/scene/{id}/task
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述      |
+|:------------------------ |:------ |:----:|:-------- |:--------- |
+| X-Gizwits-Application-Id | string |  是  | header   | appid     |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token |
+| id                       | string |  是  | path     | 场景ID    |
+
+
+
+响应参数
+
+    无
+
+* 返回成功，场景任务开始执行
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-# 定时任务接口
-
-## 创建定时任务
-
-[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/post_app_devices_did_scheduler)
+# 定时任务管理
 
 定时任务分为如下几类：
 
@@ -2670,33 +2955,530 @@ data    - 设备上报状态
 
 每个定时任务都可以设置使能状态，只有开启状态的定时任务才会被执行。
 
-重复执行的定时任务需要设置开始和结束日志。
+定时任务管理下的全部接口均使用 UTC 时间
 
-一个定时任务可以一次性设置多个数据点。
+定时任务管理接口只能对单个设备设置定时任务
 
 ## 获取定时任务
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/get_app_devices_did_scheduler)
 
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/devices/{did}/scheduler?limit=20&skip=0
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                           |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                          |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                      |
+| did                      | string  |  是  | path     | 需要设置定时任务的设备id       |
+| limit                    | integer |  否  | query    | 返回的结果条数                 |
+| skip                     | integer |  否  | query    | 表示跳过的条数，间接表示页数。 |
+
+
+响应参数
+
+| 参数        | 类型    | 描述                                                               |
+| ----------- | ------- | ------------------------------------------------------------------ |
+| id          | string  | 定时任务id                                                         |
+| created_at  | string  |任务创建时间 UTC 时间|
+| product_key | string  |产品PK|
+| did         | string  | 需要设置定时任务的设备id                                           |
+| raw         | string  | 原始控制指令                                                       |
+| attrs       | object  |                                                                    |
+| date        | string  | 一次性定时任务的执行时间                                           |
+| time        | string  | 定时任务执行的时间，精确到分钟，格式xx:xx，如：02:30               |
+| repeat      | string  | 是否重复，"none","mon", "tue", "wed", "thu", "fri", "sat", "sun"   |
+| days        | Array   | 重复的日期列表，如[1, 15]表示每月1日和15日重复                     |
+| start_date  | string  | 定时任务执行的开始日期，该天0点开始，格式xxxx-xx-xx，如2016-09-01  |
+| end_date    | string  | 定时任务执行的结束日期，该天24点结束，格式xxxx-xx-xx，如2016-10-01 |
+| enabled     | boolean | 是否启用，若不启用则时间到也不触发，默认启用                       |
+| remark      | string  | 任务备注                                                           |
+
+
+
+
+返回例子
+
+```json
+[
+  {
+    "remark": "备注",
+    "repeat": "none",
+    "end_date": "2017-09-26",
+    "did": "LWHWrRAnzRbxtv9cyuNFSY",
+    "created_at": "2017-09-26T06:36:47",
+    "enabled": true,
+    "days": [],
+    "product_key": "b6777e0a343b422b8c474254e016b4dc",
+    "id": "59c9f57f8c7d50001963992c",
+    "raw": "",
+    "attrs": {
+      "bool": true
+    },
+    "time": "15:00",
+    "date": "2017-09-26",
+    "start_date": "2017-09-20"
+  }
+]
+```
+
+
+
+
+
+
+## 创建定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/post_app_devices_did_scheduler)
+
+### 创建一次性定时任务
+* repeat 设置为 none
+* date 和 time 必须填写，并且注意 date 和 time 为执行定时任务时的 UTC 时间
+
+### 创建按星期重复定时任务
+* repeat 为重复星期，多个用逗号分隔；比如每周一执行，设置为 "mon"，每周一、周三执行，设置为 "mon,wed"；
+* repeat 为重复星期时，可选值为： mon,tue,wed,thu,fri,sat,sun
+* time 必须填写，并且注意星期和 time 为执行定时任务时的 UTC 时间
+* 可以选填 start_date 和 end_date 表示定时任务开启的日期范围
+
+### 创建按天重复的定时任务
+* repeat 设置为 day
+* days 设置为要执行的日期列表；比如每月 1 号执行，设置为 ["1"]；每月 1 号、15 号执行，设置为 ["1", "15"]
+* time 必须填写，并且注意 days 和 time 为执行定时任务时的 UTC 时间
+* 可以选填 start_date 和 end_date 表示定时任务开启的日期范围
+
+#### 原始指令(raw):
+发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+```json
+{
+  "raw": [1, 2, 3]
+}
+```
+
+#### 数据点方式(attrs):
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+```json
+{
+  "attrs": {
+    "boolean":true,
+    "binary": "1234567000"
+  }
+}
+```
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/devices/{did}/scheduler
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                               |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                              |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                          |
+| did                      | string  |  是  | path     | 需要设置定时任务的设备id                                           |
+| raw                      | string  |  否  | body     | 原始控制指令                                                       |
+| attrs                    | object  |  否  | body     |                                                                    |
+| date                     | string  |  是  | body     | 一次性定时任务的执行时间                                           |
+| time                     | string  |  是  | body     | 定时任务执行的时间，精确到分钟，格式xx:xx，如：02:30               |
+| repeat                   | string  |  是  | body     | 是否重复，"none","mon", "tue", "wed", "thu", "fri", "sat", "sun"   |
+| days                     | Array   |  否  | body     | 重复的日期列表，如[1, 15]表示每月1日和15日重复                     |
+| start_date               | string  |  否  | body     | 定时任务执行的开始日期，该天0点开始，格式xxxx-xx-xx，如2016-09-01  |
+| end_date                 | string  |  否  | body     | 定时任务执行的结束日期，该天24点结束，格式xxxx-xx-xx，如2016-10-01 |
+| enabled                  | boolean |  否  | body     | 是否启用，若不启用则时间到也不触发，默认启用                       |
+| remark                   | string  |  否  | body     | 任务备注                                                           |
+
+
+响应参数
+
+| 参数 | 类型   | 描述       |
+| ---- | ------ | ---------- |
+| id   | string | 定时任务id |
+
+
+
+返回例子
+
+```json
+{
+  "id": "59c9f57f8c7d50001963992c"
+}
+```
+
+
+
 ## 修改定时任务
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/put_app_devices_did_scheduler_id)
+
+请求地址及方式
+
+      PUT
+      https://api.gizwits.com/app/devices/{did}/scheduler/{id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                               |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                              |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                          |
+| did                      | string  |  是  | path     | 需要设置定时任务的设备id                                           |
+| id                       | string  |  是  | path     | 需要修改的定时任务id                                               |
+| raw                      | string  |  否  | body     | 原始控制指令                                                       |
+| attrs                    | object  |  否  | body     |                                                                    |
+| date                     | string  |  是  | body     | 一次性定时任务的执行时间                                           |
+| time                     | string  |  是  | body     | 定时任务执行的时间，精确到分钟，格式xx:xx，如：02:30               |
+| repeat                   | string  |  是  | body     | 是否重复，"none","mon", "tue", "wed", "thu", "fri", "sat", "sun"   |
+| days                     | Array   |  否  | body     | 重复的日期列表，如[1, 15]表示每月1日和15日重复                     |
+| start_date               | string  |  否  | body     | 定时任务执行的开始日期，该天0点开始，格式xxxx-xx-xx，如2016-09-01  |
+| end_date                 | string  |  否  | body     | 定时任务执行的结束日期，该天24点结束，格式xxxx-xx-xx，如2016-10-01 |
+| enabled                  | boolean |  否  | body     | 是否启用，若不启用则时间到也不触发，默认启用                       |
+| remark                   | string  |  否  | body     | 任务备注                                                           |
+
+
+响应参数
+
+| 参数 | 类型   | 描述       |
+| ---- | ------ | ---------- |
+| id   | string | 定时任务id |
+
+
+
+返回例子
+
+```json
+{
+  "id": "59c9f57f8c7d50001963992c"
+}
+```
 
 ## 删除定时任务
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/定时任务管理/delete_app_devices_did_scheduler_id)
 
+请求地址及方式
+
+      DELETE
+      https://api.gizwits.com/app/devices/{did}/scheduler/{id}
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述                     |
+|:------------------------ |:------ |:----:|:-------- |:------------------------ |
+| X-Gizwits-Application-Id | string |  是  | header   | appid                    |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token                |
+| did                      | string |  是  | path     | 需要设置定时任务的设备id |
+| id                       | string |  是  | path     | 定时任务id               |
+
+响应参数
+
+    无
+
+
+
+
+
+
+# 通用定时任务
+
+**通用定时任务** 为 **定时任务管理** 的升级接口，能对场景、分组和单个设备创建定时任务。
+
+## 获取定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/通用定时任务/get_app_common_did_scheduler)
+
+请求地址及方式
+
+      GET
+      https://api.gizwits.com/app/common_scheduler?did={did}&group_id={group_id}&scene_id={scene_id}&limit={limit}&skip={skip}
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述                     |
+|:------------------------ |:------ |:----:|:-------- |:------------------------ |
+| X-Gizwits-Application-Id | string |  是  | header   | appid                    |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token                |
+| did                      | string |  否  | path     | 需要设置定时任务的设备id |
+| group_id                 | string |  否  | path     | 分组id                   |
+| scene_id                 | string |  否  | path     | 场景id                   |
+| limit                    | integer |  否  | query    | 返回的结果条数                 |
+| skip                     | integer |  否  | query    | 表示跳过的条数，间接表示页数。 |
+
+
+响应参数
+
+| 参数        | 类型    | 描述                                                               |
+| ----------- | ------- | ------------------------------------------------------------------ |
+| id          | string  | 定时任务id                                                         |
+| created_at  | string  |任务创建时间 UTC 时间|
+| product_key | string  |产品PK|
+| scene_id    | string  |                                                                    |
+| group_id    | string  |                                                                    |
+| did         | string  | 需要设置定时任务的设备id                                           |
+| raw         | string  | 原始控制指令                                                       |
+| attrs       | object  |                                                                    |
+| date        | string  | 一次性定时任务的执行时间                                           |
+| time        | string  | 定时任务执行的时间，精确到分钟，格式xx:xx，如：02:30               |
+| repeat      | string  | 是否重复，"none","mon", "tue", "wed", "thu", "fri", "sat", "sun"   |
+| days        | Array   | 重复的日期列表，如[1, 15]表示每月1日和15日重复                     |
+| start_date  | string  | 定时任务执行的开始日期，该天0点开始，格式xxxx-xx-xx，如2016-09-01  |
+| end_date    | string  | 定时任务执行的结束日期，该天24点结束，格式xxxx-xx-xx，如2016-10-01 |
+| enabled     | boolean | 是否启用，若不启用则时间到也不触发，默认启用                       |
+| remark      | string  | 任务备注                                                           |
+
+
+
+
+返回例子
+
+```json
+[
+  {
+    "remark": "备注",
+    "repeat": "none",
+    "end_date": "2017-09-26",
+    "did": "LWHWrRAnzRbxtv9cyuNFSY",
+    "created_at": "2017-09-26T06:36:47",
+    "enabled": true,
+    "days": [],
+    "product_key": "b6777e0a343b422b8c474254e016b4dc",
+    "id": "59c9f57f8c7d50001963992c",
+    "raw": "",
+    "attrs": {
+      "bool": true
+    },
+    "time": "15:00",
+    "date": "2017-09-26",
+    "scene_id": "",
+    "group_id": "",
+    "start_date": "2017-09-20"
+  }
+]
+```
+
+
+## 创建定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/通用定时任务/post_app_common_did_scheduler)
+
+* did, group_id, scene_id 参数只需传其中一个，分别用于创建设备，设备分组，用户场景定时任务，
+* 若同时传了多个，则按此优先级取第一个有效字符串；
+* 针对场景任务，不需要传 raw 和 attrs 控制命令，传了会被忽略；
+* 创建循环类型与[定时任务管理](#定时任务管理)接口一致。
+
+
+#### 原始指令(raw):
+发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+```json
+{
+  "raw": [1, 2, 3]
+}
+```
+
+#### 数据点方式(attrs):
+设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+```json
+{
+  "attrs": {
+    "boolean":true,
+    "binary": "1234567000"
+  }
+}
+```
+
+请求地址及方式
+
+      POST
+      https://api.gizwits.com/app/common_scheduler
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                               |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                              |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                          |
+| did                      | string  |  否  | body     | 需要设置定时任务的设备id                                           |
+| group_id                 | string  |  否  | body     | 需要设置定时任务的设备分组id                                       |
+| scene_id                 | string  |  否  | body     | 需要设置定时任务的场景id                                           |
+| raw                      | string  |  否  | body     | 原始控制指令                                                       |
+| attrs                    | object  |  否  | body     |                                                                    |
+| date                     | string  |  是  | body     | 一次性定时任务的执行时间                                           |
+| time                     | string  |  是  | body     | 定时任务执行的时间，精确到分钟，格式xx:xx，如：02:30               |
+| repeat                   | string  |  是  | body     | 是否重复，"none","mon", "tue", "wed", "thu", "fri", "sat", "sun"   |
+| days                     | Array   |  否  | body     | 重复的日期列表，如[1, 15]表示每月1日和15日重复                     |
+| start_date               | string  |  否  | body     | 定时任务执行的开始日期，该天0点开始，格式xxxx-xx-xx，如2016-09-01  |
+| end_date                 | string  |  否  | body     | 定时任务执行的结束日期，该天24点结束，格式xxxx-xx-xx，如2016-10-01 |
+| enabled                  | boolean |  否  | body     | 是否启用，若不启用则时间到也不触发，默认启用                       |
+| remark                   | string  |  否  | body     | 任务备注                                                           |
+
+
+响应参数
+
+| 参数 | 类型   | 描述           |
+| ---- | ------ | -------------- |
+| id   | string | 通用定时任务id |
+
+
+
+返回例子
+
+```json
+{
+  "id": "59c9f57f8c7d50001963992c"
+}
+```
+
+
+
+## 修改定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/通用定时任务/put_app_common_did_scheduler_id)
+
+请求地址及方式
+
+      PUT
+      https://api.gizwits.com/app/common_scheduler/{id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                               |
+|:------------------------ |:------- |:----:|:-------- |:------------------------------------------------------------------ |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                              |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                          |
+| id                       | string  |  是  | path     | 通用定时任务id                                                     |
+| did                      | string  |  否  | body     | 需要设置定时任务的设备id                                           |
+| group_id                 | string  |  否  | body     | 需要设置定时任务的设备分组id                                       |
+| scene_id                 | string  |  否  | body     | 需要设置定时任务的场景id                                           |
+| raw                      | string  |  否  | body     | 原始控制指令                                                       |
+| attrs                    | object  |  否  | body     |                                                                    |
+| date                     | string  |  是  | body     | 一次性定时任务的执行时间                                           |
+| time                     | string  |  是  | body     | 定时任务执行的时间，精确到分钟，格式xx:xx，如：02:30               |
+| repeat                   | string  |  是  | body     | 是否重复，"none","mon", "tue", "wed", "thu", "fri", "sat", "sun"   |
+| days                     | Array   |  否  | body     | 重复的日期列表，如[1, 15]表示每月1日和15日重复                     |
+| start_date               | string  |  否  | body     | 定时任务执行的开始日期，该天0点开始，格式xxxx-xx-xx，如2016-09-01  |
+| end_date                 | string  |  否  | body     | 定时任务执行的结束日期，该天24点结束，格式xxxx-xx-xx，如2016-10-01 |
+| enabled                  | boolean |  否  | body     | 是否启用，若不启用则时间到也不触发，默认启用                       |
+| remark                   | string  |  否  | body     | 任务备注                                                           |
+
+
+响应参数
+
+| 参数 | 类型   | 描述           |
+| ---- | ------ | -------------- |
+| id   | string | 通用定时任务id |
+
+
+
+返回例子
+
+```json
+{
+  "id": "59c9f57f8c7d50001963992c"
+}
+```
+
+## 删除定时任务
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/通用定时任务/delete_app_common_did_scheduler_id)
+
+请求地址及方式
+
+      DELETE
+      https://api.gizwits.com/app/common_scheduler/{id}
+
+请求参数
+
+| 参数                     | 类型   | 必填 | 参数类型 | 描述                     |
+|:------------------------ |:------ |:----:|:-------- |:------------------------ |
+| X-Gizwits-Application-Id | string |  是  | header   | appid                    |
+| X-Gizwits-User-token     | string |  是  | header   | 用户token                |
+| did                      | string |  是  | path     | 需要设置定时任务的设备id |
+| id                       | string |  是  | path     | 通用定时任务id               |
+
+响应参数
+
+    无
+
 # 高级数据接口
 
 ## 获取设备聚合数据
-
-[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口//get_app_devdata_did_agg_data)
 
 该接口可以对设备上报的数值型数据点数据进行聚合，可以按小时/天/周/月对数据点数据进行求和/平均值/最大值/最小值进行聚合。
 
 一次可以获取多个数据点的聚合数据。
 
 要使用该接口，必须先请求开通该接口。请求通过的之后上报的数据才会进行聚合运算。
+
+
+[调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口//get_app_devdata_did_agg_data)
+
+请求地址及方式
+
+      PUT
+      https://api.gizwits.com/app/rules/{rule_id}
+
+请求参数
+
+| 参数                     | 类型    | 必填 | 参数类型 | 描述                                                       |
+|:------------------------ |:------- |:----:|:-------- |:---------------------------------------------------------- |
+| X-Gizwits-Application-Id | string  |  是  | header   | appid                                                      |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                  |
+| did                      | string  |  是  | path     | 设备ID                                                     |
+| start_ts                 | integer |  是  | query    | 开始时间，单位为毫秒                                       |
+| end_ts                   | integer |  否  | query    | 结束时间，单位为毫秒                                       |
+| attrs                    | string  |  是  | query    | 数字类型数据点名称，多个数据点用逗号分隔                   |
+| aggregator               | string  |  是  | query    | 统计方式，sum：合计；avg：平均值；max：最大值；min：最少值 |
+| unit                     | string  |  是  | query    | 汇总方式,hours：小时；day：天；weeks：周；months：月       |
+
+
+响应参数
+
+| 参数        | 类型    | 描述                                                       |
+| ----------- | ------- | ---------------------------------------------------------- |
+| aggregator  | string  | 统计方式，sum：合计；avg：平均值；max：最大值；min：最少值 |
+| end_ts      | integer | 开始时间，单位为毫秒                                       |
+| start_ts    | integer | 结束时间，单位为毫秒                                       |
+| attrs       | string  | 查询的数据点                                               |
+| unit        | string  | sum：合计；avg：平均值；max：最大值；min：最少值           |
+| datatime    | string  |                                                            |
+| uid         | string  | 用户id                                                     |
+| product_key | string  | 产品PK                                                     |
+| attrs       | object  | 数据点聚合结果                                             |
+
+
+返回例子
+
+```json
+{
+  "query": {
+    "aggregator": "sum",
+    "end_ts": null,
+    "start_ts": 1505318400000,
+    "attrs": "set_temp, alert_shutdown, room_temp",
+    "unit": "HOURS"
+  },
+  "data": [
+    {
+      "datatime":"",
+      "uid":"c0a85d0773e24f15a6853f3148c80a33",
+      "product_key":"42121342d79694a259232431b6f2ef46a",
+      "attrs":{
+        "set_temp":"12",
+        "alert_shutdown":"12",
+        "room_temp":"12"
+      }
+    }
+  ]
+}
+```
+
+
+
 
 
 # 系统信息
