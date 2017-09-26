@@ -2,7 +2,7 @@ title: 企业API
 ---
 
 # 概述
-企业API是机智云为接入机智云平台的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求。企业API为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本。
+    企业API是机智云为接入机智云平台的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求。企业API为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本。
 
 
 #  企业API接口列表
@@ -33,7 +33,7 @@ title: 企业API
 | [get_v1_products_product_key_datapoint](#获取产品数据点)    | 获取某个产品的数据点信息  |
 
 
-* [设备管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备管理)：提供了获取设备did、获取设备详情、搜索设备、远程控制设备、查看设备上下线记录、通信日志以及默认查询2天的历时数据等功能。
+* [设备管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备管理)：提供了获取设备did、获取设备详情、搜索设备、远程控制设备、查看设备上下线记录、通信日志以及默认查询2天的历史数据等功能。
 
 | API列表                                  | 描述               |
 | ---------------------------------------- | ------------------ |
@@ -41,9 +41,9 @@ title: 企业API
 | [get_v1_products_product_key_device_detail](#获取设备详情)      |    获取设备详情    |
 | [get_v1_products_product_key_devices_search](#搜索设备)         |     搜索设备    |
 | [get_v1_products_product_key_devices_did_data](#获取设备历时数据)|  默认查询两天内的设备KV值  |
-| [get_v1_products_product_key_devices_did_online](#设备上下线记录)  |  获取设备上下线记录   |
-| [get_v1_products_product_key_devices_did_cmd](#设备通信日志) |  默认查询两天内的设备原始指令 |
-| [post_v1_products_product_key_devices_did_control](#设备远程控制)     |   远程控制设备    |
+| [get_v1_products_product_key_devices_did_online](#设备上下线记录) | 获取设备上下线记录|
+| [get_v1_products_product_key_devices_did_cmd](#设备通信日志) | 默认查询两天内的设备原始指令 |
+| [post_v1_products_product_key_devices_did_control](#设备远程控制)   |  远程控制设备  |
 
 
 
@@ -54,7 +54,7 @@ title: 企业API
 | [get_v1_products_product_key_users_report_new](#用户新增报表--大数据)          |   这里指的是绑定了该 PK 下产品的新增用户  |
 | [get_v1_users_liveness_total](#企业活跃用户人数)     |    企业活跃用户人数  |
 | [get_v1_users_location](#用户地理分布)          |    用户地理分布   |
-| [get_v1_products_product_key_users_report_total](#用户总数报表--实时)              |   用户总数   |
+| [get_v1_products_product_key_users_report_total](#用户总数报表--实时)         |   用户总数   |
 
 * [设备报表](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备报表)：提供了查询设备激活报表、地理位置分布、概览、激活详情、活跃详情、设备故障、设备报警报表等功能
 
@@ -152,10 +152,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key	| string |  是  | path   | 产品标识符     |
-| enterprise_id  | string |  是  | body  | 企业id |      
-| enterprise_secret    | string |  是 | 企业id 密码   |  
-| product_secret       | string |  是 | body    | 	 
+| product_key				| string |  是  | path   | 产品标识符     |
+| enterprise_id  			| string |  是  | body  | 企业id |
+| enterprise_secret   		 | string |  是 |  body  |  企业id 密码 |
+| product_secret       		| string |  是 | body    | 	 产品密匙 |
 
 
 
@@ -163,8 +163,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 |   参数    |  数据类型   |     描述      |
 |:--------- |:------- |:------------- |  
-| token     | string  | 用户token     |   
-| expire_at | integer | token过期时间（时间戳） |   
+| token     | string  | 用户token     |
+| expire_at | integer | token过期时间（时间戳） |
 
 返回例子
 ```json
@@ -181,7 +181,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_search">搜索注册用户</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是注册用户信息
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户管理/get_v1_users_search)
@@ -197,7 +197,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id      |
-| X-Gizwits-Enterprise-Secret  | string |  否  | header   | enterprise secret   |      
+| X-Gizwits-Enterprise-Secret  | string |  否  | header   | enterprise secret|
 | product_secret           | string |  是 | query    | 产品名称  product_key  |
 | appid          | string |  否 | query    | 	应用id  |
 | username         | string |  否 | query    | 	用户名称 |
@@ -264,9 +264,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_users_search">搜索绑定用户</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是绑定用户信息
-*说明：只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限
+* 说明：只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户管理/get_v1_products_product_key_users_search)
 
@@ -281,8 +281,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品名称   |
-| gid           | string |  否  | query     | 组ID  |      
-| type        | string |  否  | query     | 密码    | 
+| gid           | string |  否  | query     | 组ID  |
+| type        | string |  否  | query     | 密码    |
 |   val         | string |  否  | query     | 查询条件值   |
 | limit           | integer |  否  | query     | 每次返回的条数 |
 | skip       | integer |  否  | query   | 每次跳过的条数|
@@ -368,14 +368,14 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 |   参数    |  数据类型   |     描述      |
 |:--------- |:------- |:------------- |  
-| name      | string  | 数据点标识名称    |   
-| entities   | Array[EntitiyList] | 数据点列表  |   
-| protocolType       | string  | 协议类型，固定长度为“standard” ，可变长度为“var_len” |  
-| product_key       | string  | 产品名称     |  
-| packetVersion       | string  |  固定值，“0x00000004”   |  
-| ui       | object  | 数据点 ui json    |  
-| display_name       | string  | 数据点名称    |  
-| id      | string  | entity id    |  
+| name      | string  | 数据点标识名称    |
+| entities   | Array[EntitiyList] | 数据点列表  |
+| protocolType       | string  | 协议类型，固定长度为“standard” ，可变长度为“var_len” |
+| product_key       | string  | 产品名称     |
+| packetVersion       | string  |  固定值，“0x00000004”   |
+| ui       | object  | 数据点 ui json    |
+| display_name       | string  | 数据点名称    |
+| id      | string  | entity id    |
 
 
 返回例子
@@ -397,7 +397,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 ```
 
-#设备管理
+
+# 设备管理
 ## <span id = "get_v1_products_product_key_devices">获取设备did</span>
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices)
@@ -422,8 +423,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 | 参数       | 数据类型    | 描述                      |
 |:---------- |:------- |:------------------------- |
-| did      | string |                   |
-| passcode       | string |             |
+| did      | string |     设备id              |
+
 
 
 
@@ -432,7 +433,6 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```json
 {
   "did": "string",
-  "passcode": "string"
 }
 ```
 
@@ -496,21 +496,16 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品名称   |
-| gid           | string |  否  | query     | 设备组 id  |      
-| country           | string |  否  | query     | 国家  |  
-| region           | string |  否  | query     | 省  |  
-| city           | string |  否  | query     |  城市  |  
-| is_online           | integer |  否  | query     | 是否在线,在线为1,不在线为0   |  
-
-| is_faulty        | integer |  否  | query     | 是否故障,故障为1,无故障为0    | 
-| is_alert        | integer |  否  | query     | 是否报警,报警为1,无报警为0    | 
-| show_disabled        | integer |  否  | query     | 显示注销为1，过滤注销为0    | 
-
-| liveness_start        | string |  否  | query     | 最近活跃时间戳
-    | 
-
-| type        | string |  否  | query     | 可以为 did|mac|uid
-    | 
+| gid           | string |  否  | query     | 设备组 id  |
+| country           | string |  否  | query     | 国家  |
+| region           | string |  否  | query     | 省  |
+| city           | string |  否  | query     |  城市  |
+| is_online           | integer |  否  | query     | 是否在线,在线为1,不在线为0   |
+| is_faulty        | integer |  否  | query     | 是否故障,故障为1,无故障为0    |
+| is_alert        | integer |  否  | query     | 是否报警,报警为1,无报警为0    |
+| show_disabled        | integer |  否  | query     | 显示注销为1，过滤注销为0    |
+| liveness_start        | string |  否  | query     | 最近活跃时间戳|
+| type        | string |  否  | query     | 可以为 did、mac、uid|
 |   val         | string |  否  | query     | 查询条件值   |
 | limit           | integer |  否  | query     | 每次返回的条数 |
 | skip       | integer |  否  | query   | 每次跳过的条数|
@@ -570,12 +565,12 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "post_v1_products_product_key_devices_did_control">远程控制</span>
 
 远程控制设备可以通过两种方式
-*原始指令: raw
+* 原始指令: raw
 二进制转 byte 数组，如要发送 010203，就是
 {
 "raw": [1, 2, 3]
 }
-*数据点方式: attrs
+* 数据点方式: attrs
 设备产品必须定义了数据点，比如要设置温度 temp 为 30 度
 {
 "attrs": {
@@ -624,27 +619,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online)
 
-*按 ts 降序排序。
-*设备的心跳统计信息，在设备上下线记录的 Payload 中。
-*设备上线记录中，payload 记录了设备设备指定的心跳时间间隔（KeepAlive），单位为秒，此 KeepAlive 的值等于设备上传的心跳时间间隔再加上5秒
-*设备下线记录中，payload 记录了设备的在线时长（duration），以及在线时发送的心跳次数（heartbeat/count），相邻两个心跳的最大间隔时间（heartbeat/max），最小间隔时间（heartbeat/min），平均间隔时间（heartbeat/avg）, 最后一次收到心跳时刻与下线时刻的间隔时间（heartbeat/last），单位为秒
-*心跳的间隔时间，为m2m收到第n次心跳的时间点（时间戳）与第n-1次心跳的时间点（时间戳）之差，其中n >= 2；当n < 2时，max，min，avg的值固定为0
-*max，min：计算客户端从接到第一次心跳开始，到最后一次接到心跳为止的时间段内，相邻两个心跳时间差的最大，最小值；
-*avg：客户端与云端建立链接开始，到最后一次接到心跳为止的时间段，除以心跳次数；
-设备下线记录中，payload记录了设备的下线原因（reason），说明各种reason的意义：
-*mqtt_disconnect：设备主动断开与mqtt的连接
-*no_heartbeat：m2m在KeepAlive时段内，没有收到设备心跳
-*tcp_closed：设备主动断开tcp连接
-*ssl_closed：设备主动断开ssl连接
-*offline_force：设备重复上线，原有的连接断开
-*offline_reset：设备注销，断开连接
-*offline_exception：异常断开连接
-*offline_sending_density_overflow：客户端发送信息的频率过大，断开链接
-*offline_sending_data_size_overflow：客户端发送信息的流量过大，断开链接
-*ChangeLog
-*0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-*0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-*0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+ChangeLog
+* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -709,12 +687,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd)
 
-*按 ts 降序排序。
-*payload 为二进制进行 base64 编码后的结果。
-*ChangeLog
-*0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-*0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-*0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+ChangeLog
+* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -777,10 +753,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data)
 
-*ChangeLog
-*0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-*0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-*0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+ChangeLog
+* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -853,16 +829,17 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 
+# 用户报表
 
-#用户报表
-##<span id = "get_v1_products_product_key_users_report_new">用户新增报表</span>
+## <span id = "get_v1_products_product_key_users_report_new">用户新增报表</span>
 
 实现备注：
 这里指的是绑定了该 PK 下产品的新增用户
 日期查询说明：
-*cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
-*cycle 为 week 时，start,end的格式是年-周，example:2016-51
-*cycle 为 month 时，start,end的格式为年-月，example:2016-12
+* cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
+* cycle 为 week 时，start,end的格式是年-周，example:2016-51
+* cycle 为 month 时，start,end的格式为年-月，example:2016-12
+
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new)
 
 
@@ -878,10 +855,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
 | product_key            | string |  是 | path    | 产品名称   |
 | gid         			| string |  是 | query    | 设备组id  |
-| cycle         			| string |  否 | query    | 统计周期，可以为 date|week|month  |
-| start         			| string |  是 | query    | 起始周期，为起始日期、起始周或起始月  |
-| end         			| string |  是 | query    | 结束周期，为结束日期、结束周或结束月
-  |
+| cycle         		| string |  否 | query    | 统计周期，可以为 date、week、month  |
+| start         		| string |  是 | query    | 起始周期，为起始日期、起始周或起始月 |
+| end         			| string |  是 | query    | 结束周期，为结束日期、结束周或结束月|
 
 
 
@@ -918,7 +894,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_liveness_total">企业活跃用户人数</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是企业活跃用户人数
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total)
@@ -934,7 +910,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id      |
-| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret   |      
+| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret   |
 | product_secret           | string |  是 | query    | 产品标识码 product_key  |
 | appid          | string |  否 | query    | 	应用id  |
 | start_date         | string |  是 | query    | 	开始日期，如：2015-01-02 |
@@ -966,7 +942,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_location">用户地理分布</span>
 
 
-*实现备注
+* 实现备注
 该接口查询的是企业用户地理分布
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location)
@@ -981,8 +957,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id      |
-| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret   |      
+| X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id     |
+| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret  |
 | product_secret           | string |  是 | query    | 产品标识码 product_key  |
 
 
@@ -1014,7 +990,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_users_report_total">用户总数报表</span>
 
 
-*实现备注
+* 实现备注
 查询用户空间表，获取曾经绑定过该 pk 设备的用户总数
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total)
@@ -1030,7 +1006,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 |product_key	| string |  是  | path   | 产品标识码     |
-| gid  | string |  否  | query   | 设备组id   |      
+| gid  | string |  否  | query   | 设备组id   |
 
 
 
@@ -1051,13 +1027,12 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```
 
 
-
-#设备报表
+# 设备报表
 
 ## <span id = "get_v1_products_product_key_devices_locations">获取设备地理位置分布</span>
 
 
-*实现备注
+* 实现备注
 获取设备地理位置分布报表
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations)
@@ -1073,10 +1048,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 |product_key	| string |  是  | path   | 产品标识码     |
-| gid  			| string |  否  | query   | 设备组id   | 
-| is_online 	 | integer |  否  | query   | 是否在线   |  
-| is_faulty  	| integer |  否  | query   | 是否故障   |  
-| is_alert  	| integer |  否  | query   | 是否报警   |       
+| gid  			| string |  否  | query   | 设备组id   |
+| is_online 	 | integer |  否  | query   | 是否在线   |
+| is_faulty  	| integer |  否  | query   | 是否故障   |
+| is_alert  	| integer |  否  | query   | 是否报警   |
 
 
 
@@ -1101,7 +1076,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_summary">设备概览</span>
 
 
-*实现备注
+* 实现备注
 获取最近的激活和活跃设备数报表
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations)
@@ -1154,10 +1129,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_incr_devices">设备激活详情</span>
 
 实现备注
-*获取设备激活详情报表
+* 获取设备激活详情报表
 日期查询说明
-*start,end 的格式是年-月-日，example:2016-08-01,
-*注意：蓝牙设备响应返回的结果为device_sn字段
+* start,end 的格式是年-月-日，example:2016-08-01,
+* 注意：蓝牙设备响应返回的结果为device_sn字段
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_incr_devices)
 
@@ -1172,11 +1147,11 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| start           | string |  否  | query     | 字符串开始日期 | 
-| end           | string |  否  | query     | 字符串结束日期 |       
-| country           | string |  否  | query     | 国家  |  
-| region           | string |  否  | query     | 省  |  
-| city           | string |  否  | query     |  城市  |  
+| start           | string |  否  | query     | 字符串开始日期 |
+| end           | string |  否  | query     | 字符串结束日期 |
+| country           | string |  否  | query     | 国家  |
+| region           | string |  否  | query     | 省  |
+| city           | string |  否  | query     |  城市  |
 
 
 响应参数
@@ -1229,10 +1204,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_active_devices">设备活跃详情</span>
 
 实现备注
-*获取设备活跃详情报表
+* 获取设备活跃详情报表
 日期查询说明
-*start,end 的格式是年-月-日，example:2016-08-01,
-*注意：蓝牙设备响应返回的结果为device_sn字段
+* start,end 的格式是年-月-日，example:2016-08-01,
+* 注意：蓝牙设备响应返回的结果为device_sn字段
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_active_devices)
 
@@ -1247,11 +1222,11 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| start           | string |  否  | query     | 字符串开始日期 | 
-| end           | string |  否  | query     | 字符串结束日期 |       
-| country           | string |  否  | query     | 国家  |  
-| region           | string |  否  | query     | 省  |  
-| city           | string |  否  | query     |  城市  |  
+| start           | string |  否  | query     | 字符串开始日期 |
+| end           | string |  否  | query     | 字符串结束日期 |
+| country           | string |  否  | query     | 国家  |
+| region           | string |  否  | query     | 省  |
+| city           | string |  否  | query     |  城市  |
 
 
 响应参数
@@ -1305,13 +1280,13 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 实现备注
 活跃设备：一天之内有数据上报的设备
-*日报表最多查询 30 天。
-*周报表最多查询 53 周。
-*月报表最多查询 12 月。
+* 日报表最多查询 30 天。
+* 周报表最多查询 53 周。
+* 月报表最多查询 12 月。
 日期查询说明
-*cycle 为 date 时，start,end 的格式是年-月-日，example:2016-08-01,
-*cycle 为 week 时，start,end 的格式是年-周，example:2016-51
-*cycle 为 month 时，start,end 的格式为年-月，example:2016-12
+* cycle 为 date 时，start,end 的格式是年-月-日，example:2016-08-01,
+* cycle 为 week 时，start,end 的格式是年-周，example:2016-51
+* cycle 为 month 时，start,end 的格式为年-月，example:2016-12
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_report_liveness_history)
 
@@ -1326,10 +1301,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| gid          | string |  否  | query     | 设备组 id | 
-| cycle           | string |  否  | query     | 统计周期，可以是日、周、月 |       
-| start           | string |  是  | query     | 开始日期  |  
-| end           | string |  是  | query     | 结束日期  |  
+| gid          | string |  否  | query     | 设备组 id |
+| cycle           | string |  否  | query     | 统计周期，可以是日、周、月 |
+| start           | string |  是  | query     | 开始日期  |
+| end           | string |  是  | query     | 结束日期  |
 
 
 
@@ -1343,7 +1318,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | end    | string  | 结束日期           |
 | date        | string  | 日期           |
 | count          | integer  | 数量          |
-| location   | object  | 地理位置信息
+| location   | object  | 地理位置信息|
              
 
 返回例子
@@ -1363,12 +1338,65 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 }
 ```
 
+## <span id = "get_v1_products_product_key_devices_report_rt">设备实时统计报表</span>
+实现备注
+* 获取设备实时统计报表
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_devices_report_rt)
+
+
+请求类型及地址
+
+      GET  
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/report/devices/report/rt
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+| product_key				| string |  是  | path   | 产品标识码  |
+| gid          | string |  否  | query     | 设备组 id |
+
+
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| gid        | string | 设备组 id                   |
+| activated     | integer | 激活数  |
+| faulty        | integer | 故障数        |
+| end    | integer  | 报警数           |
+
+             
+
+返回例子
+```json
+{
+  "gid": "string",
+  "count": {
+    "activated": 0,
+    "faulty": 0,
+    "alert": 0
+  },
+  "location": {
+    "China": {
+      "count": {
+        "activated": 0,
+        "faulty": 0,
+        "alert": 0
+      }
+    }
+  }
+
+```
 
 
 ## <span id = "get_v1_products_product_key_fault_report_devices">获取故障设备台数报表</span>
 
 实现备注
-*获取故障设备台数报表
+* 获取故障设备台数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_devices)
@@ -1384,7 +1412,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| gid          | string |  否  | query     | 设备组 id | 
+| gid          | string |  否  | query     | 设备组 id |
 
 
 
@@ -1415,7 +1443,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_alert_report_devices">获取报警设备台数报表</span>
 
 实现备注
-*获取报警设备台数报表
+* 获取报警设备台数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_alert_report_devices)
@@ -1431,7 +1459,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| gid          | string |  否  | query     | 设备组 id | 
+| gid          | string |  否  | query     | 设备组 id |
 
 
 
@@ -1461,7 +1489,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_fault_report_events">获取故障次数报表</span>
 
 实现备注
-*获取故障次数报表
+* 获取故障次数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_report_events)
@@ -1477,7 +1505,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| gid          | string |  否  | query     | 设备组 id | 
+| gid          | string |  否  | query     | 设备组 id |
 
 
 
@@ -1511,7 +1539,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_fault_alert_events">获取报警次数报表</span>
 
 实现备注
-*获取报警次数报表
+* 获取报警次数报表
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备报表/get_v1_products_product_key_fault_alert_events)
@@ -1527,7 +1555,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| gid          | string |  否  | query     | 设备组 id | 
+| gid          | string |  否  | query     | 设备组 id |
 
 
 
@@ -1561,8 +1589,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 
-
-#绑定管理
+# 绑定管理
 
 ## <span id = "post_v1_products_product_key_devices_bindings">设备绑定功能</span>
 
@@ -1580,9 +1607,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| uid          | string |  是  | body     | 用户 id | 
-| appid           | string |  是  | body     | 应用  id | 
-| dids           | string |  是  | body     | did 列表  | 
+| uid          | string |  是  | body     | 用户 id |
+| appid           | string |  是  | body     | 应用  id |
+| dids           | string |  是  | body     | did 列表  |
 
 
 响应参数
@@ -1621,9 +1648,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
 | product_key				| string |  是  | path   | 产品标识码  |
-| uid          | string |  是  | body     | 用户 id | 
-| appid           | string |  是  | body     | 应用  id | 
-| dids           | string |  是  | body     | did 列表  | 
+| uid          | string |  是  | body     | 用户 id |
+| appid           | string |  是  | body     | 应用  id |
+| dids           | string |  是  | body     | did 列表  |
 
 
 响应参数
