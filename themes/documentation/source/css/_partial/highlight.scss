@@ -22,6 +22,7 @@
     pre {
       position: relative;
       font-weight: bold;
+      line-height: 21px;
     }
   }
 
@@ -55,7 +56,7 @@ code {
 pre code {
   border: none;
   display: block;
-  padding: 0;
+  padding: 10px 50px;
 }
 
 .highlight table {
