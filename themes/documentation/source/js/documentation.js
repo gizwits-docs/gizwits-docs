@@ -142,7 +142,7 @@ var HEADER_BP = 915
     var path = location.pathname
     var editPath = 'https://github.com/gizwits-docs/gizwits-docs/edit/master/source' + path.slice(0, path.length - 4) + 'md'
     $('.edit-link').attr('href', editPath)
-  }) 
+  })
 }(jQuery)
 
 
@@ -278,7 +278,7 @@ var HEADER_BP = 915
 // open doc anchor in new page
 +function($) {
   $(function() {
-    $('.markdown-body a').not('.anchor').attr('target') //, '_blank')
+    $('.markdown-body a').not('.anchor').attr('target') //, '_blank')//页内跳转
   })
 }(jQuery)
 
@@ -386,7 +386,7 @@ $(function() {
       }).map(function(item) {
         var content = item.content
         var start = 0
-        
+
         if (item.first_occur - 10 > 0) {
           start = item.first_occur - 10
         }
@@ -397,7 +397,7 @@ $(function() {
         var h = ''
         h += '<div class="header-search-result-item">\n'
         h += '<div class="header-search-result-item-title"><a href="' + item.url + '" target="_blank">' + item.title.replace(sReg, '<span class="hl">$1</span>') + '</a></div>\n'
-        h += '<div class="header-search-result-item-content">' + content + '</div>'  
+        h += '<div class="header-search-result-item-content">' + content + '</div>'
         h += '</div>'
         return h
       })

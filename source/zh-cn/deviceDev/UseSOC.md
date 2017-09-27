@@ -1,4 +1,4 @@
-title: SOC快速入门
+title: ESP8266-SOC快速入门
 ----
 附件：[SOC快速开发LED灯参考代码](/assets/pdf/gizlamp.zip)
 # 概述
