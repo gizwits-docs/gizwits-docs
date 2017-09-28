@@ -209,7 +209,7 @@ var HEADER_BP = 915
       if (!$('.nav-control').data().show) {
         var activeGroup = $active.data().group
         $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
-        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
+      //hohuiking  $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
       }
     })
   })
@@ -220,7 +220,7 @@ var HEADER_BP = 915
       if (!$('.nav-control').data().show) {
         var activeGroup = $(this).data().group
         $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
-        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
+      //hohuiking  $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
       }
     })
   })
@@ -228,6 +228,7 @@ var HEADER_BP = 915
   // nav's sub-menu show/hide
   $(function() {
     $('.nav-control').click(function() {
+    //$(document).ready(function() {
       var $this = $(this)
       var langIsEn = localStorage.getItem('lang') === 'en-us'
       if ($this.data().show) {
