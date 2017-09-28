@@ -46,6 +46,18 @@ title: 企业API
 | [post_v1_products_product_key_devices_did_control](#设备远程控制)   |  远程控制设备  |
 
 
+* [设备组管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备组管理)：提供了创建设备组、查询设备组列表、删除设备组、更新设备组、获取设备组下mac列表等功能。
+
+| API列表                                  | 描述               |
+| ---------------------------------------- | ------------------ |
+| [get_v1_products_product_key_device_groups](#获取设备组树形结构)               |   获取设备组树形结构  |
+| [post_v1_products_product_key_device_groups](#创建设备组)      |    创建设备组   |
+| [delete_v1_products_product_key_device_groups_gid](#删除设备组)         |     删除设备组    |
+| [get_v1_products_product_key_device_groups_gid](#获取设备组下的mac列表)|  获取设备组下的mac列表  |
+| [put_v1_products_product_key_device_groups_gid](#更新设备组) | 更新设备组|
+
+
+
 
 * [用户报表](http://swagger.gizwits.com/doc/index/debug_enterprise#/用户报表)：提供了查询用户新增报表、企业活跃用户人数、用户地理分布、用户总数报表等功能。
 
@@ -427,14 +439,13 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 
-
-
 返回例子
 ```json
 {
   "did": "string",
 }
 ```
+
 
 ## <span id = "get_v1_products_product_key_device_detail">获取设备详情</span>
 
@@ -619,10 +630,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online)
 
-ChangeLog
-* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+实现备注
+*  start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+*  start_ts与end_ts之间的间隔秒必须在两天范围以内
+*  增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -687,10 +698,10 @@ ChangeLog
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd)
 
-ChangeLog
-* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+实现备注
+* start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -753,10 +764,10 @@ ChangeLog
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data)
 
-ChangeLog
-* 0.4.2.1 start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-* 0.4.2.1 start_ts与end_ts之间的间隔秒必须在两天范围以内
-* 0.4.2.1 增加sort排序，默认为降序，asc代表升序，desc代表降序
+实现备注
+* start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
+* start_ts与end_ts之间的间隔秒必须在两天范围以内
+* 增加sort排序，默认为降序，asc代表升序，desc代表降序
 
 请求类型及地址
 
@@ -813,6 +824,194 @@ ChangeLog
   ]
 }
 ```
+
+
+
+
+* [设备组管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备组管理)：提供了创建设备组、查询设备组列表、删除设备组、更新设备组、获取设备组下mac列表等功能。
+
+| API列表                                  | 描述               |
+| ---------------------------------------- | ------------------ |
+| [get_v1_products_product_key_device_groups](#获取设备组树形结构)               |   获取设备组树形结构  |
+| [post_v1_products_product_key_device_groups](#创建设备组)      |    创建设备组   |
+| [delete_v1_products_product_key_device_groups_gid](#删除设备组)         |     删除设备组    |
+| [get_v1_products_product_key_device_groups_gid](#获取设备组下的mac列表)|  获取设备组下的mac列表  |
+| [put_v1_products_product_key_device_groups_gid](#更新设备组) | 更新设备组|
+
+
+
+# 设备组管理
+## <span id = "get_v1_products_product_key_device_groups">获取设备组树形结构</span>
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups)
+
+
+请求类型及地址
+
+      GET
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
+
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
+| product_key            | string |  是 | path    | 产品名称   |
+
+
+
+响应参数
+    无
+
+
+
+返回例子
+```json
+{
+ 
+}
+```
+
+
+## <span id = "post_v1_products_product_key_device_groups">创建设备组</span>
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/post_v1_products_product_key_device_groups)
+
+
+请求类型及地址
+
+     POST
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups
+
+实现备注
+* parent 为可选参数，如果有 parent 表示创建一个子设备组。
+* 一个产品只能有一个根设备组。
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
+| product_key            | string |  是 | path    | 产品名称   |
+| parent_gid            | string |  否 | body    | 子设备组id  |
+
+
+响应参数
+    
+| 参数                     | 数据类型   |   描述                                          |
+|:------------------------ |:------  |:--------------------------------------------- |     
+| gid              | string |  设备组id |
+
+
+返回例子
+```json
+{
+  "gid": "string"
+}
+```
+
+## <span id = "delete_v1_products_product_key_device_groups_gid">删除设备组</span>
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/delete_v1_products_product_key_device_groups_gid)
+
+
+请求类型及地址
+
+     DELETE
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+
+实现备注
+* 删除设备组需要先清空设备组下所有设备及子设备组。
+
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
+| product_key            | string |  是 | path    | 产品名称   |
+| gid            | string |  是 | path    | 设备组id  |
+
+
+响应参数
+       无 
+
+返回例子
+```json
+{
+  
+}
+```
+
+
+## <span id = "get_v1_products_product_key_device_groups_gid">获取设备组下的mac列表</span>
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups_gid)
+
+
+请求类型及地址
+
+     DELETE
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
+| product_key            | string |  是 | path    | 产品名称   |
+| gid            | string |  是 | path    | 设备组id  |
+
+
+响应参数
+   
+| 参数                     | 数据类型   |   描述                                          |
+|:------------------------ |:------  |:--------------------------------------------- |     
+| macs               | Array[string] |  mac列表 |
+
+
+返回例子
+```json
+{
+  "macs": [
+    "string"
+  ]
+}
+```
+
+
+## <span id = "put_v1_products_product_key_device_groups_gid">更新设备组</span>
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/put_v1_products_product_key_device_groups_gid)
+
+
+请求类型及地址
+
+     DELETE
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
+
+实现备注
+* action: 操作，"assign" | "unassign"
+* macs: MAC 列表，最多一次上传 1000 个 MAC
+* reassign: 当 action 为 "assign" 时有效。当 reassgin 为 true，MAC 如果已经在某个设备组下面，会被移动到当前组；当 reassign 为 false，MAC 如果已经在某个设备组下面，则移动失败。
+
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
+| product_key            | string |  是 | path    | 产品名称   |
+| gid            | string |  是 | path    | 设备组id  |
+| body            | AssignObject |  是 | body    | 设备组id  |
+
+响应参数
+       无 
+
+返回例子
+```json
+{
+  
+}
+```
+
 
 
 
