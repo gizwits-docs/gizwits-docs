@@ -264,6 +264,6 @@ App通过云端下发控制事件处理，可以在
 ## 4. 项目完成
 - 完成以上步骤，整个项目开发就完成了,如果需要关注更多的开源项目以及和其他开发者深度交流，可以到我们公司的官方论坛进行学习：http://club.gizwits.com/forum.php
 
-
+## [附加篇：ESP8266-SOC方案UART0教程](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266-SOC_UART0.html)
 
 
