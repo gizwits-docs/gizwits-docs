@@ -27,7 +27,7 @@ title: ESP8266-SOC方案UART0教程
 
 ##### 注：关于串口的FIFO接收与发送数据，可下载本教程附件esp8266-technical_reference_cn.pdf，阅读第11章关于UART的介绍与接口
 
-# 二、UART0_tx发送指定数据
+# 三、UART0_tx发送指定数据
 
 #### 我们可以像控制灯的开关一样，用App去控制UART0_tx分别发送“Hello,Gizwits!\n”和“Goodbye,Gizwits!\n”。
 
