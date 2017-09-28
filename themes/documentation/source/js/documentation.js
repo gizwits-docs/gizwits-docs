@@ -227,8 +227,8 @@ var HEADER_BP = 915
 
   // nav's sub-menu show/hide
   $(function() {
-    //$('.nav-control').click(function() {
-      $(document).ready(function() {
+    $('.nav-control').click(function() {
+    //$(document).ready(function() {
       var $this = $(this)
       var langIsEn = localStorage.getItem('lang') === 'en-us'
       if ($this.data().show) {
@@ -236,13 +236,12 @@ var HEADER_BP = 915
         $this.text(langIsEn ? 'Show' : '展开全部')
         $this.data('show', false)
         $('.nav > ul > .h1[data-group=' + activeGroup + ']').addClass('active')
-        //hohuiking  $('.nav .h2').removeClass('active').hide()
+        $('.nav .h2').removeClass('active').hide()
+      } else {
+        $this.text(langIsEn ?  'Hide' : '折叠全部')
+        $this.data('show', true)
+        $('.nav .h2').show()
       }
-      //else {
-      //  $this.text(langIsEn ?  'Hide' : '折叠全部')
-      //  $this.data('show', true)
-      //  $('.nav .h2').show()
-      //}
     })
   })
 }(jQuery)

@@ -63,7 +63,10 @@
       font-size: 14px;
     }
     .nav {
-      max-height: 600px;
+      @media (max-width: $body-bp) {
+        max-height: 400px;
+      }
+      max-height: 700px;
       overflow: auto;
       &::-webkit-scrollbar {
         display: none;
@@ -71,9 +74,9 @@
     }
 
     .nav-control {
-    //  @media (max-width: $body-bp) {
+      @media (max-width: $body-bp) {
         display: none;
-    //  }
+      }
       text-align: center;
       border-top: 2px solid $dark-gray;
       cursor: pointer;
@@ -85,7 +88,7 @@
         bottom: 10px;
       }
     }
-    
+
     .nav-title {
       margin: 0;
       margin-left: 15px;
