@@ -828,18 +828,6 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 
-* [设备组管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备组管理)：提供了创建设备组、查询设备组列表、删除设备组、更新设备组、获取设备组下mac列表等功能。
-
-| API列表                                  | 描述               |
-| ---------------------------------------- | ------------------ |
-| [get_v1_products_product_key_device_groups](#获取设备组树形结构)               |   获取设备组树形结构  |
-| [post_v1_products_product_key_device_groups](#创建设备组)      |    创建设备组   |
-| [delete_v1_products_product_key_device_groups_gid](#删除设备组)         |     删除设备组    |
-| [get_v1_products_product_key_device_groups_gid](#获取设备组下的mac列表)|  获取设备组下的mac列表  |
-| [put_v1_products_product_key_device_groups_gid](#更新设备组) | 更新设备组|
-
-
-
 # 设备组管理
 ## <span id = "get_v1_products_product_key_device_groups">获取设备组树形结构</span>
 
@@ -949,7 +937,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求类型及地址
 
-     DELETE
+      GET
       http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
 
 
@@ -985,7 +973,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求类型及地址
 
-     DELETE
+      PUT
       http://enterpriseapi.gizwits.com/v1/products/{product_key}/device_groups/{gid}
 
 实现备注
