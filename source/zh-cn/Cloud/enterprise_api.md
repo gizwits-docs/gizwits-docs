@@ -1010,7 +1010,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_users_report_new">用户新增报表</span>
 
 实现备注：
-这里指的是绑定了该 PK 下产品的新增用户
+* 这里指的是绑定了该 PK 下产品的新增用户
 日期查询说明：
 * cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
 * cycle 为 week 时，start,end的格式是年-周，example:2016-51
@@ -1070,8 +1070,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_liveness_total">企业活跃用户人数</span>
 
 
-* 实现备注
-该接口查询的是企业活跃用户人数
+实现备注
+* 该接口查询的是企业活跃用户人数
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total)
 
@@ -1118,8 +1118,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_users_location">用户地理分布</span>
 
 
-* 实现备注
-该接口查询的是企业用户地理分布
+实现备注
+* 该接口查询的是企业用户地理分布
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location)
 
@@ -1166,8 +1166,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_users_report_total">用户总数报表</span>
 
 
-* 实现备注
-查询用户空间表，获取曾经绑定过该 pk 设备的用户总数
+实现备注
+* 查询用户空间表，获取曾经绑定过该 pk 设备的用户总数
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total)
 
@@ -1208,8 +1208,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_devices_locations">获取设备地理位置分布</span>
 
 
-* 实现备注
-获取设备地理位置分布报表
+实现备注
+* 获取设备地理位置分布报表
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations)
 
@@ -1252,8 +1252,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## <span id = "get_v1_products_product_key_summary">设备概览</span>
 
 
-* 实现备注
-获取最近的激活和活跃设备数报表
+实现备注
+* 获取最近的激活和活跃设备数报表
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations)
 
@@ -1454,7 +1454,6 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 ## <span id = "get_v1_products_product_key_devices_report_liveness_history">获取活跃历史报表</span>
 
-实现备注
 活跃设备：一天之内有数据上报的设备
 * 日报表最多查询 30 天。
 * 周报表最多查询 53 周。
