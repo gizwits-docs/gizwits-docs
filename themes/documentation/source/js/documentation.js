@@ -232,11 +232,17 @@ var HEADER_BP = 915
       var $this = $(this)
       var langIsEn = localStorage.getItem('lang') === 'en-us'
       if ($this.data().show) {
-        var activeGroup = $('.active').data().group
-        $this.text(langIsEn ? 'Show' : '展开全部')
-        $this.data('show', false)
-        $('.nav > ul > .h1[data-group=' + activeGroup + ']').addClass('active')
-        $('.nav .h2').removeClass('active').hide()
+          if($('.active').length){
+          var activeGroup = $('.active').data().group
+          $this.text(langIsEn ? 'Show' : '展开全部')
+          $this.data('show', false)
+          $('.nav > ul > .h1[data-group=' + activeGroup + ']').addClass('active')
+          $('.nav .h2').removeClass('active').hide()
+        } else {
+          $this.text(langIsEn ? 'Show' : '展开全部')
+          $this.data('show', false)
+          $('.nav .h2').hide()
+        }
       } else {
         $this.text(langIsEn ?  'Hide' : '折叠全部')
         $this.data('show', true)
