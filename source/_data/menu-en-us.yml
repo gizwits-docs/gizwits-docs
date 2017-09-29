@@ -1,25 +1,59 @@
-Tutorial:
-  Intro in 5 mins:
-    path: /quickstart.html
-  Device Accessing:
-    path: /quickstart.html
+Overview:
+  Overview:
+      Common Terms:
+         path: /overview/Overview/Common_Terms.html
+      Gizwits Platform Overview:
+         path: /overview/Overview/Overview.html
+  GoKit:
+     GoKit User Guide:
+          path: /overview/GoKit/useGokit.html
+     Gokit3 Simplified version of the specification:
+          path: /overview/GoKit/GoKitSpecification.html
+
+Quick start:
+  Overview:
+    	Getting Started Guideline:
+          path: /QuickStart/Overview/Guideline.html
+
+  Cloud Management:
+      Register a Gizwits Account:
+          path: /QuickStart/CloudManagement/Register.html
+      Create Product:
+          path: /QuickStart/CloudManagement/CreateProduct.html
+      Set Datapoint:
+          path: /QuickStart/CloudManagement/Datapoint.html
+      Manage Application:
+          path: /QuickStart/CloudManagement/ManageApp.html
+
+  Device Development:
+     Development of Device:
+         path: /overview/Overview/Overview.html
+
   App Development:
-    path: /quickstart.html
-Device:
-  path: /quickstart.html
-App:
-  ios SDK:
-    path: /quickstart.html
-  Android SDK:
-    path: /quickstart.html
-  Wechat SDK:
-    path: /quickstart.html
-Cloud:
-  Business Cloud:
-    path: /quickstart.html
-  D3:
-    path: /quickstart.html
-  Global Deployment:
-    path: /quickstart.html
-API:
-  path: /quickstart.html
+     Application Development:
+         path: /overview/Overview/Overview.html
+
+  Testing and Debugging:
+     Instructions for Serial Port Programming (Gizwits GAgent for ESP8266):
+         path: /overview/Overview/Overview.html
+     Testing and Debugging Tools:
+         path: /overview/Overview/Overview.html
+     Instructions for Serial Port Programming (Gizwits GAgent for MXCHIP 3162):
+         path: /overview/Overview/Overview.html
+
+Launching:
+   Product Launch:
+       path: /overview/Overview/Overview.html
+
+Production and Operation:
+   OTA Update:
+       path: /overview/Overview/Overview.html
+   Statistical Analysis:
+       path: /overview/Overview/Overview.html
+   Product Test Tool:
+       path: /overview/Overview/Overview.html
+
+
+
+Documents:
+          path: /overview/Overview/Overview.html
