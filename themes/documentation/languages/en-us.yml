@@ -11,5 +11,5 @@ join: JOIN
 content: Content
 register: Register
 share: Share
-dev_center: 开发者中心
-res_center: 下载中心
+dev_center: Developer Center
+res_center: Resources

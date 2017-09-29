@@ -10,6 +10,39 @@
   z-index: 999999;
   font-size: 14px;
 
+  .sub-title-menu {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background: $black;
+    padding: 10px 15px;
+    line-height: initial;
+    border-radius: 5px;
+    display: none;
+
+    > a {
+      display: block;
+      height: auto;
+    }
+
+    > a + a {
+      margin-top: 10px;
+    }
+
+    &:before {
+      content: "";
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px;
+      border-color: transparent;
+      border-bottom-color: $black;
+      position: absolute;
+      top: -15px;
+      right: 5px;
+    }
+  }
+
   &-search {
 
     &-close {
@@ -167,6 +200,7 @@
   }
   
   .brand {
+    position: relative;
     @media (max-width: $header-bp) {
       display: none;
     }

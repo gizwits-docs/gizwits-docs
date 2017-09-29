@@ -58,7 +58,8 @@ var HEADER_BP = 915
 +function() {
 
   // DELETE THIS SHIT BEFORE LONG
-  var lang = 'zh-cn'
+  var isEn = window.location.pathname.indexOf('/en-us/') !== -1
+  var lang = isEn ? 'en-us' : 'zh-cn'
   localStorage.setItem('lang', lang)
 
 
@@ -226,6 +227,7 @@ var HEADER_BP = 915
   })
 
   // nav's sub-menu show/hide
+
   $(function() {
     $('.nav-control').click(function() {
     //$(document).ready(function() {
@@ -318,6 +320,13 @@ var HEADER_BP = 915
     var spinner = new Spinner(opts).spin(target)
   }
 }()
+
+$(function() {
+  $('body').on('click', '#sub-title', function(e) {
+    e.preventDefault()
+    $('#sub-title-menu').toggle()
+  })
+})
 
 
 $(function() {

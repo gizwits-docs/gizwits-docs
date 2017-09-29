@@ -9,13 +9,22 @@
       {% endif %}
       </a>
       <a class="text" href="/">{{ __("sub_title") }}</a>
+
+      <!--a class="text" href="/" id="sub-title">{{ __("sub_title") }} <i class="fa fa-clone"></i>
+      </a-->
+        <!--div class="sub-title-menu" id="sub-title-menu">
+        <a href="http://dev.gizwits.com" target="_blank">{{ __("dev_center") }}</a>
+        <a href="http://download.gizwits.com" target="_blank">{{ __("res_center") }}</a>
+        <a href="/" target="_blank">{{ __("sub_title") }}</a>
+        </div-->
+
     </span>
-    
+
     <div class="mobile-header"v>
       <span class="title">{{ __("title") }} {{ __("sub_title") }}</span>
       <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
     </div>
-    
+
     <span class="menu pure-u-16-24">
       <span class="header-search-btn" id="header-search-btn">
         <i class="fa fa-search"></i>
@@ -48,10 +57,10 @@
         {% endfor %}
       </ul>
     </span>
-  
+
     <span class="pure-u-3-24 lang-switch-wrapper">
-      
-      <i class="fa fa-globe" aria-hidden="true"></i> 
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
       {% if lang == "zh-cn" %}
       <a href="/en-us/overview/Overview/Overview.html" class="lang-switch">English</a>
       {% else %}
@@ -73,7 +82,7 @@
         {% for k in site.data.searchTrend %}
         <div class="header-search-trend-item" data-word="{{k}}">{{k}}</div>
         {% endfor %}
-      </div>  
+      </div>
     </div>
 
     <div class="header-search-result hidden" id="header-search-result">
