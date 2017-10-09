@@ -5,7 +5,7 @@ After you've created your Gizwits account, you can use it to sign in to Gizwits 
 
 Follow these step-by-step instructions to create a Gizwits account.
 
-Step 1:Open Gizwits Website
+# Step 1:Open Gizwits Website
 
 Open up your Internet browser and go to the Gizwits home page: http://www.gizwits.com/ . And the Developer Zone is at the top right corner of the page in Fig 1-1.
 
@@ -14,7 +14,7 @@ Open up your Internet browser and go to the Gizwits home page: http://www.gizwit
 <center>Fig 1-1</center >
 
 
-Step 2:Enter Developer Zone
+# Step 2:Enter Developer Zone
 
 Click the Developer Zone button and you will redirect to the Developer Zone section.
 
@@ -26,13 +26,11 @@ Here you will find the Register button at the top right corner of the page.
 
 <center>Fig 1-2</center >
 
-Step 3:Enter Registration Section
+# Step 3:Enter Registration Section
 
-Click the Register button and you will find the Personal Account Registration and Enterprise Account Registration on the registration section in Fig
+Click the Register button and you will find the Personal Account Registration and Enterprise Account Registration on the registration section in Fig 1-3.Choose the proper one to register.
 
-1-3.Choose the proper one to register.
-
-Step 4:Register an Enterprise Account
+# Step 4:Register an Enterprise Account
 
 1)Industry Category
 

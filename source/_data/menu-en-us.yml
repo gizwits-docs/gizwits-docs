@@ -27,33 +27,89 @@ Quick start:
 
   Device Development:
      Development of Device:
-         path: /overview/Overview/Overview.html
+         path: /QuickStart/Device/Device_dev.html
 
   App Development:
      Application Development:
-         path: /overview/Overview/Overview.html
+         path: /QuickStart/APP/APP_dev.html
 
   Testing and Debugging:
      Instructions for Serial Port Programming (Gizwits GAgent for ESP8266):
-         path: /overview/Overview/Overview.html
+         path: /QuickStart/debug/SerialPort(ESP8266).html
      Testing and Debugging Tools:
-         path: /overview/Overview/Overview.html
+         path: /QuickStart/debug/DebugTools.html
      Instructions for Serial Port Programming (Gizwits GAgent for MXCHIP 3162):
+         path: /QuickStart/debug/SerialPort(MXCHIP3162).html
+
+  Launching:
+     Product Launch:
+         path: /Launch/ProductLaunch.html
+
+  Production and Operation:
+     OTA Update:
          path: /overview/Overview/Overview.html
-
-Launching:
-   Product Launch:
-       path: /overview/Overview/Overview.html
-
-Production and Operation:
-   OTA Update:
-       path: /overview/Overview/Overview.html
-   Statistical Analysis:
-       path: /overview/Overview/Overview.html
-   Product Test Tool:
-       path: /overview/Overview/Overview.html
-
+     Statistical Analysis:
+         path: /overview/Overview/Overview.html
+     Product Test Tool:
+         path: /overview/Overview/Overview.html
 
 
 Documents:
-          path: /overview/Overview/Overview.html
+  Open Source Framework Tutorials for App of WiFi Product:
+     Open Source Framework Tutorial for iOS APP:
+         path: /overview/Overview/Overview.html
+     Open Source Framework Tutorial for Android APP:
+         path: /overview/Overview/Overview.html
+
+  iOS SDK 2.0 Integration Guide for WiFi Product:
+     03_7_Device Sharing:
+         path: /overview/Overview/Overview.html
+     03_6_Timed Device Tasks:
+         path: /overview/Overview/Overview.html
+     03_5_Controlling the Device:
+         path: /overview/Overview/Overview.html
+  Android SDK 2.0 Integration Guide for WiFi Product:
+     03_7_Device Sharing:
+         path: /overview/Overview/Overview.html
+     03_2_Users Section:
+         path: /overview/Overview/Overview.html
+     03_1_Initialization Section:
+         path: /overview/Overview/Overview.html
+  iOS SDK 1.0 Integration Guide for WiFi Product:
+     iOS SDK 1.0 FAQ:
+         path: /overview/Overview/Overview.html
+     iOS SDK 1.0 Document 6 – Device Control:
+         path: /overview/Overview/Overview.html
+     iSO SDK 1.0 Document 5 – Device Connection:
+         path: /overview/Overview/Overview.html
+  Android SDK 1.0 Integration Guide for WiFi Product:
+     Android SDK 1.0 FAQ:
+         path: /overview/Overview/Overview.html
+     Android SDK 1.0 Document 6 – Device Control:
+         path: /overview/Overview/Overview.html
+     Android SDK 1.0 Document 5 – Device Connection:
+         path: /overview/Overview/Overview.html
+  WeChat App Development:
+     Rapid Development of WeChat Application:
+         path: /overview/Overview/Overview.html
+     FAQ:
+         path: /overview/Overview/Overview.html
+     WeChat Application Development Process:
+         path: /overview/Overview/Overview.html
+  Modules Development:
+     ESP8266 Gizwits Development Board Photoresistor SDK APP For Arduino/STM32:
+         path: /overview/Overview/Overview.html
+     Specification for Wi-Fi Modules:
+         path: /overview/Overview/Overview.html
+     GAgent Test Case:
+         path: /overview/Overview/Overview.html
+  Access to App Development Guide:
+     Access to iOS App Development Guide:
+         path: /overview/Overview/Overview.html
+     Access to Android App Development Guide:
+         path: /overview/Overview/Overview.html
+  APIs:
+     Gizwits Open API(New):
+         path: /overview/Overview/Overview.html
+     See all 1 articles:
+         path: /overview/Overview/Overview.html
