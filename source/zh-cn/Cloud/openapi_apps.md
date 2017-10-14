@@ -38,7 +38,7 @@ Open API 就是机智云对外提供这些数据的访问接口！
 | API列表                                  | 描述               |
 | ---------------------------------------- | ------------------ |
 | [get_app_messages](#查询消息列表)    | 查询消息列表       |
-| [put_app_messages](#标记消息已读和删除) | 标记消息已读和删除 |
+| [put_app_messages](#标记已读和删除消息) | 标记消息已读和删除 |
 
 
 * [绑定管理](#绑定管理)：用户与设备的绑定、解绑等功能
@@ -241,7 +241,12 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 - 用户名密码注册，通过 username 和 passowrd 创建用户
 - 手机注册，通过 phone, password 和 code（短信验证码）创建用户，短信验证码的获取参考下面章节
 - 邮箱注册，通过 email 和 password 创建用户
-- 第三方登录用户创建，通过authData内的 src、 uid 和 token 创建用户。目前支持 QQ、百度、新浪微博
+- 第三方登录用户创建，通过authData内的 src、 uid 和 token 创建用户。目前支持腾讯QQ、新浪微博、百度、微信、Facebook、Twitter、Google+、Amazon
+
+第三方登录注意事项：
+- Google 和 amazon 第三方登录，authData 里面的 token 需要带上 "Bearer " 开头
+- QQ 和 Twitter 需要在开发者中心填写API_KEY和API_Secret
+- Facebook、Twitter、Google、Amazon仅可在美东和欧洲环境使用
 
 请求地址及地址
 
@@ -260,7 +265,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 | phone                    | string |  否  | body     | 手机号码,手机号码，手机注册的请求参数             |
 | code                     | string |  否  | body     | 验证码,短信验证码，手机注册的请求参数             |
 | lang                     | string |  否  | body     | 语言:en，zh-cn                                |
-| src                      | string |  否  | body     | 平台类型:qq, sina, baidu, wechat              |
+| src                      | string |  否  | body     | 平台类型:qq,sina,baidu,wechat,twitter,facebook,google, amazon              |
 | uid                      | string |  否  | body     | 第三方登录平台返回的uid                       |
 | token                    | string |  否  | body     | 第三方登录平台返回的token                     |
 
