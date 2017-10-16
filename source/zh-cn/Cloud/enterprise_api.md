@@ -63,7 +63,7 @@ title: 企业API
 
 | API列表                                  | 描述               |
 | ---------------------------------------- | ------------------ |
-| [get_v1_products_product_key_users_report_new](#用户新增报表--大数据)          |   这里指的是绑定了该 PK 下产品的新增用户  |
+| [get_v1_products_product_key_users_report_new](#用户新增报表)          |   这里指的是绑定了该 PK 下产品的新增用户  |
 | [get_v1_users_liveness_total](#企业活跃用户人数)     |    企业活跃用户人数  |
 | [get_v1_users_location](#用户地理分布)          |    用户地理分布   |
 | [get_v1_products_product_key_users_report_total](#用户总数报表)         |   用户总数   |
