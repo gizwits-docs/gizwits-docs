@@ -97,7 +97,7 @@ title: MCU OTA教程
 
 ### 3.3.2.接下来是代码移植步骤，只需把图片内红框相应代码复制到开发者自动生成mcu代码，即可实现mcuOTA功能。
 
-![图13](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/101.png)
+![图13](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/101.PNG)
 
 ![图14](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/102.png)
 
@@ -105,9 +105,9 @@ title: MCU OTA教程
 
 ![图17](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/109.png)
 
-![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105.png)
+![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105.PNG)
 
-![图19](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/106.png)
+![图19](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/106.PNG)
 
 ![图20](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/107.png)
 
