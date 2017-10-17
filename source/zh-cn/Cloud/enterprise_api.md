@@ -15,7 +15,11 @@ title: 企业API
 | ---------------------------------------- | ------------------ |
 | [post_v1_products_product_key_access_token](#获取token)  | 获取企业API接口访问权限的功能   |
 
+* [产品管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/产品管理)：提供了获取产品数据点等功能。
 
+| API列表                                  | 描述               |
+| ---------------------------------------- | ------------------ |
+| [get_v1_products_product_key_datapoint](#获取产品数据点)    | 获取某个产品的数据点信息  |
 
 * [用户管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/用户管理)：提供了搜索注册用户、搜索绑定用户等功能。
 
@@ -23,14 +27,6 @@ title: 企业API
 | ---------------------------------------- | ------------------ |
 | [get_v1_products_product_key_users_search](#搜索注册用户)  |   该接口查询的是注册用户信息     |
 | [get_v1_users_search](#搜索绑定用户)                       |   该接口查询的是绑定用户信息     |
-
-
-
-* [产品管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/产品管理)：提供了获取产品数据点等功能。
-
-| API列表                                  | 描述               |
-| ---------------------------------------- | ------------------ |
-| [get_v1_products_product_key_datapoint](#获取产品数据点)    | 获取某个产品的数据点信息  |
 
 
 * [设备管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备管理)：提供了获取设备did、获取设备详情、搜索设备、远程控制设备、查看设备上下线记录、通信日志以及默认查询2天的历史数据等功能。
@@ -108,7 +104,7 @@ HTTP请求参数的类型一般分为三种。Header表示该参数是在HTTP请
 ##  4、HTTP请求头部
 本文档协议中设备管理类、设备报表查询类的接口在进行接口访问时，都需要在请求头增加token值，以此校验访问者是否有权访问该接口。token值是通过获取授权接口获得。
 请求头格式如下：
-```json
+```
 Content-Type: application/json
 Authorization: token ${token值}
 ```
@@ -116,7 +112,7 @@ Authorization: token ${token值}
 
 ## 5、HTTP响应头部
 本协议中的接口在返回报文头部会输出如下信息：
-```json
+```
 X-RateLimit-Limit: 60     //接口允许访问总量
 X-RateLimit-Remaining: 56 //接口剩余访问次数
 X-RateLimit-Reset: 1372700873 //调用频率限制重置时间，TS类型
@@ -186,6 +182,59 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 }
 ```
 
+# 产品管理
+
+## <span id = "get_v1_products_product_key_datapoint">获取产品数据点</span>
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/产品管理/get_v1_products_product_key_datapoint)
+
+
+请求类型及地址
+
+      GET
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/datapoint
+
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+| product_key				| string |  是  | path  | 产品名称  |
+
+
+
+响应参数
+
+|   参数    |  数据类型   |     描述      |
+|:--------- |:------- |:------------- |  
+| name      | string  | 数据点标识名称    |
+| entities   | Array[EntitiyList] | 数据点列表  |
+| protocolType       | string  | 协议类型，固定长度为“standard” ，可变长度为“var_len” |
+| product_key       | string  | 产品名称     |
+| packetVersion       | string  |  固定值，“0x00000004”   |
+| ui       | object  | 数据点 ui json    |
+| display_name       | string  | 数据点名称    |
+| id      | string  | entity id    |
+
+
+返回例子
+```json
+{
+  "name": "string",
+  "entities": [
+    {
+      "display_name": "string",
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "protocolType": "string",
+  "product_key": "string",
+  "packetVersion": "string",
+  "ui": {}
+}
+
+```
 
 
 # 用户管理
@@ -355,59 +404,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```
 
 
-# 产品管理
 
-## <span id = "get_v1_products_product_key_datapoint">获取产品数据点</span>
-
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/产品管理/get_v1_products_product_key_datapoint)
-
-
-请求类型及地址
-
-      GET
-      http://enterpriseapi.gizwits.com/v1/products/{product_key}/datapoint
-
-
-请求参数
-
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key				| string |  是  | path  | 产品名称  |
-
-
-
-响应参数
-
-|   参数    |  数据类型   |     描述      |
-|:--------- |:------- |:------------- |  
-| name      | string  | 数据点标识名称    |
-| entities   | Array[EntitiyList] | 数据点列表  |
-| protocolType       | string  | 协议类型，固定长度为“standard” ，可变长度为“var_len” |
-| product_key       | string  | 产品名称     |
-| packetVersion       | string  |  固定值，“0x00000004”   |
-| ui       | object  | 数据点 ui json    |
-| display_name       | string  | 数据点名称    |
-| id      | string  | entity id    |
-
-
-返回例子
-```json
-{
-  "name": "string",
-  "entities": [
-    {
-      "display_name": "string",
-      "id": 0,
-      "name": "string"
-    }
-  ],
-  "protocolType": "string",
-  "product_key": "string",
-  "packetVersion": "string",
-  "ui": {}
-}
-
-```
 
 
 # 设备管理
@@ -1002,6 +999,89 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 
+# 绑定管理
+
+## <span id = "post_v1_products_product_key_devices_bindings">设备绑定功能</span>
+
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/post_v1_products_product_key_devices_bindings)
+
+
+请求类型及地址
+
+      POST
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+| product_key				| string |  是  | path   | 产品标识码  |
+| uid          | string |  是  | body     | 用户 id |
+| appid           | string |  是  | body     | 应用  id |
+| dids           | string |  是  | body     | did 列表  |
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| success         | Array[string], | 绑定成功列表     |
+| failed           | Array[string], |  绑定失败列表    |
+
+
+返回例子
+```json
+{
+  "success": [
+    "string"
+  ],
+  "failed": [
+    "string"
+  ]
+}
+```
+
+## <span id = "delete_v1_products_product_key_devices_bindings">解除绑定</span>
+
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/delete_v1_products_product_key_devices_bindings)
+
+
+请求类型及地址
+
+      DELETE
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+| product_key				| string |  是  | path   | 产品标识码  |
+| uid          | string |  是  | body     | 用户 id |
+| appid           | string |  是  | body     | 应用  id |
+| dids           | string |  是  | body     | did 列表  |
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| success         | Array[string], | 绑定成功列表     |
+| failed           | Array[string], |  绑定失败列表    |
+
+
+返回例子
+```json
+{
+  "success": [
+    "string"
+  ],
+  "failed": [
+    "string"
+  ]
+}
+```
 
 
 
@@ -1777,167 +1857,64 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 
-
-# 绑定管理
-
-## <span id = "post_v1_products_product_key_devices_bindings">设备绑定功能</span>
-
-
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/post_v1_products_product_key_devices_bindings)
-
-
-请求类型及地址
-
-      POST
-      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
-
-请求参数
-
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key				| string |  是  | path   | 产品标识码  |
-| uid          | string |  是  | body     | 用户 id |
-| appid           | string |  是  | body     | 应用  id |
-| dids           | string |  是  | body     | did 列表  |
-
-
-响应参数
-
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| success         | Array[string], | 绑定成功列表     |
-| failed           | Array[string], |  绑定失败列表    |
-
-
-返回例子
-```json
-{
-  "success": [
-    "string"
-  ],
-  "failed": [
-    "string"
-  ]
-}
-```
-
-## <span id = "delete_v1_products_product_key_devices_bindings">解除绑定</span>
-
-
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/delete_v1_products_product_key_devices_bindings)
-
-
-请求类型及地址
-
-      DELETE
-      http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/bindings
-
-请求参数
-
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key				| string |  是  | path   | 产品标识码  |
-| uid          | string |  是  | body     | 用户 id |
-| appid           | string |  是  | body     | 应用  id |
-| dids           | string |  是  | body     | did 列表  |
-
-
-响应参数
-
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| success         | Array[string], | 绑定成功列表     |
-| failed           | Array[string], |  绑定失败列表    |
-
-
-返回例子
-```json
-{
-  "success": [
-    "string"
-  ],
-  "failed": [
-    "string"
-  ]
-}
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# 接口错误
-
-## 错误信息格式
-```json
-{
-      "error_code": "5001",
-      "error_message": "body json invalid",
-      "detail": ""
-}
-```
-
-## 错误信息表
-|HTTP响应编码|	系统错误编码	| 错误信息描述 | 	解决办法 |
-| ------------- |:-------------:|:-------------|:-------------|
-|400|   5001|   json字串格式错误|   核对json字串|
-|400|   5002|   form invalid|   输入数据不对|
-|404|   5003|   enterprise id not exist|   Eid不存在，检查是否申请或者Eid输入错误|
-|400|   5004|   enterprise secret error|   Esecret校验失败，检查是否是正确的|
-|400|   5005|   product secret error|   Product Secret校验失败，检查是否是正确的|
-|400|   5006|   product exist devicegroups| |
-|404|   5007|   association not exist|   表示Eid没有雨对应的产品Product Key 关联，必须成功关联才能操作|
-|400|   5008|   association existed| |
-|400|   5009|   token invalid|   请携带token或检查token字段格式,正确的token格式是在http header中输入:token ${token值}，token后面必须空一格后再写入具体的token值|
-|400|   5010|   token未匹配|   请核对token|
-|400|	5011|	token过期|	请再次获取token|
-|400|	5012|	发起关联请求的主机ip无访问权限|   添加ip到ip企业数据访问白名单中|
-|403|	5013|	接口使用过于频繁|   等待一定时间后再次使用此接口|
-|400|	5014|	Report has not been generated!|	 |
-|404|	5015|	Product Key不存在|   核对产品Product Key是否正确|
-|403|	5201|	device group not belong to this product|  |
-|404|	5202|	parent group not exist| |
-|400|	5203|	already has one root group| |
-|400|	5204|	group has subgroup|	 |
-|400|	5205|	group has device item| |
-|404|	5206|	group not exist| |
-|404|	5301|	设备不存在|   核对设备ID|
-|403|	5302|	产品与设备未绑定|   请先将设备绑定到产品|
-|400|	5303|	device not bound| |
-|400|	5304|	设备未激活|   激活设备|
-|400|	5305|	设备处于下线状态|   上线设备|
-|400|	5401|	数据点错误|	核对数据点信息|
-|400|	5402|	数据点未定义|   先定义数据点,然后再次尝试|
-|400|	5403|	控制命令发送失败|   请再次使用此接口|
-|400|	5404|	remote control not allowed|   远程控制操作需要后台开启|
+# 错误信息表
+
+| 响应码 | 系统错误码 | 错误信息描述                                            | 解决办法                                    |
+| ------ |:----------:|:------------------------------------------------------- |:------------------------------------------- |
+| 400    |    5001    | body json invalid                                       | 核对json字串                                |
+| 400    |    5002    | form invalid                                            | 输入数据不对                                |
+| 404    |    5003    | enterprise id not exist                                 | Eid不存在，检查是否申请或者Eid输入错误      |
+| 400    |    5004    | enterprise secret error                                 | Esecret校验失败，检查是否是正确的           |
+| 400    |    5005    | product secret error                                    | Product Secret校验失败，检查是否是正确的    |
+| 400    |    5006    | product exist devicegroups                              |                                             |
+| 404    |    5007    | association not exist                                   |                                             |
+| 400    |    5008    | association existed                                     | Eid没有与对应的Product Key 关联，请联系客服 |
+| 400    |    5009    | token invalid                                           | 请携带token或检查token字段格式              |
+| 400    |    5010    | token not match product_key                             |                                             |
+| 400    |    5011    | token has expired                                       | 请再次获取token                             |
+| 400    |    5012    | ip not in white list                                    | 添加ip到ip企业数据访问白名单中              |
+| 403    |    5013    | API call rate limit execeed quota                       | 等待一定时间后再次使用此接口                |
+| 400    |    5014    | Report has not been generated!                          |                                             |
+| 404    |    5015    | Product key not exist!                                  | 核对产品Product Key是否正确                 |
+| 404    |    5016    | Appid not exist!                                        |                                             |
+| 404    |    5016    | Appid not exist!                                        |                                             |
+| 404    |    5017    | Uid not exist!                                          |                                             |
+| 403    |    5018    | product operation not allowed                           |                                             |
+| 404    |    5019    | organization does not exist                             |                                             |
+| 400    |    5020    | can not delete published product!                       |                                             |
+| 400    |    5021    | enterprise is exist                                     |                                             |
+| 404    |    5022    | enterprise does not exist                               |                                             |
+| 403    |    5023    | enterprise is creating                                  |                                             |
+| 403    |    5024    | api deny to visit!                                      |                                             |
+| 404    |    5025    | product does not exist                                  |                                             |
+| 403    |    5201    | device group not belong to this product                 |                                             |
+| 404    |    5202    | parent group not exist                                  |                                             |
+| 400    |    5203    | already has one root group                              |                                             |
+| 400    |    5204    | group has subgroup                                      |                                             |
+| 400    |    5205    | group has device item                                   |                                             |
+| 404    |    5206    | group not exist                                         |                                             |
+| 400    |    5207    | product key not in pre assignment!                      |                                             |
+| 400    |    5208    | create assign device in progress!                       |                                             |
+| 404    |    5301    | device not exist                                        | 核对设备ID                                  |
+| 403    |    5302    | device not belong to this product                       | 请先将设备绑定到产品                        |
+| 400    |    5303    | device not bound                                        |                                             |
+| 400    |    5304    | device is disabled                                      | 激活设备                                    |
+| 400    |    5305    | device offline!                                         | 上线设备                                    |
+| 400    |    5401    | attr invalid!                                           | 核对数据点信息                              |
+| 404    |    5402    | datapoint data not found!                               | 先定义数据点,然后再次尝试                   |
+| 400    |    5403    | send command failed!                                    | 请再次使用此接口                            |
+| 403    |    5404    | remote control not allowed!                             | 远程控制操作需要后台开启                    |
+| 404    |    5405    | attrs not exist!                                        |                                             |
+| 500    |    5406    | Datapoints malformed                                    |                                             |
+| 500    |    5407    | generate meta failed                                    |                                             |
+| 400    |    5408    | raw data error!                                         |                                             |
+| 500    |    5409    | call innerapi failed!                                   |                                             |
+| 404    |    5501    | firmware does not exist                                 |                                             |
+| 400    |    5502    | firmware version has created                            |                                             |
+| 403    |    5503    | firmware operation not allowed                          |                                             |
+| 500    |    5601    | kairosdb query error!                                   |                                             |
+| 403    |    5701    | This eid has no permission to reset pwd.                |                                             |
+| 403    |    5702    | This eid has no permission to reset pwd for this appid. |                                             |
+| 400    |    5703    | Cannot reset pwd for anonymous user                     |                                             |
+| 400    |    5801    | the pks has not associate with enterprise!              |                                             |
+| 400    |    5901    | x-service secret key invalid!                           |                                             |
