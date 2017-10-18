@@ -3,6 +3,8 @@ title: MCU OTA教程
 
 [GAgent OTA教程](http://docs.gizwits.com/zh-cn/UserManual/OTA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
 
+[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA.zip)
+
 # 1.概述
 
 #### MCU OTA可以对MCU程序进行无线远程升级。本文以STM32F103C8T6实现OTA作为例子。原本MCU程序软件版本号是01，想升级到02，但是设备已经量产了不可能再去一个一个设备重新烧录新的程序，这时候就需要用到MCU OTA。
