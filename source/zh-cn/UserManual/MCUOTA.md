@@ -1,7 +1,9 @@
-title: MCU OTA教程
+title: MCU OTA教程（3.0）
 ---
 
 [GAgent OTA教程](http://docs.gizwits.com/zh-cn/UserManual/OTA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
+
+[MCU OTA教程（2.0）](http://docs.gizwits.com/zh-cn/UserManual/OTA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
 
 [源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA.zip)
 
