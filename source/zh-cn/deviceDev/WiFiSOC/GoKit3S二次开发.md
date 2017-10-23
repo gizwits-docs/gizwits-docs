@@ -1,4 +1,4 @@
-title: GoKit3(S) 二次开发--开发环境搭
+title: GoKit3(S) 二次开发--开发环境搭建
 ---
 # GoKit3(S)开发环境准备
 
