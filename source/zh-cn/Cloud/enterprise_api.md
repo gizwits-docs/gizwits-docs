@@ -52,17 +52,13 @@ title: 企业API
 | [get_v1_products_product_key_device_groups_gid](#获取设备组下的mac列表)|  获取设备组下的mac列表  |
 | [put_v1_products_product_key_device_groups_gid](#更新设备组) | 更新设备组|
 
-
-
-
-* [用户报表](http://swagger.gizwits.com/doc/index/debug_enterprise#/用户报表)：提供了查询用户新增报表、企业活跃用户人数、用户地理分布、用户总数报表等功能。
+* [绑定管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/绑定管理)：提供了设备绑定、解绑功能。
 
 | API列表                                  | 描述               |
 | ---------------------------------------- | ------------------ |
-| [get_v1_products_product_key_users_report_new](#用户新增报表)          |   这里指的是绑定了该 PK 下产品的新增用户  |
-| [get_v1_users_liveness_total](#企业活跃用户人数)     |    企业活跃用户人数  |
-| [get_v1_users_location](#用户地理分布)          |    用户地理分布   |
-| [get_v1_products_product_key_users_report_total](#用户总数报表)         |   用户总数   |
+| [post_v1_products_product_key_devices_bindings](#设备绑定功能)   | 设备绑定   |
+| [delete_v1_products_product_key_devices_bindings](#解除绑定) | 解除设备绑定  |
+
 
 * [设备报表](http://swagger.gizwits.com/doc/index/debug_enterprise#/设备报表)：提供了查询设备激活报表、地理位置分布、概览、激活详情、活跃详情、设备故障、设备报警报表等功能
 
@@ -81,12 +77,16 @@ title: 企业API
 | [get_v1_products_product_key_fault_alert_events](#获取报警次数报表)              |   获取报警次数报表   |
 
 
-* [绑定管理](http://swagger.gizwits.com/doc/index/debug_enterprise#/绑定管理)：提供了设备绑定、解绑功能。
+
+
+* [用户报表](http://swagger.gizwits.com/doc/index/debug_enterprise#/用户报表)：提供了查询用户新增报表、企业活跃用户人数、用户地理分布、用户总数报表等功能。
 
 | API列表                                  | 描述               |
 | ---------------------------------------- | ------------------ |
-| [post_v1_products_product_key_devices_bindings](#设备绑定功能)   | 设备绑定   |
-| [delete_v1_products_product_key_devices_bindings](#解除绑定) | 解除设备绑定  |
+| [get_v1_products_product_key_users_report_new](#用户新增报表)          |   这里指的是绑定了该 PK 下产品的新增用户  |
+| [get_v1_users_liveness_total](#企业活跃用户人数)     |    企业活跃用户人数  |
+| [get_v1_users_location](#用户地理分布)          |    用户地理分布   |
+| [get_v1_products_product_key_users_report_total](#用户总数报表)         |   用户总数   |
 
 
 
@@ -1084,207 +1084,6 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```
 
 
-
-# 用户报表
-
-## <span id = "get_v1_products_product_key_users_report_new">用户新增报表</span>
-
-实现备注：
-* 这里指的是绑定了该 PK 下产品的新增用户
-日期查询说明：
-* cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
-* cycle 为 week 时，start,end的格式是年-周，example:2016-51
-* cycle 为 month 时，start,end的格式为年-月，example:2016-12
-
-**此接口仅可在国内环境使用**
-
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new)
-
-
-请求类型及地址
-
-      GET
-      http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/new
-
-
-请求参数
-
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| gid         			| string |  是 | query    | 设备组id  |
-| cycle         		| string |  否 | query    | 统计周期，可以为 date、week、month  |
-| start         		| string |  是 | query    | 起始周期，为起始日期、起始周或起始月 |
-| end         			| string |  是 | query    | 结束周期，为结束日期、结束周或结束月|
-
-
-
-响应参数
-
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| did      		| string |     设备组 id               |
-| cycle       | string |     周期，分为 month,week,date        |
-| start      		| string |     开始日期             |
-| data      		| string |    日期    |
-| count      		| string |     数量                |
-| location      		| object |     地理位置信息               |
-
-
-
-返回例子
-```json
-{
-  "gid": "string",
-  "cycle": "string",
-  "start": "string",
-  "end": "string",
-  "data": [
-    {
-      "date": "string",
-      "count": 0,
-      "location": {}
-    }
-  ]
-}
-```
-
-## <span id = "get_v1_users_liveness_total">企业活跃用户人数</span>
-
-
-实现备注
-* 该接口查询的是企业活跃用户人数
-
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total)
-
-
-请求类型及地址
-
-      GET
-      http://enterpriseapi.gizwits.com/v1/users/liveness_total
-
-请求参数
-
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id      |
-| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret   |
-| product_secret           | string |  是 | query    | 产品标识码 product_key  |
-| appid          | string |  否 | query    | 	应用id  |
-| start_date         | string |  是 | query    | 	开始日期，如：2015-01-02 |
-| end_date          | string |  是 | query    | 	结束日期，如：2015-01-03  |
-
-
-
-响应参数
-
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| date      | string | 日期                 |
-| count       | integer | 数量          |
-
-
-
-返回例子
-```json
-{
-  "data": [
-    {
-      "date": "string",
-      "count": 0
-    }
-  ]
-}
-```
-
-## <span id = "get_v1_users_location">用户地理分布</span>
-
-
-实现备注
-* 该接口查询的是企业用户地理分布
-
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location)
-
-
-请求类型及地址
-
-      GET
-      http://enterpriseapi.gizwits.com/v1/users/location
-
-请求参数
-
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id     |
-| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret  |
-| product_secret           | string |  是 | query    | 产品标识码 product_key  |
-
-
-
-
-响应参数
-
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| count       | integer | 数 量           |
-
-
-
-返回例子
-```json
-{
-  "China": {
-    "count": 0,
-    "Guangdong": {
-      "count": 0,
-      "Guangzhou": {
-        "count": 0
-      }
-    }
-  }
-}
-```
-
-## <span id = "get_v1_products_product_key_users_report_total">用户总数报表</span>
-
-
-实现备注
-* 查询用户空间表，获取曾经绑定过该 pk 设备的用户总数
-
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total)
-
-
-请求类型及地址
-
-      GET
-     http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/total
-
-请求参数
-
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-|product_key	| string |  是  | path   | 产品标识码     |
-| gid  | string |  否  | query   | 设备组id   |
-
-
-
-响应参数
-
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| gid      | string | 设备组 id           |
-| total       | integer | 用户总数           |
-
-
-返回例子
-```json
-{
-  "gid": "string",
-  "total": 0
-}
-```
-
-
 # 设备报表
 
 ## <span id = "get_v1_products_product_key_devices_locations">获取设备地理位置分布</span>
@@ -1853,6 +1652,208 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
   "location": {}
 }
 ```
+
+
+
+# 用户报表
+
+## <span id = "get_v1_products_product_key_users_report_new">用户新增报表</span>
+
+实现备注：
+* 这里指的是绑定了该 PK 下产品的新增用户
+日期查询说明：
+* cycle 为 date 时，start,end的格式是年-月-日，example:2016-08-01,
+* cycle 为 week 时，start,end的格式是年-周，example:2016-51
+* cycle 为 month 时，start,end的格式为年-月，example:2016-12
+
+**此接口仅可在国内环境使用**
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_new)
+
+
+请求类型及地址
+
+      GET
+      http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/new
+
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
+| product_key            | string |  是 | path    | 产品名称   |
+| gid         			| string |  是 | query    | 设备组id  |
+| cycle         		| string |  否 | query    | 统计周期，可以为 date、week、month  |
+| start         		| string |  是 | query    | 起始周期，为起始日期、起始周或起始月 |
+| end         			| string |  是 | query    | 结束周期，为结束日期、结束周或结束月|
+
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| did      		| string |     设备组 id               |
+| cycle       | string |     周期，分为 month,week,date        |
+| start      		| string |     开始日期             |
+| data      		| string |    日期    |
+| count      		| string |     数量                |
+| location      		| object |     地理位置信息               |
+
+
+
+返回例子
+```json
+{
+  "gid": "string",
+  "cycle": "string",
+  "start": "string",
+  "end": "string",
+  "data": [
+    {
+      "date": "string",
+      "count": 0,
+      "location": {}
+    }
+  ]
+}
+```
+
+## <span id = "get_v1_users_liveness_total">企业活跃用户人数</span>
+
+
+实现备注
+* 该接口查询的是企业活跃用户人数
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_liveness_total)
+
+
+请求类型及地址
+
+      GET
+      http://enterpriseapi.gizwits.com/v1/users/liveness_total
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+| X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id      |
+| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret   |
+| product_secret           | string |  是 | query    | 产品标识码 product_key  |
+| appid          | string |  否 | query    | 	应用id  |
+| start_date         | string |  是 | query    | 	开始日期，如：2015-01-02 |
+| end_date          | string |  是 | query    | 	结束日期，如：2015-01-03  |
+
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| date      | string | 日期                 |
+| count       | integer | 数量          |
+
+
+
+返回例子
+```json
+{
+  "data": [
+    {
+      "date": "string",
+      "count": 0
+    }
+  ]
+}
+```
+
+## <span id = "get_v1_users_location">用户地理分布</span>
+
+
+实现备注
+* 该接口查询的是企业用户地理分布
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_users_location)
+
+
+请求类型及地址
+
+      GET
+      http://enterpriseapi.gizwits.com/v1/users/location
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+| X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id     |
+| X-Gizwits-Enterprise-Secret  | string |  是  | header   | enterprise secret  |
+| product_secret           | string |  是 | query    | 产品标识码 product_key  |
+
+
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| count       | integer | 数 量           |
+
+
+
+返回例子
+```json
+{
+  "China": {
+    "count": 0,
+    "Guangdong": {
+      "count": 0,
+      "Guangzhou": {
+        "count": 0
+      }
+    }
+  }
+}
+```
+
+## <span id = "get_v1_products_product_key_users_report_total">用户总数报表</span>
+
+
+实现备注
+* 查询用户空间表，获取曾经绑定过该 pk 设备的用户总数
+
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_users_report_total)
+
+
+请求类型及地址
+
+      GET
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/users/report/total
+
+请求参数
+
+| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
+|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
+|product_key	| string |  是  | path   | 产品标识码     |
+| gid  | string |  否  | query   | 设备组id   |
+
+
+
+响应参数
+
+| 参数       | 数据类型    | 描述                      |
+|:---------- |:------- |:------------------------- |
+| gid      | string | 设备组 id           |
+| total       | integer | 用户总数           |
+
+
+返回例子
+```json
+{
+  "gid": "string",
+  "total": 0
+}
+```
+
 
 
 
