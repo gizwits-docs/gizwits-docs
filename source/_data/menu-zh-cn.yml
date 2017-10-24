@@ -63,6 +63,9 @@
       path: /Cloud/SharingSDK.html
     第三方登录平台申请流程:
       path: /AppDev/third-party.html
+  
+  应用开发FAQ：
+    path: /AppDev/应用开发FAQ.html
 
 设备接入:
   设备接入准备工作及向导:
