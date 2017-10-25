@@ -135,6 +135,9 @@
       path: /UserManual/ecevideos.html
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
+      
+  设备接入FAQ:
+    path: /deviceDev/设备接入FAQ.html
 
 云API:
     Open API 指南:
