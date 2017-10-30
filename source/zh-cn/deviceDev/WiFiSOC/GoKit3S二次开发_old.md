@@ -1,7 +1,7 @@
 title: GoKit3(S) 二次开发--开发环境搭建
 ---
 
-**2017年9月25日起已使用新版SOC代码生成，查看新版[GoKit3(S)二次开发——开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html)**
+**2017年9月25日起已使用新版MCU代码生成，查看新版[GoKit3(S)二次开发——开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发.html)**
 
 
 # GoKit3(S)开发环境准备

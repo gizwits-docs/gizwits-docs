@@ -1,7 +1,7 @@
 title: GoKit3(S)二次开发-程序详解（旧）
 ---
 
-**2017年9月25日起已使用新版SOC代码生成，[查看新版](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html)自动生成代码程序详解**
+**2017年9月25日起已使用新版MCU代码生成，[查看新版](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html)自动生成代码程序详解**
 
 # 通信协议详解
 
