@@ -1,7 +1,7 @@
-
-
-title: GoKit3(S)二次开发-程序详解
+title: GoKit3(S)二次开发-程序详解（旧）
 ---
+
+**2017年9月25日起已使用新版SOC代码生成，[查看新版](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html)自动生成代码程序详解**
 
 # 通信协议详解
 
@@ -62,12 +62,12 @@ title: GoKit3(S)二次开发-程序详解
 1).命令标志位**(attr_flags)**表示相关的数据值是否为有效值，相关的标志位为“1”表示值有效，为“0”表示值无效，从右到左的标志位依次为：
 
 
-| 标志位     |     功能        | 
-| :-------- | :-------        | 
+| 标志位     |     功能        |
+| :-------- | :-------        |
 | bit0	    | 设置LED_OnOff   |  
-| bit1      | 设置LED_Color   | 
+| bit1      | 设置LED_Color   |
 | bit2      | 设置LED_R       |  
-| bit3	    | 设置LED_G       | 
+| bit3	    | 设置LED_G       |
 | bit4	    | 设置LED_B       |  
 | bit5	    | 设置Motor_Speed |  
 
@@ -83,12 +83,12 @@ title: GoKit3(S)二次开发-程序详解
 
 **“p0 数据区约定”**主要作用是完成有效数据的上传(协议4.8、4.9)与下达(协议4.10)，其中**上传协议**的组成形式为：**action(1B) + dev_status(11B)** ; 下达协议的组成形式为：**action(1B) + attr_flags(1B) + attr_vals(6B)** ; 其中：
 
-| p0 数据区内容     | 含义 | 
+| p0 数据区内容     | 含义 |
 | :-------- | :-------- |
-| action | 表示”p0 命令”的传输方向，即：WiFi -> MCU 或 MCU ->Wifi | 
-| dev_status | 表示上报的所有数据点的设备状态 | 
-| attr_flags | 表示有效的控制型数据点 | 
-| attr_vals| 表示有效控制数据点的数据值 | 
+| action | 表示”p0 命令”的传输方向，即：WiFi -> MCU 或 MCU ->Wifi |
+| dev_status | 表示上报的所有数据点的设备状态 |
+| attr_flags | 表示有效的控制型数据点 |
+| attr_vals| 表示有效控制数据点的数据值 |
 
 至此**“p0 数据区约定”**的解析到此结束，之后我们还会分析SOC的程序实现。
 
@@ -122,19 +122,19 @@ title: GoKit3(S)二次开发-程序详解
 主要文件说明：
 
 | 文件       | 说明       |
-| :-------- | :--------| 
-| libgagent.a | 该文件为机智云设备接入协议库文件,文件位于 lib 目录下 | 
-| gagent_external.h	| 该文件为 libgagent.a 对应头文件,两个文件配合使用 | 
-|gizwits_product.c	| 该文件为平台相关处理文件，存放事件处理API接口函数，即 gizwitsEventProcess() | 
-|gizwits_product.h 	| 该文件为 gizwits_product.c 的头文件，存放产品相关宏定义如： HARDWARE_VERSION 、SOFTWARE_VERSION | 
-|gizwits_protocol.c	 | 该文件为协议实现文件，存放 SDK API 接口函数 | 
-|gizwits_protocol.h	 | 该文件为 gizwits_protocol.c 对应头文件，协议相关宏定义以及 API 接口声明均在此文件中。 | 
+| :-------- | :--------|
+| libgagent.a | 该文件为机智云设备接入协议库文件,文件位于 lib 目录下 |
+| gagent_external.h	| 该文件为 libgagent.a 对应头文件,两个文件配合使用 |
+|gizwits_product.c	| 该文件为平台相关处理文件，存放事件处理API接口函数，即 gizwitsEventProcess() |
+|gizwits_product.h 	| 该文件为 gizwits_product.c 的头文件，存放产品相关宏定义如： HARDWARE_VERSION 、SOFTWARE_VERSION |
+|gizwits_protocol.c	 | 该文件为协议实现文件，存放 SDK API 接口函数 |
+|gizwits_protocol.h	 | 该文件为 gizwits_protocol.c 对应头文件，协议相关宏定义以及 API 接口声明均在此文件中。 |
 
 
 ### 1.3 协议API介绍
 
-|API 名称| 	API 功能 | 
-| :-------- | :--------| 
+|API 名称| 	API 功能 |
+| :-------- | :--------|
 |void gizwitsInit(void)| gizwits协议初始化接口。用户调用该接口可以完成Gizwits协议相关初始化（包括协议相关定时器、串口的初始化）。|
 | void gizwitsSetMode(uint8_t mode) | 参数mode[in]：仅支持0,1和2,其他数据无效。参数为0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。参数为1时配置模组进入SoftAp模式；参数为2配置模组进入AirLink模式。|
 | void gizwitsHandle(dataPoint_t *dataPoint)| 参数dataPoint[in]:用户设备数据点。该函数中完成了数据上报等相关操作。 |
@@ -143,19 +143,19 @@ title: GoKit3(S)二次开发-程序详解
 
 ## 2 程序实现原理
 
-**协议实现机制：** 
+**协议实现机制：**
 
 协议解析后，将P0数据区的有效数据点生成对应的数据点事件，再按事件处理数据点。
 
-**数据点转换事件的说明**： 
+**数据点转换事件的说明**：
 
-根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizEventProcess)完成事件的处理。 
+根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizEventProcess)完成事件的处理。
 
 ## 3 程序初始化说明
 
 ### 3.1 数据协议结构体的定义
 
-结构体**dataPoint_t**  ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
+结构体**dataPoint_t**  ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image7.png)
 
@@ -164,7 +164,7 @@ title: GoKit3(S)二次开发-程序详解
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image8.png)
 
-**attrFlags_t、attrVals_t** ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
+**attrFlags_t、attrVals_t** ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image9.png)
 
@@ -173,7 +173,7 @@ title: GoKit3(S)二次开发-程序详解
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image10.png)
 
 
-**devStatus_t**，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
+**devStatus_t**，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image11.png)
 
@@ -285,7 +285,7 @@ API使用说明：
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image23.png)
 
 
-在本示例工程中是通过**按键触**发进入相应的配置模式，程序中触发逻辑位置：**gokit_mcu_stm32_xxx\User\main.c** 
+在本示例工程中是通过**按键触**发进入相应的配置模式，程序中触发逻辑位置：**gokit_mcu_stm32_xxx\User\main.c**
 
 A.进入Soft AP 模式：key2按键短按。
 
@@ -362,11 +362,11 @@ C.模组复位：key1按键长。
 
 | 函数	     |     说明 |
 | :-------- | :--------|
-| giziIssuedProcess    |  该函数被gagent调用，接收来自云端或app端下发的相关协议数据 | 
-| ACTION_CONTROL_DEVICE    | 进行“控制型协议”的相关处理 | 
+| giziIssuedProcess    |  该函数被gagent调用，接收来自云端或app端下发的相关协议数据 |
+| ACTION_CONTROL_DEVICE    | 进行“控制型协议”的相关处理 |
 | gizDataPoint2Event    |根据协议生成“控制型事件”，并完成相应数据类型的转换 |
 | gizwitsEventProcess    | 根据已生成的“控制型事件”进行相应事件处理（即调用相应的驱动函数）|
-	
+
 
 ### 6.1 控制型事件的生成
 相关代码位置：
@@ -431,9 +431,9 @@ C.模组复位：key1按键长。
 
 转换函数说明：
 
-| 函数 |  说明 | 
+| 函数 |  说明 |
 | :-------- | :-------|
-|gizDecompressionValue| 完成传输数据的压缩处理，详情查看“2.8.2 数据解压与压缩处理”一节。| 
+|gizDecompressionValue| 完成传输数据的压缩处理，详情查看“2.8.2 数据解压与压缩处理”一节。|
 | gizX2Y |将用户区数据转化为传输数据，详情查看“2.8.1 数据点类型转换”一节。|  
 
 程序中对应：
@@ -517,7 +517,7 @@ C.模组复位：key1按键长。
 | gizDataPoints2ReportData   |完成传输数据的压缩处理，详情查看“2.8.2 数据解压与压缩处理”一节。|
 |gizY2X | 将用户区数据转化为传输数据，详情查看“2.8.1 数据点类型转换”一节。 |
 
-	
+
 
 ## 8 机智云协议数据处理
 
@@ -525,7 +525,7 @@ C.模组复位：key1按键长。
 
 机智云为使设备功能定义更加简单直接，使用户输入的数值转换成设备能够识别的uint类型，这套算法的核心公式是：y=kx+m （**y：显示值；x：传输值；k：分辨率；m：增量**）
 
-以微信宠物屋的温湿度传感器温度检测为例： 
+以微信宠物屋的温湿度传感器温度检测为例：
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image53.png)
 
@@ -602,4 +602,3 @@ GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得
 官方二维码：
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image61.png)
-

@@ -10,7 +10,13 @@ var redirectMap = {
 '/zh-cn/UserManual/OTA使用教程.html':'/zh-cn/UserManual/OTA.html',
 '/zh-cn/quickstart/iOSAPP快速入门.html':'/zh-cn/quickstart/iOSAPPFrame.html',
 '/zh-cn/quickstart/5分钟了解机智云.html':'/zh-cn/quickstart/README.html',
-'/zh-cn/quickstart/定义数据点.html':'/zh-cn/quickstart/datapoint_tutorial.html'
+'/zh-cn/quickstart/定义数据点.html':'/zh-cn/quickstart/datapoint_tutorial.html',
+'/zh-cn/deviceDev/ArduinoUNO/sdk.html':"/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html",
+'/zh-cn/deviceDev/ArduinoUNO/intro.html':"/zh-cn/deviceDev/ArduinoUNO/ArduinoUnoWiFi_intro.html",
+'/zh-cn/deviceDev/GoKit3 DEV SDK Common版移植说明.html':"/zh-cn/deviceDev/GoKit3_DEV_SDK_Common_transplant.html"
+//'/zh-cn/deviceDev/WiFiSOC/GoKit3S程序详解.html':"/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html",
+//'/zh-cn/deviceDev/Gokit3Voice/GoKit3V程序详解.html':'/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html'
+
 
 }
 

@@ -63,7 +63,7 @@
       path: /Cloud/SharingSDK.html
     第三方登录平台申请流程:
       path: /AppDev/third-party.html
-  
+
   应用开发FAQ:
     path: /AppDev/应用开发FAQ.html
 
@@ -101,7 +101,9 @@
     MCU代码自动生成工具使用教程:
       path: /deviceDev/DevSDK/代码自动生成工具.html
     MCU SDK 通用平台移植教程:
-      path: /deviceDev/GoKit3 DEV SDK Common版移植说明.html
+      path: /deviceDev/GoKit3_DEV_SDK_Common_transplant.html
+    STM32CubeMX移植机智云自动生成代码详解:
+      path: /deviceDev/STM32CubeMX_transplant.html
 
   开源套件Gokit资料:
     Gokit2 使用指南:
@@ -117,16 +119,18 @@
       path: /deviceDev/WiFiSOC/GoKit3S开发套件介绍.html
     GoKit3(S)开发环境搭建:
       path: /deviceDev/WiFiSOC/GoKit3S二次开发.html
-    Gokit3(S)源码详解:
-      path: /deviceDev/WiFiSOC/GoKit3S程序详解.html
+    GoKit-SoC程序详解:
+      path: /deviceDev/WiFiSOC/GoKit-SoC-explanation.html
+    GoKit-MCU程序详解:
+      path: /deviceDev/Gokit3Voice/GoKit-MCU-explanation.html
 
   开发套件Arduino资料:
     ArduinoUNOWiFi接入机智云介绍:
-      path: /deviceDev/ArduinoUNO/intro.html
+      path: /deviceDev/ArduinoUNO/ArduinoUnoWiFi.html
     ArduinoUnoWiFi 之ESP8266固件烧写教程:
       path: /deviceDev/ArduinoUNO/Tutorial.html
     ArduinoUnoWiFi SDK之API介绍:
-      path: /deviceDev/ArduinoUNO/sdk.html
+      path: /deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html
     Arduino Uno WiFi智能小夜灯:
       path: /deviceDev/ArduinoUNO/example.html
 
@@ -135,7 +139,7 @@
       path: /UserManual/ecevideos.html
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
-      
+
   设备接入FAQ:
     path: /deviceDev/设备接入FAQ.html
 
