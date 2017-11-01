@@ -158,6 +158,7 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 
 - [代码自动生成工具介绍以及使用教程](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
 - [MCU SDK 通用平台版移植说明](http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html)
+- [STM32CubeMX移植机智云自动生成代码详解](http://docs.gizwits.com/zh-cn/deviceDev/STM32CubeMX_transplant.html)
 
 ## 4.开源套件Gokit资料
 为了让开发者更快的体验到机智云的云服务，我们提供了开源套件Gokit来供开发者学习、参考，借此让开发者自己的产品更快接入机智云。
@@ -168,7 +169,8 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 - [Gokit3(S)使用说明书](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6.html)
 - [Gokit3(S)开发套件介绍](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%BB%8D.html)
 - [Gokit3(S)开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html)
-- [Gokit3(S)程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
+- [GoKit-SoC程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html)
+- [GoKit-MCU程序详解](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html)
 
 ## 5.ArduinoUnoWIFI接入教程
  - [ArduinoUNOWIFI接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
