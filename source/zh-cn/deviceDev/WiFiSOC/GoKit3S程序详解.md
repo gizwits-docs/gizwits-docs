@@ -51,7 +51,7 @@ title: GoKit3(S)二次开发-程序详解（旧）
 
 我们先关注**命令10**如下：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image3.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image3.png)
 
 注：SOC版代码无需关注P0协议区以外的协议内容，后文同理。
 
@@ -75,7 +75,7 @@ title: GoKit3(S)二次开发-程序详解（旧）
 
 2).设置数据值**(attr_vals(6B))** 即可写数据区，定义如下：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image4.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image4.png)
 
 这里可以清楚的看到，只有相关的设置标志位**（attr_flags）**为1时，数据值才是有效的，需要特别注意的是“p0 数据区约定”约定第三条，数据区会自动合并布尔和枚举变量，且有严格的顺序，不可任意改变。对应上面的“byte0”合并了“bool”和“enum”类型。
 
@@ -98,7 +98,7 @@ title: GoKit3(S)二次开发-程序详解（旧）
 
 ### 1.1 一级目录
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image5.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image5.png)
 
 说明：
 
@@ -116,7 +116,7 @@ title: GoKit3(S)二次开发-程序详解（旧）
 
 ### 1.2 代码文件说明
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image6.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image6.png)
 
 
 主要文件说明：
@@ -157,30 +157,30 @@ title: GoKit3(S)二次开发-程序详解（旧）
 
 结构体**dataPoint_t**  ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image7.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image7.png)
 
 
 说明：结构体**dataPoint_t**，作用是存储用户区的设备状态信息，用户根据云端定义的数据点向其对应的数据位赋值后便不需关心数据的转换，其数据位分别对应**“p0 数据区约定”**中的**“4.9 设备MCU向WiFi模组主动上报当前状态”**中的：dev_status(11B) 位：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image8.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image8.png)
 
 **attrFlags_t、attrVals_t** ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image9.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image9.png)
 
 结构体attrFlags_t、attrVals_t分别对应**“p0 数据区约定”**中的**“4.10 WiFi模组控制设备”**中的：attr_flags(1B) + attr_vals(6B)位：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image10.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image10.png)
 
 
 **devStatus_t**，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image11.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image11.png)
 
 
 结构体**devStatus_t**对应“**p0 数据区约定”**中的**“4.9 设备MCU向WiFi模组主动上报当前状态”**中的：dev_status(11B) 位：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/12.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/12.png)
 
 **特别说明：**
 
@@ -202,7 +202,7 @@ B. 位段举例说明：
 
 位置：**gokit-soc-esp8266\app\user\user_main.c**中user_init() 函数：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image12.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image12.png)
 
 
 说明：该函数作为整个系统的程序入口初始化了Gagent模块和Gizwits协议模块这两个主要的部分，其中跟开发者有关的是函数是**gizwitsInit()**、**userTimerFunc()**、**gizwitsUserTask()**，相关说明：
@@ -217,63 +217,63 @@ B. 位段举例说明：
 ### 3.3 用户程序初始化
 位置：**user_main.c**中 **“//user_init 相关程序”**
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image13.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image13.png)
 
 
 这部分完成了RGB LED、按键、电机、温湿度、红外传感器的硬件驱动调用，对应的驱动程序实现都在**gokit-soc-esp8266\app\driver**下。
 
 其中完成了定时器初始化（详情查看2.3.4节）：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image14.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image14.png)
 
 
 以及系统任务初始化（详情查看2.3.5节）：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image15.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image15.png)
 
 
 ### 3.4 定时器使用
 
 代码位置：app\user\user_main.c 中的user_init()函数
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/16.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/16.png)
 
 相关宏定义：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image16.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image16.png)
 
 API说明：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image17.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image17.png)
 
 回调函数说明：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image18.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image18.png)
 
 在userTimerFunc() 中完成了周期100ms的定时执行，开发者可以在user_handle()中实现定时读取外设数据的操作，将读取到的数据赋值到用户区的全局结构体变量：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image19.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image19.png)
 
 
 ### 3.5 系统任务的使用
 
 代码位置：**app\user\user_main.c** 中的**user_init()**函数
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/20.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/20.png)
 
 API使用说明：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image20.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image20.png)
 
 回调函数说明：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image21.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image21.png)
 
 开发者可以自定义系统任务(**system_os_post**中的消息类型)，然后在系统任务回调函数中(gizwitsUserTask)添加对应的任务处理(即switch中对应的消息类型)。
 
 需要注意的是：任务优先级不可随意修改（共有三个优先级，提供给开发者的是**优先级0**）：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image22.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image22.png)
 
 
 ## 4 配置模式说明
@@ -282,22 +282,22 @@ API使用说明：
 
 **“WiFi配置接口”API 位置：gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image23.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image23.png)
 
 
 在本示例工程中是通过**按键触**发进入相应的配置模式，程序中触发逻辑位置：**gokit_mcu_stm32_xxx\User\main.c**
 
 A.进入Soft AP 模式：key2按键短按。
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image24.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image24.png)
 
 B.进入AirLink 模式：key2按键长按。
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image25.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image25.png)
 
 C.模组复位：key1按键长。
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image26.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image26.png)
 
 **注：开发者可以按照自己的需求来实现配置模式。**
 
@@ -312,15 +312,15 @@ C.模组复位：key1按键长。
 
 ● 首先是一些局部变量的初始化，比较重要的是**“gizwitsIssued_t *gizIssuedData”**它的作用是保存解析出来的协议包头：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image27.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image27.png)
 
 协议格式对应协议“4.10 WiFi模组控制设备”中“P0协议区”的标志位"attr_flags" + 数据值"attr_vals"
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image28.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image28.png)
 
 ● 然后是各协议命令的处理流程：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image29.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image29.png)
 
 由于SOC版相对MCU版去掉了串口协议等概念，故开发者在只需了解《xxx机智云接入串口通信协议文档》中的8、10三条指令：
 
@@ -332,23 +332,23 @@ C.模组复位：key1按键长。
 
 ● 下面以以协议4.8的处理为例：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image30.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image30.png)
 
 其“action”值 为“0x02”，对应程序中的的case为**“ACTION_READ_DEV_STATUS”**
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image31.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image31.png)
 
 之后完成了上报数据的数据类型转化（转化后的数据存储在**gizwitsReport_t**中的devStatus数据位中）：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image32.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image32.png)
 
 最后将待上报的数据以指针拷贝的方式进行输出：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image33.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image33.png)
 
 ● 同理其他协议action值对应的宏定义的位置在Gizwits\gizwits_protocol.h中:
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image34.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image34.png)
 
 以上便是p0协议处理函数的详解。
 
@@ -356,7 +356,7 @@ C.模组复位：key1按键长。
 
 与控制型协议相关的函数调用关系如下：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image35.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image35.png)
 
 函数调用说明：
 
@@ -375,29 +375,29 @@ C.模组复位：key1按键长。
 功能说明：
 在该函数中完成了写类型外设事件的生成，以“红灯开关数据点”为例：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image36.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image36.png)
 
 
 这里对应协议**“4.10 WiFi模组控制设备”**：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/37.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/37.png)
 
 前面我们已经知道程序里的 **“issuedData->attr_flags”**就对应《微信宠物屋-机智云接入串口通信协议文档.pdf》中的**“4.10 WiFi模组控制设备”**中的**attr_flags(1B)**，作用是用来控制所选位的设备，在文档中我们可以看到attr_flags的第0位是用来选择控制LED灯开关的，即只要设置了第0位为1就表示要控制LED等开关了，代码中对应如下：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image37.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image37.png)
 
 接下来便是控制型事件的生成：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image38.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image38.png)
 
 
 以及完成数据的解压（详情请查看**“2.8.2 数据解压与压缩处理”**一节）：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image39.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image39.png)
 
 
 注意：枚举（如**EVENT_LED_ONOFF**）用来直观的表示事件的含义，用户自行添加、更改（位置：**app\Gizwits\gizwits_protocol.h**）
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image40.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image40.png)
 
 
 ### 6.2 控制型事件处理
@@ -409,19 +409,19 @@ C.模组复位：key1按键长。
 
 完成写类型外设事件的处理。
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image41.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image41.png)
 
 
 这段程序功能的控制LED灯的开关：LED开关控制位 **“issued->attr_vals.led_onoff”** 的值若是LED_On（0x01）表示灯开，为LED_Off（0x01）表示灯关。这对应《微信宠物屋-机智云接入串口通信协议文档.pdf》中的**“4.10 WiFi模组控制设备”**中的attr_vals(6B)，即“数据位”，如下所示：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image42.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image42.png)
 
 
 第0位用来控制红灯亮灭，对应到在云端定义的数据点含义为：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image43.png)    = 0x00 = 红灯灭
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image43.png)    = 0x00 = 红灯灭
 
- ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image44.png)   = 0x01 = 红灯亮
+ ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image44.png)   = 0x01 = 红灯亮
 
 下面的程序基本和上面一样，只要大家看懂了《xxx-机智云接入串口通信协议文档.pdf》中的**“4.10 WiFi模组控制设备”**中的attr_flags(1B) 、attr_vals(6B)这两位就能编写控制型协议的程序了。
 
@@ -438,23 +438,23 @@ C.模组复位：key1按键长。
 
 程序中对应：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image45.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image45.png)
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image46.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image46.png)
 
 特别说明：
 
 网络字节序转化
 
 数据点为uint16、uint32型的数据要考虑**网络字节序转化**（uint16即使用**exchangeBytes()**函数），以电机控制为例：
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image47.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image47.png)
 
 
 ## 7 上报型协议的实现
 
 与上报型协议相关的函数调用关系如下：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image48.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image48.png)
 
 函数调用说明：
 
@@ -475,7 +475,7 @@ C.模组复位：key1按键长。
 使用说明：
 
 该函数中完成了用户区上报型数据的获取。**用户只需将读到的数据赋值到用户区当前设备状态结构体**即可：
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image49.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image49.png)
 
 
 ### 7.2 上报状态判断
@@ -496,15 +496,15 @@ C.模组复位：key1按键长。
 
 协议中说明如下：(“4.9 设备MCU向WiFi模组主动上报当前状态”)
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image50.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image50.png)
 
 以“逻辑1：控制型数据主动上报当前状态”为例：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image51.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image51.png)
 
 以“逻辑2：控制型数据主动上报当前状态”为例：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image52.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image52.png)
 
 ### 7.3 只读型数据类型转换
 
@@ -527,14 +527,14 @@ C.模组复位：key1按键长。
 
 以微信宠物屋的温湿度传感器温度检测为例：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image53.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image53.png)
 
 
 取值范围：-13（Ymin） ~ 187（Ymax），分辨率：1，增量：-13 ；
 
 其分辨率、偏移量作为宏定义定义在app\Gizwits\gizwits_product.h中：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image54.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image54.png)
 
 根据公式：y=kx＋m，k = 1 ; m = -13
 
@@ -543,12 +543,12 @@ C.模组复位：key1按键长。
 转换函数在程序中的说明：
 
 A.X2Y的转换：
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image55.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image55.png)
 
 
 B. Y2X的转换：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image56.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image56.png)
 
 功能定义更加
 
@@ -565,23 +565,23 @@ B. Y2X的转换：
 
 以《微信宠物屋》的RGB LED控制为例，云端定义如下：
 
- ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/57.png)
+ ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/57.png)
 
 对应文档中数据存储格式如下：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image57.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image57.png)
 
 字节序与bit序对应代码中宏定义如下：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image58.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image58.png)
 
 对应的数据点在接收解压时处理如下(位于gizDataPoint2Event函数中)：位于
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image59.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image59.png)
 
 对应的数据点在发送压缩时处理如下(位于gizDataPoints2ReportData函数中)：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image60.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image60.png)
 
 # 相关支持
 
@@ -601,4 +601,4 @@ GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得
 
 官方二维码：
 
-![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/image61.png)
+![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/Source/Source_old/image61.png)
