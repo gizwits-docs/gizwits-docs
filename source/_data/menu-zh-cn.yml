@@ -171,6 +171,9 @@
       APP绑定设备二维码生成教程:
         path: /UserManual/UseQRCode.html
 
+    WebSocketAPI:
+      path: /Cloud/CloudFAQ.html
+
 
 用户手册:
   个人项目产品转企业项目产品:
