@@ -133,17 +133,19 @@ title:  平台概述
 
 ## 1. 设备快速接入机智云
 为了让开发者快速了解我们设备接入的流程，我们提供了基于开源套件Gokit编写的MCU和SOC两套方案的快速接入教程，两套教程都以智能灯为案例
->**注：设备接入并非必须使用Gokit套件**
+
+**注：设备接入并非必须使用Gokit套件**
 
 - [MCU方案快速接入教程](http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html)
 - [SOC方案快速接入教程](http://docs.gizwits.com/zh-cn/deviceDev/UseSOC.html)
 
 
-## 3.GAgent通讯模组使用教程
+## 2.GAgent通讯模组使用教程
 GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。
 
 为了适应不同通讯模组接入机智云，我们提供了多个模组的烧写方法以及日志打印的方法，以确保GAgent固件在模组里正常运行。
->**注：合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误**
+
+**注：合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误**
 
 - [GAgent详细介绍](http://docs.gizwits.com/zh-cn/deviceDev/gagent_info.html)
 - [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
@@ -153,7 +155,7 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 - [广和通G510模组烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)
 - [通讯模组调试日志获取教程](http://docs.gizwits.com/zh-cn/deviceDev/%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3.html)
 
-## 2.MCU代码自动生成服务介绍
+## 3.MCU代码自动生成服务介绍
 为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。
 
 - [代码自动生成工具介绍以及使用教程](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
