@@ -7,7 +7,7 @@ title:  设备接入FAQ
 
 # 2、FAQ
 
-**Q：AirLink是什么意思，如何解释 **
+**Q：AirLink是什么意思，如何解释**
 A： 机智云推出的实现 Onboarding 的一套技术名称，兼容了多个 Wi-Fi 模块厂商的 Smart-Config 协议以及一套良好用户体验的标准 Onboarding 操作流程，机智云的 Wi-Fi设备接入SDK 已经内置 AirLink 技术。
 
 **Q：微信的AirKiss跟你们的AirLink有什么区别**
@@ -54,3 +54,6 @@ A：WiFi 模块是通过串口与底板 MCU 通信的，所以只需要找到 Wi
 
 **Q： gokit2 代上 stm32 软件是基于 mdk 哪个版本开发的**
 A：基于 Keil uVision5，目前使用 5.12 和 5.14 没有问题。
+
+**Q：设备如何无按键配网？**
+A：目前Gagent如果没有连接过路由器，或者重置过，打印Gagent日志就会发现，WiFi模块上电以后会自动进入airlink，10几秒以后没有配网就转为softap。只要知道模组处于什么配网模式，就可以做到无按键配网
