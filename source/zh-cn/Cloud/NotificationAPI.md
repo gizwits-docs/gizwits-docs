@@ -40,7 +40,7 @@ v2.1.7
 ![添加](/assets/zh-cn/cloud/添加api.png)
 
 # 关键术语
-1.auth_id & auth_secret: 产品授权ID和密钥，一个产品可创建多个auth_id，一个auth_id对应唯一的一个产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；
+1.auth_id & auth_secret: 产品授权ID和密钥，一款产品可创建多个auth_id，一个auth_id对应唯一的一款产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；
 
 2.subkey：消息分发机制，以ProductKey + subkey作为唯一主键，不同主键之间，消息互不影响（即同一个ProductKey使用不同的subkey，可产生消息副本）；subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）；
 
