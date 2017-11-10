@@ -1317,6 +1317,7 @@ API 调用限制
 | 参数                     | 类型   | 必填 | 参数类型 | 描述                     |
 |:------------------------ |:------ |:----:|:-------- |:------------------------ |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                    |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                            |
 | did                      | string |  是  | path     | 设备ID                   |
 
 
