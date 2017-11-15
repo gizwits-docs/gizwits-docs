@@ -11,21 +11,21 @@ v2.1.7
 1.Java版客户端
 
   代码仓库：https://github.com/Bestfeel/noti-netty-client
-  
+
 2.Ruby版客户端
 
   代码仓库：https://github.com/AbelLai/gizwits_sac_rb
-  
+
 3.Python版客户端
 
   代码仓库：https://github.com/wangzhenandy/snoti_client_python
-  
+
 4.Java版Demo（基础版）
-  
+
   代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0
-  
+
 5.Java版Demo（Netty框架版）
-  
+
   代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 
 # SNoti申请流程
@@ -103,14 +103,14 @@ v2.1.7
 请求字段说明：
 
 
-| 字段      | 是否必须         |             描述           | 
+| 字段      | 是否必须         |             描述           |
 | ------------- |:-------------:|    -------------    |  
-| cmd     | 必须   | 登录类型，必须为login_req| 
-| prefetch_count  | 	非必须     | 默认值为50| 
-| data.product_key| 必须 	| 产品ID| 
-| data.auth_id	| 必须 	| 产品授权ID| 
-| data.auth_secret 	| 必须 	| 产品授权密匙| 
-| data.subkey | 必须 	| subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线| 
+| cmd     | 必须   | 登录类型，必须为login_req|
+| prefetch_count  | 	非必须     | 默认值为50|
+| data.product_key| 必须 	| 产品ID|
+| data.auth_id	| 必须 	| 产品授权ID|
+| data.auth_secret 	| 必须 	| 产品授权密匙|
+| data.subkey | 必须 	| subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线|
 | data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed   center_control.sub_device_added;center_control.sub_device_deleted   device.bind;device.unbind;device.reset|
 
 
@@ -166,17 +166,17 @@ OR
 ```
 请求字段说明：
 
-| 字段      | 是否必须         |             描述           | 
+| 字段      | 是否必须         |             描述           |
 | ------------- |:-------------:|    -------------    |  
-| cmd     | 必须   | 控制设备，必须为 remote_control_req| 
+| cmd     | 必须   | 控制设备，必须为 remote_control_req|
 | msg_id  | 可选  | 可用于标识本消息，将会在回复指令中返回|
-| data  | 必须 	| 控制指令，数组类型| 
-| data.cmd| 必须 	| V4 产品数据点协议格式，填写write_attrs；V4 产品自定义协议格式，填写 write；V1 产品协议格式，填写 write_v1| 
-| data.source	| 必须 	| 固定填写 noti| 
-| data.data.did 	| 必须 	| 设备 ID| 
-| data.data.mac	| 必须 	| 设备 Mac 地址,长度为 12 的字符串，大小写敏感| 
-| data.data.product_key	| 必须 	|设备所属产品的标识码| 
-| data.data.attrs / data.data.raw	| 必须 	| V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式（参考通用数据点协议之透传业务指令），选择data.data.raw；V1 产品协议格式，选择 data.data.raw| 
+| data  | 必须 	| 控制指令，数组类型|
+| data.cmd| 必须 	| V4 产品数据点协议格式，填写write_attrs；V4 产品自定义协议格式，填写 write；V1 产品协议格式，填写 write_v1|
+| data.source	| 必须 	| 固定填写 noti|
+| data.data.did 	| 必须 	| 设备 ID|
+| data.data.mac	| 必须 	| 设备 Mac 地址,长度为 12 的字符串，大小写敏感|
+| data.data.product_key	| 必须 	|设备所属产品的标识码|
+| data.data.attrs / data.data.raw	| 必须 	| V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式（参考通用数据点协议之透传业务指令），选择data.data.raw；V1 产品协议格式，选择 data.data.raw|
 
 
 Gizwits Platform 回复：
@@ -199,7 +199,7 @@ Gizwits Platform 回复：
 如协议自身引起的错误，Gizwits Platform 回复 错误响应消息，该消息格式参见下文。
 
 ## 4.  推送事件
-#### 数据点编辑事件
+### 数据点编辑事件
 ```json
 {
 "cmd": "event_push",
@@ -209,7 +209,7 @@ Gizwits Platform 回复：
 "created_at"：<timestamp in seconds, float>
 }\n
 ```
-#### 设备上线事件
+### 设备上线事件
 ```json
 {
 "cmd": "event_push",
@@ -226,7 +226,7 @@ Gizwits Platform 回复：
 "city": <city string>
 }\n
 ```
-#### 设备下线事件
+### 设备下线事件
 
 ```json
 {
@@ -240,7 +240,7 @@ Gizwits Platform 回复：
 "created_at"：<timestamp in seconds, float>
 }\n
 ```
-#### 故障与报警事件
+### 故障与报警事件
 当有故障与报警事件发生，Gizwits Platform 会向客户端推送以下消息：
 
 ```json
@@ -261,7 +261,7 @@ Gizwits Platform 回复：
 }
 }\n
 ```
-#### 设备状态事件
+### 设备状态事件
 
 ```json
 {
@@ -296,7 +296,7 @@ Gizwits Platform 回复：
 }
 }
 ```
-#### 中控添加子设备事件
+### 中控添加子设备事件
 
 ```json
 {
@@ -318,7 +318,7 @@ AES补码方式为pcks7padding
 AES key为中控passcode的md5值（16 bytes）
 AES mode为AES.MODE_ECB
 
-#### 中控删除子设备事件
+### 中控删除子设备事件
 
 ```json
 {
@@ -335,7 +335,7 @@ AES mode为AES.MODE_ECB
 }\n
 ```
 
-#### 设备绑定/解绑事件
+### 设备绑定/解绑事件
 
 ```json
 {
@@ -352,7 +352,7 @@ AES mode为AES.MODE_ECB
 }\n
 ```
 
-#### 设备重置事件
+### 设备重置事件
 
 ```json
 {
@@ -366,7 +366,7 @@ AES mode为AES.MODE_ECB
 }\n
 ```
 
-#### 事件 ACK
+### 事件 ACK
 
 客户端每收到一事件消息都需要回复以下 ACK 消息：
 ```json
