@@ -104,6 +104,8 @@
       path: /deviceDev/GoKit3_DEV_SDK_Common_transplant.html
     STM32CubeMX移植机智云自动生成代码详解:
       path: /deviceDev/STM32CubeMX_transplant.html
+    8051平台最小资源裁剪说明:
+      path: /deviceDev/approach_to_tailoring_8051.html
 
   开源套件Gokit资料:
     Gokit2 使用指南:
