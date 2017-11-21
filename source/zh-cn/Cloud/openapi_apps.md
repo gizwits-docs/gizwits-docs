@@ -248,6 +248,9 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 - QQ 和 Twitter 需要在开发者中心填写API_KEY和API_Secret
 - Facebook、Twitter、Google、Amazon仅可在美东和欧洲环境使用
 
+密码强度要求：
+- 不能小于6位的大小写字母，数字，符号的组合
+
 请求地址及地址
 
       POST
@@ -3621,6 +3624,7 @@ data    : 设备上报状态
 | 9044   | GIZ_OPENAPI_SIGNATURE_INVALID                 | X-Gizwits-Signature invalid!                            |
 | 9045   | GIZ_OPENAPI_DEPRECATED_API                    | API deprecated!                                         |
 | 9046   | GIZ_OPENAPI_REGISTER_IS_BUSY                  | Register already in progress!                           |
+| 9077   | GIZ_OPENAPI                                   | email already exists but not activate!                  |
 | 9080   | GIZ_OPENAPI_CANNOT_SHARE_TO_SELF              | can not share device to self!                           |
 | 9081   | GIZ_OPENAPI_ONLY_OWNER_CAN_SHARE              | guest or normal user can not share device!              |
 | 9082   | GIZ_OPENAPI_NOT_FOUND_GUEST                   | guest user not found!                                   |
