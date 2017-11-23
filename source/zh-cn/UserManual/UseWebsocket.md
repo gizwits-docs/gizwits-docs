@@ -68,13 +68,15 @@ https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html
 # 控制设备分两种方式
 ## 1.V4版本的标准数据点协议
 ### 1.1.初始化Gizwits WS对象
+
 上面使用的参数有：
-| 参数      | 	说明       |            	数值         | 
-| ------------- |:-------------:|    -------------    |  
-|apiHost	|机智云OpenApi域名	|api.gizwits.com|
-|commType	|标准数据点协议格式	|attrs_v4|
-|wechatOpenId	|微信用户OpenID（就是手机的iPhone_id）|	String|
-|gizwitsAppId	|机智云平台应用标识	|String|
+
+| 参数         | 说明                                  | 数值            |
+| ------------ | ------------------------------------- | --------------- |
+| apiHost      | 机智云OpenApi域名                     | api.gizwits.com |
+| commType     | 标准数据点协议格式                    | attrs_v4        |
+| wechatOpenId | 微信用户OpenID（就是手机的iPhone_id） | String          |
+| gizwitsAppId | 机智云平台应用标识                    | String          |
 
 初始化，如下：
 
@@ -101,6 +103,15 @@ https://gizwits.github.io/gizwits-wechat-js-sdk/v0.2.0.html
 
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片16.png)
 
+* 如要设置扩展类型的字段 binary 为16进制 616263 ,补齐后每组byte换成一个十进制数组的值
+* 设置布尔型需要是true和false:
+```json
+{
+    "boolean":true,
+    "binary": [97,98,99,0,0,0,0,0,0,0]
+}
+```
+
 控制模拟设备效果：
 
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片17.png)
@@ -111,13 +122,13 @@ V4版本的自定义格式协议（就是无法数据点透传）
 ### 2.1.初始化Gizwits WS对象
 上面用的的参数有：
 
-| 参数      | 	说明       |            	数值         | 
-| ------------- |:-------------:|    -------------    |  
-|  apiHost |  	机智云OpenApi域名	 |  api.gizwits.com |  
-|  commType	 |  标准数据点协议格式 |  	attrs_v4 |  
-|  wechatOpenId	 |  微信用户OpenID（就是手机的iPhone_id） |  	String |  
-|  gizwitsAppId	 |  机智云平台应用标识 |  	String |  
- 
+| 参数         | 说明                                  | 数值            |
+| ------------ | ------------------------------------- | --------------- |
+| apiHost      | 机智云OpenApi域名                     | api.gizwits.com |
+| commType     | 标准数据点协议格式                    | attrs_v4        |
+| wechatOpenId | 微信用户OpenID（就是手机的iPhone_id） | String          |
+| gizwitsAppId | 机智云平台应用标识                    | String          |
+
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片18.png)
 
 ### 2.2.获取绑定列表
