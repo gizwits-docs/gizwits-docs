@@ -52,7 +52,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
 
-```
+```json
 {
     "cmd": "login_req",
     "data":
@@ -72,7 +72,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 <p>云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</p>
 
 
-```
+```json
 {
     "cmd": "login_res",
     "data":
@@ -89,7 +89,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串定阅设备消息。
 
-```
+```json
 {
     "cmd": "subscribe_req",
     "data": 
@@ -103,7 +103,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串返回定阅结果。
 
-```
+```json
 {
     "cmd": "subscribe_res",
     "data": 
@@ -147,7 +147,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知设备上线或下线。
 
 
-```
+```json
 {
     "cmd": "s2c_online_status",
     "data": 
@@ -167,7 +167,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有绑定或解绑事件发生。
 
-```
+```json
 {
     "cmd": "s2c_binding_changed",
     ￼"data":
@@ -187,7 +187,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。 
 
 
-```
+```json
 {
     "cmd": "c2s_raw",
     "data": 
@@ -224,7 +224,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，读取目标设备当前的状态。陆参数"p0_type"​的值等于​"custom"​时不允许使用本指令。
 
 
-```
+```json
 {
     "cmd": "c2s_read",
     "req_sn": <int>, (可选参数,若有值下发指令为带ACK的业务透传指令 [0x0093],若无则为不带ACK的业务
@@ -240,7 +240,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，控制目标设备（更改目标设备的状态）。登陆参数​"p0_type"​的值等于​"custom"​时不允许使用本指令。
 
 
-```
+```json
 {
     "cmd": "c2s_write",
     "req_sn": <int>, (可选参数,若有值下发指令为带ACK的业务透传指令 [0x0093],若无则为不带ACK的业务
@@ -260,7 +260,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 云端 ⇒ 浏览器。设备收到读取指令或状态发生变化后，会主动发送当前状态到云端，云端向浏览器转发以下的JSON字符串。 登陆参数​"p0_type"​的值等于​"custom"​时不会收到本指令。
 
-```
+```json
 {
     "cmd": "s2c_noti",
     "req_sn": <int>, (非必须参数,若设备发送带ACK透传业务指令 [0x0093],则包含本字段,浏览器须带上本
@@ -282,7 +282,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 云端 ⇒ 浏览器。浏览器发送带有req_sn的读取或写指令后 [0x0093],可能会收到设备对透传指 令的ACK [0x0094](另一种可能是收到带有响应内容和res_sn的s2c_noti指令),云端向浏览器 转发以下的JSON字符串。登陆参数​"p0_type"​的值等于​"custom"​时不使用本指令。
 
-```
+```json
 {
     ￼"cmd": "s2c_ack",
     "res_sn": <int>, (对应浏览器读取或写指令的req_sn)
@@ -293,7 +293,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 浏览器 ⇒ 云端。浏览器收到带有req_sn的s2c_noti消息后 [0x0093],需要浏览器向云端发送以下 的JSON字符串[0x0094]。登陆参数​"p0_type"​的值等于​"custom"​时不允许使用本指令。
 
-```
+```json
 {
     ￼"cmd": "c2s_ack",
     "res_sn": <int>, (对应浏览器接收到s2c_noti指令的req_sn)
@@ -309,14 +309,14 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
 
 
-```
+```json
 {
     "cmd": "ping"
 }
 ```
   
 云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。
-```
+```json
 {
     "cmd": "pong"
 }
@@ -329,7 +329,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有非法消息。
 
 
-```
+```json
 {
     "cmd": "s2c_invalid_msg", 
     "data": 
