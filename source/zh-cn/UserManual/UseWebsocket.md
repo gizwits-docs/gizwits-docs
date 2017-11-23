@@ -113,10 +113,10 @@ V4版本的自定义格式协议（就是无法数据点透传）
 
 | 参数      | 	说明       |            	数值         | 
 | ------------- |:-------------:|    -------------    |  
- |  apiHost |  	机智云OpenApi域名	 |  api.gizwits.com |  
- |  commType	 |  标准数据点协议格式 |  	attrs_v4 |  
- |  wechatOpenId	 |  微信用户OpenID（就是手机的iPhone_id） |  	String |  
- |  gizwitsAppId	 |  机智云平台应用标识 |  	String |  
+|  apiHost |  	机智云OpenApi域名	 |  api.gizwits.com |  
+|  commType	 |  标准数据点协议格式 |  	attrs_v4 |  
+|  wechatOpenId	 |  微信用户OpenID（就是手机的iPhone_id） |  	String |  
+|  gizwitsAppId	 |  机智云平台应用标识 |  	String |  
  
 ![Alt text](/assets/zh-cn/UserManual/WebSocket/图片18.png)
 
