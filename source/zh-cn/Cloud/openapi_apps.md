@@ -409,7 +409,6 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |                   描述                    |
 |:------------------------ |:------ |:----:|:-------- |:----------------------------------------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                                     |
-| X-Gizwits-User-token     | string |  是  | header   | 用户token                                 |
 | username                 | string |  是  | body     | 用户名，可以是用户的 username/email/phone |
 | password                 | string |  是  | body     | 密码                                      |
 | lang                     | string |  否  | body     | 语言版本                                  |
