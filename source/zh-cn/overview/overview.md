@@ -1,7 +1,7 @@
 title:  平台概述
 ---
 
-[专题热点](http://topic.gizwits.com/) 、 [本周热门下载](http://docs.gizwits.com/zh-cn/UserManual/hide/download.html)
+[专题热点](http://topic.gizwits.com/) 、 [本周热门下载](http://docs.gizwits.com/zh-cn/UserManual/hide/download.html) 、 [视频教程](http://docs.gizwits.com/zh-cn/UserManual/hide/videos.html)
 
 # 机智云平台概述
 ## 1 机智云平台概述
@@ -161,6 +161,8 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 - [代码自动生成工具介绍以及使用教程](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
 - [MCU SDK 通用平台版移植说明](http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html)
 - [STM32CubeMX移植机智云自动生成代码详解](http://docs.gizwits.com/zh-cn/deviceDev/STM32CubeMX_transplant.html)
+- [8051平台最小资源裁剪说明](http://docs.gizwits.com/zh-cn/deviceDev/approach_to_tailoring_8051.html)
+
 
 ## 4.开源套件Gokit资料
 为了让开发者更快的体验到机智云的云服务，我们提供了开源套件Gokit来供开发者学习、参考，借此让开发者自己的产品更快接入机智云。
@@ -206,3 +208,4 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [ECE雾计算使用教程](http://docs.gizwits.com/zh-cn/UserManual/ece.html)
  - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
  - [实时大数据使用说明](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html)
+ - [全球部署方案](http://docs.gizwits.com/zh-cn/UserManual/WorldWideConnectSolution.html)
