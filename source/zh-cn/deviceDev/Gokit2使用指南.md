@@ -253,9 +253,7 @@ AirLink配置就是说明书上介绍的方法，实现过程就是：通过按�
 
 更多的开发教程请查看社区**GoKit开源套件**板块
 
-> [*GoKit开源套件*](http://club.gizwits.com/forum-133-1.html)
-> [Gokit2历代资料(原理图等)整理](http://club.gizwits.com/thread-3721-1-1.html)
-> [免费试用申请](http://www.gizwits.com/zh-cn/gokit/)
+> [*GoKit开源套件*](http://club.gizwits.com/forum-133-1.html) 、 [Gokit2历代资料(原理图等)整理](http://club.gizwits.com/thread-3721-1-1.html) 、 [免费试用申请](http://www.gizwits.com/zh-cn/gokit/)
  
 
 **有任何疑问或技术支持，请联系我们：**
