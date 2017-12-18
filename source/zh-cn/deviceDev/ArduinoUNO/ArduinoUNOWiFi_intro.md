@@ -139,7 +139,7 @@ Arduino IDE(Integrated Development Environment)即Arduino 集成开发环境，�
 
 注册机智云开发者平台，即可免费体验相关开发工具
 
-开发者平台：site.gizwits.com
+开发者平台：[site.gizwits.com](https://accounts.gizwits.com/zh-cn/login)
 
 Gokit在线申请：www.gizwits.com/zh-cn/gokit
 
