@@ -233,11 +233,11 @@ AirLink配置就是说明书上介绍的方法，实现过程就是：通过按�
 
 [智能宠物屋”MCU源码 for GoKit（1代、2代STM、2代Arduino）](http://dev.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit)
 
-[智能宠物屋”Demo App （iOS、Android）](http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app)
+[智能宠物屋”Demo App （iOS、Android）](http://dev.gizwits.com/zh-cn/developer/resource/open_source?type=demo_app)(或在应用商店搜索“机智云”APP，下载体验)
 
 为了让你更快掌握GoKit的开发，我们提供了一系列的教学视频：
 
-[进入视频教学](http://dev.gizwits.com/zh-cn/developer/learn)
+[进入视频教学](http://docs.gizwits.com/zh-cn/UserManual/hide/videos.html)
 
 在你开发过程中，会使用到的一系列开发文档：
 
@@ -254,6 +254,9 @@ AirLink配置就是说明书上介绍的方法，实现过程就是：通过按�
 更多的开发教程请查看社区**GoKit开源套件**板块
 
 > [*GoKit开源套件*](http://club.gizwits.com/forum-133-1.html)
+> [Gokit2历代资料(原理图等)整理](http://club.gizwits.com/thread-3721-1-1.html)
+> [免费试用申请](http://www.gizwits.com/zh-cn/gokit/)
+ 
 
 **有任何疑问或技术支持，请联系我们：**
 
