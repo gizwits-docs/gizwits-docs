@@ -248,6 +248,9 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 - QQ 和 Twitter 需要在开发者中心填写API_KEY和API_Secret
 - Facebook、Twitter、Google、Amazon仅可在美东和欧洲环境使用
 
+密码强度要求：
+- 不能小于6位的大小写字母，数字，符号的组合
+
 请求地址及地址
 
       POST
@@ -406,7 +409,6 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |                   描述                    |
 |:------------------------ |:------ |:----:|:-------- |:----------------------------------------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                                     |
-| X-Gizwits-User-token     | string |  是  | header   | 用户token                                 |
 | username                 | string |  是  | body     | 用户名，可以是用户的 username/email/phone |
 | password                 | string |  是  | body     | 密码                                      |
 | lang                     | string |  否  | body     | 语言版本                                  |
@@ -1317,6 +1319,7 @@ API 调用限制
 | 参数                     | 类型   | 必填 | 参数类型 | 描述                     |
 |:------------------------ |:------ |:----:|:-------- |:------------------------ |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                    |
+| X-Gizwits-User-token     | string  |  是  | header   | 用户token                                            |
 | did                      | string |  是  | path     | 设备ID                   |
 
 
@@ -1473,15 +1476,21 @@ objects:
 通过云端对设备进行控制
 
 #### 原始指令(raw):
-发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+
+默认格式为十进制数组，设置 binary_coding 参数可使用 hex 和 base64，
+如要发送 payload 为二进制 011000010110001001100011 ，每组byte换成一个十进制数组的值得就是：[97,98,99]；
+如要发送 payload 为16进制 616263 ，每组byte换成一个十进制数组的值得就是：[97,98,99]。
+
 ```json
 {
-  "raw": [1, 2, 3]
+  "raw": [97,98,99]
 }
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度：
+设备产品必须定义了数据点。如要设置扩展类型的字段 binary 为16进制 1234567 ，需要补齐扩展型长度：
+扩展型默认为hex16 ，设置 binary_coding 参数可使用 base64 。
+
 ```json
 {
   "attrs": {
@@ -2153,15 +2162,20 @@ objects:
 通过云端对分组内的所有设备进行控制，该接口只能统一控制单PK分组的设备。
 
 #### 原始指令(raw):
-发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+默认格式为十进制数组，设置 binary_coding 参数可使用 hex 和 base64，
+如要发送 payload 为二进制 011000010110001001100011 ，每组byte换成一个十进制数组的值得就是：[97,98,99]；
+如要发送 payload 为16进制 616263 ，每组byte换成一个十进制数组的值得就是：[97,98,99]。
+
 ```json
 {
-  "raw": [1, 2, 3]
+  "raw": [97,98,99]
 }
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+设备产品必须定义了数据点。如要设置扩展类型的字段 binary 为1234567(16进制)，需要补齐扩展型长度；
+扩展型默认为hex16 ，设置 binary_coding 参数可使用 base64 。
+
 ```json
 {
   "attrs": {
@@ -2471,19 +2485,22 @@ data    : 设备上报状态
 指定当条件满足时, 需要做的事情，可认为云端同时执行各组动作，各组之间互不影响
 
 #### 原始指令(raw):
-发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+
+默认格式为十进制数组
+如要发送 payload 为二进制 011000010110001001100011 ，每组byte换成一个十进制数组的值得就是：[97,98,99]；
+如要发送 payload 为16进制 616263 ，每组byte换成一个十进制数组的值得就是：[97,98,99]。
+
 ```JSON
 {
-  "raw": [1, 2, 3]
+  "raw": [97,98,99]
 }
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+设备产品必须定义了数据点。如要设置扩展类型的字段 binary 为16进制 1234567，需要补齐扩展型长度：
 ```json
 {
   "attrs": {
-    "boolean":true,
     "binary": "1234567000"
   }
 }
@@ -2749,7 +2766,8 @@ data    : 设备上报状态
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/post_app_scene)
 
 #### 原始指令(raw):
-发送 0090 命令，只需要包括 payload 即可;格式为 base64 字符串，如要发送 payload 为 010203，就是
+默认格式为 base64 ，设置 binary_coding 参数可使用 hex，
+如要发送 payload 为 010203 ，编译后就是： AQID ；
 
 ```json
 {
@@ -2758,7 +2776,9 @@ data    : 设备上报状态
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+设备产品必须定义了数据点。如要设置扩展类型的字段 binary 为1234567(16进制)，需要补齐扩展型长度；
+扩展型默认为hex16 ，设置 binary_coding 参数可使用 base64 。
+
 ```json
 {
   "attrs": {
@@ -2836,26 +2856,6 @@ data    : 设备上报状态
 ## 修改场景信息
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/用户场景/post_app_scene)
-
-#### 原始指令(raw):
-发送 0090 命令，只需要包括 payload 即可;格式为 base64 字符串，如要发送 payload 为 010203，就是
-
-```json
-{
-  "raw": "AQID"
-}
-```
-
-#### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
-```json
-{
-  "attrs": {
-    "boolean":true,
-    "binary": "1234567000"
-  }
-}
-```
 
 请求地址及方式
 
@@ -3057,15 +3057,19 @@ data    : 设备上报状态
 * 可以选填 start_date 和 end_date 表示定时任务开启的日期范围
 
 #### 原始指令(raw):
-发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+默认格式为 hex16 ，设置 binary_coding 参数可使用 base64 ，
+如要发送 payload 为二进制 011000010110001001100011 ，每组byte换成16进制就是： 616263 ；
+
 ```json
 {
-  "raw": [1, 2, 3]
+  "raw": 616263
 }
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+设备产品必须定义了数据点。如要设置扩展类型的字段 binary 为1234567(16进制)，需要补齐扩展型长度；
+扩展型默认为hex16 ，设置 binary_coding 参数可使用 base64 。
+
 ```json
 {
   "attrs": {
@@ -3278,15 +3282,19 @@ data    : 设备上报状态
 
 
 #### 原始指令(raw):
-发送 0090 命令，只需要包括 payload 即可;格式为二进制转 byte 数组，如要发送 payload 为 010203，就是
+默认格式为 hex16 ，设置 binary_coding 参数可使用 base64 ，
+如要发送 payload 为二进制 011000010110001001100011 ，每组byte换成16进制就是： 616263 ；
+
 ```json
 {
-  "raw": [1, 2, 3]
+  "raw": 616263
 }
 ```
 
 #### 数据点方式(attrs):
-设备产品必须定义了数据点，比如要设置扩展类型的字段 binary 为1234567，需要补齐扩展型长度，设置布尔型需要是true和false：
+设备产品必须定义了数据点。如要设置扩展类型的字段 binary 为1234567(16进制)，需要补齐扩展型长度；
+扩展型默认为hex16 ，设置 binary_coding 参数可使用 base64 。
+
 ```json
 {
   "attrs": {
@@ -3620,6 +3628,7 @@ data    : 设备上报状态
 | 9044   | GIZ_OPENAPI_SIGNATURE_INVALID                 | X-Gizwits-Signature invalid!                            |
 | 9045   | GIZ_OPENAPI_DEPRECATED_API                    | API deprecated!                                         |
 | 9046   | GIZ_OPENAPI_REGISTER_IS_BUSY                  | Register already in progress!                           |
+| 9077   | GIZ_OPENAPI                                   | email already exists but not activate!                  |
 | 9080   | GIZ_OPENAPI_CANNOT_SHARE_TO_SELF              | can not share device to self!                           |
 | 9081   | GIZ_OPENAPI_ONLY_OWNER_CAN_SHARE              | guest or normal user can not share device!              |
 | 9082   | GIZ_OPENAPI_NOT_FOUND_GUEST                   | guest user not found!                                   |

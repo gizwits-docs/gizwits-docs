@@ -203,19 +203,25 @@ ArduinoUNOWiFi 云端自动生成源码，创建之后在项目如图所示的�
 
 
 # 4.相关支持
- - 1)如果您是开发者
 
-GoKit是面向智能硬件开发者限量免费开放，注册我们的论坛或关注我们的官方微信均可发起申请即可。
+ - 1)相关支持
+ 
+如果您是开发者
 
-开发者论坛： http://club.gizwits.com/forum.php
+注册机智云开发者平台，即可免费体验相关开发工具
 
-文档中心：http://docs.gizwits.com/hc/
+开发者平台：[site.gizwits.com](https://accounts.gizwits.com/zh-cn/login)
 
- - 2)如果您是团体
+Gokit在线申请：www.gizwits.com/zh-cn/gokit
 
-GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得到GoKit以及技术支持；
 
-网站地址：http://www.gizwits.com/about-us
+ - 2)如果您是团队
+ 
+GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得到技术支持
+
+联系邮箱：service@gizwits.com
+
+联系电话：020-6224-0080
 
 官方二维码：
 

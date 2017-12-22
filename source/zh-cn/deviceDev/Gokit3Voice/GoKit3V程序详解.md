@@ -1,7 +1,7 @@
-
-
-title: GoKit3(V)二次开发-程序详解
+title: GoKit3(V)二次开发-程序详解（旧）
 ---
+
+**2017年9月25日起已使用新版MCU代码生成，[查看新版](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html)自动生成代码程序详解**
 
 # 通信协议详解
 
@@ -116,27 +116,27 @@ title: GoKit3(V)二次开发-程序详解
 
 |API 名称    |   API 功能 |
 | :-------- | :--------|
-| void gizwitsInit(void)   | gizwits协议初始化接口。用户调用该接口可以完成Gizwits协议相关初始化（包括协议相关定时器、串口的初始化）。 | 
-| void gizwitsSetMode(uint8_t mode) | 参数mode[in]：仅支持0,1和2,其他数据无效。参数为0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。参数为1时配置模组进入SoftAp模式；            	参数为2配置模组进入AirLink模式。| 
-|  void gizwitsSetMode(uint8_t mode)  |  参数mode[in]：仅支持0,1和2,其他数据无效。参数为0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。参数为1时配置模组进入SoftAp模式；            	参数为2配置模组进入AirLink模式| 
-| void gizwitsHandle(dataPoint_t *dataPoint)   | 参数dataPoint[in]:用户设备数据点。该函数中完成了相应协议数据的处理即数据上报的等相关操作。 | 
-| int8_t gizwitsEventProcess (eventInfo_t *info, uint8_t *data, uint32_t len)  | 参数info[in]:事件队列;参数data[in]:数据;参数len [in]:数据长度;用户数据处理函数,包括wifi状态更新事件和控制事件。a)Wifi状态更新事件:WIFI_开头的事件为wifi状态更新事件，data参数仅在WIFI_RSSI有效，data值为RSSI值,数据类型为uint8_t，取值范围0~7。b)控制事件:与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。 | 
+| void gizwitsInit(void)   | gizwits协议初始化接口。用户调用该接口可以完成Gizwits协议相关初始化（包括协议相关定时器、串口的初始化）。 |
+| void gizwitsSetMode(uint8_t mode) | 参数mode[in]：仅支持0,1和2,其他数据无效。参数为0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。参数为1时配置模组进入SoftAp模式；            	参数为2配置模组进入AirLink模式。|
+|  void gizwitsSetMode(uint8_t mode)  |  参数mode[in]：仅支持0,1和2,其他数据无效。参数为0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置。参数为1时配置模组进入SoftAp模式；            	参数为2配置模组进入AirLink模式|
+| void gizwitsHandle(dataPoint_t *dataPoint)   | 参数dataPoint[in]:用户设备数据点。该函数中完成了相应协议数据的处理即数据上报的等相关操作。 |
+| int8_t gizwitsEventProcess (eventInfo_t *info, uint8_t *data, uint32_t len)  | 参数info[in]:事件队列;参数data[in]:数据;参数len [in]:数据长度;用户数据处理函数,包括wifi状态更新事件和控制事件。a)Wifi状态更新事件:WIFI_开头的事件为wifi状态更新事件，data参数仅在WIFI_RSSI有效，data值为RSSI值,数据类型为uint8_t，取值范围0~7。b)控制事件:与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。 |
 
 ## 2 程序实现原理
 
-**协议实现机制：** 
+**协议实现机制：**
 
 协议解析后，将P0数据区的有效数据点生成对应的数据点事件，再按事件处理数据点。
 
-**数据点转换事件的说明：** 
+**数据点转换事件的说明：**
 
-根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizwitsEventProcess)完成事件的处理。 
+根据协议P0数据区的attr_flags位判断出有效数据点，并将其转化成对应的数据点事件，然后在事件处理函数中(gizwitsEventProcess)完成事件的处理。
 
 ## 3 程序初始化说明
 
 ### 3.1 数据协议结构体的定义
 
-结构体dataPoint_t  ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
+结构体dataPoint_t  ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image6.png)
 
@@ -146,7 +146,7 @@ title: GoKit3(V)二次开发-程序详解
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image7.png)
 
 
-**attrFlags_t、attrVals_t** ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
+**attrFlags_t、attrVals_t** ，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image8.png)
 
@@ -154,7 +154,7 @@ title: GoKit3(V)二次开发-程序详解
 
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image9.png)
 
-结构体**devStatus_t**，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h** 
+结构体**devStatus_t**，代码位置: **gokit_mcu_stm32_xxx\Gizwits\gizwits_protocol.h**
 
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image10.png)
 
@@ -192,7 +192,7 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 
 相关说明：
 
-|函数	   |     说明| 
+|函数	   |     说明|
 | :-------- | :--------|
 | SystemInit()	  |   平台相关的硬件初始化（非API，不同的平台名称可能不同） |
 | userInit()  |用户相关的初始化，如：外设驱动初始化、打印串口初始化（非API，不同的平台名称可能不同）|
@@ -200,7 +200,7 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 | userHandle()	 | 用户事件回调函数，用户可以自定义事件在该函数中完成相应的协议处理。（非API，不同的平台名称可能不同） |
 | gizwitsHandle() | 协议相关的主函数（协议API） |
 
-	
+
 
 ### 3.3 用户程序初始化
 
@@ -213,7 +213,7 @@ uint8_t reserve:7; 因为程序中申请内存时的最小单位是byte(字节)�
 这部分完成了RGB LED、电机、温湿度、红外传感器的硬件驱动初始化以及电机初始状态，对应的驱动程序实现都在 **gokit_mcu_stm32_xxx\Hal** 下。
 
 这里主要完成了配置入网的功能，作为开发者可以按照自己的需求来实现这部分代码。
-		
+
 下面是平台协议相关初始化 （位置：**main.c中gizwitsInit() 函数**）：
 
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image13.png)
@@ -277,7 +277,7 @@ b.TIM3的中断回调函数为**UTIM3_IRQHandler() (#define TIMER_IRQ_FUN TIM3_I
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image22.png)
 
 
-串口中断函数，位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.c** 
+串口中断函数，位置：**gokit_mcu_stm32_xxx\Gizwits\gizwits_product.c**
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image23.png)
 
 
@@ -306,18 +306,18 @@ Wifi 配置接口说明：
 
 /**
 * @brief WiFi配置接口
-* 
+*
 
 * 用户可以调用该接口使WiFi模组进入相应的配置模式或者复位模组
-* 
+*
 
 * @param[in] mode 配置模式选择：0x0， 模组复位 ;0x01， SoftAp模式 ;0x02， AirLink模式
-* 
+*
 * @return 错误命令码
 */
 **·int32_t gizwitsSetMode(uint8_t mode)**
 
-程序中触发逻辑位置：**gokit_mcu_stm32_xxx\User\main.c** 
+程序中触发逻辑位置：**gokit_mcu_stm32_xxx\User\main.c**
 
 A.进入Soft AP 模式：key2按键短按。
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image26.png)
@@ -514,10 +514,10 @@ C.模组复位：key1按键长。
 
 | 函数  |  	说明 |
 | :-------- | :--------|
-| userHandle	  |  获取用户区的上报型数据| 
-| gizCheckReport  |   判断是否上报当前状态的数据 | 
-| gizDataPoints2ReportData	 | 完成用户区数据到上报型数据的转换| 
-|gizReportData	  |  将转换后的上报数据通过串口发送给WiFi模块 | 
+| userHandle	  |  获取用户区的上报型数据|
+| gizCheckReport  |   判断是否上报当前状态的数据 |
+| gizDataPoints2ReportData	 | 完成用户区数据到上报型数据的转换|
+|gizReportData	  |  将转换后的上报数据通过串口发送给WiFi模块 |
 
 
 ### 7.1 只读型数据的获取
@@ -571,7 +571,7 @@ C.模组复位：key1按键长。
 | 函数    |     说明 |
 | :-------- | :--------|
 | gizCompressValue	  |  完成传输数据的压缩处理，详情查看“2.8.2 数据解压与压缩处理”一节。 |
-| 
+|
 gizY2X	  |   将用户区数据转化为传输数据，详情查看“2.8.1 数据点类型转换”一节。 |
 
 
@@ -580,8 +580,8 @@ gizY2X	  |   将用户区数据转化为传输数据，详情查看“2.8.1 数�
 ### 8.1 数据点类型转换
 
 机智云为使设备功能定义更加简单直接，使用户输入的数值转换成设备能够识别的uint类型，这套算法的核心公式是：y=kx+m （y：显示值；x：传输值；k：分辨率；m：增量）
-	
-以《微信宠物屋》的温湿度传感器温度数据点为例： 
+
+以《微信宠物屋》的温湿度传感器温度数据点为例：
 
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image56.png)
 
@@ -614,11 +614,11 @@ B. Y2X的转换：
 
 |处理名称	     |    接口名称 |
 | :-------- | :--------|
-|bool和enum类型数据点数据解压	 |  **gizDecompressionValue**| 
-| bool和enum类型数据点数据压缩	 |  **gizCompressValue**| 
+|bool和enum类型数据点数据解压	 |  **gizDecompressionValue**|
+| bool和enum类型数据点数据压缩	 |  **gizCompressValue**|
 
 以《微信宠物屋》的RGB LED控制为例，云端定义如下：
- 
+
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image60.png)
 
 
@@ -663,5 +663,3 @@ GizWits针对团体有很多支持计划，您可以和GizWtis联系，快速得
 官方二维码：
 
 ![Alt text](/assets/zh-cn/deviceDev/Gokit3Voice/source/image65.png)
-
-

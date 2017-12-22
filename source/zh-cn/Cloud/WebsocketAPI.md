@@ -5,31 +5,31 @@ v1.0.7
 # Demo
 https://github.com/gizwits/gizwits-wechat-js-sdk
 
-#  通讯模型 
+#  通讯模型
 
-浏览器（Javascript）可以通过Web Socket API与机智云云端直接通讯。浏览器（Javascript）通过 Web Socket API，可以控制设备和实时接收设备上报的数据。 
+浏览器（Javascript）可以通过Web Socket API与机智云云端直接通讯。浏览器（Javascript）通过 Web Socket API，可以控制设备和实时接收设备上报的数据。
 
 ![通信模型](/assets/zh-cn/cloud/通信模型.jpg)
 
-#  通讯流程 
+#  通讯流程
 
 浏览器（Javascript）通过Web Socket API与云端通讯主要包括以下的通讯过程。
 
 * 用户登陆：用户通过从Http API获得的uid和token登陆云端。
-* 接收设备上线下线消息：只有绑定设备后才能控制设备。 
+* 接收设备上线下线消息：只有绑定设备后才能控制设备。
 * 发送和接收设备业务逻辑数据：
 * 心跳：浏览器（Javascript）定期向云端发送心跳，云端回复心跳响应。
 
 
-#  约定 
+#  约定
 
 
-## 1. 协议阅读说明 
+## 1. 协议阅读说明
 
 ● &lt;str&gt;表示字符串占位符，&lt;int&gt;表示整型数据占位符。
 
 
-## 2. 云端Web Socket服务地址 
+## 2. 云端Web Socket服务地址
 ```
 ws://<host>:<ws_port>/ws/app/v1 (非加密连接)
 wss://<host>:<wss_port>/ws/app/v1 (加密连接)
@@ -39,28 +39,28 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 ## 3. 注意事项  
 
-* 在与云端进行Web Socket交互前，用户必须已注册并已绑定了设备。 
+* 在与云端进行Web Socket交互前，用户必须已注册并已绑定了设备。
 * 与云端交互的数据均为JSON字符串,以UTF-8的方式编码。可以通过JSON.stringify(json)把Javascript对象转化为字符串再发送给云端，或通过var res = JSON.parse(evt.data)把接收到的字符串数据转化成Javascript对象。
 * Web Socket的测试程序请使用http://&lt;m2m_host&gt;:8080/app (​&lt;m2m_host&gt;为绑定设备列表中的host字段的值)， 也可以查看这个网页的源代码作为示例代码参考。
 
 
-#  通讯协议 
+#  通讯协议
 
-## 1. 用户登陆 
+## 1. 用户登陆
 
-浏览器（Javascript）必须登陆后才能和云端作进一步的交互。 
+浏览器（Javascript）必须登陆后才能和云端作进一步的交互。
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
 
-```
+```json
 {
     "cmd": "login_req",
     "data":
     {
-        "appid": <str>, 
+        "appid": <str>,
         "uid": <str>,
         "token": <str>,
-        "p0_type": "attrs_v4"|"custom", ("attrs_v4" 指通过标准数据点协议的方式和云端交互，见下文“标准数据点操作”部分。"custom"表示使用自定义业务逻辑协议的方式与云端交互，见下文“浏览器与云端的数据交互”部分。) 
+        "p0_type": "attrs_v4"|"custom", ("attrs_v4" 指通过标准数据点协议的方式和云端交互，见下文“标准数据点操作”部分。"custom"表示使用自定义业务逻辑协议的方式与云端交互，见下文“浏览器与云端的数据交互”部分。)
         "heartbeat_interval": <int>, (心跳的时间间隔，单位为秒，值必须小于等于180)
         "auto_subscribe": true | false (true表示登陆成功后，服务器自动订阅所有已绑定设备；false则需要通过下面的“用户定阅设备消息”协议选择订阅设备，默认值为true。推荐设为false，然后按需定阅设备以节省开销)
     }
@@ -72,7 +72,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 <p>云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。</p>
 
 
-```
+```json
 {
     "cmd": "login_res",
     "data":
@@ -81,18 +81,18 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
     }
 }
 ```
- 
- 
-## 2. 用户定阅设备消息 
+
+
+## 2. 用户定阅设备消息
 
 用户只有订阅了已绑定的设备消息，才可以接收与设备相关的消息。本指令只适用于登陆参数auto_subscribe: false的场景。
 
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串定阅设备消息。
 
-```
+```json
 {
     "cmd": "subscribe_req",
-    "data": 
+    "data":
     [
         {"did": <str> },（需要定阅的设备did1）
         {"did": <str> },（需要定阅的设备did2）
@@ -103,12 +103,12 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串返回定阅结果。
 
-```
+```json
 {
     "cmd": "subscribe_res",
-    "data": 
+    "data":
     {
-        "success": 
+        "success":
         [
             {
                 "did": <str>,（对应请求的设备did1）
@@ -122,7 +122,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
             },
             ……
          ],
-         “failed”: 
+         “failed”:
          [
             {
                 "did": <str>,（对应请求的设备did1）
@@ -140,17 +140,17 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 }
 ```
 
-## 3. 设备上线下线通知 
+## 3. 设备上线下线通知
 
 当设备上线或下线时，云端会主动发送通知到浏览器。
 
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知设备上线或下线。
 
 
-```
+```json
 {
     "cmd": "s2c_online_status",
-    "data": 
+    "data":
     {
         "did": <str>,（上下线设备的did）
         "passcode": <str>,（上下线设备的passcode）
@@ -167,7 +167,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有绑定或解绑事件发生。
 
-```
+```json
 {
     "cmd": "s2c_binding_changed",
     ￼"data":
@@ -184,13 +184,13 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 浏览器可以和云端交互任意符合协议的数据。协议的格式为请参考其它协议文档。
 当用户在登 陆时参数"p0_type"的值等于"custom"时，只能以这种方式和云端交互数据。
 
-浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。 
+浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
 
 
-```
+```json
 {
     "cmd": "c2s_raw",
-    "data": 
+    "data":
     {
         "did": <str>, （目标设备的did）
         "raw": [<byte>, <byte>, ...] （自定义业务逻辑指令的内容，以byte数组方式传送，每个byte的范围必须为 0~255。该内容必须要以[0, 0, 0, 3, varLen(1~4B), 0, 0, 144]开头）
@@ -204,9 +204,9 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 
 云端 ⇒ 浏览器。当云端收到设备上传的数据后，云端向浏览器转发以下的JSON字符串，数据放在raw字段中。注意，即使是登陆参数​"p0_type"​的值等于​"attrs_v4"​时，设备以“透传业务指令”上报的数据指令或中控相关的操作指令也会以本指令发往浏览器。
-```
+```json
 {
-    "cmd": "s2c_raw", 
+    "cmd": "s2c_raw",
     "data":
     {
         "did": <str>,（数据来源设备的did）
@@ -224,7 +224,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，读取目标设备当前的状态。陆参数"p0_type"​的值等于​"custom"​时不允许使用本指令。
 
 
-```
+```json
 {
     "cmd": "c2s_read",
     "req_sn": <int>, (可选参数,若有值下发指令为带ACK的业务透传指令 [0x0093],若无则为不带ACK的业务
@@ -240,7 +240,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串，控制目标设备（更改目标设备的状态）。登陆参数​"p0_type"​的值等于​"custom"​时不允许使用本指令。
 
 
-```
+```json
 {
     "cmd": "c2s_write",
     "req_sn": <int>, (可选参数,若有值下发指令为带ACK的业务透传指令 [0x0093],若无则为不带ACK的业务
@@ -248,9 +248,9 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
     "data":
     {
         "did": <str>,（目标设备的did）
-        "attrs": 
+        "attrs":
         {
-            "name1": <value1>, (“name1”指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+            "name1": <value1>, (“name1”指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(布尔型)，Unicode编码的字符串如\u62bd(枚举型)，数字（数值型），byte数组[23,2,3]（扩展类型)
             "name2": <value2>,
             ...
         }
@@ -260,29 +260,29 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 云端 ⇒ 浏览器。设备收到读取指令或状态发生变化后，会主动发送当前状态到云端，云端向浏览器转发以下的JSON字符串。 登陆参数​"p0_type"​的值等于​"custom"​时不会收到本指令。
 
-```
+```json
 {
     "cmd": "s2c_noti",
     "req_sn": <int>, (非必须参数,若设备发送带ACK透传业务指令 [0x0093],则包含本字段,浏览器须带上本
 字段的值回复c2s_ack。res_sn与req_sn参数不能同时并存)
     "res_sn": <int>, (非必须参数,若浏览器发送的c2s_read或c2s_write请求指令带有req_sn参数,则对应响应
 指令s2c_noti包含res_sn字段且值与req_sn一致。res_sn与req_sn参数不能同时并存)
-    "data": 
-    { 
+    "data":
+    {
         "did": <str>,（数据来源设备的did）         
-        "attrs": 
+        "attrs":
         {
-            "name1": <value1>, (“name1”指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+            "name1": <value1>, (“name1”指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(布尔型)，Unicode编码的字符串如\u62bd(枚举型)，数字（数值型），byte数组[23,2,3]（扩展类型)
             "name2": <value2>,
              ...          
         }
-    } 
-} 
+    }
+}
 ```
 
 云端 ⇒ 浏览器。浏览器发送带有req_sn的读取或写指令后 [0x0093],可能会收到设备对透传指 令的ACK [0x0094](另一种可能是收到带有响应内容和res_sn的s2c_noti指令),云端向浏览器 转发以下的JSON字符串。登陆参数​"p0_type"​的值等于​"custom"​时不使用本指令。
 
-```
+```json
 {
     ￼"cmd": "s2c_ack",
     "res_sn": <int>, (对应浏览器读取或写指令的req_sn)
@@ -293,7 +293,7 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 
 浏览器 ⇒ 云端。浏览器收到带有req_sn的s2c_noti消息后 [0x0093],需要浏览器向云端发送以下 的JSON字符串[0x0094]。登陆参数​"p0_type"​的值等于​"custom"​时不允许使用本指令。
 
-```
+```json
 {
     ￼"cmd": "c2s_ack",
     "res_sn": <int>, (对应浏览器接收到s2c_noti指令的req_sn)
@@ -303,20 +303,20 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 ```
 
 ## 7. 心跳
-  
+
 浏览器和云端建立Web Socket连接后，需要在登陆参数"heartbeat_interval"指定的时间间隔内，定期向云端发送心跳。云端收到后会回复心跳。
-    
+
 浏览器 ⇒ 云端。浏览器向云端发送以下的JSON字符串。
 
 
-```
+```json
 {
     "cmd": "ping"
 }
 ```
-  
+
 云端 ⇒ 浏览器。云端向浏览器回复以下的JSON字符串。
-```
+```json
 {
     "cmd": "pong"
 }
@@ -329,10 +329,10 @@ wss://<host>:<wss_port>/ws/app/v1 (加密连接)
 云端 ⇒ 浏览器。云端向浏览器发送以下的JSON字符串通知有非法消息。
 
 
-```
+```json
 {
-    "cmd": "s2c_invalid_msg", 
-    "data": 
+    "cmd": "s2c_invalid_msg",
+    "data":
     {
         "error_code": <int> ​(错误码)
         "msg": <str> ​(描述文本)

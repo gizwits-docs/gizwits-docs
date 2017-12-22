@@ -1,5 +1,8 @@
 title: GoKit3(S) 二次开发--开发环境搭建
 ---
+
+**[查看旧版代码开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发_old.html)**
+
 # GoKit3(S)开发环境准备
 
 ## 1 开发环境搭建方式
@@ -172,7 +175,7 @@ echo $PATH									//显示红框所示表示配置正确
 https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
 
 ## 2 GoKit3(S)源代码
-GoKit3(S)源码下载地址，[点击下载中](http://download.gizwits.com/zh-cn/p/92/93)
+GoKit3(S)的源码获取方式请查看：[代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/代码自动生成工具.html) 中 **生成SoC方案代码** 一节。
 
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image25.png)
@@ -184,21 +187,25 @@ GoKit3(S)源码下载地址，[点击下载中](http://download.gizwits.com/zh-c
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image26.png)
 
+注：示例中以ESP8266 32M模组的源码为例，16M、8M同理。
+
 
 2) 进入编译目录：
 
-cd /mnt/hgfs/share/gokit-soc-esp8266/app/
+cd /mnt/hgfs/share/SoC_ESP8266_32M_source/app/
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image27.png)
 
 
-3) 设置编译脚本为Unix格式，防止Win系统下对编译脚本产生影响：
+3) 设置编译脚本为Unix格式，防止Win系统下对编译脚本产生影响(**注:无法运行编译脚本时即可使用此方法**)：
 
 vim gen_misc.sh
 
 :set ff=unix			//这是vim命令，非添加的内容
 
 :wq!					//这是vim命令，非添加的内容
+
+![image27_5](/assets/zh-cn/deviceDev/WiFiSOC/dev/image27_5.png)
 
 4) 运行编译脚本：
 ./gen_misc.sh
@@ -209,7 +216,7 @@ vim gen_misc.sh
 注：如图所示表明编译成功
 
 5) 生成的固件位置:
-share/gokit3_SoC_ESP8266_xxx/bin/upgrade
+share/SOC_ESP8266_32M_source/bin/upgrade
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image29.png)
 
@@ -243,7 +250,7 @@ SOC版的程序固件名称为：
 
 编译后固件默认保存位置： 	
 
-**share/gokit3_SoC_ESP8266_xxx/bin/upgrade**
+**share/SOC_ESP8266_xxM_source/bin/upgrade**
 
 ### 2.2 GoKit3(S) MCU版
 
@@ -264,11 +271,11 @@ MCU版的程序固件名称为：
 
 
 注：
-1).前三个 ‘.bin’ 文件都在**D:\share\gokit-soc-esp8266\bin** 目录下，选择对应的名称的 ‘.bin’文件即可。
+1).前三个 ‘.bin’ 文件都在**D:\share\SoC_ESP8266_32M_source\bin** 目录下，选择对应的名称的 ‘.bin’文件即可。
 
 最后一个.bin 文件默认为SOC版固件：**user1.4096.new.6.bin**
 
-位置：**D:\share\gokit-soc-esp8266\bin\upgrade\user1.4096.new.6.bin**
+位置：**D:\share\SoC_ESP8266_32M_source\bin\upgrade\user1.4096.new.6.bin**
 
 若烧写MCU版固件请选择 **GAgent_00ESP826_04020011_16041419.bin**
 

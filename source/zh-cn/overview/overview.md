@@ -1,7 +1,7 @@
 title:  平台概述
 ---
 
-[专题热点](http://topic.gizwits.com/) 、 [本周热门下载](http://docs.gizwits.com/zh-cn/UserManual/hide/download.html)
+[专题热点](http://topic.gizwits.com/) 、 [本周热门下载](http://docs.gizwits.com/zh-cn/UserManual/hide/download.html) 、 [视频教程](http://docs.gizwits.com/zh-cn/UserManual/hide/videos.html)
 
 # 机智云平台概述
 ## 1 机智云平台概述
@@ -133,17 +133,19 @@ title:  平台概述
 
 ## 1. 设备快速接入机智云
 为了让开发者快速了解我们设备接入的流程，我们提供了基于开源套件Gokit编写的MCU和SOC两套方案的快速接入教程，两套教程都以智能灯为案例
->**注：设备接入并非必须使用Gokit套件**
+
+**注：设备接入并非必须使用Gokit套件**
 
 - [MCU方案快速接入教程](http://docs.gizwits.com/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html)
 - [SOC方案快速接入教程](http://docs.gizwits.com/zh-cn/deviceDev/UseSOC.html)
 
 
-## 3.GAgent通讯模组使用教程
+## 2.GAgent通讯模组使用教程
 GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。
 
 为了适应不同通讯模组接入机智云，我们提供了多个模组的烧写方法以及日志打印的方法，以确保GAgent固件在模组里正常运行。
->**注：合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误**
+
+**注：合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误**
 
 - [GAgent详细介绍](http://docs.gizwits.com/zh-cn/deviceDev/gagent_info.html)
 - [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
@@ -153,11 +155,14 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 - [广和通G510模组烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)
 - [通讯模组调试日志获取教程](http://docs.gizwits.com/zh-cn/deviceDev/%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B%E6%96%87%E6%A1%A3.html)
 
-## 2.MCU代码自动生成服务介绍
+## 3.MCU代码自动生成服务介绍
 为了降低开发者的开发门槛，缩短开发周期，降低开发资源投入，机智云推出了代码自动生成服务。云端会根据产品定义的数据点生成对应产品的设备端代码。
 
 - [代码自动生成工具介绍以及使用教程](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
 - [MCU SDK 通用平台版移植说明](http://docs.gizwits.com/zh-cn/deviceDev/GoKit3%20DEV%20SDK%20Common%E7%89%88%E7%A7%BB%E6%A4%8D%E8%AF%B4%E6%98%8E.html)
+- [STM32CubeMX移植机智云自动生成代码详解](http://docs.gizwits.com/zh-cn/deviceDev/STM32CubeMX_transplant.html)
+- [8051平台最小资源裁剪说明](http://docs.gizwits.com/zh-cn/deviceDev/approach_to_tailoring_8051.html)
+
 
 ## 4.开源套件Gokit资料
 为了让开发者更快的体验到机智云的云服务，我们提供了开源套件Gokit来供开发者学习、参考，借此让开发者自己的产品更快接入机智云。
@@ -168,10 +173,11 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
 - [Gokit3(S)使用说明书](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E4%B9%A6.html)
 - [Gokit3(S)开发套件介绍](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%BB%8D.html)
 - [Gokit3(S)开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html)
-- [Gokit3(S)程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
+- [GoKit-SoC程序详解](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit-SoC-explanation.html)
+- [GoKit-MCU程序详解](http://docs.gizwits.com/zh-cn/deviceDev/Gokit3Voice/GoKit-MCU-explanation.html)
 
 ## 5.ArduinoUnoWIFI接入教程
- - [ArduinoUNOWIFI接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/intro.html)
+ - [ArduinoUNOWIFI接入机智云介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/ArduinoUNOWiFi_intro.html)
  - [ArduinoUNOWiFi 之ESP8266固件烧写教程](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/Tutorial.html)
  - [ArduinoUNOWiFi SDK之API介绍](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/sdk.html)
  - [ArduinoUNOWiFi智能小夜灯](http://docs.gizwits.com/zh-cn/deviceDev/ArduinoUNO/example.html)
@@ -202,3 +208,4 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [ECE雾计算使用教程](http://docs.gizwits.com/zh-cn/UserManual/ece.html)
  - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
  - [实时大数据使用说明](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html)
+ - [全球部署方案](http://docs.gizwits.com/zh-cn/UserManual/WorldWideConnectSolution.html)

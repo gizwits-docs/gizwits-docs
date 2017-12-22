@@ -336,8 +336,27 @@ sudo apt-get install lua、sudo apt-get install lua5.1-0-dev
   [35]: http://static.zybuluo.com/AlexLin/sqvaal69sat4ygwgchxcaz4a/image_1b52eg53l1vnn19q810qepb5be91g.png
   [36]: http://static.zybuluo.com/AlexLin/yu6scxcs2zdzlsb92n5q5gi8/image_1b52egm5f1q3951nla12lg1apm1t.png
   [37]: http://static.zybuluo.com/AlexLin/s1oj1xyj90avz3lippw7syzw/image_1b52eh3j657kvm6177i1k1epd42a.png
-# 视频观看链接
 
-[lua脚本讲解](http://v.qq.com/x/page/d03617dbq8p.html)
 
-[gokit跑lua演示](http://v.qq.com/x/page/y0361kmy887.html)
+
+# ECE雾计算入门教程
+
+
+## 1 企业账号注册	
+https://v.qq.com/x/page/n0362u2fgws.html
+
+## 2 固件烧录	
+http://v.qq.com/x/page/r03612h7pr0.html
+
+## 3 pk烧录	
+http://v.qq.com/x/page/p0361baxn9z.html
+
+## 4 MCU协议介绍	
+http://v.qq.com/x/page/a03619wrrqr.html
+
+## 5 lua脚本讲解	
+http://v.qq.com/x/page/d03617dbq8p.html
+
+## 6 gokit跑lua演示	
+http://v.qq.com/x/page/y0361kmy887.html
+
