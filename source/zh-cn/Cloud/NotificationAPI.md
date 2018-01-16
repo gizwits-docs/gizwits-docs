@@ -57,6 +57,7 @@ v2.1.7
 - device.bind：设备绑定消息
 - device.unbind: 设备解绑消息
 - device.reset：设备重置消息
+- device.file.download：设备文件下载消息
 
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
@@ -111,7 +112,7 @@ v2.1.7
 | data.auth_id	| 必须 	| 产品授权ID|
 | data.auth_secret 	| 必须 	| 产品授权密匙|
 | data.subkey | 必须 	| subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线|
-| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed   center_control.sub_device_added;center_control.sub_device_deleted   device.bind;device.unbind;device.reset|
+| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline   device.status.raw;device.status.kv;datapoints.changed   center_control.sub_device_added;center_control.sub_device_deleted   device.bind;device.unbind;device.reset;device.file.download|
 
 
 Gizwits Platform 回复：
@@ -362,6 +363,21 @@ AES mode为AES.MODE_ECB
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
+"created_at"：<timestamp in seconds, float>
+}\n
+```
+
+### 设备大文件下载通知事件
+
+```json
+{
+"cmd": "event_push",
+"delivery_id": <delivery_id>，(用于ACK)
+"event_type": "device_file_download",
+"product_key": <product_key string>,
+"did": <did string>,
+"mac": <mac string>,
+"download_url": <download_url string>,
 "created_at"：<timestamp in seconds, float>
 }\n
 ```
