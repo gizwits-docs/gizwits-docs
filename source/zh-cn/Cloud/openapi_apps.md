@@ -249,7 +249,8 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 - Facebook、Twitter、Google、Amazon仅可在美东和欧洲环境使用
 
 密码强度要求：
-- 不能小于6位的大小写字母，数字，符号的组合
+- 密码长度不小于 8 位
+- 必须由大写，小写，数字，特殊符号至少 3 种以上字符组合
 
 请求地址及地址
 
