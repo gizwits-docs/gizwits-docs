@@ -36,7 +36,7 @@ title: 企业API
 | [get_v1_products_product_key_devices](#获取设备did)               |   获取设备did    |
 | [get_v1_products_product_key_device_detail](#获取设备详情)      |    获取设备详情    |
 | [get_v1_products_product_key_devices_search](#搜索设备)         |     搜索设备    |
-| [get_v1_products_product_key_devices_did_data](#获取设备历时数据)|  默认查询两天内的设备KV值  |
+| [get_v1_products_product_key_devices_did_data](#获取设备历史数据)|  默认查询两天内的设备KV值  |
 | [get_v1_products_product_key_devices_did_online](#设备上下线记录) | 获取设备上下线记录|
 | [get_v1_products_product_key_devices_did_cmd](#设备通信日志) | 默认查询两天内的设备原始指令 |
 | [post_v1_products_product_key_devices_did_control](#设备远程控制)   |  远程控制设备  |
@@ -757,7 +757,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 }
 ```
 
-## <span id = "get_v1_products_product_key_devices_did_data">获取设备历时数据</span>
+## <span id = "get_v1_products_product_key_devices_did_data">获取设备历史数据</span>
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data)
 
