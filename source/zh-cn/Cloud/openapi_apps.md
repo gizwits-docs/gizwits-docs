@@ -3434,7 +3434,7 @@ data    : 设备上报状态
 请求地址及方式
 
       PUT
-      https://api.gizwits.com/app/rules/{rule_id}
+      https://api.gizwits.com/app/devdata/{did}/agg_data
 
 请求参数
 
