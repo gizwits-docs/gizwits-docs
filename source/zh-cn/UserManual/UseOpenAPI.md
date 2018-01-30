@@ -69,7 +69,7 @@ title: 利用openapi（postman）控制虚拟设备
 ![Alt text](/assets/zh-cn/UserManual/OpenAPI/1484204941259.png)
 
 Import From Link填入：
-https://www.getpostman.com/collections/c76186e38f06e3f4a46a
+https://www.getpostman.com/collections/d6c5981977683526877f
 然后点击import，就会出现如下图所示的文件夹
 
 ![Alt text](/assets/zh-cn/UserManual/OpenAPI/1484202208479.png)

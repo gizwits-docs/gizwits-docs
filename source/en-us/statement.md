@@ -61,8 +61,8 @@ We recognise that privacy concerns differ from person to person. Therefore, we p
  
 You have the right to request access and/or correction or any other personal data that we hold about you. When you update your personal data, you will be asked to verify your identity before we proceed with your request. Once we obtain sufficient information to accommodate your request for access or correction of your personal data, we shall process in accordance with the laws of your country. While we try our utmost in acceding to your requests, unreasonably repetitive or unrealistic requests or those that put others’ privacy at risk may be declined.
 We normally provide such services for free but reserve the right to charge a reasonable fee.
-If you believe any information we are holding on you is incorrect or incomplete, please write to or email us as soon as possible at the email address below. Email: gizwits_echo@gizwits.com.
-For details relating to the personal data in your Gizwits Account, you may also access and change them at Email: gizwits_echo@gizwits.com.
+If you believe any information we are holding on you is incorrect or incomplete, please write to or email us as soon as possible at the email address below. Email: Gizwits_echo@Gizwits.com.
+For details relating to the personal data in your Gizwits Account, you may also access and change them at Email: Gizwits_echo@Gizwits.com.
 ​
 # Withdrawal of Consent
  
@@ -109,7 +109,7 @@ Our Privacy Policy does not apply to products and services offered by a third pa
 # Minors
  
 We consider it the responsibility of parents to monitor their children’s use of our products and services. Nevertheless, it is our policy not to require personal data from minors or offer to send any promotional materials to persons in that category. Gizwits does not seek or intend to seek to receive any personal data from minors. Should a parent or guardian have reasons to believe that a minor has provided Gizwits with personal data without their prior consent, please contact us to ensure that the personal data is removed and unsubscribe them from any of the applicable Gizwits services.
-Our Services are not directed to individuals under 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will take steps to delete such information. If you become aware that a child has provided us with personal information, please contact us at gizwits_echo@gizwits.com.
+Our Services are not directed to individuals under 13. We do not knowingly collect personal information from children under 13. If we become aware that a child under 13 has provided us with personal information, we will take steps to delete such information. If you become aware that a child has provided us with personal information, please contact us at Gizwits_echo@Gizwits.com.
 ​
 # Updates To The Privacy Policy
  
