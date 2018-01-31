@@ -1247,7 +1247,7 @@ API 调用限制
 
 ```json
 {
-  "name": "Huiking_OTA_宠物屋",
+  "name": "宠物屋",
   "entities": [
     {
       "id": 0,
