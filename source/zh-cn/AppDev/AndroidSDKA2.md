@@ -936,7 +936,8 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 
 //配置设备入网，发送要配置的wifi名称、密码
 GizWifiSDK.sharedInstance().setListener(mListener);
-GizWifiSDK.sharedInstance().setDeviceOnboarding("your_ssid", "your_key", GizWifiConfigureMode.GizWifiSoftAP, "your_gagent_hotspot_prefix", 60, null);
+// 此代码示例使用最新的配网接口（乐鑫或汉枫固件要求04020027以上，其他模组类型不要求最低版本号）
+GizWifiSDK.sharedInstance().setDeviceOnboardingDeploy("your_ssid", "your_key", GizWifiConfigureMode.GizWifiSoftAP, "your_gagent_hotspot_prefix", 60, null, false);
 
 //模块收到配置信息，尝试连接路由器并自动关闭热点
 //让手机连接到配置的wifi上
