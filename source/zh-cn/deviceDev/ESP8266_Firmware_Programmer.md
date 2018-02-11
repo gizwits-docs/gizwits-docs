@@ -50,13 +50,15 @@ title: ESP8266串口烧写说明
  
  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new4.png)
  
-  #### 使用SOC方案烧写方式（32Mbit方案分区烧写）：
+  #### 备注：若使用机智云官网SOC方案编译出来的固件，烧写方式如下（32Mbit方案分区烧写）：
   
  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new5.png)
 
-## 5烧写操作 
+## 5.烧写操作 
 
-步骤一、当串口连接成功之后，点击如上图的“START”按钮，
+步骤一、选择正确的串口，当串口连接成功之后，点击如上图的“START”按钮，
+
+ ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new6.png)
 
   ![name](/assets/zh-cn/deviceDev/debug/ESP8266/1478076571280.png)
 
@@ -66,10 +68,10 @@ title: ESP8266串口烧写说明
 
 步骤二、将ESP8266进行复位（按下2.3节原理图所示的KEY1后松开）将会出现如下信息表示模块正在进行烧写。
  
-  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/1478076590987.png)
+  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new7.png)
 
 步骤三、等待一段时间后，出现“FINISH”字样表示烧写成功。
  
- ![name](/assets/zh-cn/deviceDev/debug/ESP8266/1478076247606.png)
+ ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new8.png)
 
 
