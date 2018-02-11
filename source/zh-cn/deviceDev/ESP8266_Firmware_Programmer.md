@@ -40,12 +40,9 @@ title: ESP8266串口烧写说明
 
 ### 烧写固件
 
- ![name](/assets/zh-cn/deviceDev/debug/ESP8266/20161118150552.png)
- 
- 使用如上图所示固件烧录固件时，串口烧录工具参数需按照如下方式填写：
-
  **请务必依次对照下图所选的地方进行相应的填写：**
- 使用MCU方案烧写方式（合并烧写）：
+ 
+ #### 使用MCU方案烧写方式（合并烧写）：
  
  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new2.png)
  
@@ -53,7 +50,7 @@ title: ESP8266串口烧写说明
  
  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new4.png)
  
-  使用SOC方案烧写方式（32Mbit方案分区烧写）：
+  #### 使用SOC方案烧写方式（32Mbit方案分区烧写）：
   
  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new5.png)
 
