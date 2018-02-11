@@ -13,11 +13,11 @@ title: ESP8266串口烧写说明
 
  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/1478076396266.png)
 
-  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new1.png)
+  ![name](/assets/zh-cn/deviceDev/debug/ESP8266/1478076409588.png)
 
 ## 2.确认固件文件（以合并固件为例）
  
- ![name](/assets/zh-cn/deviceDev/debug/ESP8266/1478076417476.png)
+ ![name](/assets/zh-cn/deviceDev/debug/ESP8266/new1.png)
 
 如图所示bin文件为我们所需要的固件。
 
