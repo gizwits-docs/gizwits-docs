@@ -146,7 +146,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 # 授权
 
-## <span id = "post_v1_products_product_key_access_token">获取token</span>
+## 获取token
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/授权/post_v1_products_product_key_access_token)
 
@@ -177,14 +177,14 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 返回例子
 ```json
 {
-  "token": "string",
-  "expired_at": 0
+  "token": "89d753a234ef42cd90f75da7489e78a4",
+  "expired_at": 1517897923
 }
 ```
 
 # 产品管理
 
-## <span id = "get_v1_products_product_key_datapoint">获取产品数据点</span>
+## 获取产品数据点
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/产品管理/get_v1_products_product_key_datapoint)
 
@@ -217,21 +217,127 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | id      | string  | entity id    |
 
 
+| 参数           | 类型           | 描述                                                                                      |
+| -------------- | -------------- | ----------------------------------------------------------------------------------------- |
+| name           | string         | 产品名称                                                                                  |
+| entities       | Array          | [EntitiyList]                                                                              |
+| protocolType   | string         | 固定值：standard                                                                          |
+| product_key    | string         | 产品product_key                                                                           |
+| packetVersion  | string         | 固定值：0x00000004                                                                                 |
+| ui             | inline_model_7 | 手机客户端 UI 定义                                                                        |
+| EntitiyList     | ——————         | ——————                                                                                    |
+| id             | integer        | 固定值：0                                                                                 |
+| name           | string         | 固定值：entity0                                                                           |
+| display_name   | string         | 固定值：机智云开发套件                                                                    |
+| attrs          | Array          | [AttrItem]                                                                                |
+| inline_model_7 | ——————         | ——————                                                                                    |
+| object         | inline_model_1 |                                                                                           |
+| sections       | Array          | UI 片段列表:[SectionItem]                                                                 |
+| AttrItem       | ——————         | ——————                                                                                    |
+| id             | integer        | 数据点顺序                                                                                |
+| name           | string         | 数据点标示名                                                                              |
+| display_name   | string         | 数据点显示名                                                                              |
+| desc           | string         | 固定值：.....                                                                             |
+| type           | string         | 读写类型，W: 读写,R: 只读,N: 报警,E: 故障                                                 |
+| data_type      | string         | 数据类型，bool：布尔;'uint8','uint16','uint32'：数值型;enum：枚举;binary:扩展型]          |
+| uint_spec      | inline_model_4 | 当 data_type 为 uint8/uint16/uint32 时，有该字段                                          |
+| enum           | Array          | 当 data_type 为 enum 时，有该字段                                                         |
+| position       | inline_model_5 | 字节与比特位描述                                                                          |
+| inline_model_1 | ——————         | ——————                                                                                    |
+| version        | integer        | 固定值：4                                                                                 |
+| showEditButton | boolean        | 固定值：false                                                                             |
+| SectionItem    | ——————         | ——————                                                                                    |
+| elements       | Array          | [ElementItem]                                                                             |
+| inline_model_4 | ——————         | ——————                                                                                    |
+| min            | integer        | 最少值                                                                                    |
+| max            | integer        | 最大值                                                                                    |
+| ratio          | number         | 分辨率k                                                                                   |
+| addition       | integer        | 增量                                                                                      |
+| inline_model_5 | ——————         | ——————                                                                                    |
+| bit_offset     | integer        | 位索引，如果为变长协议，固定为 0                                                          |
+| len            | integer        | 长度                                                                                      |
+| unit           | string         | 单位，'bit', 'byte'                                                                       |
+| byte_offset    | integer        | 字节索引，如果为变长协议，固定为 0                                                        |
+| ElementItem    | ——————         | ——————                                                                                    |
+| title          | string         | 数据点显示名                                                                              |
+| key            | string         | entity0.{数据点标示名}                                                                    |
+| type           | string         | 'QBooleanElement', 'QFloatElement', 'QRadioElement', 'QMultilineElement', 'QLabelElement' |
+| keyboardType   | string         | 键盘类型，固定值，"NumbersAndPunctuation"                                                 |
+| maxLength      | integer        | type 为 QMultilineElement 才有该字段，最大长度，为数据点定义长度的 2 倍                   |
+| items          | Array          | type 为 QRadioElement 才有该字段，枚举值列表                                              |
+| boolValue      | boolean        | type 为 QBooleanElement 才有该字段，固定值：false                                         |
+| bind           | string         | type 为 QFloatElement 才有该字段，固定值：floatValue:float                                |
+| maximumValue   | number         | type 为 QFloatElement 才有该字段，最大值                                                  |
+| minimumValue   | number         | type 为 QFloatElement 才有该字段，最少值                                                  |
+| value          | integer        | type 为 QFloatElement 才有该字段，固定值：0                                               |
+| object         | inline_model_6 |                                                                                           |
+| inline_model_6 | ——————         | ——————                                                                                    |
+| action         | string         | 固定值:entity0                                                                            |
+| bind           | Array[string]  | 固定值:entity0.{数据点标示名}                                                             |
+| perm           | string         | 读写类型：W: 读写,R: 只读,N: 报警,E: 故障                                                 |
+| unit_spec      | inline_model_2 | type 为 QFloatElement 才有该字段                                                          |
+| inline_model_2 | ——————         | ——————                                                                                    |
+| max            | integer        | 最大值                                                                                    |
+| step           | integer        | 步进                                                                                      |
+| min            | integer        | 最小值                                                                                    |
+
+
+
 返回例子
 ```json
 {
-  "name": "string",
+  "name": "微信宠物屋",
   "entities": [
     {
-      "display_name": "string",
       "id": 0,
-      "name": "string"
+      "display_name": "机智云开发套件",
+      "attrs": [
+        {
+          "display_name": "开关",
+          "name": "switch",
+          "data_type": "bool",
+          "position": {
+            "bit_offset": 0,
+            "len": 1,
+            "unit": "bit",
+            "byte_offset": 0
+          },
+          "type": "status_writable",
+          "id": 0,
+          "desc": "....."
+        }
+      ],
+      "name": "entity0"
     }
   ],
-  "protocolType": "string",
-  "product_key": "string",
-  "packetVersion": "string",
-  "ui": {}
+  "protocolType": "standard",
+  "product_key": "4244bf2d79694a259232431b6f2ef46a",
+  "packetVersion": "0x00000004",
+  "ui": {
+    "object": {
+      "version": 4,
+      "showEditButton": false
+    },
+    "sections": [
+      {
+        "elements": [
+          {
+            "boolValue": false,
+            "object": {
+              "action": "entity0",
+              "bind": [
+                "entity0.switch"
+              ],
+              "perm": "W"
+            },
+            "type": "QBooleanElement",
+            "key": "entity0.switch",
+            "title": "开关"
+          }
+        ]
+      }
+    ]
+  }
 }
 
 ```
@@ -239,7 +345,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 # 用户管理
 
-## <span id = "get_v1_users_search">搜索注册用户</span>
+## 搜索注册用户</span>
 
 
 * 实现备注
@@ -255,39 +361,39 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| X-Gizwits-Enterprise-ID	| string |  是  | header   | enterprise id      |
-| X-Gizwits-Enterprise-Secret  | string |  否  | header   | enterprise secret|
-| product_secret           | string |  是 | query    | 产品名称  product_key  |
-| appid          | string |  否 | query    | 	应用id  |
-| username         | string |  否 | query    | 	用户名称 |
-| phone          | string |  否 | query    | 	手机号码  |
-| email          | string |  否 | query    | 	邮件  |
-| limit          | integer |  否 | query    | 	返回的条数，默认:20  |
-| skip           | integer |  否 | query    | 跳过的条数，default:0|
+| 参数                        | 数据类型 | 必填 | 参数类型 | 描述                  |
+|:--------------------------- |:-------- |:----:|:-------- |:--------------------- |
+| X-Gizwits-Enterprise-ID     | string   |  是  | header   | enterprise id         |
+| X-Gizwits-Enterprise-Secret | string   |  否  | header   | enterprise secret     |
+| product_key                 | string   |  是  | query    | 产品名称  product_key |
+| appid                       | string   |  否  | query    | 应用id                |
+| username                    | string   |  否  | query    | 用户名称              |
+| phone                       | string   |  否  | query    | 手机号码              |
+| email                       | string   |  否  | query    | 邮件                  |
+| limit                       | integer  |  否  | query    | 返回的条数，默认:20   |
+| skip                        | integer  |  否  | query    | 跳过的条数，default:0 |
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| total      | integer | 消息总数                  |
-| limit      | integer | 返回的结果条数            |
-| skip       | integer | 跳过的条数                |
-| previous   | string  | 上一页的请求地址          |
-| next       | string  | 下一页的请求地址          |
-| uid         | string  | 用户 id                 |
-| username | string  | 用户名称             |
-| phone | string  |     手机号码          |
-| email       | string | 邮箱 |
-| birthday     | string | 生日日期   |
-| is_anonymous    | boolean  | 是否为匿名用户        |
-| gender     | string | 性别   |
-| address     | string | 地址   |
-| remark     | string | 备注   |
-| created_at     | integer | 创建时间   |
-| updated_at     | integer | 更新时间   |
+| 参数         | 数据类型 | 描述             |
+|:------------ |:-------- |:---------------- |
+| total        | integer  | 消息总数         |
+| limit        | integer  | 返回的结果条数   |
+| skip         | integer  | 跳过的条数       |
+| previous     | string   | 上一页的请求地址 |
+| next         | string   | 下一页的请求地址 |
+| uid          | string   | 用户 id          |
+| username     | string   | 用户名称         |
+| phone        | string   | 手机号码         |
+| email        | string   | 邮箱             |
+| birthday     | string   | 生日日期         |
+| is_anonymous | boolean  | 是否为匿名用户   |
+| gender       | string   | 性别             |
+| address      | string   | 地址             |
+| remark       | string   | 备注             |
+| created_at   | integer  | 创建时间         |
+| updated_at   | integer  | 更新时间         |
 
 
 
@@ -296,25 +402,25 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```json
 {
   "meta": {
-    "total": 0,
-    "limit": 0,
+    "previous": null,
     "skip": 0,
-    "next": "string",
-    "previous": "string"
+    "total": 30,
+    "limit": 20,
+    "next": "/v1/users/search?username=&skip=20&product_key=4214bf2d791234259232431b6f2ef46a&phone=&limit=20&appid=&email="
   },
   "objects": [
     {
-      "uid": "string",
-      "username": "string",
-      "phone": "string",
-      "email": "string",
-      "birthday": "string",
+      "username": null,
+      "remark": null,
+      "uid": "25a5324c807842348f63ade277eb413a",
       "is_anonymous": true,
-      "gender": "string",
-      "address": "string",
-      "remark": "string",
-      "created_at": 0,
-      "updated_at": 0
+      "gender": null,
+      "created_at": 1513135417,
+      "updated_at": 1513135417,
+      "phone": null,
+      "birthday": null,
+      "address": null,
+      "email": null
     }
   ]
 }
@@ -322,7 +428,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 
-## <span id = "get_v1_products_product_key_users_search">搜索绑定用户</span>
+## 搜索绑定用户
 
 
 * 实现备注
@@ -339,36 +445,36 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key				| string |  是  | path   | 产品名称   |
-| gid           | string |  否  | query     | 组ID  |
-| type        | string |  否  | query     | 密码    |
-|   val         | string |  否  | query     | 查询条件值   |
-| limit           | integer |  否  | query     | 每次返回的条数 |
-| skip       | integer |  否  | query   | 每次跳过的条数|
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述           |
+|:----------- |:-------- |:----:|:-------- |:-------------- |
+| product_key | string   |  是  | path     | 产品名称       |
+| gid         | string   |  否  | query    | 组ID           |
+| type        | string   |  否  | query    | 密码           |
+| val         | string   |  否  | query    | 查询条件值     |
+| limit       | integer  |  否  | query    | 每次返回的条数 |
+| skip        | integer  |  否  | query    | 每次跳过的条数 |
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| total      | integer | 消息总数                  |
-| limit      | integer | 返回的结果条数            |
-| skip       | integer | 跳过的条数                |
-| previous   | string  | 上一页的请求地址          |
-| next       | string  | 下一页的请求地址          |
-| uid         | string  | 用户 id                 |
-| username | string  | 用户名称             |
-| phone | string  |     手机号码          |
-| email       | string | 邮箱 |
-| birthday     | string | 生日日期   |
-| address     | string | 地址   |
-| remark     | string | 备注   |
-| created_at     | integer | 创建时间   |
-| is_anonymous    | boolean  | 是否为匿名用户        |
-| auth_src      | object | 用户第三方信息    |
-| is_owner      | boolean | 只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限   |
+| 参数         | 数据类型 | 描述                                                                                              |
+|:------------ |:-------- |:------------------------------------------------------------------------------------------------- |
+| total        | integer  | 消息总数                                                                                          |
+| limit        | integer  | 返回的结果条数                                                                                    |
+| skip         | integer  | 跳过的条数                                                                                        |
+| previous     | string   | 上一页的请求地址                                                                                  |
+| next         | string   | 下一页的请求地址                                                                                  |
+| uid          | string   | 用户 id                                                                                           |
+| username     | string   | 用户名称                                                                                          |
+| phone        | string   | 手机号码                                                                                          |
+| email        | string   | 邮箱                                                                                              |
+| birthday     | string   | 生日日期                                                                                          |
+| address      | string   | 地址                                                                                              |
+| remark       | string   | 备注                                                                                              |
+| created_at   | integer  | 创建时间                                                                                          |
+| is_anonymous | boolean  | 是否为匿名用户                                                                                    |
+| auth_src     | object   | 用户第三方信息                                                                                    |
+| is_owner     | boolean  | 只有当搜索设备 did 时会返回该设备的 owner 权限情况，true：拥有 owner 权限，false：没有 owner 权限 |
 
 
 
@@ -377,27 +483,26 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```json
 {
   "meta": {
-    "total": 0,
-    "limit": 0,
+    "previous": null,
     "skip": 0,
-    "next": "string",
-    "previous": "string"
+    "total": 30,
+    "limit": 20,
+    "next": "/v1/products/42a259232431b614bf2d79694f2ef46a/users/search?skip=20&gid=&limit=20&val=&type="
   },
   "objects": [
     {
-      "uid": "string",
-      "username": "string",
-      "phone": "string",
-      "email": "string",
-      "name": "string",
-      "gender": "string",
-      "birthday": "string",
-      "address": "string",
-      "remark": "string",
-      "created_at": 0,
-      "is_anomymous": true,
-      "auth_src": {},
-      "is_owner": true
+      "username": null,
+      "remark": null,
+      "uid": "2ac80784a695a5f88f63ade277eb413a",
+      "is_anonymous": true,
+      "gender": null,
+      "created_at": 1513135417,
+      "auth_src": null,
+      "phone": null,
+      "birthday": null,
+      "address": null,
+      "email": null,
+      "name": null
     }
   ]
 }
@@ -408,7 +513,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 # 设备管理
-## <span id = "get_v1_products_product_key_devices">获取设备did</span>
+## 获取设备did
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices)
 
@@ -421,10 +526,10 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| mac          | string |  是 | query    | 	mac 地址  |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述     |
+|:----------- |:-------- |:----:|:-------- |:-------- |
+| product_key | string   |  是  | path     | 产品名称 |
+| mac         | string   |  是  | query    | mac 地址 |
 
 
 
@@ -439,7 +544,8 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 返回例子
 ```json
 {
-  "did": "string",
+  "did": "cBhaUHdkYkSjoE2xspYM5k",
+  "passcode": "123456"
 }
 ```
 
@@ -457,39 +563,39 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| mac          | string |  是 | query    | 	mac 地址  |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述     |
+|:----------- |:-------- |:----:|:-------- |:-------- |
+| product_key | string   |  是  | path     | 产品名称 |
+| mac         | string   |  是  | query    | mac 地址 |
 
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| product_key       | string |          产品名称    |
-| mac          | string |  	mac 地址  |
-| did           | string |  	设备 ID  |
-| is_online           | boolean |  	设备是否在线，True 代表在线，False 代表离线  |
-| is_disabled            | boolean |  	设备是否注销，True 代表已注销，False 代表未注销  |
-| type            | string |  	设备类型  |
+| 参数        | 数据类型 | 描述                                            |
+|:----------- |:-------- |:----------------------------------------------- |
+| product_key | string   | 产品名称                                        |
+| mac         | string   | mac 地址                                        |
+| did         | string   | 设备 ID                                         |
+| is_online   | boolean  | 设备是否在线，True 代表在线，False 代表离线     |
+| is_disabled | boolean  | 设备是否注销，True 代表已注销，False 代表未注销 |
+| type        | string   | 设备类型                                        |
 
 
 返回例子
 ```json
 {
-  "product_key": "string",
-  "mac": "string",
-  "did": "string",
-  "is_online": true,
-  "is_disabled": true,
-  "type": "string"
+  "did": "dkYkSE2xjocBhaUHspYM5k",
+  "is_disabled": false,
+  "product_key": "49232431b6f2e214bf2d79694a25f46a",
+  "mac": "virtual:site",
+  "is_online": false,
+  "type": "normal"
 }
 ```
 
 
-## <span id = "get_v1_products_product_key_devices_search">搜索设备</span>
+## 搜索设备
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_search)
 
@@ -501,45 +607,49 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key				| string |  是  | path   | 产品名称   |
-| gid           | string |  否  | query     | 设备组 id  |
-| country           | string |  否  | query     | 国家  |
-| region           | string |  否  | query     | 省  |
-| city           | string |  否  | query     |  城市  |
-| is_online           | integer |  否  | query     | 是否在线,在线为1,不在线为0   |
-| is_faulty        | integer |  否  | query     | 是否故障,故障为1,无故障为0    |
-| is_alert        | integer |  否  | query     | 是否报警,报警为1,无报警为0    |
-| show_disabled        | integer |  否  | query     | 显示注销为1，过滤注销为0    |
-| liveness_start        | string |  否  | query     | 最近活跃时间戳|
-| type        | string |  否  | query     | 可以为 did、mac、uid|
-|   val         | string |  否  | query     | 查询条件值   |
-| limit           | integer |  否  | query     | 每次返回的条数 |
-| skip       | integer |  否  | query   | 每次跳过的条数|
+| 参数           | 数据类型 | 必填 | 参数类型 | 描述                       |
+|:-------------- |:-------- |:----:|:-------- |:-------------------------- |
+| product_key    | string   |  是  | path     | 产品名称                   |
+| gid            | string   |  否  | query    | 设备组 id                  |
+| country        | string   |  否  | query    | 国家                       |
+| region         | string   |  否  | query    | 省                         |
+| city           | string   |  否  | query    | 城市                       |
+| is_online      | integer  |  否  | query    | 是否在线,在线为1,不在线为0 |
+| is_faulty      | integer  |  否  | query    | 是否故障,故障为1,无故障为0 |
+| is_alert       | integer  |  否  | query    | 是否报警,报警为1,无报警为0 |
+| show_disabled  | integer  |  否  | query    | 显示注销为1，过滤注销为0   |
+| liveness_start | string   |  否  | query    | 最近活跃时间戳             |
+| type           | string   |  否  | query    | 可以为 did、mac、uid       |
+| val            | string   |  否  | query    | 查询条件值                 |
+| limit          | integer  |  否  | query    | 每次返回的条数             |
+| skip           | integer  |  否  | query    | 每次跳过的条数             |
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| total      | integer | 消息总数                  |
-| limit      | integer | 返回的结果条数            |
-| skip       | integer | 跳过的条数                |
-| previous   | string  | 上一页的请求地址          |
-| next       | string  | 下一页的请求地址          |
-| did         | string  | 设备 id                 |
-| mac  | string  | mac 地址             |
-| is_online | integer  |     是否设备在线           |
-| country        | string | country  |
-| region     | string | 省    |
-| city      | string | 市    |
-| longitude      | string | 经度    |
-| latitude      | integer | 纬度    |
-| is_faulty    | integer  | 是否发生故障 ,        |
-| is_alert       | integer | 是否发生报警    |
-| online_latest      | integer | 设备最近上线时间  |
-| created_at       | integer | 设备创建时间  |
+| 参数              | 数据类型 | 描述             |
+|:----------------- |:-------- |:---------------- |
+| total             | integer  | 消息总数         |
+| limit             | integer  | 返回的结果条数   |
+| skip              | integer  | 跳过的条数       |
+| previous          | string   | 上一页的请求地址 |
+| next              | string   | 下一页的请求地址 |
+| did               | string   | 设备 id          |
+| mac               | string   | mac 地址         |
+| is_online         | integer  | 是否设备在线     |
+| country           | string   | country          |
+| region            | string   | 省               |
+| city              | string   | 市               |
+| longitude         | string   | 经度             |
+| latitude          | integer  | 纬度             |
+| is_faulty         | integer  | 是否发生故障     |
+| is_alert          | integer  | 是否发生报警     |
+| online_latest     | integer  | 设备最近上线时间 |
+| created_at        | integer  | 设备创建时间     |
+| mcu_hard_version  | string   | mcu 硬件版本     |
+| mcu_soft_version  | string   | mcu 软件件版本   |
+| wifi_hard_version | string   | wifi 硬件版本    |
+| wifi_soft_version | string   | wifi 软件件版本  |
 
 
 
@@ -547,47 +657,61 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```json
 {
   "meta": {
-    "total": 0,
-    "limit": 0,
+    "previous": null,
     "skip": 0,
-    "next": "string",
-    "previous": "string"
+    "total": 3,
+    "limit": 20,
+    "next": null
   },
-  "objects": {
-    "did": "string",
-    "mac": "string",
-    "is_online": 0,
-    "country": "string",
-    "region": "string",
-    "city": "string",
-    "longitude": "string",
-    "latitude": "string",
-    "is_faulty": 0,
-    "is_alert": 0,
-    "online_latest": 0,
-    "created_at": 0
-  }
+  "objects": [
+    {
+      "city": "Guangzhou",
+      "mcu_hard_version": null,
+      "mcu_soft_version": null,
+      "did": "kYkSE2xspYjocBhaUHdM5k",
+      "country": "China",
+      "region": "Guangdong",
+      "mac": "virtual:site",
+      "longitude": 113.280637,
+      "wifi_hard_version": null,
+      "online_latest": 1517296665,
+      "wifi_soft_version": null,
+      "is_online": false,
+      "latitude": 23.125178,
+      "is_alert": false,
+      "created_at": 1505789918,
+      "is_faulty": false
+    }
+  ]
 }
 ```
 
-## <span id = "post_v1_products_product_key_devices_did_control">设备远程控制</span>
-
-远程控制设备可以通过两种方式
-* 原始指令: raw
-二进制转 byte 数组，如要发送 010203，就是
-{
-"raw": [1, 2, 3]
-}
-* 数据点方式: attrs
-设备产品必须定义了数据点，比如要设置温度 temp 为 30 度
-{
-"attrs": {
-  "temp": 30
-}
-}
+## 设备远程控制
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/post_v1_products_product_key_devices_did_control)
 
+#### 原始指令(raw):
+
+默认格式为十进制数组，设置 binary_coding 参数可使用 hex 和 base64，
+如要发送 payload 为二进制 011000010110001001100011 ，每组byte换成一个十进制数组的值得就是：[97,98,99]；
+如要发送 payload 为16进制 616263 ，每组byte换成一个十进制数组的值得就是：[97,98,99]。
+
+```json
+{
+  "raw": [97,98,99]
+}
+```
+
+#### 数据点方式(attrs):
+设备产品必须定义了数据点。如要设置扩展类型的字段 binary 为16进制 1234567 ，需要补齐扩展型长度：
+
+```json
+{
+  "attrs": {
+    "binary": "1234567000"
+  }
+}
+```
 
 请求类型及地址
 
@@ -598,12 +722,12 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| did        			 | string |  是 | path    | 设备 id |
-| raw        		| Array[integer] |  是 | body  | 原始指令 |
-| attrs         	 | object |  是 | body    | 数据点方式 |
+| 参数        | 数据类型       | 必填 | 参数类型 | 描述       |
+|:----------- |:-------------- |:----:|:-------- |:---------- |
+| product_key | string         |  是  | path     | 产品名称   |
+| did         | string         |  是  | path     | 设备 id    |
+| raw         | Array[integer] |  是  | body     | 原始指令   |
+| attrs       | object         |  是  | body     | 数据点方式 |
 
 
 
@@ -612,25 +736,30 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
    无
 
 
-
-返回例子
-```json
-{
-  "raw": [
-    0
-  ],
-  "attrs": {}
-}
-```
-
-## <span id = "get_v1_products_product_key_devices_did_online">设备上下线记录</span>
+## 设备上下线记录
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_online)
 
-实现备注
+用于查询最近7天内任意两天的上下线记录。
+
+
+##### 时间&排序：
 *  start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
-*  start_ts与end_ts之间的间隔秒必须在两天范围以内
+*  start_ts 与 end_ts之间的间隔秒必须在两天范围以内
 *  增加sort排序，默认为降序，asc代表升序，desc代表降序
+
+##### 设备的下线原因（reason）
+* mqtt_disconnect：设备主动断开与mqtt的连接
+* no_heartbeat：m2m在KeepAlive时段内，没有收到设备心跳
+* tcp_closed：设备主动断开tcp连接
+* ssl_closed：设备主动断开ssl连接
+* offline_force：设备重复上线，原有的连接断开
+* offline_reset：设备注销，断开连接
+* offline_exception：异常断开连接
+* offline_sending_density_overflow：客户端发送信息的频率过大，断开链接
+* offline_sending_data_size_overflow：客户端发送信息的流量过大，断开链接
+
+
 
 请求类型及地址
 
@@ -641,31 +770,39 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key           | string |  是 | path    | 产品名称   |
-| did                   | string |  是 | path    | 	设备did |
-| start_ts              |integer  |  否 |   query  | 	开始时间戳|
-| end_ts                |integer  |  否 |   query  | 	结束时间戳|
-| sort             	    |sort  | 否 |   query  | 	可以是desc和asc|
-| limit             	|integer  |  否 |   query  | 	返回的结果条数  |
-| skip    		  		|integer  |  否 |   query  | 	跳过的条数|
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述            |
+|:----------- |:-------- |:----:|:-------- |:--------------- |
+| product_key | string   |  是  | path     | 产品名称        |
+| did         | string   |  是  | path     | 设备did         |
+| start_ts    | integer  |  否  | query    | 开始时间戳      |
+| end_ts      | integer  |  否  | query    | 结束时间戳      |
+| sort        | sort     |  否  | query    | 可以是desc和asc |
+| limit       | integer  |  否  | query    | 返回的结果条数  |
+| skip        | integer  |  否  | query    | 跳过的条数      |
 
 
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| total      | integer | 消息总数                  |
-| limit      | integer | 返回的结果条数            |
-| skip       | integer | 跳过的条数                |
-| previous   | string  | 上一页的请求地址          |
-| next       | string  | 下一页的请求地址          |
-| timestamp      | integer | 设备上下线指令时间    |
-| type       | string | 设备日志类型，如： dev2app/app2dev 等   |
-| payload    | string  | 设备原始日志信息       |
+| 参数      | 数据类型 | 描述                                          |
+|:--------- |:-------- |:--------------------------------------------- |
+| total     | integer  | 消息总数                                      |
+| limit     | integer  | 返回的结果条数                                |
+| skip      | integer  | 跳过的条数                                    |
+| previous  | string   | 上一页的请求地址                              |
+| next      | string   | 下一页的请求地址                              |
+| timestamp | integer  | 设备上下线指令时间                            |
+| type      | string   | 设备日志类型，如： dev_offline/dev_offline 等 |
+| payload   | string   | 设备原始日志信息                              |
+| KeepAlive | integer  | 设备指定的心跳时间间隔（单位:秒）             |
+| duration  | integer  | 设备的在线时长 （单位:秒）                    |
+| count     | integer  | 在线时发送的心跳次数                          |
+| max       | integer  | 最大间隔时间                                  |
+| min       | integer  | 最小间隔时间                                  |
+| avg       | integer  | 平均间隔时间                                  |
+| last      | integer  | 最后一次收到心跳时刻与下线时刻的间隔时间      |
+| reason    | string   | 下线原因                                      |
 
 
 
@@ -674,31 +811,54 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```json
 {
   "meta": {
-    "total": 0,
-    "limit": 0,
+    "previous": null,
     "skip": 0,
-    "next": "string",
-    "previous": "string"
+    "total": 5,
+    "limit": 20,
+    "next": null
   },
   "objects": [
     {
-      "timestamp": 0,
-      "type": "string",
-      "payload": "string"
+      "timestamp": 1517384124.229,
+      "type": "dev_online",
+      "payload": {
+        "keep_alive": 130
+      }
+    },
+    {
+      "timestamp": 1517298056.201,
+      "type": "dev_offline",
+      "payload": {
+        "duration": 1391,
+        "heartbeat": {
+          "count": 21,
+          "max": 60,
+          "avg": 60,
+          "last": 130,
+          "min": 60
+        },
+        "reason": "no_heartbeat"
+      }
     }
   ]
 }
 ```
 
 
-## <span id = "get_v1_products_product_key_devices_did_cmd">设备通信日志</span>
+## 设备通信日志
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_cmd)
 
-实现备注
+用于查询最近7天内任意两天的设备通讯日志（原始数据）。
+
+###### 时间&排序：
 * start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
 * start_ts与end_ts之间的间隔秒必须在两天范围以内
 * 增加sort排序，默认为降序，asc代表升序，desc代表降序
+
+###### payload：
+* payload 为二进制进行 base64 编码后的结果。
+
 
 请求类型及地址
 
@@ -709,31 +869,31 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key           | string |  是 | path    | 产品名称   |
-| did                   | string |  是 | path    | 	设备did |
-| start_ts              |integer  |  否 |   query  | 	开始时间戳|
-| end_ts                |integer  |  否 |   query  | 	结束时间戳|
-| sort             	    |sort  | 否 |   query  | 	可以是desc和asc|
-| limit             	|integer  |  否 |   query  | 	返回的结果条数  |
-| skip    		  		|integer  |  否 |   query  | 	跳过的条数|
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述            |
+|:----------- |:-------- |:----:|:-------- |:--------------- |
+| product_key | string   |  是  | path     | 产品名称        |
+| did         | string   |  是  | path     | 设备did         |
+| start_ts    | integer  |  否  | query    | 开始时间戳      |
+| end_ts      | integer  |  否  | query    | 结束时间戳      |
+| sort        | sort     |  否  | query    | 可以是desc和asc |
+| limit       | integer  |  否  | query    | 返回的结果条数  |
+| skip        | integer  |  否  | query    | 跳过的条数      |
 
 
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| total      | integer | 消息总数                  |
-| limit      | integer | 返回的结果条数            |
-| skip       | integer | 跳过的条数                |
-| previous   | string  | 上一页的请求地址          |
-| next       | string  | 下一页的请求地址          |
-| timestamp      | integer | 设备上下线指令时间    |
-| type       | string | 设备日志类型，如： dev2app/app2dev 等   |
-| payload    | string  | 设备原始日志信息       |
+| 参数      | 数据类型 | 描述                                  |
+|:--------- |:-------- |:------------------------------------- |
+| total     | integer  | 消息总数                              |
+| limit     | integer  | 返回的结果条数                        |
+| skip      | integer  | 跳过的条数                            |
+| previous  | string   | 上一页的请求地址                      |
+| next      | string   | 下一页的请求地址                      |
+| timestamp | integer  | 设备上下线指令时间                    |
+| type      | string   | 设备日志类型，如： dev2app/app2dev 等 |
+| payload   | string   | 设备原始日志信息                      |
 
 
 
@@ -741,25 +901,32 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ```json
 {
   "meta": {
-    "total": 0,
-    "limit": 0,
+    "previous": null,
     "skip": 0,
-    "next": "string",
-    "previous": "string"
+    "total": 6,
+    "limit": 20,
+    "next": null
   },
   "objects": [
     {
-      "timestamp": 0,
-      "type": "string",
-      "payload": "string"
+      "timestamp": 1517384252.294,
+      "type": "app2dev",
+      "payload": "0000000309000090010101000010"
+    },
+    {
+      "timestamp": 1517384243.044,
+      "type": "dev2app",
+      "payload": "000000030b0000910401000010000000"
     }
   ]
 }
 ```
 
-## <span id = "get_v1_products_product_key_devices_did_data">获取设备历史数据</span>
+## 获取设备历史数据
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices_did_data)
+
+用于查询最近7天内任意两天的设备通讯日志（Json格式）。
 
 实现备注
 * start_ts 和 end_ts不填，默认查询过去到现在两天以内的通信日志记录
@@ -775,47 +942,57 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key           | string |  是 | path    | 产品名称   |
-| did                   | string |  是 | path    | 	设备did |
-| start_ts              |integer  |  否 |   query  | 	开始时间戳|
-| end_ts                |integer  |  否 |   query  | 	结束时间戳|
-| sort             	    |sort  | 否 |   query  | 	可以是desc和asc|
-| limit             	|integer  |  否 |   query  | 	返回的结果条数  |
-| skip    		  		|integer  |  否 |   query  | 	跳过的条数|
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述            |
+|:----------- |:-------- |:----:|:-------- |:--------------- |
+| product_key | string   |  是  | path     | 产品名称        |
+| did         | string   |  是  | path     | 设备did         |
+| start_ts    | integer  |  否  | query    | 开始时间戳      |
+| end_ts      | integer  |  否  | query    | 结束时间戳      |
+| sort        | sort     |  否  | query    | 可以是desc和asc |
+| limit       | integer  |  否  | query    | 返回的结果条数  |
+| skip        | integer  |  否  | query    | 跳过的条数      |
 
 
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| total      | integer | 消息总数                  |
-| limit      | integer | 返回的结果条数            |
-| skip       | integer | 跳过的条数                |
-| previous   | string  | 上一页的请求地址          |
-| next       | string  | 下一页的请求地址          |
-| longitude      | string | 经度    |
-| latitude      | integer | 纬度    |
+| 参数     | 数据类型 | 描述             |
+|:-------- |:-------- |:---------------- |
+| total    | integer  | 消息总数         |
+| limit    | integer  | 返回的结果条数   |
+| skip     | integer  | 跳过的条数       |
+| previous | string   | 上一页的请求地址 |
+| next     | string   | 下一页的请求地址 |
+| ts       | integer  | 设备指令时间     |
+| attrs    | objects  | 数据点           |
+
 
 返回例子
 ```json
 {
   "meta": {
-    "total": 0,
-    "limit": 0,
+    "previous": null,
     "skip": 0,
-    "next": "string",
-    "previous": "string"
+    "total": 3,
+    "limit": 20,
+    "next": null
   },
   "objects": [
     {
-      "ts": 0,
+      "ts": 1517384243,
       "attrs": {
-        "longitude": "string",
-        "latitude": "string"
+        "alert_full": 0,
+        "alert_shutdown": 0,
+        "mode": "制冷",
+        "fan_swing": 0,
+        "switch": 1,
+        "fan_speed": "低风",
+        "fault_roomtemp": 0,
+        "room_temp": -10,
+        "set_temp": 16,
+        "off_timing": 0,
+        "on_timing": 0
       }
     }
   ]
@@ -826,7 +1003,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 # 设备组管理
-## <span id = "get_v1_products_product_key_device_groups">获取设备组树形结构</span>
+## 获取设备组树形结构
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups)
 
@@ -839,26 +1016,28 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述     |
+|:----------- |:-------- |:----:|:-------- |:-------- |
+| product_key | string   |  是  | path     | 产品名称 |
 
 
 
 响应参数
-    无
+| 参数 | 数据类型 | 描述     |
+|:---- |:-------- |:-------- |
+| gid  | string   | 设备组ID |
 
 
 
 返回例子
 ```json
 {
-
+  "c8e4b5634b047dc495be4a05a39d02a3": ""
 }
 ```
 
 
-## <span id = "post_v1_products_product_key_device_groups">创建设备组</span>
+## 创建设备组
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/post_v1_products_product_key_device_groups)
 
@@ -874,27 +1053,27 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| parent_gid            | string |  否 | body    | 子设备组id  |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述       |
+|:----------- |:-------- |:----:|:-------- |:---------- |
+| product_key | string   |  是  | path     | 产品名称   |
+| parent_gid  | string   |  否  | body     | 子设备组id |
 
 
 响应参数
     
-| 参数                     | 数据类型   |   描述                                          |
-|:------------------------ |:------  |:--------------------------------------------- |     
-| gid              | string |  设备组id |
+| 参数 | 数据类型 | 描述     |
+|:---- |:-------- |:-------- |
+| gid  | string   | 设备组ID |
 
 
 返回例子
 ```json
 {
-  "gid": "string"
+  "gid": "c8e4b5634b047dc495be4a05a39d02a3"
 }
 ```
 
-## <span id = "delete_v1_products_product_key_device_groups_gid">删除设备组</span>
+## 删除设备组
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/delete_v1_products_product_key_device_groups_gid)
 
@@ -910,24 +1089,18 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| gid            | string |  是 | path    | 设备组id  |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述     |
+|:----------- |:-------- |:----:|:-------- |:-------- |
+| product_key | string   |  是  | path     | 产品名称 |
+| gid         | string   |  是  | path     | 设备组id |
 
 
 响应参数
        无 
 
-返回例子
-```json
-{
-
-}
-```
 
 
-## <span id = "get_v1_products_product_key_device_groups_gid">获取设备组下的mac列表</span>
+## 获取设备组下的mac列表
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/get_v1_products_product_key_device_groups_gid)
 
@@ -940,30 +1113,30 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| gid            | string |  是 | path    | 设备组id  |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述     |
+|:----------- |:-------- |:----:|:-------- |:-------- |
+| product_key | string   |  是  | path     | 产品名称 |
+| gid         | string   |  是  | path     | 设备组id |
 
 
 响应参数
    
-| 参数                     | 数据类型   |   描述                                          |
-|:------------------------ |:------  |:--------------------------------------------- |     
-| macs               | Array[string] |  mac列表 |
+| 参数     | 数据类型      | 描述                            |
+|:-------- |:------------- |:------------------------------- |
+| macs     | Array[string] | mac列表                         |
 
 
 返回例子
 ```json
 {
   "macs": [
-    "string"
+    "virtual:site"
   ]
 }
 ```
 
 
-## <span id = "put_v1_products_product_key_device_groups_gid">更新设备组</span>
+## 更新设备组
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备组管理/put_v1_products_product_key_device_groups_gid)
 
@@ -981,19 +1154,28 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |     
-| product_key            | string |  是 | path    | 产品名称   |
-| gid            | string |  是 | path    | 设备组id  |
-| body            | AssignObject |  是 | body    | 设备组id  |
+| 参数        | 数据类型      | 必填 | 参数类型 | 描述                            |
+|:----------- |:------------- |:----:|:-------- |:------------------------------- |
+| product_key | string        |  是  | path     | 产品名称                        |
+| gid         | string        |  是  | path     | 设备组id                        |
+| action      | string        |  是  | body     | 设备组分配类型: assign,unassign |
+| reassign    | boolean       |  是  | body     |                                 |
+| macs        | Array[string] |  是  | body     | MAC 列表                        |
 
 响应参数
-       无 
+| 参数    | 数据类型      | 描述              |
+|:------- |:------------- |:----------------- |
+| failed  | Array[string] | 更新失败的mac列表 |
+| success | Array[string] | 更新成功的mac列表 |
+
 
 返回例子
 ```json
 {
-
+  "failed": [],
+  "success": [
+    "virtual:site"
+  ]
 }
 ```
 
@@ -1001,7 +1183,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 # 绑定管理
 
-## <span id = "post_v1_products_product_key_devices_bindings">设备绑定功能</span>
+## 设备绑定功能
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/post_v1_products_product_key_devices_bindings)
@@ -1014,35 +1196,33 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key				| string |  是  | path   | 产品标识码  |
-| uid          | string |  是  | body     | 用户 id |
-| appid           | string |  是  | body     | 应用  id |
-| dids           | string |  是  | body     | did 列表  |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述       |
+|:----------- |:-------- |:----:|:-------- |:---------- |
+| product_key | string   |  是  | path     | 产品标识码 |
+| uid         | string   |  是  | body     | 用户 id    |
+| appid       | string   |  是  | body     | 应用  id   |
+| dids        | string   |  是  | body     | did 列表   |
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| success         | Array[string], | 绑定成功列表     |
-| failed           | Array[string], |  绑定失败列表    |
+| 参数    | 数据类型      | 描述            |
+|:------- |:------------- |:--------------- |
+| success | Array[string] | 解绑成功MAC列表 |
+| failed  | Array[string] | 解绑失败MAC列表 |
 
 
 返回例子
 ```json
 {
+  "failed": [],
   "success": [
-    "string"
-  ],
-  "failed": [
-    "string"
+    "jaUHdkYkSocBhE2xspYM5k"
   ]
 }
 ```
 
-## <span id = "delete_v1_products_product_key_devices_bindings">解除绑定</span>
+## 解除绑定
 
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/绑定管理/delete_v1_products_product_key_devices_bindings)
@@ -1055,30 +1235,28 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 请求参数
 
-| 参数                     | 数据类型   | 必填 | 参数类型 | 描述                                          |
-|:------------------------ |:------ |:----:|:-------- |:--------------------------------------------- |
-| product_key				| string |  是  | path   | 产品标识码  |
-| uid          | string |  是  | body     | 用户 id |
-| appid           | string |  是  | body     | 应用  id |
-| dids           | string |  是  | body     | did 列表  |
+| 参数        | 数据类型 | 必填 | 参数类型 | 描述       |
+|:----------- |:-------- |:----:|:-------- |:---------- |
+| product_key | string   |  是  | path     | 产品标识码 |
+| uid         | string   |  是  | body     | 用户 id    |
+| appid       | string   |  是  | body     | 应用  id   |
+| dids        | string   |  是  | body     | did 列表   |
 
 
 响应参数
 
-| 参数       | 数据类型    | 描述                      |
-|:---------- |:------- |:------------------------- |
-| success         | Array[string], | 绑定成功列表     |
-| failed           | Array[string], |  绑定失败列表    |
+| 参数    | 数据类型       | 描述            |
+|:------- |:-------------- |:--------------- |
+| success | Array[string] | 绑定成功MAC列表 |
+| failed  | Array[string] | 绑定失败MAC列表 |
 
 
 返回例子
 ```json
 {
+  "failed": [],
   "success": [
-    "string"
-  ],
-  "failed": [
-    "string"
+    "jaUHdkYkSocBhE2xspYM5k"
   ]
 }
 ```
@@ -1086,7 +1264,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 # 设备报表
 
-## <span id = "get_v1_products_product_key_devices_locations">获取设备地理位置分布</span>
+## 获取设备地理位置分布
 
 
 实现备注
@@ -1130,8 +1308,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 }
 ```
 
-## <span id = "get_v1_products_product_key_summary">设备概览</span>
-
+## 设备概览
 
 实现备注
 * 获取最近的激活和活跃设备数报表
@@ -1185,7 +1362,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 }
 ```
 
-## <span id = "get_v1_products_product_key_incr_devices">设备激活详情</span>
+## 设备激活详情
 
 实现备注
 * 获取设备激活详情报表

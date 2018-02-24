@@ -6,7 +6,6 @@ title:  Gizwits Open API（新）
 
 # 概述
 
-
 机智云是一个开放的物联网设备平台，它为企业和个人开发者提供设备接入、用户账号管理、用户与设备绑定管理、设备远程监控、定时任务以及设备高级数据等服务。
 
 这些数据都是存储在机智云的数据库中的。那么作为开发者，如何去访问这些数据呢？
@@ -1247,7 +1246,7 @@ API 调用限制
 
 ```json
 {
-  "name": "Huiking_OTA_宠物屋",
+  "name": "宠物屋",
   "entities": [
     {
       "id": 0,
@@ -1371,20 +1370,22 @@ API 调用限制
 
 [调试接口](http://swagger.gizwits.com/doc/index/openapi_apps#/设备远程监控/get_app_devices_did_raw_data)
 
-入参的类型（type）
+用于查询最近7天内任意两天的设备通讯日志和上下线记录。
+
+##### 入参的类型（type）
 1. 通信日志查询, type 字段为 cmd
 2. 上下线记录查询, type 字段为 online
 
-返回结果（type）
-meta:
+##### 返回结果（type）
+* meta:
 1. 通信日志查询, type 字段为 cmd
 2. 上下线记录查询, type 字段为 online
 
-objects:
+* objects:
 1. 通信数据查询返回数据字段的 type 字段为 app2dev(app 到设备的通信), dev2app(设备到 app 的通信)
 2. 上下线查询返回数据的 type 字段为 dev_online(上线), dev_re_online(完成离线流程前再次登陆), dev_offline(离线)
 
-结束时间戳end_time
+##### 结束时间戳end_time
 1. 必须小于等于当前系统时间戳
 2. 必须大于开始时间戳.
 3. 终止时间戳与开始时间戳之差必须小于48小时
@@ -1445,10 +1446,10 @@ objects:
   },
   "objects": [
     {
-    "ip": "10.104.109.219",
-    "payload_bin": "000000030b0000910400000010000000",
-    "type": "dev2app",
-    "timestamp": 1505871342.875
+      "ip": "10.104.109.219",
+      "payload_bin": "000000030b0000910400000010000000",
+      "type": "dev2app",
+      "timestamp": 1505871342.875
     },
     {
       "ip": "127.0.0.1",
@@ -3434,7 +3435,7 @@ data    : 设备上报状态
 请求地址及方式
 
       PUT
-      https://api.gizwits.com/app/rules/{rule_id}
+      https://api.gizwits.com/app/devdata/{did}/agg_data
 
 请求参数
 
