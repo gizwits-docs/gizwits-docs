@@ -1,11 +1,13 @@
-title: MCU OTA教程（3.0）
+title: MCU OTA教程（3.1）
 ---
 
 [GAgent OTA教程](http://docs.gizwits.com/zh-cn/UserManual/OTA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
 
 [MCU OTA教程（2.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA2.html)
 
-[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA.zip)
+[MCU OTA教程（3.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA.html)
+
+[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA3.1.zip)
 
 # 1.概述
 
@@ -115,7 +117,7 @@ title: MCU OTA教程（3.0）
 
 ![图20](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/107.png)
 
-![图21](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/108.png)
+![图21](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/108_1.png)
 
 ![图22](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/22.png)
 
