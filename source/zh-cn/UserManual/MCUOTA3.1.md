@@ -85,7 +85,7 @@ title: MCU OTA教程（3.1）
 
 ### 3.2.4.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）
 
-![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25.png)
+![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25_1.png)
 
 ### 3.2.5.设置按区域擦除
 
@@ -93,7 +93,7 @@ title: MCU OTA教程（3.1）
 
 ### 3.2.6.往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h
 
-![图12](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/100.png)
+![图12](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/100_1.png)
 
 ## 3.3.App 分区OTA功能代码移植
 
