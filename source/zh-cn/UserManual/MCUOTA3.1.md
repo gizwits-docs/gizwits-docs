@@ -105,13 +105,13 @@ title: MCU OTA教程（3.1）
 
 ![图13](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/101.PNG)
 
-![图14](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/102.png)
+![图14](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/102_1.png)
 
 ![图16](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/103.png)
 
 ![图17](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/109.png)
 
-![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105.PNG)
+![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105_1.PNG)
 
 ![图19](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/106.PNG)
 
