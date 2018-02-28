@@ -91,7 +91,7 @@ title: MCU OTA教程（3.1）
 
 ![图26](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/26.png)
 
-### 3.2.6.往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h
+### 3.2.6.往工程目录添加hal_lash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到hal_flash.h和gagent_md5.h
 
 ![图12](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/100_1.png)
 
