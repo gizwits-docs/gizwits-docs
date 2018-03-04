@@ -111,7 +111,7 @@ title: MCU OTA教程（3.1）
 
 ![图17](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/109.png)
 
-![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105_1.PNG)
+![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105_1.png)
 
 ![图19](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/106.PNG)
 
