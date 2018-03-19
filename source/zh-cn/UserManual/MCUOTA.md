@@ -5,7 +5,7 @@ title: MCU OTA教程（3.1）
 
 [MCU OTA教程（2.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA2.html)
 
-[MCU OTA教程（3.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA.html)
+[MCU OTA教程（3.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA3.0.html)
 
 [源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA3.1.zip)
 
