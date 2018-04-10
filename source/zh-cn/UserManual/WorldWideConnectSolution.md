@@ -13,13 +13,13 @@ title: 机智云全球部署方案说明
 # 前期准备工作
 ## 确认模组使用固件版本
 目前支持全球一体化方案模组固件如下
-![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024937640.png)
+![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024937641.png)
 
 WIFI模组上烧录的固件为上图中发布时间之后的固件版本均可使用全球一体化方案，不过建议使用最新版本的固件来开发全球一体化的设备。
 如果开发者无法确认模组的固件是否支持全球一体化方案，可咨询机智云FAE确认。
 ## 确认APP使用的SDK版本
 APP支持全球一体化建议使用以下及其之后发布的SDK版本。
-![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024974568.png)
+![Alt text](/assets/zh-cn/UserManual/WorldWideConnectSolution/1503024974569.png)
 
 ## 一体化方案产品数据同步部署
 确定产品使用全球一体化方案后，开发者需要联系机智云技术支持，提供产品如下的对应信息。
