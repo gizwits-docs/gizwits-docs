@@ -1,11 +1,13 @@
-title: MCU OTA教程（3.0）
+title: MCU OTA教程（3.1）
 ---
 
 [GAgent OTA教程](http://docs.gizwits.com/zh-cn/UserManual/OTA%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.html)
 
 [MCU OTA教程（2.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA2.html)
 
-[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA.zip)
+[MCU OTA教程（3.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA3.0.html)
+
+[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA3.1.zip)
 
 # 1.概述
 
@@ -83,15 +85,15 @@ title: MCU OTA教程（3.0）
 
 ### 3.2.4.设置编译的时候生成.bin文件（OTA的时候需要选择把.bin文件上传到机智云）
 
-![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25.png)
+![图25](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/25_1.png)
 
 ### 3.2.5.设置按区域擦除
 
 ![图26](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/26.png)
 
-### 3.2.6.往工程目录添加Flash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到Flash.h和gagent_md5.h
+### 3.2.6.往工程目录添加hal_lash.c和gagent_md5.c，单击keil的build按钮展开工程目录，可以看到hal_flash.h和gagent_md5.h
 
-![图12](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/100.png)
+![图12](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/100_1.png)
 
 ## 3.3.App 分区OTA功能代码移植
 
@@ -103,19 +105,19 @@ title: MCU OTA教程（3.0）
 
 ![图13](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/101.PNG)
 
-![图14](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/102.png)
+![图14](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/102_1.png)
 
 ![图16](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/103.png)
 
 ![图17](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/109.png)
 
-![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105.PNG)
+![图18](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/105_1.png)
 
 ![图19](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/106.PNG)
 
 ![图20](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/107.png)
 
-![图21](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/108.png)
+![图21](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/108_1.png)
 
 ![图22](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/22.png)
 
