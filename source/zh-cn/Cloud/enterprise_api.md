@@ -2119,7 +2119,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 400    |    5004    | enterprise secret error                                 | Esecret校验失败，检查是否是正确的           |
 | 400    |    5005    | product secret error                                    | Product Secret校验失败，检查是否是正确的    |
 | 400    |    5006    | product exist devicegroups                              |                                             |
-| 404    |    5007    | association not exist                                   |                                             |
+| 404    |    5007    | association not exist                                   | 需要先开通企业API服务                                        |
 | 400    |    5008    | association existed                                     | Eid没有与对应的Product Key 关联，请联系客服 |
 | 400    |    5009    | token invalid                                           | 请携带token或检查token字段格式              |
 | 400    |    5010    | token not match product_key                             |                                             |
