@@ -1614,3 +1614,41 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
     }
 };
 ```
+
+
+
+
+
+## 	重要提示
+
+#### 查阅《[APP代码自动生成服务介绍](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)》，可了解自动生成的APP代码模块具备哪些功能
+
+#### 查阅《APP开源框架》，可了解
+
+ - [iOS开源框架使用指南](http://docs.gizwits.com/zh-cn/AppDev/iosframe.html)
+ 
+ - [iOS App消息推送集成指南](http://docs.gizwits.com/zh-cn/AppDev/iOS%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
+ 
+ - [iOS App集成第三方登录与换肤指南](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
+ - [iOS App快速开发实例](http://docs.gizwits.com/zh-cn/quickstart/iOSAPPFrame.html)
+ - [Android开源框架使用指南（含源码）](http://docs.gizwits.com/zh-cn/AppDev/Android%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
+ - [Android App消息推送集成指南](http://docs.gizwits.com/zh-cn/AppDev/Android%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
+ - [Android App集成第三方登录与换肤指南](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
+ - [APICloud开源框架使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudFrame.html)
+ 
+#### 查阅《APP开发SDK》，可随心开发IoT APP（很多细节设计，均可在里面找到应用案例）
+ 
+ - [iOS SDK 2.0集成指南](http://docs.gizwits.com/zh-cn/AppDev/iOSSDKA2.html)
+ - [Android SDK 2.0集成指南](http://docs.gizwits.com/zh-cn/AppDev/AndroidSDKA2.html)
+ - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
+ - [SDK数据透传方法解析](http://docs.gizwits.com/zh-cn/AppDev/SDK%E6%95%B0%E6%8D%AE%E9%80%8F%E4%BC%A0%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90.html)
+ - [SDK调试日志抓取教程](http://docs.gizwits.com/zh-cn/AppDev/SDK%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
+ - [SDK错误码表](http://docs.gizwits.com/zh-cn/AppDev/sdk_error.html)
+ 
+#### 更多应用开发
+
+ - [应用开发FAQ](http://docs.gizwits.com/zh-cn/AppDev/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91FAQ.html)
+ - [设备分享功能使用流程](http://docs.gizwits.com/zh-cn/Cloud/SharingSDK.html)
+ - [第三方登录平台申请流程](http://docs.gizwits.com/zh-cn/AppDev/third-party.html)
+
+
