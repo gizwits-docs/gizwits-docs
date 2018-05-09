@@ -62,7 +62,7 @@ title: APP代码自动生成服务介绍
 
 ## 3.	重要提示
 
-#### 查阅《[APP代码自动生成服务介绍](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)》，可了解自动生成的APP代码模块具备哪些功能；
+#### 查阅《[APP代码自动生成服务介绍](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)》，可了解自动生成的APP代码模块具备哪些功能
 
 #### 查阅《APP开源框架》，可了解
 
