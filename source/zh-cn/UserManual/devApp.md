@@ -88,6 +88,6 @@ title: APP代码自动生成服务介绍
  
 #### 更多应用开发
 
-  - [应用开发FAQ](http://docs.gizwits.com/zh-cn/AppDev/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91FAQ.html)
-  - [设备分享功能使用流程](http://docs.gizwits.com/zh-cn/Cloud/SharingSDK.html)
-  - [第三方登录平台申请流程](http://docs.gizwits.com/zh-cn/AppDev/third-party.html)
+ - [应用开发FAQ](http://docs.gizwits.com/zh-cn/AppDev/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91FAQ.html)
+ - [设备分享功能使用流程](http://docs.gizwits.com/zh-cn/Cloud/SharingSDK.html)
+ - [第三方登录平台申请流程](http://docs.gizwits.com/zh-cn/AppDev/third-party.html)
