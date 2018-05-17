@@ -234,7 +234,7 @@ Windows中显示如下
 
 https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar
 
-下载完毕解压后点击运行**“ESP_DOWNLOAD_TOOL_V2.4.exe”**
+下载完毕解压后点击运行**“ESPFlashDownloadTool_v3.3.4.exe”**
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image31.png)
 
