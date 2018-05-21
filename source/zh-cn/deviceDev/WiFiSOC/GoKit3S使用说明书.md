@@ -24,49 +24,21 @@ title:  GoKit3(S)使用说明书
 
 # 下载官方应用
 
-#### 下载GoKit的官方APP （分IOS、安卓两个版本）
+想控制使用Gokit3（S），通常推荐这两种方法：使用“机智云（又称IoE Demo）”APP或机智云公众号（微信号：go-kit）。
 
-##### 方式一：用微信扫说明书上的二维码（首选推荐方式）
-
-首先，使用手机上具有“扫一扫”功能的APP（如微信或扫一扫），扫描说明书上的二维码。
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image2.png)
-
- **注：说明书上含有两个二维码，印刷在说明书上的二维码才是GoKit对应的APP的下载链接，如上图。**
-
-接下来，点击右上角选择在浏览器中打开，并点击安装。
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image3.png)
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image4.png)
-
-最后，待APP下载成功后点击安装IOE Demo，等待安装成功后点击完成。
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image5.png) ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image6.png)
-
-##### 方式二：在**机智云下载中心**中下载
-
-在手机浏览器中登录机智云[下载中心](http://download.gizwits.com/zh-cn/p/98/99)
-
-根据您手机系统选择对应的下载，将鼠标放到下图二维码位置，即可放大二维码。打开手机的“扫一扫”功能app软件，对准二维码进行扫描，按照提示进行下载并安装即可。（**安装过程与方式一相同**）
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image7.png)
-
-安装成功后可以在桌面看到IOE Demo的图标。
-
+获取Gokit的官方APP“机智云（又称IoE Demo）” 的方式有：
+ - 1）用微信扫一扫说明书上的二维码，下载“机智云”APP
+ - 2）在机智云“下载中心”下载
+ - 3）在应用商店，搜索“机智云”
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image8.png)
 
-##### 将GoKit和微信账号绑定：
-
-打开微信软件，使用“扫一扫”功能扫描说明书上的二维码，关注“机智云智能宠物屋”公众号。
-
+安装成功后可以在桌面看到“机智云（又称IOE Demo）”APP的图标。接下来，就可以控制Gokit3（S）了。
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image9.png)
 
-**注：贴在说明书上的二维码为绑定微信用的二维码，不要与上面的APP二维码弄混，效果如上图。**
 
 # 连接到路由器
 
-现在您已经拿到了GoKit，已经下载了APP，那么接下来的一步，就是将您的GoKit连接到您的路由器上去，如何做到呢？GoKit提供两种配置入网方式：AirLink 、 SoftAP。
+现在您已经拿到了GoKit，安装了“机智云（又称IoE Demo）”APP，那么接下来的一步，就是将您的GoKit连接到您的路由器上去，如何做到呢？GoKit提供两种配置入网方式：AirLink 、 SoftAP。
 
 ## 1 AirLink配置入网
 
