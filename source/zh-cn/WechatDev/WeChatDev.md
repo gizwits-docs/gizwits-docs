@@ -273,7 +273,7 @@ devices列表中的每个设备，都会有六个属性，分别是product_key(�
 
 # 手动读取：设备数据点
 
-获取设备的数据点，也很简单，只需调用gizwits.read()方法，不需要任何参数。调用此方法，可以马上获取一次，同样，数据也是通过回调函数 gizwits.onReceivedAttrs，或者gizwits.onReceivedRaw来获取。
+获取设备的数据点，也很简单，只需调用gizwits.read()方法，需要传入did。调用此方法，可以马上获取一次，同样，数据也是通过回调函数 gizwits.onReceivedAttrs，或者gizwits.onReceivedRaw来获取。
 
 # 连接错误
 
