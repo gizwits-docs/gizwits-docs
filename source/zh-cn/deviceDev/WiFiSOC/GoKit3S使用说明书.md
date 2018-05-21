@@ -8,7 +8,7 @@ title:  GoKit3(S)使用说明书
 
 首先您需要弄清楚的有这些：
 
-初步了解GoKit3(S)，没有看的同学请查看 《GoKit3(S)开发套件介绍》
+初步了解GoKit3(S)，没有看的同学请查看 [《GoKit3(S)开发套件介绍》](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%BB%8D.html)
 
 **了解按钮的功能，定义如下表：**
 
