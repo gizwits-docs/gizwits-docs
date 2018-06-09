@@ -7,7 +7,7 @@ title: MCU OTA教程（3.1）
 
 [MCU OTA教程（3.0）](http://docs.gizwits.com/zh-cn/UserManual/MCUOTA3.0.html)
 
-[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA3.1.zip)
+[源文档及源参考代码下载](http://docs.gizwits.com/assets/pdf/GOKIT-OTA3.1.rar)
 
 # 1.概述
 
@@ -64,7 +64,7 @@ title: MCU OTA教程（3.1）
 #### 做好 BOOTLOADER 工作后，我们开始写 APP 分区的代码。APP 分区固件的编写要注意硬件版本号和软件版本号，软件版号作为升级迭代很重要的标志。APP 分区代码我们只需要在 GOKIT 微信宠物屋代码基础上增加大数据接受即接受云端新固件功能即可。需要注意的是，中断向量地址偏移的定义，这个地方需要我们尤其注意，我在开发过程中在这个地方排查了好长时间。STM32 标准库默认中断向量地址偏移为 0x0,但是我们 APP 分区实际的偏移是 0x3000。如果不修改，APP 分区也可以正常加载运行，但是不会相应中断。所以，我们需要根据实际 APP 分区下载的起始地址，对中断向量地址偏移做定义。按照协议规定，我们去实现大数据整个流程，具体如下：
 
 ![图8](http://docs.gizwits.com/assets/zh-cn/UserManual/OTA/MCUOTA/8.png)
-
+ 
 ## 3.2.App 分区编译器设置
 
 #### 同样，因为硬件 FLASH 空间限定，我们需要对 APP 分区的固件大小做严格的限制。本方案，针对 GOKIT 我们可允许的最大固件为 26KB。需要升级的新固件同样最大可支持 26KB。

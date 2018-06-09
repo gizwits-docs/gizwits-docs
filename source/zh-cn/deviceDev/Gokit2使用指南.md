@@ -221,7 +221,7 @@ AirLink配置就是说明书上介绍的方法，实现过程就是：通过按�
 
 新版本的DEV SDK同样支持GoKit2，二次开发可参考如下文档：
     
-- 代码自动生成及二次开发请参考 [GoKit3代码自动生成工具](./DevSDK/代码自动生成工具.html)
+- 代码自动生成及二次开发请参考 [MCU代码自动生成工具](./DevSDK/代码自动生成工具.html)
 - STM32版GoKit2代码介绍请参考 [GoKit3(V)源码详解](./Gokit3Voice/GoKit3V程序详解.html)
 - 暂不支持Arduino版GoKit2。
     

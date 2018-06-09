@@ -230,11 +230,11 @@ Windows中显示如下
 # GoKit3(S)固件下载
 ## 1 打开烧写软件
 
-下载程序烧录工具“FLASH_DOWNLOAD_TOOLS_v2.4” ，下载地址：
+下载程序烧录工具“ESPFlashDownloadTool_v3.3.4.exe” ，下载地址：
 
-http://bbs.espressif.com/viewtopic.php?f=57&t=433
+https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar
 
-下载完毕解压后点击运行**“ESP_DOWNLOAD_TOOL_V2.4.exe”**
+下载完毕解压后点击运行**“ESPFlashDownloadTool_v3.3.4.exe”**
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image31.png)
 
@@ -256,9 +256,9 @@ SOC版的程序固件名称为：
 
 MCU版的程序固件名称为：
 
-**GAgent_00ESP826_04020011_16041419.bin**
+**GAgent_00ESP826_04020029_32Mbitcombine.bin**
 
-[点击下载](http://download.gizwits.com/zh-cn/p/92/94))
+[点击下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020029-1524657141995.rar)
 
 
 详细介绍请查看**《GoKit3(S) 开发套件介绍》**中“5. 使用Gokit的MCU模式”一节。
@@ -277,7 +277,7 @@ MCU版的程序固件名称为：
 
 位置：**D:\share\SoC_ESP8266_32M_source\bin\upgrade\user1.4096.new.6.bin**
 
-若烧写MCU版固件请选择 **GAgent_00ESP826_04020011_16041419.bin**
+若烧写MCU版固件请选择 **GAgent_00ESP826_04020029_32Mbitcombine.bin**
 
 2).COM PORT 为TTL转串口的COM号（下边会说明）
 
@@ -403,6 +403,7 @@ sudo ./vmware-install.pl
 之后一路回车键确认直到安装完成即可
 
 ## 2 总结
+
 至此，Gokit3的开发环境搭建、源码编译及固件下载已介绍完毕。
 
 若想深入了解Gokit3的硬件电路说明请查看：

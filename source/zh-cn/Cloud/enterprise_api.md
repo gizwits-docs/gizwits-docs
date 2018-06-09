@@ -3,7 +3,7 @@ title: 企业API
 
 # 概述
 
-企业API是机智云为接入机智云平台的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求。企业API为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本。
+企业API是机智云为接入机智云平台 的企业开发者提供的开放API服务，使用企业API的企业将设备接入到机智云平台后，通常还有进一步基于接入机智云设备数据开展企业某个垂直领域的业务需求。企业API为企业提供企业视角全局的设备管理、数据分析等功能，让企业更关注业务管理系统本身，减少不必要的开发成本。
 
 #  企业API接口列表
 
@@ -1293,14 +1293,14 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 ## 设备概览
 **此接口仅可在国内环境使用**
 
-[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_devices_locations)
+[调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/用户报表/get_v1_products_product_key_summary)
 
 用于获取最近的新增激活和活跃设备数报表
 
 #### 请求类型及地址
 
       GET
-     http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/locations
+     http://enterpriseapi.gizwits.com/v1/products/{product_key}/devices/summary
 
 #### 请求参数
 
@@ -2119,7 +2119,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | 400    |    5004    | enterprise secret error                                 | Esecret校验失败，检查是否是正确的           |
 | 400    |    5005    | product secret error                                    | Product Secret校验失败，检查是否是正确的    |
 | 400    |    5006    | product exist devicegroups                              |                                             |
-| 404    |    5007    | association not exist                                   |                                             |
+| 404    |    5007    | association not exist                                   | 需要先开通企业API服务                                        |
 | 400    |    5008    | association existed                                     | Eid没有与对应的Product Key 关联，请联系客服 |
 | 400    |    5009    | token invalid                                           | 请携带token或检查token字段格式              |
 | 400    |    5010    | token not match product_key                             |                                             |
