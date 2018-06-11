@@ -62,7 +62,7 @@
 
       <i class="fa fa-globe" aria-hidden="true"></i>
       {% if lang == "zh-cn" %}
-      <a href="/en-us/overview/Overview.html" class="lang-switch">English</a>
+      <a href="/en-us/overview/overview.html" class="lang-switch">English</a>
       {% else %}
       <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
       {% endif %}
