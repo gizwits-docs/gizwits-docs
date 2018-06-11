@@ -1,18 +1,21 @@
 <div class="header">
   <div class="container pure-g">
     <span class="brand pure-u-5-24">
-
       <a href="http://www.gizwits.com" class="logo">
-        <img src="{{ url_for('images/logo.png') }}" alt="logo"> 
+      {% if lang == "zh-cn" %}
+      <img src="{{ url_for('images/logo.png') }}" alt="logo">
+      {% else %}
+      <img src="{{ url_for('images/logo_en.png') }}" alt="logo">
+      {% endif %}
       </a>
       <a class="text" href="/">{{ __("sub_title") }}</a>
     </span>
-    
+
     <div class="mobile-header"v>
       <span class="title">{{ __("title") }} {{ __("sub_title") }}</span>
       <i class="fa fa-caret-square-o-down fa-lg" aria-hidden="true"></i>
     </div>
-    
+
     <span class="menu pure-u-16-24">
       <span class="header-search-btn" id="header-search-btn">
         <i class="fa fa-search"></i>
@@ -45,14 +48,14 @@
         {% endfor %}
       </ul>
     </span>
-  
+
     <span class="pure-u-3-24 lang-switch-wrapper">
-      
-      <i class="fa fa-globe" aria-hidden="true"></i> 
+
+      <i class="fa fa-globe" aria-hidden="true"></i>
       {% if lang == "zh-cn" %}
-      <a href="http://docsen.gizwits.com/hc/" class="lang-switch">English</a>
+      <a href="/en-us/overview/Overview.html" class="lang-switch">English</a>
       {% else %}
-        <button class="lang-switch" data-lang="zh-cn">中文</button>
+      <a href="/zh-cn/overview/overview.html" class="lang-switch" data-lang="zh-cn">中文</a>
       {% endif %}
     </span>
   </div>
@@ -70,7 +73,7 @@
         {% for k in site.data.searchTrend %}
         <div class="header-search-trend-item" data-word="{{k}}">{{k}}</div>
         {% endfor %}
-      </div>  
+      </div>
     </div>
 
     <div class="header-search-result hidden" id="header-search-result">

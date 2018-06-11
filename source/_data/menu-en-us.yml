@@ -1,25 +1,14 @@
-Tutorial:
+Overview:
+  path: /overview/overview.html
+
+
+Quickly:
   Intro in 5 mins:
-    path: /quickstart.html
-  Device Accessing:
-    path: /quickstart.html
-  App Development:
-    path: /quickstart.html
-Device:
-  path: /quickstart.html
-App:
-  ios SDK:
-    path: /quickstart.html
-  Android SDK:
-    path: /quickstart.html
-  Wechat SDK:
-    path: /quickstart.html
-Cloud:
-  Business Cloud:
-    path: /quickstart.html
-  D3:
-    path: /quickstart.html
-  Global Deployment:
-    path: /quickstart.html
-API:
-  path: /quickstart.html
+    path: /quickstart/readme.html
+
+Cloud API:
+
+    Enterprise Application Development:
+      path: /Cloud/ent_dev.html
+    Enterprise API:
+      path: /Cloud/enterprise_api.html

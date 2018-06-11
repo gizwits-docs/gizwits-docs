@@ -58,7 +58,8 @@ var HEADER_BP = 915
 +function() {
 
   // DELETE THIS SHIT BEFORE LONG
-  var lang = 'zh-cn'
+  var isEn = window.location.pathname.indexOf('/en-us/') !== -1
+  var lang = isEn ? 'en-us' : 'zh-cn'
   localStorage.setItem('lang', lang)
 
 
