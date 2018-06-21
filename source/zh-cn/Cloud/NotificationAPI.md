@@ -179,6 +179,27 @@ OR
 | data.data.product_key	| 必须 	|设备所属产品的标识码|
 | data.data.attrs / data.data.raw	| 必须 	| V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式（参考通用数据点协议之透传业务指令），选择data.data.raw；V1 产品协议格式，选择 data.data.raw|
 
+当设备为NB-IoT设备时，使用如下指令：
+```json
+{
+"cmd": "remote_control_nb_req",
+"msg_id": <msg id string>,
+"source": "huawei",
+"did": <did string>,
+"mac": <mac string>,
+"product_key": <product_key string>,
+"attrs": {
+"name1": <value1>,("name1"指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+"name2": <value2>,
+… …
+}
+}\n
+```
+请求字段说明：
+
+| 字段      | 是否必须         |             描述           |
+| ------------- |:-------------:|    -------------    |  
+| source     | 必须   | NB-IoT设备的来源，目前仅支持电信IoT平台|
 
 Gizwits Platform 回复：
 ```json
