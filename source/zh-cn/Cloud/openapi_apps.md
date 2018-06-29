@@ -2861,7 +2861,7 @@ data    : 设备上报状态
 
 请求地址及方式
 
-      POST
+      PUT
       https://api.gizwits.com/app/scene/{id}
 
 请求参数
