@@ -3183,7 +3183,6 @@ data    : 设备上报状态
 |:------------------------ |:------ |:----:|:-------- |:------------------------ |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                    |
 | X-Gizwits-User-token     | string |  是  | header   | 用户token                |
-| did                      | string |  是  | path     | 需要设置定时任务的设备id |
 | id                       | string |  是  | path     | 定时任务id               |
 
 响应参数
