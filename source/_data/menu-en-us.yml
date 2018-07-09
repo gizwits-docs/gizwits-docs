@@ -5,13 +5,41 @@ Overview:
 Quickly:
   Intro in 5 mins:
     path: /quickstart/readme.html
+  Glossary:
+    path: /quickstart/Glossary.html
 
+
+App Dev:
+  App Dev FAQ:
+    path: /AppDev/AppDev_FAQ.html
+  iOS Auth Re Skin:
+    path: /AppDev/iOS_AuthReSkin.html
+  iOS frame:
+    path: /AppDev/ios_frame.html
+  iOS Push Notification:
+    path: /AppDev/iOS_Push_Notification.html
+  WeChatDev
+    path: /WeChatDev/WeChatDev.html  
+  WeChat Dev Intro
+    path: /WeChatDev/WeChatDev_InTro.html     
+
+    
 Cloud API:
-
     Enterprise Application Development:
       path: /cloud/ent_dev.html
     Enterprise API:
       path: /cloud/enterprise_api.html
+    Cloud FAQ:
+      path: /cloud/CloudFAQ.html
+    Notification API:
+      path: /cloud/NotificationAPI.html      
+    Open API:
+      path: /cloud/OpenAPI.html
+    WebsocketAPI:
+      path: /cloud/WebsocketAPI.html
+      
+      
+User Manual:      
     Data API:
       path: /UserManual/DataAPI.html  
     dev App:
