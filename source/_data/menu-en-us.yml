@@ -18,9 +18,9 @@ App Dev:
     path: /AppDev/ios_frame.html
   iOS Push Notification:
     path: /AppDev/iOS_Push_Notification.html
-  WeChatDev
+  WeChatDev:
     path: /WeChatDev/WeChatDev.html  
-  WeChat Dev Intro
+  WeChat Dev Intro:
     path: /WeChatDev/WeChatDev_InTro.html     
 
     
