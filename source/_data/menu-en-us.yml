@@ -14,17 +14,17 @@ Cloud API:
       path: /cloud/enterprise_api.html
     Data API:
       path: /UserManual/DataAPI.html  
-    dev App
+    dev App:
       path: /UserManual/devApp.html
-    dev group_API
+    dev group_API:
       path: /UserManual/devgroup_API.html
-    Linkage API
+    Linkage API:
       path: /UserManual/LinkageAPI.html
-    Use Open API
+    Use Open API:
       path: /UserManual/UseOpenAPI.html      
-    Use QRC API
+    Use QRC API:
       path: /UserManual/UseQRCAPI.html    
-    Use SNoti
+    Use SNoti:
       path: /UserManual/UseSNoti.html    
-    Use Websocket
+    Use Websocket:
       path: /UserManual/UseWebsocket.html   
