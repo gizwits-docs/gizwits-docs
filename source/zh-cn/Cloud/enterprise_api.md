@@ -185,6 +185,12 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 # 产品管理
 
 ## 获取产品数据点
+该接口查询的是产品的数据点定义 
+* 数值型数据点真实范围需要通过计算获得
+```
+最大值 = max * ratio + addition
+最小值 = min * ratio + addition
+```
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/产品管理/get_v1_products_product_key_datapoint)
 
