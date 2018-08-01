@@ -127,9 +127,9 @@ APP要支持QQ登录，需要先到腾讯开放平台创建一个应用，获取
 ![name](/assets/zh-cn/AppDev/third-party/配置qq.png)
 
 ### 配置开源框架
-点击查看[ios SDK配置QQ登录教程](docs.gizwits.com/zh-cn/AppDev/iOS第三方登陆与换肤.html#开源框架配置)
+点击查看[ios SDK配置QQ登录教程](http://docs.gizwits.com/zh-cn/AppDev/iOS第三方登陆与换肤.html#开源框架配置)
 
-点击查看[Android SDK配置QQ登录教程](docs.gizwits.com/zh-cn/AppDev/Android第三方登录与换肤.html#修改UIConfig-json文件)
+点击查看[Android SDK配置QQ登录教程](http://docs.gizwits.com/zh-cn/AppDev/Android第三方登录与换肤.html#修改UIConfig-json文件)
 
 
 ## 新浪微博
