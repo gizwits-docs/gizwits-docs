@@ -10,12 +10,12 @@ Quick Start:
 
 
 App Dev:
-  App development preparation and guidance
+  App development preparation and guidance:
     path: /quickstart/AppDevPrepare.html  
-  App code auto-generator
+  App code auto-generator:
     path: /UserManual/devApp.html
   APPFrame:
-    iOS SDK A2
+    iOS SDK A2:
       path: /AppDev/iOSSDKA2.html
     iOS Push Notification:
       path: /quickstart/iOSPushNotification.html
@@ -23,17 +23,17 @@ App Dev:
       path: /AppDev/iOSAuthReSkin.html
     Quick start of iOS App development:
       path: /AppDev/iOSAPPFrame.html
-    Android SDK A2
+    Android SDK A2:
       path: /AppDev/AndroidSDKA2.html
-    Android frame
+    Android frame:
       path: /AppDev/androidframe.html  
-    Android Push Notification
+    Android Push Notification:
       path: /AppDev/AndroidPushNotification.html  
-    Quick start of Android App development
+    Quick start of Android App development:
       path: /quickstart/AndroidAppFrame.html  
-    API Cloud Frame
+    API Cloud Frame:
       path: /AppDev/APICloudFrame.html  
-    Video tutorial of the App open source framework
+    Video tutorial of the App open source framework:
       path: /AppDev/VideoTutorial.html 
   WeChat Dev:
     path: /WeChatDev/WeChatDev.html  
@@ -57,12 +57,12 @@ Cloud API:
       path: /cloud/NotificationAPI.html      
     WebsocketAPI:
       path: /cloud/WebsocketAPI.html
-    API Tutorial  
-      Using Open API to control virtual device with Postman
+    API Tutorial:
+      Using Open API to control virtual device with Postman:
         path: /UserManual/UseOpenAPI.html  
-      Real-time data synchronization demo for SNoti service 
+      Real-time data synchronization demo for SNoti service:
         path: /UserManual/UseSNoti.html 
-      Control device using WebSocket
+      Control device using WebSocket:
         path: /UserManual/UseWebsocket.html
       Aggregation API Guide:
         path: /UserManual/DataAPI.html 
@@ -75,7 +75,7 @@ Cloud API:
     Cloud FAQ:
       path: /cloud/CloudFAQ.html     
       
-User Manual  
+User Manual:  
 
 
 
