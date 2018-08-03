@@ -6,22 +6,34 @@ Quick Start:
   Intro in 5 mins:
     path: /quickstart/readme.html
   Glossary:
-    path: /quickstart/Glossary.html
+    path: /quickstart/glossary.html
 
 
 App Dev:
   App Dev FAQ:
-    path: /AppDev/AppDev_FAQ.html
+    path: /AppDev/AppDevFAQ.html
   iOS Auth Re Skin:
-    path: /AppDev/iOS_AuthReSkin.html
+    path: /AppDev/iOSAuthReSkin.html
   iOS frame:
-    path: /AppDev/ios_frame.html
+    path: /AppDev/iosframe.html
   iOS Push Notification:
-    path: /AppDev/iOS_Push_Notification.html
-  WeChatDev:
+    path: /AppDev/iOSPushNotification.html
+  iOS SDK A2
+    path: /AppDev/iOSSDKA2.html
+  WeChat Dev:
     path: /WeChatDev/WeChatDev.html  
   WeChat Dev Intro:
-    path: /WeChatDev/WeChatDev_InTro.html     
+    path: /WeChatDev/WeChatDevInTro.html  
+  Android SDKA2
+    path: /AppDev/AndroidSDKA2.html
+  Android frame
+    path: /AppDev/androidframe.html  
+  API Cloud Frame
+    path: /AppDev/APICloudFrame.html  
+  Android Push Notification
+    path: /AppDev/AndroidPushNotification.html      
+  Video tutorial of the App open source framework
+    path: /AppDev/VideoTutorial.html 
 
     
 Cloud API:
@@ -50,11 +62,12 @@ User Manual:
       path: /UserManual/LinkageAPI.html
     Use Open API:
       path: /UserManual/UseOpenAPI.html      
-    Use QRC API:
-      path: /UserManual/UseQRCAPI.html    
+    Use QRC Code:
+      path: /UserManual/UseQRCode.html    
     Use SNoti:
-      path: /UserManual/UseSNoti.html    
-      
+      path: /UserManual/UseSNoti.html  
+    Use Websocket
+      path: /UserManual/UseWebsocket.html  
       
     Use Websocket:
       path: /UserManual/UseWebsocket.html   
