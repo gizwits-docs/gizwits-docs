@@ -243,6 +243,8 @@ Gizwits Platform 回复：
 "group_id": <group_id string>,
 "created_at"：<timestamp in seconds, float>，
 "ip": <ip string>,
+"latitude": <latitude float; Only for NB device>,
+"longitude": <longitude float; Only for NB device>,
 "country": <country string>,
 "region": <region string>,
 "city": <city string>
