@@ -12,7 +12,7 @@ ST is one of the largest semiconductor companies in the world. The STM32 family 
 With “ST plus Gizwits”, manufacturers can quickly seize opportunities of intelligent device market to achieve intelligent functions such as device connection, data statistics and analysis, online upgrading and remote control, which not only provides users with a better user experience and product services, but also helps manufacturers to manage the use of device as well as pre- service.
 
 
-![Gizwits and ST Make IoT Development Easy](../../../(assets/en-us/UserManual/ST_IoT/12345.png)
+![Gizwits and ST Make IoT Development Easy](/assets/en-us/UserManual/ST_IoT/12345.png)
 
 Features of STM32*Gizwits
  - Low-cost connection, 12-hour to achieve intelligence 
