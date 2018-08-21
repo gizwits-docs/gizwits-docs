@@ -41,9 +41,14 @@ Application fields:
 # 3) About GoKit 
 GoKit adopts ST MCU chip solution and supports Wifi/2G/NB-IoT communication module, bundled motor, temperature and humidity sensor and other infrared devices.
 
-Gokit3 supports MCU, SoC mode switching and other features.
-Gokit4 supports Seeed standard-interface sensors and also can be adapted to other types of sensors such as water-intrusion sensors, carbon dioxide sensors, soil sensors, smoke sensors, etc.
+GoKit3 supports MCU, SoC mode switching and other features.
+
+
+GoKit4 supports Seeed standard-interface sensors and also can be adapted to other types of sensors such as water-intrusion sensors, carbon dioxide sensors, soil sensors, smoke sensors, etc.
 Easy-use Gokit4 supports plug-and-play fast calibration and secondary development. It also supports other new sensors, and is suitable for the rapid development of NB-IoT/eMTC intelligent solutions.
+
+
+Apply for GoKit3 >>http://www.gizwits.com/zh-cn/gokit/
 
 
 
