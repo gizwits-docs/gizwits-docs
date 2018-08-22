@@ -118,7 +118,7 @@ APP的代码自动生成工具：当开发者在产品项目上创建对应的�
 
 目前APP生成的源码支持 Andriod、iOS、APICloud平台。
 
-![Alt text](/assets/zh-cn/UserManual/App/1490685455353.png)
+![Alt text](/assets/zh-cn/UserManual/App/1490685798872.png)
 
 自动生成的APP代码模块化集成了一个智能硬件APP必备功能，主要包括：
  - 1.用户部分：用户注册，找回密码、第三方登录（微信登录、QQ登录）
