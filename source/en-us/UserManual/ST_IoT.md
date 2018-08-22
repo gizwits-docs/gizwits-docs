@@ -1,8 +1,8 @@
 Gizwits and ST Make IoT Development Easy
-# 1）About ST micro controller
+# 1) About ST micro controller
 ST is one of the largest semiconductor companies in the world. The STM32 family is based on ARM Cortex <-M0, M0+, M3, M4, and M7 kernels designed specifically for embedded applications that require high performance, low cost, and low power. As it is cost effective and has abundant functions, STM32 family is very popular in the industrial control, communications, Internet of Things, vehicular networking and other industries.
 
- - Classification by kernel architecture:
+Classification by kernel architecture:
  - Mainstream products:（STM32F0、STM32F1、STM32F3）
  - Low-power products:(STM32L0、STM32L1、STM32L4、STM32L4+)
  - High-performance products: （STM32F2、STM32F4、STM32F7、STM32H7)
