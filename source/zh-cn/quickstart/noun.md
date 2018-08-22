@@ -209,10 +209,10 @@ app用户用邮箱注册成功时会收到一个注册成功邮箱，通过邮�
 
 开源框架包括智能硬件app通用的5个模块，分别是：初始化模块、用户模块、配置模块、设备列表模块、控制模块。
 
-iOS版开源框架：https://gitee.com/dantang/GizOpenSource_AppKit_iOS
-Andriod版开源框架：https://gitee.com/dantang/GizOpenSource_AppKit_Android
-APICloud版开源框架：https://github.com/gizwits/GizOpenSourceAppKit_APICloud
-或在下载中心下载：https://download.gizwits.com/zh-cn/p/95/96
+ - iOS版开源框架：https://gitee.com/dantang/GizOpenSource_AppKit_iOS
+ - Andriod版开源框架：https://gitee.com/dantang/GizOpenSource_AppKit_Android
+ - APICloud版开源框架：https://github.com/gizwits/GizOpenSourceAppKit_APICloud
+ - 或在下载中心下载：https://download.gizwits.com/zh-cn/p/95/96
 
 ## 2.设备接入SDK
 
