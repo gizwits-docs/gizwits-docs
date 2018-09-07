@@ -407,6 +407,50 @@ AES mode为AES.MODE_ECB
 }\n
 ```
 
+### 设备控制事件
+
+```json
+{
+"cmd": "event_push",
+"delivery_id": <delivery_id>，(用于 ACK)
+"event_type": "app2dev_raw",
+"product_key": <product_key string>,
+"did": <did string>,
+"mac": <mac string>,
+"group_id": <group_id string>,
+"created_at"：<timestamp in seconds, float>,
+"source:": "client"|"open_api"|"scheduler"|"enterprise_api"|"gateway"
+"appid": <appid string>, (missing if source="enterprise_api"|"gateway" or v1.0 devices)
+"uid": <uid string>, (missing if source="enterprise_api"|"gateway" or v1.0 devices)
+"enterprise_id": <enterprise_id string>, (only for source="enterprise_api")
+"data": <base64 encoding string> (设备状态原始数据 base64 编码字符串)
+}\n
+```
+
+如该产品支持数据点解释(机智云通用数据点协议或自定义数据点协议)，则消息格式为message format:
+
+```json
+{
+"cmd": "event_push",
+"delivery_id": <delivery_id>，(用于 ACK)
+"event_type": "app2dev_kv",
+"product_key": <product_key string>,
+"did": <did string>,
+"mac": <mac string>,
+"group_id": <group_id string>,
+"created_at"：<timestamp in seconds, float>,
+"source: "client"|"open_api"|"scheduler"|"enterprise_api"|"gateway" 
+"appid": <appid string>, (missing if source="enterprise_api"|"gateway" or v1.0 devices)
+"uid": <uid string>, (missing if source="enterprise_api"|"gateway" or v1.0 devices)
+"enterprise_id": <enterprise_id string>, (only for source="enterprise_api")
+"data": {
+<key1 string>: <value1>,
+<key2 string>: <value2>,
+...
+}
+}\n
+```
+
 ### 事件 ACK
 
 客户端每收到一事件消息都需要回复以下 ACK 消息：
