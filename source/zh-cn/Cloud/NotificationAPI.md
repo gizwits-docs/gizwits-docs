@@ -58,6 +58,8 @@ v2.1.9
 - device.unbind: 设备解绑消息
 - device.reset：设备重置消息
 - device.file.download：设备文件下载消息
+- device.app2dev.raw: 控制设备自定义透传业务指令
+- device.app2dev.kv: 控制设备数据点业务指令
 
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
