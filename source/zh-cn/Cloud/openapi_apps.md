@@ -1159,7 +1159,6 @@ Owner 解除 Guest 用户对设备的绑定关系
 
 API 调用限制
 * AppID 和 product_key 关联
-* AppID 为超级 AppID
 
 请求地址及方式
 
