@@ -1,4 +1,4 @@
-title: Guide of Gizwits Device SDK 2.0 for Android App
+title: Guide to Gizwits Device SDK 2.0 for Android App
 ---
 
 # SDK_API Reference Manual
@@ -1558,11 +1558,11 @@ GizDeviceSchedulerCenterListener mListener = new GizDeviceSchedulerCenterListene
 
 ## 7. Device sharing
 
-After binding a device, you can let others use the device through device sharing. When multiple customers use the same device, device sharing provides device permission management with a more secure and convenient device binding. There are four types of device permissions for device binding:
+After binding a device, you can let others use the device through device sharing. In order to facilitate multiple customers use the same device, device sharing provides device permission management with a more secure and convenient device binding. There are four types of device permissions for device binding:
 
-* Owner: The primary account of the device, which can share the device;
-* Guest: The shared account of the device, which can accept the sharing invitation and can no longer share the device to other users;
-* Special: The account which has bound to the device at the earliest but has not shared the device, and will become the Owner of the device after sharing it;
+* Owner: The primary account of the device, who can share the device;
+* Guest: The guest account of the device, who can accept the sharing invitation and can no longer share the device to other users;
+* Special: The account who has bound to the device at the earliest but has not shared the device, and will become the Owner of the device after sharing it;
 * Normal: The account that has bound to the device but cannot share the device or become the Owner of the device.
 
 Only the user bound to a device at the earliest or the Owner of a device can share the device. Once a device has an Owner account, other users can no longer bind the device. The Owner can view the currently users bound to the device and can unbind other users. When a device does not have an Owner, other users can bind the device.
@@ -1575,13 +1575,13 @@ Only the user bound to a device at the earliest or the Owner of a device can sha
 
 Before sharing your devices, check which devices you can share. Using the SDK, the App can traverse the list of devices and find those devices on which the currently logged in user has a permission of GizDeviceSharingSpecial or GizDeviceSharingOwner to create a device sharing invitation.
 
-There are two ways to create a device sharing invitation by Owner and Special: Account Sharing and QR code Sharing.
+There are two ways to create a device sharing invitation by Owner and Special: Device Sharing via user ID and Device Sharing via QR code.
 
-#### 7.2.1 Account Sharing 
+#### 7.2.1 Device Sharing via user ID
 
-For Account sharing, the receiver's account can be a mobile phone number, an email address, a regular user name, or an anonymous account, but it must be a user who has already registered in Gizwits Cloud. If the user is already the Guest account of this device or has already bound the device, the sharing invitation will fail to be created. The account sharing invitation is valid for 24 hours, that is, the receiver must respond within 24 hours, otherwise the invitation will expire. 
+For Device Sharing via user ID, the receiver's ID can be a mobile phone number, an email address, a regular user name, or an anonymous ID, but it must be a user who has already registered in Gizwits Cloud. If the user is already the Guest of this device or has already bound the device, the sharing invitation will fail to be created. The sharing invitation is valid for 24 hours, that is, the receiver must respond within 24 hours, otherwise the invitation will expire. 
 
-You need to specify the account type for Account Sharing. The guestUser parameter for the anonymous user should be set to the uid of the anonymous user. When the Account Sharing is created successfully, the sharingID will be returned in the callback parameter, but the QRCodeImage will not be returned. The following is only an example of device sharing to a user registered with mobile phone number:
+You need to specify the user ID type. The guestUser parameter for the anonymous user should be set to the uid of the anonymous user. When the Account Sharing is created successfully, the sharingID will be returned in the callback parameter, but the QRCodeImage will not be returned. The following is only an example of device sharing to a user registered with mobile phone number:
 
 [Code sample]
 
@@ -1607,9 +1607,9 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 };
 ```
 
-#### 7.2.2 QR code Sharing
+#### 7.2.2 Device Sharing via QR code
 
-For the QR code Sharing, the QR code is valid for 15 minutes, that is, the receiver must scan the generated QR code within 15 minutes and respond, otherwise the QR code invitation will expire. When the QR code Sharing invitation is created successfully, the sharingID will be returned in the callback parameter, and the corresponding QRCodeImage will also be returned. The App can directly load the QR code image.
+For the Device Sharing via QR code, the QR code is valid for 15 minutes, that is, the receiver must scan the generated QR code within 15 minutes and respond, otherwise the QR code invitation will expire. When the QR code Sharing invitation is created successfully, the sharingID will be returned in the callback parameter, and the corresponding QRCodeImage will also be returned. The App can directly load the QR code image.
 
 [Code sample]
 
@@ -1638,8 +1638,6 @@ GizDeviceSharingListener mListener = new GizDeviceSharingListener() {
 ### 7.3 Accept sharing invitation
 
 The Guest account can query the received sharing invitations. Only the Guest account can accept the sharing invitation.
-
-#### 7.3.1 Accept Account Sharing invitation
 
 If a sharing invitation received by the Guest has not yet been accepted, the Guest can accept or reject it.
 
