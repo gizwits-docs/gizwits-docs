@@ -1,13 +1,11 @@
 Overview:
   path: /overview/overview.html
 
-
 Quick Start:
   Intro in 5 mins:
     path: /quickstart/readme.html
   Glossary:
     path: /quickstart/glossary.html
-
 
 App Dev:
   App development preparation and guidance:
@@ -43,21 +41,20 @@ App Dev:
     path: /AppDev/AppDevFAQ.html
 
 
-
 DeviceDev:
   Get started with device connection:
-      path: /deviceDev/DeviceDevIntro.html
+    path: /deviceDev/DeviceDevIntro.html
   Gizwits Cloud access:
     MCU scheme:
       path: /quickstart/UseMCU.html
     ESP8266-SoC scheme:
       path: /deviceDev/UseSOC.html
   Module Documents:
-      path: /module_source/module_source.html
+    path: /module_source/module_source.html
   GAgent Documents:
     Detailed annotation of GAgent:
       path: /deviceDev/gagent_info.html
-  Firmware downloading on modules:
+    Firmware downloading on modules:
       path: /deviceDev/DebugTool.html
     HF-LPB100:
       path: /deviceDev/HF-LPB100.html
