@@ -57,11 +57,11 @@ App Dev Guide:
   WeChat SDK Guide:
     path: /WechatDev/WeChatDev.html  
   WeChat Dev Intro:
-    path: /WeChatDev/WeChatDevInTro.html  
+    path: /WechatDev/WeChatDevInTro.html  
 
   More Guide:
     Gizwits Device Sharing:
-      path: /Cloud/SharingSDK.html
+      path: /cloud/SharingSDK.html
     Application process for third-party authentication:
       path: /AppDev/third-party.html
 
