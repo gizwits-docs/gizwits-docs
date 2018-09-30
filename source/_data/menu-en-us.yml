@@ -43,7 +43,7 @@ App Dev:
 
 DeviceDev:
   Get started with device connection:
-    path: /deviceDev/DeviceDevIntro.html
+    path: /DeviceDev/DeviceDevIntro.html
   Gizwits Cloud access:
     MCU scheme:
       path: /quickstart/UseMCU.html
@@ -53,17 +53,17 @@ DeviceDev:
     path: /module_source/module_source.html
   GAgent Documents:
     Detailed annotation of GAgent:
-      path: /deviceDev/gagent_info.html
+      path: /DeviceDev/gagent_info.html
     Firmware downloading on modules:
-      path: /deviceDev/DebugTool.html
+      path: /DeviceDev/DebugTool.html
     HF-LPB100:
-      path: /deviceDev/HF-LPB100.html
+      path: /DeviceDev/HF-LPB100.html
     HF-LPT120:
-      path: /deviceDev/debug/HF-LPT120.html
+      path: /DeviceDev/debug/HF-LPT120.html
     MXCHIP:
-      path: /deviceDev/MXCHIP.html
+      path: /DeviceDev/MXCHIP.html
     ESP8266:
-      path: /deviceDev/ESP8266.html
+      path: /DeviceDev/ESP8266.html
 
 
 
