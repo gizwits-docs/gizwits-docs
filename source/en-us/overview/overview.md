@@ -8,6 +8,7 @@ The Gizwits platform provides developers with self-service smart hardware develo
 ![Platform Access Sketch](../../../assets/en-us/overview/platform_access_sketch.png)
 
 ## 2. Architecture
+
 ![Gizwits Platform Architecture](../../../assets/en-us/overview/architecture.png)
 
 ## 3. Gizwits Advantages
@@ -119,7 +120,7 @@ The main role of GAgent is data forwarding. It is a data exchange bridge among d
 
 In order to enable different communication modules to connect to Gizwits cloud, we provide multiple burning methods and logging methods for those modules to ensure that the GAgent firmware runs normally in the modules.
 
-Note: Please follow the following steps when performing the module burning operation; otherwise, uncontrollable errors will occur.
+Note: Please follow the following steps when performing the module burning operation; otherwise, unknown errors will occur.
 
 * GAgent details
 * Burning instructions for HF-LPB100 serial port 
@@ -171,7 +172,7 @@ If you have completed device connection and App development, and want to obtain 
     - Use openapi (postman) to control virtual devices
     - Use Websocket webpage to control devices
     - Aggregation API tutorial
-    - Device interaction API tutorial
+    - Device linkage API tutorial
     - Demo tutorial for Snoti real-time synchronization service 
 
 # User Manual
