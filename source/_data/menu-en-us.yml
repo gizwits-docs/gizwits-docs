@@ -1,11 +1,17 @@
 Overview:
   path: /overview/overview.html
 
+
+
+
 Quick Start:
   Intro in 5 mins:
     path: /quickstart/readme.html
   Glossary:
     path: /quickstart/glossary.html
+
+
+
 
 App Dev:
   App development preparation and guidance:
@@ -33,13 +39,37 @@ App Dev:
       path: /AppDev/APICloudFrame.html  
     Video tutorial of the App open source framework:
       path: /AppDev/VideoTutorial.html 
+
+  App SDK:
+    iOS SDK:
+      path: /AppDev/iOSSDKA2.html
+    Android SDK:
+      path: /AppDev/AndroidSDKA2.html
+    APICloud SDK:
+      path: /AppDev/APICloudWifiSDK.html
+    Data transparent transmission of SDK:
+      path: /AppDev/SDKTransparentTransmission.html
+    SDK debug log capture:
+      path: /AppDev/SDKLogCapture.html
+    SDK error codes:
+      path: /AppDev/sdk_error.html
+      
   WeChat Dev:
     path: /WeChatDev/WeChatDev.html  
   WeChat Dev Intro:
     path: /WeChatDev/WeChatDevInTro.html  
+
+  More Guide:
+    Gizwits Device Sharing:
+      path: /Cloud/SharingSDK.html
+    Application process for third-party authentication:
+      path: /AppDev/third-party.html
+
   App Dev FAQ:
     path: /AppDev/AppDevFAQ.html
-
+    
+    
+    
 
 DeviceDev:
   Get started with device connection:
@@ -64,6 +94,7 @@ DeviceDev:
       path: /DeviceDev/MXCHIP.html
     ESP8266:
       path: /DeviceDev/ESP8266.html
+
 
 
 
