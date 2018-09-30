@@ -13,12 +13,12 @@ Quick Start:
 
 
 
-App Dev:
+App Dev Guide:
   App development preparation and guidance:
     path: /quickstart/AppDevPrepare.html  
   App code auto-generator:
     path: /UserManual/devApp.html
-  APPFrame:
+  APP Frame Guide:
     iOS SDK A2:
       path: /AppDev/iOSSDKA2.html
     iOS Push Notification:
@@ -40,7 +40,7 @@ App Dev:
     Video tutorial of the App open source framework:
       path: /AppDev/VideoTutorial.html 
 
-  App SDK:
+  App SDK Guide:
     iOS SDK:
       path: /AppDev/iOSSDKA2.html
     Android SDK:
@@ -54,8 +54,8 @@ App Dev:
     SDK error codes:
       path: /AppDev/sdk_error.html
       
-  WeChat Dev:
-    path: /WeChatDev/WeChatDev.html  
+  WeChat SDK Guide:
+    path: /WechatDev/WeChatDev.html  
   WeChat Dev Intro:
     path: /WeChatDev/WeChatDevInTro.html  
 
