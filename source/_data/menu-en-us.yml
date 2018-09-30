@@ -87,13 +87,13 @@ DeviceDev:
     Firmware downloading on modules:
       path: /DeviceDev/DebugTool.html
     HF-LPB100:
-      path: /DeviceDev/HF-LPB100.html
+      path: /DeviceDev/debug/HF-LPB100.html
     HF-LPT120:
       path: /DeviceDev/debug/HF-LPT120.html
     MXCHIP:
-      path: /DeviceDev/MXCHIP.html
+      path: /DeviceDev/debug/MXCHIP.html
     ESP8266:
-      path: /DeviceDev/ESP8266.html
+      path: /DeviceDev/debug/ESP8266.html
 
 
 
