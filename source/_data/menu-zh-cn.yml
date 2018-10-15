@@ -125,6 +125,8 @@
       path: /deviceDev/WiFiSOC/GoKit-SoC-explanation.html
     GoKit-MCU程序详解:
       path: /deviceDev/Gokit3Voice/GoKit-MCU-explanation.html
+    Gokit4 SoC开发环境搭建教程:
+      path: /deviceDev/Gokit4/Gokit4_Dev_Assets.html
 
   开发套件Arduino资料:
     ArduinoUNOWiFi接入机智云介绍:
