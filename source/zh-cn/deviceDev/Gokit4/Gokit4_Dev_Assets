@@ -43,21 +43,21 @@ python setup.py install
 
 解压Quectel_BG96_Windows_USB_Driver_V1.0后点击setup.exe安装，貌似也不用多说，下一步就好。安装过程中遇到错误如下，忽略就好。
 
-![驱动安装过程中出错](/assets/Gokit4_Dev_Assets/驱动安装过程中出错.png)
+![驱动安装过程中出错](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/驱动安装过程中出错.png)
 
 安装后，USB线连接PC和开发板，如下图，拨码开关拨至BOOT
 
-![烧录模式图](/assets/Gokit4_Dev_Assets/烧录模式图.png)
+![烧录模式图](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/烧录模式图.png)
 
 打开PC设备管理器，检查驱动安装是否正常，如下图所示端口出现三个COM即表示成功，一会儿我们会用到AT port。
 
-![设备管理器查看串口](/assets/Gokit4_Dev_Assets/设备管理器查看串口.png)
+![设备管理器查看串口]/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/设备管理器查看串口.png)
 
 ### 4、编译
 
 双击源码根目录中的llvm_build.bat批处理文件，喝水等会，如果出现红色Error那就恭喜你成功编写了BUG。一切顺利的话，在源码目录target下生成三个文件表示成功，如下图
 
-![目标文件输出](/assets/Gokit4_Dev_Assets/目标文件输出.png)
+![目标文件输出](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/目标文件输出.png)
 
 ### 5、固件下载
 
@@ -73,34 +73,34 @@ python QFLOG.py -p <COMPORT> PUSH -f <absolute bin path>
 
 <absolute bin path> 为下载的文件名,返回表示成功，如下图：
 
-![下载成功](/assets/Gokit4_Dev_Assets/下载成功.png)
+![下载成功](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/下载成功.png)
 
 同样将oem_app_path.ini下载到设备中(注意很重要)
 
-![下载ini文件](/assets/Gokit4_Dev_Assets/下载ini文件.png)
+![下载ini文件](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/下载ini文件.png)
 
 6. 4 下载后拔下USB口，插到扩展板usb口上就开始运行程序了，如下
 
-![运行接USB](/assets/Gokit4_Dev_Assets/运行接USB.png)
+![运行接USB](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/运行接USB.png)
 
 ### 6、查看日志调试代码 
 
 连接电脑，在设备管理器下看自己的端口号，打开串口工具，观察日志，注意波特率是115200，非十六进制显示
 
-![观察日志](/assets/Gokit4_Dev_Assets/观察日志.png)
+![观察日志](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/观察日志.png)
 
 ### 7、在个人账户下查看设备在线情况
 
-![查看设备IMEI](/assets/Gokit4_Dev_Assets/查看设备IMEI.png)
+![查看设备IMEI](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/查看设备IMEI.png)
 
 ### 8、APP绑定设备并实现控制
 
 9.1 打开机智云串口调试助手，依次点击小工具->二维码生成->输入Product Key和IMEI->获取二维码
 
-![生成二维码](/assets/Gokit4_Dev_Assets/生成二维码.png)
+![生成二维码](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/生成二维码.png)
 
 9.2 APP扫码绑定设备
 
 打开IOEDemo，左上角扫码允许摄像头，扫码二维码后在设备列表中就会出现你的设备
 
-![扫码绑定](/assets/Gokit4_Dev_Assets/扫码绑定.png)
+![扫码绑定](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/扫码绑定.png)
