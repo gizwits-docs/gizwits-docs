@@ -52,7 +52,7 @@ python setup.py install
 
 打开PC设备管理器，检查驱动安装是否正常，如下图所示端口出现三个COM即表示成功，一会儿我们会用到AT port。
 
-![设备管理器查看串口]/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/设备管理器查看串口.png)
+![设备管理器查看串口](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/设备管理器查看串口.png)
 
 ## 4、编译
 
