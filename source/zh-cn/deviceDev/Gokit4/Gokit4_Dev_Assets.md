@@ -1,7 +1,7 @@
 title: 机智云GoKit4（G） SoC环境搭建教程
 -------
 
-## 开发工具包
+# 开发工具包
 
 网盘下载开发环境所需安装包：
 
@@ -18,11 +18,11 @@ title: 机智云GoKit4（G） SoC环境搭建教程
 | 7    | CP210x_Universal_Windows_Driver.zip      | CP210x串口驱动         |
 | 8    | UartAssist.exe                           | 串口调试工具           |
 
-### 1、交叉编译链
+## 1、交叉编译链
 
 简单，解压移远模组交叉编译工具4.0.3.zip文件至D盘根目录（注意此目录顶级目录是4.0.3）
 
-### 2、Python环境及QFLOG
+## 2、Python环境及QFLOG
 
 1、python-2.7.amd64.msi“傻瓜式”安装，你懂得，默认路径一直下一步就好啦，注意python和交叉编译链的路径很重要，windows下编译源码的时候在批处理文件已经指定了默认路径。（编译时用python-2.7）
 
@@ -40,7 +40,7 @@ python setup.py install
 
 4、将QFLOG文件夹移植到D盘根目录下，修改D:\QFLOG\src\QFLOGPackage\env_qflog.bat文件，修改变量QFLOG_PYTHON_PATH的值，改为自己的python36的绝对路径，保存。
 
-### 3、USB驱动安装
+## 3、USB驱动安装
 
 解压Quectel_BG96_Windows_USB_Driver_V1.0后点击setup.exe安装，貌似也不用多说，下一步就好。安装过程中遇到错误如下，忽略就好。
 
@@ -54,13 +54,13 @@ python setup.py install
 
 ![设备管理器查看串口]/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/设备管理器查看串口.png)
 
-### 4、编译
+## 4、编译
 
 双击源码根目录中的llvm_build.bat批处理文件，喝水等会，如果出现红色Error那就恭喜你成功编写了BUG。一切顺利的话，在源码目录target下生成三个文件表示成功，如下图
 
 ![目标文件输出](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/目标文件输出.png)
 
-### 5、固件下载
+## 5、固件下载
 
 6.1  将上一步编译后生成的目标文件gagent_app.bin和oem_app_path.ini文件拷贝到D:\QFLOG\src\QFLOGPackage\目录下
 
@@ -84,17 +84,17 @@ python QFLOG.py -p <COMPORT> PUSH -f <absolute bin path>
 
 ![运行接USB](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/运行接USB.png)
 
-### 6、查看日志调试代码 
+## 6、查看日志调试代码 
 
 连接电脑，在设备管理器下看自己的端口号，打开串口工具，观察日志，注意波特率是115200，非十六进制显示
 
 ![观察日志](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/观察日志.png)
 
-### 7、在个人账户下查看设备在线情况
+## 7、在个人账户下查看设备在线情况
 
 ![查看设备IMEI](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/查看设备IMEI.png)
 
-### 8、APP绑定设备并实现控制
+## 8、APP绑定设备并实现控制
 
 9.1 打开机智云串口调试助手，依次点击小工具->二维码生成->输入Product Key和IMEI->获取二维码
 
