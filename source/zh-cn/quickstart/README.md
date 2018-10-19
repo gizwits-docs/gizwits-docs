@@ -85,7 +85,9 @@ title: 五分钟了解机智云接入流程
 ## 7.自助接入机智云视频
 
 自助接入机智云教学视频-2018年中文版
-https://v.qq.com/x/page/o0758i68nqc.html
+腾讯视频：https://v.qq.com/x/page/o0758i68nqc.html
+
+优酷视频：https://v.youku.com/v_show/id_XMzgwOTI2NTg2OA==.html
 
 # 新手初体验
 
