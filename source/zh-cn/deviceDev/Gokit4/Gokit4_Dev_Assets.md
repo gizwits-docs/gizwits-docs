@@ -1,4 +1,5 @@
-# 			机智云GoKit4（G） SoC环境搭建教程
+title: 机智云GoKit4（G） SoC环境搭建教程及开发指南
+---
 
 ### 开发工具包
 
@@ -91,13 +92,13 @@ at+csq;+qnwinfo;+cereg?;
 
 ### 6、编码及编译
 
-​	借助机智云自助开发平台，开发者可以快速实现产品设计、开发、调试、发布的完整流程，请先阅读先阅读http://docs.gizwits.com/zh-cn/quickstart/README.html 五分钟 五分钟了解机智云自助开发平台。
+​借助机智云自助开发平台，开发者可以快速实现产品设计、开发、调试、发布的完整流程，请先阅读http://docs.gizwits.com/zh-cn/quickstart/README.html 五分钟了解机智云自助开发平台。
 
 6.1 创建产品，选择通讯方式为移动网络，如下图：
 
 备注：本次高通开发者大赛标配的物联网卡支持NB-IoT网络，但请勿选择“WiFi”或“NB-IoT”通讯方式
 
-![TXLXXZ](D:\GizwitsBusiness\for_market\20180901_GOKIT4\site\Gokit4 SoC开发环境搭建教程.assets/TXLXXZ.png)
+![TXLXXZ](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/TXLXXZ.png)
 
 6.2 根据产品需求编辑数据点
 
