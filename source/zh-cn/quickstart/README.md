@@ -85,7 +85,9 @@ title: 五分钟了解机智云接入流程
 ## 7.自助接入机智云视频
 
 自助接入机智云教学视频-2018年中文版
-https://v.qq.com/x/page/o0758i68nqc.html
+腾讯视频：https://v.qq.com/x/page/o0758i68nqc.html
+
+优酷视频：https://v.youku.com/v_show/id_XMzgwOTI2NTg2OA==.html
 
 # 新手初体验
 
@@ -198,3 +200,6 @@ OK，恭喜您已经通过虚拟设备和机智云测试APP快速了解和体验
 申请机智云开源开发套件GoKit，请[点击这里](http://www.gizwits.com/zh-cn/gokit/)
 
 进入开发者社区与万名开发者互动，请[点击这里](http://club.gizwits.com/forum.php)
+
+视频-自助接入机智云（2018）https://v.youku.com/v_show/id_XMzgwOTI2NTg2OA==.html
+视频-How to create a IoT product on Gizwits Platform   https://youtu.be/-wypfTDGmv4
