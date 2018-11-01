@@ -1,5 +1,6 @@
 title: ST I-CUBE-GizWits套件快速接入指南
 ---
+
 # 产品介绍
 基于ST和机智云的I-cube-gizwits软件包运行在基于ARM Cortex-M处理器的STM32微控制器上。
 
@@ -20,7 +21,8 @@ I-cube-gizwits软件包是STM32 Cube的扩展软件包，基于STM32 Cube HAL库
 # 准备工作
 ### 1. 硬件：
 1）B-L475E-IOT01A2开发板
-![@ST-I-CUBE-GIZWITS](/assets/zh-cn/deviceDev/STCUBEGIZWITS/1.jpg) ![@ST-I-CUBE-GIZWITS](/assets/zh-cn/deviceDev/STCUBEGIZWITS/2.jpg)
+![@ST-I-CUBE-GIZWITS](/assets/zh-cn/deviceDev/STCUBEGIZWITS/1.jpg) 
+![@ST-I-CUBE-GIZWITS](/assets/zh-cn/deviceDev/STCUBEGIZWITS/2.jpg)
 
 2）Micro USB线
 
