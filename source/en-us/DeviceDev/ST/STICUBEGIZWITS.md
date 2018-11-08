@@ -154,8 +154,6 @@ The software package needs to support the peripherals on the STM32 boards apart 
 
 It is a real-time operating system required for simulating the Linux environment that was originally used to develop the GAgent client stack and GIZWITS application.
 
-Figure 3 outlines I-CUBE-GIZWITS software architecture.
-
 **Figure 3. I-CUBE-GIZWITS software architecture**
 
 ![I CUBE GIZWITS](/assets/en-us/DeviceDev/STICUBEGIZWITS/5.png)
@@ -164,9 +162,7 @@ Figure 3 outlines I-CUBE-GIZWITS software architecture.
 
 ## **3.3** Folderstructure
 
-Figure 4 presents the folder structure of the I-CUBE-GIZWITS package.
-
-**Figure 4. Project file structure**
+**Figure 4 presents the folder structure of the I-CUBE-GIZWITS package.**
 
 ![I CUBE GIZWITS](/assets/en-us/DeviceDev/STICUBEGIZWITS/6.png)
 
