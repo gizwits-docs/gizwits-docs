@@ -42,7 +42,7 @@ I-CUBE-GIZWITS offers the following features:
 # **1.General information**
 
 The I-CUBE-GIZWITS package for the GIZWITS® IoT cloud platform runs on STM32 32-bit microcontrollers based on the Arm® Cortex®-M processor.
-![I CUBE GIZWITS](/assets/en-us/deviceDev/STICUBEGIZWITS/2.png)
+![I CUBE GIZWITS](/assets/en-us/DeviceDev/STICUBEGIZWITS/2.png)
 
 
 Table1 presents the definition of acronyms that are relevant **for a better understanding** of thisdocument.
