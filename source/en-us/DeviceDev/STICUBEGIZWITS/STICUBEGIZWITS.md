@@ -1,10 +1,9 @@
-**User**  **manual**
-* * *
+title:  User manual
+---
+
 Getting started with I-CUBE-GIZWITS IoT cloud software expansion for STM32Cube
-* * *
 
-
-Introduction
+# Introduction
 
 This user manual describes the content of the STM32Cube software expansion package for the GIZWITS®
 IoT cloud platform.
