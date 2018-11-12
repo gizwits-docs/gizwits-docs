@@ -123,13 +123,13 @@ Step 2: Login in Gizwits debugging App and bind the device
 
 ![Login in Gizwits debugging App and bind the device](../../../assets/en-us/readme/readme-18.png)
 
-After using debugging App to scan the virtual device QR Code and binding the selected virtual device successfully, "Gizwits Smart Light 2nd Generation" will be showed in the "bound devices" of "My Devices" on the debugging App.
+After using debugging App to scan the virtual device QR Code and binding the selected virtual device successfully, "Smart Light" will be showed in the "bound devices" of "My Devices" on the debugging App.
 
 Step 3: Control the virtual device using Gizwits debugging App
 
 ![Control the virtual device using Gizwits debugging App](../../../assets/en-us/readme/readme-19.png)
 
-Click "Gizwits Smart Light 2nd Generation" in the red box to navigate to the debugging page of the virtual device. Take the "switch on/off" function as an example, set the "switch on/off" field of the smart light with 1.
+Click "Smart Light" in the red box to navigate to the debugging page of the virtual device. Take the "switch on/off" function as an example, set the "switch on/off" field of the smart light with 1.
 
 ![Set the "switch on/off" field of the smart light with 1](../../../assets/en-us/readme/readme-20.png)
 
