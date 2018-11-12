@@ -141,7 +141,7 @@ At this point, you can see that the "switch on/off" field of the virtual device 
 
 ![Virtual devices reporting data to the debugging App](../../../assets/en-us/readme/readme-21.png)
 
-Set the "Adjustment mode" of the virtual device in the cloud with "Color temperature mode" option, and click the "push" button. The virtual device will report the data to the Gizwits debugging App. You can see that the "Adjustment mode" field on the Gizwits Debugging App has changed to "Color temperature mode". At the same time, "Virtual devices reporting data" will be displayed on the "Communication log" for the virtual device in the cloud, and the communication log will be printed automatically.
+Set the "colors" of the virtual device in the cloud from "red" to "yellow", and click the "push" button. The virtual device will report the data to the Gizwits debugging App. You can see that the "colors" field on the Gizwits Debugging App has changed to be "yellow". At the same time, "Virtual devices reporting data" will be displayed on the "Communication log" for the virtual device in the cloud, and the communication log will be printed automatically.
 
 Gizwits Debugging App automatically updates its UI after receiving the data pushed by the virtual device.
 
