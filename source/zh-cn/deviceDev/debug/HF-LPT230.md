@@ -21,6 +21,7 @@ title: 机智云GAgent For HF-LPT230串口烧写说明
 将HF-LPT230模块按照如下原理图进行接线，注意nReload需要输入低电平，通过按键S2控制nReload的低电平输入。S1实现外部复位功能。
 
 ![设备连接](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_1.png)
+
 ![设备连接](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_10.png)
 
 ## 4. 串口设置
