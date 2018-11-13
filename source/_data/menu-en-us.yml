@@ -6,7 +6,7 @@ Overview:
 
 Quick Start:
   Gizwits Quick Start within 5 mins:
-    path: /AppDev/GizwitsQuickStart.html
+    path: /quickstart/GizwitsQuickStart.html
   Glossary:
     path: /quickstart/glossary.html
 
@@ -15,7 +15,7 @@ Quick Start:
 
 App Dev Guide:
   Get Started with APP Development:
-    path: /quickstart/AppDevGetStarted.html  
+    path: /AppDev/AppDevGetStarted.html  
   App code auto-generator:
     path: /UserManual/devApp.html
   APP Frame Guide:
