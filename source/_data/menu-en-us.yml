@@ -19,12 +19,12 @@ App Dev Guide:
     
   APP Frame Guide:
     Gizwits App Framework for iOS:
-      path: /AppDev/iOSFramework.html
-      
+      path: /AppDev/iOSFramework.html      
     iOS Push Notification:
-      path: /AppDev/iOSPushNotification.html
-    iOS Auth Re Skin:
+      path: /AppDev/iOSPushNotification.html      
+    iOS Auth Re-Skin:
       path: /AppDev/iOSAuthReSkin.html
+      
     Quick start of iOS App development:
       path: /AppDev/iosframe.html
     Android frame:
