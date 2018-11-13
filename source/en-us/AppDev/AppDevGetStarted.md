@@ -19,13 +19,13 @@ Gizwits currently offers three SDKs: the native Gizwits App SDK for iOS, the nat
 
 
 * [Download Gizwits App SDK for Android](http://download.gizwits.com/zh-cn/p/95/97)
-* [Guide to Gizwits App SDK for Android](../AppDev/AndroidSDKA2.md)
+* [Guide to Gizwits App SDK for Android](../AppDev/AndroidSDKA2.html)
 
 * [Download Gizwits App SDK for iOS](http://download.gizwits.com/zh-cn/p/95/97)
-* [Guide to Gizwits App SDK for iOS](../AppDev/iOSSDKA2.md)
+* [Guide to Gizwits App SDK for iOS](../AppDev/iOSSDKA2.html)
 
 * [Download Gizwits App SDK for APICloud](http://download.gizwits.com/zh-cn/p/95/97)
-* [Guide to Gizwits App SDK for APICloud](../AppDev/APICloudSDK.md)
+* [Guide to Gizwits App SDK for APICloud](../AppDev/APICloudSDK.html)
 
 
 ![Overview](../../../assets/en-us/quickstart/11.png)
