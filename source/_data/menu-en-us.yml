@@ -9,15 +9,15 @@ Quick Start:
     path: /quickstart/GizwitsQuickStart.html
   Glossary:
     path: /quickstart/glossary.html
-
-
-
+    
 
 App Dev Guide:
   Get Started with APP Development:
     path: /AppDev/AppDevGetStarted.html  
-  App code auto-generator:
+  Gizwits App Code Auto-Generator:
     path: /AppDev/AppCodeAutoGenerator.html
+    
+    
   APP Frame Guide:
     iOS Push Notification:
       path: /AppDev/iOSPushNotification.html
