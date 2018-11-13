@@ -42,11 +42,11 @@ title: 机智云GAgent For HF-LPT230串口烧写说明
 
 串口配置协议为Serial，端口为上述2.4.1中的COM口，波特率设置为230400（关键），数据位为8位，停止位为1位，无奇偶校验，最后点击连接。
 
-![串口工具SecureCRT](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_5.png)
-
 连接成功后，在SecureCRT工作区间会有光标闪烁。
 
 ![串口工具SecureCRT](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_6.png)
+
+![串口工具SecureCRT](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_5.png)
 
 ## 5. 烧写操作
 
