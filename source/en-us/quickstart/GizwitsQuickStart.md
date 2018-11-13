@@ -177,7 +177,7 @@ OK, congratulations! You have quickly understood and experienced the connection 
 
 To learn about the device connection to Gizwits IoT Cloud, please click [here](../DeviceDev/UseMCU.html).
 
-To learn more about the rapid App development process, please click [here](/quickstart/GizwitsQuickStart.html).
+To learn more about the rapid App development process, please click [here](/AppDev/AppDevGetStarted.html).
 
 To get Gizwits open source development kit - Gokit, please click [here](http://www.gizwits.com/zh-cn/gokit/).
 
