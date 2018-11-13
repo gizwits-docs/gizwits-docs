@@ -15,10 +15,12 @@ App Dev Guide:
   Get Started with APP Development:
     path: /AppDev/AppDevGetStarted.html  
   Gizwits App Code Auto-Generator:
-    path: /AppDev/AppCodeAutoGenerator.html
-    
+    path: /AppDev/AppCodeAutoGenerator.html 
     
   APP Frame Guide:
+    Gizwits App Framework for iOS:
+      path: /AppDev/iOSFramework.html
+      
     iOS Push Notification:
       path: /AppDev/iOSPushNotification.html
     iOS Auth Re Skin:
