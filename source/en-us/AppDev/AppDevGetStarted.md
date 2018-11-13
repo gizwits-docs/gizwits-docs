@@ -28,7 +28,7 @@ Gizwits currently offers three SDKs: the native Gizwits App SDK for iOS, the nat
 - [Guide to Gizwits App SDK for APICloud](../AppDev/APICloudSDK.html)
 
 
-![Overview](/AppDev/AppDevGetStarted/1.png)
+![Overview](/assets/en-us/AppDev/AppDevGetStarted/1.png)
 
 ## 2. Gizwits App Framework
 
@@ -83,17 +83,17 @@ Note: The above tutorials are all based on Gizwits App Framework.
 
 ## 1. Create a product and define Data Points
 
-![Create a product and define Data Points](/AppDev/AppDevGetStarted/2.png)
+![Create a product and define Data Points](/assets/en-us/AppDev/AppDevGetStarted/2.png)
 
-![Create a product and define Data Points](/AppDev/AppDevGetStarted/3.png)
+![Create a product and define Data Points](/assets/en-us/AppDev/AppDevGetStarted/3.png)
  
 ## 2. Create Android and iOS applications for your product
 
 In the left navigation pane, click "Application Configuration" under “Services” to add Android and iOS applications respectively.
 
-![Create Android and iOS applications for your product](/AppDev/AppDevGetStarted/4.png)
+![Create Android and iOS applications for your product](/assets/en-us/AppDev/AppDevGetStarted/4.png)
 
-![Create Android and iOS applications for your product](/AppDev/AppDevGetStarted/5.png)
+![Create Android and iOS applications for your product](/assets/en-us/AppDev/AppDevGetStarted/5.png)
  
 ## 3. The meaning and role of App ID and App Secret
 App ID: application identification code, when the developer needs to develop applications for a smart product (including iOS, Android, Web applications, etc.), an App ID is automatically generated after an application is created in the Gizwits Developer Center and associates with the device. This App ID is required during application development. All users registered in the App are bound under this App ID.
@@ -102,7 +102,7 @@ App Secret: App ID verification secret.
 
 As shown in the figure below, it is the role that App ID plays in the process of developing App.
 
-![App ID](/AppDev/AppDevGetStarted/6.png)
+![App ID](/assets/en-us/AppDev/AppDevGetStarted/6.png)
 
 # See Also
 
