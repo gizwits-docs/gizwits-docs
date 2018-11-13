@@ -17,7 +17,7 @@ https://git.oschina.net/dantang/GoKit_Demo_iOS
 
 It can also be downloaded at the Download Center:
 
-![iOS Gokit App](../../../assets/en-us/AppDev/AppFrame/image1.png)
+![iOS Gokit App](/assets/en-us/AppDev/iOSFramework/image1.png)
  
 # The Framework code directory structure
 
