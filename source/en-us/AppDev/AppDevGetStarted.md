@@ -18,14 +18,14 @@ This method is applicable to the App that needs to do complex business logic pro
 Gizwits currently offers three SDKs: the native Gizwits App SDK for iOS, the native Gizwits App SDK for Android, and the Gizwits App SDK for APICloud on cross-platform. Developers can choose anyone according to the needs of the project. The Gizwits App SDK for APICloud can be used to develop once with HTML5 technology and can be adapted to both iOS and Android platforms.
 
 
-* [Download Gizwits App SDK for Android](http://download.gizwits.com/zh-cn/p/95/97)
-* [Guide to Gizwits App SDK for Android](../AppDev/AndroidSDKA2.html)
+- [Download Gizwits App SDK for Android](http://download.gizwits.com/zh-cn/p/95/97)
+- [Guide to Gizwits App SDK for Android](../AppDev/AndroidSDKA2.html)
 
-* [Download Gizwits App SDK for iOS](http://download.gizwits.com/zh-cn/p/95/97)
-* [Guide to Gizwits App SDK for iOS](../AppDev/iOSSDKA2.html)
+- [Download Gizwits App SDK for iOS](http://download.gizwits.com/zh-cn/p/95/97)
+- [Guide to Gizwits App SDK for iOS](../AppDev/iOSSDKA2.html)
 
-* [Download Gizwits App SDK for APICloud](http://download.gizwits.com/zh-cn/p/95/97)
-* [Guide to Gizwits App SDK for APICloud](../AppDev/APICloudSDK.html)
+- [Download Gizwits App SDK for APICloud](http://download.gizwits.com/zh-cn/p/95/97)
+- [Guide to Gizwits App SDK for APICloud](../AppDev/APICloudSDK.html)
 
 
 ![Overview](../../../assets/en-us/quickstart/11.png)
