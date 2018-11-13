@@ -23,10 +23,10 @@ App Dev Guide:
     iOS Push Notification:
       path: /AppDev/iOSPushNotification.html      
     iOS Auth Re-Skin:
-      path: /AppDev/iOSAuthReSkin.html
+      path: /AppDev/iOSAuthReSkin.html      
+    iOS APP Development Instruction:
+      path: /AppDev/iOSDevQuickStart.html
       
-    Quick start of iOS App development:
-      path: /AppDev/iosframe.html
     Android frame:
       path: /AppDev/androidframe.html  
     Android Push Notification:
