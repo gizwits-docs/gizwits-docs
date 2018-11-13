@@ -1,15 +1,15 @@
-title: Guide of iOS App push notification integration
+title: Guide to push notification integration for iOS App
 ---
 
 # Overview
 
-The Gizwits App open source framework (hereinafter referred as Framework) integrates Baidu push notification and Jiguang push notification, which help rapid development with few modifciation. This document describes how to integreate push notification based on the Framework. For more information on the Framework, please refer to the Quick Start documentation.
+The Gizwits App Framework (hereinafter referred as Framework) integrates Baidu push notification and Jiguang push notification, which is intended for rapid development with few modifciation. This document describes how to integreate push notification based on the Framework. For more information on the Framework, please refer to the Quick Start documentation.
 
 # Quick integration with Jiguang push notification
 
-## 1. Apply for Jiguang AppKey and Master Secret
+## 1. Get Jiguang AppKey and Master Secret
 
-### 1.1 Creating a Jiguang Application
+### 1.1 Create a Jiguang application
 
 Click https://www.jiguang.cn/app/form to create a Jiguang application.
 
@@ -17,9 +17,9 @@ Click https://www.jiguang.cn/app/form to create a Jiguang application.
  
 As shown in the figure, you need to upload the Apple Developer Certificate, including the development certificate and the production certificate and their passwords.
 
-### 1.2 Apply for iOS development certificate
+### 1.2 Get Apple certificate
 
-Log in to the Apple Developer Center: https://developer.apple.com, apply and download the cer certificate, double-click the certificate to open it from the Keychain, select the certificate, choose "login" and "My Certificates", right-click the certificate, export p12 certificate.
+Log in to the Apple Developer Center: https://developer.apple.com, request and download the cer certificate, double-click the certificate to open it from the Keychain, select the certificate, choose "login" and "My Certificates", right-click the certificate, export p12 certificate.
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/12.png)
  
@@ -41,23 +41,23 @@ At this point, the Jiguang application has been created and the AppKey and Maste
  
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/16.png)
  
-## 2. Bind third-party push notification in the Gizwits cloud
+## 2. Use third-party push notification in the Gizwits cloud
 
-### 2.1 Applying for D3 Engine service
+### 2.1 Request to use D3 Engine
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/17.png)
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/18.png)
 
-The use of D3 Engine service requires the approval of Gizwits. After request to access the service, you need to contact the Gizwits FAE for assistant.
+The use of D3 Engine requires the verification of Gizwits. After your request has been submitted, you need to contact the Gizwits FAE for assistant.
 
-### 2.2 Binding Jiguang push notification in Gizwits cloud
+### 2.2 Use Jiguang push notification in Gizwits cloud
 
-After approval, you can see the D3 Engine under the Services column, click "Configuration" -> "Edit Push Notification Platform"
+After the verification passes, you can see the D3 Engine under the Services column, click "Configuration" -> "Edit Push Notification Platform".
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/19.png)
 
-Type the App Key and Master Secret you applied to Jiguang as the following figure and select the certificate type.
+Enter the App Key and Master Secret you got from Jiguang as the following figure and select the certificate type.
 
 Note: When selecting "Development" for the certificate type, only in the development environment your App is able to receive notifications.
 
@@ -92,9 +92,9 @@ Double-click "Push for App" and set the notification content.
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/29.png)
  
  
-## 3. Modify the code of UIConfig.json
+## 3. Update UIConfig.json
 
-Fill in jpush_app_key, and set push_type to 1, indicating that Jiguang push notification is selected. Then fill in the values of app_id, app_secret, and product_key of the Gizwits application that is bound to Jiguang push notification.
+Set jpush_app_key, and set push_type to 1, indicating that Jiguang push notification is selected. Then enter the values of app_id, app_secret, and product_key of the Gizwits application that is bound to Jiguang push notification.
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/30.png)
 
@@ -112,7 +112,7 @@ After the button is turned on, an .entitlements file is automatically generated,
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/33.png)
 
-## 6. Run the APP
+## 6. Run the App
 
 Through the above steps, the App is equipped with Jiguang push notification function. After being deployed to a mobile phone, register a user and login in, then bind the cloud virtual device by scanning its QR code.
 
@@ -168,7 +168,7 @@ The sample detail is as follows:
 }
 ```
 
-Here we use Jiguang push notification. If the sound name is pushMusic.caf, the Advanced Parameter field need to be filled in as follows:
+Here we use Jiguang push notification. If the sound name is pushMusic.caf, the Advanced Parameter field need to be set in as follows:
 
 ```
 {
@@ -205,7 +205,7 @@ At this point, the configuration of push notification sound is completed. The Ap
 
 # Quick integration with Baidu push notification
 
-## 1. Apply for Baidu API KEY
+## 1. Get Baidu API KEY
 
 ### 1.1 Create a Baidu application
 
@@ -215,7 +215,7 @@ Go to Baidu cloud push notification platform: http://push.baidu.com, create an a
 
 As shown above, you need to upload the development certificate and production certificate in the pem format.
 
-### 1.2 Apply for Apple Certification
+### 1.2 Get Apple Certification
 
 The process of applying for the cer certificate and its exporting is described in section 1.2 of "Quick integrated with Jiguang push notification". The following figure shows how to export the pem certificate from the p12 certificate.
 
@@ -233,17 +233,17 @@ Upload the pem certificate to the figure in "1.1 Create a Baidu application". Af
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/43.png)
  
-## 2. Bind third-party authentication in Gizwits cloud
+## 2. Use third-party authentication in Gizwits cloud
 
-### 2.1 Apply for D3 Engine
+### 2.1 Request to use D3 Engine
 
 For this step, refer to section 2.1 of Quick integration with Jiguang push notification.
 
-### 2.2 Bind Baidu push notification in Gizwits cloud
+### 2.2 Use Baidu push notification in Gizwits IoT Cloud
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/44.png)
 
-Type the App Key and Master Secret you applied to Baidu as the following figure and select the certificate type.
+Type the API Key and Secret Key you obtained from Baidu as the following figure and select the certificate type.
 
 Note: When selecting "Development" for the certificate type, only in the development environment your App is able to receive notifications.
 
@@ -255,9 +255,9 @@ Note: When selecting "Development" for the certificate type, only in the develop
 
 For this step, refer to section 2.3 of Quick integration with Jiguang push notification.
 
-## 3. Modify the code of UIConfig.json
+## 3. Update UIConfig.json
 
-Fill in bpush _app_key, and set push_type to 1, indicating that Baidu push notification is selected. Then fill in the values of app_id, app_secret, and product_key of the Gizwits application that is bound to Baidu push notification.
+Set bpush_app_key, and set push_type to 1, indicating that Baidu push notification is selected. Then enter the values of app_id, app_secret, and product_key of the Gizwits application that is bound to Baidu push notification.
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/47.png)
 
@@ -269,7 +269,7 @@ The App launch interface for Baidu push notification has a pushMode parameter, t
 
 BPushModeDevelopment: Set Baidu push notification in development environment
 
-When the environment set above matches the current running environment of the APP, the push notification will take effect. 
+When the environment set above matches the current running environment of the App, the push notification will take effect. 
 
 ![iOS Push Notification](../../../assets/en-us/AppDev/AppFrame/ios/push/48.png)
 
@@ -277,7 +277,7 @@ When the environment set above matches the current running environment of the AP
 
 This step can refer to section 5 of Quick integration with Jiguang push notification.
 
-## 6. Run the APP
+## 6. Run the App
 
 Through the above steps, the App is equipped with Baidu push notification function. After being deployed to a mobile phone, register a user and login in, then bind the cloud virtual device by scanning its QR code. 
 
@@ -323,7 +323,7 @@ The sample detail is as follows:
 }
 ```
 
-Here we use Baidu push notification. If the sound name is pushMusic.caf, the Advanced Parameter field need to be filled in as follows:
+Here we use Baidu push notification. If the sound name is pushMusic.caf, the Advanced Parameter field need to be set in as follows:
 
 ```
 {
@@ -348,9 +348,9 @@ Please refer to section “8.2 Import push notification sound file to project”
 
 # FAQ
 
-## 1. Need I request to access D3 Engine to use push notification?
+## 1. Need I request to use D3 Engine for push notification?
 
-Answer: Yes, D3 Engine currently only targets at enterprise developers. Therefore, only enterprise developers can request to access it.
+Answer: Yes, D3 Engine currently is intended for enterprise developers. Therefore, only enterprise developers can request to use it.
 
 ## 2. I completed the above steps using Jiguang push notification, but cannot receive the expected push notification.
 
