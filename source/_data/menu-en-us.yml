@@ -19,16 +19,12 @@ App Dev Guide:
   App code auto-generator:
     path: /UserManual/devApp.html
   APP Frame Guide:
-    iOS SDK A2:
-      path: /AppDev/iOSSDKA2.html
     iOS Push Notification:
       path: /AppDev/iOSPushNotification.html
     iOS Auth Re Skin:
       path: /AppDev/iOSAuthReSkin.html
     Quick start of iOS App development:
       path: /AppDev/iosframe.html
-    Android SDK A2:
-      path: /AppDev/AndroidSDKA2.html
     Android frame:
       path: /AppDev/androidframe.html  
     Android Push Notification:
