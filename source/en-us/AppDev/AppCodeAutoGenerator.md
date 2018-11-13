@@ -23,44 +23,44 @@ Gizwits App Code Auto-Generator currently supports Andriod, iOS, and APICloud.
 
 1.1. After creating the product and Data Points in the Gizwits Developer Center, choose “Application Configuration”.
 
-![Create an application](../../../assets/en-us/UserManual/app/11.png)
+![Create an application](/assets/en-us/AppDev/AppAutoGenerator/1.png)
 
 Note that the naming of Data Points cannot be a common programming language keywords, such as switch, static, enum, native, etc. Otherwise, the generated code will be incorrect!
 
 1.2. Choose “New Application” on the Application Configuration page
 
-![Create an application](../../../assets/en-us/UserManual/app/12.png)
+![Create an application](/assets/en-us/AppDev/AppAutoGenerator/2.png)
 
 1.3. Create an Android application and an iOS application separately.
 
-![Create an application](../../../assets/en-us/UserManual/app/13.png)
+![Create an application](/assets/en-us/AppDev/AppAutoGenerator/3.png)
 
-![Create an application](../../../assets/en-us/UserManual/app/14.png)
+![Create an application](/assets/en-us/AppDev/AppAutoGenerator/4.png)
 
-![Create an application](../../../assets/en-us/UserManual/app/15.png)
+![Create an application](/assets/en-us/AppDev/AppAutoGenerator/5.png)
  
  
 ## 2. Generate code
 
 2.1. Check the product secret and copy it to the clipboard.
 
-![Generate code](../../../assets/en-us/UserManual/app/16.png)
+![Generate code](/assets/en-us/AppDev/AppAutoGenerator/6.png)
 
 2.2. Click “Application Development”, select the Android application you just created, paste the product secret you copied, and click “Generate Code Package”.
 
-![Generate code](../../../assets/en-us/UserManual/app/17.png)
+![Generate code](/assets/en-us/AppDev/AppAutoGenerator/7.png)
 
 2.3. After a while, you can download the source code.
 
-![Generate code](../../../assets/en-us/UserManual/app/18.png)
+![Generate code](/assets/en-us/AppDev/AppAutoGenerator/8.png)
 
 2.4. The downloaded source code is a compressed file. After decompression, you can see the related source code.
 
-![Generate code](../../../assets/en-us/UserManual/app/19.png)
+![Generate code](/assets/en-us/AppDev/AppAutoGenerator/9.png)
 
 2.5. For the guide to the source code, please refer to the appendix "source code explanation" after decompression!
 
-![Generate code](../../../assets/en-us/UserManual/app/20.png)
+![Generate code](/assets/en-us/AppDev/AppAutoGenerator/10.png)
 
 # See Also
 
