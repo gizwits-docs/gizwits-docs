@@ -34,10 +34,9 @@ App Dev Guide:
       path: /AppDev/AndroidAuthReSkin.html     
     Android APP Development Instruction:
       path: /AppDev/AndroidDevQuickStart.html
+    Gizwits App Framework for APICloud:
+      path: /AppDev/APICloudFramework.html  
       
-
-    API Cloud Frame:
-      path: /AppDev/APICloudFrame.html  
     Video tutorial of the App open source framework:
       path: /AppDev/VideoTutorial.html 
 
