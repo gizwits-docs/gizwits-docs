@@ -31,10 +31,11 @@ App Dev Guide:
     Android Push Notification:
       path: /AppDev/AndroidPushNotification.html      
     Android Authentication and Re-Skin:
-      path: /AppDev/AndroidAuthReSkin.html
+      path: /AppDev/AndroidAuthReSkin.html     
+    Android APP Development Instruction:
+      path: /AppDev/AndroidDevQuickStart.md
       
-    Quick start of Android App development:
-      path: /quickstart/AndroidAppFrame.html  
+
     API Cloud Frame:
       path: /AppDev/APICloudFrame.html  
     Video tutorial of the App open source framework:
