@@ -35,10 +35,9 @@ App Dev Guide:
     Android APP Development Instruction:
       path: /AppDev/AndroidDevQuickStart.html
     Gizwits App Framework for APICloud:
-      path: /AppDev/APICloudFramework.html  
-      
-    Video tutorial of the App open source framework:
-      path: /AppDev/VideoTutorial.html 
+      path: /AppDev/APICloudFramework.html      
+    How-to videos on Gizwits App Framework:
+      path: /AppDev/VideoTutorials.html 
 
   App SDK Guide:
     iOS SDK:
