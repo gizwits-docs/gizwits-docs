@@ -22,15 +22,17 @@ App Dev Guide:
       path: /AppDev/iOSFramework.html      
     iOS Push Notification:
       path: /AppDev/iOSPushNotification.html      
-    iOS Auth Re-Skin:
+    iOS Authentication and Re-Skin:
       path: /AppDev/iOSAuthReSkin.html      
     iOS APP Development Instruction:
       path: /AppDev/iOSDevQuickStart.html      
     Gizwits App Framework for Android:
-      path: /AppDev/AndroidFramework.html  
-      
+      path: /AppDev/AndroidFramework.html        
     Android Push Notification:
-      path: /AppDev/AndroidPushNotification.html  
+      path: /AppDev/AndroidPushNotification.html      
+    Android Authentication and Re-Skin:
+      path: /AppDev/AndroidAuthReSkin.html
+      
     Quick start of Android App development:
       path: /quickstart/AndroidAppFrame.html  
     API Cloud Frame:
