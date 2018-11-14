@@ -25,10 +25,10 @@ App Dev Guide:
     iOS Auth Re-Skin:
       path: /AppDev/iOSAuthReSkin.html      
     iOS APP Development Instruction:
-      path: /AppDev/iOSDevQuickStart.html
+      path: /AppDev/iOSDevQuickStart.html      
+    Gizwits App Framework for Android:
+      path: /AppDev/AndroidFramework.html  
       
-    Android frame:
-      path: /AppDev/androidframe.html  
     Android Push Notification:
       path: /AppDev/AndroidPushNotification.html  
     Quick start of Android App development:
