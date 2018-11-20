@@ -60,9 +60,9 @@ App Dev Guide:
 
   More Guide:
     Gizwits Device Sharing:
-      path: /cloud/SharingSDK.html
-    Application process for third-party authentication:
-      path: /AppDev/third-party.html
+      path: /AppDev/SharingSDK.html
+    Set Up Third-party Authentication:
+      path: /AppDev/ThirdpartyAuth.html
 
   App Dev FAQ:
     path: /AppDev/AppDevFAQ.html
