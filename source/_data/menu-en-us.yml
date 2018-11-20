@@ -47,12 +47,11 @@ App Dev Guide:
     Gizwits App SDK for APICloud:
       path: /AppDev/APICloudSDK.html
     Data Transparent Transmission:
-      path: /AppDev/TransparentTransmission.html      
-      
-    SDK debug log capture:
+      path: /AppDev/TransparentTransmission.html     
+    SDK Debug Log Capture:
       path: /AppDev/SDKLogCapture.html
-    SDK error codes:
-      path: /AppDev/sdk_error.html
+    SDK Error Codes:
+      path: /AppDev/SDKErrorCodes.html
       
   WeChat SDK Guide:
     path: /WechatDev/WeChatDev.html  
