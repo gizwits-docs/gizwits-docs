@@ -14,19 +14,19 @@ Only the user bound to a device at the earliest or the Owner of a device can sha
 
 Note: Before using Device Sharing feature, it needs to be enabled in the Developer Center - Product Basics.
 
-![Device Sharing](../../../assets/en-us/cloud/share/11.png)
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/11.png)
 
 # 2. Scenarios of Device Sharing
 
 The process flowchart is as follows.
 
-![Device Sharing](../../../assets/en-us/cloud/share/12.png)
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/12.png)
  
 ## 2.1 Scenario 1: One device to one user
 
 A device can only be bound and controlled by one user, which means that the user only needs the roles of Special / Owner and does not have the roles of Normal / Guest. The code flowchart is as follows:
  
-![Device Sharing](../../../assets/en-us/cloud/share/13.png)
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/13.png)
 
 Note: Because this scenario is for one device to one user, when the user with Special role calls the Device Sharing function to become the Owner role, the guestUser parameter of the sharingDevice method is just set to a user account registered using the appid without UI involved.
 
@@ -36,11 +36,11 @@ This is a common scenario. A device can be bound by multiple users. When a Speci
 
 (1) Create a sharing invitation
 
-![Device Sharing](../../../assets/en-us/cloud/share/14.png) 
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/14.png) 
 
 (2) Receive a sharing invitation
 
-![Device Sharing](../../../assets/en-us/cloud/share/15.png) 
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/15.png) 
 
 # 3. Hardware design
 
@@ -48,9 +48,9 @@ This is a common scenario. A device can be bound by multiple users. When a Speci
 
 When the Wi-Fi module requests the device information, the MCU reply contains a binding timeout field. When the field value is 0, the device can be bound at any time in the WLAN. If it is greater than 0, the commands in the protocol document 4.12 MCU tells the Wi-Fi module to enter the bindable mode can be used.
  
-![Device Sharing](../../../assets/en-us/cloud/share/16.png)
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/16.png)
 
-![Device Sharing](../../../assets/en-us/cloud/share/17.png)
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/17.png)
 
 ## 3.2 Why Device Sharing should be used together with Device Binding timeout
 
@@ -61,7 +61,7 @@ In the case of Macro Cycle, the users who has previously bound the device, excep
 
 After the device module is reset, it clears the previously configured SSID, password, did, passcode, etc., and all binding relationships of the device.
  
-![Device Sharing](../../../assets/en-us/cloud/share/18.png)
+![Device Sharing](/assets/en-us/AppDev/DeviceSharing/18.png)
 
 ## 3.4 Why Device Sharing needs the Wi-Fi module reset sometimes
 
