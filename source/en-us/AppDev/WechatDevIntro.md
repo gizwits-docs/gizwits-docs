@@ -9,7 +9,7 @@ If you need to use WeChat Official Accounts as the end user interface, you can r
 
 ## 2. Overall access flowchart
 
-![Overview](../../../assets/en-us/WechatDev/11.png)
+![Overview](/assets/en-us/AppDev/WeChatIntro/11.png)
  
 ## 3. Gizwits IoT Cloud
 
