@@ -1,13 +1,13 @@
-title: Guide to Gizwits Serial Port Debug Tool
+title: Guide to Gizwits Serial Port Debugger
 ---
 
 # Get ready
 
 ## 1. Sign up for a developer account and create a product
 
-To use the Gizwits serial port debug tool, you need to create a product in Gizwits Developer Center. See here for reference.
+To use the Gizwits Serial Port Debugger, you need to create a product in Gizwits Developer Center. See here for reference.
 
-## 2. Download Gizwits Debug App
+## 2. Download Gizwits Debugging App
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/11.png)
 
@@ -21,20 +21,20 @@ According to the following schematic, connect ESP8266 to your PC using a USB-to-
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/12.png)
 
-## 5. Download Gizwits Serial Port Debug Tool
+## 5. Download Gizwits Serial Port Debugger
 
 Download it here: https://download.gizwits.com/en-us/p/98/119
 
 
-## 6. Configure Gizwits Serial Port Debug Tool
+## 6. Configure Gizwits Serial Port Debugger
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/13.png)
 
-Find the productkey corresponding to the product in Gizwits Developer Center and fill in the blank of the serial port debug tool and save it.
+Find the productkey corresponding to the product in Gizwits Developer Center and fill in the blank of Gizwits Serial Port Debugger and save it.
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/14.png)
 
-# UI description for Gizwits Serial Port Debug Tool 
+# UI description for Gizwits Serial Port Debugger
 
 ## 1. Home Screen
 
@@ -48,7 +48,7 @@ Find the productkey corresponding to the product in Gizwits Developer Center and
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/17.png)
 
-# Configure the module to access Gizwits Cloud
+# Configure the module to access Gizwits IoT Cloud
 
 ## 1. Power on the module for the first time
 
@@ -56,7 +56,7 @@ As shown in the figure, when the ESP8266 module is powered on for the first time
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/18.png)
 
-## 2. Start Gizwits Debug App
+## 2. Start Gizwits Debugging App
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/19.png)
 
@@ -98,7 +98,7 @@ At this point the App will issue a configuration package and display that it is 
 
 ## 8. Configuration result
 
-Observe the receiving box of the serial port tool. When the following two commands are output, it indicates that the Wi-Fi module has successfully received the configuration information sent by the App, and connected to the router and Gizwits Cloud.
+Observe the receiving box of the serial port tool. When the following two commands are output, it indicates that the Wi-Fi module has successfully received the configuration information sent by the App, and connected to the router and Gizwits IoT Cloud.
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/27.png)
 
@@ -114,7 +114,7 @@ Clicking the device on the device list page will take you to the device control 
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/29.png)
 
-## 2. Send control commands
+## 2. Send commands
 
 Toggle "Turn on/off red light" button on the App to issue commands to control the red light.
 
@@ -122,13 +122,13 @@ Toggle "Turn on/off red light" button on the App to issue commands to control th
 
 ## 3. Control result
 
-When you see the following command in the serial port debug tool, it means that the App controlled the device successfully.
+When you see the following command in Gizwits Serial Port Debugger, it means that the App controlled the device successfully.
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/31.png) 
 
 ## 4. Report data
 
-Change the infrared detection value on the serial port debug tool to "1", click Report Data to mimic the MCU behavior of reporting the device status actively.
+Change the infrared detection value on Gizwits Serial Port Debugger to "1", click Report Data to mimic the MCU behavior of reporting the device status actively.
 
 ![Gizwits Serial Port Debug Tool](../../../assets/en-us/DeviceDev/debug/Serial/32.png)
 
