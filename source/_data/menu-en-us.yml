@@ -54,9 +54,9 @@ App Dev Guide:
       path: /AppDev/SDKErrorCodes.html
       
   WeChat SDK Guide:
-    path: /WechatDev/WeChatDev.html  
+    path: /AppDev/WeChatDev.html  
   WeChat Dev Intro:
-    path: /WechatDev/WechatDevIntro.html  
+    path: /AppDev/WechatDevIntro.html  
 
   More Guide:
     Gizwits Device Sharing:
