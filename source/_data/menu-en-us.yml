@@ -47,8 +47,7 @@ App Dev Guide:
     Gizwits App SDK for iOS:
       path: /AppDev/APICloudSDK.html
     Data Transparent Transmission:
-      path: /AppDev/TransparentTransmission.html
-      
+      path: /AppDev/TransparentTransmission.html      
       
     SDK debug log capture:
       path: /AppDev/SDKLogCapture.html
