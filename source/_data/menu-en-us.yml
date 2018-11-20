@@ -45,7 +45,9 @@ App Dev Guide:
     Android SDK:
       path: /AppDev/AndroidSDKA2.html
     APICloud SDK:
-      path: /AppDev/APICloudWifiSDK.html
+      path: /AppDev/APICloudSDK.html
+      
+      
     Data transparent transmission of SDK:
       path: /AppDev/SDKTransparentTransmission.html
     SDK debug log capture:
