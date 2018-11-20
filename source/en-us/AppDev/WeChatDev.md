@@ -40,7 +40,7 @@ Of course, you can also use a test account for debugging in the early stages of 
 
 Before WeChat access, it is necessary to ensure that the device can normally communicate with Gizwits IoT Cloud. The detailed development flow of the device is as follows.
 
-![WeChat application development](../../../assets/en-us/WechatDev/wechat_02.png)
+![WeChat application development](/assets/en-us/AppDev/WeChatDev/wechat_02.png)
  
 Note that when integrating AirKiss into the Wi-Fi module, you need to configure the original ID of your WeChat Official Account. In other words, in addition to write the product_key of Gizwits into the MCU, it is also necessary to write the original ID of your WeChat Official Account into the Wi-Fi module firmware. Regarding the firmware downloading, if you have difficulties, please seek help from Gizwits Customer Service. 
 
@@ -48,7 +48,7 @@ Note that when integrating AirKiss into the Wi-Fi module, you need to configure 
 
 The WeChat App can add a device by scanning its QR code. To enable devices that have been successfully connected to Gizwits IoT Cloud to be controlled by WeChat App, check the following settings when creating a product on the WeChat Official Accounts Platform. The settings are as follows:
 
-![Device QR code](../../../assets/en-us/WechatDev/wechat_03.png)
+![Device QR code](/assets/en-us/AppDev/WeChatDev/wechat_03.png)
  
 Choose "Wi-Fi" device for the connection type;
 
@@ -64,7 +64,7 @@ The authentication method is to send a request to the WeChat API. For details, s
 
 Many developers share the feedback that their authentication often fails. Here we give a set of examples based on Wi-Fi communication for reference.
 
-![Device authentication](../../../assets/en-us/WechatDev/wechat_04.png)
+![Device authentication](/assets/en-us/AppDev/WeChatDev/wechat_04.png)
  
 Note: The 12 characters of xxxxxxxxxxxx represents the device MAC address, and the id refers to the device ID, which is did of Gizwits. But Gizwits only assign a did value to a device until it comes online, so you cannot predict the value of did in advance. The usual practice is to set both id and MAC to the device MAC address.
 
@@ -82,7 +82,7 @@ Well, to this point, you can reward yourself a little and enjoy the initial achi
 
 Open your WeChat (ensure Wi-Fi network access is in use) and scan your product QR code.
 
-![Primary Achievement](../../../assets/en-us/WechatDev/wechat_05.jpg)
+![Primary Achievement](/assets/en-us/AppDev/WeChatDev/wechat_05.jpg)
  
 There are two buttons below. The green button is for starting WeChat AirKiss, which sends the Wi-Fi SSID and password to the Wi-Fi module of the device.
  
@@ -112,11 +112,11 @@ Now that you have bound the device in WeChat, you want to see the device online 
 
 We use WeChat OpenId as a unique identifier to generate an anonymous user. When do you register the anonymous user? When WeChat binds a device, it will push a device binding event message to our business server. At this time, we will simultaneously complete the registration of anonymous users, as well as the user/device binding operation.
 
-![Device Binding](../../../assets/en-us/WechatDev/wechat_06.jpg)
+![Device Binding](/assets/en-us/AppDev/WeChatDev/wechat_06.jpg)
  
 When WeChat is binding a device, it sends such an event message:
 
-![Device Binding](../../../assets/en-us/WechatDev/wechat_6.5.png)
+![Device Binding](/assets/en-us/AppDev/WeChatDev/wechat_6.5.png)
  
 What we need are OpenID and MAC, and then we call the operation provided by the Java-SDK:
 
@@ -145,11 +145,11 @@ This operation solves two problems at one time: registering an anonymous user an
 
 In which deviceAlias (device alias) and deviceRemark (device notes) can be set with empty string "". gizwitsProductKey is the key of the product you created in the Developer Center.
 
-![Device Binding](../../../assets/en-us/WechatDev/wechat_07.jpg)
+![Device Binding](/assets/en-us/AppDev/WeChatDev/wechat_07.jpg)
  
 The gizwitsProductSecret, which is the secret corresponding to the product, can be found in the product details.
 
-![Device Binding](../../../assets/en-us/WechatDev/wechat_08.jpg)
+![Device Binding](/assets/en-us/AppDev/WeChatDev/wechat_08.jpg)
  
 gizwitsAppId is the ID of the App in Gizwits IoT Cloud. Because a product may be operated by multiple Apps, such as an iOS App, an Android App, a Web App, or even a light App such as WeChat, each of them is considered as a separate App. Therefore, after creating a product, you can also associate one or more Apps for the product. The gizwitsAppId here is the ID of the App that is associated with the product. Note that an App must be associated with the product before it can be used.
 
@@ -194,7 +194,7 @@ The workaround is: Upgrade the nss library in the server environment.
 
 # Control device on Wechat page
 
-![Control device on Wechat page](../../../assets/en-us/WechatDev/wechat_09.png)
+![Control device on Wechat page](/assets/en-us/AppDev/WeChatDev/wechat_09.png)
 
 Well, we have now bound the device and can also know the device online status. But how do we control our device? A good user experience of course depends on interactive pages.
 
@@ -208,7 +208,7 @@ In simple terms, we send an authentication request to WeChat's server. WeChat wi
 
 The most important parameter is “code”. We can obtain OpenId through “code”. Then we print OpenId on the page. 
 
-![Get OpenId](../../../assets/en-us/WechatDev/wechat_10.png)
+![Get OpenId](/assets/en-us/AppDev/WeChatDev/wechat_10.png)
 
 # Web Socket connection
 
@@ -218,7 +218,7 @@ For Gizwits IoT Cloud access with Web Socket API, it’s encapsulated into the J
 
 The first is to create a Gizwits service:
 
-![Initialize Gizwits service](../../../assets/en-us/WechatDev/wechat_11.png)
+![Initialize Gizwits service](/assets/en-us/AppDev/WeChatDev/wechat_11.png)
  
 This Gizwits service will be responsible for all the following operations, including: connecting devices, reading device Data Points, controlling devices, etc.
 
@@ -231,7 +231,7 @@ GizwitsAppId	|String	|The ID of the App with which the Gizwits product is associ
 
 Of course, at this time, the Gizwits service does not run. We also need to initialize it. But before that, we can set a callback function that will execute automatically after the initialization is complete.
 
-![Initialize Gizwits service](../../../assets/en-us/WechatDev/wechat_12.png)
+![Initialize Gizwits service](/assets/en-us/AppDev/WeChatDev/wechat_12.png)
  
 When gizwits.init() is executed, the Gizwits service is initialized and all devices bound to the anonymous user OpenId are inserted into the array variable “devices” of the callback function. 
 
@@ -245,7 +245,7 @@ In the above step, we have obtained a list of devices. In general, a customer ma
 
 # Connect device
 
-![Connect device](../../../assets/en-us/WechatDev/wechat_13.png)
+![Connect device](/assets/en-us/AppDev/WeChatDev/wechat_13.png)
 
 You can connect to the device that you want to operate on by: gizwits.connect(did). Of course, after the connection is successful, there is also a callback function: gizwits.onConnected. This callback function does not have incoming arguments.
 
@@ -255,9 +255,9 @@ Since initializing and connecting devices are not synchronous operations, if you
 
 After the connection is successful, you can receive the data reported by the device. The reported data is passed to the callback function: gizwits.onReceivedAttrs, whose format is as follows:
 
-![Connect device](../../../assets/en-us/WechatDev/wechat_14.png)
+![Connect device](/assets/en-us/AppDev/WeChatDev/wechat_14.png)
 
-![Connect device](../../../assets/en-us/WechatDev/wechat_15.png)
+![Connect device](/assets/en-us/AppDev/WeChatDev/wechat_15.png)
  
 
 # Read device Data Points
