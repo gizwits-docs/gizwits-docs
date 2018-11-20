@@ -40,15 +40,15 @@ App Dev Guide:
       path: /AppDev/VideoTutorials.html 
 
   App SDK Guide:
-    iOS SDK:
+    Gizwits App SDK for Android:
       path: /AppDev/iOSSDKA2.html
-    Android SDK:
+    Gizwits App SDK for iOS:
       path: /AppDev/AndroidSDKA2.html
-    APICloud SDK:
+    Gizwits App SDK for iOS:
       path: /AppDev/APICloudSDK.html
       
       
-    Data transparent transmission of SDK:
+    Data Transparent Transmission:
       path: /AppDev/SDKTransparentTransmission.html
     SDK debug log capture:
       path: /AppDev/SDKLogCapture.html
