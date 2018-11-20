@@ -67,32 +67,32 @@ App Dev Guide:
   App Dev FAQ:
     path: /AppDev/AppDevFAQ.html
     
-    
-    
 
 DeviceDev:
-  Get started with device connection:
-    path: /DeviceDev/DeviceDevIntro.html
-  Gizwits Cloud access:
-    MCU scheme:
-      path: /quickstart/UseMCU.html
-    ESP8266-SoC scheme:
-      path: /DeviceDev/UseSOC.html
-  Module Documents:
-    path: /module_source/module_source.html
-  GAgent Documents:
-    Detailed annotation of GAgent:
-      path: /DeviceDev/gagent_info.html
-    Firmware downloading on modules:
-      path: /DeviceDev/DebugTool.html
+  Get Started with Device Development:
+    path: /DeviceDev/DeviceDevGetStarted.html
+  Device Connection:
+    Standalone MCU Scheme:
+      path: /DeviceDev/MCUScheme.html
+    SoC Scheme:
+      path: /DeviceDev/SoCScheme.html
+  Module Resources:
+    path: /DeviceDev/ModuleResources.html
+  GAgent Guides:
+    GAgent:
+      path: /DeviceDev/GAgent.html
+    Gizwits Serial Port Debugger:
+      path: /DeviceDev/Debug/DebugTool.html
     HF-LPB100:
-      path: /DeviceDev/debug/HF-LPB100.html
+      path: /DeviceDev/Debug/HF-LPB100.html
     HF-LPT120:
-      path: /DeviceDev/debug/HF-LPT120.html
+      path: /DeviceDev/Debug/HF-LPT120.html
     MXCHIP:
-      path: /DeviceDev/debug/MXCHIP.html
+      path: /DeviceDev/Debug/MXCHIP.html
     ESP8266:
-      path: /DeviceDev/debug/ESP8266.html
+      path: /DeviceDev/Debug/ESP8266.html
+    Debug Log Capture:
+      path: /DeviceDev/Debug/DebugLog.html
 
 
 
