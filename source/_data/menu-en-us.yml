@@ -46,10 +46,10 @@ App Dev Guide:
       path: /AppDev/AndroidSDKA2.html
     Gizwits App SDK for iOS:
       path: /AppDev/APICloudSDK.html
-      
-      
     Data Transparent Transmission:
-      path: /AppDev/SDKTransparentTransmission.html
+      path: /AppDev/TransparentTransmission.html
+      
+      
     SDK debug log capture:
       path: /AppDev/SDKLogCapture.html
     SDK error codes:
