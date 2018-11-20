@@ -103,8 +103,22 @@ DeviceDev:
       path: /DeviceDev/PortingUsingSTM32CubeMX.html
     Tailoring MCU SDK to Resource-Limited Platform:
       path: /DeviceDev/TailoringMCUCode.html
-
-
+      
+  GoKits
+    GoKit 3.X Instruction:
+      path: /DeviceDev/GoKit/Gokit3Intro.html
+    GoKit 3.X Hardware Manual:
+      path: /DeviceDev/GoKit/Gokit3Manual.html
+    Get started with Gokit3(S):
+      path: /DeviceDev/GoKit/Gokit3SGetStarted.html
+    Gokit3(S) Instruction:
+      path: /DeviceDev/GoKit/Gokit3SIntro.html
+    Set Up GoKit3(S) Dev Environment:
+      path: /DeviceDev/GoKit/SetupGokit3SDevEnv.html
+    GoKit-SoC Program Exprience:
+      path: /DeviceDev/GoKit/GokitSoCProgram.html
+    GoKit-MCU Program Experience:
+      path: /DeviceDev/GoKit/GokitMCUProgram.html  
 
     
 Cloud API:
