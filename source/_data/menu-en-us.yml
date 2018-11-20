@@ -93,7 +93,16 @@ DeviceDev:
       path: /DeviceDev/Debug/ESP8266.html
     Debug Log Capture:
       path: /DeviceDev/Debug/DebugLog.html
-
+  
+  Gizwits MCU Code Auto-generator:
+    Gizwits MCU Code Auto-generator:
+      path: /DeviceDev/MCUCodeAutoGenerator.html
+    Porting Common Platform Edition of MCU SDK:
+      path: /DeviceDev/PortingCommonPlatform.html
+    Porting Using STM32CubeMX:
+      path: /DeviceDev/PortingUsingSTM32CubeMX.html
+    Tailoring MCU SDK to Resource-Limited Platform:
+      path: /DeviceDev/TailoringMCUCode.html
 
 
 
