@@ -15,7 +15,7 @@ Take an air conditioner as an example. When the air conditioner manufacturer dev
  
 # Create product on Gizwits IoT Cloud
 
-Take "Smart Light" as an example to introduce the entire process of connecting a device to Gizwits IoT Cloud.
+Take "Water Purifier" as an example to introduce the entire process of connecting a device to Gizwits IoT Cloud.
 
 ## 1. Sign up for a Gizwits IoT Cloud developer account
 
@@ -33,7 +33,7 @@ Go to the Developer Center of Gizwits IoT Cloud, and sign up for the developer a
  
 ## 4. Product overview 
 
-The Smart Light product has been successfully created on Gizwits IoT Cloud, which generated the Product Key and Product Secret for the product. The Product Key needs to be written by the developer to the device MCU (device main control board) , which will notify the Wi-Fi/GPRS module when logging into Gizwits IoT Cloud. Gizwits IoT Cloud will identify the product with the Product Key. The Product Secret is used when Apps connecting to Gizwits IoT Cloud.
+The Water Purifier product has been successfully created on Gizwits IoT Cloud, which generated the Product Key and Product Secret for the product. The Product Key needs to be written by the developer to the device MCU (device main control board) , which will notify the Wi-Fi/GPRS module when logging into Gizwits IoT Cloud. Gizwits IoT Cloud will identify the product with the Product Key. The Product Secret is used when Apps connecting to Gizwits IoT Cloud.
 
 ![Gizwits Cloud access for standalone MCU scheme](/assets/en-us/DeviceDev/MCUScheme/15.png)
  
@@ -95,7 +95,7 @@ Xmax = (50+30) / 0.1 = 800
 
 ## 2. Product requirement analysis
 
-The product requirement of "Smart Light" is to synchronize the switch state and color combination of the RGB_LED light to the App, and control the light with the App remotely.
+The product requirement of "Water Purifier" is to synchronize the switch state and color combination of the RGB_LED light to the App, and control the light with the App remotely.
 
 ## 3. Data Points requirement analysis
 
@@ -115,7 +115,7 @@ The product requirement of "Smart Light" is to synchronize the switch state and 
 
 ![Gizwits Cloud access for standalone MCU scheme](/assets/en-us/DeviceDev/MCUScheme/23.png)
 
-# MCU development for Smart Light
+# MCU development for Water Purifier
 
 ## 1. Generate MCU code automatically
 
