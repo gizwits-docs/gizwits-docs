@@ -1,7 +1,6 @@
 title: Guide to device connection for standalone MCU scheme
 ---
 
-Click here to download LED lamp sample code for rapid development of MCU scheme.
 
 # Overview
 
