@@ -209,3 +209,11 @@ GAgent主要的作用是数据转发，是设备数据、机智云、应用端�
  - [接入亚马逊Echo音箱教程](http://docs.gizwits.com/zh-cn/UserManual/echo.html)
  - [实时大数据使用说明](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html)
  - [全球部署方案](http://docs.gizwits.com/zh-cn/UserManual/WorldWideConnectSolution.html)
+ 
+ # 视频教学
+ 机智云自助开发平台接入-2018-中文版
+ https://v.qq.com/x/page/o0758i68nqc.html
+ 
+ 其他视频教学
+ http://docs.gizwits.com/zh-cn/UserManual/hide/videos.html
+ 

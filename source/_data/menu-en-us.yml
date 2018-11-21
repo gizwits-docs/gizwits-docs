@@ -2,13 +2,136 @@ Overview:
   path: /overview/overview.html
 
 
-Quickly:
+
+
+Quick Start:
   Intro in 5 mins:
     path: /quickstart/readme.html
+  Glossary:
+    path: /quickstart/glossary.html
 
+
+
+
+App Dev Guide:
+  App development preparation and guidance:
+    path: /quickstart/AppDevPrepare.html  
+  App code auto-generator:
+    path: /UserManual/devApp.html
+  APP Frame Guide:
+    iOS SDK A2:
+      path: /AppDev/iOSSDKA2.html
+    iOS Push Notification:
+      path: /AppDev/iOSPushNotification.html
+    iOS Auth Re Skin:
+      path: /AppDev/iOSAuthReSkin.html
+    Quick start of iOS App development:
+      path: /AppDev/iosframe.html
+    Android SDK A2:
+      path: /AppDev/AndroidSDKA2.html
+    Android frame:
+      path: /AppDev/androidframe.html  
+    Android Push Notification:
+      path: /AppDev/AndroidPushNotification.html  
+    Quick start of Android App development:
+      path: /quickstart/AndroidAppFrame.html  
+    API Cloud Frame:
+      path: /AppDev/APICloudFrame.html  
+    Video tutorial of the App open source framework:
+      path: /AppDev/VideoTutorial.html 
+
+  App SDK Guide:
+    iOS SDK:
+      path: /AppDev/iOSSDKA2.html
+    Android SDK:
+      path: /AppDev/AndroidSDKA2.html
+    APICloud SDK:
+      path: /AppDev/APICloudWifiSDK.html
+    Data transparent transmission of SDK:
+      path: /AppDev/SDKTransparentTransmission.html
+    SDK debug log capture:
+      path: /AppDev/SDKLogCapture.html
+    SDK error codes:
+      path: /AppDev/sdk_error.html
+      
+  WeChat SDK Guide:
+    path: /WechatDev/WeChatDev.html  
+  WeChat Dev Intro:
+    path: /WechatDev/WechatDevIntro.html  
+
+  More Guide:
+    Gizwits Device Sharing:
+      path: /cloud/SharingSDK.html
+    Application process for third-party authentication:
+      path: /AppDev/third-party.html
+
+  App Dev FAQ:
+    path: /AppDev/AppDevFAQ.html
+    
+    
+    
+
+DeviceDev:
+  Get started with device connection:
+    path: /DeviceDev/DeviceDevIntro.html
+  Gizwits Cloud access:
+    MCU scheme:
+      path: /quickstart/UseMCU.html
+    ESP8266-SoC scheme:
+      path: /DeviceDev/UseSOC.html
+  Module Documents:
+    path: /module_source/module_source.html
+  GAgent Documents:
+    Detailed annotation of GAgent:
+      path: /DeviceDev/gagent_info.html
+    Firmware downloading on modules:
+      path: /DeviceDev/DebugTool.html
+    HF-LPB100:
+      path: /DeviceDev/debug/HF-LPB100.html
+    HF-LPT120:
+      path: /DeviceDev/debug/HF-LPT120.html
+    MXCHIP:
+      path: /DeviceDev/debug/MXCHIP.html
+    ESP8266:
+      path: /DeviceDev/debug/ESP8266.html
+
+
+
+
+    
 Cloud API:
-
+    Open API:
+      path: /cloud/OpenAPI.html
     Enterprise Application Development:
       path: /cloud/ent_dev.html
     Enterprise API:
       path: /cloud/enterprise_api.html
+    Notification API:
+      path: /cloud/NotificationAPI.html      
+    WebsocketAPI:
+      path: /cloud/WebsocketAPI.html
+    API Tutorial:
+      Using Open API to control virtual device with Postman:
+        path: /UserManual/UseOpenAPI.html  
+      Real-time data synchronization demo for SNoti service:
+        path: /UserManual/UseSNoti.html 
+      Control device using WebSocket:
+        path: /UserManual/UseWebsocket.html
+      Aggregation API Guide:
+        path: /UserManual/DataAPI.html 
+      Device Linkage API Tutorial:
+        path: /UserManual/LinkageAPI.html   
+      Device Grouping API Tutorial:
+        path: /UserManual/devgroup_API.html       
+      Generating device QR code for App binding:
+        path: /UserManual/UseQRCode.html    
+    Cloud FAQ:
+      path: /cloud/CloudFAQ.html     
+      
+User Manual:  
+      Gizwits and ST Make IoT Development Easy:
+        path: /UserManual/ST_IoT.html
+
+
+
+

@@ -318,7 +318,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 | birthday     | string  | 生日，日期格式：YYYY-MM-DD or MM-DD |
 | address      | string  | 地址                                |
 | lang         | string  | 语言版本en, zh-cn                   |
-| remar        | string  | 备注                                |
+| remark        | string  | 备注                                |
 | uid          | string  | 用户唯一id                          |
 | is_anonymous | boolean | 是否匿名用户                        |
 
@@ -373,7 +373,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 | birthday                 | string |  否  | body     | 生日，日期格式：YYYY-MM-DD or MM-DD |
 | address                  | string |  否  | body     | 地址                                |
 | lang                     | string |  否  | body     | 语言版本en, zh-cn                   |
-| remar                    | string |  否  | body     | 备注                                |
+| remark                    | string |  否  | body     | 备注                                |
 
 
 
@@ -1159,7 +1159,6 @@ Owner 解除 Guest 用户对设备的绑定关系
 
 API 调用限制
 * AppID 和 product_key 关联
-* AppID 为超级 AppID
 
 请求地址及方式
 
