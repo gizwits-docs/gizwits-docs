@@ -104,7 +104,7 @@ DeviceDev:
     Tailoring MCU SDK to Resource-Limited Platform:
       path: /DeviceDev/TailoringMCUCode.html
       
-  GoKits
+  GoKits:
     GoKit 3.X Instruction:
       path: /DeviceDev/GoKit/Gokit3Intro.html
     GoKit 3.X Hardware Manual:
