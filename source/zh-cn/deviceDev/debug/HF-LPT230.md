@@ -25,12 +25,13 @@ title: 机智云GAgent For HF-LPT230串口烧写说明
 ![设备连接](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_10.png)
 
 ## 4. 串口设置
-### 4.1 确认串口参数
+
+## 4.1 确认串口参数
 将上述串口连接电脑后，通过“我的电脑”->“管理”-> “设备管理器”->“端口（COM 和LPT）”选项中可以看到相应增加的COM口。
 
 ![确认串口参数](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_2.png)
 
-### 4.2 下载串口工具SecureCRT
+## 4.2 下载串口工具SecureCRT
 
 下载地址：[http://pan.baidu.com/s/1dECLxYD](http://pan.baidu.com/s/1dECLxYD)
 
