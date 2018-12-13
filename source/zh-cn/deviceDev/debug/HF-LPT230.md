@@ -26,12 +26,12 @@ title: 机智云GAgent For HF-LPT230串口烧写说明
 
 ## 4. 串口设置
 
-## 4.1 确认串口参数
+### 4.1 确认串口参数
 将上述串口连接电脑后，通过“我的电脑”->“管理”-> “设备管理器”->“端口（COM 和LPT）”选项中可以看到相应增加的COM口。
 
 ![确认串口参数](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_2.png)
 
-## 4.2 下载串口工具SecureCRT
+### 4.2 下载串口工具SecureCRT
 
 下载地址：[http://pan.baidu.com/s/1dECLxYD](http://pan.baidu.com/s/1dECLxYD)
 
@@ -50,7 +50,7 @@ title: 机智云GAgent For HF-LPT230串口烧写说明
 ![串口工具SecureCRT](/assets/zh-cn/deviceDev/debug/LPT230/LPT230programming_5.png)
 
 ## 5. 烧写操作
-  ## 5.1 进入烧写模式 
+### 5.1 进入烧写模式 
 
 当串口连接成功之后，将HF-LPT230的nReload接入低电平（按下第3节原理图所示的S2），然后进行复位（按下第3节原理图所示的S1后松开）或者给模块重新上电后迅速连续单击键盘空格键，
 将会出现如下信息表示模块进入烧写模式，松开S2。
@@ -67,7 +67,7 @@ title: 机智云GAgent For HF-LPT230串口烧写说明
 |命令‘S’	|升级应用程序；SDK等编译出来文件（需使用串口方式的升级文件）的用此选项升级。|
 |命令‘G’|	执行应用程序。|
 
-## 5.2 进行烧写
+### 5.2 进行烧写
 
 输入“S”升级应用程序，再输入“Y”进入接收固件状态。
 
