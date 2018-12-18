@@ -23,6 +23,8 @@ title: 模块硬件资料
 
 [HFLPT220 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPT220.html)
 
+[HFLPT230 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPT230.html)
+
 ## 2.GPRS模块的Datasheet，硬件介绍
 
 - ### 广和通模块系列
