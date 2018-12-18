@@ -1,4 +1,4 @@
-title: HF-LPT120_datasheet_cn
+title: HF-LPT230_datasheet_cn
 ---
 
 # 1.产品特点
