@@ -93,6 +93,8 @@
       path: /deviceDev/MXCHIP串口烧写说明.html
     ESP8266串口烧写说明:
       path: /deviceDev/ESP8266串口烧写说明.html
+    ESP-WROOM-02D串口烧写说明:
+      path: /deviceDev/ESP-WROOM-02Duart.html
     广和通G510模组烧写方法:
       path: /deviceDev/debug/G510.html
     通讯模组调试日志抓取教程:
