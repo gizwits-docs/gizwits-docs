@@ -32,7 +32,7 @@ title: HF-LPT120_datasheet_cn
 
 # I. 附录 - 资源
 
-##### • [HF-LPT230_datasheet_cn下载](http://docs.gizwits.com/assets/pdf/HF-LPX30 User Manual.rar)
+##### • [HF-LPT230_datasheet_cn下载](http://docs.gizwits.com/assets/pdf/LPT230/HF-LPX30_User_Manual.rar)
 
 ##### • [HF-LPB120/HF-LPT230串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT230.html)
 
