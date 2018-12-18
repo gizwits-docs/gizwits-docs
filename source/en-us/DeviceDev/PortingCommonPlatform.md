@@ -18,7 +18,7 @@ This document will focus on the porting to the Common Platform Edition of MCU SD
 
 After defining a product in Gizwits IoT Cloud, click "MCU Development" in the left navigation pane, and choose the standalone MCU scheme for the hardware scheme. In the hardware platform drop-down list, select Other platforms. Then click "Generate Code" and wait to download the generated code package.
 
-![Porting instructions](../../../assets/en-us/DeviceDev/DevSDK/common/11.png)
+![Porting instructions](/assets/en-us/DeviceDev/MCUCode/MCUSDK/11.png)
 
 After downloading the code package, unpack it.
  
@@ -34,7 +34,7 @@ C. The platform supports at least 2K RAM (the ring buffer size can be adjusted t
 
 Note: Set the ring buffer here: Gizwits\gizwits_protocol.h
 
-![Porting instructions](../../../assets/en-us/DeviceDev/DevSDK/common/12.png)
+![Porting instructions](/assets/en-us/DeviceDev/MCUCode/MCUSDK/12.png)
 
 In the above code snippet, MAX_PACKAGE_LEN = 950, that is, the size of the ring buffer is 950*2 = 1900 bytes. Here you can adjust the RAM usage of the program.
 
@@ -108,7 +108,7 @@ They are related to the Data Points. This version of the code will print the rel
 
 Gizwits MCU Code Auto-Generator has produced the corresponding Gizwits serial protocol layer code according to the user-defined product Data Points, and you need to port the code into your own project to complete the device connection as shown below:
 
-![Porting instructions](../../../assets/en-us/DeviceDev/DevSDK/common/13.png)
+![Porting instructions](/assets/en-us/DeviceDev/MCUCode/MCUSDK/13.png)
 
 The protocol logic and the main program flow in the green blocks of the above figure have been implemented for you. The blocks marked with the yellow text in the figure is to be implemented. The porting process is composed of the following steps:
 
@@ -504,5 +504,5 @@ Website: http://www.gizwits.com/about-us
 
 WeChat Official Account QR code of Gizwits:
 
-![Porting instructions](../../../assets/en-us/DeviceDev/DevSDK/common/14.png) 
+![Porting instructions](/assets/en-us/DeviceDev/MCUCode/MCUSDK/14.png) 
 
