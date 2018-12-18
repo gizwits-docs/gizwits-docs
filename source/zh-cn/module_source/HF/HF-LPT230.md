@@ -25,9 +25,9 @@ title: HF-LPT120_datasheet_cn
 
 # 2.产品参数
 
-![name](/assets/zh-cn/dmodule_source/HF/LPT230/LPT230datasheet_1.png)
+![图](http://docs.gizwits.com/assets/zh-cn/module_source/HF/LPT230/LPT230datasheet_1.png)
 
-![name](/assets/zh-cn/dmodule_source/HF/LPT230/LPT230datasheet_2.png)
+![图](http://docs.gizwits.com/assets/zh-cn/module_source/HF/LPT230/LPT230datasheet_2.png)
 
 
 # I. 附录 - 资源
