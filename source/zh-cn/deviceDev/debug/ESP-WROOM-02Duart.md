@@ -1,16 +1,16 @@
-title: ESP-EROOM-02D串口烧写说明
+title: ESP-WROOM-02D串口烧写说明
 ---
 
 # 概述
 
-本文针对乐鑫ESP-EROOM-02D模块进行串口模式烧写流程整理了一篇操作流程。**合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。**
+本文针对乐鑫ESP-WROOM-02D模块进行串口模式烧写流程整理了一篇操作流程。**合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。**
 
 # 操作流程
 
-## 1.下载ESP-EROOM-02D对应的固件
+## 1.下载ESP-WROOM-02D对应的固件
 
-ESP-EROOM-02D GAgent固件下载地址：https://download.gizwits.com/zh-cn/p/92/94
-由于ESP-EROOM-02D与ESP8266的CPU相同，所以下载ESP8266的GAgent固件可适用于ESP-EROOM-02D。 
+ESP-WROOM-02D GAgent固件下载地址：https://download.gizwits.com/zh-cn/p/92/94
+由于ESP-WROOM-02D与ESP8266的CPU相同，所以下载ESP8266的GAgent固件可适用于ESP-WROOM-02D。 
  ![name](/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_1.png)
 
  ![name](/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_2.png)
@@ -21,11 +21,11 @@ ESP-EROOM-02D GAgent固件下载地址：https://download.gizwits.com/zh-cn/p/92
  
  ![name](/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_4.png)
 
-如图所示.bin文件为我们所需要的固件，由于ESP-EROO-02DM模组的flash是2MB的，使用机智云官网乐鑫8266固件的16Mbit固件。如图所示bin文件为我们所需要的固件。
+如图所示.bin文件为我们所需要的固件，由于ESP-WROOM-02DM模组的flash是2MB的，使用机智云官网乐鑫8266固件的16Mbit固件。如图所示bin文件为我们所需要的固件。
 
 ## 3.设备连接 
 
-将ESP-EROOM-02D模块按照如下原理图进行接线，注意GPIO0（7号管脚）需要输入低电平，本实验直接接地处理，KEY1实现外部复位功能。
+将ESP-WROOM-02D模块按照如下原理图进行接线，注意GPIO0（7号管脚）需要输入低电平，本实验直接接地处理，KEY1实现外部复位功能。
   ![name](/assets/zh-cn/deviceDev/debug/ESP-EROOM-02D/ESPEROOMprogramming_5.png)
 
 **上图为烧录固件简易原理图，在产品中实际搭建线路时，请参考官方提供线路图，如下所示：**
