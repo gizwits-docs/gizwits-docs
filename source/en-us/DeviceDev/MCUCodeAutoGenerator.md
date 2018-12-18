@@ -30,24 +30,24 @@ In addition to supporting the STM32 platform, the standalone MCU scheme can also
 
 Go to Gizwits Developer Center: http://dev.gizwits.com/
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/11.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/11.png)
 
 Click “Create a new product” button at the top right corner of the Developer Center to create a new product.
 Type the corresponding product information and click "Save".
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/12.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/12.png)
  
 ## 2. Create Data Points
 
 Add corresponding Data Points for the product.
  
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/13.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/13.png)
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/14.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/14.png)
  
 Click “Apply” after adding Data Points.
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/15.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/15.png)
  
 ## 3. Generate code for the target platform 
 
@@ -59,26 +59,26 @@ After defining Data Points, click "MCU Development" in the left navigation pane 
 
 Note: If the MCU used is another MCU chip, please select the "Other Platforms" option, and then port the generated code package to the platform used. For details, see Guide to porting Common Platform Edition of MCU SDK.
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/16.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/16.png)
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/17.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/17.png)
  
  
 ### 3.2 Generate code for the SoC scheme
 
 After defining Data Points, click "MCU Development" in the left navigation pane (Assume that the SoC used is ESP8266) and choose the SoC scheme for the hardware scheme. In the hardware platform drop-down list, select esp8266. Then click "Generate Code" and wait to download the generated code package.  
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/18.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/18.png)
  
 After downloading the code package, unpack it.
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/19.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/19.png)
  
 # Explanation of the generated code
 
 ## 1. STM32 platform
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/20.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/20.png)
 
 The following table is the description of key code files.
 
@@ -91,7 +91,7 @@ gizwits_protocol.h	|This file is the header file of gizwits_protocol.c, which co
 
 ## 2. ESP8266 platform
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/21.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/21.png)
 
 The following table is the description of key code files.
 
@@ -112,7 +112,7 @@ The Gizwits IoT Cloud generates the platform-specific (STM32, ESP8266 etc.) code
 
 The code framework is shown below:
 
-![MCU Code Auto-Generator](../../../../assets/en-us/DeviceDev/DevSDK/tool/22.png)
+![MCU Code Auto-Generator](/assets/en-us/DeviceDev/MCUCode/AutoCode/22.png)
 
 The functional blocks that need to be implemented are:
 * Downstream processing: For example, LED light switch, motor speed control, etc.
