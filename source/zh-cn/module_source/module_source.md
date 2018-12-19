@@ -40,6 +40,10 @@ title: 模块硬件资料
 
 [TinyCon3350-M26 Datasheet](http://docs.gizwits.com/zh-cn/module_source/TinyCon3350-M26/TinyCon3350-M26.html)
 
+- ### 合宙模块系列
+
+
+
 # 二、模块资源
 
 - ### 乐鑫模块系列
@@ -99,3 +103,5 @@ title: 模块硬件资料
 获取锐凌微TinyCon3350-M26 Gagent日志（近期推出）
 
 [GAgent for 锐凌微 TinyCon3350-M26 04020018](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_0GRLWM26_04020018_2017022011.bin)
+
+- ### 合宙模块系列
