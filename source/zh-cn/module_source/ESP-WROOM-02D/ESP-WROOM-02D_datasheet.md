@@ -94,3 +94,11 @@ title: ESP-WROOM-02D_datasheet_cn
 # 6. 封装信息
 
 ![封装图形 ](http://docs.gizwits.com/assets/zh-cn/module_source/ESP-WROOM-02D/datasheet_17.png)
+
+# I. 附录 - 资源
+
+##### • [ESP-WROOM-02D串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/ESP-WROOM-02Duart.html)
+
+##### • [获取乐鑫ESP-WROOM-02D日志（教程中“2.获取乐鑫ESP-WROOM-02D Gagent日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
+
+##### • [GAgent for ESP8266 04020034下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020034-1529147544607.rar)
