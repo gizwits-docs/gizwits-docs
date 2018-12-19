@@ -42,7 +42,7 @@ title: 模块硬件资料
 
 - ### 合宙模块系列
 
-[Air202_hardware_design](http://docs.gizwits.com/assets/pdf/HZ/Air202_hardware_design.pdf)
+[Air202_hardware_design](http://gizwits-docs/assets/pdf/HZ/Air202_hardware_design.pdf)
 
 
 # 二、模块资源
