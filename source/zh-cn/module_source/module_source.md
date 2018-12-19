@@ -44,11 +44,21 @@ title: 模块硬件资料
 
 - ### 乐鑫模块系列
 
+#### 1.ESP8266
+
 [ESP8266串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
 
 [获取乐鑫ESP 8266 Gagent日志](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html#1-获取乐鑫ESP-8266-Gagent日志)
 
 [GAgent for ESP8266 04020025下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020025_17083019-1504231974149.tar)
+
+#### 2.ESP-WROOM-02D
+
+[ESP-WROOM-02D串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/ESP-WROOM-02Duart.html)
+
+[获取乐鑫ESP-WROOM-02D日志（教程中“2.获取乐鑫ESP-WROOM-02D Gagent日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
+
+[GAgent for ESP8266 04020034下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020034-1529147544607.rar)
 
 - ### 汉枫模块系列
 
