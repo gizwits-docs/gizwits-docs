@@ -13,6 +13,9 @@ title: 模块硬件资料
 
 [esp8266-12s Datasheet](http://docs.gizwits.com/zh-cn/module_source/esp8266/esp8266_datasheet.html)
 
+[ESP-WROOM-02D Datasheet](http://docs.gizwits.com/zh-cn/module_source/ESP-WROOM-02D/ESP-WROOM-02D_datasheet.html)
+
+
 - ### 汉枫模块系列
 
 [HFLPB100 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPB100.html)
@@ -24,6 +27,7 @@ title: 模块硬件资料
 [HFLPT220 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPT220.html)
 
 [HFLPT230 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPT230.html)
+
 
 ## 2.GPRS模块的Datasheet，硬件介绍
 
