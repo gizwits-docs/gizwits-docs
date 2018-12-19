@@ -39,9 +39,9 @@ title: ESP-WROOM-02D_datasheet_cn
 ### 3.2.1. 内置SRAM和RAM
 
 #### ESP8266EX 芯⽚片⾃自身内置了了存储控制器器和存储单元，包括 ROM 和 SRAM。MCU 可以通过 iBus、dBus 和 AHB 接⼝口访问存储单元。这些接⼝口都可以根据要求访问存储单元。存储仲裁器器以到达顺序确定运⾏行行顺序。
-####基于⽬目前我司 Demo SDK 的使⽤用 SRAM 情况，⽤用户可⽤用剩余 SRAM 空间为：
-####•RAM < 50 kB（Station 模式下，连上路路由后，Heap + Data 区⼤大致可⽤用 50 kB 左右）。
-####•⽬目前 ESP8266EX ⽚片上没有可编程 ROM，⽤用户程序存放在 SPI flash 中。
+#### 基于⽬目前我司 Demo SDK 的使⽤用 SRAM 情况，⽤用户可⽤用剩余 SRAM 空间为：
+#### •RAM < 50 kB（Station 模式下，连上路路由后，Heap + Data 区⼤大致可⽤用 50 kB 左右）。
+#### •⽬目前 ESP8266EX ⽚片上没有可编程 ROM，⽤用户程序存放在 SPI flash 中。
 
 ### 3.2.2. SPI Flash
 
@@ -51,14 +51,14 @@ title: ESP-WROOM-02D_datasheet_cn
 #### ESP-WROOM-02D 和 ESP-WROOM-02U 使⽤用 26 MHz 晶振。选⽤用的晶振⾃自身精度需在±10  PPM。使⽤用时请注意在下载⼯工具中选择对应晶体类型。晶振输⼊入输出所加的对地调节电容 C1、C2 可不不设为固定值，该值范围在 6 pF ~ 22 pF，具体值需要通过对系统测试后进⾏行行调节确定。基于⽬目前市场中主流晶振的情况，⼀一般 26 MHz 晶振的输⼊入输出所加电容C1、C2 在 10 pF 以内。
 
 ## 3.4. 接口说明
-####接口说面如表3-1所示
+#### 接口说面如表3-1所示
 
 ![接口说明 ](http://docs.gizwits.com/assets/zh-cn/module_source/ESP-WROOM-02D/datasheet_7.png)
 
 ![接口说明 ](http://docs.gizwits.com/assets/zh-cn/module_source/ESP-WROOM-02D/datasheet_8.png)
 
 # 4. 电气参数
-####说明：如⽆无特殊说明，测试条件为：VDD = 3.3V，温度为 25°C。
+#### 说明：如⽆无特殊说明，测试条件为：VDD = 3.3V，温度为 25°C。
 
 ## 4.1. 电气特性
 
@@ -71,7 +71,7 @@ title: ESP-WROOM-02D_datasheet_cn
 ![射频参数 ](http://docs.gizwits.com/assets/zh-cn/module_source/ESP-WROOM-02D/datasheet_11.png)
 
 ## 4.3. 功耗
-####下列列功耗数据是基于 3.3V 的电源、25°C 的周围温度，并使⽤用内部稳压器器测得。所有发射数据是基于 50% 的占空⽐比，在持续发射的模式下测得的。
+#### 下列列功耗数据是基于 3.3V 的电源、25°C 的周围温度，并使⽤用内部稳压器器测得。所有发射数据是基于 50% 的占空⽐比，在持续发射的模式下测得的。
 
 ![功耗 ](http://docs.gizwits.com/assets/zh-cn/module_source/ESP-WROOM-02D/datasheet_12.png)
 
@@ -89,7 +89,7 @@ title: ESP-WROOM-02D_datasheet_cn
 
 ![外围设计原理图 ](http://docs.gizwits.com/assets/zh-cn/module_source/ESP-WROOM-02D/datasheet_16.png)
 
-####说明：ESP-WROOM-02D 和 ESP-WROOM-02U 的管脚 19，可以不不焊接到底板。若⽤用户将该管脚焊接到底板，请确保使⽤用适量量的焊锡膏。
+#### 说明：ESP-WROOM-02D 和 ESP-WROOM-02U 的管脚 19，可以不不焊接到底板。若⽤用户将该管脚焊接到底板，请确保使⽤用适量量的焊锡膏。
 
 # 6. 封装信息
 
