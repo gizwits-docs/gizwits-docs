@@ -42,6 +42,7 @@ title: 模块硬件资料
 
 - ### 合宙模块系列
 
+[Air202_hardware_design](http://docs.gizwits.com/assets/pdf/HZ/Air202_hardware_design.pdf)
 
 
 # 二、模块资源
@@ -105,3 +106,7 @@ title: 模块硬件资料
 [GAgent for 锐凌微 TinyCon3350-M26 04020018](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_0GRLWM26_04020018_2017022011.bin)
 
 - ### 合宙模块系列
+
+[合宙Air202模组串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/Air202.html)
+
+[获取合宙Air202日志（教程中“7.获取合宙Air202 日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
