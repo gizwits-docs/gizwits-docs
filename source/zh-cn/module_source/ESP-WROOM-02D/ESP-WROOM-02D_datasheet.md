@@ -102,3 +102,5 @@ title: ESP-WROOM-02D_datasheet_cn
 ##### • [获取乐鑫ESP-WROOM-02D日志（教程中“2.获取乐鑫ESP-WROOM-02D Gagent日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
 
 ##### • [GAgent for ESP8266 04020034下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020034-1529147544607.rar)
+
+##### • [esp-wroom-02d_esp-wroom-02u_datasheet_cn](http://docs.gizwits.com/assets/pdf/ESP-WROOM-02D/esp-wroom-02d_esp-wroom-02u_datasheet_cn.pdf)
