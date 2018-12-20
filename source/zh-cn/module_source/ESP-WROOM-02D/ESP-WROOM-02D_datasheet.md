@@ -95,6 +95,8 @@ title: ESP-WROOM-02D_datasheet_cn
 
 ![封装图形 ](http://docs.gizwits.com/assets/zh-cn/module_source/ESP-WROOM-02D/datasheet_17.png)
 
+####图6-1 ESP-WROOM-02D PCB 封装图形
+
 # I. 附录 - 资源
 
 ##### • [ESP-WROOM-02D串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/ESP-WROOM-02Duart.html)
