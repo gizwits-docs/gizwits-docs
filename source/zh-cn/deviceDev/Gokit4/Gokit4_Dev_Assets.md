@@ -1,7 +1,7 @@
 title: 机智云GoKit4（G） SoC环境搭建教程及开发指南
 ---
 
-### 开发工具包
+## 开发工具包
 
 网盘下载开发环境所需安装包：
 
@@ -22,11 +22,11 @@ title: 机智云GoKit4（G） SoC环境搭建教程及开发指南
 | 9    | QFlash_V4.3.1                            | 底包烧录工具           |
 | 10   | BG96MAR03A03M1G                          | Gokit4底包             |
 
-### 1、交叉编译链
+## 1、交叉编译链
 
 简单，解压移远模组交叉编译工具4.0.3.zip文件至D盘根目录（注意此目录顶级目录是4.0.3）
 
-### 2、Python环境及QFLOG
+## 2、Python环境及QFLOG
 
 1、python-2.7.amd64.msi“傻瓜式”安装，你懂得，默认路径一直下一步就好啦，注意python和交叉编译链的路径很重要，windows下编译源码的时候在批处理文件已经指定了默认路径。（编译时用python-2.7）
 
@@ -44,7 +44,7 @@ python setup.py install
 
 4、将QFLOG文件夹移植到D盘根目录下，修改D:\QFLOG\src\QFLOGPackage\env_qflog.bat文件，修改变量QFLOG_PYTHON_PATH的值，改为自己的python36的绝对路径，保存。
 
-### 3、USB驱动安装
+## 3、USB驱动安装
 
 解压Quectel_BG96_Windows_USB_Driver_V1.0后点击setup.exe安装，貌似也不用多说，下一步就好。安装过程中遇到错误如下，忽略就好。
 
@@ -58,7 +58,7 @@ python setup.py install
 
 ![设备管理器查看串口](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/设备管理器查看串口.png)
 
-### 4、底包烧录
+## 4、底包烧录
 
 4.1 解压QFlash_V4.3.1到英文路径下
 
@@ -70,7 +70,7 @@ python setup.py install
 
 ![QFlashsldbt](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/QFlashsldbt.png)
 
-### 5、AT切换NB模式
+## 5、AT切换NB模式
 
 5.1 Gokit4数据线插到转接板上，并检查设备管理器AT Port
 
@@ -90,7 +90,7 @@ at+csq;+qnwinfo;+cereg?;
 
 ![ATForNB](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/ATForNB.png)
 
-### 6、编码及编译
+## 6、编码及编译
 
 ​借助机智云自助开发平台，开发者可以快速实现产品设计、开发、调试、发布的完整流程，请先阅读http://docs.gizwits.com/zh-cn/quickstart/README.html 五分钟了解机智云自助开发平台。
 
@@ -108,7 +108,7 @@ at+csq;+qnwinfo;+cereg?;
 
 ![目标文件输出](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/目标文件输出.png)
 
-### 7、固件下载
+## 7、固件下载
 
 7.1  将上一步编译后生成的目标文件gagent_app.bin和oem_app_path.ini文件拷贝到D:\QFLOG\src\QFLOGPackage\目录下
 
@@ -138,17 +138,17 @@ AT+QCFGEXT="qflogen",1
 
 ![运行接USB](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/运行接USB.png)
 
-### 8、查看日志调试代码
+## 8、查看日志调试代码
 
 连接电脑，在设备管理器下看自己的端口号，打开串口工具，观察日志，注意波特率是115200，非十六进制显示
 
 ![观察日志](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/观察日志.png)
 
-### 9、在个人账户下查看设备在线情况
+## 9、在个人账户下查看设备在线情况
 
 ![查看设备IMEI](/assets/zh-cn/deviceDev/Gokit4/Gokit4_Dev_Assets/查看设备IMEI.png)
 
-### 10、APP绑定设备并实现控制
+## 10、APP绑定设备并实现控制
 
 10.1 打开机智云串口调试助手，依次点击小工具->二维码生成->输入Product Key和IMEI->获取二维码
 
