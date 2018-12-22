@@ -73,8 +73,8 @@ The Gizwits IoT Cloud provides developers with self-service smart hardware devel
 
 ## Five Minutes to Understand Gizwits
 
-* [Quick start with Gizwits IoT Cloud](../quickstart/GizwitsQuickStart.md)
-* [Terms and Definitions](../quickstart/glossary.md)
+* [Quick start with Gizwits IoT Cloud](http://docs.gizwits.com/en-us/quickstart/GizwitsQuickStart.html)
+* [Terms and Definitions](http://docs.gizwits.com/en-us/quickstart/glossary.html)
 
 ## Device Connection
 
@@ -86,31 +86,31 @@ Gizwits provides the Gizwits App SDKs, Gizwits App Framework, and WeChat SDK to 
 
 ## 1. Get started with App development
 
-[Get started with App development](../quickstart/AppDevGetStarted.md)
+[Get started with App development](http://docs.gizwits.com/en-us/AppDev/AppDevGetStarted.html)
 
 ## 2. Gizwits App Code Auto-Generator
 
-[Gizwits App Code Auto-Generator](../UserManual/AppCodeAutoGenerator.md)
+[Gizwits App Code Auto-Generator](http://docs.gizwits.com/en-us/AppDev/AppCodeAutoGenerator.html)
 
 ## 3. Gizwits App Frameworks
 
-* [Gizwits App Framework for iOS](../AppDev/iOSFramework.md)
-* [Push notification integration for iOS App](../AppDev/iOSPushNotification.md)
-* [Third-party authentication and re-skin for iOS App](../AppDev/iOSAuthReSkin.md)
-* [Quick start with iOS App development](../quickstart/iOSDevQuickStart.md)
-* [Gizwits App Framework for Android](../AppDev/AndroidFramework.md)
-* [Push notification integration for Android App](../AppDev/AndroidPushNotification.md)
-* [Third-party authentication and re-skin for Android](../AppDev/AndroidAuthReSkin.md)
-* [Quick start with Android App development](../quickstart/AndroidDevQuickStart.md)
-* [Gizwits App Framework for APICloud](../AppDev/APICloudFramework.md)
+* [Gizwits App Framework for iOS](http://docs.gizwits.com/en-us/AppDev/iOSFramework.html)
+* [Push notification integration for iOS App](http://docs.gizwits.com/en-us/AppDev/iOSPushNotification.html)
+* [Guide to third-party authentication and re-skin for iOS APP](http://docs.gizwits.com/en-us/AppDev/iOSAuthReSkin.html)
+* [Quick start with iOS App development](http://docs.gizwits.com/en-us/AppDev/iOSDevQuickStart.html)
+* [Gizwits App Framework for Android](http://docs.gizwits.com/en-us/AppDev/AndroidFramework.html)
+* [Guide to push notification integration for Android APP](http://docs.gizwits.com/en-us/AppDev/AndroidPushNotification.html)
+* [Guide to third-party authentication and re-skin for Android](http://docs.gizwits.com/en-us/AppDev/AndroidAuthReSkin.html)
+* [Quick start with Android App development](http://docs.gizwits.com/en-us/AppDev/AndroidDevQuickStart.html)
+* [Guide to Gizwits App Framework for APICloud](http://docs.gizwits.com/en-us/AppDev/APICloudFramework.html)
 
 ## 4. Gizwits App SDKs
 
 Gizwits App SDKs facilitate developers to rapidly complete App development. You only need to focus on the App UI and UE design, while relatively complex protocols and error handling can be ignored.
 
-* [Gizwits App SDK for Android](../AppDev/AndroidSDKA2.md)
-* [Gizwits App SDK for iOS](../AppDev/iOSSDKA2.md)
-* [Gizwits App SDK for APICloud](../AppDev/APICloudSDK.md)
+* [Gizwits App SDK for Android](http://docs.gizwits.com/en-us/AppDev/AndroidSDKA2.html)
+* [Gizwits App SDK for iOS](http://docs.gizwits.com/en-us/AppDev/iOSSDKA2.html)
+* [Gizwits App SDK for APICloud](http://docs.gizwits.com/en-us/AppDev/APICloudSDK.html)
 
 ## 5. More guides for App development
 
