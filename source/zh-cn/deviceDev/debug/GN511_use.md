@@ -9,13 +9,13 @@ title: GN511使用说明
 
 ## 1. 在机智云创建新产品，定义数据点，添加设备
 
-#### 4.1 创建新产品
+#### 1.1 创建新产品
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_1.png)
  
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_2.png)
 
-#### 4.2 定义数据点
+#### 1.2 定义数据点
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_3.png)
  
@@ -23,7 +23,7 @@ title: GN511使用说明
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_5.png)
 
-#### 4.3 添加设备
+#### 1.3 添加设备
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_6.png)
 
@@ -46,6 +46,7 @@ title: GN511使用说明
 #### MCU 无外部晶振，必须使用内部时钟 HSI。 
 #### STM32 的部分 IO 口默认主功能是 JLINK 的功能管脚，需要将关闭 JTAG-DP，启动SW-DP 才可以控制该 IO 口，例如本硬件中用到的 PB3 和 PB4. 
 ##### 注：寄存器控制配置方式: 
+
 RCC->APB2ENR|=0x1D; //使能 ABC IO 口时钟 开启辅助时钟 
 
 AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
@@ -54,13 +55,13 @@ AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
 
 ## 4. mcu控制N256的上电和掉电、开机和关机
 
-#### N256 上电
+#### 4.1 N256 上电
 #### N256 默认不得电，需要通过 MCU 的 PB0(NB_PWR)来控制得电。
  i. PB0(NB_PWR)=1，N256 上电。 
  
  ii. PB0(NB_PWR)=0，N256 掉电。
 
-#### N256 开机
+#### 4.2 N256 开机
 ###### a) MCU 需要先通过 PB0(NB_PWR)=1 给 N256 上电。 
 ###### b) 等 N256 电压稳定后 MCU 再通过 PB1(NB_PKEY)来控制 N256 开机或关机。 
 ###### c) PB1(NB_PKEY)的电平逻辑和 N256 的 PWRKEY 的电平逻辑是非门 
@@ -83,7 +84,8 @@ AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_11.png)
 
-#### 生成设备绑定二维码后，我们可以下载机智云IOE DEMO APP扫码绑定设备（APP下载地址https://download.gizwits.com/zh-cn/p/98/99）
+#### 生成设备绑定二维码后，我们可以下载机智云IOE DEMO APP扫码绑定设备
+（APP下载地址https://download.gizwits.com/zh-cn/p/98/99）
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_12.png)
 
