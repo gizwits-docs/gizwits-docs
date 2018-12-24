@@ -89,8 +89,6 @@ title: 8051平台最小资源裁剪说明
 
 ![15](/assets/zh-cn/deviceDev/8051/25.png)
 
-![img](file:///D:/Gizwits_Work/%E6%96%87%E6%A1%A3%E7%9B%B8%E5%85%B3/8051%E5%B9%B3%E5%8F%B0%E6%9C%80%E5%B0%8F%E8%B5%84%E6%BA%90%E8%A3%81%E5%89%AA%E8%AF%B4%E6%98%8E/15.png?lastModify=1511148170?lastModify=1511148250)
-
 ![15](/assets/zh-cn/deviceDev/8051/24.png)
 
 - 屏蔽控制型事件处理相关代码：

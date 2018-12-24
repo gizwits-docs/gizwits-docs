@@ -1,15 +1,15 @@
-title: Guide of SDK debug log capture
+title: Get Gizwits App SDK debug log
 ---
 
 # Overview
 
-This document describes how to get the debug log of the SDK.
+This document describes how to get the debug log of Gizwits App SDKs.
 
-When using the Gizwits SDK for debugging, if there are some unknown errors, you can get and provide the corresponding log information to the Gizwits technical team to do trouble shooting.
+When debugging with Gizwits App SDKs, if there are some unknown errors, you can get and provide the corresponding log information to the Gizwits technical team to do trouble shooting.
 
-# How to get the App SDK log
+# How to get the Gizwits App SDK log
 
-## 1. Get Android App SDK log
+## 1. Gizwits App SDK for Android
 
 The following steps take the Samsung Galaxy Note3 Lite 4G as an example.
 
@@ -17,7 +17,7 @@ Step 1: Integrate our SDK on Android phones and refer to the initialization proc
 
 http://docs.gizwits.com/hc/kb/article/175453/ 
 
-After launching our SDK correctly, the SDK will output all the log information to the debug terminal and log file by default. If the phone has an SD card, the log file will be saved on the SD card. If there is no SD card, it will only be saved in the application path.
+After launching our Gizwits App SDK correctly, the Gizwits App SDK will output all the log information to the debug terminal and log file by default. If the phone has an SD card, the log file will be saved on the SD card. If there is no SD card, it will only be saved in the application path.
 
 Step 2: Connect your phone to your computer with a USB cable and open the phone's SD card directory.
 
@@ -29,15 +29,15 @@ Step 4: According to the application that has the problem, find the package fold
 
 ![Get Android App SDK log](../../../assets/en-us/AppDev/debug/Journal/12.png)
  
-## 2. Get iOS App SDK log
+## 2. Gizwits App SDK for iOS
 
-To get iOS App SDK log, note that there are two cases: iOS 10 and prior versions.
+To get the log of Gizwits App SDK for iOS, note that there are two cases: iOS 10 and prior versions.
 
-1) How to get debug log for the versions before iOS10 
+1) How to get debug log for the versions before iOS 10 
 
 Step 1: Integrate our SDK on iOS phones and refer to the initialization process of the document on the Gizwits website: 
 http://docs.gizwits.com/hc/kb/article/175453/ 
-After launching our SDK correctly, the SDK will output all the log information to the debug terminal and log file by default. 
+After launching our Gizwits App SDK correctly, the Gizwits App SDK will output all the log information to the debug terminal and log file by default. 
 
 Step 2: Download and install the sync assistant (which includes the Mac and Win versions):  
 http://zs.tongbu.com/mac/ 
@@ -46,7 +46,7 @@ Step 3: Connect the phone to the computer with the USB cable, open the sync assi
 
 ![Get iOS App SDK log](../../../assets/en-us/AppDev/debug/Journal/13.png)
  
-2) How to get debug log for iOS10
+2) How to get debug log for iOS 10
 
 Step 1: Add a key to the project's info.plist: Application supports iTunes file sharing, and its value is YES, as shown below:
 

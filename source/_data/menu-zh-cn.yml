@@ -87,12 +87,18 @@
       path: /deviceDev/HF-LPB100串口烧写说明.html
     HF-LPT120串口烧写说明:
       path: /deviceDev/debug/HF-LPT120.html
+    HF-LPT230串口烧写说明:
+      path: /deviceDev/debug/HF-LPT230.html
     MXCHIP串口烧写说明:
       path: /deviceDev/MXCHIP串口烧写说明.html
     ESP8266串口烧写说明:
       path: /deviceDev/ESP8266串口烧写说明.html
+    ESP-WROOM-02D串口烧写说明:
+      path: /deviceDev/debug/ESP-WROOM-02Duart.html
     广和通G510模组烧写方法:
       path: /deviceDev/debug/G510.html
+    合宙Air202串口烧写说明:
+      path: /deviceDev/debug/Air202.html
     通讯模组调试日志抓取教程:
       path: /deviceDev/通讯模组调试日志抓取教程.html
 
@@ -125,7 +131,7 @@
       path: /deviceDev/WiFiSOC/GoKit-SoC-explanation.html
     GoKit-MCU程序详解:
       path: /deviceDev/Gokit3Voice/GoKit-MCU-explanation.html
-    Gokit4(G) SoC开发环境搭建教程:
+    Gokit4(G) SoC开发环境搭建、开发指南:
       path: /deviceDev/Gokit4/Gokit4_Dev_Assets.html
 
   开发套件Arduino资料:
@@ -143,6 +149,8 @@
       path: /UserManual/ecevideos.html
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
+    ST I-CUBE-GizWits套件快速接入指南:
+      path: /deviceDev/STICubeGizwits/STICubeGizwits.html
 
   设备接入FAQ:
     path: /deviceDev/设备接入FAQ.html

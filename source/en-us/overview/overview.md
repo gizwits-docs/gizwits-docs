@@ -1,10 +1,12 @@
 title: Overview
 ---
-# Gizwits Platform Overview
-## 1. Introduction
-The Gizwits platform is a one-stop intelligent hardware development and cloud services platform for individuals and enterprise developers that has been built by Gizwits company with many years of deeply rooting in the industries, as well as actionable insights. The platform provides capabilities ranging from products definition, device-side development and debugging, application development, production testing, cloud-side development, operations management, and data services etc., which cover full lifecycle services from intelligent hardware provision to operation management.
+# Gizwits IoT Cloud
 
-The Gizwits platform provides developers with self-service smart hardware development tools and open cloud services. With self-service tools for dummies, comprehensive SDKs and API service capabilities, the platform lowers the technical barrier for IoT hardware development, reduces R&D costs, accelerates products launch speed, and helps developers promote the intellectualization of products to better connect and serve the end consumers.
+## 1. Introduction
+
+The Gizwits IoT Cloud is a one-stop intelligent hardware development and cloud services platform that has been built by Gizwits with many years of deeply rooting in the industries as well as actionable insights for individuals and enterprise developers. The platform provides capabilities ranging from products definition, device-side development and debugging, application development, End-of-line test, cloud-side development, operations management, and data services etc., which cover full lifecycle services from intelligent hardware provision to operation management.
+
+The Gizwits IoT Cloud provides developers with self-service smart hardware development tools and open cloud services. With self-service tools for novices, comprehensive SDKs and API service capabilities, the platform lowers the technical barrier for IoT hardware development, reduces R&D costs, accelerates products launch speed, and helps developers promote the intellectualization of products to better connect and serve the end consumers.
 ![Platform Access Sketch](../../../assets/en-us/overview/platform_access_sketch.png)
 
 ## 2. Architecture
@@ -12,18 +14,19 @@ The Gizwits platform provides developers with self-service smart hardware develo
 ![Gizwits Platform Architecture](../../../assets/en-us/overview/architecture.png)
 
 ## 3. Gizwits Advantages
+
 1. High availability
     - SLA 99.99%
     - EB-level massive data support
     - Flexible and scalable architecture
-2. Fast connection
-    - Fast connection within only a half day
+2. Rapid development for device connection
+    - Within only a half day
     - Provide SDKs for each activity in the development process
     - Provide automatic code generation tools
     - Provide ECE capability to automatically adapt private protocols through cloud configuration scripts
     - Provide holistic solutions for industries
 3. Professional services
-    - Professional tools support for dummies
+    - Professional tools support for novices
     - Professional support from our solution architecture team
     - Professional operation and maintenance support
 4. Deep industry expertise
@@ -46,141 +49,159 @@ The Gizwits platform provides developers with self-service smart hardware develo
     - Global coverage: Built independent data centers and cloud platforms in China, Europe, America, and Southeast Asia to cover the devices and users in most countries and regions of the world for customers
     - Smart connection: Devices adapt their connections with the nearest cloud servers for acquiring the same service
 
-## 4. Gizwites Global Server Deployment
+## 4. Global Network of Gizwits
+
 1.The network response times in Guangzhou, Shenzhen, Guangxi, Hunan, and Fujian cities/regions are all less than 20ms (0.02 seconds); the network response times in other cities/regions of China are generally less than 40ms (0.04 seconds); the network response times in Singapore, Malaysia, Indonesia are less than 20ms (0.02 seconds); other cities in Asia are less than 70ms (0.07 seconds).
 
-![Gizwites Global Network Report 01](../../../assets/en-us/overview/GlobalReport_01.png)
+![Gizwits Global Network Report 01](../../../assets/en-us/overview/GlobalReport_01.png)
 
 2.The response time in the Middle East is less than 70ms (0.07 seconds); the average response time in Oceania is about 98ms; the average response time in Africa is about 150ms (0.15 seconds); the overall situation remains good.
 
-![Gizwites Global Network Report 02](../../../assets/en-us/overview/GlobalReport_02.png)
+![Gizwits Global Network Report 02](../../../assets/en-us/overview/GlobalReport_02.png)
 
 3.The overall network response time in Europe and other regions is less than 40ms (0.04 seconds).
 
-![Gizwites Global Network Report 03](../../../assets/en-us/overview/GlobalReport_03.png)
+![Gizwits Global Network Report 03](../../../assets/en-us/overview/GlobalReport_03.png)
 
 4.The overall network response time in North America and other regions is less than 40 ms (0.04 seconds); the average response time in cities/regions of South America is 146 ms (0.146 seconds); the overall situation remains good.
 
-![Gizwites Global Network Report 04](../../../assets/en-us/overview/GlobalReport_04.png)
+![Gizwits Global Network Report 04](../../../assets/en-us/overview/GlobalReport_04.png)
 
 (PS: Due to network instability, there are small deviations of response time.)
+
 # Quick Start
+
 ## Five Minutes to Understand Gizwits
-* Five minutes to understand Gizwits
-* Definition of terms
-## Fast Connection Wizard
+
+* [Quick start with Gizwits IoT Cloud](http://docs.gizwits.com/en-us/quickstart/GizwitsQuickStart.html)
+* [Terms and Definitions](http://docs.gizwits.com/en-us/quickstart/glossary.html)
+
+## Device Connection
+
 ![Fast Connection Wizard](../../../assets/en-us/overview/platform_overview_navigation.png)
 
 # Application Development(App, Wechat)
-Gizwits provides the APP SDKs, open source frameworks, and WeChat SDK to facilitate the quick building of mobile applications. You only need to implement business functions according to the tool guides without considering the underlying functions.
 
-## 1. App development preparation and guidance
-App development preparation and guidance
+Gizwits provides the Gizwits App SDKs, Gizwits App Framework, and WeChat SDK to facilitate the quick building of mobile applications. You only need to implement business functions according to the tool guides without considering the underlying functions.
 
-## 2. App code automatic generation service introduction
-App code automatic generation service introduction
+## 1. Get started with App development
 
-## 3. App open source frameworks
-* iOS open source framework description (including source code)
-* iOS push notification
-* iOS third-party authentication and themes
-* Rapid application development examples for iOS open source framework
-* Android open source framework description (including source code)
-* Android push notification
-* Android third-party authentication and themes
-* Rapid application development examples for Android open source framework
-* APICloud open source framework guidlines (including source code)
+[Get started with App development](http://docs.gizwits.com/en-us/AppDev/AppDevGetStarted.html)
 
-## 4. App SDKs
-App SDKs help developers rapidly complete App development. You only need to focus on the App UI and UE design, while relatively complex protocols and error handling can be ignored.
+## 2. Gizwits App Code Auto-Generator
 
-* Android SDK access
-* IOS SDK access
-* APICloud SDK User Guide
+[Gizwits App Code Auto-Generator](http://docs.gizwits.com/en-us/AppDev/AppCodeAutoGenerator.html)
 
-## 5. More guidelines for App development
-* Transparent transmission mode of data
-* Video tutorial for open source frameworks
+## 3. Gizwits App Frameworks
+
+* [Gizwits App Framework for iOS](http://docs.gizwits.com/en-us/AppDev/iOSFramework.html)
+* [Push notification integration for iOS App](http://docs.gizwits.com/en-us/AppDev/iOSPushNotification.html)
+* [Guide to third-party authentication and re-skin for iOS APP](http://docs.gizwits.com/en-us/AppDev/iOSAuthReSkin.html)
+* [Quick start with iOS App development](http://docs.gizwits.com/en-us/AppDev/iOSDevQuickStart.html)
+* [Gizwits App Framework for Android](http://docs.gizwits.com/en-us/AppDev/AndroidFramework.html)
+* [Guide to push notification integration for Android APP](http://docs.gizwits.com/en-us/AppDev/AndroidPushNotification.html)
+* [Guide to third-party authentication and re-skin for Android](http://docs.gizwits.com/en-us/AppDev/AndroidAuthReSkin.html)
+* [Quick start with Android App development](http://docs.gizwits.com/en-us/AppDev/AndroidDevQuickStart.html)
+* [Guide to Gizwits App Framework for APICloud](http://docs.gizwits.com/en-us/AppDev/APICloudFramework.html)
+
+## 4. Gizwits App SDKs
+
+Gizwits App SDKs facilitate developers to rapidly complete App development. You only need to focus on the App UI and UE design, while relatively complex protocols and error handling can be ignored.
+
+* [Gizwits App SDK for Android](http://docs.gizwits.com/en-us/AppDev/AndroidSDKA2.html)
+* [Gizwits App SDK for iOS](http://docs.gizwits.com/en-us/AppDev/iOSSDKA2.html)
+* [Gizwits App SDK for APICloud](http://docs.gizwits.com/en-us/AppDev/APICloudSDK.html)
+
+## 5. More guides for App development
+
+* [Data transparent transmission](../AppDev/TransparentTransmission.md)
+* [How-to videos on Gizwits App Framework](../AppDev/VideoTutorials.md)
 
 ## 6. Wechat Application Development
-* Learn about WeChat application development
-* WeChat application development tutorial
+
+* [Introduction to WeChat application development](../WechatDev/WechatDevIntro.md)
+* [WeChat application development](../WechatDev/WeChatDev.md)
 
 # Device Connectivity
-## 1. Connecting your devices to Gizwits cloud quickly
-In order to let developers quickly understand the process of our device connection, we provide two fast connection tutorials for MCU and SOC solutions based on the open-source suite Gokit. Both tutorials use the smart lighting as a case study.
 
-Note: It is not necessary to use Gokit suite for device connection
+## 1. Connect your devices to Gizwits IoT Cloud rapidly
 
-* Fast connection tutorial for MCU solution
-* Fast connection tutorial for SOC solution 
+In order to let developers quickly grasp the process of device connection, Gizwits provides two guides to device connection for MCU and SoC schemes respectively based on Gizwits open-source development kit - Gokit. Both guides take the smart light as an example.
 
-## 2. GAgent communication module usage
-The main role of GAgent is data forwarding. It is a data exchange bridge among devices, Gizwits cloud, and applications (APP).
+Note: It is not necessary to use Gokit for device connection.
 
-In order to enable different communication modules to connect to Gizwits cloud, we provide multiple burning methods and logging methods for those modules to ensure that the GAgent firmware runs normally in the modules.
+* [Device connection for standalone MCU scheme](../quickstart/MCUScheme.md)
+* [Device connection for SoC scheme](../DeviceDev/SoCScheme.md)
 
-Note: Please follow the following steps when performing the module burning operation; otherwise, unknown errors will occur.
+## 2. GAgent
 
-* GAgent details
-* Burning instructions for HF-LPB100 serial port 
-* Burning instructions for HF-LPT120 serial port
-* Burning instructions for MXCHIP serial port
-* Burning instructions for ESP8266 serial port
-* Burning instructions for Guanghetong G510 module
-* Log retrieve tutorial for debugging communication modules
+GAgent is Gizwits’s hardware connectivity with the embedded system firmware that can operate in Wi-Fi modules, GPRS modules and PCs etc. Devices access Gizwits IoT Cloud through the GAgent. GAgent provides the communication protocol between cloud and MCU, so that, according to the protocol, developers can realize the communication between MCU and GAgent.
 
-## 3. MCU code automatic generation service
-In order to reduce the barrier for development, shorten the development cycle, and reduce the investment in development resources, Gizwits has launched an automatic code generation service. The cloud generates the device-side code for the corresponding product based on the defined product data points.
+The main role of GAgent is data forwarding. It is a data exchange bridge among devices, Gizwits IoT Cloud, and applications (App).
 
-* Introduction and tutorial for the automatic code generation tool 
-* Porting instructions for MCU SDK common version
-* Porting the code automatically generated by Gizwits using STM32CubeMX
-* Optimization instructions for 8051 platform by tailoring code 
+In order to enable different communication modules to connect to Gizwits IoT Cloud, we provide multiple firmware downloading methods and debug log collecting methods for those modules to ensure that the GAgent firmware runs normally on the modules.
 
-## 4. Gokit open source suite 
-In order to enable developers to experience the Gizwits service faster, we provide the open source suite Gokit for developers to learn and reference, so that developers can connect their own products to Gizwits cloud quickly.
+Note: Please follow the following steps when downloading firmware to modules, otherwise unknown errors will occur.
 
-* Gokit2 User Guide
-* Introduction to Gokit3 series development suite
-* Gokit3 hardware manual
-* Gokit3(S) user manual
-* Introduction to Gokit3(S) development suite 
-* Gokit3 (S) development environment setup
-* Detailed annotation for GoKit-SoC program
-* Detailed annotation for GoKit-MCU program
+* [Gizwits IoT Cloud access with GAgent](../DeviceDev/GAgent.md)
+* [Firmware downloading for HF-LPB100 via serial port](../DeviceDev/debug/HF-LPB100.md)
+* [Firmware downloading for HF-LPT120 via serial port](../DeviceDev/debug/HF-LPT120.md)
+* [Firmware downloading for MXCHIP via serial port](../DeviceDev/debug/MXCHIP.md)
+* [Firmware downloading for ESP8266 via serial port](../DeviceDev/debug/ESP8266.md)
+* [Firmware downloading for Fibocom G510](../DeviceDev/debug/G510.md)
+* [Debug log capture for communication modules](../DeviceDev/DebugLog.md)
 
-## 5. Connecting ArduinoUnoWIFI to Gizwits cloud
-* How to connect ArduinoUNOWIFI to Gizwits cloud
-* How to burn ESP8266 firmware into ArduinoUNOWiFi
-* SDK API introduction for ArduinoUNOWiFi 
-* Making a smart lamp using ArduinoUNO WiFi
+## 3. Gizwits MCU Code Auto-generator
 
-## 6. More guidelines for device connection
-* Development tutorial for ECE demo 
-* Gizwits serial port tool tutorial 
+In order to reduce the barrier for development, shorten the development cycle, and reduce the investment in development resources, Gizwits has rolled out Gizwits MCU Code Auto-Generator, which generates the device-side code for the corresponding product based on the defined product data points.
+
+* [Gizwits MCU Code Auto-generator](../DeviceDev/DevSDK/MCUCodeAutoGenerator.md)
+* [Porting Common Platform Edition of MCU SDK](../DeviceDev/PortingCommonPlatform.md)
+* [Porting using STM32CubeMX](../DeviceDev/PortingUsingSTM32CubeMX.md)
+* [Tailoring MCU SDK to resource-limited platform](../DeviceDev/TailoringMCUCode.md)
+
+## 4. Development kit - Gokit 
+
+In order to enable developers to experience the Gizwits service faster, Gizwits open-source development kit - Gokit is offered for developers to learn and reference, so that developers can connect their own products to Gizwits IoT Cloud quickly.
+
+* [Introduction to Gokit3 series development kit](../DeviceDev/Gokit3/Gokit3Intro.md)
+* [Gokit3 hardware manual](../DeviceDev/Gokit3/Gokit3Manual.md)
+* [Get started with Gokit3(S)](../DeviceDev/WiFiSOC/Gokit3SGetStarted.md)
+* [Introduction to Gokit3(S) development kit](../DeviceDev/WiFiSOC/Gokit3SIntro.md)
+* [Set up Gokit3(S) development environment](../DeviceDev/WiFiSOC/SetupGokit3SDevEnv.md)
+* [Gokit-SoC program with explanation](../DeviceDev/WiFiSOC/GokitSoCProgram.md)
+* [Gokit-MCU program with explanation](../DeviceDev/Gokit3/GokitMCUProgram.md)
+
+## 5. More guides for device connection
+
+* [Gizwits ECE development](../UserManual/ECEDemo.md)
+* [Gizwits Serial Port Debugger](../DeviceDev/DebugTool.md)
 
 # Cloud API
+
 If you have completed device connection and App development, and want to obtain data from the Gizwits PaaS platform to build a business management system or access services provided by Gizwits, the following documents should be noticed:
 
-* 1). Understanding enterprise application development
-* 2). Understanding enterprise APIs
-* 3). SNoti API (V2.1.3)
-* 4). Gizwits Open API (new)
-* 5). Websocket API guide
-* 6). API tutorial
-    - Use openapi (postman) to control virtual devices
-    - Use Websocket webpage to control devices
-    - Aggregation API tutorial
-    - Device linkage API tutorial
-    - Demo tutorial for Snoti real-time synchronization service 
+* 1). [Enterprise application development](../cloud/EnterpriseAppDev.md)
+* 2). [Gizwits Enterprise API](../cloud/EnterpriseAPI.md)
+* 3). [Gizwits SNoti API](../cloud/NotificationAPI.md)
+* 4). [Gizwits Open API](../cloud/OpenAPI.md)
+* 5). [Gizwits Web Socket API](../cloud/WebsocketAPI.md)
+* 6). API tutorials
+    - [Control device using Gizwits Open API](../UserManual/UseOpenAPI.md)
+    - [Control device using Gizwits Web Socket API](../UserManual/UseWebsocketAPI.md)
+	- [Real-time data synchronization using Gizwits SNoti API](../UserManual/UseSNotiAPI.md)
+    - [Device Linkage API tutorial](../UserManual/DeviceLinkageAPI.md)
+    - [Device Grouping API tutorial](../UserManual/DeviceGroupingAPI.md)
+    - [Data Aggregation API tutorial](../UserManual/DataAggregationAPI.md)
+
 
 # User Manual
-* Product transfer from a personal account to an enterprise account
-* OTA tutorial
-* Production testing tool tutorial
-* D3 engine tutorial
-* ECE fog computing tutorial
-* Amazon Echo integration tutorial
-* Real-time big data guidelines
-* Global deployment solutions
+
+* [Promote personal type product to enterprise type product](../UserManual/PromoteProduct.md)
+* [GAgent OTA](../UserManual/GAgentOTA.md)
+* [End-of-line test](../DeviceDev/EolTest.md)
+* [Gizwits D3 Engine](../UserManual/D3.md)
+* [Gizwits ECE fog computing](../UserManual/ECE.md)
+* [Integration with Amazon Echo](../UserManual/EchoIntegration.md)
+* [Gizwits Real-time Big Data Analytics](../UserManual/DataAnalytics.md)
+* [Global Network of Gizwits](../UserManual/GlobalDeployment.md)

@@ -1,15 +1,15 @@
-title: Guide of Android App push notification integration
+title: Guide to push notification integration for Android App
 ---
 
 # Overview
 
-The Gizwits App open source framework (hereinafter referred as Framework) integrates Baidu push notification and Jiguang push notification, which help rapid development with few modifciation. This document describes how to integreate push notification based on the Framework. For more information on the Framework, please refer to the Quick Start documentation.
+The Gizwits App Framework (hereinafter referred as Framework) integrates Baidu push notification and Jiguang push notification, which help rapid development with few modifciation. This document describes how to integreate push notification based on the Framework. For more information on the Framework, please refer to the Quick Start documentation.
 
 # Quick integration with Jiguang push notification
 
-## 1. Apply for Jiguang AppKey and Master Secret
+## 1. Get Jiguang AppKey and Master Secret
 
-You need to create an application on Jiguang official website and fill in the appropriate information based on the package name of the Framework, as shown below:
+You need to create an application on Jiguang official website with the appropriate information and the package name of the Framework, as shown below:
 
 1). Find the package name of the Framework
 
@@ -23,27 +23,27 @@ You need to create an application on Jiguang official website and fill in the ap
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/13.png)
  
-## 2. Bind third-party push notification in the Gizwits cloud
+## 2. Use third-party push notification in the Gizwits IoT Cloud
 
-### 2.1 Applying for D3 Engine service
+### 2.1 Enable D3 Engine
 
 1. Find D3 Engine
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/14.png)
 
-2. Request to access D3 Engine
+2. Request to use D3 Engine
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/15.png)
 
-The use of D3 Engine service requires the approval of Gizwits. After request to access the service, you need to contact the Gizwits FAE for assistant.
+The use of D3 Engine requires the verification of Gizwits. After your request has been submitted, you need to contact the Gizwits FAE for assistant.
 
-### 2.2 Binding Jiguang push notification in Gizwits cloud
+### 2.2 Use Jiguang push notification in Gizwits IoT Cloud
 
-After approval, you can see the D3 Engine under the Services column, click "Configuration" -> "Edit Push Notification Platform"
+After the verification passes, you can see the D3 Engine under the Services column, click "Configuration" -> "Edit Push Notification Platform"
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/16.png)
 
-Type the App Key and Master Secret you applied to Jiguang as the following figure and choose "Bind".
+Type the App Key and Master Secret you got from Jiguang as the following figure and choose "Bind".
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/17.png)
 
@@ -83,7 +83,7 @@ The following figure shows that the push notification rule has been successfully
  
 ## 3. Update UIConfig.json
 
-1. Fill in the Gizwits app_id and product_key and modify the push_type.
+1. Set the Gizwits app_id and product_key and modify the push_type.
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/27.png)
 
@@ -99,7 +99,7 @@ Update the APP KEY in AndroidManifest.xml.
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/30.png)
 
-## 6. Run the APP
+## 6. Run the App
 
 Through the above steps, the App is equipped with Jiguang push notification function. After being deployed to a mobile phone, register a user and login in, then bind the cloud virtual device by scanning its QR code.
 
@@ -113,9 +113,9 @@ Restart the virtual device to see whether your phone receives a push message.
 
 # Quick integration with Baidu push notification
 
-## 1. Apply for Baidu API KEY
+## 1. Get Baidu API KEY
 
-You need to create an application on Jiguang official website and fill in the appropriate information based on the package name of the Framework, as shown below:
+You need to create an application on Jiguang official website with the appropriate information and the package name of the Framework, as shown below:
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/33.png)
 
@@ -125,17 +125,17 @@ Find the corresponding API KEY and SECRET KEY.
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/35.png)
  
-## 2. Bind third-party authentication in Gizwits cloud
+## 2. Use third-party authentication in Gizwits IoT Cloud
 
-### 2.1 Apply for D3 Engine
+### 2.1 Request to use D3 Engine
 
 For this step, refer to section 2.1 of Quick integration with Jiguang push notification.
 
-### 2.2 Bind Baidu push notification in Gizwits cloud
+### 2.2 Use Baidu push notification in Gizwits IoT Cloud
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/36.png)
 
-Type the API Key and Secret Key you applied to Baidu as the following figure and choose "Bind".
+Type the API Key and Secret Key you obtained from Baidu as the following figure and choose "Bind".
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/37.png)
 
@@ -149,7 +149,7 @@ For this step, refer to section 2.3 of Quick integration with Jiguang push notif
 
 ## 3. Update UIConfig.json
 
-Fill in app_id, app_secret, product_key, and set push_type to 2. Update the application API key of Baidu push notification you obtained in step 1.
+Set app_id, app_secret, product_key, and set push_type to 2. Update the application API key of Baidu push notification you obtained in step 1.
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/39.png)
 
@@ -171,9 +171,9 @@ Restart the virtual device to see whether your phone receives a push message.
 
 # FAQ
 
-## 1. Need I request to access D3 Engine to use push notification?
+## 1. Need I request to use D3 Engine for push notification?
 
-Answer: Yes, D3 Engine currently only targets at enterprise developers. Therefore, only enterprise developers can request to access it.
+Answer: Yes, D3 Engine currently is intended for enterprise developers. Therefore, only enterprise developers can request to use it.
 
 ## 2. I completed the above steps using Jiguang push notification, but cannot receive the expected push notification.
 
@@ -189,11 +189,11 @@ Then it is necessary to test whether it is successful to push messages to the Ap
 
 ii. For the case that the App still can't receive the message when the push from Jiguang platform is successful. 
 
-First, confirm that Gizwits platform successfully binds Jiguang push notification with its App Key and Master Secret.
+First, confirm that Gizwits IoT Cloud successfully binds Jiguang push notification with its App Key and Master Secret.
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/42.png)
 
-Second, confirm that Gizwits platform successfully creates the rule.
+Second, confirm that Gizwits IoT Cloud successfully creates the rule.
 
 ![Android Push Notification](../../../assets/en-us/AppDev/AppFrame/android/push/43.png)
 

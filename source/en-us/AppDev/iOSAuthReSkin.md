@@ -1,27 +1,27 @@
-title: Guide of iOS App third-party authentication and re-skin
+title: Guide to third-party authentication and re-skin for iOS App
 ---
 
-See Guide of Android third party authentication and re-skin
+See Guide to Android third party authentication and re-skin
 
-See Application process of third-party authentication platform
+See Set up third-party authentication with the provider of choice
 
 # Overview 
 
-This article mainly describes how to quickly implement QQ and WeChat authentication through open source framework as well as re-skin for the App.
+This document mainly describes how to quickly implement QQ and WeChat authentication through Gizwits App Framework as well as re-skin for the App.
 
 # QQ authentication
 
-To support QQ authentication, you should first create an application on the Tencent open platform, obtain the APPID for the App, which will be used in the open source framework. 
+To support QQ authentication, you should first create an application on the Tencent open platform, obtain the APPID for the App, which will be used in the Gizwits App Framework. 
 
 ## Get APP ID and bind the application
 
-For obtaining APP ID and binding Gizwits application, see Application Request Tutorial for QQ Open Platform.
+For obtaining APP ID and binding Gizwits application, see Guide to Application for QQ authentication.
 
-## Configuration of the open source framework 
+## Configuration of Gizwits App Framework
 
 ### Configure Tencent APPID
 
-Type the APPID obtained from Tencent development platform into the configuration file UIConfig.json of the open source framework.
+Type the APPID obtained from Tencent development platform into the configuration file UIConfig.json of Gizwits App Framework.
 
 ![Configure Tencent APP ID](../../../assets/en-us/AppDev/AppFrame/ios/change/11.png)
  
@@ -41,17 +41,17 @@ Identifier value generally adopts the reversed domain name to ensure its uniquen
 
 # Wechat authentication
 
-To implement WeChat authentication, you need to go to the WeChat open platform to apply for an application, obtain the APPID and APPSecret of the application which will be applied to the open source framework.
+To implement WeChat authentication, you need to go to the WeChat open platform to register for an application, obtain the APPID and APPSecret of the application which will be applied to the Gizwits App Framework.
 
 ## Get APPID and APPSecret
 
-To get APPID and APPSecret, see Application Request Tutorial for WeChat Open Platform.
+To get APPID and APPSecret, see Guide to Application for WeChat authentication.
 
-## Configuration of the open source framework 
+## Configuration of Gizwits App Framework 
 
 ### Configure WeChat APPID
 
-Type the APPID and APPSecret obtained from WeChat development platform into the open source framework configuration file UIConfig.json, as shown below
+Type the APPID and APPSecret obtained from WeChat development platform into the configuration file UIConfig.json of Gizwits App Framework, as shown below.
 
 ![Configure WeChat APPID](../../../assets/en-us/AppDev/AppFrame/ios/change/13.png)
  
@@ -71,7 +71,7 @@ Identifier value generally adopts the reversed domain name to ensure its uniquen
 
 # App Re-Skin
 
-The open source framework has the re-skin feature. Quick re-skin can be achieved by modifying the UIConfig.json file.
+The Gizwits App Framework has the re-skin feature. Quick re-skin can be achieved by modifying the UIConfig.json file.
 
 ![APP Re-Skin](../../../assets/en-us/AppDev/AppFrame/ios/change/15.png)
  
@@ -135,30 +135,31 @@ The result:
 
 # See Also
 
-See "Introduction to App code auto-generator" to understand what functions the automatically generated App code has;
+See [Gizwits App Code Auto-Generator](../UserManual/AppCodeAutoGenerator.md) to learn about the functionality of the automatically generated App code.
 
-See "App open source framework" to understand
+See "Gizwits App Framework" to grasp
 
-* Guide of App open source framework for iOS
-* Guide of iOS App push notification integration
-* Guide of iOS App third-party authentication and re-skin
-* Quick start of iOS App development
-* Guide of App open source framework for Android
-* Guide of Android App push notification integration
-* Guide of Android App third-party authentication and re-skin
-* Guide of APICloud open source framework
+* [Gizwits App Framework for iOS](../AppDev/iOSFramework.md)
+* [Push notification integration for iOS App](../AppDev/iOSPushNotification.md)
+* [Third-party authentication and re-skin for iOS App](../AppDev/iOSAuthReSkin.md)
+* [Quick start with iOS App development](../quickstart/iOSDevQuickStart.md)
+* [Gizwits App Framework for Android](../AppDev/AndroidFramework.md)
+* [Push notification integration for Android App](../AppDev/AndroidPushNotification.md)
+* [Third-party authentication and re-skin for Android](../AppDev/AndroidAuthReSkin.md)
+* [Quick start with Android App development](../quickstart/AndroidDevQuickStart.md)
+* [Gizwits App Framework for APICloud](../AppDev/APICloudFramework.md)
 
-See "App Development SDK" to develop the IoT App (many user cases of design details can be found here)
+See "App Development SDK" to develop your IoT App
 
-* Guide of iOS SDK 2.0 integration
-* Guide of Android SDK 2.0 integration
-* Guide of APICloud SDK
-* Explanation of SDK data transparent transmission
-* Guide of SDK debug log capture
-* SDK error codes
+* [Gizwits App SDK for Android](../AppDev/AndroidSDKA2.md)
+* [Gizwits App SDK for iOS](../AppDev/iOSSDKA2.md)
+* [Gizwits App SDK for APICloud](../AppDev/APICloudSDK.md)
+* [Data transparent transmission](../AppDev/TransparentTransmission.md)
+* [Get Gizwits App SDK debug log](../AppDev/SDKLogCapture.md)
+* [SDK error codes](../AppDev/SDKErrorCodes.md)
 
 More application development guides
 
-* Application development FAQ
-* Device sharing guide
-* Application process of third-party authentication platform 
+* [FAQ of mobile application development](../AppDev/AppDevFAQ.md)
+* [Gizwits Device Sharing](../cloud/DeviceSharing.md)
+* [Set up third-party authentication with the provider of choice](../AppDev/ThirdpartyAuth.md)

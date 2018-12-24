@@ -25,7 +25,7 @@ MCU方案默认支持 **STM32F103C8x** 平台，如果是其他MCU芯片，可�
 
 下载完成后解压如下：
 
- ![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/20170918122404.png)
+ ![Alt text](/assets/zh-cn/deviceDev/DevSDK/common/image4.png)
 
 
 ## 3.通用平台移植需知
