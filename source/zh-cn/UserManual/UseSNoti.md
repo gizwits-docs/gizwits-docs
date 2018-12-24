@@ -74,7 +74,7 @@ FF FF 00 09 05 00 00 00 04 01 02 03 18
 因为是透传的，收到的数据是base64加密了，厂家得自己进行base64解密。
 ![Alt text](/assets/zh-cn/UserManual/SNotiAPI/1490858101947.png)
 ![Alt text](/assets/zh-cn/UserManual/SNotiAPI/1490858110840.png)
-Base64在线解密链接:[http://www1.tc711.com/tool/BASE64.htm](http://www1.tc711.com/tool/BASE64.htm)
+[Base64在线解密链接](http://docs.gizwits.com/zh-cn/tools/Base64_encode_decode.html)
 ### 4.4.运行maven工程
 （1）鼠标右击工程，选择Run As->Maven Install，然后点击运行。
 ![Alt text](/assets/zh-cn/UserManual/SNotiAPI/1490858155758.png)
