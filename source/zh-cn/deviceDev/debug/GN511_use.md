@@ -46,55 +46,61 @@ title: GN511使用说明
 #### MCU 无外部晶振，必须使用内部时钟 HSI。 
 #### STM32 的部分 IO 口默认主功能是 JLINK 的功能管脚，需要将关闭 JTAG-DP，启动SW-DP 才可以控制该 IO 口，例如本硬件中用到的 PB3 和 PB4. 
 ##### 注：寄存器控制配置方式: 
-  RCC->APB2ENR|=0x1D; //使能 ABC IO 口时钟 开启辅助时钟 
-  AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
+RCC->APB2ENR|=0x1D; //使能 ABC IO 口时钟 开启辅助时钟 
+
+AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
+
 程序修改步骤，略，本文最后有参考代码
 
 ## 4. mcu控制N256的上电和掉电、开机和关机
 
-### · N256 上电
+#### N256 上电
 #### N256 默认不得电，需要通过 MCU 的 PB0(NB_PWR)来控制得电。
-#### i. PB0(NB_PWR)=1，N256 上电。 
-#### ii. PB0(NB_PWR)=0，N256 掉电。
+ i. PB0(NB_PWR)=1，N256 上电。 
+ 
+ ii. PB0(NB_PWR)=0，N256 掉电。
 
-### · N256 开机
-#### a) MCU 需要先通过 PB0(NB_PWR)=1 给 N256 上电。 
-#### b) 等 N256 电压稳定后 MCU 再通过 PB1(NB_PKEY)来控制 N256 开机或关机。 
-#### c) PB1(NB_PKEY)的电平逻辑和 N256 的 PWRKEY 的电平逻辑是非门 
-###### i. PB1(NB_PKEY)=1，N256 PWRKEY=0. 
-###### ii. PB1(NB_PKEY)=0，N256 PWRKEY=1. 
-#### d) 在拉低管脚 PWRKEY 之前，保证 VBAT 电压稳定。建议 VBAT 上电到管脚 PWRKEY 拉低之间的时间 T1 为 100ms 左右。 
-### · N256 开机后，可以通过查看模组日志或者输入 AT 命令（如AT+CGSN=1）查看响应，判断模块是否已经开机成功，若成功可以释放 PWRKEY 引脚，反之，则模块开机失败。
-### · 注：使用GN511的COM1查看模组日志
-### · 模组日志截图
+#### N256 开机
+###### a) MCU 需要先通过 PB0(NB_PWR)=1 给 N256 上电。 
+###### b) 等 N256 电压稳定后 MCU 再通过 PB1(NB_PKEY)来控制 N256 开机或关机。 
+###### c) PB1(NB_PKEY)的电平逻辑和 N256 的 PWRKEY 的电平逻辑是非门 
+ i. PB1(NB_PKEY)=1，N256 PWRKEY=0. 
+ 
+ ii. PB1(NB_PKEY)=0，N256 PWRKEY=1. 
+ 
+###### d) 在拉低管脚 PWRKEY 之前，保证 VBAT 电压稳定。建议 VBAT 上电到管脚 PWRKEY 拉低之间的时间 T1 为 100ms 左右。 
+#### N256 开机后，可以通过查看模组日志或者输入 AT 命令（如AT+CGSN=1）查看响应，判断模块是否已经开机成功，若成功可以释放 PWRKEY 引脚，反之，则模块开机失败。
+#### 注：使用GN511的COM1查看模组日志
+#### 模组日志截图
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_10.png)
 
+
 ## 5. GN511上线，机智云IOE DEMO APP绑定设备
 
-### · 当模组正常开机十多秒以后，模组会自动连接上机智云平台，此时我们可以使用机智云APP扫描二维码的方式绑定GN511，使用机智云串口助手的小工具生成设备绑定二维码
-####（串口助手下载地址https://download.gizwits.com/zh-cn/p/98/119）
+#### 当模组正常开机十多秒以后，模组会自动连接上机智云平台，此时我们可以使用机智云APP扫描二维码的方式绑定GN511，使用机智云串口助手的小工具生成设备绑定二维码
+ （串口助手下载地址https://download.gizwits.com/zh-cn/p/98/119）
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_11.png)
 
-### · 生成设备绑定二维码后，我们可以下载机智云IOE DEMO APP扫码绑定设备（APP下载地址https://download.gizwits.com/zh-cn/p/98/99）
+#### 生成设备绑定二维码后，我们可以下载机智云IOE DEMO APP扫码绑定设备（APP下载地址https://download.gizwits.com/zh-cn/p/98/99）
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_12.png)
 
 ## 6. 控制设备，下发透传数据，实现简单透传功能，机智云接入完毕
 
-### · APP端下发透传数据，然后我们用GN511的485将该透传数据输出，本程序使用了485-1打印mcu日志，485-2输出透传数据
+#### APP端下发透传数据，然后我们用GN511的485将该透传数据输出，本程序使用了485-1打印mcu日志，485-2输出透传数据
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_13.png)
 
-### · GN511透传数据接收情况
+#### GN511透传数据接收情况
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_14.png)
 
 ## 7. 参考资料下载
 
-### · 参考代码下载地址：链接：https://pan.baidu.com/s/1QoSs4I2sHkpLZFUhYoCzfw 
-#### 提取码：p6vx 
+#### 参考代码下载地址：链接：https://pan.baidu.com/s/1QoSs4I2sHkpLZFUhYoCzfw 
+提取码：p6vx 
 
-### · 《GN511硬件IO说明书 V1.5》链接：https://pan.baidu.com/s/1FbwuWueLlPV1PCDkU1RXww 
-#### 提取码：pn0l 
+#### 《GN511硬件IO说明书 V1.5》链接：https://pan.baidu.com/s/1FbwuWueLlPV1PCDkU1RXww 
+提取码：pn0l 
