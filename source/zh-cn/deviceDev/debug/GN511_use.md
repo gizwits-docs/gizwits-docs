@@ -9,13 +9,13 @@ title: GN511使用说明
 
 ## 1. 在机智云创建新产品，定义数据点，添加设备
 
-### · 创建新产品
+#### 创建新产品
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_1.png)
  
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_2.png)
 
-### · 定义数据点
+#### 定义数据点
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_3.png)
  
@@ -23,7 +23,7 @@ title: GN511使用说明
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_5.png)
 
-### · 添加设备
+#### 添加设备
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_6.png)
 
