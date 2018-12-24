@@ -80,12 +80,12 @@ AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
 ## 5. GN511上线，机智云IOE DEMO APP绑定设备
 
 #### 当模组正常开机十多秒以后，模组会自动连接上机智云平台，此时我们可以使用机智云APP扫描二维码的方式绑定GN511，使用机智云串口助手的小工具生成设备绑定二维码
- （串口助手下载地址https://download.gizwits.com/zh-cn/p/98/119）
+ 串口助手下载地址：https://download.gizwits.com/zh-cn/p/98/119
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_11.png)
 
 #### 生成设备绑定二维码后，我们可以下载机智云IOE DEMO APP扫码绑定设备
-（APP下载地址https://download.gizwits.com/zh-cn/p/98/99）
+APP下载地址：https://download.gizwits.com/zh-cn/p/98/99
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_12.png)
 
