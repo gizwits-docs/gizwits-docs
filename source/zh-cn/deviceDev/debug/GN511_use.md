@@ -9,13 +9,13 @@ title: GN511使用说明
 
 ## 1. 在机智云创建新产品，定义数据点，添加设备
 
-#### 创建新产品
+#### 4.1 创建新产品
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_1.png)
  
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_2.png)
 
-#### 定义数据点
+#### 4.2 定义数据点
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_3.png)
  
@@ -23,7 +23,7 @@ title: GN511使用说明
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_5.png)
 
-#### 添加设备
+#### 4.3 添加设备
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_6.png)
 
@@ -33,21 +33,21 @@ title: GN511使用说明
 
 ##  2. 下载自动生成mcu代码，烧写程序到GN511的mcu中
 
-### · 下载自动生成代码
+#### 2.1 下载自动生成代码
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_8.png)
 
-### · 下载代码完成后，我们可以先尝试将编译好的程序通过 CON3 的 SW 调试接口烧写到mcu当中。
+#### 2.2 下载代码完成后，我们可以先尝试将编译好的程序通过 CON3 的 SW 调试接口烧写到mcu当中。
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_9.png)
 
 ## 3. 修改mcu程序，使得mcu可以正常运行
 
-### · MCU 无外部晶振，必须使用内部时钟 HSI。 
-### · STM32 的部分 IO 口默认主功能是 JLINK 的功能管脚，需要将关闭 JTAG-DP，启动SW-DP 才可以控制该 IO 口，例如本硬件中用到的 PB3 和 PB4. 
-#### · 注：寄存器控制配置方式: 
-######## RCC->APB2ENR|=0x1D; //使能 ABC IO 口时钟 开启辅助时钟 
-######## AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
+#### MCU 无外部晶振，必须使用内部时钟 HSI。 
+#### STM32 的部分 IO 口默认主功能是 JLINK 的功能管脚，需要将关闭 JTAG-DP，启动SW-DP 才可以控制该 IO 口，例如本硬件中用到的 PB3 和 PB4. 
+##### 注：寄存器控制配置方式: 
+  RCC->APB2ENR|=0x1D; //使能 ABC IO 口时钟 开启辅助时钟 
+  AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
 程序修改步骤，略，本文最后有参考代码
 
 ## 4. mcu控制N256的上电和掉电、开机和关机
