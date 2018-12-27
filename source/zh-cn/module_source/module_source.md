@@ -3,7 +3,7 @@ title: 模块硬件资料
 
 # 一、模块Datasheet
 
-## 1.WIFI模块Datasheet，硬件介绍
+## 1. WIFI模块Datasheet 硬件介绍
 
 - ### 乐鑫模块系列(esp8266各型号用同一datasheet)
 
@@ -30,7 +30,7 @@ title: 模块硬件资料
 [HFLPT230 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPT230.html)
 
 
-## 2.GPRS模块的Datasheet，硬件介绍
+## 2. GPRS模块的Datasheet 硬件介绍
 
 - ### 广和通模块系列
 
@@ -42,7 +42,16 @@ title: 模块硬件资料
 
 - ### 合宙模块系列
 
-[Air202硬件设计手册](http://docs.gizwits.com/assets/pdf/HZ/Air202_hardware_design.pdf)
+[Air202 硬件设计手册](http://docs.gizwits.com/assets/pdf/HZ/Air202_hardware_design.pdf)
+
+## 3. NB-IOT模块的Datasheet 硬件介绍
+
+- ### 零零模块系列
+
+[N256 硬件设计手册](http://docs.gizwits.com/assets/pdf/Lingling/N256_hardware_design.pdf)
+
+[N102 硬件设计手册](http://docs.gizwits.com/assets/pdf/Lingling/N102_hardware_design.pdf)
+
 
 
 # 二、模块资源
