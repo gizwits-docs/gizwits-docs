@@ -34,9 +34,11 @@ N102 DTU模组的UART1主串口用于与MCU进行串口通信，其简易通信�
 ## 4. 下载FLASH_TOOL工具
 
 ### FLASH_TOOL工具下载链接：
-(http://docs.gizwits.com/assets/pdf/IOT_FLASH_TOOL/IOT_Flash_Tool.rar)
+
+http://docs.gizwits.com/assets/pdf/IOT_FLASH_TOOL/IOT_Flash_Tool.rar
 
 ![FLASH_TOOL](/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_4.png)
+
 ↑软件界面
 
 ## 5. 烧写操作
@@ -66,13 +68,17 @@ N102 DTU模组的UART1主串口用于与MCU进行串口通信，其简易通信�
 ## 6. 查看有无写入IMEI和AUTHCODE（授权秘钥）
 
 打开串口调试助软件，波特率115200，连接模块的串口UART0。
-6.1查看IMEI，输入AT+CGSN=1(1后面要加回车)，输入3-4次。IMEI一般都是已经写好的
+
+### 6.1 查看IMEI，输入AT+CGSN=1(1后面要加回车)，输入3-4次。IMEI一般都是已经写好的
+
 AT+CGSN=1
 
 +CGSN: 866061038958554
 
 OK
+
 返回IMEI，模块里面已写入IMEI。
+
 /*********************************************************/
 
 AT+CGSN=1
@@ -80,19 +86,25 @@ AT+CGSN=1
 +CGSN: 000000000000000!
 
 OK
+
 返回多个0，模块里面没有写入IMEI，需要写入IMEI。
 
 写入实例：
+
 AT*MCGSN=1,"012345678912345"(IMEI在模组表面可查看)
+
 /*********************************************************/
 
-6.2查看AUTHCODE，输入AT+AUTHCODE?(?后面要加回车)
+### 6.2 查看AUTHCODE，输入AT+AUTHCODE?(?后面要加回车)
+
 AT+AUTHCODE?
 
 +AUTHCODE:b746XXXXXXXXXXXXXXX77
 
 OK
+
 返回AUTHCODE，模块里面已写入AUTHCODE
+
 /*********************************************************/
 
 AT+AUTHCODE?
@@ -100,13 +112,16 @@ AT+AUTHCODE?
 +AUTHCODE:
 
 OK
+
 返回空，模块里面没有AUTHCODE，需要写入AUTHCODE。
+
 写入实例：
+
 AT+AUTHCODE=XXXXXXXXXXXXXXXXXXX
+
 /*********************************************************/
 
 注：客户编号（PIN）和授权码（Auth_Code）根据IMEI生成AUTHCODE（授权秘钥），如需使用授权密钥，可联系机智云FAE或者销售同事获取。
-
 
 ## 7. 模组添加到产品里
 
