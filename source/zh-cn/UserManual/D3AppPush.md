@@ -1,5 +1,5 @@
-# D3 APP 推送使用文档
-
+title: D3 APP 推送使用文档
+---
 # 概述
 D3 推送功能目前支持四个推送平台，分别是极光、百度、信鸽、亚马逊SNS。对不同的平台我们提供统一的功能支持。
 
@@ -79,4 +79,3 @@ __生产环境__
 具体的可配置字段和含义请参看[APNS文档](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/PayloadKeyReference.html#//apple_ref/doc/uid/TP40008194-CH17-SW1)。
 #### 注意
 1. 当使用高级参数功能的时候假如需要传递一些比较自定义的数据（例如数据点数据），建议将字段配置在 `data` 字段内。因为当消息类型是自定义消息的时候会清空 `alert` 字段的内容，自定义的数据如果放在此字段内将会丢失；
-
