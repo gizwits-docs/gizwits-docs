@@ -21,11 +21,11 @@ N102 DTU模组的UART1主串口用于与MCU进行串口通信，其简易通信�
 
 图3-1  UART1三线制连接方式示意图
 
-### N102 的实际线路图如图3-3所示：
-
 ![设备连接](/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_2.png)
 
 图3-2  调试串口UART0连线图
+
+### N102 的实际线路图如图3-3所示：
 
 ![设备连接](/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_3.png)
 
