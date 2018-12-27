@@ -109,5 +109,5 @@ title: 模块硬件资料
 
 [合宙Air202模组串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/Air202.html)
 
-[获取合宙Air202日志（教程中“7.获取合宙Air202 日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
+[获取合宙Air202日志（教程中“8.获取合宙Air202 日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
 
