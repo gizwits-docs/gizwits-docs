@@ -44,6 +44,13 @@ title: 模块硬件资料
 
 [Air202 硬件设计手册](http://docs.gizwits.com/assets/pdf/HZ/Air202_hardware_design.pdf)
 
+- ### 域格4G模块系列
+
+[CLM920_NC3_LTE模块硬件使用指南V2.0](http://docs.gizwits.com/assets/pdf/YG/CLM920_NC3_LTE_hardware_guide_V2.0.pdf)
+
+[CLM920_NC3_参考设计_V1.0](http://docs.gizwits.com/assets/pdf/YG/CLM920_NC3_reference_design_V1.0.pdf)
+
+
 ## 3. NB-IOT模块的Datasheet 硬件介绍
 
 - ### 零零模块系列
@@ -51,7 +58,6 @@ title: 模块硬件资料
 [N256 硬件设计手册](http://docs.gizwits.com/assets/pdf/Lingling/N256_hardware_design.pdf)
 
 [N102 硬件设计手册](http://docs.gizwits.com/assets/pdf/Lingling/N102_hardware_design.pdf)
-
 
 
 # 二、模块资源
