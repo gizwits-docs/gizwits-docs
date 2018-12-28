@@ -62,9 +62,9 @@ title: 模块硬件资料
 
 # 二、模块资源
 
-## 乐鑫模块系列
+## 1. 乐鑫模块系列
 
-#### 1.ESP8266
+#### 1.1 ESP8266
 
 [ESP8266串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
 
@@ -72,7 +72,7 @@ title: 模块硬件资料
 
 [GAgent for ESP8266 04020025下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020025_17083019-1504231974149.tar)
 
-#### 2.ESP-WROOM-02D
+#### 1.2 ESP-WROOM-02D
 
 [ESP-WROOM-02D串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/ESP-WROOM-02Duart.html)
 
@@ -80,9 +80,9 @@ title: 模块硬件资料
 
 [GAgent for ESP8266 04020034下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020034-1529147544607.rar)
 
-## 汉枫模块系列
+## 2. 汉枫模块系列
 
-#### 1.HF-LPB100
+#### 2.1 HF-LPB100
 
 [HF-LPB100串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/HF-LPB100%E4%B8%B2%E5%8F%A3%E7%83%A7%E5%86%99%E8%AF%B4%E6%98%8E.html)
 
@@ -90,7 +90,7 @@ title: 模块硬件资料
 
 [GAgent for HF LPB100 04020022下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00HFLPB1_04020022_17082814-1504232026164.tar)
 
-#### 2.HF-LPB120/LPT120
+#### 2.2 HF-LPB120/LPT120
 
 [HF-LPB120/HF-LPT120串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT120.html)
 
@@ -98,13 +98,13 @@ title: 模块硬件资料
 
 [GAgent for HFLPT120/LPB120/LPT220 04020025下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00HFB120&00HFT120&00HFT220_04020025_17082110-1503557904310.zip)
 
-#### 3.HF-LPT230
+#### 2.3 HF-LPT230
 
 [HF-LPB120/HF-LPT230串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/HF-LPT230.html)
 
 [获取汉枫LPT230 Gagent日志（教程中“5.获取汉枫LPT230 Gagent日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
 
-## 广和通模块系列
+## 3. 广和通模块系列
 
 [广和通G510模组烧写方法](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510.html)
 
@@ -112,7 +112,7 @@ title: 模块硬件资料
 
 [GAgent for 广和通Fibocom G510 04020027下载](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00FBG510_04020027_17041911_bps9600.zip)
 
-## 锐凌微模块系列
+## 4. 锐凌微模块系列
 
 锐凌微TinyCon3350-M26须原厂烧写固件
 
@@ -120,13 +120,13 @@ title: 模块硬件资料
 
 [GAgent for 锐凌微 TinyCon3350-M26 04020018](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_0GRLWM26_04020018_2017022011.bin)
 
-## 合宙模块系列
+## 5. 合宙模块系列
 
 [合宙Air202模组串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/Air202.html)
 
 [获取合宙Air202日志（教程中“8.获取合宙Air202 日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
 
-## 零零模块系列
+## 6. 零零模块系列
 
 [GN511 使用说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/GN511_use.html)
 
@@ -136,7 +136,7 @@ title: 模块硬件资料
 
 [获取零零N102日志（教程中“7.获取零零N102 日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
 
-## 域格模块系列
+## 7. 域格模块系列
 
 [域格 NC3 模组串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/NC3_uart.html)
 
