@@ -140,7 +140,7 @@ AT+AUTHCODE=XXXXXXXXXXXXXXXXXXX
 
 ![信号检测](/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_11.png)
 
-电信NB卡有可能会有过期需要续费才能用的情况，但是从NB模组日志中是看不出来的，建议直接找真真确认卡有无问题
+电信NB卡有可能会有过期需要续费才能用的情况，但是从NB模组日志中是看不出来的。
 
 ## 9. 最后，确保上述步骤 4/5/6/7/8 都没问题后，就可以用IOE demo APP 和 机智云串口调试助手模拟mcu调试N102模块
 
