@@ -87,14 +87,34 @@ USB 接口可支持的功能有：软件下载升级、数据通讯、AT Command
 
 | 管脚号 | 管脚名 | 描述 |
 | - | :-: | -: | 
-| 67 | TXD | UART发送数据 |
+| 67 | TXD | UART 发送数据 |
+| 68 | RSD | UART 接收数据 |
 
+**日志串口：**
 
+| 管脚号 | 管脚名 | 描述 |
+| - | :-: | -: | 
+| 63 | DCD | UART1 发送数据 |
+| 66 | DRT | UART1 接收数据 |
 
+串口设计图：
 
 ![name](/assets/zh-cn/deviceDev/debug/NC3/NC_uart_8.png)
 
+## 4.6 开机引脚的连接
+
+CLM920 NC3 模块的 21 脚是开机脚，模块开机是低电平有效，PWRKEY 拉低至少500ms，模块开机，用户可通过查询 VDD_EXT 管脚的高低电平来判断模块是否开机
+
 ![name](/assets/zh-cn/deviceDev/debug/NC3/NC_uart_9.png)
 
+# 三、烧录操作步骤
+
+连接好硬件，将USB接口插入电脑的USB口，安装好驱动之后，开机，打开设备管理器，设备管理器会显示两个串口
+
 ![name](/assets/zh-cn/deviceDev/debug/NC3/NC_uart_10.png)
+
+双击固件文件夹内的updateadb_9025.bat批处理文件，会打开一个命令行串口，烧写完成后，窗口会自动关闭
+
 ![name](/assets/zh-cn/deviceDev/debug/NC3/NC_uart_11.png)
+
+之后设备将会重启，此时固件已烧写成功
