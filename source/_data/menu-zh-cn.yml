@@ -99,10 +99,14 @@
       path: /deviceDev/debug/ESP-WROOM-02Duart.html
     广和通G510模组烧写方法:
       path: /deviceDev/debug/G510.html
-    零零N102 串口烧写说明:
+    零零 N102 串口烧写说明:
       path: /deviceDev/debug/N102_DTU.html
-    合宙Air202串口烧写说明:
+    合宙 Air202 串口烧写说明:
       path: /deviceDev/debug/Air202.html
+    域格 NC3 串口烧写说明:
+      path: /deviceDev/debug/NC3_uart.html
+    NB 接入方案:
+      path: /deviceDev/debug/NB_Project.html
     通讯模组调试日志抓取教程:
       path: /deviceDev/通讯模组调试日志抓取教程.html
 
