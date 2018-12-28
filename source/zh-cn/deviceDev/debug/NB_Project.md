@@ -59,15 +59,17 @@ APP下发设备控制数据：APP端→机智云平台→运营商IOT平台→�
 
 ![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_12.png)
 
-生成设备绑定二维码后，我们可以下载机智云IOE DEMO APP扫码绑定设备（APP下载地址https://download.gizwits.com/zh-cn/p/98/99）
+生成设备绑定二维码后，我们可以下载机智云IOE DEMO APP扫码绑定设备
+
+（APP下载地址https://download.gizwits.com/zh-cn/p/98/99）
 
 ![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_13.png)
 
 # 八、控制设备，点亮/熄灭LED灯成功，机智云接入完毕
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_13.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_14.png)
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_13.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_15.png)
 
 # 九、参考资料下载
 
