@@ -128,9 +128,11 @@ title: 模块硬件资料
 
 ## 零零模块系列
 
-[GN511使用说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/GN511_use.html)
+[GN511 使用说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/GN511_use.html)
 
-[零零N102模组串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/N102_DTU.html)
+[NB 接入方案](http://docs.gizwits.com/zh-cn/deviceDev/debug/NB_Project.html)
+
+[零零 N102 模组串口烧写说明](http://docs.gizwits.com/zh-cn/deviceDev/debug/N102_DTU.html)
 
 [获取零零N102日志（教程中“7.获取零零N102 日志”）](http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
 
