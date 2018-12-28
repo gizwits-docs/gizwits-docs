@@ -41,9 +41,9 @@ App Dev Guide:
 
   App SDK Guide:
     Gizwits App SDK for Android:
-      path: /AppDev/iOSSDKA2.html
-    Gizwits App SDK for iOS:
       path: /AppDev/AndroidSDKA2.html
+    Gizwits App SDK for iOS:
+      path: /AppDev/iOSSDKA2.html
     Gizwits App SDK for APICloud:
       path: /AppDev/APICloudSDK.html
     Data Transparent Transmission:
