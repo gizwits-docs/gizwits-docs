@@ -71,8 +71,7 @@ V3.0 | 补充说明 | 钟汉烽 | 2019/2/2
 &emsp;&emsp;3、手机B打开机智云demo APP，一键配置，等待配网成功。
 
 ![14](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/14.png)
-
-<center>手机A热点设置</center>
+手机A热点设置
 
 ### 5.1、使用手机热点进行Airlink配网失败
 
