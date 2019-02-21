@@ -123,8 +123,7 @@ http://docs.gizwits.com/zh-cn/AppDev/SDK%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%
 &emsp;&emsp;A：APP输入错误的密码后配网，模组会正常退出配网模式并进入STA模式，开始一直搜索APP给出ssid和密码都符合的热点，有就连接上，没有就打印disconnect from ssid xxx，reason2...
 
 ![19](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/19.png)
-
-<center>除了密码错误，路由器不兼容，APP连接5G路由器后配网，模组解析配置包出错，模组日志都会如上打印</center>
+除了密码错误，路由器不兼容，APP连接5G路由器后配网，模组解析配置包出错，模组日志都会如上打印
 
 ![20](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/20.png)
 
