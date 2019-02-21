@@ -57,15 +57,7 @@ V3.0 | 补充说明 | 钟汉烽 | 2019/2/2
 
 ### 4.3、机智云demo APP配网流程，等待配网成功
 
-![5](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/5.png)
-![6](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/6.png)
-![7](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/7.png)
-![8](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/8.png)
-![9](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/9.png)
-![10](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/10.png)
-![11](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/11.png)
-![12](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/12.png)
-![13](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/13.png)
+![5](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/5.png)![6](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/6.png)![7](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/7.png)![8](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/8.png)![9](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/9.png)![10](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/10.png)![11](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/11.png)![12](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/12.png)![13](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/13.png)
 
 <br/>&emsp;&emsp;若机智云demo APP配网成功，而开发者APP配网失败，则有以下几点原因：
 <br/>&emsp;&emsp;1、可能是开发者app调用配网接口填写的模组平台与板卡模组型号不一致。
