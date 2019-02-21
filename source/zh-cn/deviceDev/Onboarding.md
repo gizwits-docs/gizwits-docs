@@ -23,9 +23,9 @@ V3.0 | 补充说明 | 钟汉烽 | 2019/2/2
 
 ## 3、AirLink配网失败排查步骤
 &emsp;&emsp;1、	乐鑫8266模组仅支持连接2.4G频段路由器，确认要配网连接的路由器不是5G或者2.4G/5G混合双频
-<br/>&emsp;&emsp;2、	通过模组日志判断，模组使用的是否最新版模组固件
-<br/>&emsp;&emsp;3、	通过模组日志判断，模组确实进入Airlink配网模式
-<br/>&emsp;&emsp;4、	确认客户的APP没有选错模组平台和Airlink配网模式
+&emsp;&emsp;2、	通过模组日志判断，模组使用的是否最新版模组固件
+&emsp;&emsp;3、	通过模组日志判断，模组确实进入Airlink配网模式
+&emsp;&emsp;4、	确认客户的APP没有选错模组平台和Airlink配网模式
 
 ### 3.1、确认路由器是2.4G频段
 
@@ -59,16 +59,16 @@ V3.0 | 补充说明 | 钟汉烽 | 2019/2/2
 
 ![5](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/5.png)![6](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/6.png)![7](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/7.png)![8](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/8.png)![9](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/9.png)![10](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/10.png)![11](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/11.png)![12](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/12.png)![13](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/13.png)
 
-<br/>&emsp;&emsp;若机智云demo APP配网成功，而开发者APP配网失败，则有以下几点原因：
-<br/>&emsp;&emsp;1、可能是开发者app调用配网接口填写的模组平台与板卡模组型号不一致。
-<br/>&emsp;&emsp;2、开发者app调用配网接口的配网方法参数非AirLink配网。
+&emsp;&emsp;若机智云demo APP配网成功，而开发者APP配网失败，则有以下几点原因：
+&emsp;&emsp;1、可能是开发者app调用配网接口填写的模组平台与板卡模组型号不一致。
+&emsp;&emsp;2、开发者app调用配网接口的配网方法参数非AirLink配网。
 
 ## 5、使用手机热点作为路由器进行测试
 
-<br/>&emsp;&emsp;若是使用机智云demo App如上述步骤4.1——4.3配网后仍然失败了，这时候极有可能是路由器的问题了，可以尝试使用手机热点作为路由器进行测试，以对比出是否真实路由器的某些原因导致配网失败。
-<br/>&emsp;&emsp;1、打开手机A热点
-<br/>&emsp;&emsp;2、使用手机B连接A的热点
-<br/>&emsp;&emsp;3、手机B打开机智云demo APP，一键配置，等待配网成功。
+&emsp;&emsp;若是使用机智云demo App如上述步骤4.1——4.3配网后仍然失败了，这时候极有可能是路由器的问题了，可以尝试使用手机热点作为路由器进行测试，以对比出是否真实路由器的某些原因导致配网失败。
+&emsp;&emsp;1、打开手机A热点
+&emsp;&emsp;2、使用手机B连接A的热点
+&emsp;&emsp;3、手机B打开机智云demo APP，一键配置，等待配网成功。
 
 ![14](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/14.png)
 
@@ -77,9 +77,9 @@ V3.0 | 补充说明 | 钟汉烽 | 2019/2/2
 ### 5.1、使用手机热点进行Airlink配网失败
 
 &emsp;&emsp;如果通过手机热点和机智云demo APP进行配网还是失败，需要抓取模组日志和APP的sdk日志给机智云FAE，才能进一步确认问题的分析。除了日志，客户还应该提供手机型号，手机操作系统版本号，路由器型号，模组版本号，product key信息，企业信息，appid信息给FAE
-<br/>&emsp;&emsp;模组日志或sdk日志的获取流程
+&emsp;&emsp;模组日志或sdk日志的获取流程
 http://docs.gizwits.com/zh-cn/deviceDev/%E9%80%9A%E8%AE%AF%E6%A8%A1%E7%BB%84%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html#
-<br/>&emsp;&emsp;APP端sdk日志获取流程
+&emsp;&emsp;APP端sdk日志获取流程
 http://docs.gizwits.com/zh-cn/AppDev/SDK%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html#
 
 ### 5.2、使用手机热点进行Airlink配网成功
@@ -110,18 +110,18 @@ http://docs.gizwits.com/zh-cn/AppDev/SDK%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%
 ## 6、其他配网失败排查方法
 
 &emsp;&emsp;有时候配网失败可能的原因既不是设备端原因，也不是APP端原因，也不是路由器原因，可能是手机的原因，这时候我们可以尝试更换手机来配网，以此排查是否手机的原因。例如客户原先用的IOS手机，安装了机智云demo APP后airlink配网仍然失败，换了Android手机就能成功，这样就可以初步判断是IOS手机的原因；例如客户用Android8.0甚至Android9.0的手机，机智云demo APP后Airlink配网仍然失败，换了Android7.0及以下就能成功，这样就可以初步判断是Android8.0及以上手机的原因。
-<br/>&emsp;&emsp;注：目前乐鑫的配置库使用IOS手机和Android8.0及以上手机Airlink配网均正常，这里只是提供一个排查的思路打的比方。
+&emsp;&emsp;注：目前乐鑫的配置库使用IOS手机和Android8.0及以上手机Airlink配网均正常，这里只是提供一个排查的思路打的比方。
 
 ## 7、FAQ
 
 &emsp;&emsp;Q：客户使用自己开发的APP给模组Airlink配网失败，用机智云demo APP给模组Airlink配网成功，怎么知道客户APP是否选错平台和选错配网模式？
-<br/>&emsp;&emsp;A：发送SDK日志给FAE
+&emsp;&emsp;A：发送SDK日志给FAE
 
-<br/>&emsp;&emsp;Q：乐鑫模组会跟2.4G路由器的存在兼容问题导致无法连接路由器吗？
-<br/>&emsp;&emsp;A：理论上有这种情况，但是极少见，一般都遇不到
+&emsp;&emsp;Q：乐鑫模组会跟2.4G路由器的存在兼容问题导致无法连接路由器吗？
+&emsp;&emsp;A：理论上有这种情况，但是极少见，一般都遇不到
 
-<br/>&emsp;&emsp;Q：配网时APP输入路由器的密码错误，模组会如何表现
-<br/>&emsp;&emsp;A：APP输入错误的密码后配网，模组会正常退出配网模式并进入STA模式，开始一直搜索APP给出ssid和密码都符合的热点，有就连接上，没有就打印disconnect from ssid xxx，reason2...
+&emsp;&emsp;Q：配网时APP输入路由器的密码错误，模组会如何表现
+&emsp;&emsp;A：APP输入错误的密码后配网，模组会正常退出配网模式并进入STA模式，开始一直搜索APP给出ssid和密码都符合的热点，有就连接上，没有就打印disconnect from ssid xxx，reason2...
 
 ![19](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/19.png)
 
@@ -129,13 +129,13 @@ http://docs.gizwits.com/zh-cn/AppDev/SDK%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%
 
 ![20](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/20.png)
 
-<br/>&emsp;&emsp;Q：路由器端口号的限制会不会影响Airlink配网和影响模组连接路由器
-<br/>&emsp;&emsp;A：都有影响，特别是一些高级写字楼，对应路由器设置有一定的限制，要确认一下端口是否禁止：
-<br/>&emsp;&emsp;&emsp;&emsp;APP与设备服务端口的定义
-<br/>&emsp;&emsp;&emsp;&emsp;设备监听UDP广播端口号为：12414
-<br/>&emsp;&emsp;&emsp;&emsp;设备TCP服务器端口号为：12416
-<br/>&emsp;&emsp;&emsp;&emsp;APP监听UDP广播端口号为：2415
+&emsp;&emsp;Q：路由器端口号的限制会不会影响Airlink配网和影响模组连接路由器
+&emsp;&emsp;A：都有影响，特别是一些高级写字楼，对应路由器设置有一定的限制，要确认一下端口是否禁止：
+&emsp;&emsp;&emsp;&emsp;APP与设备服务端口的定义
+&emsp;&emsp;&emsp;&emsp;设备监听UDP广播端口号为：12414
+&emsp;&emsp;&emsp;&emsp;设备TCP服务器端口号为：12416
+&emsp;&emsp;&emsp;&emsp;APP监听UDP广播端口号为：2415
 
-<br/>&emsp;&emsp;&emsp;&emsp;设备与云端服务端口的定义
-<br/>&emsp;&emsp;&emsp;&emsp;设备与GService服务器端口号为：80
-<br/>&emsp;&emsp;&emsp;&emsp;设备与M2M服务器端口号为：1883或8883
+&emsp;&emsp;&emsp;&emsp;设备与云端服务端口的定义
+&emsp;&emsp;&emsp;&emsp;设备与GService服务器端口号为：80
+&emsp;&emsp;&emsp;&emsp;设备与M2M服务器端口号为：1883或8883
