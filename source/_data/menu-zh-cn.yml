@@ -152,9 +152,6 @@
     Arduino Uno WiFi智能小夜灯:
       path: /deviceDev/ArduinoUNO/example.html
 
-  Airlink配网排查引导:
-    path: /deviceDev/Onboarding.html
-
   更多接入指南:
     ECE Demo开发教程:
       path: /UserManual/ecevideos.html
@@ -162,6 +159,9 @@
       path: /deviceDev/串口工具使用文档.html
     ST I-CUBE-GizWits套件快速接入指南:
       path: /deviceDev/STICubeGizwits/STICubeGizwits.html
+
+  Airlink配网排查引导:
+    path: /deviceDev/Onboarding.html
 
   设备接入FAQ:
     path: /deviceDev/设备接入FAQ.html
