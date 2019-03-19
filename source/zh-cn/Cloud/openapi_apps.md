@@ -3443,7 +3443,7 @@ data    : 设备上报状态
 | X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                  |
 | did                      | string  |  是  | path     | 设备ID                                                     |
 | start_ts                 | integer |  是  | query    | 开始时间，单位为毫秒                                       |
-| end_ts                   | integer |  否  | query    | 结束时间，单位为毫秒                                       |
+| end_ts                   | integer |  是  | query    | 结束时间，单位为毫秒                                       |
 | attrs                    | string  |  是  | query    | 数字类型数据点名称，多个数据点用逗号分隔                   |
 | aggregator               | string  |  是  | query    | 统计方式，sum：合计；avg：平均值；max：最大值；min：最少值 |
 | unit                     | string  |  是  | query    | 汇总方式,hours：小时；day：天；weeks：周；months：月       |
@@ -3470,7 +3470,7 @@ data    : 设备上报状态
 {
   "query": {
     "aggregator": "sum",
-    "end_ts": null,
+    "end_ts": 1505318400100,
     "start_ts": 1505318400000,
     "attrs": "set_temp, alert_shutdown, room_temp",
     "unit": "HOURS"
