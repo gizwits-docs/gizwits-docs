@@ -128,7 +128,7 @@ Cloud API:
       path: /cloud/ent_dev.html
     Enterprise API:
       path: /cloud/enterprise_api.html
-    Notification API:
+    SNoti API:
       path: /cloud/NotificationAPI.html      
     WebsocketAPI:
       path: /cloud/WebsocketAPI.html
