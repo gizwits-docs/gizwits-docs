@@ -155,6 +155,34 @@ User Manual:
         path: /UserManual/ST_IoT.html
       Getting Started with I-CUBE-GiZWITS:
         path: /DeviceDev/ST/ICUBEGIZWITS.html
+      Promote personal type product to enterprise type product:
+        path: /UserManual/PromoteProduct.html
+    OTA:
+      GAgent OTA:
+        path: /UserManual/GAgentOTA.html
+      MCU OTA:
+        path: /UserManual/MCUOTA.html
+    End-of-line test:
+      path: /DeviceDev/EolTest.html
+    Gizwits D3 Engine:
+      path: /UserManual/D3.html
+    Gizwits ECE fog computing:
+      path: /UserManual/ECE.html
+    Voice control with smart speakers:
+      Integration with Amazon Echo:
+        path: /UserManual/EchoIntegration.html
+      Control Gokit using Amazon Echo:
+        path: /DeviceDev/UseEcho.html
+      Control Gokit using Google Home:
+        path: /UserManual/UseGoogleHome.html
+     Gizwits Real-time Big Data Analytics:
+       path: /UserManual/DataAnalytics.html
+     Global Network of Gizwits:
+       path: /UserManual/GlobalDeployment.html
+        
+      
+      
+        
 
 
 
