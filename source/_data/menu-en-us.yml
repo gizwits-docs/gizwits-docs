@@ -151,12 +151,12 @@ Cloud API:
       path: /cloud/CloudFAQ.html     
       
 User Manual:  
-      Gizwits and ST Make IoT Development Easy:
-        path: /UserManual/ST_IoT.html
-      Getting Started with I-CUBE-GiZWITS:
-        path: /DeviceDev/ST/ICUBEGIZWITS.html
-      Promote personal type product to enterprise type product:
-        path: /UserManual/PromoteProduct.html
+    Gizwits and ST Make IoT Development Easy:
+      path: /UserManual/ST_IoT.html
+    Getting Started with I-CUBE-GiZWITS:
+      path: /DeviceDev/ST/ICUBEGIZWITS.html
+    Promote personal type product to enterprise type product:
+      path: /UserManual/PromoteProduct.html
     OTA:
       GAgent OTA:
         path: /UserManual/GAgentOTA.html
@@ -175,10 +175,10 @@ User Manual:
         path: /DeviceDev/UseEcho.html
       Control Gokit using Google Home:
         path: /UserManual/UseGoogleHome.html
-     Gizwits Real-time Big Data Analytics:
-       path: /UserManual/DataAnalytics.html
-     Global Network of Gizwits:
-       path: /UserManual/GlobalDeployment.html
+    Gizwits Real-time Big Data Analytics:
+      path: /UserManual/DataAnalytics.html
+    Global Network of Gizwits:
+      path: /UserManual/GlobalDeployment.html
         
       
       
