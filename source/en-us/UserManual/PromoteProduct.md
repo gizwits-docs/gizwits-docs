@@ -5,9 +5,9 @@ Personal products cannot use the Enterprise API, D3 Rules Engine and other funct
 
 Since many users are not aware of the above, they often register for an individual developer account at the Gizwits Developer Center, or create personal type products with an enterprise developer account. In these cases, the enterprise users need to promote the personal type product to an enterprise type product.
 
-![Product Transfer](/assets/en-us/UserManual/promote/11.png)
+![Product Transfer](../../../assets/en-us/UserManual/promote/11.png)
 
-![Product Transfer](/assets/en-us/UserManual/promote/20.png)
+![Product Transfer](../../../assets/en-us/UserManual/promote/20.png)
 
 # Promote personal type project of individual developer account to enterprise type project of enterprise developer account
 
