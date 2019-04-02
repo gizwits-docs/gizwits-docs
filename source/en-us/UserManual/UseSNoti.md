@@ -158,4 +158,4 @@ Base64 decoding as follows
 # 5. Reference guide
 
 SNoti API:
-http://docs.gizwits.com/en-us/Cloud/NotificationAPI.html
+http://docs.gizwits.com/en-us/cloud/NotificationAPI.html
