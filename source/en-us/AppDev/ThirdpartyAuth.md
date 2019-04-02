@@ -60,9 +60,9 @@ AppID and AppSecret can be seen on the Application details page.
  
 ### Configuration of Gizwits App Framework
 
-Click to view [iOS SDK configuration for WeChat authentication](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E9%85%8D%E7%BD%AE-1).
+Click to view [iOS SDK configuration for WeChat authentication](http://docs.gizwits.com/en-us/AppDev/iOSAuthReSkin.html#Wechat-authentication).
 
-Click to view [Android SDK configuration for WeChat authentication](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E4%BF%AE%E6%94%B9UIConfig-json%E6%96%87%E4%BB%B6-1).
+Click to view [Android SDK configuration for WeChat authentication](http://docs.gizwits.com/en-us/AppDev/AndroidAuthReSkin.html#Wechat-authentication).
 
 ## Tencent QQ
 
@@ -128,7 +128,7 @@ After the verification passes, you can get the APP ID and APP KEY as the followi
  
 ### Associate the authentication application
 
-Log in to the [Gizwits Developer Center](http://dev.gizwits.com/zh-cn/developer/product/) and select the product that need to be associated to a third party authentication application.
+Log in to the [Gizwits Developer Center](https://dev.gizwits.com/en/developer/) and select the product that need to be associated to a third party authentication application.
 
 ![third-party authentication](../../../assets/en-us/AppDev/third-party/31.png)
  
@@ -142,9 +142,9 @@ Click Associate Third Party Authentication, type the APPID applied from Tencent 
  
 ### Configuration of Gizwits App Framework
 
-Click to view the [iOS SDK configuration for QQ authentication](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E9%85%8D%E7%BD%AE).
+Click to view the [iOS SDK configuration for QQ authentication](http://docs.gizwits.com/en-us/AppDev/iOSAuthReSkin.html#QQ-authentication).
 
-Click to view the [Android SDK configuration for QQ authentication](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html#%E4%BF%AE%E6%94%B9UIConfig-json%E6%96%87%E4%BB%B6).
+Click to view the [Android SDK configuration for QQ authentication](http://docs.gizwits.com/en-us/AppDev/AndroidAuthReSkin.html#QQ-authentication).
 
 ## Sina Weibo
 
@@ -198,7 +198,7 @@ Click on the Application Information and view the AppID and AppSecret as shown b
  
 ### API call
 
-You can accomplish the third-party authentication via the SDK provided by Weibo, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users) to complete the user login.
+You can accomplish the third-party authentication via the SDK provided by Weibo, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://docs.gizwits.com/en-us/cloud/OpenAPI.html) to complete the user login.
 
 ## Baidu
 
@@ -236,7 +236,7 @@ Click on the Basic Information and view the API Key and Secret Key as shown belo
  
 ### API call
 
-You can accomplish the third-party authentication via the SDK provided by Baidu and get the access_token. After that, call the Baidu REST API and get the UID, then call the [Gizwits Open API Create a user](http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users) to complete the user login.
+You can accomplish the third-party authentication via the SDK provided by Baidu and get the access_token. After that, call the Baidu REST API and get the UID, then call the [Gizwits Open API Create a user](http://docs.gizwits.com/en-us/cloud/OpenAPI.html) to complete the user login.
 
 
 # Providers outside China
@@ -287,7 +287,7 @@ Click Settings >> Basic to view the App ID and click Show to see the App Secret.
  
 ### API call 
 
-You can accomplish the third-party authentication via the SDK provided by Facebook, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users) to complete the user login.
+You can accomplish the third-party authentication via the SDK provided by Facebook, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://docs.gizwits.com/en-us/cloud/OpenAPI.html) to complete the user login.
 
 
 ## Twitter
@@ -327,7 +327,7 @@ Click Keys and Access Tokens and you will get the API KEY and API Secret as show
  
 ### Associate the authentication application
 
-Log in to [Gizwits Developer Center](http://dev.gizwits.com/zh-cn/developer/product/) and select the product that need to be associated to a third party authentication application.
+Log in to [Gizwits Developer Center](https://dev.gizwits.com/en/developer/) and select the product that need to be associated to a third party authentication application.
 
 ![third-party authentication](../../../assets/en-us/AppDev/third-party/63.png)
  
@@ -341,7 +341,7 @@ Click Associate Third-party Authentication Application to jump to the associatio
  
 ### API call
 
-You can accomplish the third-party authentication via the SDK provided by Twitter, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users) to complete the user login.
+You can accomplish the third-party authentication via the SDK provided by Twitter, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://docs.gizwits.com/en-us/cloud/OpenAPI.html#Create-a-user) to complete the user login.
 
 
 ## Google+
@@ -386,7 +386,7 @@ Click the Credentials tab to view the client ID (Client ID) as shown below.
  
 ### API call
 
-You can accomplish the third-party authentication via the SDK provided by Google, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users) to complete the user login.
+You can accomplish the third-party authentication via the SDK provided by Google, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://docs.gizwits.com/en-us/cloud/OpenAPI.html#Create-a-user) to complete the user login.
 
 
 Note: The value of the API parameter token needs to start with Bearer and a space. Format: Bearer access_token
@@ -435,7 +435,7 @@ For API Key, you need to click Get API Key Value in iOS or Android Settings to v
  
 ### API call
 
-You can accomplish the third-party authentication via the SDK provided by Amazon, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://swagger.gizwits.com/doc/index/openapi_apps#/%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/post_app_users) to complete the user login.
+You can accomplish the third-party authentication via the SDK provided by Amazon, and with the returned user_id and access_token, call the [Gizwits Open API Create a user](http://docs.gizwits.com/en-us/cloud/OpenAPI.html#Create-a-user) to complete the user login.
 
 Note: The value of the API parameter token needs to start with Bearer and a space. Format: Bearer access_token
 
