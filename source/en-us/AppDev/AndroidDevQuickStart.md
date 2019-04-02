@@ -361,31 +361,31 @@ At this time, the light icon on the control page of the App immediately changes 
 
 # See Also
 
-See [Gizwits App Code Auto-Generator](../UserManual/AppCodeAutoGenerator.md) to learn about the functionality of the automatically generated App code.
+See [Gizwits App Code Auto-Generator](http://docs.gizwits.com/en-us/AppDev/AppCodeAutoGenerator.html) to learn about the functionality of the automatically generated App code.
 
 See "Gizwits App Framework" to grasp
 
-* [Gizwits App Framework for iOS](../AppDev/iOSFramework.md)
-* [Push notification integration for iOS App](../AppDev/iOSPushNotification.md)
-* [Third-party authentication and re-skin for iOS App](../AppDev/iOSAuthReSkin.md)
-* [Quick start with iOS App development](../quickstart/iOSDevQuickStart.md)
-* [Gizwits App Framework for Android](../AppDev/AndroidFramework.md)
-* [Push notification integration for Android App](../AppDev/AndroidPushNotification.md)
-* [Third-party authentication and re-skin for Android](../AppDev/AndroidAuthReSkin.md)
-* [Quick start with Android App development](../quickstart/AndroidDevQuickStart.md)
-* [Gizwits App Framework for APICloud](../AppDev/APICloudFramework.md)
+* [Gizwits App Framework for iOS](http://docs.gizwits.com/en-us/AppDev/iOSFramework.html)
+* [Push notification integration for iOS App](http://docs.gizwits.com/en-us/AppDev/iOSPushNotification.html)
+* [Third-party authentication and re-skin for iOS App](http://docs.gizwits.com/en-us/AppDev/iOSAuthReSkin.html)
+* [Quick start with iOS App development](http://docs.gizwits.com/en-us/AppDev/iOSDevQuickStart.html)
+* [Gizwits App Framework for Android](http://docs.gizwits.com/en-us/AppDev/AndroidFramework.html)
+* [Push notification integration for Android App](http://docs.gizwits.com/en-us/AppDev/AndroidPushNotification.html)
+* [Third-party authentication and re-skin for Android](http://docs.gizwits.com/en-us/AppDev/AndroidAuthReSkin.html)
+* [Quick start with Android App development](http://docs.gizwits.com/en-us/AppDev/AndroidDevQuickStart.html)
+* [Gizwits App Framework for APICloud](http://docs.gizwits.com/en-us/AppDev/APICloudFramework.html)
 
 See "App Development SDK" to develop your IoT App
 
-* [Gizwits App SDK for Android](../AppDev/AndroidSDKA2.md)
-* [Gizwits App SDK for iOS](../AppDev/iOSSDKA2.md)
-* [Gizwits App SDK for APICloud](../AppDev/APICloudSDK.md)
-* [Data transparent transmission](../AppDev/TransparentTransmission.md)
-* [Get Gizwits App SDK debug log](../AppDev/SDKLogCapture.md)
-* [SDK error codes](../AppDev/SDKErrorCodes.md)
+* [Gizwits App SDK for Android](http://docs.gizwits.com/en-us/AppDev/AndroidSDKA2.html)
+* [Gizwits App SDK for iOS](http://docs.gizwits.com/en-us/AppDev/iOSSDKA2.html)
+* [Gizwits App SDK for APICloud](http://docs.gizwits.com/en-us/AppDev/APICloudSDK.html)
+* [Data transparent transmission](http://docs.gizwits.com/en-us/AppDev/TransparentTransmission.html)
+* [Get Gizwits App SDK debug log](http://docs.gizwits.com/en-us/AppDev/SDKLogCapture.html)
+* [SDK error codes](http://docs.gizwits.com/en-us/AppDev/SDKErrorCodes.html)
 
 More application development guides
 
-* [FAQ of mobile application development](../AppDev/AppDevFAQ.md)
-* [Gizwits Device Sharing](../cloud/DeviceSharing.md)
-* [Set up third-party authentication with the provider of choice](../AppDev/ThirdpartyAuth.md)
+* [FAQ of mobile application development](http://docs.gizwits.com/en-us/AppDev/AppDevFAQ.html)
+* [Gizwits Device Sharing](http://docs.gizwits.com/en-us/AppDev/DeviceSharing.html)
+* [Set up third-party authentication with the provider of choice](http://docs.gizwits.com/en-us/AppDev/ThirdpartyAuth.html)
