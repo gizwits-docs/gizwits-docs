@@ -103,7 +103,7 @@ The result:
 
 # See Also
 
-See [Gizwits App Code Auto-Generator](../UserManual/AppCodeAutoGenerator.md) to learn about the functionality of the automatically generated App code.
+See [Gizwits App Code Auto-Generator](http://docs.gizwits.com/en-us/AppDev/AppCodeAutoGenerator.html) to learn about the functionality of the automatically generated App code.
 
 See "Gizwits App Framework" to grasp
 
