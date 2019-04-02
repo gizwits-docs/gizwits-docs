@@ -26,7 +26,7 @@ __3. Click Create a Group -> Exclamation Point__
 
 Fill in App ID and token which can be referred to the section "2.3 Create Application Configuration" and "3. Postman Installation and Import" in the document " Using Open API to control virtual device with Postman ". The document link is 
 
-http://docs.gizwits.com/en-us/UserManual/UseOpenAPI.html
+http://docs.gizwits.com/en-us/cloud/OpenAPI.html
 
 ![Device grouping API usage](../../../assets/en-us/UserManual/Dev_GroupAPI/14.png)
 
