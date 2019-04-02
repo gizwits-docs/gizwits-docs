@@ -7,16 +7,16 @@ title: Module resources
 
 ### Espressif (Use the same datasheet for each model of ESP8266)
 
-* [esp8266-07s Datasheet](../module_source/esp8266/esp8266_datasheet.md)
-* [esp8266-12f Datasheet](../module_source/esp8266/esp8266_datasheet.md)
-* [esp8266-12s Datasheet](../module_source/esp8266/esp8266_datasheet.md)
+* [esp8266-07s Datasheet](../module_source/esp8266/esp8266_datasheet.html)
+* [esp8266-12f Datasheet](../module_source/esp8266/esp8266_datasheet.html)
+* [esp8266-12s Datasheet](../module_source/esp8266/esp8266_datasheet.html)
 
 ### High-Flying
 
-* [HFLPB100 Datasheet](../module_source/HF/HF-LPB100.md)
-* [HFLPB120 Datasheet](../module_source/HF/HF-LPB120.md)
-* [HFLPT120 Datasheet](../module_source/HF/HF-LPT120.md)
-* [HFLPT220 Datasheet](../module_source/HF/HF-LPT220.md)
+* [HFLPB100 Datasheet](../module_source/HF/HF-LPB100.html)
+* [HFLPB120 Datasheet](../module_source/HF/HF-LPB120.html)
+* [HFLPT120 Datasheet](../module_source/HF/HF-LPT120.html)
+* [HFLPT220 Datasheet](../module_source/HF/HF-LPT220.html)
 
 ## 1.2 Datasheets for GPRS modules
 
@@ -32,28 +32,28 @@ title: Module resources
 
 ## Espressif
 
-* [Firmware downloading for ESP8266 via serial port](../DeviceDev/debug/ESP8266.md)
-* [Debug log capture for ESP8266](../DeviceDev/DebugLog.md)
+* [Firmware downloading for ESP8266 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/ESP8266.html)
+* [Debug log capture for ESP8266](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugLog.html)
 * [Download Agent for ESP8266 04020025](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020025_17083019-1504231974149.tar)
 
 ## High-Flying
 
 ### 1. HF-LPB100
 
-* [Firmware downloading for HF-LPB100 via serial port](../DeviceDev/debug/HF-LPB100.md)
-* [Debug log capture for LPB100](../DeviceDev/DebugLog.md)
+* [Firmware downloading for HF-LPB100 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/HF-LPB100.html)
+* [Debug log capture for LPB100](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugLog.html)
 * [Download GAgent for HF LPB100 04020022](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00HFLPB1_04020022_17082814-1504232026164.tar)
 
 ### 2. HF-LPB120/LPT120
 
-* [Firmware downloading for HF-LPB120/HF-LPT120 via serial port](../DeviceDev/debug/HF-LPT120.md)
-* [Debug log capture for LPB120/LPT120](../DeviceDev/DebugLog.md)
+* [Firmware downloading for HF-LPB120/HF-LPT120 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/HF-LPB120.html)
+* [Debug log capture for LPB120/LPT120](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugLog.html)
 * [Download GAgent for HFLPT120/LPB120/LPT220 04020025](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00HFB120&00HFT120&00HFT220_04020025_17082110-1503557904310.zip)
 
 ## Fibocom
 
-* [Firmware downloading for Fibocom G510](../DeviceDev/debug/G510.md)
-* [Debug log capture for G510](../DeviceDev/DebugLog.md)
+* [Firmware downloading for Fibocom G510](../DeviceDev/Debug/G510.html)
+* [Debug log capture for G510](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugLog.html)
 * [Download GAgent for Fibocom G510 04020027](http://gizwits.oss.aliyuncs.com/hardware_resource/GAgent_00FBG510_04020027_17041911_bps9600.zip)
 
 ## Ralinwi
