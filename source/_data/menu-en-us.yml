@@ -91,6 +91,8 @@ DeviceDev:
       path: /DeviceDev/Debug/MXCHIP.html
     ESP8266:
       path: /DeviceDev/Debug/ESP8266.html
+    G510:
+      path: /DeviceDev/Debug/G510.html
     Debug Log Capture:
       path: /DeviceDev/Debug/DebugLog.html
   
