@@ -114,13 +114,13 @@ Gizwits App SDKs facilitate developers to rapidly complete App development. You 
 
 ## 5. More guides for App development
 
-* [Data transparent transmission](../AppDev/TransparentTransmission.md)
-* [How-to videos on Gizwits App Framework](../AppDev/VideoTutorials.md)
+* [Data transparent transmission](http://docs.gizwits.com/en-us/AppDev/TransparentTransmission.html)
+* [How-to videos on Gizwits App Framework](http://docs.gizwits.com/en-us/AppDev/VideoTutorials.html)
 
 ## 6. Wechat Application Development
 
-* [Introduction to WeChat application development](../WechatDev/WechatDevIntro.md)
-* [WeChat application development](../WechatDev/WeChatDev.md)
+* [Introduction to WeChat application development](http://docs.gizwits.com/en-us/AppDev/WechatDevIntro.html)
+* [WeChat application development](http://docs.gizwits.com/en-us/AppDev/WeChatDev.html)
 
 # Device Connectivity
 
@@ -130,8 +130,8 @@ In order to let developers quickly grasp the process of device connection, Gizwi
 
 Note: It is not necessary to use Gokit for device connection.
 
-* [Device connection for standalone MCU scheme](../quickstart/MCUScheme.md)
-* [Device connection for SoC scheme](../DeviceDev/SoCScheme.md)
+* [Device connection for standalone MCU scheme](http://docs.gizwits.com/en-us/DeviceDev/MCUScheme.html)
+* [Device connection for SoC scheme](http://docs.gizwits.com/en-us/DeviceDev/SoCScheme.html)
 
 ## 2. GAgent
 
@@ -143,65 +143,65 @@ In order to enable different communication modules to connect to Gizwits IoT Clo
 
 Note: Please follow the following steps when downloading firmware to modules, otherwise unknown errors will occur.
 
-* [Gizwits IoT Cloud access with GAgent](../DeviceDev/GAgent.md)
-* [Firmware downloading for HF-LPB100 via serial port](../DeviceDev/debug/HF-LPB100.md)
-* [Firmware downloading for HF-LPT120 via serial port](../DeviceDev/debug/HF-LPT120.md)
-* [Firmware downloading for MXCHIP via serial port](../DeviceDev/debug/MXCHIP.md)
-* [Firmware downloading for ESP8266 via serial port](../DeviceDev/debug/ESP8266.md)
-* [Firmware downloading for Fibocom G510](../DeviceDev/debug/G510.md)
-* [Debug log capture for communication modules](../DeviceDev/DebugLog.md)
+* [Gizwits IoT Cloud access with GAgent](http://docs.gizwits.com/en-us/DeviceDev/GAgent.html)
+* [Firmware downloading for HF-LPB100 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/HF-LPB100.html)
+* [Firmware downloading for HF-LPT120 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/HF-LPB120.html)
+* [Firmware downloading for MXCHIP via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/MXCHIP.html)
+* [Firmware downloading for ESP8266 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/ESP8266.html)
+* [Firmware downloading for Fibocom G510](http://docs.gizwits.com/en-us/DeviceDev/Debug/G510.html)
+* [Debug log capture for communication modules](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugLog.html)
 
 ## 3. Gizwits MCU Code Auto-generator
 
 In order to reduce the barrier for development, shorten the development cycle, and reduce the investment in development resources, Gizwits has rolled out Gizwits MCU Code Auto-Generator, which generates the device-side code for the corresponding product based on the defined product data points.
 
-* [Gizwits MCU Code Auto-generator](../DeviceDev/DevSDK/MCUCodeAutoGenerator.md)
-* [Porting Common Platform Edition of MCU SDK](../DeviceDev/PortingCommonPlatform.md)
-* [Porting using STM32CubeMX](../DeviceDev/PortingUsingSTM32CubeMX.md)
-* [Tailoring MCU SDK to resource-limited platform](../DeviceDev/TailoringMCUCode.md)
+* [Gizwits MCU Code Auto-generator](http://docs.gizwits.com/en-us/DeviceDev/MCUCodeAutoGenerator.html)
+* [Porting Common Platform Edition of MCU SDK](http://docs.gizwits.com/en-us/DeviceDev/PortingCommonPlatform.html)
+* [Porting using STM32CubeMX](http://docs.gizwits.com/en-us/DeviceDev/PortingUsingSTM32CubeMX.html)
+* [Tailoring MCU SDK to resource-limited platform](http://docs.gizwits.com/en-us/DeviceDev/TailoringMCUCode.html)
 
 ## 4. Development kit - Gokit 
 
 In order to enable developers to experience the Gizwits service faster, Gizwits open-source development kit - Gokit is offered for developers to learn and reference, so that developers can connect their own products to Gizwits IoT Cloud quickly.
 
-* [Introduction to Gokit3 series development kit](../DeviceDev/Gokit3/Gokit3Intro.md)
-* [Gokit3 hardware manual](../DeviceDev/Gokit3/Gokit3Manual.md)
-* [Get started with Gokit3(S)](../DeviceDev/WiFiSOC/Gokit3SGetStarted.md)
-* [Introduction to Gokit3(S) development kit](../DeviceDev/WiFiSOC/Gokit3SIntro.md)
-* [Set up Gokit3(S) development environment](../DeviceDev/WiFiSOC/SetupGokit3SDevEnv.md)
-* [Gokit-SoC program with explanation](../DeviceDev/WiFiSOC/GokitSoCProgram.md)
-* [Gokit-MCU program with explanation](../DeviceDev/Gokit3/GokitMCUProgram.md)
+* [Introduction to Gokit3 series development kit](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3Intro.html)
+* [Gokit3 hardware manual](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3Manual.html)
+* [Get started with Gokit3(S)](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3SGetStarted.html)
+* [Introduction to Gokit3(S) development kit](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3SIntro.html)
+* [Set up Gokit3(S) development environment](http://docs.gizwits.com/en-us/DeviceDev/GoKit/SetupGokit3SDevEnv.html)
+* [Gokit-SoC program with explanation](http://docs.gizwits.com/en-us/DeviceDev/GoKit/GokitSoCProgram.html)
+* [Gokit-MCU program with explanation](http://docs.gizwits.com/en-us/DeviceDev/GoKit/GokitMCUProgram.html)
 
 ## 5. More guides for device connection
 
-* [Gizwits ECE development](../UserManual/ECEDemo.md)
-* [Gizwits Serial Port Debugger](../DeviceDev/DebugTool.md)
+* [Gizwits ECE development](http://docs.gizwits.com/en-us/UserManual/ECE.html)
+* [Gizwits Serial Port Debugger](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugTool.html)
 
 # Cloud API
 
 If you have completed device connection and App development, and want to obtain data from the Gizwits PaaS platform to build a business management system or access services provided by Gizwits, the following documents should be noticed:
 
-* 1). [Enterprise application development](../cloud/EnterpriseAppDev.md)
-* 2). [Gizwits Enterprise API](../cloud/EnterpriseAPI.md)
-* 3). [Gizwits SNoti API](../cloud/NotificationAPI.md)
-* 4). [Gizwits Open API](../cloud/OpenAPI.md)
-* 5). [Gizwits Web Socket API](../cloud/WebsocketAPI.md)
+* 1). [Enterprise application development](http://docs.gizwits.com/en-us/cloud/ent_dev.html)
+* 2). [Gizwits Enterprise API](http://docs.gizwits.com/en-us/cloud/enterprise_api.html)
+* 3). [Gizwits SNoti API](http://docs.gizwits.com/en-us/cloud/NotificationAPI.html)
+* 4). [Gizwits Open API](http://docs.gizwits.com/en-us/cloud/OpenAPI.html)
+* 5). [Gizwits Web Socket API](http://docs.gizwits.com/en-us/cloud/WebsocketAPI.html)
 * 6). API tutorials
-    - [Control device using Gizwits Open API](../UserManual/UseOpenAPI.md)
-    - [Control device using Gizwits Web Socket API](../UserManual/UseWebsocketAPI.md)
-	- [Real-time data synchronization using Gizwits SNoti API](../UserManual/UseSNotiAPI.md)
-    - [Device Linkage API tutorial](../UserManual/DeviceLinkageAPI.md)
-    - [Device Grouping API tutorial](../UserManual/DeviceGroupingAPI.md)
-    - [Data Aggregation API tutorial](../UserManual/DataAggregationAPI.md)
+    - [Control device using Gizwits Open API](http://docs.gizwits.com/en-us/UserManual/UseOpenAPI.html)
+    - [Control device using Gizwits Web Socket API](http://docs.gizwits.com/en-us/UserManual/UseWebsocket.html)
+	- [Real-time data synchronization using Gizwits SNoti API](http://docs.gizwits.com/en-us/UserManual/UseSNoti.html)
+    - [Device Linkage API tutorial](http://docs.gizwits.com/en-us/UserManual/LinkageAPI.html)
+    - [Device Grouping API tutorial](http://docs.gizwits.com/en-us/UserManual/devgroup_API.html)
+    - [Data Aggregation API tutorial](http://docs.gizwits.com/en-us/UserManual/DataAPI.html)
 
 
 # User Manual
 
-* [Promote personal type product to enterprise type product](../UserManual/PromoteProduct.md)
-* [GAgent OTA](../UserManual/GAgentOTA.md)
-* [End-of-line test](../DeviceDev/EolTest.md)
-* [Gizwits D3 Engine](../UserManual/D3.md)
-* [Gizwits ECE fog computing](../UserManual/ECE.md)
-* [Integration with Amazon Echo](../UserManual/EchoIntegration.md)
-* [Gizwits Real-time Big Data Analytics](../UserManual/DataAnalytics.md)
-* [Global Network of Gizwits](../UserManual/GlobalDeployment.md)
+* [Promote personal type product to enterprise type product](http://docs.gizwits.com/en-us/UserManual/PromoteProduct.html)
+* [GAgent OTA](http://docs.gizwits.com/en-us/UserManual/GAgentOTA.html)
+* [End-of-line test](http://docs.gizwits.com/en-us/DeviceDev/EolTest.html)
+* [Gizwits D3 Engine](http://docs.gizwits.com/en-us/UserManual/D3.html)
+* [Gizwits ECE fog computing](http://docs.gizwits.com/en-us/UserManual/ECE.html)
+* [Integration with Amazon Echo](http://docs.gizwits.com/en-us/UserManual/EchoIntegration.html)
+* [Gizwits Real-time Big Data Analytics](http://docs.gizwits.com/en-us/UserManual/DataAnalytics.html)
+* [Global Network of Gizwits](http://docs.gizwits.com/en-us/UserManual/GlobalDeployment.html)
