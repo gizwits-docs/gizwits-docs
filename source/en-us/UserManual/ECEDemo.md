@@ -16,7 +16,7 @@ At present, the function of ECE is only provided for an enterprise developer acc
 
 Quick start with Gizwits IoT Cloud
 
-Step 1: Click on the registration link https://accounts.gizwits.com/en-us/register/
+Step 1: Click on the registration link https://dev.gizwits.com/en/developer/
 
 ![ECE](../../../assets/en-us/UserManual/ECEDemo/11.png)
 
