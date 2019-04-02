@@ -42,7 +42,7 @@ This document takes the GizLamp project as an example to demonstrate how to quic
 
 The Gizwits developer account is used for device connection, device management, OTA service, MCU development and other functions.
 
-Registration link: http://dev.gizwits.com/zh-cn/developer/
+Registration link: https://dev.gizwits.com/en/developer/
 
 ### 2.2 Create a product
 
