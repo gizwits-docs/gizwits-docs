@@ -255,11 +255,11 @@ The following figure is the reserved interfaces:
 
 The Gokit series development kits are offered with Gizwits developer accounts which provide bundled technical support for the Gizwits IoT Cloud platform, including the tutorials and SDKs, community services, and other services that you need.
 
-Gizwits website: http://www.gizwits.com/
+Gizwits website: http://en.gizwits.com/
 
 Community: http://club.gizwits.com/forum.php
 
-Documentation Center: http://docs.gizwits.com
+Documentation Center: http://docs.gizwits.com/en-us/overview/overview.html
 
 
 # Appendix: Gokit3 schematic
