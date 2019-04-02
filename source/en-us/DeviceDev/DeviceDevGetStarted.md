@@ -17,8 +17,8 @@ In order to let you quickly know the process of device connection process, we pr
 
 Note: It is not necessary to use Gokit for device connection.
 
-* [Device connection for standalone MCU scheme](../quickstart/MCUScheme.md)
-* [Device connection for SoC scheme](../DeviceDev/SoCScheme.md)
+* [Device connection for standalone MCU scheme](http://docs.gizwits.com/en-us/DeviceDev/MCUScheme.html)
+* [Device connection for SoC scheme](http://docs.gizwits.com/en-us/DeviceDev/SoCScheme.html)
 
 ## 2.How to use GAgent 
 
@@ -31,38 +31,38 @@ In order to adapt different communication modules to access Gizwits IoT Cloud, w
 Note: When downloading firmware to modules, please go through the steps below, otherwise unknown errors will occur.
 
 
-* [Gizwits IoT Cloud access with GAgent](../DeviceDev/GAgent.md)
-* [Firmware downloading for HF-LPB100 via serial port](../DeviceDev/debug/HF-LPB100.md)
-* [Firmware downloading for HF-LPT120 via serial port](../DeviceDev/debug/HF-LPT120.md)
-* [Firmware downloading for MXCHIP via serial port](../DeviceDev/debug/MXCHIP.md)
-* [Firmware downloading for ESP8266 via serial port](../DeviceDev/debug/ESP8266.md)
-* [Firmware downloading for Fibocom G510](../DeviceDev/debug/G510.md)
-* [Debug log capture for communication modules](../DeviceDev/DebugLog.md)
+* [Gizwits IoT Cloud access with GAgent](http://docs.gizwits.com/en-us/DeviceDev/GAgent.html)
+* [Firmware downloading for HF-LPB100 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/HF-LPB100.html)
+* [Firmware downloading for HF-LPT120 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/HF-LPT120.html)
+* [Firmware downloading for MXCHIP via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/MXCHIP.html)
+* [Firmware downloading for ESP8266 via serial port](http://docs.gizwits.com/en-us/DeviceDev/Debug/ESP8266.html)
+* [Firmware downloading for Fibocom G510](http://docs.gizwits.com/en-us/DeviceDev/Debug/G510.html)
+* [Debug log capture for communication modules](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugLog.html)
 
 
 ## 3.  Introduction to Gizwits App Code Auto-Generator
 
 In order to lower the development barrier, shorten the development cycle, and reduce the development investment, Gizwits has rolled out Gizwits App Code Auto-Generator, which generates the device-side code for the corresponding product based on Data Points defined for the product.
 
-* [Gizwits MCU Code Auto-generator](../DeviceDev/DevSDK/MCUCodeAutoGenerator.md)
-* [Porting Common Platform Edition of MCU SDK](../DeviceDev/PortingCommonPlatform.md)
+* [Gizwits MCU Code Auto-generator](http://docs.gizwits.com/en-us/DeviceDev/MCUCodeAutoGenerator.html)
+* [Porting Common Platform Edition of MCU SDK](http://docs.gizwits.com/en-us/DeviceDev/PortingCommonPlatform.html)
 
 ## 4. Gizwits open source development kit - Gokit
 
 In order to facilitate developers to experience Gizwits IoT Cloud faster, Gizwits open source development kit - Gokit is offered for developers to learn and reference, so that developers can connect their products to Gizwits IoT Cloud rapidly.
 
-* [Introduction to Gokit3 series development kit](../DeviceDev/Gokit3/Gokit3Intro.md)
-* [Gokit3 hardware manual](../DeviceDev/Gokit3/Gokit3Manual.md)
-* [Get started with Gokit3(S)](../DeviceDev/WiFiSOC/Gokit3SGetStarted.md)
-* [Introduction to Gokit3(S) development kit](../DeviceDev/WiFiSOC/Gokit3SIntro.md)
-* [Set up Gokit3(S) development environment](../DeviceDev/WiFiSOC/SetupGokit3SDevEnv.md)
-* [Gokit-SoC program with explanation](../DeviceDev/WiFiSOC/GokitSoCProgram.md)
-* [Gokit-MCU program with explanation](../DeviceDev/Gokit3/GokitMCUProgram.md)
+* [Introduction to Gokit3 series development kit](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3Intro.html)
+* [Gokit3 hardware manual](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3Manual.html)
+* [Get started with Gokit3(S)](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3SGetStarted.html)
+* [Introduction to Gokit3(S) development kit](http://docs.gizwits.com/en-us/DeviceDev/GoKit/Gokit3SIntro.html)
+* [Set up Gokit3(S) development environment](http://docs.gizwits.com/en-us/DeviceDev/GoKit/SetupGokit3SDevEnv.html)
+* [Gokit-SoC program with explanation](http://docs.gizwits.com/en-us/DeviceDev/GoKit/GokitSoCProgram.html)
+* [Gokit-MCU program with explanation](http://docs.gizwits.com/en-us/DeviceDev/GoKit/GokitMCUProgram.html)
 
 ## 5. More
 
-* [Gizwits ECE development](../UserManual/ECEDemo.md)
-* [Gizwits Serial Port Debugger](../DeviceDev/DebugTool.md)
+* [Gizwits ECE development](http://docs.gizwits.com/en-us/UserManual/ECE.html)
+* [Gizwits Serial Port Debugger](http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugTool.html)
 
 # Get started
 
@@ -80,7 +80,7 @@ After creating the product, you can see the basic properties of your project in 
  
 ## 2 Define Data Points
 
-For details on creating Data Points, see [Device connection for standalone MCU scheme](../quickstart/MCUScheme.md). 
+For details on creating Data Points, see [Device connection for standalone MCU scheme](http://docs.gizwits.com/en-us/DeviceDev/MCUScheme.html). 
 
 ![Get started with device connection](../../../assets/en-us/DeviceDev/intro/15.png)
  
