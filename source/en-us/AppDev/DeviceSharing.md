@@ -293,5 +293,5 @@ If a sharing invitation received by the Guest has not yet been accepted, the Gue
 
 # 5. Reference
 
-* Guide to Gizwits App SDK 2.0 for Android: http://docs.gizwits.com/zh-cn/AppDev/AndroidSDKA2.html
-* Guide to Gizwits App SDK 2.0 for iOS: http://docs.gizwits.com/zh-cn/AppDev/iOSSDKA2.html
+* Guide to Gizwits App SDK 2.0 for Android: http://docs.gizwits.com/en-us/AppDev/AndroidSDKA2.html
+* Guide to Gizwits App SDK 2.0 for iOS: http://docs.gizwits.com/en-us/AppDev/iOSSDKA2.html
