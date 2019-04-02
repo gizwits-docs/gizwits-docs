@@ -77,13 +77,13 @@ You can get the same development approach as Gokit2 through the MCU mode, that i
 
 Gokit is free, but only a limited number are available for individual developers. Register in our forum or follow our official WeChat to request for provision.
 
-Website: http://site.gizwits.com/developer/activity/gokit/request
+Website: http://www2.gizwits.com/zh-cn/gokit/
 
 ## For organizations
 
 Gizwits has a lot of support programs for organizations, you can contact Gizwits to get Gokit and timely technical support.
 
-Website: http://www.gizwits.com/about-us
+Website: http://en.gizwits.com/about-us
 
 
 
