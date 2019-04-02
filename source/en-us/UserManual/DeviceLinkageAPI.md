@@ -470,7 +470,7 @@ rule_id	|Integer|	Yes|	url	|	|Rule ID
 
 # 4. See Also
 
-* Open API documentation: http://docs.gizwits.com/en/Cloud/openapi_apps.html
+* Open API documentation: http://docs.gizwits.com/en-us/cloud/OpenAPI.html
 * Swagger link: 
 http://swagger.gizwits.com/doc/index/openapi_apps#/设备联动
 
