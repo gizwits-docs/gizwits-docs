@@ -5,14 +5,14 @@ Overview:
 
 
 Quick Start:
-  Gizwits Quick Start within 5 mins:
+  Quick start with Gizwits IoT Cloud:
     path: /quickstart/GizwitsQuickStart.html
-  Glossary:
+  Terms and Definitions:
     path: /quickstart/glossary.html
     
 
 App Dev Guide:
-  Get Started with APP Development:
+  Get started with App development:
     path: /AppDev/AppDevGetStarted.html  
   Gizwits App Code Auto-Generator:
     path: /AppDev/AppCodeAutoGenerator.html 
@@ -20,19 +20,19 @@ App Dev Guide:
   APP Frame Guide:
     Gizwits App Framework for iOS:
       path: /AppDev/iOSFramework.html      
-    iOS Push Notification:
+    Push notification integration for iOS App:
       path: /AppDev/iOSPushNotification.html      
-    iOS Authentication and Re-Skin:
+    Third-party authentication and re-skin for iOS App:
       path: /AppDev/iOSAuthReSkin.html      
-    iOS APP Development Instruction:
+    Quick start with iOS App development:
       path: /AppDev/iOSDevQuickStart.html      
     Gizwits App Framework for Android:
       path: /AppDev/AndroidFramework.html        
-    Android Push Notification:
+    Push notification integration for Android App:
       path: /AppDev/AndroidPushNotification.html      
-    Android Authentication and Re-Skin:
+    Third-party authentication and re-skin for Android:
       path: /AppDev/AndroidAuthReSkin.html     
-    Android APP Development Instruction:
+    Quick start with Android App development:
       path: /AppDev/AndroidDevQuickStart.html
     Gizwits App Framework for APICloud:
       path: /AppDev/APICloudFramework.html      
@@ -63,9 +63,8 @@ App Dev Guide:
       path: /AppDev/DeviceSharing.html
     Set Up Third-party Authentication:
       path: /AppDev/ThirdpartyAuth.html
-
-  App Dev FAQ:
-    path: /AppDev/AppDevFAQ.html
+    App Dev FAQ:
+      path: /AppDev/AppDevFAQ.html
     
 
 DeviceDev:
