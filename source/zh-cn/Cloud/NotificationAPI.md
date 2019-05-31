@@ -239,6 +239,7 @@ Gizwits Platform 回复：
 "cmd": "event_push",
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_online",
+"msg_id": <msg id string>,
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
@@ -259,6 +260,7 @@ Gizwits Platform 回复：
 "cmd": "event_push",
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_offline",
+"msg_id": <msg id string>,
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
@@ -275,6 +277,7 @@ Gizwits Platform 回复：
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "attr_fault" | "attr_alert",
 "event_id": <uuid string>, (同一设备的同一故障或报警的发生事件与恢复事件共享同一事件 id)
+"msg_id": <msg id string>,
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
@@ -294,6 +297,7 @@ Gizwits Platform 回复：
 "cmd": "event_push",
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_status_raw",
+"msg_id": <msg id string>,
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
@@ -310,6 +314,7 @@ Gizwits Platform 回复：
 "cmd": "event_push",
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_status_kv",
+"msg_id": <msg id string>,
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
@@ -414,6 +419,7 @@ AES mode为AES.MODE_ECB
 "cmd": "event_push",
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "app2dev_raw",
+"msg_id": <msg id string>,
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
@@ -434,6 +440,7 @@ AES mode为AES.MODE_ECB
 "cmd": "event_push",
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "app2dev_kv",
+"msg_id": <msg id string>,
 "product_key": <product_key string>,
 "did": <did string>,
 "mac": <mac string>,
@@ -457,6 +464,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_ack",
+"msg_id": <msg id string>,
 "delivery_id": <delivery_id> (按原数据类型填写)
 }\n
 ```
