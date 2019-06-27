@@ -45,7 +45,7 @@ title: WIFI 接入方案
 
 ![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_15.png)
 
-# 爸、参考资料下载
+# 八、参考资料下载
 
 参考代码下载链接：
 
