@@ -31,7 +31,7 @@ title: WIFI 接入方案
 
 程序修改步骤，略，本文最后有参考代码
 
-# 五、WIFI模块与mcu接线，通电让设备运行
+# 五、WIFI模块与mcu接线，通电让设备运行，长按key2三秒以上设备进入Airlink配网模式
 
 ![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_11.png)
 
