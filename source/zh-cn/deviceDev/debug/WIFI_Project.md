@@ -13,15 +13,15 @@ title: WIFI 接入方案
 
 ![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_2.png)
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_3.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_3.png)
 
 ## 2. 定义数据点
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_4.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_4.png)
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_5.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_5.png)
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_6.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_6.png)
 
 # 三、下载自动生成mcu代码，烧写程序到Gokit的mcu中
 
@@ -33,7 +33,7 @@ title: WIFI 接入方案
 
 # 五、WIFI模块与mcu接线，通电让设备运行
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_11.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_11.png)
 
 # 六、机智云IOE DEMO APP配网让设备连上路由器和机智云服务器，然后绑定设备
 
