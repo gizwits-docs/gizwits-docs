@@ -37,13 +37,13 @@ title: WIFI 接入方案
 
 # 六、机智云IOE DEMO APP配网让设备连上路由器和机智云服务器
 
-![5](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/5.png)![6](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/6.png)![7](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/7.png)![8](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/8.png)![9](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/9.png)![10](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/10.png)![11](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/11.png)![12](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/12.png)![13](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/13.png)
+![5](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/5.png)![6](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/6.png)![7](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/7.png)![8](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/8.png)![9](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/9.png)![10](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/10.png)![11](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/11.png)![12](http://docs.gizwits.com/assets/zh-cn/deviceDev/Onboarding/Esp8266-Airlink/12.png)![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_16.png)
 
 # 七、控制设备，点亮/熄灭LED灯成功，机智云接入完毕
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_14.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_14.png)
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_15.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/WIFIproject_15.png)
 
 # 八、参考资料下载
 
