@@ -33,7 +33,10 @@ title:  SaaS 二次开发说明文档
 ##### 配置中心服务
 * 配置中心仓库---所有springboot初始化的yml文件都放在这里
 * 目录命名规范：config-repo/${spring.application.name}/appication-{profiles}.yml
+
 ##### 消息层服务
+* 目录命名规范：
+
 ##### 管理数据层
 ##### 产品设备数据层
 ##### 用户数据层
