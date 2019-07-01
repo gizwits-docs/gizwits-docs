@@ -11,19 +11,13 @@ Enterprise users can ingest data from globally dispersed devices in real time th
 The user can choose any version of the following language-specific clients as appropriate for secondary development, or as a reference based on this.
 
 1. Client sample for Java
-    * Code repository: https://github.com/Bestfeel/noti-netty-client
+    * Code repository: https://github.com/smallCC/noti-client
 
 2. Client sample for Ruby
     * Code repository: https://github.com/AbelLai/gizwits_sac_rb
 
 3. Client sample for Python
     * Code repository: https://github.com/wangzhenandy/snoti_client_python
-
-4. Client demo for Java (Basic Edition)
-    * Code repository: https://github.com/gizwits/noti-java-demo/tree/v2.0.0
-
-5. Client demo for Java (Netty Framework Edition)
-    * Code repository: https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 
 # Request to access SNoti service
 
