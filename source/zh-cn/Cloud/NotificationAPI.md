@@ -10,7 +10,7 @@ v2.1.9
 
 1.Java版客户端
 
-  代码仓库：https://github.com/Bestfeel/noti-netty-client
+  代码仓库：https://github.com/smallCC/noti-client
 
 2.Ruby版客户端
 
@@ -19,14 +19,6 @@ v2.1.9
 3.Python版客户端
 
   代码仓库：https://github.com/wangzhenandy/snoti_client_python
-
-4.Java版Demo（基础版）
-
-  代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0
-
-5.Java版Demo（Netty框架版）
-
-  代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 
 # SNoti申请流程
 
