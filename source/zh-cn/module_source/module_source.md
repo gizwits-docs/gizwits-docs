@@ -54,6 +54,7 @@ title: 模块硬件资料
 
 [BC20模块硬件手册V1.0.0](http://docs.gizwits.com/zh-cn/module_source/BSJ/BC20_V1.0.0.pdf)
 
+[BC26硬件设计手册V1.0.3](http://docs.gizwits.com/assets/pdf/BSJ/BC26_V1.0.3.pdf)
 
 ## 3. NB-IOT模块的Datasheet 硬件介绍
 
@@ -66,8 +67,6 @@ title: 模块硬件资料
 - ### 博实结模块系列
 
 [BC60硬件设计手册V1.0.1](http://docs.gizwits.com/assets/pdf/BSJ/BC60_V1.0.1.pdf)
-
-[BC26硬件设计手册V1.0.3](http://docs.gizwits.com/assets/pdf/BSJ/BC26_V1.0.3.pdf)
 
 
 # 二、模块资源
