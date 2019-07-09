@@ -52,7 +52,7 @@ title: 模块硬件资料
 
 - ### 博实结模块系列
 
-[BC20 Datasheet](http://docs.gizwits.com/zh-cn/module_source/BSJ/BC20模块硬件手册V1.0.0.pdf)
+[BC20模块硬件手册V1.0.0](http://docs.gizwits.com/zh-cn/module_source/BSJ/BC20模块硬件手册V1.0.0.pdf)
 
 
 ## 3. NB-IOT模块的Datasheet 硬件介绍
