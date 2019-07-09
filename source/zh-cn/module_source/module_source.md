@@ -63,6 +63,10 @@ title: 模块硬件资料
 
 [N102 硬件设计手册](http://docs.gizwits.com/assets/pdf/Lingling/N102_hardware_design.pdf)
 
+- ### 博实结模块系列
+
+[BC60硬件设计手册V1.0.1.pdf](http://docs.gizwits.com/assets/pdf/BSJ/BC60硬件设计手册V1.0.1.pdf)
+
 
 # 二、模块资源
 
