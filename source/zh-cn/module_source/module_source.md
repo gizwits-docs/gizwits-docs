@@ -50,6 +50,10 @@ title: 模块硬件资料
 
 [CLM920_NC3_参考设计_V1.0](http://docs.gizwits.com/assets/pdf/YG/CLM920_NC3_reference_design_V1.0.pdf)
 
+- ### 博实结模块系列
+
+[BC20 Datasheet](http://docs.gizwits.com/zh-cn/module_source/BSJ/BC20模块硬件手册V1.0.0.pdf)
+
 
 ## 3. NB-IOT模块的Datasheet 硬件介绍
 
