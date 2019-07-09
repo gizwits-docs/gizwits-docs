@@ -65,7 +65,9 @@ title: 模块硬件资料
 
 - ### 博实结模块系列
 
-[BC60硬件设计手册V1.0.1.pdf](http://docs.gizwits.com/assets/pdf/BSJ/BC60硬件设计手册V1.0.1.pdf)
+[BC60硬件设计手册V1.0.1](http://docs.gizwits.com/assets/pdf/BSJ/BC60硬件设计手册V1.0.1.pdf)
+
+[BC26硬件设计手册V1.0.3](http://docs.gizwits.com/assets/pdf/BSJ/BC26硬件设计手册V1.0.3.pdf)
 
 
 # 二、模块资源
