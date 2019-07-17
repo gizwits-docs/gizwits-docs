@@ -527,7 +527,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |   描述    |
 |:------------------------ |:------ |:----:|:-------- |:--------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid     |
-| X-Gizwits-Application-Token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 | phone                    | string |  是  | body     | 手机号码  |
 | code                     | string |  是  | body     | 验证码    |
 
@@ -552,7 +552,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |   描述    |
 |:------------------------ |:------ |:----:|:-------- |:--------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid     |
-| X-Gizwits-Application-Token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 
 响应参数
 
@@ -586,7 +586,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |                  描述                   |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                                   |
-| X-Gizwits-Application-Token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 | captcha_id               | string |  是  | body     | 图片验证码id                            |
 | captcha_code             | string |  是  | body     | 图片验证码的值                          |
 | phone                    | string |  是  | body     | 手机号码                                        |
@@ -612,7 +612,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 | 参数                     | 类型   | 必填 | 参数类型 | 描述                                                           |
 |:------------------------ |:------ |:----:|:-------- |:-------------------------------------------------------------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                                                          |
-| X-Gizwits-Application-Token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 | phone                    | string |  是  | body     | 手机号码                                                       |
 | sms_code                 | string |  是  | body     | 验证码                                                         |
 
