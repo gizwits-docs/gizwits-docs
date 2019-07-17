@@ -454,13 +454,13 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |   参数    |  类型   |     描述      |
 |:--------- |:------- |:------------- |  
 | uid       | string  | 用户唯一id    |   
-| expire_at | integer | token过期时间（时间戳） |   
+| expired_at | integer | token过期时间（时间戳） |   
 
 返回例子
 ```json
 {
   "token": "f8324047f20144f6914e7be19304f943",
-  "expire_at": 1504772734
+  "expired_at": 1504772734
 }
 ```
 
