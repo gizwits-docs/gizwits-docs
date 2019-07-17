@@ -446,14 +446,14 @@ Response Parameters
 Params | Data Type |  Description
 -----|-----|-----
 uid |string | Unique user id
-expire_at  | integer |Token expiration time (timestamp)
+expired_at  | integer |Token expiration time (timestamp)
 
 Example Response
 
 ```
 {
   "token": "f8324047f20144f6914e7be19304f943",
-  "expire_at": 1504772734
+  "expired_at": 1504772734
 }
 ```
 
@@ -519,7 +519,7 @@ Request paramters
 Params | Data Type |  Required  |  Param Type | Description
 -----|-----|-----|-----|-----
 X-Gizwits-Application-Id  |  string|  Yes |header | appid
-X-Gizwits-User-token   | string|  Yes| header  |User token, obtained by request an access token API
+X-Gizwits-Application-Token   | string|  Yes| header  |App token, obtained by request an access token API
 phone  | string | Yes |body  |  Phone number
 code   | string  |Yes| body  |  Verification code
 
@@ -545,7 +545,7 @@ Request paramters
 Params | Data Type |  Required  |  Param Type | Description
 -----|-----|-----|-----|-----
 X-Gizwits-Application-Id  |  string | Yes |header | appid
-X-Gizwits-User-token   | string | Yes |header | User token, obtained by request an access token API
+X-Gizwits-Application-Token   | string | Yes |header | App token, obtained by request an access token API
 
 Response Parameters
 
@@ -581,7 +581,7 @@ Request paramters
 Params | Data Type |  Required  |  Param Type | Description
 -----|-----|-----|-----|-----
 X-Gizwits-Application-Id  |  string|  Yes |header|  appid
-X-Gizwits-User-token  |  string | Yes| header  |User token, obtained by request an access token API
+X-Gizwits-Application-Token  |  string | Yes| header  |App token, obtained by request an access token API
 captcha_id | string  |Yes |body  |  ID of the image captcha
 captcha_code  |  string | Yes |body |   Value of the image captcha
 phone  | string | Yes |body   | Phone number
@@ -597,7 +597,7 @@ Debug console
 Request method and URL
 
 ```
-GET
+PUT
 https://api.gizwits.com/app/verify/codes
 ```
 
@@ -606,7 +606,7 @@ Request paramters
 Params | Data Type |  Required  |  Param Type | Description
 -----|-----|-----|-----|-----
 X-Gizwits-Application-Id   | string | Yes |header | appid
-X-Gizwits-User-token   | string | Yes| header | User token, obtained by request an access token API
+X-Gizwits-Application-Token   | string | Yes| header | App token, obtained by request an access token API
 phone   |string | Yes |body  |  Phone number
 sms_code   | string  |Yes| body  |  Verification code
 
