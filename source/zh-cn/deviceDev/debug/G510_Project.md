@@ -33,7 +33,7 @@ title: G510 接入方案
 
 # 六、G510与mcu接线，通电让设备上线
 
-![name](/assets/zh-cn/deviceDev/debug/G510/G510project_11.png)
+![name](/assets/zh-cn/deviceDev/debug/G510/G510project_14.png)
 
 # 七、设备上线，机智云IOE DEMO APP绑定设备
 
@@ -49,7 +49,7 @@ title: G510 接入方案
 
 # 八、控制设备，点亮/熄灭LED灯成功，机智云接入完毕
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_14.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_11.png)
 
 ![name](/assets/zh-cn/deviceDev/debug/G510/G510project_15.png)
 
