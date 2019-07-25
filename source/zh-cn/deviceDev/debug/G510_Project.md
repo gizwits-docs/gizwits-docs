@@ -49,7 +49,7 @@ title: G510 接入方案
 
 # 八、控制设备，点亮/熄灭LED灯成功，机智云接入完毕
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/G510project_14.png)
+![name](/assets/zh-cn/deviceDev/debug/NB_project/G510project_11.png)
 
 ![name](/assets/zh-cn/deviceDev/debug/G510/G510project_15.png)
 
