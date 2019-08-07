@@ -48,7 +48,7 @@ http://docs.gizwits.com/assets/pdf/IOT_FLASH_TOOL/IOT_Flash_Tool.rar
 
 模块输入电压为5V，接软件调试串口UART0。
 
-#### 5.1 首先在调试工具中确保串口选项卡的串口为你设备的串口值，选择下载的固件，点击start，模组上电(pwrkey先不拉低)，然后pwrkey拉低到串口烧写软件出现进度条，设备上电，出现进度条：
+#### 5.1 首先在调试工具中确保串口选项卡的串口为你设备的串口值，选择下载的固件，点击start，然后连接模组的POWER_IN和GND，最后PWRKEY拉低直到串口烧写软件出现进度条：
 
 ![烧写操作](/assets/zh-cn/deviceDev/debug/N102_DTU/N102programming_5.png)
 
