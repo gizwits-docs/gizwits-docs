@@ -117,8 +117,6 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![自动生成MCU SDK-3](/assets/zh-cn/quickstart/dev/new14.png)
 
-![GoKit的RGB_LED](/assets/zh-cn/quickstart/dev/new15.png)
-
 ## 2.MCU SDK文件内容目录结构
 
 如下图，其中黑色标注部分为STM32f103cx8硬件平台开发基本文件，绿色标注部分为机智云逻辑部分。gokit的串口驱动、定时器驱动、按键驱动等驱动机智云的自动生成mcu代码已实现完毕，开发者可直接在gizwits\_product.c&gizwits\_product.h文件编写硬件动作执行函数。
