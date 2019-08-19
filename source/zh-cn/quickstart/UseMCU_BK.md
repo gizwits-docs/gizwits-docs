@@ -98,7 +98,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ## 3.结合设备功能需求，分析设备数据点需求
 
-![设备数据点需求](/assets/zh-cn/quickstart/dev/table41.png)
+![设备数据点需求](/assets/zh-cn/quickstart/dev/table41_1.png)
 
 ## 4.创建4个对应数据点
 
