@@ -104,6 +104,8 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![创建数据点-1](/assets/zh-cn/quickstart/dev/new7.png)
 
+![创建数据点-1](/assets/zh-cn/quickstart/dev/new8.png)
+
 ![创建数据点-3](/assets/zh-cn/quickstart/dev/new9.png)
 
 # 智能灯MCU开发
@@ -112,8 +114,6 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 自动生成的MCU SDK代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的 API。当设备收到云端或 APP 端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，便可完成产品的开发。这里选择独立MCU方案、硬件平台STM32f103c8x后，机智云直接生成适应STM32f103c8x的工程代码。
 
 ![自动生成MCU SDK-1](/assets/zh-cn/quickstart/dev/new12.png)
-
-![自动生成MCU SDK-2](/assets/zh-cn/quickstart/dev/new13.png)
 
 ![自动生成MCU SDK-3](/assets/zh-cn/quickstart/dev/new14.png)
 
