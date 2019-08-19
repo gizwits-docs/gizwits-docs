@@ -104,8 +104,6 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![创建数据点-1](/assets/zh-cn/quickstart/dev/new7.png)
 
-![创建数据点-2](/assets/zh-cn/quickstart/dev/new8.png)
-
 ![创建数据点-3](/assets/zh-cn/quickstart/dev/new9.png)
 
 # 智能灯MCU开发
