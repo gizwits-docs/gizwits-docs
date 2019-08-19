@@ -129,7 +129,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ## 2.MCU SDK文件内容目录结构
 
-如下图，其中黑色标注部分为STM32f103cx8硬件平台开发基本文件。绿色标注部分为机智云逻辑部分，硬件的串口驱动、定时器驱动、按键驱动等驱动实现完毕，开发者可直接在Gizwits\_product.c&Gizwits\_product.h文件编写硬件动作执行函数。
+如下图，其中黑色标注部分为STM32f103cx8硬件平台开发基本文件，绿色标注部分为机智云逻辑部分。gokit的串口驱动、定时器驱动、按键驱动等驱动机智云的自动生成mcu代码已实现完毕，开发者可直接在gizwits\_product.c&gizwits\_product.h文件编写硬件动作执行函数。
 
 ![MCU SDK文件内容目录结构](/assets/zh-cn/quickstart/dev/new16.png)
 
@@ -137,19 +137,19 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 | 文件                 | 说明            |
 |---------------------|-----------------------------|
-| Gizwits\_product.c  | 该文件为产品相关处理函数，如gizEventProcess()平台相关硬件初始化，如串口、定时器等。            |
-| Gizwits\_product.h  | 该文件为gizwits\_product.c的头文件，存放产品相关宏定义如：HARDWARE\_VERSION、SOFTWARE\_VERSION |
-| Gizwits\_protocol.c | 该文件为SDK API接口函数定义文件                                                                |
-| Gizwits\_protocol.h | 该文件为gizwits\_protocol.c对应头文件，相关API的接口声明均在此文件中。                         |
+| gizwits\_product.c  | 该文件为产品相关处理函数，如gizEventProcess()平台相关硬件初始化，如串口、定时器等。            |
+| gizwits\_product.h  | 该文件为gizwits\_product.c的头文件，存放产品相关宏定义如：HARDWARE\_VERSION、SOFTWARE\_VERSION |
+| gizwits\_protocol.c | 该文件为SDK API接口函数定义文件                                                                |
+| gizwits\_protocol.h | 该文件为gizwits\_protocol.c对应头文件，相关API的接口声明均在此文件中。                         |
 
 协议API介绍
 
 | API名称      | API功能               |   
 |-------------|--------------------|                                                                                                    
-| Void gizwitsInit(void)    | gizwits 协议初始化接口。用户调用该接口可以完成 Gizwits 协议相关初始化（包括协议相关定时器、串口的初始化）。 |
-| Void gizwitsSetMode(unit8\_t mode) | 参数mode\[in\]：仅支持0,1和2,其他数据无效。参数为 0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置;  参数为 1 时配置模组进入 SoftAp 模式； 参数为 2 配置模组进入 AirLink 模式。 |
-| Void gizwitsHandle(dataPoint\_t \*dataPoint)   | 参数 dataPoint\[in\]:用户设备数据点。该函数中完成了相应协议数据的处理即数据上报的等相关操作。|
-| Int8\_t gizwitsEventProcess(eventInfo\_t \*info,uint8\_t \*data,uint32\_t len) |参数 info\[in\]:事件队列参数 ;  data\[in\]:数据;                                                                                                         参数 len \[in\]:数据长度。用户数据处理函数,包括 wifi 状态更新事件和控制事件。a) Wifi 状态更新事件WIFI\_开头的事件为 wifi 状态更新事件，data 参数仅在WIFI\_RSSI 有效，data 值为 RSSI 值,数据类型为 uint8\_t，取值范围 0~7。  b) 控制事件与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。 |
+| void gizwitsInit(void)    | gizwits 协议初始化接口。用户调用该接口可以完成 Gizwits 协议相关初始化（包括协议相关定时器、串口的初始化）。 |
+| void gizwitsSetMode(unit8\_t mode) | 参数mode\[in\]：仅支持0,1和2,其他数据无效。参数为 0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置;  参数为 1 时配置模组进入 SoftAp 模式； 参数为 2 配置模组进入 AirLink 模式。 |
+| void gizwitsHandle(dataPoint\_t \*dataPoint)   | 参数 dataPoint\[in\]:用户设备数据点。该函数中完成了相应协议数据的处理即数据上报的等相关操作。|
+| int8\_t gizwitsEventProcess(eventInfo\_t \*info,uint8\_t \*data,uint32\_t len) |参数 info\[in\]:事件队列参数 ;  data\[in\]:数据;                                                                                                         参数 len \[in\]:数据长度。用户数据处理函数,包括 wifi 状态更新事件和控制事件。a) Wifi 状态更新事件WIFI\_开头的事件为 wifi 状态更新事件，data 参数仅在WIFI\_RSSI 有效，data 值为 RSSI 值,数据类型为 uint8\_t，取值范围 0~7。  b) 控制事件与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。 |
 
 ## 3.开发步骤
 
