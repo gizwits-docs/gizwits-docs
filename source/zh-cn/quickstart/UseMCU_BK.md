@@ -239,7 +239,7 @@ void userHandle(void)
     currentDataPoint.valueInfrared = irHandle();
     
     ///< 新添加代码: 温湿度传感器数据获取
-    if((gizGetTimerCount() ‐ thLastTimer) > 2000) //上报间隔2S
+    if((gizGetTimerCount() - thLastTimer) > 2000) //上报间隔2S
     {
         ret = dht11Read((uint8_t *)&currentDataPoint.valueTemperature,
                         (uint8_t *)&currentDataPoint.valueHumidity);
@@ -297,7 +297,7 @@ void key2LongPress(void)
 
 功能说明：完成写类型外设的事件处理。
 
-相应代码：
+相应代码（代码中的注释//user handle的下一行即可加入开发者的应用代码）：
 
 ```C
 int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
@@ -490,35 +490,43 @@ void userHandle(void)
 
 ![安装机智云APP](/assets/zh-cn/quickstart/dev/new33.png)
 
-## 2. 打开机智云APP，注册登录APP账号
+## 2. 打开机智云APP，注册登录APP账号（或者跳过登录）
 
 ![注册登录APP账号](/assets/zh-cn/quickstart/dev/new34.png)
 
-## 3. 配置WiFi模块入网
+## 3. 短按gokit中间的key2按键，使WiFi模块进入softap配网模式，此时RGB全彩灯变红
 
-![配置WiFi模块入网-1](/assets/zh-cn/quickstart/dev/new35.png)
+![配置WiFi模块入网-1](/assets/zh-cn/quickstart/dev/new35_35.png)
 
-![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36.png)
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_36.png)
 
-![配置WiFi模块入网-3](/assets/zh-cn/quickstart/dev/new37.png)
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_37.png)
 
-## 4. 配置成功后，选择相应设备
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_38.png)
 
-![选择相应设备](/assets/zh-cn/quickstart/dev/new38.png)
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_39.png)
 
-## 5. APP收发设备数据
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_40.png)
 
-![APP收发设备数据](/assets/zh-cn/quickstart/dev/new39.png)
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_41.png)
+
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_42.png)
+
+## 4. APP控制/读取设备数据
+
+![APP收发设备数据](/assets/zh-cn/quickstart/dev/new39_39.png)
 
 ## 6. 机智云后台查看设备交互数据
 
-![机智云后台查看设备交互数据1](/assets/zh-cn/quickstart/dev/new40.png)
+![机智云后台查看设备交互数据1](/assets/zh-cn/quickstart/dev/new40_40.png)
 
-![机智云后台查看设备交互数据2](/assets/zh-cn/quickstart/dev/new41.png)
+![机智云后台查看设备交互数据2](/assets/zh-cn/quickstart/dev/new41_41.png)
+
+<font color=#FF0000 >特别说明：当APP与设备处于同一局域网，APP的控制指令会走小循环，因此设备日志上面看不到APP to Dev；如果想看到APP to Dev，可以将手机切换到4G流量或者连接别的路由器，再来控制设备，就能看到APP to Dev</font>
 
 # 发布产品
 
-产品发布到正式生产环境后，机智云将为你的设备免费分配独立的云端运行环境，确保你的设备24小时不间断在线以供用户使用，将享受更多机智云为您提供的免费增值服务，包括：智能设备统计分析，开放平台展示以及各种无微不至的技术支持服务。
+产品发布到正式生产环境后，机智云将为你的设备免费分配独立的云端运行环境，确保你的设备24小时不间断在线以供用户使用，将享受更多机智云为您提供的增值服务，包括：智能设备统计分析，开放平台展示以及各种无微不至的技术支持服务。
 
 产品如何申请发布上线，具体步骤如下：
 
