@@ -241,7 +241,8 @@ void userHandle(void)
     ///< 新添加代码: 温湿度传感器数据获取
     if((gizGetTimerCount() ‐ thLastTimer) > 2000) //上报间隔2S
     {
-        ret = dht11Read((uint8_t *)&currentDataPoint.valueTemperature,(uint8_t *)&currentDataPoint.valueHumidity);
+        ret = dht11Read((uint8_t *)&currentDataPoint.valueTemperature,
+                        (uint8_t *)&currentDataPoint.valueHumidity);
         if(ret != 0)
         {
             printf("Failed to read DHT11 [%d] \n", ret);
@@ -299,7 +300,145 @@ void key2LongPress(void)
 相应代码：
 
 ```C
+int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
+{
+  uint8_t i = 0;
+  dataPoint_t *dataPointPtr = (dataPoint_t *)gizdata;
+  moduleStatusInfo_t *wifiData = (moduleStatusInfo_t *)gizdata;
+  protocolTime_t *ptime = (protocolTime_t *)gizdata;
+  
+#if MODULE_TYPE
+  gprsInfo_t *gprsInfoData = (gprsInfo_t *)gizdata;
+#else
+  moduleInfo_t *ptModuleInfo = (moduleInfo_t *)gizdata;
+#endif
 
+  if((NULL == info) || (NULL == gizdata))
+  {
+    return -1;
+  }
+
+  for(i=0; i<info->num; i++)
+  {
+    switch(info->event[i])
+    {
+      case EVENT_LED_OnOff:
+        currentDataPoint.valueLED_OnOff = dataPointPtr->valueLED_OnOff;
+        GIZWITS_LOG("Evt: EVENT_LED_OnOff %d \n", currentDataPoint.valueLED_OnOff);
+        if(0x01 == currentDataPoint.valueLED_OnOff)
+        {
+          //user handle
+          ledRgbControl(254, 0, 0);
+        }
+        else
+        {
+          //user handle    
+		  ledRgbControl(0, 0, 0);
+        }
+        break;
+
+      case EVENT_LED_Color:
+        currentDataPoint.valueLED_Color = dataPointPtr->valueLED_Color;
+        GIZWITS_LOG("Evt: EVENT_LED_Color %d\n", currentDataPoint.valueLED_Color);
+        switch(currentDataPoint.valueLED_Color)
+        {
+          case LED_Color_VALUE0:
+            //user handle
+			ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+                          currentDataPoint.valueLED_B);
+            break;
+          case LED_Color_VALUE1:
+            //user handle
+			ledRgbControl(254, 254, 0);
+            break;
+          case LED_Color_VALUE2:
+            //user handle
+			ledRgbControl(254, 0, 70);
+            break;
+          case LED_Color_VALUE3:
+            //user handle
+			ledRgbControl(238, 30, 30);
+            break;
+          default:
+            break;
+        }
+        break;
+
+      case EVENT_LED_R:
+        currentDataPoint.valueLED_R = dataPointPtr->valueLED_R;
+        GIZWITS_LOG("Evt:EVENT_LED_R %d\n",currentDataPoint.valueLED_R);
+        //user handle
+		ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+					  currentDataPoint.valueLED_B);
+        break;
+      case EVENT_LED_G:
+        currentDataPoint.valueLED_G = dataPointPtr->valueLED_G;
+        GIZWITS_LOG("Evt:EVENT_LED_G %d\n",currentDataPoint.valueLED_G);
+        //user handle
+		ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+				      currentDataPoint.valueLED_B);
+        break;
+      case EVENT_LED_B:
+        currentDataPoint.valueLED_B = dataPointPtr->valueLED_B;
+        GIZWITS_LOG("Evt:EVENT_LED_B %d\n",currentDataPoint.valueLED_B);
+        //user handle
+		ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+				      currentDataPoint.valueLED_B);
+        break;
+      case EVENT_Motor_Speed:
+        currentDataPoint.valueMotor_Speed = dataPointPtr->valueMotor_Speed;
+        GIZWITS_LOG("Evt:EVENT_Motor_Speed %d\n",currentDataPoint.valueMotor_Speed);
+        //user handle
+		motorStatus(currentDataPoint.valueMotor_Speed);
+        break;
+
+
+      case WIFI_SOFTAP:
+        break;
+      case WIFI_AIRLINK:
+        break;
+      case WIFI_STATION:
+        break;
+      case WIFI_CON_ROUTER:
+		ledRgbControl(0, 0, 0);
+        break;
+      case WIFI_DISCON_ROUTER:
+ 
+        break;
+      case WIFI_CON_M2M:
+ 
+        break;
+      case WIFI_DISCON_M2M:
+        break;
+      case WIFI_RSSI:
+        GIZWITS_LOG("RSSI %d\n", wifiData->rssi);
+        break;
+      case TRANSPARENT_DATA:
+        GIZWITS_LOG("TRANSPARENT_DATA \n");
+        //user handle , Fetch data from [data] , size is [len]
+        break;
+      case WIFI_NTP:
+        GIZWITS_LOG("WIFI_NTP : [%d-%d-%d %02d:%02d:%02d][%d] \n",ptime->year,ptime->month,
+                    ptime->day,ptime->hour,ptime->minute,ptime->second,ptime->ntp);
+        break;
+      case MODULE_INFO:
+            GIZWITS_LOG("MODULE INFO ...\n");
+      #if MODULE_TYPE
+            GIZWITS_LOG("GPRS MODULE ...\n");
+            //Format By gprsInfo_t
+      #else
+            GIZWITS_LOG("WIF MODULE ...\n");
+            //Format By moduleInfo_t
+            GIZWITS_LOG("moduleType : [%d] \n",ptModuleInfo->moduleType);
+      #endif
+    break;
+      default:
+        break;
+    }
+  }
+
+  return 0;
+}
 ```
 
 ### 3.7 上报设备状态
@@ -320,7 +459,29 @@ void key2LongPress(void)
 相关代码位置: ...\User\\main.c 中 userHandle() 函数：
 使用说明：该函数中完成了用户区上报型数据的获取。用户只需将读到的数据赋值到 用户区当前设备状态结构体即可，赋值完的数据是通过 gizwitsHandle 上报云端的，开发者不需要关注变化上报和定时上报。
 
-![上报设备状态代码](/assets/zh-cn/quickstart/dev/new32.png)
+```C
+void userHandle(void)
+{
+    uint8_t ret = 0;
+    static uint32_t thLastTimer = 0;
+    
+    ///< 新添加代码: 红外传感器数据获取
+    currentDataPoint.valueInfrared = irHandle();
+    
+    ///< 新添加代码: 温湿度传感器数据获取
+    if((gizGetTimerCount() ‐ thLastTimer) > 2000) //上报间隔2S
+    {
+        ret = dht11Read((uint8_t *)&currentDataPoint.valueTemperature,
+                        (uint8_t *)&currentDataPoint.valueHumidity);
+        if(ret != 0)
+        {
+            printf("Failed to read DHT11 [%d] \n", ret);
+        }
+        
+        thLastTimer = gizGetTimerCount();
+    }
+}
+```
 
 ### 3.8 编译并将固件烧写到GoKit3代MCU主控板
 
