@@ -457,7 +457,7 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
 | gizReportData            | 将转换后的上报数据通过串口发送给 WiFi 模块，MCU SDK自处理，开发者可不关注 |
 
 相关代码位置: ...\User\\main.c 中 userHandle() 函数：
-使用说明：该函数中完成了用户区上报型数据的获取。用户只需将读到的数据赋值到 用户区当前设备状态结构体即可，赋值完的数据是通过 gizwitsHandle 上报云端的，开发者不需要关注变化上报和定时上报。
+使用说明：该函数中完成了用户区上报型数据的获取。用户只需将读到的数据赋值到用户区当前设备状态的全局变量结构体成员currentDataPoint.valueXXXXX即可，赋值完的数据是通过 gizwitsHandle 上报云端的，开发者不需要关注变化上报和定时上报。
 
 ```C
 void userHandle(void)
