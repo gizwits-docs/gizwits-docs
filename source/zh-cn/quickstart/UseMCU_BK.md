@@ -32,7 +32,7 @@ title: 独立MCU方案接入机智云
 
 ## 4.项目基本信息
 
-在机智云官网上已成功创建智能灯产品，机智云为该产品分配Product Key和Product Secret参数。Product Key参数由开发者写入设备MCU（设备主控板），并告知WiFi/GPRS模块，WiFi/GPRS模块登录机智云后，机智云将会识别该Product Key的产品。Product Secret参数是APP开发或服务器对接时所使用的参数。
+在机智云官网上已成功创建“微信宠物屋”产品，机智云为该产品分配Product Key和Product Secret参数。Product Key参数由开发者写入设备MCU（设备主控板），并告知WiFi/GPRS模块，WiFi/GPRS模块登录机智云后，机智云将会识别该Product Key的产品。Product Secret参数是APP开发或服务器对接时所使用的参数。
 
 ![项目基本信息图](/assets/zh-cn/quickstart/dev/new4_4.png)
 # 创建数据点
@@ -108,7 +108,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![创建数据点-3](/assets/zh-cn/quickstart/dev/new9_9.png)
 
-# 智能灯MCU开发
+# 微信宠物屋MCU开发
 ## 1.自动生成MCU SDK
 
 自动生成的MCU SDK代码实现了机智云通信协议的解析与封包、传感器数据与通信数据的转换逻辑，并封装成了简单的 API。当设备收到云端或 APP 端的数据后，程序会将数据转换成对应的事件并通知到应用层，开发者只需要在对应的事件处理逻辑中添加传感器的控制函数，便可完成产品的开发。这里选择独立MCU方案、硬件平台STM32f103c8x后，机智云直接生成适应STM32f103c8x的工程代码。
@@ -121,25 +121,25 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 如下图，其中黑色标注部分为STM32f103cx8硬件平台开发基本文件，绿色标注部分为机智云逻辑部分。gokit的串口驱动、定时器驱动、按键驱动等驱动机智云的自动生成mcu代码已实现完毕，开发者可直接在gizwits\_product.c&gizwits\_product.h文件编写硬件动作执行函数。
 
-![MCU SDK文件内容目录结构](/assets/zh-cn/quickstart/dev/new16.png)
+![MCU SDK文件内容目录结构](/assets/zh-cn/quickstart/dev/new16_16.png)
 
 其中主要文件说明：
 
 | 文件                 | 说明            |
 |---------------------|-----------------------------|
-| gizwits\_product.c  | 该文件为产品相关处理函数，如gizEventProcess()平台相关硬件初始化，如串口、定时器等。            |
-| gizwits\_product.h  | 该文件为gizwits\_product.c的头文件，存放产品相关宏定义如：HARDWARE\_VERSION、SOFTWARE\_VERSION |
-| gizwits\_protocol.c | 该文件为SDK API接口函数定义文件                                                                |
-| gizwits\_protocol.h | 该文件为gizwits\_protocol.c对应头文件，相关API的接口声明均在此文件中。                         |
+| Gizwits\_product.c  | 该文件为产品相关处理函数，如gizwitsEventProcess()数据点事件处理函数。            |
+| Gizwits\_product.h  | 该文件为gizwits\_product.c的头文件，存放产品相关宏定义如：HARDWARE\_VERSION、SOFTWARE\_VERSION |
+| Gizwits\_protocol.c | 该文件为SDK API接口函数定义文件                                                                |
+| Gizwits\_protocol.h | 该文件为gizwits\_protocol.c对应头文件，相关API的接口声明均在此文件中。                         |
 
 协议API介绍
 
 | API名称      | API功能               |   
-|-------------|--------------------|                                                                                                    
-| void gizwitsInit(void)    | gizwits 协议初始化接口。用户调用该接口可以完成 Gizwits 协议相关初始化（包括协议相关定时器、串口的初始化）。 |
-| void gizwitsSetMode(unit8\_t mode) | 参数mode\[in\]：仅支持0,1和2,其他数据无效。参数为 0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置;  参数为 1 时配置模组进入 SoftAp 模式； 参数为 2 配置模组进入 AirLink 模式。 |
-| void gizwitsHandle(dataPoint\_t \*dataPoint)   | 参数 dataPoint\[in\]:用户设备数据点。该函数中完成了相应协议数据的处理即数据上报的等相关操作。|
-| int8\_t gizwitsEventProcess(eventInfo\_t \*info,uint8\_t \*data,uint32\_t len) |参数 info\[in\]:事件队列参数 ;  data\[in\]:数据;                                                                                                         参数 len \[in\]:数据长度。用户数据处理函数,包括 wifi 状态更新事件和控制事件。a) Wifi 状态更新事件WIFI\_开头的事件为 wifi 状态更新事件，data 参数仅在WIFI\_RSSI 有效，data 值为 RSSI 值,数据类型为 uint8\_t，取值范围 0~7。  b) 控制事件与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。 |
+|-------------|--------------------|                                                                                               
+| Void gizwitsInit(void)    | gizwits 协议初始化接口。用户调用该接口可以完成 Gizwits 协议相关初始化（包括协议相关定时器、串口的初始化）。 |
+| Void gizwitsSetMode(unit8\_t mode) | 参数mode\[in\]：支持0、1、2、3、4和5，其他数据无效。参数为 0，恢复模组出厂配置接口，调用会清空所有配置参数，恢复到出厂默认配置;  参数为 1 时配置模组进入 SoftAp 模式； 参数为 2 配置模组进入 AirLink 模式； 参数为 3 配置模组进入 产测 模式； 参数为 4 配置模组进入 可绑定 模式； 参数为 5 请求模组重启。 |
+| Void gizwitsHandle(dataPoint\_t \*dataPoint)   | 参数 dataPoint\[in\]:用户设备数据点。该函数中完成了相应协议数据的处理即数据上报的等相关操作。|
+| Int8\_t gizwitsEventProcess(eventInfo\_t \*info,uint8\_t \*data,uint32\_t len) |参数 info\[in\]:事件队列参数 ;  data\[in\]:数据;                                                                                                         参数 len \[in\]:数据长度。用户数据处理函数,包括 wifi 状态更新事件和控制事件。a) Wifi 状态更新事件WIFI\_开头的事件为 wifi 状态更新事件，data 参数仅在WIFI\_RSSI 有效，data 值为 RSSI 值,数据类型为 uint8\_t，取值范围 0~7。  b) 控制事件与数据点相关,本版本代码会打印相关事件信息，相关数值也一并打印输出，用户只需要做命令的具体执行即可。 |
 
 ## 3.开发步骤
 
@@ -152,25 +152,32 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 | 函数            | 说明                                                               |
 |-----------------|------|
-| SystemInit()    | 平台相关的硬件初始化 ==**（非 MCU SDK API，不同的平台名称可能不同）**== |
-| userInit()      | 用户相关的初始化，如：外设驱动初始化、打印串口初始化 ==**（非MCU SDK API，不同的平台名称可能不同）**== |
-| gizwitsInit()   | 平台、协议处理初始化，如：用户定时器初始化、协议通信串口初始化 **（MCU SDK API）** |
-| userHandle()    | 用户事件回调函数，用户可以自定义事件在该函数中完成相应的协议处理。==**（非MCU SDK API，不同的平台名称可能不同）**==|
-| gizwitsHandle() | 协议相关的主函数 ==**（MCU SDK API）**==|
+| HAL_Init()    | 平台相关的硬件初始化 **（非 MCU SDK API，不同的平台名称可能不同）** |
+| SystemClock_Config()      | 平台相关的硬件初始化 **（非 MCU SDK API，不同的平台名称可能不同）** |
+| userInit()      | 用户相关的初始化，如：外设驱动初始化、打印串口初始化 **（非MCU SDK API，不同的平台名称可能不同）** |
+| gizwitsInit()   | 平台、协议处理初始化 **（MCU SDK API）** |
+| userHandle()    | 用户事件回调函数，用户可以自定义事件在该函数中完成相应的协议处理。**（非MCU SDK API，不同的平台名称可能不同）**|
+| gizwitsHandle() | 协议相关的主函数 **（MCU SDK API）**|
 
-### 3.2 移植RGB_LED驱动程序
+### 3.2 移植微信宠物屋驱动程序
 
-从MCU SDK文件内容目录结构看到，自动生成MCU代码里面没有rgb_led灯驱动，我们可以去机智云官网，开发者中心，下载中心，去参考下载其他含rgb_led灯驱动的项目，把里面的rgb_led灯驱动提取出来移植，以移植微信宠物屋rgb_led灯驱动为例。
-
-![MCU SDK文件内容目录结构](/assets/zh-cn/quickstart/dev/new16.png)
+从MCU SDK文件内容目录结构看到，自动生成MCU代码里面没有正反转可调电机马达，温湿度传感器，红外感应器、RGB全彩灯驱动。机智云下载中心提供STM32CubeMX版的驱动库文件。
 
 ![下载1](/assets/zh-cn/quickstart/dev/new18.png)
 
 ![下载2](/assets/zh-cn/quickstart/dev/new19.png)
 
-我们把刚刚下载的微信宠物项目解压，进入如下目录，可以看到有个rgb_led灯驱动文件夹，把文件夹复制到自己的自动生成MCU驱动目录里面
+![下载2](/assets/zh-cn/quickstart/dev/new19_20.png)
 
-![移植1](/assets/zh-cn/quickstart/dev/new20.png)
+导入微信宠物屋工程配置文件
+
+> 建议开发者提前阅读文档中心的《STM32CubeMX移植机智云自动生成代码详解》一文，了解STM32CubeMX的相关使用方法，本文不做过多叙述。
+
+将下载中心得到的微信宠物屋CubeMX配置文件，替换掉自动生成代码中的原配置文件：
+
+![移植1](/assets/zh-cn/quickstart/dev/new20_20.png)
+
+然后重新生成对应配置的STM32代码（并不会影响到原有的机智云协议处理代码）：
 
 ![移植2](/assets/zh-cn/quickstart/dev/new21.png)
 
