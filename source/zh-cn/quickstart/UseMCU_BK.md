@@ -260,8 +260,8 @@ void key2ShortPress(void)
     #if !MODULE_TYPE
     gizwitsSetMode(WIFI_SOFTAP_MODE);
     #endif
-		//Soft AP mode, RGB red
-		ledRgbControl(250, 0, 0);
+    //Soft AP mode, RGB red
+    ledRgbControl(250, 0, 0);
 }
 ```
 ```C
@@ -272,8 +272,8 @@ void key2LongPress(void)
     #if !MODULE_TYPE
     gizwitsSetMode(WIFI_AIRLINK_MODE);
     #endif
-		//AirLink mode, RGB Green
-		ledRgbControl(0, 250, 0);
+    //AirLink mode, RGB Green
+    ledRgbControl(0, 250, 0);
 }
 ```
 
@@ -298,9 +298,9 @@ void key2LongPress(void)
 
 相应代码：
 
-![gizwitsEventProcess() 函数1](/assets/zh-cn/quickstart/dev/new30.png)
+```C
 
-![gizwitsEventProcess() 函数2](/assets/zh-cn/quickstart/dev/new31.png)
+```
 
 ### 3.7 上报设备状态
 
