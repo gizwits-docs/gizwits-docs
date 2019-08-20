@@ -496,9 +496,13 @@ void userHandle(void)
 
 ## 3. 短按gokit中间的key2按键，使WiFi模块进入softap配网模式，此时RGB全彩灯变红
 
-![配置WiFi模块入网-1](/assets/zh-cn/quickstart/dev/new35_35.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_36.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_37.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_38.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_39.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_40.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_41.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_42.png)
+![配置WiFi模块入网-1](/assets/zh-cn/quickstart/dev/new35_35.png)!
 
-## 4. APP控制/读取设备数据
+## 3. App将gokit配置入网
+
+[配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_36.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_37.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_38.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_39.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_40.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_41.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_42.png)
+
+## 5. APP控制/读取设备数据
 
 ![APP收发设备数据](/assets/zh-cn/quickstart/dev/new39_39.png)
 
