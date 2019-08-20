@@ -181,17 +181,46 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![移植2](/assets/zh-cn/quickstart/dev/new21.png)
 
-回到我们自己MCU代码，在驱动目录里面添加rgb_led驱动文件
+移植微信宠物屋驱动代码
 
-![移植3](/assets/zh-cn/quickstart/dev/new22.png)
+1)将前序中介绍的驱动库代码文件拷贝到自动生成代码工程中的 MCU_STM32F103C8x_source\Hal 文件夹中
 
-![移植4](/assets/zh-cn/quickstart/dev/new23.png)
+![移植3](/assets/zh-cn/quickstart/dev/new22_22.png)
 
-在main.c和gizwits_product.c文件加入#include "Hal_rgb_led/Hal_rgb_led.h"
+![移植4](/assets/zh-cn/quickstart/dev/new23_23.png)
 
-![移植5](/assets/zh-cn/quickstart/dev/new24.png)
+2)在工程项目中国添加驱动代码的“.c”文件
 
-![移植6](/assets/zh-cn/quickstart/dev/new25.png)
+![移植5](/assets/zh-cn/quickstart/dev/new24_24.png)
+
+3)在驱动代码的“.c”文件加入"main.h"头文件
+
+![移植6](/assets/zh-cn/quickstart/dev/new25_25.png)
+
+![移植6](/assets/zh-cn/quickstart/dev/new25_26.png)
+
+![移植6](/assets/zh-cn/quickstart/dev/new25_27.png)
+
+![移植6](/assets/zh-cn/quickstart/dev/new25_28.png)
+
+![移植6](/assets/zh-cn/quickstart/dev/new25_29.png)
+
+4)在代码中添加相应的函数调用
+
+在 MCU_STM32F103C8x_source\Src\main.c 和 MCU_STM32F103C8x_source\Gizwits\gizwits_product.c 文
+件中添加驱动库的头文件
+
+```C
+#include "delay.h"
+#include "hal_motor.h"
+#include "hal_rgb_led.h"
+#include "hal_temp_hum.h"
+#include "hal_infrared.h"
+```
+
+在 MCU_STM32F103C8x_source\Gizwits\gizwits_product.c 文件的 userInit( ) 函数中添加各sensor的初始化
+
+![移植6](/assets/zh-cn/quickstart/dev/new25_30.png)
 
 ### 3.4 用户程序初始化
 
