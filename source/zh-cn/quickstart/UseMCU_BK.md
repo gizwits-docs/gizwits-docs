@@ -333,7 +333,7 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
         else
         {
           //user handle    
-		  ledRgbControl(0, 0, 0);
+	  ledRgbControl(0, 0, 0);
         }
         break;
 
@@ -344,20 +344,20 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
         {
           case LED_Color_VALUE0:
             //user handle
-			ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+	    ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
                           currentDataPoint.valueLED_B);
             break;
           case LED_Color_VALUE1:
             //user handle
-			ledRgbControl(254, 254, 0);
+	    ledRgbControl(254, 254, 0);
             break;
           case LED_Color_VALUE2:
             //user handle
-			ledRgbControl(254, 0, 70);
+	    ledRgbControl(254, 0, 70);
             break;
           case LED_Color_VALUE3:
             //user handle
-			ledRgbControl(238, 30, 30);
+	    ledRgbControl(238, 30, 30);
             break;
           default:
             break;
@@ -368,28 +368,28 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
         currentDataPoint.valueLED_R = dataPointPtr->valueLED_R;
         GIZWITS_LOG("Evt:EVENT_LED_R %d\n",currentDataPoint.valueLED_R);
         //user handle
-		ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
-					  currentDataPoint.valueLED_B);
+	ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+		      currentDataPoint.valueLED_B);
         break;
       case EVENT_LED_G:
         currentDataPoint.valueLED_G = dataPointPtr->valueLED_G;
         GIZWITS_LOG("Evt:EVENT_LED_G %d\n",currentDataPoint.valueLED_G);
         //user handle
-		ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
-				      currentDataPoint.valueLED_B);
+	ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+		      currentDataPoint.valueLED_B);
         break;
       case EVENT_LED_B:
         currentDataPoint.valueLED_B = dataPointPtr->valueLED_B;
         GIZWITS_LOG("Evt:EVENT_LED_B %d\n",currentDataPoint.valueLED_B);
         //user handle
-		ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
-				      currentDataPoint.valueLED_B);
+	ledRgbControl(currentDataPoint.valueLED_R, currentDataPoint.valueLED_G, 
+		      currentDataPoint.valueLED_B);
         break;
       case EVENT_Motor_Speed:
         currentDataPoint.valueMotor_Speed = dataPointPtr->valueMotor_Speed;
         GIZWITS_LOG("Evt:EVENT_Motor_Speed %d\n",currentDataPoint.valueMotor_Speed);
         //user handle
-		motorStatus(currentDataPoint.valueMotor_Speed);
+	motorStatus(currentDataPoint.valueMotor_Speed);
         break;
 
 
@@ -400,7 +400,7 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
       case WIFI_STATION:
         break;
       case WIFI_CON_ROUTER:
-		ledRgbControl(0, 0, 0);
+	ledRgbControl(0, 0, 0);
         break;
       case WIFI_DISCON_ROUTER:
  
