@@ -159,7 +159,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 | userHandle()    | 用户事件回调函数，用户可以自定义事件在该函数中完成相应的协议处理。**（非MCU SDK API，不同的平台名称可能不同）**|
 | gizwitsHandle() | 协议相关的主函数 **（MCU SDK API）**|
 
-### 3.2 移植微信宠物屋驱动程序
+### 3.2 下载微信宠物屋STM32CubeMX版的驱动库文件
 
 从MCU SDK文件内容目录结构看到，自动生成MCU代码里面没有正反转可调电机马达，温湿度传感器，红外感应器、RGB全彩灯驱动。机智云下载中心提供STM32CubeMX版的驱动库文件。
 
@@ -169,7 +169,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![下载2](/assets/zh-cn/quickstart/dev/new19_20.png)
 
-导入微信宠物屋工程配置文件
+### 3.3 导入微信宠物屋工程配置文件
 
 > 建议开发者提前阅读文档中心的《STM32CubeMX移植机智云自动生成代码详解》一文，了解STM32CubeMX的相关使用方法，本文不做过多叙述。
 
@@ -181,7 +181,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![移植2](/assets/zh-cn/quickstart/dev/new21_21.png)
 
-移植微信宠物屋驱动代码
+### 3.4 移植微信宠物屋驱动代码
 
 1)将下载中心得到的驱动库代码文件拷贝到自动生成代码工程中的 MCU_STM32F103C8x_source\Hal 文件夹中
 
@@ -278,7 +278,7 @@ void key2LongPress(void)
 }
 ```
 
-### 3.6 处理云端/APP发送过来的控制事件。
+### 3.5 处理云端/APP发送过来的控制事件。
 
 与控制型协议相关的函数调用关系如下：
 
@@ -441,7 +441,7 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *gizdata, uint32_t len)
 }
 ```
 
-### 3.7 上报设备状态
+### 3.6 上报设备状态
 
 与上报型协议相关的函数调用关系如下：
 
@@ -483,7 +483,7 @@ void userHandle(void)
 }
 ```
 
-### 3.8 编译并将固件烧写到GoKit3代MCU主控板
+### 3.7 编译并将固件烧写到GoKit3代MCU主控板
 
 # 调试
 ## 1. 手机安装机智云APP
@@ -498,7 +498,7 @@ void userHandle(void)
 
 ![配置WiFi模块入网-1](/assets/zh-cn/quickstart/dev/new35_35.png)
 
-## 3. App将gokit配置入网
+## 4. App将gokit配置入网
 
 ![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_36.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_37.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_38.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_39.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_40.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_41.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_42.png)
 
