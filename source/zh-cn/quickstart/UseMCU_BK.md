@@ -193,22 +193,15 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![移植5](/assets/zh-cn/quickstart/dev/new24_24.png)
 
-3)在驱动代码的“.c”文件加入"main.h"头文件
+3)在驱动代码的delay.c、hal_infrared.c、hal_motor.c、hal_rgb_led.c、hal_temp_hum.c文件加入"main.h"头文件
 
-![移植6](/assets/zh-cn/quickstart/dev/new25_25.png)
-
-![移植6](/assets/zh-cn/quickstart/dev/new25_26.png)
-
-![移植6](/assets/zh-cn/quickstart/dev/new25_27.png)
-
-![移植6](/assets/zh-cn/quickstart/dev/new25_28.png)
-
-![移植6](/assets/zh-cn/quickstart/dev/new25_29.png)
+```C
+#include "main.h"
+```
 
 4)在代码中添加相应的函数调用
 
-在 MCU_STM32F103C8x_source\Src\main.c 和 MCU_STM32F103C8x_source\Gizwits\gizwits_product.c 文
-件中添加驱动库的头文件
+在 MCU_STM32F103C8x_source\Src\main.c 和 MCU_STM32F103C8x_source\Gizwits\gizwits_product.c 文件中添加驱动库的头文件
 
 ```C
 #include "delay.h"
@@ -220,29 +213,69 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 在 MCU_STM32F103C8x_source\Gizwits\gizwits_product.c 文件的 userInit( ) 函数中添加各sensor的初始化
 
-![移植6](/assets/zh-cn/quickstart/dev/new25_30.png)
+```C
+void userInit(void)
+{
+    memset((uint8_t *)&currentDataPoint, 0, sizeof(dataPoint_t));
+    
+    delay_init(72); // 延时 初始化
+    rgbLedInit(); // RGB LED 初始化
+    dht11Init(); // 温湿度初始化
+    irInit(); // 红外初始化
+    motorInit(); // 电机初始化
+    motorStatus(0); // 电机转速初始化
+}
+```
 
-### 3.4 用户程序初始化
+在 MCU_STM32F103C8x_source\Gizwits\gizwits_product.c 文件的 userHandle( ) 函数中添加只读型传感器数据点相关的代码
 
-位置：main.c 中 userInit() 函数
+```C
+void userHandle(void)
+{
+    uint8_t ret = 0;
+    static uint32_t thLastTimer = 0;
+    
+    ///< 新添加代码: 红外传感器数据获取
+    currentDataPoint.valueInfrared = irHandle();
+    
+    ///< 新添加代码: 温湿度传感器数据获取
+    if((gizGetTimerCount() ‐ thLastTimer) > 2000) //上报间隔2S
+    {
+        ret = dht11Read((uint8_t *)&currentDataPoint.valueTemperature,(uint8_t *)&currentDataPoint.valueHumidity);
+        if(ret != 0)
+        {
+            printf("Failed to read DHT11 [%d] \n", ret);
+        }
+        
+        thLastTimer = gizGetTimerCount();
+    }
+}
+```
 
-![用户初始化函数](/assets/zh-cn/quickstart/dev/new26.png)
-
-### 3.5 WiFi模块Reset/入网方式
-
-设备需要进入配置模式才能进行联网，并与云端进行通信，MCU SDK在工程中是通过按键触发进入相应的配置模式。这里，我们简单地添加成功触发WiFi模组进入AirLink配置模式后LED灯亮起。
-
-进入 Soft AP 模式：key2 按键短按。
-
-![ Soft AP 模式](/assets/zh-cn/quickstart/dev/new27.png)
-
-B. 进入 AirLink 模式：key2 按键长按亮蓝blue灯。
-
-![ AirLink 模式](/assets/zh-cn/quickstart/dev/new28.png)
-
-C. 模组复位：key1 按键长。
-
-![模组复位](/assets/zh-cn/quickstart/dev/new29.png)
+在 MCU_STM32F103C8x_source\User\main.c 文件的 key2ShortPress( ) 函数与 key2LongPress( ) 函数中添加长/短按key2时的LED点亮代码
+```C
+void key2ShortPress(void)
+{
+    GIZWITS_LOG("KEY2 PRESS ,Soft AP mode\n");
+    #if !MODULE_TYPE
+    gizwitsSetMode(WIFI_SOFTAP_MODE);
+    #endif
+		//Soft AP mode, RGB red
+		ledRgbControl(250, 0, 0);
+}
+```
+```C
+void key2LongPress(void)
+{
+    //AirLink mode
+    GIZWITS_LOG("KEY2 PRESS LONG ,AirLink mode\n");
+    #if !MODULE_TYPE
+    gizwitsSetMode(WIFI_AIRLINK_MODE);
+    #endif
+		//AirLink mode, RGB Green
+		ledRgbControl(0, 250, 0);
+}
+```
 
 ### 3.6 处理云端/APP发送过来的控制事件。
 
