@@ -146,7 +146,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 ### 3.1 程序主函数
 位置：main.c 中 main()函数
 
-![main函数截图](/assets/zh-cn/quickstart/dev/new17.png)
+![main函数截图](/assets/zh-cn/quickstart/dev/new17_17.png)
 
 相关说明：
 
@@ -179,11 +179,11 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 然后重新生成对应配置的STM32代码（并不会影响到原有的机智云协议处理代码）：
 
-![移植2](/assets/zh-cn/quickstart/dev/new21.png)
+![移植2](/assets/zh-cn/quickstart/dev/new21_21.png)
 
 移植微信宠物屋驱动代码
 
-1)将前序中介绍的驱动库代码文件拷贝到自动生成代码工程中的 MCU_STM32F103C8x_source\Hal 文件夹中
+1)将下载中心得到的驱动库代码文件拷贝到自动生成代码工程中的 MCU_STM32F103C8x_source\Hal 文件夹中
 
 ![移植3](/assets/zh-cn/quickstart/dev/new22_22.png)
 
