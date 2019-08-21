@@ -30,7 +30,7 @@ title: 模块硬件资料
 [HFLPT230 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPT230.html)
 
 
-## 2. GPRS模块的Datasheet 硬件介绍
+## 2. 移动通讯模块的Datasheet 硬件介绍
 
 - ### 广和通模块系列
 
@@ -69,7 +69,7 @@ title: 模块硬件资料
 [BC60硬件设计手册V1.0.1](http://docs.gizwits.com/assets/pdf/BSJ/BC60_V1.0.1.pdf)
 
 
-# 二、模块资源
+# 二、模块使用资源
 
 ## 1. 乐鑫模块系列
 
