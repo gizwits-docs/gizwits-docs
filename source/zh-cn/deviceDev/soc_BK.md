@@ -1,10 +1,10 @@
 title: ESP8266-SOC快速入门
 ----
-附件：[微信宠物屋参考代码](/assets/pdf/gizlamp.zip)
+附件：[微信宠物屋参考代码](/assets/pdf/Gokit.zip)
 # 概述
 微信宠物屋，是机智云一个简单常见的体验宠物屋真实场景的智能产品，硬件电路简单，程序本身也不复杂；下面我们使用gokit3（s）开发板和机智云云端，实现微信宠物屋。
 
-**下面我们使用GoKit3（S）开发板，基于esp8266模块上的SoC方案，开发的智能灯项目为例，示范一下如何将设备快速接入机智云，实现硬件智能化。**
+**下面我们使用GoKit3（S）开发板，基于esp8266模块上的SoC方案，开发的微信宠物屋项目为例，示范一下如何将设备快速接入机智云，实现硬件智能化。**
 
 # 步骤
 ## 1.准备工作 
@@ -20,6 +20,7 @@ title: ESP8266-SOC快速入门
 
 1）Oracle VM VirtualBox
 2）乐鑫官方的esp8266开发环境
+[开发环境准备](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
 
 **其他：**
 
@@ -35,41 +36,39 @@ title: ESP8266-SOC快速入门
 
 
 
-## 2.开始开发
+# 在机智云官网创建设备产品.
 
-### 2.1 注册开发者账号
+这里以Gokit“微信宠物屋”的例子介绍设备接入机智云的整个流程。
 
-机智云开发者账号，用于产品接入、设备管理、OTA服务、MCU开发等的功能使用。
-注册链接：http://dev.gizwits.com/zh-cn/developer/
+## 1.注册机智云开发者账号
 
+[进入机智云官网开发者中心](http://dev.gizwits.com/zh-cn/developer/)， 根据界面指引注册开发者账号。
 
-### 2.2新建产品
+![](/assets/zh-cn/quickstart/dev/new2.png)
 
-注册完成后，登陆至机智云开发者中心后台后，点击开发者中心后台右上角的**“创建新产品”**菜单，在跳转页面新建一个名为**“GizLamp”**的产品，选择**“Wi-Fi/移动网络方案”**方式接入，并完成产品创建。如下图：
+## 2.登录账号，选择对应项创建新产品
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410297895.png)
+![创建新产品图](/assets/zh-cn/quickstart/dev/new3.png)
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410303591.png)
+## 3.填写设备产品基本信息
 
+![填写设备产品基本信息图](/assets/zh-cn/quickstart/dev/new5_5.png)
 
-### 2.3云端数据点（产品功能点）
+## 4.根据产品需求，分析硬件开发需求
 
-**数据点介绍：**
+Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器、RGB全彩灯，“微信宠物屋”可以通过红外感应器及时了解您宠物是否在窝里和小窝的情况，可以通过温湿度传感器查看到一段时间内小窝的温湿度数据，可以通过电机马达模拟宠物喂食，还可以通过RGB全彩灯调节小窝灯光。
 
-**数据点：**即设备产品的功能的抽象，用于描述产品功能及其参数。创建数据点后，设备与云端通讯的数据格式即可确定，设备、机智云可以相互识别设备与机智云互联互通的数据。更多的解析和新建指引，可以在开发者中心数据点页面右上角“定义数据点教程”中查看找到帮助，以建立属于你自己产品的数据点，如下图：
+## 5.结合设备功能需求，分析设备数据点需求
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410323764.png)
+![设备数据点需求](/assets/zh-cn/quickstart/dev/table41_1.png)
 
-**新建数据点：**
+## 4.创建15个对应数据点
 
-然后以本次的项目“GizLamp”为例，简单描述一下云端数据点和产品的功能点的关系，本次的项目“GizLamp”，它需要实现的功能是远程开灯和关灯，那我们只需在云端建立一个“布尔值”的数据点即可完成这件事，如下图：
+![创建数据点-1](/assets/zh-cn/quickstart/dev/new7_7.png)
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410463103.png)
+![创建数据点-1](/assets/zh-cn/quickstart/dev/new8_8.png)
 
-
-添加数据点完成之后，点击下图的“应用”即可，完成整个产品的数据点的新建工作。
-
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410483137.png)
+![创建数据点-3](/assets/zh-cn/quickstart/dev/new9_9.png)
 
 ### 2.4 云端自动生成源码
 
@@ -80,29 +79,29 @@ title: ESP8266-SOC快速入门
 - **关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：** [自动生成代码工具](/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
 
 
-**获取本次（GizLamp）项目，云端自动生成基于esp8266的SoC源码：**
+**获取本次（Gokit）项目，云端自动生成基于esp8266的SoC源码：**
 
-完成产品的数据点新建之后，点击页面的左侧菜单栏的“MCU开发”根据页面提示选择“SOC方案”，目前SOC方案机智云云端默认的“硬件平台”为esp8266，选择完成之后下拉至页面底部，点击“生成代码包”，等待大概30秒左右即可生成基于esp8266的本次项目（GizLamp）代码包，下载下来即可，由于下载下来的文件名过于长，并且在文件名里包含了产品的ProductKey，所以本次项目将下载下来的文件名修改为“GizLamp”如下图：
+完成产品的数据点新建之后，点击页面的左侧菜单栏的“MCU开发”根据页面提示选择“SOC方案”，目前SOC方案机智云云端默认的“硬件平台”为esp8266，选择完成之后下拉至页面底部，点击“生成代码包”，等待大概30秒左右即可生成基于esp8266的本次项目（Gokit）代码包，下载下来即可，由于下载下来的文件名过于长，并且在文件名里包含了产品的ProductKey，所以本次项目将下载下来的文件名修改为“Gokit”如下图：
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410499518.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/new_soc_1.png)
 
 
 **补充说明：SOC方案自动生成代码工具目前仅支持esp8266。**
 
 #### 2.4.2 项目源码二次开发指引：
 
-整个云端自动生成的SOC源码里面，用户只需要关心文件路径为“GizLamp\app”下面的几个地方：
+整个云端自动生成的SOC源码里面，用户只需要关心文件路径为“Gokit\app”下面的几个地方：
 
 如果你需要添加8266的外设，只需要在
-- **“GizLamp\app\driver”**文件目录下添加相应外设的驱动的.c文件
-- **“GizLamp\app\include\driver”**文件目录下添加相应外设的驱动的.h文件
+- **“Gokit\app\driver”**文件目录下添加相应外设的驱动的.c文件
+- **“Gokit\app\include\driver”**文件目录下添加相应外设的驱动的.h文件
 
 App通过云端下发控制事件处理，可以在
-- **“GizLamp\app\Gizwits”**文件目录下**“gizwits_product.c”**文件里面的
+- **“Gokit\app\Gizwits”**文件目录下**“gizwits_product.c”**文件里面的
 - **“gizwitsEventProcess（）**函数里添加驱动外设执行事件函数即可实现控制设备
 
 上报云端状态事件处理，可以在
-- **“GizLamp\app\user”**文件目录下“user_main.c”文件里面的**“userTimerFunc（）”**函数里添加数据状态上报函数即可以实现状态上报。
+- **“Gokit\app\user”**文件目录下“user_main.c”文件里面的**“userTimerFunc（）”**函数里添加数据状态上报函数即可以实现状态上报。
 
 在这套SOC源码里面需要关心也就这几个主要的地方，模块联网以及底层驱动均不需要开发者去处理和修改。
 
@@ -119,29 +118,28 @@ App通过云端下发控制事件处理，可以在
 [微信宠物屋实例源码的解析](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E7%A8%8B%E5%BA%8F%E8%AF%A6%E8%A7%A3.html)
 
 
-#### 2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“GizLamp”项目所需要的led驱动的.c和.h文件。
+#### 2.4.4 从“微信宠物屋 for GoKit3(S) ESP8266 V03000003”案例中移植“Gokit”项目所需要的led驱动的.c和.h文件。
 
-- 将**“gokit3_SoC_ESP8266_03000003_2016120711\app\driver”**文件目录下的
-   **“hal_rgb_led.c”**的c文件复制至**“gizlamp\app\driver”**下
+- 将**“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”**文件目录下的
+   **“hal_rgb_led.c”、“hal_infrared.c”、“hal_motor.c”、“hal_temp_hum.c”**的c文件复制至**“Gokit\app\driver”**下
    
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410538947.png)
 
 
-- 将**“gokit3_SoC_ESP8266_03000003_2016120711\app\include\driver”**文件目录下的   **“hal_rgb_led.h”**的h文件复制至**“gizlamp\app\include\driver”**下
+- 将**“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”**文件目录下的   **“hal_rgb_led.h”、“hal_infrared.h”、“hal_motor.h”、“hal_temp_hum.h”**的h文件复制至**“Gokit\app\include\driver”**下
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410551854.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/new_soc_2.png)
 
 完成以上动作之后就完成SOC文件的准备工作，下面进行修改相应的c文件。
 
-
-#### 2.4.5 修改“GizLamp”的SOC源码文件
+#### 2.4.5 修改“Gokit”的SOC源码文件
 
 这里我使用Sublime软件打开整个工程的，然后需要修改的两个文件，如下：
 
-- **“GizLamp\app\user”**文件目录下**“user_main.c”**文件
+- **“Gokit\app\user”**文件目录下**“user_main.c”**文件
   外设的驱动初始化，在这个c文件里面的**“user_init（）**函数中完成
 
-- **“GizLamp\app\Gizwits”**文件目录下**“gizwits_product.c”**文件
+- **“Gokit\app\Gizwits”**文件目录下**“gizwits_product.c”**文件
   云端下发的数据，在这个c文件里面的**“gizwitsEventProcess（）”**函数中处理
 
 
