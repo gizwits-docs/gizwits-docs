@@ -96,12 +96,13 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 - **“Gokit\app\driver”**文件目录下添加相应外设的驱动的.c文件
 - **“Gokit\app\include\driver”**文件目录下添加相应外设的驱动的.h文件
 
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410538947.png)
+
 App通过云端下发控制事件处理，可以在
-- **“Gokit\app\Gizwits”**文件目录下**“gizwits_product.c”**文件里面的
-- **“gizwitsEventProcess（）**函数里添加驱动外设执行事件函数即可实现控制设备
+- **“Gokit\app\Gizwits”**文件目录下**“gizwits_product.c”**文件里面的**“gizwitsEventProcess（）**函数里添加驱动外设执行事件函数即可实现控制设备
 
 上报云端状态事件处理，可以在
-- **“Gokit\app\user”**文件目录下“user_main.c”文件里面的**“userTimerFunc（）”**函数里添加数据状态上报函数即可以实现状态上报。
+- **“Gokit\app\user”**文件目录下“user_main.c”文件里面的**“userHandle（）”**函数里添加数据状态上报函数即可以实现状态上报。
 
 在这套SOC源码里面需要关心也就这几个主要的地方，模块联网以及底层驱动均不需要开发者去处理和修改。
 
@@ -122,13 +123,12 @@ App通过云端下发控制事件处理，可以在
 
 - 将**“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”**文件目录下的
    **“hal_rgb_led.c”、“hal_infrared.c”、“hal_motor.c”、“hal_temp_hum.c”**的c文件复制至**“Gokit\app\driver”**下
-   
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410538947.png)
 
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/new_soc_2_1.png)
 
 - 将**“GoKit_SoC_ESP8266_V03000003测试固件及开发资源2017072815\驱动库代码”**文件目录下的   **“hal_rgb_led.h”、“hal_infrared.h”、“hal_motor.h”、“hal_temp_hum.h”**的h文件复制至**“Gokit\app\include\driver”**下
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/new_soc_2.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/new_soc_2_2.png)
 
 完成以上动作之后就完成SOC文件的准备工作，下面进行修改相应的c文件。
 
@@ -141,7 +141,6 @@ App通过云端下发控制事件处理，可以在
 
 - **“Gokit\app\Gizwits”**文件目录下**“gizwits_product.c”**文件
   云端下发的数据，在这个c文件里面的**“gizwitsEventProcess（）”**函数中处理
-
 
 - 程序修改部分说明如下图：
 
@@ -301,7 +300,8 @@ int8_t ICACHE_FLASH_ATTR gizwitsEventProcess(eventInfo_t *info, uint8_t *data, u
             {
             case LED_Color_VALUE0:
                 //user handle
-            	rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+            	rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,
+		currentDataPoint.valueLED_B);
                 break;
             case LED_Color_VALUE1:
                 //user handle
@@ -324,19 +324,22 @@ int8_t ICACHE_FLASH_ATTR gizwitsEventProcess(eventInfo_t *info, uint8_t *data, u
             currentDataPoint.valueLED_R= dataPointPtr->valueLED_R;
             GIZWITS_LOG("Evt:EVENT_LED_R %d\n",currentDataPoint.valueLED_R);
             //user handle
-			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,
+			currentDataPoint.valueLED_B);
             break;
         case EVENT_LED_G:
             currentDataPoint.valueLED_G= dataPointPtr->valueLED_G;
             GIZWITS_LOG("Evt:EVENT_LED_G %d\n",currentDataPoint.valueLED_G);
             //user handle
-			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,
+			currentDataPoint.valueLED_B);
             break;
         case EVENT_LED_B:
             currentDataPoint.valueLED_B= dataPointPtr->valueLED_B;
             GIZWITS_LOG("Evt:EVENT_LED_B %d\n",currentDataPoint.valueLED_B);
             //user handle
-			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,
+			currentDataPoint.valueLED_B);
 			break;
         case EVENT_Motor_Speed:
             currentDataPoint.valueMotor_Speed= dataPointPtr->valueMotor_Speed;
