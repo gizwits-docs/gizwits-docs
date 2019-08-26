@@ -185,7 +185,6 @@ App通过云端下发控制事件处理，可以在
 ### 3.1首先在gizwits_product.c文件 和 user_main.c文件里面添加以下头文件
 
 ```C
-#include "delay.h"
 #include "hal_motor.h"
 #include "hal_rgb_led.h"
 #include "hal_temp_hum.h"
