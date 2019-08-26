@@ -67,7 +67,7 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 ![设备数据点需求](/assets/zh-cn/quickstart/dev/table41_1.png)
 
-## 4.创建15个对应数据点
+## 6.创建15个对应数据点
 
 ![创建数据点-1](/assets/zh-cn/quickstart/dev/new7_7.png)
 
