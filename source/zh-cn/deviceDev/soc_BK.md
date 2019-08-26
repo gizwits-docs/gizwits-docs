@@ -185,10 +185,10 @@ App通过云端下发控制事件处理，可以在
 ### 3.1首先在gizwits_product.c文件 和 user_main.c文件里面添加以下头文件
 
 ```C
-#include "hal_motor.h"
-#include "hal_rgb_led.h"
-#include "hal_temp_hum.h"
-#include "hal_infrared.h"
+#include "driver/hal_infrared.h"
+#include "driver/hal_motor.h"
+#include "driver/hal_rgb_led.h"
+#include "driver/hal_temp_hum.h"
 ```
 
 ### 3.2在 gizwits_product.c文件添加只读型传感器数据点相关的代码
