@@ -191,7 +191,15 @@ App通过云端下发控制事件处理，可以在
 #include "hal_infrared.h"
 ```
 
-在 userInit( ) 函数中添加各sensor的初始化
+在 gizwits_product.c 文件的 添加只读型传感器数据点相关的代码
+
+```C
+#define USER_TIME_MS 1000                ///< 新添加代码: 更改定时器间隔为100ms
+#define TH_TIMEOUT (1000 / USER_TIME_MS) ///< 新添加代码: 温湿度采集间隔为1S（1000ms）
+#define INF_TIMEOUT (500 / USER_TIME_MS) ///< 新添加代码: 红外采集间隔为500ms
+```
+
+在 gizwits_product.c 文件的 userInit( ) 函数中添加各sensor的初始化
 
 ```C
 void ICACHE_FLASH_ATTR userInit(void)
@@ -208,36 +216,179 @@ void ICACHE_FLASH_ATTR userInit(void)
 
 	irInit();          ///< 新添加代码: 红外初始化
 }
-
 ```
 
-- 添加**“#include "driver/hal_rgb_led.h"”**头文件
+在 gizwits_product.c 文件的 userHandle( ) 函数中添加只读型传感器数据点相关的代码
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410801710.png)
+```C
+void ICACHE_FLASH_ATTR userHandle(void)
+{
+	uint8_t ret = 0;
+	uint8_t curTemperature = 0;
+	uint8_t curHumidity = 0;
+	uint8_t curIr = 0;
+	static uint8_t thCtime = 0;
+	static uint8_t irCtime = 0;
+	thCtime++;
+	irCtime++;
+	
+	///< 新添加代码: 红外传感器数据获取
+	if(INF_TIMEOUT < irCtime)
+	{
+		irCtime = 0;
+		curIr = irUpdateStatus();
+		currentDataPoint.valueInfrared = curIr;
+	}
+	
+	///< 新添加代码: 温湿度传感器数据获取
+	if(TH_TIMEOUT < thCtime)
+	{
+		thCtime = 0;
+		ret = dh11Read(&curTemperature, &curHumidity);
+		if(0 == ret)
+		{
+			currentDataPoint.valueTemperature = curTemperature;
+			currentDataPoint.valueHumidity = curHumidity;
+		}
+		else
+		{
+			os_printf("@@@@ dh11Read error ! \n");
+		}
+	}
+	
+    system_os_post(USER_TASK_PRIO_2, SIG_UPGRADE_DATA, 0);
+}
+```
 
-- 在**“user_main（）”**函数里添加rgb灯的驱动函数
+接着在**“gizwitsEventProcess()”**函数里面的**“//user handle”**部分添加完成写类型外设的事件处理的代码，例如控制微信宠物屋的灯光，驱动电机马达。
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410831716.png)
+```C
+int8_t ICACHE_FLASH_ATTR gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
+{
+    uint8_t i = 0;
+    dataPoint_t * dataPointPtr = (dataPoint_t *)data;
+    moduleStatusInfo_t * wifiData = (moduleStatusInfo_t *)data;
 
-然后在**“gizwits_product.c”**文件里面添加以下头文件
+    if((NULL == info) || (NULL == data))
+    {
+        GIZWITS_LOG("!!! gizwitsEventProcess Error \n");
+        return -1;
+    }
 
-  - **#include "driver/hal_rgb_led.h"**  
-  
-接着在**“gizwitsEventProcess()”**函数里面的**“//user handle”**部分添加以下函数用于驱动GoKit3上面的RGB灯，使RGB灯开和关的动作；也可以修改**rgbControl（）**这条函数的参数控制rgb灯的组合色，每一个参数输入范围在“0~254”之间，这条函数可以  在**“hal_rgb_led.c”**文件里找到。
+    for(i = 0; i < info->num; i++)
+    {
+        switch(info->event[i])
+        {
+        case EVENT_LED_OnOff :
+            currentDataPoint.valueLED_OnOff = dataPointPtr->valueLED_OnOff;
+            GIZWITS_LOG("Evt: EVENT_LED_OnOff %d \n", currentDataPoint.valueLED_OnOff);
+            if(0x01 == currentDataPoint.valueLED_OnOff)
+            {
+                //user handle
+                rgbControl(254, 0, 0); ///< 新添加代码: 对应开启红灯
+            }
+            else
+            {
+                //user handle
+                rgbControl(0, 0, 0); ///< 新添加代码: 对应关闭红灯
+            }
+            break;
 
+        case EVENT_LED_Color:
+            currentDataPoint.valueLED_Color = dataPointPtr->valueLED_Color;
+            GIZWITS_LOG("Evt: EVENT_LED_Color %d\n", currentDataPoint.valueLED_Color);
+            switch(currentDataPoint.valueLED_Color)
+            {
+            case LED_Color_VALUE0:
+                //user handle
+            	rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+                break;
+            case LED_Color_VALUE1:
+                //user handle
+                rgbControl(254, 254, 0); ///< 新添加代码: 对应LED组合颜色‐黄色
+                break;
+            case LED_Color_VALUE2:
+                //user handle
+                rgbControl(254, 0, 70); ///< 新添加代码: 对应LED组合颜色‐紫色
+                break;
+            case LED_Color_VALUE3:
+                //user handle
+                rgbControl(238, 30, 30); ///< 新添加代码: 对应LED组合颜色‐粉色
+                break;
+            default:
+                break;
+            }
+            break;
 
-- **//LED 控制函数**
-- **rgbControl（0，0，0）;//关灯**
-- **rgbControl（254，254，254）;//开灯**
-@
+        case EVENT_LED_R:
+            currentDataPoint.valueLED_R= dataPointPtr->valueLED_R;
+            GIZWITS_LOG("Evt:EVENT_LED_R %d\n",currentDataPoint.valueLED_R);
+            //user handle
+			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+            break;
+        case EVENT_LED_G:
+            currentDataPoint.valueLED_G= dataPointPtr->valueLED_G;
+            GIZWITS_LOG("Evt:EVENT_LED_G %d\n",currentDataPoint.valueLED_G);
+            //user handle
+			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+            break;
+        case EVENT_LED_B:
+            currentDataPoint.valueLED_B= dataPointPtr->valueLED_B;
+            GIZWITS_LOG("Evt:EVENT_LED_B %d\n",currentDataPoint.valueLED_B);
+            //user handle
+			rgbControl(currentDataPoint.valueLED_R,currentDataPoint.valueLED_G,currentDataPoint.valueLED_B);
+			break;
+        case EVENT_Motor_Speed:
+            currentDataPoint.valueMotor_Speed= dataPointPtr->valueMotor_Speed;
+            GIZWITS_LOG("Evt:EVENT_Motor_Speed %d\n",currentDataPoint.valueMotor_Speed);
+            //user handle
+			motorControl(currentDataPoint.valueMotor_Speed);
+			break;
 
--  添加**“#include "driver/hal_rgb_led.h"”**头文件
-
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410953054.png)
-
-- 在**“gizwitsEventProcess（）”**函数添加灯的开关事件
-
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410973316.png)
+        case WIFI_SOFTAP:
+            break;
+        case WIFI_AIRLINK:
+            break;
+        case WIFI_STATION:
+            break;
+        case WIFI_CON_ROUTER:
+            GIZWITS_LOG("@@@@ connected router\n");
+ 			rgbControl(0, 0, 0); ///< 新添加代码: 连接路由后关闭LED灯
+            break;
+        case WIFI_DISCON_ROUTER:
+            GIZWITS_LOG("@@@@ disconnected router\n");
+ 
+            break;
+        case WIFI_CON_M2M:
+            GIZWITS_LOG("@@@@ connected m2m\n");
+			setConnectM2MStatus(0x01);
+ 
+            break;
+        case WIFI_DISCON_M2M:
+            GIZWITS_LOG("@@@@ disconnected m2m\n");
+			setConnectM2MStatus(0x00);
+ 
+            break;
+        case WIFI_RSSI:
+            GIZWITS_LOG("@@@@ RSSI %d\n", wifiData->rssi);
+            break;
+        case TRANSPARENT_DATA:
+            GIZWITS_LOG("TRANSPARENT_DATA \n");
+            //user handle , Fetch data from [data] , size is [len]
+            break;
+        case MODULE_INFO:
+            GIZWITS_LOG("MODULE INFO ...\n");
+            break;
+            
+        default:
+            break;
+        }
+    }
+    system_os_post(USER_TASK_PRIO_2, SIG_UPGRADE_DATA, 0);
+    
+    return 0; 
+}
+```
 
 完成以上动作之后，进行SoC编译开发环境的搭建，请参考 >> 第6）点
 
