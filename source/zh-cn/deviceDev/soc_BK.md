@@ -137,9 +137,11 @@ App通过云端下发控制事件处理，可以在
 这里我使用Sublime软件打开整个工程的，然后需要修改的两个文件，如下：
 
 - **“Gokit\app\user”**文件目录下**“user_main.c”**文件
+
   外设的驱动初始化，在这个c文件里面的**“user_init（）**函数中完成
 
 - **“Gokit\app\Gizwits”**文件目录下**“gizwits_product.c”**文件
+
   云端下发的数据，在这个c文件里面的**“gizwitsEventProcess（）”**函数中处理
 
 - 程序修改部分说明如下图：
