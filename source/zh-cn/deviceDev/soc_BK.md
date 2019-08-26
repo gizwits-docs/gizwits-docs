@@ -395,6 +395,26 @@ int8_t ICACHE_FLASH_ATTR gizwitsEventProcess(eventInfo_t *info, uint8_t *data, u
 }
 ```
 
+接着在 gizwits_product.c 文件的key2ShortPress()和key2LongPress()添加配网按键指示灯
+
+```C
+LOCAL void ICACHE_FLASH_ATTR key2ShortPress(void)
+{
+	GIZWITS_LOG("#### key2 short press, soft ap mode \n");
+	rgbControl(250, 0, 0); ///< 新添加代码: Soft AP mode, RGB red
+	gizwitsSetMode(WIFI_SOFTAP_MODE);
+}
+```
+
+```C
+LOCAL void ICACHE_FLASH_ATTR key2LongPress(void)
+{
+	GIZWITS_LOG("#### key2 long press, airlink mode\n");
+	rgbControl(0, 250, 0); ///< 新添加代码: AirLink mode, RGB Green
+	gizwitsSetMode(WIFI_AIRLINK_MODE);
+}
+```
+
 完成以上动作之后，进行SoC编译开发环境的搭建，请参考 >> 第6）点
 
 #### 2.4.6 搭建SoC源码编译开发环境
