@@ -83,13 +83,11 @@ Gokit板载了正反转可调电机马达，温湿度传感器，红外感应器
 
 - **关于“自动生成代码工具”的更多介绍和帮助，请点击以下链接：** [自动生成代码工具](/zh-cn/deviceDev/DevSDK/%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E5%B7%A5%E5%85%B7.html)
 
-
 **获取本次（Gokit）项目，云端自动生成基于esp8266的SoC源码：**
 
 完成产品的数据点新建之后，点击页面的左侧菜单栏的“MCU开发”根据页面提示选择“SOC方案”，目前SOC方案机智云云端默认的“硬件平台”为esp8266，选择完成之后下拉至页面底部，点击“生成代码包”，等待大概30秒左右即可生成基于esp8266的本次项目（Gokit）代码包，下载下来即可，由于下载下来的文件名过于长，并且在文件名里包含了产品的ProductKey，所以本次项目将下载下来的文件名修改为“Gokit”如下图：
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/new_soc_1.png)
-
 
 **补充说明：SOC方案自动生成代码工具目前仅支持esp8266。**
 
@@ -122,22 +120,23 @@ App通过云端下发控制事件处理，可以在
 用于reset wifi和使模块进入产测模式
 - reset wifi -> 长按key1
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410609968.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/key1_long.png)
 
 - 进入产测模式 -> 短按key1
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410698977.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/key1_short.png)
 
 **- Key2**
 
-用于触发模块进入airlink和softap的配置模式
-- airlink配置模式 -> 长按key2
-
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410739993.png)
+用于触发模块进入softap和airlink的配置模式
 
 - softap配置模式 -> 短按key2
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410747091.png)
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/key2_short.png)
+
+- airlink配置模式 -> 长按key2
+
+![Alt text](/assets/zh-cn/deviceDev/UseSoc/key2_long.png)
 
 # 微信宠物屋开发
 
