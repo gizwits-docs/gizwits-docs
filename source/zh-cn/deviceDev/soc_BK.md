@@ -477,9 +477,9 @@ LOCAL void ICACHE_FLASH_ATTR key2LongPress(void)
 
 产测是生产环节中重要的部分，保证了产品的质量，提升自身产品形象。机智云产测工具为批量生产的产品提供了方便快捷的模块与MCU产测方式。在大型生产时，保证模块与MCU可正常使用。使用产测工具，必须让产品先上架。由产品创建者向机智云申请发布。机智云将免费为你提供人工审核以及严谨的测试。[详情请点击浏览。](http://docs.gizwits.com/zh-cn/deviceDev/%E4%BA%A7%E6%B5%8B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html)
 
-## 4. 项目完成
+# 项目完成
 - 完成以上步骤，整个项目开发就完成了,如果需要关注更多的开源项目以及和其他开发者深度交流，可以到我们公司的官方论坛进行学习：http://club.gizwits.com/forum.php
 
-## [附加篇：ESP8266-SOC方案UART0教程](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266-SOC_UART0.html)
+# [附加篇：ESP8266-SOC方案UART0教程](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266-SOC_UART0.html)
 
 
