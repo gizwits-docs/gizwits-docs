@@ -181,16 +181,35 @@ App通过云端下发控制事件处理，可以在
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410747091.png)
 
 
-首先在**“user_main.c”**文件里面添加以下头文件
+首先在**“gizwits_product.c”**文件里面添加以下头文件
 
- - **#include "driver/hal_rgb_led.h"**
+```C
+#include "delay.h"
+#include "hal_motor.h"
+#include "hal_rgb_led.h"
+#include "hal_temp_hum.h"
+#include "hal_infrared.h"
+```
 
-接着在**“user init（）”**函数里面的**“//user init”**部分添加以下两条函数，用于初始化GoKit3上面的RGB灯，这两条函数可以在**“hal_rgb_led.c”**文件里找到。
+在 userInit( ) 函数中添加各sensor的初始化
 
-- **//LED初始化函数**
-- **rgbGpioInit（）**
-- **rgbLedInit（）;**
-@
+```C
+void ICACHE_FLASH_ATTR userInit(void)
+{
+	gizMemset((uint8_t *)&currentDataPoint, 0, sizeof(dataPoint_t));
+
+	rgbGpioInit();     ///< 新添加代码: RGB LED初始化
+	rgbLedInit();
+
+	motorInit();       ///< 新添加代码: 电机初始化
+	motorControl(0);
+
+	dh11Init();        ///< 新添加代码: 温湿度初始化
+
+	irInit();          ///< 新添加代码: 红外初始化
+}
+
+```
 
 - 添加**“#include "driver/hal_rgb_led.h"”**头文件
 
