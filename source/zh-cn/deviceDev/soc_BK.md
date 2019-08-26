@@ -12,29 +12,34 @@ title: ESP8266-SOC快速入门
 **硬件：**
 
 1）GoKit3（S）开发板
+
 2）杜邦线若干
+
 3）Usb转串口模块，如：ft232、cp2102、ch340均可
+
 4）Micro USB线
 
 **软件：**
 
 1）Oracle VM VirtualBox
+
 2）乐鑫官方的esp8266开发环境
 [开发环境准备](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
 
 **其他：**
 
 1）机智云开发者账号
+
 2）微信宠物屋 for GoKit3(S) ESP8266 V03000003源码（机智云下载中心可获得）
+
 3）智能灯项目自动生成SoC源码（请继续查看下述操作，即可生成获得）
 
 
 **补充说明：**
 
 1）如果没有GoKit3的小伙伴也可以参考GoKit3的原理图基于esp8266模块（模块的Flash必须为4Mbyte，建议模块型号：安信可的esp-12f）自行搭建硬件，原理图链接如下：http://club.gizwits.com/thread-2889-1-1.html
+
 2）GoKit3（S）购买链接：https://shop159680395.taobao.com/ （机智云官方店）
-
-
 
 # 在机智云官网创建设备产品.
 
@@ -148,13 +153,9 @@ App通过云端下发控制事件处理，可以在
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410564904.png)
 
-
-
 **云端自动生成SOC源码的其他说明**
 
 ·Key1和Key2这部分的程序是由机智云工程师基于GoKit3（S）完成的，如果用户自行搭建的8266硬件（非GoKit3），则需要修改这部分的程序去驱动用自己的按键GPIO口，用户按键这部分的程序是必需的，它用于使能wifi进入相应的配置模式，然后通过机智云的app（IOE Dome）给wifi模块推送路由器的ssid和password，从而使wifi联网网络，如果没有这个功能，就无法配置wifi模块，从而无法使wifi模块联网。
-
-
 
 **-云端自动生成SoC源码里面的用户按键Key1、Key2**
  
@@ -415,44 +416,65 @@ LOCAL void ICACHE_FLASH_ATTR key2LongPress(void)
 }
 ```
 
-完成以上动作之后，进行SoC编译开发环境的搭建，请参考 >> 第6）点
-
-#### 2.4.6 搭建SoC源码编译开发环境
-
-- 请参考这里：[开发环境准备](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
-	
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410993024.png)
-
+完成以上动作之后，进行SoC编译开发环境的搭建，请参考[开发环境准备](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
 
 **补充说明：新手入门建议使用virtualbox+乐鑫官方的开发环境，进行二次开发**
-
-
-#### 2.4.7 SOC源码编译
-
-- 请参考这里：[源码编译](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-源码编译)
-
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411008805.png)
 
 #### 2.4.8 固件烧写
 
 - 请参考这里：[固件下载](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载)
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411027642.png)
+# 调试
+## 1. 手机安装机智云APP
 
+![安装机智云APP](/assets/zh-cn/quickstart/dev/new33.png)
 
+## 2. 打开机智云APP，注册登录APP账号（或者跳过登录）
 
-## 3. 调试与发布
+![注册登录APP账号](/assets/zh-cn/quickstart/dev/new34.png)
 
-- 产品调试请参考这里：[调试](/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#调试)
+## 3. 短按gokit中间的key2按键，使WiFi模块进入softap配网模式，此时RGB全彩灯变红
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411043890.png)
+![配置WiFi模块入网-1](/assets/zh-cn/quickstart/dev/new35_35.png)
 
+## 4. App将gokit配置入网
 
-- 产品发布请参考这里：[发布产品](/zh-cn/quickstart/%E8%AE%BE%E5%A4%87%E5%BF%AB%E9%80%9F%E6%8E%A5%E5%85%A5.html#发布产品)
+![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_36.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_37.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_38.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_39.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_40.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_41.png)![配置WiFi模块入网-2](/assets/zh-cn/quickstart/dev/new36_42.png)
 
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411051018.png)
+## 5. APP控制/读取设备数据
 
+![APP收发设备数据](/assets/zh-cn/quickstart/dev/new39_39.png)
 
+## 6. 机智云后台查看设备交互数据
+
+![机智云后台查看设备交互数据1](/assets/zh-cn/quickstart/dev/new40_40.png)
+
+![机智云后台查看设备交互数据2](/assets/zh-cn/quickstart/dev/new41_41.png)
+
+<font color=#FF0000 >特别说明：当APP与设备处于同一局域网，APP的控制指令会走小循环，因此设备日志上面看不到APP to Dev；如果想看到APP to Dev，可以将手机切换到4G流量或者连接别的路由器，再来控制设备，就能看到APP to Dev</font>
+
+# 发布产品
+
+产品发布到正式生产环境后，机智云将为你的设备免费分配独立的云端运行环境，确保你的设备24小时不间断在线以供用户使用，将享受更多机智云为您提供的增值服务，包括：智能设备统计分析，开放平台展示以及各种无微不至的技术支持服务。
+
+产品如何申请发布上线，具体步骤如下：
+
+1.进入产品详细信息页面，在产品名称旁边显示【申请发布】按钮
+
+![申请发布](/assets/zh-cn/quickstart/dev/new42.png)
+
+2.点击【马上申请】按钮，如实填写申请信息审核
+
+![马上申请](/assets/zh-cn/quickstart/dev/new43.png)
+
+3.点击【提交申请】按钮，跳转提交成功页面。机智云将免费为你提供人工审核以及严谨的测试，审核通过后，会根据你提交的量产计划免费提供后台服务器支持。
+
+![提交申请](/assets/zh-cn/quickstart/dev/new44.png)
+
+# 产测简介
+
+产测是生产环节中重要的部分，保证了产品的质量，提升自身产品形象。机智云产测工具为批量生产的产品提供了方便快捷的模块与MCU产测方式。在大型生产时，保证模块与MCU可正常使用。使用产测工具，必须让产品先上架。由产品创建者向机智云申请发布。机智云将免费为你提供人工审核以及严谨的测试。[详情请点击浏览。](http://docs.gizwits.com/zh-cn/deviceDev/%E4%BA%A7%E6%B5%8B%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3.html)
 
 ## 4. 项目完成
 - 完成以上步骤，整个项目开发就完成了,如果需要关注更多的开源项目以及和其他开发者深度交流，可以到我们公司的官方论坛进行学习：http://club.gizwits.com/forum.php
