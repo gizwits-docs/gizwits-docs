@@ -183,7 +183,7 @@ App通过云端下发控制事件处理，可以在
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410564904.png)
 
-首先在gizwits_product.c文件里面添加以下头文件
+首先在gizwits_product.c文件 和 user_main.c文件里面添加以下头文件
 
 ```C
 #include "delay.h"
@@ -396,7 +396,7 @@ int8_t ICACHE_FLASH_ATTR gizwitsEventProcess(eventInfo_t *info, uint8_t *data, u
 }
 ```
 
-接着在 gizwits_product.c 文件的key2ShortPress()和key2LongPress()添加配网按键指示灯
+接着在 user_main.c 文件的key2ShortPress()和key2LongPress()添加配网按键指示灯
 
 ```C
 LOCAL void ICACHE_FLASH_ATTR key2ShortPress(void)
