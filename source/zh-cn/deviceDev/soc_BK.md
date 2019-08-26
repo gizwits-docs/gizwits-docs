@@ -183,7 +183,7 @@ App通过云端下发控制事件处理，可以在
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410564904.png)
 
-首先在gizwits_product.c文件 和 user_main.c文件里面添加以下头文件
+### 3.1首先在gizwits_product.c文件 和 user_main.c文件里面添加以下头文件
 
 ```C
 #include "delay.h"
@@ -193,7 +193,7 @@ App通过云端下发控制事件处理，可以在
 #include "hal_infrared.h"
 ```
 
-在 gizwits_product.c文件添加只读型传感器数据点相关的代码
+### 3.2在 gizwits_product.c文件添加只读型传感器数据点相关的代码
 
 ```C
 #define USER_TIME_MS 1000                ///< 新添加代码: 更改定时器间隔为100ms
@@ -201,7 +201,7 @@ App通过云端下发控制事件处理，可以在
 #define INF_TIMEOUT (500 / USER_TIME_MS) ///< 新添加代码: 红外采集间隔为500ms
 ```
 
-在 gizwits_product.c 文件的 userHandle( ) 函数中添加只读型传感器数据点相关的代码
+### 3.3在 gizwits_product.c 文件的 userHandle( ) 函数中添加只读型传感器数据点相关的代码
 
 ```C
 void ICACHE_FLASH_ATTR userHandle(void)
@@ -243,7 +243,7 @@ void ICACHE_FLASH_ATTR userHandle(void)
 }
 ```
 
-在 gizwits_product.c 文件的 userInit( ) 函数中添加各sensor的初始化
+### 3.4在 gizwits_product.c 文件的 userInit( ) 函数中添加各sensor的初始化
 
 ```C
 void ICACHE_FLASH_ATTR userInit(void)
@@ -262,7 +262,7 @@ void ICACHE_FLASH_ATTR userInit(void)
 }
 ```
 
-接着在**“gizwitsEventProcess()”**函数里面的**“//user handle”**部分添加完成写类型外设的事件处理的代码，例如控制微信宠物屋的灯光，驱动电机马达。
+### 3.5接着在**“gizwitsEventProcess()”**函数里面的**“//user handle”**部分添加完成写类型外设的事件处理的代码，例如控制微信宠物屋的灯光，驱动电机马达。
 
 ```C
 int8_t ICACHE_FLASH_ATTR gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
@@ -396,7 +396,7 @@ int8_t ICACHE_FLASH_ATTR gizwitsEventProcess(eventInfo_t *info, uint8_t *data, u
 }
 ```
 
-接着在 user_main.c 文件的key2ShortPress()和key2LongPress()添加配网按键指示灯
+### 3.6接着在 user_main.c 文件的key2ShortPress()和key2LongPress()添加配网按键指示灯
 
 ```C
 LOCAL void ICACHE_FLASH_ATTR key2ShortPress(void)
@@ -416,15 +416,16 @@ LOCAL void ICACHE_FLASH_ATTR key2LongPress(void)
 }
 ```
 
-完成以上动作之后，进行SoC编译开发环境的搭建，请参考[开发环境准备](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
+### 3.7完成以上动作之后，进行SoC编译开发环境的搭建，请参考[开发环境准备](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-开发环境准备)
 
 **补充说明：新手入门建议使用virtualbox+乐鑫官方的开发环境，进行二次开发**
 
-#### 2.4.8 固件烧写
+### 3.8 固件烧写
 
-- 请参考这里：[固件下载](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载)
+- 请参考这里：[固件烧写](/zh-cn/deviceDev/WiFiSOC/GoKit3S%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91.html#GoKit3-S-固件下载)
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483411027642.png)
+
 # 调试
 ## 1. 手机安装机智云APP
 
