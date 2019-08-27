@@ -31,7 +31,7 @@ title: 2G/4G 接入方案
 
 # 五、修改mcu程序，使得mcu可以控制LED灯
 
-修改代码步骤请参考，[微信宠物屋移植与开发](https://github.com/gizwits-docs/gizwits-docs/blob/master/source/zh-cn/quickstart/UseMCU_BK.md#32-%E4%B8%8B%E8%BD%BD%E5%BE%AE%E4%BF%A1%E5%AE%A0%E7%89%A9%E5%B1%8Bstm32cubemx%E7%89%88%E7%9A%84%E9%A9%B1%E5%8A%A8%E5%BA%93%E6%96%87%E4%BB%B6)
+修改代码步骤请参考，[微信宠物屋移植与开发](http://docs.gizwits.com/zh-cn/quickstart/UseMCU_BK.html#3-2-%E4%B8%8B%E8%BD%BD%E5%BE%AE%E4%BF%A1%E5%AE%A0%E7%89%A9%E5%B1%8BSTM32CubeMX%E7%89%88%E7%9A%84%E9%A9%B1%E5%8A%A8%E5%BA%93%E6%96%87%E4%BB%B6)
 
 # 六、G510与mcu接线，通电让设备上线
 
