@@ -1,35 +1,37 @@
-title: G510 接入方案
+title: 2G/4G 接入方案
 ---
 
 # 一、概述
 
-本文主要介绍如何使用Gokit开发板和G510模块快速接入机智云
+本文主要介绍如何使用Gokit开发板和2G/4G模块快速接入机智云，本文使用的是2G模块G510作为例子。
 
 # 二、在机智云官网创建设备产品，定义数据点，添加设备
 
-**这里以“智能灯”的例子介绍设备接入机智云的整个流程。**
+**这里以机智云的入门产品“微信宠物屋”为例子介绍设备接入机智云的整个流程。**
 
 ## 1. 创建新产品
 
 ![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_2.png)
 
-![name](/assets/zh-cn/deviceDev/debug/G510/G510project_3.png)
+![name](/assets/zh-cn/deviceDev/debug/G510/G510project_3_3.png)
 
-## 2. 定义数据点
+## 2. 创建15个数据点
 
-![name](/assets/zh-cn/deviceDev/debug/G510/G510project_4.png)
+![创建数据点-1](/assets/zh-cn/quickstart/dev/new7_7.png)
 
-![name](/assets/zh-cn/deviceDev/debug/G510/G510project_5.png)
+![创建数据点-1](/assets/zh-cn/quickstart/dev/new8_8.png)
 
-![name](/assets/zh-cn/deviceDev/debug/G510/G510project_6.png)
+![创建数据点-3](/assets/zh-cn/quickstart/dev/new9_9.png)
 
-# 四、下载自动生成mcu代码，烧写程序到Gokit的mcu中
+# 四、下载自动生成mcu代码
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/NBproject_10.png)
+![自动生成MCU SDK-1](/assets/zh-cn/quickstart/dev/new12_12.png)
+
+![自动生成MCU SDK-3](/assets/zh-cn/quickstart/dev/new14.png)
 
 # 五、修改mcu程序，使得mcu可以控制LED灯
 
-程序修改步骤，略，本文最后有参考代码
+修改代码步骤请参考，[微信宠物屋移植与开发](https://github.com/gizwits-docs/gizwits-docs/blob/master/source/zh-cn/quickstart/UseMCU_BK.md#32-%E4%B8%8B%E8%BD%BD%E5%BE%AE%E4%BF%A1%E5%AE%A0%E7%89%A9%E5%B1%8Bstm32cubemx%E7%89%88%E7%9A%84%E9%A9%B1%E5%8A%A8%E5%BA%93%E6%96%87%E4%BB%B6)
 
 # 六、G510与mcu接线，通电让设备上线
 
@@ -53,8 +55,6 @@ title: G510 接入方案
 
 ![name](/assets/zh-cn/deviceDev/debug/G510/G510project_15.png)
 
-# 九、参考资料下载
+# 九、参考代码下载
 
-参考代码下载链接：
-
-http://docs.gizwits.com/assets/pdf/mcu%E5%BF%AB%E9%80%9F%E5%BC%80%E5%8F%91RGB_LED%E7%81%AF%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%811.rar
+附件：[微信宠物屋参考代码](/assets/pdf/gokit_code.rar)
