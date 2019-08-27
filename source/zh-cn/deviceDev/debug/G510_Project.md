@@ -53,7 +53,7 @@ title: 2G/4G 接入方案
 
 ![name](/assets/zh-cn/deviceDev/debug/G510/G510project_11.png)
 
-![name](/assets/zh-cn/deviceDev/debug/G510/G510project_15.png)
+![APP收发设备数据](/assets/zh-cn/quickstart/dev/new39_39.png)
 
 # 九、参考代码下载
 
