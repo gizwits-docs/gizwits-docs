@@ -57,4 +57,4 @@ title: 2G/4G 接入方案
 
 # 九、参考代码下载
 
-附件：[微信宠物屋参考代码](/assets/pdf/gokit_code.rar)
+附件：[微信宠物屋参考代码](http://docs.gizwits.com/assets/pdf/gokit_code.rar)
