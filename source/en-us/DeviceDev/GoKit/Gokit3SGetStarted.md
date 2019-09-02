@@ -181,7 +181,7 @@ The operation of Gokit3(S) in MCU mode is the same as that in SoC mode. For the 
 
 If you want to understand the entire development frameworks of Gizwits, please check Developer Documentation Center:
 
-http://docs.gizwits.com
+http://docs.gizwits.com/en-us/overview/overview.html
 
 To check out more development tutorials, visit the Gokit section of Gizwits Community.
 

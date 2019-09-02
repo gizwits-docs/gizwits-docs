@@ -454,13 +454,13 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |   参数    |  类型   |     描述      |
 |:--------- |:------- |:------------- |  
 | uid       | string  | 用户唯一id    |   
-| expire_at | integer | token过期时间（时间戳） |   
+| expired_at | integer | token过期时间（时间戳） |   
 
 返回例子
 ```json
 {
   "token": "f8324047f20144f6914e7be19304f943",
-  "expire_at": 1504772734
+  "expired_at": 1504772734
 }
 ```
 
@@ -527,7 +527,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |   描述    |
 |:------------------------ |:------ |:----:|:-------- |:--------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid     |
-| X-Gizwits-User-token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 | phone                    | string |  是  | body     | 手机号码  |
 | code                     | string |  是  | body     | 验证码    |
 
@@ -552,7 +552,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |   描述    |
 |:------------------------ |:------ |:----:|:-------- |:--------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid     |
-| X-Gizwits-User-token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 
 响应参数
 
@@ -586,7 +586,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 |           参数           |  类型  | 必填 | 参数类型 |                  描述                   |
 |:------------------------ |:------ |:----:|:-------- |:--------------------------------------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                                   |
-| X-Gizwits-User-token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 | captcha_id               | string |  是  | body     | 图片验证码id                            |
 | captcha_code             | string |  是  | body     | 图片验证码的值                          |
 | phone                    | string |  是  | body     | 手机号码                                        |
@@ -604,7 +604,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 
 请求地址及方式
 
-      GET
+      PUT
       https://api.gizwits.com/app/verify/codes
 
 请求参数
@@ -612,7 +612,7 @@ lower(md5(product_secret + X-Gizwits-Timestamp ))
 | 参数                     | 类型   | 必填 | 参数类型 | 描述                                                           |
 |:------------------------ |:------ |:----:|:-------- |:-------------------------------------------------------------- |
 | X-Gizwits-Application-Id | string |  是  | header   | appid                                                          |
-| X-Gizwits-User-token     | string |  是  | header   | 用户token,通过[获取APP Token](#post_app_request_token)接口取得 |
+| X-Gizwits-Application-Token     | string |  是  | header   | App token,通过[获取APP Token](#post_app_request_token)接口取得 |
 | phone                    | string |  是  | body     | 手机号码                                                       |
 | sms_code                 | string |  是  | body     | 验证码                                                         |
 
@@ -3443,7 +3443,7 @@ data    : 设备上报状态
 | X-Gizwits-User-token     | string  |  是  | header   | 用户token                                                  |
 | did                      | string  |  是  | path     | 设备ID                                                     |
 | start_ts                 | integer |  是  | query    | 开始时间，单位为毫秒                                       |
-| end_ts                   | integer |  否  | query    | 结束时间，单位为毫秒                                       |
+| end_ts                   | integer |  是  | query    | 结束时间，单位为毫秒                                       |
 | attrs                    | string  |  是  | query    | 数字类型数据点名称，多个数据点用逗号分隔                   |
 | aggregator               | string  |  是  | query    | 统计方式，sum：合计；avg：平均值；max：最大值；min：最少值 |
 | unit                     | string  |  是  | query    | 汇总方式,hours：小时；day：天；weeks：周；months：月       |
@@ -3470,7 +3470,7 @@ data    : 设备上报状态
 {
   "query": {
     "aggregator": "sum",
-    "end_ts": null,
+    "end_ts": 1505318400100,
     "start_ts": 1505318400000,
     "attrs": "set_temp, alert_shutdown, room_temp",
     "unit": "HOURS"

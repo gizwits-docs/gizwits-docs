@@ -4,6 +4,7 @@ var redirectMap = {
 //  '/zh-cn/old.html': '/zh-cn/new.html',
 //  '/zh-cn/旧.html': '/zh-cn/新.html'
 
+'/hc':'/en-us/overview/overview.html',
 '/zh-cn/quickstart/独立mcu接入方案.html':'/zh-cn/quickstart/UseMCU.html',
 '/zh-cn/quickstart/设备快速接入.html':'/zh-cn/quickstart/UseMCU.html',
 '/zh-cn/UserManual/使用设备分组API教程.html':'/zh-cn/UserManual/devgroup_API.html',

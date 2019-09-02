@@ -16,7 +16,7 @@ After you have been granted the permission to use the aggregation API of OpenAPI
 
 ## 2.1. Create a User
 
-http://swagger.gizwits.com/doc/index/openapi_apps#/用户管理/post_app_users
+http://docs.gizwits.com/en-us/cloud/OpenAPI.html#APIs
 
 The following figure shows how to.
 
@@ -28,7 +28,7 @@ The API for anonymous user login is the same as creating an anonymous login user
 
 ## 2.3. Bind device
 
-http://swagger.gizwits.com/doc/index/openapi_apps#/绑定管理/post_app_bind_mac
+http://docs.gizwits.com/en-us/cloud/OpenAPI.html#APIs
 
 ![Bind device](../../../assets/en-us/UserManual/DataAPI/12.png)
 
@@ -38,13 +38,13 @@ Use the xpg tool provided by Gizwits to simulate a MCU reporting the current dev
 
 The usage of xpg is as follows:
 
-http://docs.gizwits.com/en-us/deviceDev/串口工具使用文档.html
+http://docs.gizwits.com/en-us/DeviceDev/Debug/DebugTool.html
 
 ![Report device data](../../../assets/en-us/UserManual/DataAPI/13.png)
 
 ## 2.5. Data aggregation query
 
-http://swagger.gizwits.com/doc/index/openapi_apps#/高级数据接口
+http://docs.gizwits.com/en-us/cloud/OpenAPI.html#Advanced-Data-API
 
 ![Data aggregation query](../../../assets/en-us/UserManual/DataAPI/14.png)
 
@@ -62,7 +62,7 @@ Note: Before using Enterprise API, you must first contact Gizwits technical supp
 
 Apply for Enterprise API access:
 
-http://docs.gizwits.com/en-us/Cloud/ent_dev.html
+http://docs.gizwits.com/en-us/cloud/enterprise_api.html
 
 ## 3.2. Set IP whitelist
 
@@ -127,7 +127,7 @@ Header parameters:
 
 Device data aggregation API is for enterprise developers. If you want to apply, please contact us through the official website.
 
-Website address: http://www.gizwits.com/about-us
+Website address: http://en.gizwits.com/about-us
 
 Gizwits official QR code:
 

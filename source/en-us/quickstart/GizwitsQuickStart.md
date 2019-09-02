@@ -175,10 +175,10 @@ Gizwits Debugging App automatically updates its UI after receiving the data push
 
 OK, congratulations! You have quickly understood and experienced the connection service of Gizwits through the virtual device and Gizwits Debugging App. Now get started!
 
-To learn about the device connection to Gizwits IoT Cloud, please click [here](../DeviceDev/UseMCU.html).
+To learn about the device connection to Gizwits IoT Cloud, please click [here](http://docs.gizwits.com/en-us/DeviceDev/MCUScheme.html).
 
-To learn more about the rapid App development process, please click [here](/AppDev/AppDevGetStarted.html).
+To learn more about the rapid App development process, please click [here](http://docs.gizwits.com/en-us/AppDev/AppDevGetStarted.html).
 
-To get Gizwits open source development kit - Gokit, please click [here](http://www.gizwits.com/zh-cn/gokit/).
+To get Gizwits open source development kit - Gokit, please click [here](http://www2.gizwits.com/zh-cn/gokit/).
 
-To join our developer community and talk with 10,000 developers, please click [here](http://club.gizwits.com/forum.php).
+To join our developer community and talk with 120,000 developers, please click [here](http://club.gizwits.com/forum.php).

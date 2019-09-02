@@ -50,7 +50,7 @@ GoKit4 supports Seeed standard-interface sensors and also can be adapted to othe
 Easy-use Gokit4 supports plug-and-play fast calibration and secondary development. It also supports other new sensors, and is suitable for the rapid development of NB-IoT/eMTC intelligent solutions.
 
 
-Apply for GoKit3 >>http://www.gizwits.com/zh-cn/gokit/
+Apply for GoKit3 >>http://www2.gizwits.com/zh-cn/gokit/
 
 
 

@@ -15,7 +15,7 @@ The following steps take the Samsung Galaxy Note3 Lite 4G as an example.
 
 Step 1: Integrate our SDK on Android phones and refer to the initialization process of the document on the Gizwits website: 
 
-http://docs.gizwits.com/hc/kb/article/175453/ 
+http://docs.gizwits.com/en-us/AppDev/AndroidSDKA2.html
 
 After launching our Gizwits App SDK correctly, the Gizwits App SDK will output all the log information to the debug terminal and log file by default. If the phone has an SD card, the log file will be saved on the SD card. If there is no SD card, it will only be saved in the application path.
 
@@ -36,7 +36,7 @@ To get the log of Gizwits App SDK for iOS, note that there are two cases: iOS 10
 1) How to get debug log for the versions before iOS 10 
 
 Step 1: Integrate our SDK on iOS phones and refer to the initialization process of the document on the Gizwits website: 
-http://docs.gizwits.com/hc/kb/article/175453/ 
+http://docs.gizwits.com/en-us/AppDev/iOSSDKA2.html
 After launching our Gizwits App SDK correctly, the Gizwits App SDK will output all the log information to the debug terminal and log file by default. 
 
 Step 2: Download and install the sync assistant (which includes the Mac and Win versions):  

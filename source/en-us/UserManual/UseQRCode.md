@@ -1,9 +1,9 @@
-title: Generating device QR code for App binding
+title: Generate device QR code for App binding
 ---
 
 # Overview
 
-A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This article describes how to generate the device QR code through the API.
+A QR code scanning API for App binding is reserved in the Gizwits App SDK, which can be used to directly bind devices by App through scanning the GPRS devices (or Wi-Fi devices). This document describes how to generate the device QR code through the API.
 
 # Steps
 
@@ -63,11 +63,11 @@ The downloaded QR code is packaged in a zip file, as shown below.
  
 ## 7. Binding device using App
 
-After decompressing QR code zip file, you can use the Gizwits debugging App to directly scan the QR code and bind the device.
+After decompressing QR code zip file, you can use the Gizwits Debugging App to directly scan the QR code and bind the device.
 
 ![Generating device QR code for App binding](../../../assets/en-us/UserManual/qrcode/20.png) 
  
-In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits open source framework code. The specific device binding API call in SDK is as follows, taking Android as an example:
+In the App development, you need to call the device binding API through QR code in the Gizwits App SDK. QR code scanning can be implemented through a third-party framework (such as zxing). You can refer to the Gizwits App Framework code. The specific API call for device binding in Gizwits App SDK is as follows, taking Android as an example:
 
 ```
 //Call device binding API

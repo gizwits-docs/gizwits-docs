@@ -316,13 +316,13 @@ Gokit is free, but only a limited number are available for individual developers
 
 Developer Forum: http://club.gizwits.com/forum.php
 
-Documentation Center: http://docs.gizwits.com/hc/
+Documentation Center: http://docs.gizwits.com/en-us/overview/overview.html
 
 ## For organizations
 
 Gizwits has a lot of support programs for organizations, you can contact Gizwits to get Gokit and timely technical support.
 
-Website: http://www.gizwits.com/about-us
+Website: http://en.gizwits.com/about-us
 
 WeChat Official Account QR code of Gizwits:
 
