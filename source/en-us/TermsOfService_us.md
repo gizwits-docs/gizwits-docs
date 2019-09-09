@@ -1,0 +1,93 @@
+title: Terms of Service
+---
+
+## Important Notice
+【Guangzhou Gizwits IoT Technology Co., Ltd.】Smart Home Products 【Gizwits Smart】(hereinafter referred to as “Gizwits Smart”) specifically reminds users to carefully read and fully understand this "GENERAL AGREEMENT FOR SOFTWARE LICENSE AND SERVICE" (hereinafter referred to as "this agreement"). Users should carefully read and fully understand the terms of this agreement, in particular those involving exemptions or restrictions on responsibilities of liability, dispute resolution and the application of laws. Terms of exemption or limitation of liability will be identified in bold and the user will need to read it carefully. Please read it carefully and choose to accept or not accept this agreement (Minors should read with a legal guardian). The user downloading, installation, use of the software, account acquisition and login will be deemed as acceptance of this agreement and the user agree to be bound by the terms of this agreement.
+
+Gizwits Smart has the right to revise this agreement, and the terms of the updated agreement will be published on the official website or software, effective from the date of publication. Users can download and install this software again or go official website to check the latest agreement terms. After Gizwits Smart modifies the terms of this agreement, if the user does not accept the revised terms, please immediately stop using the "Gizwits Smart" software and services provided by Gizwits. Users continue to use "Gizwits Smart" software and services will be deemed to have accepted the revised agreement.
+
+## 1. The General
+* 1.1. This agreement is an agreement between you (hereinafter referred to as "User") and “Gizwits Smart” and its operating partners (hereinafter referred to as "Partners") regarding the user's download, installation, use of "Gizwits Smart" (hereinafter referred to as "the Software".) and the use of “Gizwits Smart” related services.
+* 1.2. This software and service are software and services provided by Gizwits Smart that are installed on, but not limited to, mobile smart terminal devices. It provides services such as binding and operation of smart products for users using the smart terminal.
+* 1.3. The ownership and operation rights of the software and services are owned by Gizwits Smart.
+
+## 2.The Scope of Software Authorization
+* 2.1. Gizwits Smart gives the user a personal, non-transferable, non-transferable authorization, and non-exclusive license to the software.
+2.2. Users can install, use, display and run this software terminal device for non-commercial purposes. However, the user can’t install, use or run the software for commercial operation purposes. Users can’t copy, change, modify, mount, or create any derivative works of this software or the data released to any terminal device memory during the running of the software and the interaction data between the client and server during the running of the software. Forms include, but are not limited to, plug-ins, plug-ins, or unauthorized third-party tools/services to access the software and related systems. If it is necessary to conduct commercial sales, reproduction and distribution, such as software pre-installation and bundling, it must obtain written authorization and permission from Gizwits Smart.
+* 2.3. Users can not install this software on other terminal equipment without explicit permission of Gizwits Smart, including but not limited to set-top boxes, game consoles, television sets, DVD players, etc.
+* 2.4. The user may make one copy of the software for the purpose of using the software and services and use it only as a backup. The backup copy must contain all the copyright information contained in the original software.
+* 2.5. Except as expressly authorized by this agreement, Gizwits Smart does not authorize the user to use other rights. If the user uses other rights, he or she must obtain the written consent of Gizwits Smart.
+
+## 3.Software Acquisition, Installation, Upgrade
+* 3.1. The user shall download and install this software product in accordance with the designated website or designated means of Gizwits Smart. Beware of downloading this software on non-designated websites in order to prevent mobile terminal devices from infecting malicious programs that can damage user data and obtain user privacy information. If a user obtains this software from a third party that is not authorized by Gizwits Smart, or has an installation program with the same name as the software, GizwitsSmart cannot guarantee that the software can be used normally, andwill not be responsible for the damages caused to user.
+* 3.2. The user must select the version of the software that matches the installed terminal equipment. Otherwise, any software problems, equipment problems or damages caused by the software and equipment model mismatch will be borne by the user.
+* 3.3. In order to improve the user experience and improve the service content, Gizwits Smart has the right to provide users with replacement, modification, and upgrade versions of the software from time to time. It also reserves the right to charge for replacement, modification, or upgrades, but prior to obtaining users’ consent. This software provides users with the “Upgrade Prompt” function by default. Depending on the software version used by the user, Gizwits Smart provides the user with the option to open this function. After the release of the new software version, Gizwits Smart does not guarantee the continued availability of the old version of the software.
+
+## 4. The Use of Standard
+* 4.1.Users may use this software and services in accordance with this agreement on the premise of compliance with the law and this agreement. Users may not perform the following actions:
+   *  Delete all copyright information on this software and other copies, and modify, delete or circumvent the technical measures set by the software to protect intellectual property rights;
+
+
+   * Reverse engineering of the software, such as disassembly, decompilation or other means to obtain the source code of the software;
+
+   * By modifying or forging instructions or data in software operations, adding, deleting, or changing software functions or operational effects, or operating or publicizing the software or methods used for the above purposes, regardless of whether these actions are for commercial purposes;
+
+   * Use the software to perform any activities that endanger the network security, including but not limited to: use of unlicensed data or access to unauthorized servers/accounts; unauthorized access to the public network or other people's operating systems and deletion or modification , increase the storage of information; unauthorized attempts to detect, scan, test the software's system or network weaknesses or other activities that undermine the security of the network; attempt to interfere in or disrupt the normal operation of the software system or website, intentionally spread malicious programs or viruses and other acts that disrupt the interference of normal network information services; forged TCP/IP packet names or partial names;
+
+   * Users log in or use the software and services through third-party compatible software, systems that are not developed, authorized or recognized by Gizwits Smart, or make, publish, or disseminate the above tools;
+
+   * Without the express written consent of Gizwits Smart, the user arbitrarily implements the software and its contained information including, but not limited to, the following acts: use, rent, lend, copy, modify, link, republish, compile, announce, publish, and create images site; unauthorized use of the software to develop derivative products, works, services, plug-ins, add-on, compatibility, interconnection, etc;
+
+   * Use this software to publish, transmit, disseminate, and store content that violates local laws and regulations;
+
+   * Use this software to publish, transmit, disseminate, and store content that violates the legal rights of others, such as intellectual property rights and trade secrets;
+
+   * Use this software to publish, transmit and disseminate advertisement information and spam in batches;
+
+   * Use the software and other services provided by Gizwits Smart in any illegal ways, for any unlawful purpose, or in any manner inconsistent with the license use of this agreement;
+
+* 4.2. Information Release Specifications
+   *	Users can use this software to publish content, opinions, data, text, information, user names, pictures, photos, personal information, audio, video files, links and other information that you own or you have the right to publish. The user must ensure that he or she own the intellectual property rights or have obtained legal authorization of the information he or she have uploaded, and that he or she use of the software and services does not infringe the legal rights of any third party.
+   * The user must comply with local laws and regulations when using this software.
+   * The user can’t use this software to perform the following actions when using this software, including but not limited to: 1）Produce, copy, publish and spread, store content that violates local laws and regulations; 2）Distribute, transmit, disseminate, and store content that infringes other people's right of reputation, portrait rights, intellectual property rights, trade secrets, etc.; 3）Fictitious facts, concealing the truth to mislead or deceive others; 4）Post, transmit, transmit advertising information and spam; 5）Engage in other violations of local laws and regulations.
+   * The user can’t perform any commercial activities such as advertising or selling merchandise in this software without permission from Gizwits Smart.
+
+* 4.3.The user understand and agree:
+   * Gizwits Smart will make a determination as to whether the user is suspected of violating the above-mentioned usage specifications, and suspend or terminate users’ license to use or take other restrictive measures that can be taken in accordance with this agreement.
+   * Gizwits Smart will delete the information that is suspected of illegal or suspected infringement of the legal rights of others or violate this agreement when the user uses this software;
+   * In the event that a user violates the above-mentioned rules of use and causes damage to a third party, the user need to assume legal responsibility in their own name and should ensure that Gizwits Smart is free from losses or increase costs;
+   * If the user violates the relevant legal provisions or the agreement, causing Gizwits Smart to suffer losses, or be subject to a third party’s claim, or be punished by an administrative authority, the user shall indemnify Gizwits Smart for losses and/or costs incurred, including reasonable lawyer fees, investigation and evidence collection fees.
+
+## 5.Service Risk and Disclaimer
+* 5.1. Users must personally equip the mobile terminal equipment to access the Internet and use the equipment required by the telecom value-added services, and pay for the communication fees and information fees borne by the individual mobile terminal equipment on the Internet or by third parties (including but not limited to telecommunications or mobile communication providers). If you are involved in value-added telecom services, Gizwits Smart recommend that user check with user’s telecom value-added service provider about the related cost issue.
+* 5.2. Gizwits Smart and cooperating units shall not be liable for any loss suffered by the user due to the failure of the third party such as communication lines, technical problems, network, mobile terminal equipment failure, system instability and other force majeure reasons.
+* 5.3. This software, like most Internet software, is affected by various factors including, but not limited to, user reasons, network service quality, social environment, etc., and may be plagued by various security issues, such as the use of user data by others, causing real-life harassment. Users download and install other software or other websites visited to contain Trojans and other viruses, threatening the user's terminal device information and data security, and then affect the normal use of the software. Users should strengthen their awareness of information security and protection of user data. Attention should be paid to enhancing password protection so as to avoid loss and harassment.
+* 5.4. When the user uses the software or requires Gizwits Smart to provide specific services, the software may invoke the third party system or third party software to support the user's use or access. The results of the use or visit are provided by the third party. Gizwits Smart does not guarantee the security, accuracy, validity, and other uncertainties of the results achieved through the support of third-party systems or third-party software support. In this case, if any disputes or damages are caused, Gizwits Smart will not assume any responsibility.
+* 5.5. Gizwits Smart specifically draws attention to users. In order to protect the autonomy of the company's business development and adjustment, Gizwits Smart has the right to modify or discontinue services at any time without informing users. The right of Gizwits Smart to modify or discontinue service is not responsible to the user or any third party.
+* 5.6. Except as expressly provided by laws and regulations, we will do our utmost to ensure that the software and its related technologies and information are safe, effective, accurate and reliable, but it is limited by the existing technology and users understand that Gizwits Smart cannot guarantee this.
+* 5.7. Compensation for personal injury or incidental or indirect economic damage caused by or relating to the user in any of the following circumstances, including but not limited to loss of profits, loss of data, business interruption damages or other commercial damages or The loss shall be borne by the user:
+•	Use of unlicensed software;
+•	Third party unauthorized use of software or change of user data;
+•	Costs and losses incurred by users using the software's actions;
+•	Misunderstandings of software by users;
+•	Other Software-related Losses not caused by Gizwits Smart.
+* 5.8. The acts performed by the software between the user and other users who use the software, any personal or economic injury or loss caused or may result from your being misled or deceived shall be borne by the party in error in accordance with the law.
+
+## 6.Intellectual Property Statement
+* 6.1. Gizwits Smart is the intellectual property right holder of the software. All copyrights, trademarks, patents, trade secrets and other intellectual property rights of the software, and all information related to the software (including but not limited to text, pictures, audio, video, graphics, interface design, layout framework, relevant data and electronic documents, etc.) are protected by your local laws and regulations and corresponding international treaties, and Gizwits Smart enjoys the above-mentioned intellectual property rights.
+* 6.2. Without the express written consent of Gizwits Smart, the user can not, for any commercial or non-commercial purpose, use or permit any third party to implement, utilize or transfer the above-mentioned intellectual property rights. Gizwits Smart retains the right to pursue the above-mentioned legal liabilities.
+
+## 7.Change of Agreement
+* 7.1. Gizwits Smart has the right to modify the terms of this agreement when necessary. Once the terms of the agreement are changed, the revised terms of the agreement will be posted on the relevant pages. If the user do not agree with the changed content, he or she should take the initiative to cancel this service. If the user continues to use the service, he or she is deemed to accept the changes in the terms of the agreement.
+* 7.2. Gizwits Smart and cooperative companies have the right to amend or change the charge service, charge standard, charge way, service fees and service terms as needed. When providing services, Gizwits Smart may begin to charge users for certain services now or in the future. If the user refuses to pay such fees, they cannot continue to use related services after the charges are started. Gizwits Smart and partner companies will use their best efforts to notify users of changes by e-mail or other means.
+
+## 8.Applicable Law and Dispute Resolution
+* 8.1. The validity and interpretation of the terms of this agreement shall apply to the laws of the People's Republic of China. If there is no relevant legal requirement, refer to the use of international business practices and/or business practices.
+* 8.2. The place of signing this agreement is Tianhe District of Guangzhou City.
+* 8.3．The user and Gizwits Smart agree that the disputes arising from this service shall be settled through negotiation. If the negotiation is unsuccessful, either party may submit a lawsuit to the court of jurisdiction where the agreement is signed.
+
+## 9.Miscellaneous
+* 9.1.When the user uses a particular service of the software, the service may have a separate agreement, related business rules, etc. (hereinafter collectively referred to as "separate agreement"). Please read and agree to the relevant separate agreement before using this service.
+* 9.2. This agreement takes effect on May 10, 2018.
+* 9.3. The headings of all provisions of this agreement are for readability only, and they do not have actual meaning in themselves. They cannot be used as the basis for interpretation of the meaning of this agreement.
+* 9.4. If any of the terms of this agreement are invalid or unenforceable for any reason, the remaining provisions are still valid and binding on both parties.
