@@ -1,4 +1,4 @@
-tille:Allgemeine Geschäftsbedingungen
+title: Allgemeine Geschäftsbedingungen
 ---
 
 ## Wichtiger Hinweis
