@@ -26,24 +26,14 @@ Gizwits Smart has the right to revise this agreement, and the terms of the updat
 ## 4. The Use of Standard
 * 4.1.Users may use this software and services in accordance with this agreement on the premise of compliance with the law and this agreement. Users may not perform the following actions:
    *  Delete all copyright information on this software and other copies, and modify, delete or circumvent the technical measures set by the software to protect intellectual property rights;
-
-
    * Reverse engineering of the software, such as disassembly, decompilation or other means to obtain the source code of the software;
-
    * By modifying or forging instructions or data in software operations, adding, deleting, or changing software functions or operational effects, or operating or publicizing the software or methods used for the above purposes, regardless of whether these actions are for commercial purposes;
-
    * Use the software to perform any activities that endanger the network security, including but not limited to: use of unlicensed data or access to unauthorized servers/accounts; unauthorized access to the public network or other people's operating systems and deletion or modification , increase the storage of information; unauthorized attempts to detect, scan, test the software's system or network weaknesses or other activities that undermine the security of the network; attempt to interfere in or disrupt the normal operation of the software system or website, intentionally spread malicious programs or viruses and other acts that disrupt the interference of normal network information services; forged TCP/IP packet names or partial names;
-
    * Users log in or use the software and services through third-party compatible software, systems that are not developed, authorized or recognized by Gizwits Smart, or make, publish, or disseminate the above tools;
-
    * Without the express written consent of Gizwits Smart, the user arbitrarily implements the software and its contained information including, but not limited to, the following acts: use, rent, lend, copy, modify, link, republish, compile, announce, publish, and create images site; unauthorized use of the software to develop derivative products, works, services, plug-ins, add-on, compatibility, interconnection, etc;
-
    * Use this software to publish, transmit, disseminate, and store content that violates local laws and regulations;
-
    * Use this software to publish, transmit, disseminate, and store content that violates the legal rights of others, such as intellectual property rights and trade secrets;
-
    * Use this software to publish, transmit and disseminate advertisement information and spam in batches;
-
    * Use the software and other services provided by Gizwits Smart in any illegal ways, for any unlawful purpose, or in any manner inconsistent with the license use of this agreement;
 
 * 4.2. Information Release Specifications
@@ -66,11 +56,11 @@ Gizwits Smart has the right to revise this agreement, and the terms of the updat
 * 5.5. Gizwits Smart specifically draws attention to users. In order to protect the autonomy of the company's business development and adjustment, Gizwits Smart has the right to modify or discontinue services at any time without informing users. The right of Gizwits Smart to modify or discontinue service is not responsible to the user or any third party.
 * 5.6. Except as expressly provided by laws and regulations, we will do our utmost to ensure that the software and its related technologies and information are safe, effective, accurate and reliable, but it is limited by the existing technology and users understand that Gizwits Smart cannot guarantee this.
 * 5.7. Compensation for personal injury or incidental or indirect economic damage caused by or relating to the user in any of the following circumstances, including but not limited to loss of profits, loss of data, business interruption damages or other commercial damages or The loss shall be borne by the user:
-•	Use of unlicensed software;
-•	Third party unauthorized use of software or change of user data;
-•	Costs and losses incurred by users using the software's actions;
-•	Misunderstandings of software by users;
-•	Other Software-related Losses not caused by Gizwits Smart.
+   *	Use of unlicensed software;
+   *	Third party unauthorized use of software or change of user data;
+   *	Costs and losses incurred by users using the software's actions;
+   *	Misunderstandings of software by users;
+   *	Other Software-related Losses not caused by Gizwits Smart.
 * 5.8. The acts performed by the software between the user and other users who use the software, any personal or economic injury or loss caused or may result from your being misled or deceived shall be borne by the party in error in accordance with the law.
 
 ## 6.Intellectual Property Statement
