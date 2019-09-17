@@ -33,6 +33,12 @@ APP下发设备控制数据：APP端→机智云平台→设备接收数据
 
 ![创建数据点-3](/assets/zh-cn/quickstart/dev/new9_9.png)
 
+或者也可以直接选择导入微信宠物屋的数据点，机智云已经创建好了微信宠物屋的数据点。
+
+![创建数据点-3](/assets/zh-cn/quickstart/dev/new10_10.png)
+
+![创建数据点-3](/assets/zh-cn/quickstart/dev/new11_11.png)
+
 # 四、下载自动生成mcu代码
 
 ![自动生成MCU SDK-1](/assets/zh-cn/quickstart/dev/new12_12.png)
@@ -65,6 +71,12 @@ APP下发设备控制数据：APP端→机智云平台→设备接收数据
 
 ![APP收发设备数据](/assets/zh-cn/quickstart/dev/new39_39.png)
 
-# 九、参考代码下载
+# 九、机智云后台查看设备交互数据
+
+![机智云后台查看设备交互数据1](/assets/zh-cn/quickstart/dev/new40_40.png)
+
+![机智云后台查看设备交互数据2](/assets/zh-cn/quickstart/dev/new41_41.png)
+
+# 十、参考代码下载
 
 附件：[微信宠物屋参考代码](http://docs.gizwits.com/assets/pdf/gokit_code.zip)
