@@ -494,6 +494,8 @@ void userHandle(void)
 # 调试
 ## 1. 手机安装机智云APP
 
+下载地址：https://download.gizwits.com/zh-cn/p/98/99
+
 ![安装机智云APP](/assets/zh-cn/quickstart/dev/new33.png)
 
 ## 2. 打开机智云APP，注册登录APP账号（或者跳过登录）
