@@ -13,7 +13,7 @@ title: G510接入机智云方案及问题排查指引
 
 G510模组管脚图
 
-![name](/assets/zh-cn/deviceDev/debug/G510/000000.png)
+![name](/assets/zh-cn/deviceDev/debug/G510/1.png)
 
 1.当拿到一片G510 DTU RS485 1911的时候，第一件事是要给该DTU烧写机智云的Gagent固件。机智云G510 DTU，版本号为04020040的固件[下载链接](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00FBG510_04020040_201811071942-1542166609513.bin)
 
@@ -41,7 +41,7 @@ G510模组管脚图
 
 使用杜邦线将USB转TTL串口模块与焊接好的G510模组连接。
 
-![name](/assets/zh-cn/deviceDev/debug/G510/000000.png)
+![name](/assets/zh-cn/deviceDev/debug/G510/2.png)
 
 4.使用串口工具烧写G510，先将G510断电，USB转TTL串口模块连接G510，打开Fibocom_upgrade
 
