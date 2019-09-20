@@ -9,11 +9,11 @@ title: 机智云通用串口协议解析
 
 ### 2.1根据已经创建好的产品，并且定义好数据点，选中产品
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/1.png)
 
 ### 2.2下载模组与mcu之间的串口通信协议
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/2.png)
 
 # 3、协议内容说明
 
@@ -83,7 +83,7 @@ mcu与WiFi模组通过串口交互，通用固件：波特率9600/数据位8位�
 
 具体流程可以查看以下时序图：
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/3.png)
 
 此外，如果通信模组不是WiFi模组，而是2G、4G或者NB模组的话，mcu不需要请求WiFi模组进入配网模式。2G/4G/NB模组是无线蜂窝通信模组，只要给设备插上物联网卡，模组根据蜂窝通信方式连接附近的基站，从而再连接上机智云平台。
 
@@ -95,7 +95,7 @@ mcu与WiFi模组通过串口交互，通用固件：波特率9600/数据位8位�
 
 具体流程可以查看以下时序图：
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/4.png)
 
 #### (3)APP下发控制指令（必须开发）
 
@@ -107,7 +107,7 @@ mcu与WiFi模组通过串口交互，通用固件：波特率9600/数据位8位�
 
 具体流程可以查看以下时序图：
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/5.png)
 
 #### (4)非法包处理（必须开发）
 
@@ -186,7 +186,7 @@ mcu与WiFi模组通过串口交互，通用固件：波特率9600/数据位8位�
 
 具体流程时序图：
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/6.png)
 
 备注说明：
 
@@ -233,7 +233,7 @@ MCU给WiFi模组发送的，MCU可以按照协议向WiFi模组获取“WiFi模�
 目前轻网关方案，我们只支持用乐鑫8266模组，并且固件版本为04020035版本以上（包括04020035版本），其它模组暂时不支持。轻网关方案存在 4 个位置：模组 SDK、移动端 SDK、云端接入层、客户应用层。机智云串口协议部分为WiFi转网关部分，如下图的WiFi转蓝牙网关。
 
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/7.png)
 
 轻网关主要指令如下：
 
@@ -248,13 +248,13 @@ MCU给WiFi模组发送的，MCU可以按照协议向WiFi模组获取“WiFi模�
 
 如果子设备与网关之间通信是通过有线连接方式，如433/458等方式，注册子设备就要通过mcu请求WiFi模组完成。轻网关控制子设备时序图如下：
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/8.png)
 
 ##### b.网关与子设备通信方式是无线方式
 
 如果子设备与网关之间通信是通过无线连接方式，如蓝牙mesh、红外等方式，注册子设备通过APP注册子设备接口来完成。轻网关控制子设备时序图如下：
 
-![name](/assets/zh-cn/deviceDev/debug/NB_project/000000000000000000000.png)
+![name](/assets/zh-cn/deviceDev/Uart_Protocol/9.png)
 
 备注说明：
 
