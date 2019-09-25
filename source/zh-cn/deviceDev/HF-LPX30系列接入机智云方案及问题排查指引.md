@@ -35,18 +35,18 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 >备注：文件名带有“upgrade”的bin文件为OTA的固件，例如：GAgent_00HFT230_0403000A_1M_upgrade_201904292027.bin。
 >备注：本文固件名称以HFLPT230这款模块的固件为例，其他HF-LPX30系列的模组的固件名称的软硬件版本有差异
 
-![HFLPT-230固件获取与确认](./HFLPX30_1.png)
+![HFLPT-230固件获取与确认](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_1.png)
 
 
 ## 4.2、HF-LPX30系列硬件设备连接
 将HF-LPX30模块按照如下原理图进行接线，注意nReload需要输入低电平，通过按键S2控制nReload的低电平输入。S1实现外部复位功能。
-![HFLPT-230硬件设备连接](./HFLPX30_2.png)
+![HFLPT-230硬件设备连接](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_2.png)
 
 
 ## 4.3、HF-LPX30确认串口参数
 将上述串口连接电脑后，通过“我的电脑”->“管理”-> “设备管理器”->“端口（COM 和LPT）”选项中可以看到相应增加的COM口。
 
-![确认串口参数](./HFLPX30_3.png)
+![确认串口参数](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_3.png)
 
 ## 4.4、HF-LPX30烧写软件获取与使用（SecureCRT）
 
@@ -54,15 +54,15 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 ​
 下载解压后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。
 
-![串口工具SecureCRT](./HFLPX30_4.png)
+![串口工具SecureCRT](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_4.png)
 
-![串口工具SecureCRT](./HFLPX30_5.png)
+![串口工具SecureCRT](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_5.png)
 
 串口配置协议为Serial，端口为上述4.3中的COM口，波特率设置为230400（关键），数据位为8位，停止位为1位，无奇偶校验，最后点击连接。
 
 连接成功后，在SecureCRT工作区间会有光标闪烁。
 
-![串口工具SecureCRT](./HFLPX30_6.png)
+![串口工具SecureCRT](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_6.png)
 
 
 ## 4.5、HF-LPX30的烧写
@@ -70,7 +70,7 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 当串口连接成功之后，将HF-LPT230的nReload接入低电平（按下第3节原理图所示的S2），然后进行复位（按下第3节原理图所示的S1后松开）或者给模块重新上电后迅速连续单击键盘空格键，
 将会出现如下信息表示模块进入烧写模式，松开S2。
 
-![串口工具SecureCRT](./HFLPX30_7.png)
+![串口工具SecureCRT](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_7.png)
 
 备注：此步骤不易操作实现，需要多次进行试验，当进行进入烧写模式操作始终无法显示上述信息的时候要注意检查串口设置是否正确，待确保串口设置无误后再次进行连接操作。
 
@@ -86,17 +86,17 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 
 输入“S”升级应用程序，再输入“Y”进入接收固件状态。
 
-![进行烧写](./HFLPX30_8.png)
+![进行烧写](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_8.png)
 
 当窗体连续打印出“CC”后选择”菜单栏” 中“传输”->”发送Xmode(N)”， 选择4.1节中所示的固件文件，点击发送。
 
-![进行烧写](./HFLPX30_9.png)
+![进行烧写](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_9.png)
 
 等待一段时候后，出现如上述信息表示烧写成功。
 ​​
 >若烧写过慢，可以按照下图设置，提高烧写速度
 
-![进行烧写](./HFLPX30_10.png)
+![进行烧写](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_10.png)
 
 # 5、HF-LPX30模组日志抓取
 
@@ -106,35 +106,35 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 
 >备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps
 
-​​![模组日志抓取](./HFLPX30_13.png)
+​​![模组日志抓取](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_13.png)
 
 ### 5.1.2、HF-LPB135模组日志接线方法
 按照下图HF-LPB135的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的2脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。
 
 >备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps
 
-![模组日志抓取](./HFLPX30_14.png)
+![模组日志抓取](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_14.png)
 
 ### 5.1.3、HF-LPT130A&B模组日志接线方法
 按照下图HF-LPT130A&B的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的1脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。
 
 >备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps
 
-​​![模组日志抓取](./HFLPX30_15.png)
+​​![模组日志抓取](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_15.png)
 
 ### 5.1.4、HF-LPT230模组日志接线方法
 按照下图HF-LPT230的管脚定义图，将图中所示的Debug TX引脚（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的16脚GND，然后将USB转TTL工具连接到电脑，波特率921600bps。
 
 >备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps
 
-​​![模组日志抓取](./HFLPX30_16.png)
+​​![模组日志抓取](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_16.png)
 
 ### 5.1.5、HF-LPT330模组日志接线方法
 按照下图HF-LPT330的管脚定义图，将图中所示的17引脚（UART1_TX）（芯片调试日志信息输出口）连接USB转TTL工具的RXD上，且USB转TTL工具的GND需接模组的15脚GND，然后将USB转TTL工具连接到电脑，波特率115200bps。
 
 >备注：因固件版本差异问题，若波特率选择115200bps出现乱码的现象，则更改串口波特率为921600bps
 
-![模组日志抓取](./HFLPX30_11.png)
+![模组日志抓取](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_11.png)
 
 
 ## 5.2、机智云串口打印软件工具的获取与使用
@@ -144,7 +144,7 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 
 >备注：因固件版本差异问题，若波特率选择921600bps出现乱码的现象，则更改串口波特率为115200bps
 
-![机智云串口打印软件工具使用](./HFLPX30_12.png)
+![机智云串口打印软件工具使用](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_12.png)
 
 # 6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）
 快速接入文档参考链接：http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html
