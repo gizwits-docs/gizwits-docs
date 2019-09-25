@@ -30,7 +30,7 @@ title: 模块硬件资料
 [HFLPT230 Datasheet](http://docs.gizwits.com/zh-cn/module_source/HF/HF-LPT230.html)
 
 
-## 2. GPRS模块的Datasheet 硬件介绍
+## 2. 移动通讯模块的Datasheet 硬件介绍
 
 - ### 广和通模块系列
 
@@ -50,6 +50,11 @@ title: 模块硬件资料
 
 [CLM920_NC3_参考设计_V1.0](http://docs.gizwits.com/assets/pdf/YG/CLM920_NC3_reference_design_V1.0.pdf)
 
+- ### 博实结模块系列
+
+[BC20模块硬件手册V1.0.0](http://docs.gizwits.com/zh-cn/module_source/BSJ/BC20_V1.0.0.pdf)
+
+[BC26硬件设计手册V1.0.3](http://docs.gizwits.com/assets/pdf/BSJ/BC26_V1.0.3.pdf)
 
 ## 3. NB-IOT模块的Datasheet 硬件介绍
 
@@ -59,8 +64,12 @@ title: 模块硬件资料
 
 [N102 硬件设计手册](http://docs.gizwits.com/assets/pdf/Lingling/N102_hardware_design.pdf)
 
+- ### 博实结模块系列
 
-# 二、模块资源
+[BC60硬件设计手册V1.0.1](http://docs.gizwits.com/assets/pdf/BSJ/BC60_V1.0.1.pdf)
+
+
+# 二、模块使用资源
 
 ## 1. 乐鑫模块系列
 

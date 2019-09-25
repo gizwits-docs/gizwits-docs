@@ -1,6 +1,6 @@
 title:  SNoti API
 ---
-v2.1.9
+v2.3.0
 
 # 目的
 企业客户可通过SNoti提供的安全数据传输通道，实时的接收设备的数据，用于设备信息归类整理，设备状态统计，设备监控等；也可以通过远程控制功能，实时发送业务指令控制在线设备。
@@ -10,7 +10,7 @@ v2.1.9
 
 1.Java版客户端
 
-  代码仓库：https://github.com/Bestfeel/noti-netty-client
+  代码仓库：https://github.com/smallCC/noti-client
 
 2.Ruby版客户端
 
@@ -19,14 +19,6 @@ v2.1.9
 3.Python版客户端
 
   代码仓库：https://github.com/wangzhenandy/snoti_client_python
-
-4.Java版Demo（基础版）
-
-  代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0
-
-5.Java版Demo（Netty框架版）
-
-  代码仓库：https://github.com/gizwits/noti-java-demo/tree/v2.0.0-netty
 
 # SNoti申请流程
 
@@ -148,7 +140,7 @@ Gizwits Platform 回复：
 客户端和 Gizwits Platform 建立 SSL 连接后，客户端可发送以下字符串内容，控制设备：
 ```json
 {
-"cmd": "remote_control_req",
+"cmd": "remote_control_v2_req",
 "msg_id": <msg id string>,
 "data": [{
 “cmd": "write_attrs" | "write" | "write_v1",
@@ -156,8 +148,9 @@ Gizwits Platform 回复：
 "did": <did string>,
 "mac": <mac string>,
 "product_key": <product_key string>,
+"binary_coding": <"hex" OR "base64", default is "hex">,
 "attrs": {
-"name1": <value1>,("name1"指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
+"name1": <value1>,("name1"指数据点的标识名(name)，<value1>指数据点的值。)
 "name2": <value2>,
 … …
 }(Only used with cmd "write_attrs")
@@ -179,40 +172,41 @@ OR
 | data.data.did 	| 必须 	| 设备 ID|
 | data.data.mac	| 必须 	| 设备 Mac 地址,长度为 12 的字符串，大小写敏感|
 | data.data.product_key	| 必须 	|设备所属产品的标识码|
+| data.data.binary_coding | 可选 | Raw数据或数据点扩展类型数据的编码格式|
 | data.data.attrs / data.data.raw	| 必须 	| V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式（参考通用数据点协议之透传业务指令），选择data.data.raw；V1 产品协议格式，选择 data.data.raw|
 
-当设备为NB-IoT设备时，使用如下指令：
-```json
-{
-"cmd": "remote_control_nb_req",
-"msg_id": <msg id string>,
-"source": "huawei",
-"did": <did string>,
-"mac": <mac string>,
-"product_key": <product_key string>,
-"attrs": {
-"name1": <value1>,("name1"指数据点的标识名(name)，<value1>指数据点的值。值可以为true/false(bool)，Unicode编码的字符串如\u62bd(enum)，数字或byte数组(如 [23,2,3]，用于扩展类型))
-"name2": <value2>,
-… …
-}
-}\n
-```
-请求字段说明：
+数据类型说明：
 
-| 字段      | 是否必须         |             描述           |
-| ------------- |:-------------:|    -------------    |  
-| source     | 必须   | NB-IoT设备的来源，目前仅支持电信IoT平台|
+| 协议类型     | 编码         |             值类型           |
+| ------------- |:-------------:|    -------------    |
+| 数据点：Bool |  | true OR false; 1 OR 0 |
+| 数据点：Enum |  | 枚举Unicode字符串；枚举下标   |
+| 数据点：Int  |  | 整型数字 |
+| 数据点：扩展类型 | hex | byte数组:[1,2,3],取值范围0-255; Hex字符串: "010203aaff" |
+| 数据点：扩展类型 | base64 | 传输数据经过base64加密后的字符串 |
+| 透传：Raw | hex | byte数组:[1,2,3],取值范围0-255; Hex字符串: "010203aaff" |
+| 透传：Raw | base64 | 传输数据经过base64加密后的字符串 |
 
 Gizwits Platform 回复：
 ```json
 {
-"cmd": "remote_control_res”,
+"cmd": "remote_control_v2_res”,
 "msg_id": <msg id string>,
 “result": {
-"succeed": ["did1", "did2", … …]
+"succeed": [
+{"did": <did1 str>},
+{"did": <did2 str>},
+… …
+],
 "failed": [
-{"did3": <reason str>}
-{"did4": <reason str>}
+{
+"did": <did3 str>,
+"reason": <reason str>
+},
+{
+"did": did4 str>,
+"reason": <reason str>
+},
 … …
 ]
 }
@@ -227,6 +221,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "datapoints_changed",
 "product_key": <product_key string>,
@@ -237,6 +232,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_online",
 "msg_id": <msg id string>,
@@ -258,6 +254,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_offline",
 "msg_id": <msg id string>,
@@ -274,6 +271,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "attr_fault" | "attr_alert",
 "event_id": <uuid string>, (同一设备的同一故障或报警的发生事件与恢复事件共享同一事件 id)
@@ -295,6 +293,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_status_raw",
 "msg_id": <msg id string>,
@@ -312,6 +311,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "device_status_kv",
 "msg_id": <msg id string>,
@@ -332,6 +332,7 @@ Gizwits Platform 回复：
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于ACK)
 "event_type": "sub_device_added",
 "product_key": <product_key string>,
@@ -354,6 +355,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于ACK)
 "event_type": “sub_device_deleted”,
 "product_key": <product_key string>,
@@ -371,6 +373,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于ACK)
 "event_type": "device_bind" | "device_unbind",
 "product_key": <product_key string>,
@@ -388,6 +391,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于ACK)
 "event_type": "device_reset",
 "product_key": <product_key string>,
@@ -402,6 +406,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于ACK)
 "event_type": "device_file_download",
 "product_key": <product_key string>,
@@ -417,6 +422,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "app2dev_raw",
 "msg_id": <msg id string>,
@@ -438,6 +444,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_push",
+"msg_id", <msg_id string optional>, (如消息包含此字段， ACK时原样返回)
 "delivery_id": <delivery_id>，(用于 ACK)
 "event_type": "app2dev_kv",
 "msg_id": <msg id string>,
@@ -464,7 +471,7 @@ AES mode为AES.MODE_ECB
 ```json
 {
 "cmd": "event_ack",
-"msg_id": <msg id string>,
+"msg_id": <msg id string> (按原数据类型填写),
 "delivery_id": <delivery_id> (按原数据类型填写)
 }\n
 ```

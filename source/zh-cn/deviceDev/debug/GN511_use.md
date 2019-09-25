@@ -29,8 +29,6 @@ title: GN511使用说明
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_7.png)
 
-
-
 ##  2. 下载自动生成mcu代码，烧写程序到GN511的mcu中
 
 #### 2.1 下载自动生成代码
@@ -101,8 +99,16 @@ APP下载地址：https://download.gizwits.com/zh-cn/p/98/99
 
 ## 7. 参考资料下载
 
-#### 参考代码下载地址：链接：https://pan.baidu.com/s/1QoSs4I2sHkpLZFUhYoCzfw 
-提取码：p6vx 
+#### 参考代码下载地址：链接：https://eyun.baidu.com/s/3ggsfur5 密码：OaBy
 
-#### 《GN511硬件IO说明书 V1.5》链接：https://pan.baidu.com/s/1FbwuWueLlPV1PCDkU1RXww 
-提取码：pn0l 
+#### 《GN511硬件IO说明书 V1.5》链接：https://eyun.baidu.com/s/3o9q5kwi 密码：MdSA
+
+## 8. FAQ
+
+Q: NB设备连接服务器、上报数据失败
+A: 有可能是网络或者信号问题。
+
+网络问题：模组不能使用一般的电话卡或者流量卡，要使用专门的“中国电信物联网NB卡”。如果使用电信NB卡后仍然连接服务器、上报数据失败，可能是卡过期，或者卡消费次数用完。如果卡是从机智云采购的，可以报卡的iccid号给机智云FAE查询卡的状况；如果卡是自行从其他地方采购的，要自行找运营商查询
+
+信号问题：如果电信NB卡没问题，但是连接服务器、上报数据失败，则有可能是当地信号覆盖不良。此时可以通过往串口0发送AT指令AT+CSQ指令查看模组信号强度，0~10 代表低； 10~20代表中； 20~31代表高；99代表未插卡。
+
