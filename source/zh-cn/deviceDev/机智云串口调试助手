@@ -4,3 +4,5 @@
 (1)与通信模组连接，验证通信模组是否正常工作
 (2)在项目硬件和mcu程序还没有开发完成，APP开发可以通过该工具进行调试。
 (3)mcu开发者可以根据该“模拟mcu”，了解机智云串口通信协议，如设备正常跑起来，通信模组会怎样跟mcu进行通信的，发送什么数据，mcu应该回复什么数据。
+![name](/assets/zh-cn/deviceDev/gagent_debugger_png/png1.png)
+![Alt text](/assets/zh-cn/UserManual/WebSocket/图片1.png)
