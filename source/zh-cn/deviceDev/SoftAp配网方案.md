@@ -10,11 +10,17 @@ SoftAp配网方案包括Softap配网流程、硬件开发部分和APP开发流�
 
 sotfap配网流程原理：
 (1) APP端连接目标路由器，并且获取目标路由器的ssid和手动输入的密码。
+
 (2) 触发WiFi模组进入softap配网模式。
+
 (3) 手机去请求连接WiFi模组发出来的softap热点，并且把目标路由器ssid和密码发送给模组端。
+
 (4) WiFi模组拿到路由器ssid和password信息后，发送ACK给app。同时也去连接目标路由器。
+
 (5) 模组关闭softap模式，尝试连接符合ssid和password的路由器。同时，手机断开与模组连接，自动连接上一次连接的路由器。（android手机自动连接原来记忆的路由器，iOS手机随机连接当前环境可连接的路由器。)
+
 (6) app sdk监听局域网模组广播配置成功包。同时，app sdk向云端查询设备是否配置入网成功。不管局域网收到配置成功包或者查询到设备入网成功，app sdk皆认为配网成功，并且回调配网成功。
+
 具体流程可以查看以下时序图：
 
 ![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png2.png)
