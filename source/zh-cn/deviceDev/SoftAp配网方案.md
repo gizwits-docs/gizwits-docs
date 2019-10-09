@@ -6,7 +6,8 @@ SoftAp配网方案包括Softap配网流程、硬件开发部分和APP开发流�
 
 # 2.SoftAp配网流程
 
-![Alt text](./png1.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png1.png)
+
 sotfap配网流程原理：
 (1) APP端连接目标路由器，并且获取目标路由器的ssid和手动输入的密码。
 (2) 触发WiFi模组进入softap配网模式。
@@ -15,27 +16,29 @@ sotfap配网流程原理：
 (5) 模组关闭softap模式，尝试连接符合ssid和password的路由器。同时，手机断开与模组连接，自动连接上一次连接的路由器。（android手机自动连接原来记忆的路由器，iOS手机随机连接当前环境可连接的路由器。)
 (6) app sdk监听局域网模组广播配置成功包。同时，app sdk向云端查询设备是否配置入网成功。不管局域网收到配置成功包或者查询到设备入网成功，app sdk皆认为配网成功，并且回调配网成功。
 具体流程可以查看以下时序图：
-![Alt text](./png2.png)
+
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png2.png)
 
 # 3.硬件开发部分
 ### 3.1.下载机智云串口协议文档
 (1) 根据已经创建好的产品，并且定义好数据点，选中产品。
 
-![Alt text](./png3.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png3.png)
+
 (2) 下载模组与mcu之间的串口通信协议。
 
-![Alt text](./png4.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png4.png)
 
 ### 3.2.自定义softap热点名称
 机智云固件默认softap热点名称格式为“XPG-GAgent-xxxx”，xxxx表示模组mac最后4位字符，密码为123456789。如果客户想自定义WiFi模组softap热点名称，并且不设置密码，可以根据通信协议上面的“3.1获取设备信息”上面的data字段来修改。
 
-![Alt text](./png5.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png5.png)
 
 如：设置重置WiFi模组后，默认进入softap模式，并且热点名称叫“John”，密码为空。
 示例为：cfgMode=1&apName0=John
 以下就是串口通信包的解析图：
 
-![Alt text](./png6.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png6.png)
 
 "cfgMode=1&apName0=John"字符转16进制为：63 66 67 4D 6F 64 65 3D 31 26 61 70 4E 61 6D 65 30 3D 4A 6F 68 6E
 当mcu端完成以上“3.1获取设备信息”设置后，WiFi模块与mcu的串口通信稳定下来，mcu端就可以请求WiFi模组进入softap配网模式。
