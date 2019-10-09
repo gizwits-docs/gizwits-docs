@@ -47,18 +47,19 @@ sotfap配网流程原理：
 
 (1) 打开3.1下载的机智云串口协议
 
-![Alt text](./png7.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png7.png)
 
 (2) 根据协议上面的3.6通知WiFi模组进入配置模式
 
-![Alt text](./png8.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png8.png)
 
 
 此外，softap配网说明：
 a.把上面的配网方式字段赋值0x01
 b.示例：FF FF 00 06 09 02 00 00 01 12 
 c.协议上面的这些参数，是可选字段，如果没有用到，可以直接不传，如下图。
-![Alt text](./png9.png)
+
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png9.png)
 
 # 4.APP开发部分
 ### 4.1.下载机智云APP sdk链接
@@ -68,14 +69,14 @@ c.协议上面的这些参数，是可选字段，如果没有用到，可以直
 ### 4.2.Android APP开发softap配网流程
 ###### 4.2.1.下载SDK
 
-![Alt text](./png10.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png10.png)
 
 ###### 4.2.2. 集成Android SDK流程
 （1）导入SDK
 第一步，双击解开压缩包 GizWifiSDK-Android-xxx.zip。
 第二步，将解压后的libs目录下所有内容拷贝到指定工程的libs目录，保证下图红框中的文件都加载到了工程中：
 
-![Alt text](./png11.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png11.png)
 
 （2） 配置AndroidManifest.xml
 请将下面权限配置代码复制到 AndroidManifest.xml 文件中：
@@ -93,7 +94,7 @@ c.协议上面的这些参数，是可选字段，如果没有用到，可以直
 ```
 权限说明：
 
-![Alt text](./png29.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png29.png)
 
 （3）Android6.0系统文件读写权限设置
 Android 6.0新增了运行时权限动态检测，GizWifiSDK中使用的以下权限需要在运行时判断：ACCESS_FINE_LOCATION，通过这个权限可以检测到手机当前wifi和可连接的wifi列表。
@@ -132,7 +133,8 @@ if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCAT
 ```
 
 请求权限后，系统会弹出请求权限的对话框：
-![Alt text](./png12.png)
+
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png12.png)
 
 用户选择允许后，会回调onRequestPermissionsResult方法, 该方法可类似如下处理：
 
@@ -182,34 +184,34 @@ public void onRequestPermissionsResult(int requestCode, String[] permissions, in
 第一步、下载sdk
 下载完成以后请自行解压。
 
-![Alt text](./png13.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png13.png)
 
 第二步、导入jar包到Android Studio
 
-![Alt text](./png14.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png14.png)
 
 第三步、把jar包导成库文件
 
-![Alt text](./png15.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png15.png)
 
 
 第四步、导入so文件
 请在main文件加下创建文件夹jniLibs,将armeabi粘贴到对应的文件夹下：
 
-![Alt text](./png16.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png16.png)
 
 第五步、导入完成以后查看对应的build.gradle
 下图中可以看到已经关联库成功：
 
-![Alt text](./png17.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png17.png)
 
 第六步、测试是否成功
 
-![Alt text](./png18.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png18.png)
 
 如果有下面图片中的log的话代表成功：
 
-![Alt text](./png19.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png19.png)
 
 ##### 4.2.3.Android SDK 配网接口使用
 当APP端完成了sdk的集成，APP工程可以正常启动sdk后，就可以调试上面的配网接口。
@@ -249,38 +251,38 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 ### 4.3.iOS APP开发softap配网流程
 ##### 4.3.1. 下载SDK
 
-![Alt text](./png20.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png20.png)
 
 ##### 4.3.2. 集成ios SDK
 首先双击解开压缩包 GizWifiSDK-iOS-xxx.zip。按照App开发的需要，可以选择使用动态库或者静态库。以下分别为动态库和静态库的加载方式：
 (1) 导入动态SDK
 动态库在解压后的DynamicLibrary目录下。动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：
 
-![Alt text](./png21.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png21.png)
 
 (2)导入静态SDK
 第一步，解压后，将StaticLibrary目录下的文件添加到指定的工程中：
 
-![Alt text](./png22.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png22.png)
 
 第二步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
 
-![Alt text](./png23.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png23.png)
 
-![Alt text](./png24.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png24.png)
 
 
 第三步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
 
-![Alt text](./png25.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png25.png)
 
 第四步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
 
-![Alt text](./png26.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png26.png)
 
 最后，确保工程里面有这些链接库，SDK就添加完成了:
 
-![Alt text](./png27.png)
+![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png27.png)
 
 
 (3)通过cocoapods使用GizWifiSDK（可选）
