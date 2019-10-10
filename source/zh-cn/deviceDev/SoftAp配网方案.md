@@ -9,6 +9,7 @@ SoftAp配网方案包括Softap配网流程、硬件开发部分和APP开发流�
 ![Alt text](/assets/zh-cn/deviceDev/softap_mode_png/png1.png)
 
 sotfap配网流程原理：
+
 (1) APP端连接目标路由器，并且获取目标路由器的ssid和手动输入的密码。
 
 (2) 触发WiFi模组进入softap配网模式。
@@ -106,7 +107,9 @@ c.协议上面的这些参数，是可选字段，如果没有用到，可以直
 Android 6.0新增了运行时权限动态检测，GizWifiSDK中使用的以下权限需要在运行时判断：ACCESS_FINE_LOCATION，通过这个权限可以检测到手机当前wifi和可连接的wifi列表。
 下面以这个权限申请举例说明如何编写动态检测代码：
 Android6.0系统为targetSdkVersion小于23的应用默认授予了所申请的所有权限，所以如果App使用的targetSdkVersion低于23，可以正常运行。但如果用户在设置中取消了授予的权限，或者App使用的targetSdkVersion为23以上，需要在App代码中处理。以下以Android Studio举例：
+
 目标SDK版本
+
 在build.gradle中设置targetSdkVersion为23：
 
 ```
