@@ -264,6 +264,7 @@ if (result == GizWifiErrorCode.GIZ_SDK_SUCCESS) {
 
 ##### 4.3.2. 集成ios SDK
 首先双击解开压缩包 GizWifiSDK-iOS-xxx.zip。按照App开发的需要，可以选择使用动态库或者静态库。以下分别为动态库和静态库的加载方式：
+
 (1) 导入动态SDK
 动态库在解压后的DynamicLibrary目录下。动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：
 
@@ -350,8 +351,10 @@ if(result.code == GIZ_SDK_SUCCESS) {
   下载链接：[https://eyun.baidu.com/s/3jKgejMe](https://eyun.baidu.com/s/3jKgejMe) 密码：zVHf
 
 
-6.参考资料
+# 6.参考资料
+
 （1）机智云iOS SDK接口手册，下载链接为：[iOS_SDK2.0_API参考手册](http://docs.gizwits.com/assets/pdf/iOS_SDK2.0_API%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C.pdf)
+
 （2）机智云Android SDK接口手册，下载链接为：[Android_SDK2.0_API参考手册](http://docs.gizwits.com/assets/pdf/Android_SDK2.0_API%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C.pdf)
 
 
