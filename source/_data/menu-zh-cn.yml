@@ -108,7 +108,7 @@
     域格 NC3 串口烧写说明:
       path: /deviceDev/debug/NC3_uart.html
     博实结BC23M模组使用说明:
-      path: /zh-cn/deviceDev/BC23M.html
+      path: /deviceDev/BC23M.html
     NB 接入方案:
       path: /deviceDev/debug/NB_Project.html
     通讯模组调试日志抓取教程:
