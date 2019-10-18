@@ -1,4 +1,4 @@
-title: 独立MCU方案接入机智云
+title: "MCU+WiFi模组"方案接入机智云
 ---
 # 微信宠物屋参考代码
 附件：[微信宠物屋参考代码](http://docs.gizwits.com/assets/pdf/gokit_code.zip)
