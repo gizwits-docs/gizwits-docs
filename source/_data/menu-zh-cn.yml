@@ -85,7 +85,7 @@
       path: /deviceDev/串口工具使用文档.html
     GN511使用说明:
       path: /deviceDev/debug/GN511_use.html
-    GN515使用说明:
+    GR515使用说明:
       path: /deviceDev/GR515使用说明.html
     HF-LPB100串口烧写说明:
       path: /deviceDev/HF-LPB100串口烧写说明.html
@@ -107,6 +107,8 @@
       path: /deviceDev/debug/Air202.html
     域格 NC3 串口烧写说明:
       path: /deviceDev/debug/NC3_uart.html
+    博实结BC23M模组使用说明:
+      path: /zh-cn/deviceDev/BC23M.html
     NB 接入方案:
       path: /deviceDev/debug/NB_Project.html
     通讯模组调试日志抓取教程:
