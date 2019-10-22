@@ -70,11 +70,15 @@
 设备接入:
   设备接入准备工作及向导:
       path: /deviceDev/设备接入准备工作及向导.html
-  设备快速接入机智云:
-    独立MCU接入方案:
-      path: /quickstart/UseMCU.html
-    ESP8266-SOC接入方案:
-      path: /deviceDev/UseSOC.html
+  设备快速接入机智云流程:
+    MCU+WiFi通讯模组接入机智云流程:
+      path: /quickstart/UseMCU_BK.html
+    通讯模组SoC方案接入机智云流程:
+      path: /deviceDev/UseSOC_BK.html
+    MCU+2G/4G通讯模组接入机智云流程:
+      path: /deviceDev/debug/G510_Project.html
+    MCU+NB通讯模组接入机智云流程:
+      path: /deviceDev/debug/NB_Project.html
   模块硬件资料:
       path: /module_source/module_source.html
   GAgent通讯模组使用教程:
