@@ -1,4 +1,4 @@
-title: 通讯模组SoC 接入机智云流程
+title: 通讯模组SoC方案接入机智云流程
 ----
 附件：[微信宠物屋参考代码](/assets/pdf/gokit.zip)
 # 概述
