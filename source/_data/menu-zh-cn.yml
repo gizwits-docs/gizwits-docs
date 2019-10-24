@@ -93,18 +93,6 @@
       path: /deviceDev/debug/GN511_use.html
     GR515使用说明:
       path: /deviceDev/GR515使用说明.html
-    HF-LPB100串口烧写说明:
-      path: /deviceDev/HF-LPB100串口烧写说明.html
-    HF-LPT120串口烧写说明:
-      path: /deviceDev/debug/HF-LPT120.html
-    HF-LPT230串口烧写说明:
-      path: /deviceDev/debug/HF-LPT230.html
-    MXCHIP串口烧写说明:
-      path: /deviceDev/MXCHIP串口烧写说明.html
-    ESP8266串口烧写说明:
-      path: /deviceDev/ESP8266串口烧写说明.html
-    ESP-WROOM-02D串口烧写说明:
-      path: /deviceDev/debug/ESP-WROOM-02Duart.html
     广和通G510模组烧写方法:
       path: /deviceDev/debug/G510.html
     零零 N102 串口烧写说明:
