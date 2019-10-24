@@ -70,6 +70,7 @@
 设备接入:
   设备接入准备工作及向导:
       path: /deviceDev/设备接入准备工作及向导.html
+
   设备快速接入机智云流程:
     MCU+WiFi通讯模组接入机智云流程:
       path: /quickstart/UseMCU_BK.html
@@ -79,12 +80,13 @@
       path: /deviceDev/debug/G510_Project.html
     MCU+NB通讯模组接入机智云流程:
       path: /deviceDev/debug/NB_Project.html
+
   模块硬件资料:
       path: /module_source/module_source.html
+
   GAgent通讯模组使用教程:
     GAgent详细介绍:
       path: /deviceDev/gagent_info.html
-
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
     GN511使用说明:
@@ -118,6 +120,17 @@
     通讯模组调试日志抓取教程:
       path: /deviceDev/通讯模组调试日志抓取教程.html
 
+  WiFi模组接入方案:
+    A101模组接入机智云方案及问题排查指引:
+      path: /deviceDev/WiFi_Module/A101模组接入机智云方案及问题排查指引.html
+    ESP-WROOM-02DCUC接入机智云方案及问题排查指引:
+      path: /deviceDev/WiFi_Module/ESP-WROOM-02DCUC接入机智云方案及问题排查指引.html
+    安信可ESP8266系列接入机智云方案及问题排查指引:
+      path: /deviceDev/安信可ESP8266接入机智云方案及问题排查指引.html
+    HF-LPX30系列接入机智云方案及问题排查指引:
+      path: /deviceDev/HF-LPX30系列接入机智云方案及问题排查指引.html
+    HF-LPX20系列接入机智云方案及问题排查指引:
+      path: /deviceDev/HF-LPX20系列接入机智云方案及问题排查指引.html
 
   MCU代码自动生成服务介绍:
     MCU代码自动生成工具使用教程:
