@@ -124,7 +124,7 @@ title: 域格CLM920_NC3接入机智云方案及问题排查指引
 ![Alt text](/assets/zh-cn/deviceDev/yugeNC3/yuge12.png)
 
 # 6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP扫码绑定及控制设备等等）
-快速接入文档参考链接：http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html
+快速接入文档参考链接：http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html
 
 >备注：模组uart为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图
 
@@ -135,4 +135,4 @@ title: 域格CLM920_NC3接入机智云方案及问题排查指引
 
 ![Alt text](/assets/zh-cn/deviceDev/yugeNC3/yuge13.png)
 
- A:确认文章4.2.1的USB引脚是否正常接入，确认4.2.3，设备是否正常开机。
+ A:确认文章4.2.1的USB引脚是否正常接入，确认文章4.2.3，设备是否正常开机。
