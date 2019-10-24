@@ -50,9 +50,7 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 
 ## 4.4、HF-LPX30烧写软件获取与使用（SecureCRT）
 
-下载地址：[http://pan.baidu.com/s/1dECLxYD](http://pan.baidu.com/s/1dECLxYD)
-​
-下载解压后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。
+从文中第2章，下载资料后打开烧录工具文件夹，解压工具并安装后双击打开SecureCRT，点击快速连接后会弹出串口配置对话框。
 
 ![串口工具SecureCRT](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_4.png)
 
@@ -147,7 +145,7 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 ![机智云串口打印软件工具使用](/assets/zh-cn/deviceDev/HFLPX30/HFLPX30_12.png)
 
 # 6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）
-快速接入文档参考链接：http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html
+快速接入文档参考链接：http://docs.gizwits.com/zh-cn/quickstart/UseMCU_BK.html
 
 >备注：模组uart0为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图
 

@@ -127,7 +127,7 @@ title: HF-LPX20系列接入机智云方案及问题排查指引
 ![机智云串口打印软件工具使用](/assets/zh-cn/deviceDev/HFLPX20/HFLPX20_10.png)
 
 # 6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等等）
-快速接入文档参考链接：http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html
+快速接入文档参考链接：http://docs.gizwits.com/zh-cn/quickstart/UseMCU_BK.html
 
 >***备注：模组uart0为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图***
 
