@@ -89,12 +89,8 @@
       path: /deviceDev/gagent_info.html
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
-    零零 N102 串口烧写说明:
-      path: /deviceDev/debug/N102_DTU.html
     合宙 Air202 串口烧写说明:
       path: /deviceDev/debug/Air202.html
-    NB 接入方案:
-      path: /deviceDev/debug/NB_Project.html
     通讯模组调试日志抓取教程:
       path: /deviceDev/通讯模组调试日志抓取教程.html
 
