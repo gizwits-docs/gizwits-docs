@@ -89,20 +89,10 @@
       path: /deviceDev/gagent_info.html
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
-    GN511使用说明:
-      path: /deviceDev/debug/GN511_use.html
-    GR515使用说明:
-      path: /deviceDev/GR515使用说明.html
-    广和通G510模组烧写方法:
-      path: /deviceDev/debug/G510.html
     零零 N102 串口烧写说明:
       path: /deviceDev/debug/N102_DTU.html
     合宙 Air202 串口烧写说明:
       path: /deviceDev/debug/Air202.html
-    域格 NC3 串口烧写说明:
-      path: /deviceDev/debug/NC3_uart.html
-    博实结BC23M模组使用说明:
-      path: /deviceDev/BC23M.html
     NB 接入方案:
       path: /deviceDev/debug/NB_Project.html
     通讯模组调试日志抓取教程:
@@ -119,6 +109,24 @@
       path: /deviceDev/HF-LPX30系列接入机智云方案及问题排查指引.html
     HF-LPX20系列接入机智云方案及问题排查指引:
       path: /deviceDev/HF-LPX20系列接入机智云方案及问题排查指引.html
+
+  2G/4G模组接入方案:
+    博实结BC20模组接入机智云方案及问题排查指引:
+      path: /deviceDev/BC20.html
+    博实结BC23M模组接入机智云方案及问题排查指引:
+      path: /deviceDev/BC23M.html
+    广和通G510模组接入方案:
+      path: /deviceDev/debug/G510.html
+    域格CLM920_NC3模组接入机智云方案及问题排查指引:
+      path: /deviceDev/域格CLM920_NC3接入机智云方案及问题排查指引.html
+    BLZ2261-P转接板接入机智云方案及问题排查指引:
+      path: /deviceDev/BLZ2261-P转接板.html
+
+  DTU(数据传送装置)接入方案:
+    GR515使用说明:
+      path: /deviceDev/GR515使用说明.html
+    GN511使用说明:
+      path: /deviceDev/debug/GN511_use.html
 
   MCU代码自动生成服务介绍:
     MCU代码自动生成工具使用教程:
