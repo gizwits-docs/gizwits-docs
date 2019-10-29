@@ -66,7 +66,7 @@ title: ESP32-WROOM-32D接入机智云方案及问题排查指引
 
 ![确认串口参数](/assets/zh-cn/deviceDev/ESP32./ESP32_6.png)
 
-# 5、ESP32模组日志抓取
+# 5.ESP32模组日志抓取
 
 ## 5.1、ESP32模组日志接线方法
 
