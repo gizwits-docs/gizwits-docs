@@ -64,7 +64,7 @@ title: ESP32-WROOM-32D接入机智云方案及问题排查指引
 
 点击开始后，进度条开始运行，等待一段时间，显示完成便是成功。
 
-![确认串口参数](/assets/zh-cn/deviceDev/ESP32./ESP32_6.png)
+![确认串口参数](/assets/zh-cn/deviceDev/ESP32/ESP32_6.png)
 
 # 5.ESP32模组日志抓取
 
