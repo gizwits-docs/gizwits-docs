@@ -52,7 +52,7 @@ title: 模块硬件资料
 
 - ### 博实结模块系列
 
-[BC20模块硬件手册V1.0.0](http://docs.gizwits.com/zh-cn/module_source/BSJ/BC20_V1.0.0.pdf)
+[BC20模块硬件手册V1.0.0](http://docs.gizwits.com/assets/pdf/BSJ/BC20_V1.0.0.pdf)
 
 [BC26硬件设计手册V1.0.3](http://docs.gizwits.com/assets/pdf/BSJ/BC26_V1.0.3.pdf)
 
