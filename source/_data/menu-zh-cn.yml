@@ -70,46 +70,67 @@
 设备接入:
   设备接入准备工作及向导:
       path: /deviceDev/设备接入准备工作及向导.html
-  设备快速接入机智云:
-    独立MCU接入方案:
-      path: /quickstart/UseMCU.html
-    ESP8266-SOC接入方案:
-      path: /deviceDev/UseSOC.html
+
+  设备快速接入机智云流程:
+    MCU+WiFi通讯模组接入机智云流程:
+      path: /quickstart/UseMCU_BK.html
+    通讯模组SoC方案接入机智云流程:
+      path: /deviceDev/UseSOC_BK.html
+    MCU+2G/4G通讯模组接入机智云流程:
+      path: /deviceDev/debug/G510_Project.html
+    MCU+NB通讯模组接入机智云流程:
+      path: /deviceDev/debug/NB_Project.html
+
   模块硬件资料:
       path: /module_source/module_source.html
+
   GAgent通讯模组使用教程:
     GAgent详细介绍:
       path: /deviceDev/gagent_info.html
-
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
-    GN511使用说明:
-      path: /deviceDev/debug/GN511_use.html
-    HF-LPB100串口烧写说明:
-      path: /deviceDev/HF-LPB100串口烧写说明.html
-    HF-LPT120串口烧写说明:
-      path: /deviceDev/debug/HF-LPT120.html
-    HF-LPT230串口烧写说明:
-      path: /deviceDev/debug/HF-LPT230.html
-    MXCHIP串口烧写说明:
-      path: /deviceDev/MXCHIP串口烧写说明.html
-    ESP8266串口烧写说明:
-      path: /deviceDev/ESP8266串口烧写说明.html
-    ESP-WROOM-02D串口烧写说明:
-      path: /deviceDev/debug/ESP-WROOM-02Duart.html
-    广和通G510模组烧写方法:
-      path: /deviceDev/debug/G510.html
-    零零 N102 串口烧写说明:
-      path: /deviceDev/debug/N102_DTU.html
     合宙 Air202 串口烧写说明:
       path: /deviceDev/debug/Air202.html
-    域格 NC3 串口烧写说明:
-      path: /deviceDev/debug/NC3_uart.html
-    NB 接入方案:
-      path: /deviceDev/debug/NB_Project.html
     通讯模组调试日志抓取教程:
       path: /deviceDev/通讯模组调试日志抓取教程.html
 
+  WiFi模组接入方案:
+    A101模组接入机智云方案及问题排查指引:
+      path: /deviceDev/WiFi_Module/A101模组接入机智云方案及问题排查指引.html
+    ESP-WROOM-02DCUC接入机智云方案及问题排查指引:
+      path: /deviceDev/WiFi_Module/ESP-WROOM-02DCUC接入机智云方案及问题排查指引.html
+    ESP32-WROOM-32D接入机智云方案及问题排查指引:
+      path: /deviceDev/debug/ESP32-WROOM-32D接入机智云方案及问题排查指引.html
+    安信可ESP8266系列接入机智云方案及问题排查指引:
+      path: /deviceDev/安信可ESP8266接入机智云方案及问题排查指引.html
+    HF-LPX30系列接入机智云方案及问题排查指引:
+      path: /deviceDev/HF-LPX30系列接入机智云方案及问题排查指引.html
+    HF-LPX20系列接入机智云方案及问题排查指引:
+      path: /deviceDev/HF-LPX20系列接入机智云方案及问题排查指引.html
+
+  2G/4G模组接入方案:
+    博实结BC20模组接入机智云方案及问题排查指引:
+      path: /deviceDev/BC20.html
+    博实结BC23M模组接入机智云方案及问题排查指引:
+      path: /deviceDev/BC23M.html
+    广和通G510模组接入方案:
+      path: /deviceDev/debug/G510.html
+    域格CLM920_NC3模组接入机智云方案及问题排查指引:
+      path: /deviceDev/域格CLM920_NC3接入机智云方案及问题排查指引.html
+    BLZ2261-P转接板接入机智云方案及问题排查指引:
+      path: /deviceDev/BLZ2261-P转接板.html
+
+  NB模组接入方案:
+    N102转接板接入机智云方案及问题排查指引:
+      path: /deviceDev/debug/N102.html
+    N256模组接入机智云方案及问题排查指引:
+      path: /deviceDev/debug/N256.html
+
+  DTU(数据传送装置)接入方案:
+    GR515使用说明:
+      path: /deviceDev/GR515使用说明.html
+    GN511使用说明:
+      path: /deviceDev/debug/GN511_use.html
 
   MCU代码自动生成服务介绍:
     MCU代码自动生成工具使用教程:

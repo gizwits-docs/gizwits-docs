@@ -1,4 +1,4 @@
-title: MCU+NB通讯模组 接入机智云方案
+title: MCU+NB通讯模组接入机智云流程
 ---
 
 # 一、概述
@@ -91,7 +91,7 @@ eDRX：终端设备兼顾低功耗和对时延有一定要求的业务，在每�
 
 ![APP收发设备数据](/assets/zh-cn/quickstart/dev/new39_39.png)
 
-## 九、机智云后台查看设备交互数据
+# 九、机智云后台查看设备交互数据
 
 ![机智云后台查看设备交互数据1](/assets/zh-cn/quickstart/dev/new40_40.png)
 
