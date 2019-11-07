@@ -1,5 +1,8 @@
-title: GoKit3(S) 二次开发--开发环境搭
+title: GoKit3(S) 二次开发--开发环境搭建
 ---
+
+**[查看旧版代码开发环境搭建](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S二次开发_old.html)**
+
 # GoKit3(S)开发环境准备
 
 ## 1 开发环境搭建方式
@@ -13,7 +16,7 @@ GoKit3(S)有两种开发环境的搭建方式：
 
 1) 下载官方编译环境安装包：
 
-链接: http://pan.baidu.com/s/1eSbSsQQ 密码: 46vf
+链接: https://pan.baidu.com/s/1kVn12Iz
 
 安装包说明：
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image3.png)
@@ -32,7 +35,7 @@ Step 1: 选择 "Preferences" 选项
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image4.png)
 
 
-Step 2: 选择 "General" 创建VM默认虚拟机路径，例如： D:\vm 
+Step 2: 选择 "General" 创建VM默认虚拟机路径，例如： D:\vm
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image5.png)
 
@@ -172,9 +175,8 @@ echo $PATH									//显示红框所示表示配置正确
 https://github.com/esp8266/esp8266-wiki/wiki/Toolchain
 
 ## 2 GoKit3(S)源代码
-GoKit3(S)源码下载地址：
+GoKit3(S)的源码获取方式请查看：[代码自动生成工具介绍](http://docs.gizwits.com/zh-cn/deviceDev/DevSDK/代码自动生成工具.html) 中 **生成SoC方案代码** 一节。
 
-http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image25.png)
 
@@ -185,15 +187,17 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image26.png)
 
+注：示例中以ESP8266 32M模组的源码为例，16M、8M同理。
+
 
 2) 进入编译目录：
 
-cd /mnt/hgfs/share/gokit-soc-esp8266/app/
+cd /mnt/hgfs/share/SoC_ESP8266_32M_source/app/
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image27.png)
 
 
-3) 设置编译脚本为Unix格式，防止Win系统下对编译脚本产生影响：
+3) 设置编译脚本为Unix格式，防止Win系统下对编译脚本产生影响(**注:无法运行编译脚本时即可使用此方法**)：
 
 vim gen_misc.sh
 
@@ -201,8 +205,10 @@ vim gen_misc.sh
 
 :wq!					//这是vim命令，非添加的内容
 
+![image27_5](/assets/zh-cn/deviceDev/WiFiSOC/dev/image27_5.png)
+
 4) 运行编译脚本：
-./gen_misc.sh 
+./gen_misc.sh
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image28.png)
 
@@ -210,7 +216,7 @@ vim gen_misc.sh
 注：如图所示表明编译成功
 
 5) 生成的固件位置:
-share/gokit3_SoC_ESP8266_xxx/bin/upgrade
+share/SOC_ESP8266_32M_source/bin/upgrade
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image29.png)
 
@@ -224,11 +230,11 @@ Windows中显示如下
 # GoKit3(S)固件下载
 ## 1 打开烧写软件
 
-下载程序烧录工具“FLASH_DOWNLOAD_TOOLS_v2.4” ，下载地址：
+下载程序烧录工具“ESPFlashDownloadTool_v3.3.4.exe” ，下载地址：
 
-http://bbs.espressif.com/viewtopic.php?f=57&t=433
+https://www.espressif.com/sites/default/files/tools/flash_download_tools_v3.6.4.rar
 
-下载完毕解压后点击运行**“ESP_DOWNLOAD_TOOL_V2.4.exe”**
+下载完毕解压后点击运行**“ESPFlashDownloadTool_v3.3.4.exe”**
 
 ![Alt text](/assets/zh-cn/deviceDev/WiFiSOC/dev/image31.png)
 
@@ -244,17 +250,16 @@ SOC版的程序固件名称为：
 
 编译后固件默认保存位置： 	
 
-**share/gokit3_SoC_ESP8266_xxx/bin/upgrade**
+**share/SOC_ESP8266_xxM_source/bin/upgrade**
 
 ### 2.2 GoKit3(S) MCU版
 
 MCU版的程序固件名称为：
 
-**GAgent_00ESP826_04020011_16041419.bin**
+**GAgent_00ESP826_04020029_32Mbitcombine.bin**
 
-下载地址：
+[点击下载](http://goms-1251025085.cosgz.myqcloud.com/GAgent_00ESP826_04020029-1524657141995.rar)
 
-http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent 
 
 详细介绍请查看**《GoKit3(S) 开发套件介绍》**中“5. 使用Gokit的MCU模式”一节。
 
@@ -266,13 +271,13 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 
 注：
-1).前三个 ‘.bin’ 文件都在**D:\share\gokit-soc-esp8266\bin** 目录下，选择对应的名称的 ‘.bin’文件即可。
+1).前三个 ‘.bin’ 文件都在**D:\share\SoC_ESP8266_32M_source\bin** 目录下，选择对应的名称的 ‘.bin’文件即可。
 
 最后一个.bin 文件默认为SOC版固件：**user1.4096.new.6.bin**
 
-位置：**D:\share\gokit-soc-esp8266\bin\upgrade\user1.4096.new.6.bin**
+位置：**D:\share\SoC_ESP8266_32M_source\bin\upgrade\user1.4096.new.6.bin**
 
-若烧写MCU版固件请选择 **GAgent_00ESP826_04020011_16041419.bin**
+若烧写MCU版固件请选择 **GAgent_00ESP826_04020029_32Mbitcombine.bin**
 
 2).COM PORT 为TTL转串口的COM号（下边会说明）
 
@@ -387,7 +392,7 @@ http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent
 
 答：使用如下命令重新安装VMware Tools
 
-sudo apt-get autoremove open-vm-dkms open-vm-tools --purge 
+sudo apt-get autoremove open-vm-dkms open-vm-tools --purge
 
 点击“虚拟机”—— 重新安装VMware Tools ——在终端中进入相应目录
 
@@ -398,6 +403,7 @@ sudo ./vmware-install.pl
 之后一路回车键确认直到安装完成即可
 
 ## 2 总结
+
 至此，Gokit3的开发环境搭建、源码编译及固件下载已介绍完毕。
 
 若想深入了解Gokit3的硬件电路说明请查看：

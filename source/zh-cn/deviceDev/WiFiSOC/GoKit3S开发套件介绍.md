@@ -64,7 +64,7 @@ SoC是最新推出的开发方式，即功能板+wifi模组的连接方式，是
 
 二次开发源码包及原理图已经开放，地址是：
 
-1、ESP8266 SoC源码包[http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit) ，选择“微信宠物屋 for GoKit3(S) ESP8266”进行下载。
+1、ESP8266 SoC源码包[下载页面](http://download.gizwits.com/zh-cn/p/92/93) ，选择“微信宠物屋 for GoKit3(S) ESP8266”进行下载。
 
 2、原理图： [http://club.gizwits.com/thread-2889-1-1.html](http://club.gizwits.com/thread-2889-1-1.html)
 
@@ -72,11 +72,11 @@ SoC是最新推出的开发方式，即功能板+wifi模组的连接方式，是
 
 MCU的方式可得到与GoKit2相同的开发方式，即底板+功能板+wifi模组的连接方式。使用MCU的连接方式需要开发者自更新wifi模组的固件，固件下载地址及烧录方法见下面链接：
 
-1、GAgent固件：[http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent) 选择“GAgent for ESP8266”。
+1、GAgent固件，[下载页面](http://download.gizwits.com/zh-cn/p/92/94)，选择“GAgent for ESP8266”。
 
-2、GAgent固件烧录方法：[http://docs.gizwits.com/zh-cn/deviceDev/ESP8266串口烧写说明](zh-cn/deviceDev/ESP8266串口烧写说明.html)
+2、GAgent固件[烧录方法](/zh-cn/deviceDev/ESP8266串口烧写说明.html)
 
-3、STM32 MCU源码包 [http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GoKit)，选择“微信宠物屋 for GoKit 2 STM”进行下载。
+3、STM32 MCU源码包，[下载页面](http://download.gizwits.com/zh-cn/p/92/93)，选择“微信宠物屋 for GoKit 2 STM”进行下载。
 
 #  相关支持
 

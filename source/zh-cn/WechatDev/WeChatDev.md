@@ -1,7 +1,7 @@
 title:  微信应用开发教程
 ---
 # 微信SDK
-附件：[微信SDK包下载](/assets/pdf/微信SDK包.zip)
+附件：[微信SDK包下载](https://github.com/gizwits/gizwits-wechat-js-sdk)
 
 # 目标驱动的教程
 本教程以目标为驱动，去除多余的细节，让机智云的小伙伴们，可以快速的搞定微信接入。好啦，我们开始吧！
@@ -48,9 +48,16 @@ title:  微信应用开发教程
 
 # 设备二维码
 
-微信客户端APP可以通过扫描二维码添加设备。设备二维码相关信息请点击这里。设置内容如下：
+微信客户端APP可以通过扫描二维码添加设备。为使已成功接入机智云的设备能被微信控制，在微信公众平台创建产品的时候请按照以下设置来勾选。设置内容如下：
 
 ![Alt text](/assets/zh-cn/WechatDev/wechat_03.png)
+
+其中：连接类型选择“Wi-Fi”设备；
+
+产品添加方式选择“每种型号唯一的二维码”，产品添加成功后，微信会生成此款产品的唯一一个二维码，通过扫描这个唯一的二维码可以进行微信配网后近场发现设备来绑定，如果选择“每个产品唯一的二维码”，那么将会为此款产品的每一个产品生成一个二维码，扫描该二维码可以直接绑定设备，但是无法通过近场发现绑定；
+
+产品配置方式选择“微信配网”与“不使用加密”。
+
 
 # 设备授权
 
@@ -174,7 +181,7 @@ Boolean isOnline = OpenApi.getDeviceOnlineStatus(wechatOpenId, gizwitsAppId, giz
 | ------------- |:-------------:|    -------------    |  
   |  wechatOpenId	  |  String	  |  微信中的OpenId，也就是机智云中注册的匿名用户
   |  gizwitsAppId	  |  String	  |  机智云产品所绑定的APP的id
-  |  gizwitsDid	  |  String	  |  机智云中的设备ID，对应Mac，设备重置时会重新注册
+  |  gizwitsDid	  |  String	  |  机智云中的设备ID，设备重置时会重新注册
 
 # 代码样例
 
@@ -266,7 +273,7 @@ devices列表中的每个设备，都会有六个属性，分别是product_key(�
 
 # 手动读取：设备数据点
 
-获取设备的数据点，也很简单，只需调用gizwits.read()方法，不需要任何参数。调用此方法，可以马上获取一次，同样，数据也是通过回调函数 gizwits.onReceivedAttrs，或者gizwits.onReceivedRaw来获取。
+获取设备的数据点，也很简单，只需调用gizwits.read()方法，需要传入did。调用此方法，可以马上获取一次，同样，数据也是通过回调函数 gizwits.onReceivedAttrs，或者gizwits.onReceivedRaw来获取。
 
 # 连接错误
 

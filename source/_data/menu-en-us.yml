@@ -1,25 +1,190 @@
-Tutorial:
-  Intro in 5 mins:
-    path: /path/to/article
-  Device Accessing:
-    path: /path/to/article
-  App Development:
-    path: /path/to/article
-Device:
-  path: /path/to/article
-App:
-  ios SDK:
-    path: /path/to/article
-  Android SDK:
-    path: /path/to/article
-  Wechat SDK:
-    path: /path/to/article
-Cloud:
-  Business Cloud:
-    path: /path/to/article
-  D3:
-    path: /path/to/article
-  Global Deployment:
-    path: /path/to/article
-API:
-  path: /path/to/article
+Overview:
+  path: /overview/overview.html
+
+
+
+
+Quick Start:
+  Quick start with Gizwits IoT Cloud:
+    path: /quickstart/GizwitsQuickStart.html
+  Terms and Definitions:
+    path: /quickstart/glossary.html
+    
+
+App Dev:
+  Get started with App development:
+    path: /AppDev/AppDevGetStarted.html  
+  Gizwits App Code Auto-Generator:
+    path: /AppDev/AppCodeAutoGenerator.html 
+    
+  Gizwits App Frameworks:
+    Gizwits App Framework for iOS:
+      path: /AppDev/iOSFramework.html      
+    Push notification integration for iOS App:
+      path: /AppDev/iOSPushNotification.html      
+    Third-party authentication and re-skin for iOS App:
+      path: /AppDev/iOSAuthReSkin.html      
+    Quick start with iOS App development:
+      path: /AppDev/iOSDevQuickStart.html      
+    Gizwits App Framework for Android:
+      path: /AppDev/AndroidFramework.html        
+    Push notification integration for Android App:
+      path: /AppDev/AndroidPushNotification.html      
+    Third-party authentication and re-skin for Android:
+      path: /AppDev/AndroidAuthReSkin.html     
+    Quick start with Android App development:
+      path: /AppDev/AndroidDevQuickStart.html
+    Gizwits App Framework for APICloud:
+      path: /AppDev/APICloudFramework.html      
+    How-to videos on Gizwits App Framework:
+      path: /AppDev/VideoTutorials.html 
+
+  Gizwits App SDKs:
+    Gizwits App SDK for Android:
+      path: /AppDev/AndroidSDKA2.html
+    Gizwits App SDK for iOS:
+      path: /AppDev/iOSSDKA2.html
+    Gizwits App SDK for APICloud:
+      path: /AppDev/APICloudSDK.html
+    Data Transparent Transmission:
+      path: /AppDev/TransparentTransmission.html     
+    SDK Debug Log Capture:
+      path: /AppDev/SDKLogCapture.html
+    SDK Error Codes:
+      path: /AppDev/SDKErrorCodes.html
+      
+  WeChat SDK Guide:
+    path: /AppDev/WeChatDev.html  
+  WeChat Dev Intro:
+    path: /AppDev/WechatDevIntro.html  
+
+  More Guides:
+    Gizwits Device Sharing:
+      path: /AppDev/DeviceSharing.html
+    Set Up Third-party Authentication:
+      path: /AppDev/ThirdpartyAuth.html
+    App Dev FAQ:
+      path: /AppDev/AppDevFAQ.html
+    
+
+DeviceDev:
+  Get Started with Device Development:
+    path: /DeviceDev/DeviceDevGetStarted.html
+  Device Connection:
+    Standalone MCU Scheme:
+      path: /DeviceDev/MCUScheme.html
+    SoC Scheme:
+      path: /DeviceDev/SoCScheme.html
+  Module Resources:
+    path: /DeviceDev/ModuleResources.html
+  GAgent Guides:
+    GAgent:
+      path: /DeviceDev/GAgent.html
+    Gizwits Serial Port Debugger:
+      path: /DeviceDev/Debug/DebugTool.html
+    HF-LPB100:
+      path: /DeviceDev/Debug/HF-LPB100.html
+    HF-LPT120:
+      path: /DeviceDev/Debug/HF-LPT120.html
+    MXCHIP:
+      path: /DeviceDev/Debug/MXCHIP.html
+    ESP8266:
+      path: /DeviceDev/Debug/ESP8266.html
+    G510:
+      path: /DeviceDev/Debug/G510.html
+    Debug Log Capture:
+      path: /DeviceDev/Debug/DebugLog.html
+  
+  Gizwits MCU Code Auto-generator:
+    Gizwits MCU Code Auto-generator:
+      path: /DeviceDev/MCUCodeAutoGenerator.html
+    Porting Common Platform Edition of MCU SDK:
+      path: /DeviceDev/PortingCommonPlatform.html
+    Porting Using STM32CubeMX:
+      path: /DeviceDev/PortingUsingSTM32CubeMX.html
+    Tailoring MCU SDK to Resource-Limited Platform:
+      path: /DeviceDev/TailoringMCUCode.html
+      
+  GoKits:
+    GoKit 3.X Instruction:
+      path: /DeviceDev/GoKit/Gokit3Intro.html
+    GoKit 3.X Hardware Manual:
+      path: /DeviceDev/GoKit/Gokit3Manual.html
+    Gokit3(S) Development:
+      path: /DeviceDev/GoKit/Gokit3SGetStarted.html
+    Gokit3(S) Instruction:
+      path: /DeviceDev/GoKit/Gokit3SIntro.html
+    GoKit3(S) Dev Environment:
+      path: /DeviceDev/GoKit/SetupGokit3SDevEnv.html
+    GoKit-SoC Program Experience:
+      path: /DeviceDev/GoKit/GokitSoCProgram.html
+    GoKit-MCU Program Experience:
+      path: /DeviceDev/GoKit/GokitMCUProgram.html  
+
+    
+Cloud API:
+    Open API:
+      path: /cloud/OpenAPI.html
+    Enterprise Application Development:
+      path: /cloud/ent_dev.html
+    Enterprise API:
+      path: /cloud/enterprise_api.html
+    SNoti API:
+      path: /cloud/NotificationAPI.html      
+    WebsocketAPI:
+      path: /cloud/WebsocketAPI.html
+    API Tutorial:
+      Using Open API to control virtual device with Postman:
+        path: /UserManual/UseOpenAPI.html  
+      Real-time data synchronization demo for SNoti service:
+        path: /UserManual/UseSNoti.html 
+      Control device using WebSocket:
+        path: /UserManual/UseWebsocket.html
+      Aggregation API Guide:
+        path: /UserManual/DataAPI.html 
+      Device Linkage API Tutorial:
+        path: /UserManual/LinkageAPI.html   
+      Device Grouping API Tutorial:
+        path: /UserManual/devgroup_API.html       
+      Generating device QR code for App binding:
+        path: /UserManual/UseQRCode.html    
+    Cloud FAQ:
+      path: /cloud/CloudFAQ.html     
+      
+User Manual:  
+    Gizwits and ST Make IoT Development Easy:
+      path: /UserManual/ST_IoT.html
+    Getting Started with I-CUBE-GiZWITS:
+      path: /DeviceDev/ST/ICUBEGIZWITS.html
+    Promote personal type product to enterprise type product:
+      path: /UserManual/PromoteProduct.html
+    OTA:
+      GAgent OTA:
+        path: /UserManual/GAgentOTA.html
+      MCU OTA:
+        path: /UserManual/MCUOTA.html
+    End-of-line test:
+      path: /DeviceDev/EolTest.html
+    Gizwits D3 Engine:
+      path: /UserManual/D3.html
+    Gizwits ECE fog computing:
+      path: /UserManual/ECE.html
+    Voice control with smart speakers:
+      Integration with Amazon Echo:
+        path: /UserManual/EchoIntegration.html
+      Control Gokit using Amazon Echo:
+        path: /DeviceDev/UseEcho.html
+      Control Gokit using Google Home:
+        path: /UserManual/UseGoogleHome.html
+    Gizwits Real-time Big Data Analytics:
+      path: /UserManual/DataAnalytics.html
+    Global Network of Gizwits:
+      path: /UserManual/GlobalDeployment.html
+        
+      
+      
+        
+
+
+
+

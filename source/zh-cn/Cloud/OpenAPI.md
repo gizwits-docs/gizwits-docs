@@ -80,7 +80,7 @@ X-Gizwits-Application-Auth: {signature}
 |参数    |类型  |必填    |参数类型     |描述   |备注|
 | :-------- | --------:| :--: |:-------- | :-------- | :-------- | 
 |X-Gizwits-Application-Id  |String|是|header| | |
-|phone_id|string|是|body|phone_id 可以是手机的唯一识别码| |
+|phone_id|string|是|body|phone_id 可以是手机的唯一识别码|	|
 
 ### 应答报文
 ```json

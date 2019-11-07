@@ -2,7 +2,18 @@
   @media (max-width: $widget-bp) {
     display: none;
   }
-  float: left;
+
+  @media (min-width: 1170px) {
+    float: left;
+  }
+
+  @media (min-width: 1235px) {
+    float: none;
+  }
+
+  @media (min-width: 1285px) {
+    float: left;
+  }
   width: 50px;
   &,
   .widget {
@@ -15,7 +26,8 @@
     margin: {
       left: 20px;
     }
-    a {
+
+    &>a, &>div>a {
       color: #000;
       display: block;
       height: 50px;
@@ -25,9 +37,43 @@
       font-size: 13px;
       text-align: center;
 
+      -webkit-transition: background 0.5s;
+      -moz-transition: background 0.5s;
+      -ms-transition: background 0.5s;
+      -o-transition: background 0.5s;
+      transition: background 0.5s;
+
       &:hover {
-        color: $black;
+        background: white;
       }
     }
+
+    &>div{
+      position: relative;
+
+      &>a#share{
+        line-height: 30px;
+        cursor: pointer;
+      }
+
+      &:hover>div.social-share {
+        display: block;
+      }
+
+      &>div.social-share {
+        display: none;
+        position: absolute;
+        top: -75px;
+        left: 50px;
+        padding-left: 10px;
+
+        &:hover {
+          display: block;
+        }
+      }
+
+    }
   }
+
+
 }

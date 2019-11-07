@@ -108,6 +108,74 @@ title: iOS App消息推送集成指南
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1478097258793.png)
 
+## 8. 极光自定义推送声音
+ D3引擎支持向每条规则设置特定的推送声音，主要需要做两个地方的修改。
+### 8.1 设置推送声音
+  打开某条推送规则如下：
+  ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504698885850.png)
+  
+选择APP推送方块（上图红框部分）：
+
+![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504698991318.png)
+
+点击《显示json样例》:
+
+![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504699699583.png)
+
+Example的具体内容如下：
+```
+{
+  "baidu": {
+    "aps": {
+      "badge": 0,
+      "sound": "default"
+    },
+    "notification_builder_id": 0,
+    "notification_basic_style": 0
+  },
+  "jiguang": {
+    "ios": {
+      "sound": "sound.caf",
+      "badge": 1
+    },
+    "android": {
+      "builder_id": 0,
+      "alert_type": 1,
+      "style": 1
+    }
+  }
+}
+```
+
+这里做的是iOS的极光推送，假如推送声音名称为《pushMusic.caf》，则高级参数需要填写的内容如下：
+```
+{
+  "jiguang": {
+    "ios": {
+      "sound": "pushMusic.caf",
+      "badge": 1
+    }
+  }
+}
+```
+
+具体如图：
+
+![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504699964358.png)
+
+点击《确定》保存设置即完成推送声音的设置
+
+注意："badge"这个参数是设置推送后APP显示的角标内容，当设置为1时，APP收到推送显示的角标为1，不过按照正常的逻辑应该是APP收到多条推送会自动累加角标数，如果这里填1，那不管推送多少条通知，角标一直都为1。
+如果要角标根据消息数量累加，即把"badge": 1去掉即可，没有设置的话，极光会默认做累加操作。
+
+### 8.2 添加推送声音文件到项目
+当在D3成功设置自定义推送声音之后，每当有推送消息推到APP中，系统会先去APP中查找是否有相关名称的声音文件，有：则播放该声音，没有：则播放系统默认的声音。
+推送声音的音频格式包括aiff，wav，caf 文件，并且播放时间必须在30s内，文件也必须放到 app 的 mainBundle 目录中，有其中一个条件不满足，系统都会播放默认通知声音来替代。
+添加音频文件到项目如下：
+![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504700519844.png)
+
+至此自定义推送声音设置结束，推送相关消息APP将播放设置的音频。
+
 # 快速集成百度推送
 ## 1. 申请百度API KEY
 ### 1.1 创建百度应用
@@ -177,6 +245,57 @@ BPushModeDevelopment：设置百度推送环境为开发环境
 
 ![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1478097977985.png)
 
+## 8. 百度自定义推送声音
+### 8.1 设置推送声音
+  进入到推送声音设置界面如下，如何进入请参考极光的《极光自定义推送声音的8.1部分》
+![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504699699583.png)
+
+获取Example的具体内容如下：
+```
+{
+  "baidu": {
+    "aps": {
+      "badge": 0,
+      "sound": "default"
+    },
+    "notification_builder_id": 0,
+    "notification_basic_style": 0
+  },
+  "jiguang": {
+    "ios": {
+      "sound": "sound.caf",
+      "badge": 1
+    },
+    "android": {
+      "builder_id": 0,
+      "alert_type": 1,
+      "style": 1
+    }
+  }
+}
+```
+
+这里做的是iOS的百度推送，假如推送声音名称为《pushMusic.caf》，则高级参数需要填写的内容如下：
+```
+{
+  "baidu": {
+    "aps": {
+      "badge": 0,
+      "sound": "pushMusic.caf"
+    }
+  }
+}
+```
+设置完成如下：
+
+![Alt text](/assets/zh-cn/AppDev/AppFrame/ios/push/1504700958335.png)
+
+点击《确定》保存，即完成推送声音的设置
+
+### 8.2 添加推送声音文件到项目
+这部分请参考文档上方《极光自定义推送声音的8.2部分》
+
+
 # 常见问题FAQ
 **1、开发者一定要开通D3 Engine才能使用消息推送吗？**
 
@@ -222,7 +341,7 @@ development表示开发环境
 
 **3、极光推送如何设置角标的值**
 
-解答：[JPUSHService setBadge:0]; 
+解答：[JPUSHService setBadge:0];  
 
 
 

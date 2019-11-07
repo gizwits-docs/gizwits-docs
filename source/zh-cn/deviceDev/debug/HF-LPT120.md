@@ -1,8 +1,10 @@
-title: 机智云GAgent For HF-LPT120串口烧写说明
+title: 机智云GAgent For HF-LPT120/LPB120/LPT220串口烧写说明
 ---
 # 概述
 
 本文针对汉枫HF-LPT120模块进行串口模式烧写流程整理了一篇操作流程。合作厂商在进行模块烧写操作时请依次按照如下步骤进行，否则会产生不可控的错误。
+
+注意事项：HFLPT120/LPB120/LPT220 的串口模式烧写流程是一样的。
 
 # 操作流程
 
@@ -25,6 +27,7 @@ title: 机智云GAgent For HF-LPT120串口烧写说明
 将HF-LPT120模块按照如下原理图进行接线，注意nReload需要输入低电平，本实验直接接地处理。KEY1实现外部复位功能。
 
 ![设备连接](/assets/zh-cn/deviceDev/debug/LPT120/1478163793408.png)
+![设备连接](/assets/zh-cn/deviceDev/debug/LPT120/1378163793408.png)
 
 ## 4. 串口设置
 ### 4.1 确认串口参数

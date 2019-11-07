@@ -2,6 +2,8 @@ lang: zh-cn
 title: 机智云
 sub_title: 文档中心
 edit: 文档编辑
+share: 分享
+register: 项目登记
 feedback: 问题反馈
 scrolltop: 返回顶部
 home: 机智云首页
@@ -9,3 +11,5 @@ about: 关于我们
 contact: 联系我们
 join: 加入我们
 content: 目录
+dev_center: 开发者中心
+res_center: 下载中心

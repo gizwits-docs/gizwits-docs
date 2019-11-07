@@ -1,8 +1,8 @@
-.markdown-body {
+ .markdown-body {
   @media (max-width: $body-bp) {
     width: 100%;
   }
-  
+
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   font-size: 16px;
@@ -10,12 +10,12 @@
   word-wrap: break-word;
   padding: 30px;
   padding-bottom: 50px;
-  width: 780px;
+  width: 880px;
   float: left;
   position: relative;
   border: 1px solid #e7e7e7;
   box-shadow: 2px 2px 10px #e7e7e7;
-  
+
   li {
     color:#686868;
   }
@@ -28,7 +28,7 @@
   h6 {
     color:#484848;
     font: {
-      weight: normal;
+        weight: bold;
     }
 
     a.anchor {
@@ -56,46 +56,7 @@
     }
   }
 
-  h1 {
-    @media (min-width: $body-bp + 1) {
-      &:first-of-type {
-        &:before {
-          margin-top: -300px;
-          height: 300px;
-        }
-      }
-      line-height: 2.5em;
-      font-size: 24px;
-      margin: 28px 0 0; 
-    }
-  }
-  h2 {
-    font-size: 22px;
-    margin:1em 0 0;
-    line-height: 1.5em;
-  }
-  h3 {
-    font-size:20px;
-    margin:1.5em 0 0;
-    line-height: 1.5em;
-  }
-  h4 {
-    font-size: 18px;
-    margin:1.5em 0 0; 
-    line-height: 1.5em;
-  }
-  h5 {
-    font-size: 16px;
-    margin:1.5em 0 0;
-    line-height: 1.5em;
-  }
-  h6 {
-    font-size: 15px;
-    margin:1.5em 0 0;
-    line-height: 1.5em;
-  }
   p {
-    font-size: 16px;
     @media (min-width: $body-bp + 1) {
       padding-left: 21px;
     }
@@ -113,9 +74,8 @@
 
   table {
     padding: 0;
-    margin: {
-      left: 21px;
-    }
+    margin: 0;
+    width: 100%;
 
     tr {
       border-top: 1px solid #cccccc;

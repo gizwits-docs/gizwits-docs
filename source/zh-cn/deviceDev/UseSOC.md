@@ -1,5 +1,6 @@
-title: SOC快速入门
----
+title: ESP8266-SOC快速入门
+----
+附件：[SOC快速开发LED灯参考代码](/assets/pdf/gizlamp.zip)
 # 概述
 智能灯，是一个简单常见的智能产品，硬件电路简单，程序本身也不复杂；下面我们使用gokit3（s）开发板和机智云云端，实现如何将一个传统的灯泡，低成本改造成可以远控开关的智能灯。
 
@@ -173,11 +174,11 @@ App通过云端下发控制事件处理，可以在
 **- Key2**
 
 用于触发模块进入airlink和softap的配置模式
-- airlink配置模式 -> 长按key1
+- airlink配置模式 -> 长按key2
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410739993.png)
 
-- softap配置模式 -> 短按key1
+- softap配置模式 -> 短按key2
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410747091.png)
 
@@ -263,6 +264,6 @@ App通过云端下发控制事件处理，可以在
 ## 4. 项目完成
 - 完成以上步骤，整个项目开发就完成了,如果需要关注更多的开源项目以及和其他开发者深度交流，可以到我们公司的官方论坛进行学习：http://club.gizwits.com/forum.php
 
-
+## [附加篇：ESP8266-SOC方案UART0教程](http://docs.gizwits.com/zh-cn/deviceDev/ESP8266-SOC_UART0.html)
 
 

@@ -8,7 +8,7 @@ title:  GoKit3(S)使用说明书
 
 首先您需要弄清楚的有这些：
 
-初步了解GoKit3(S)，没有看的同学请查看 《GoKit3(S)开发套件介绍》
+初步了解GoKit3(S)，没有看的同学请查看 [《GoKit3(S)开发套件介绍》](http://docs.gizwits.com/zh-cn/deviceDev/WiFiSOC/GoKit3S%E5%BC%80%E5%8F%91%E5%A5%97%E4%BB%B6%E4%BB%8B%E7%BB%8D.html)
 
 **了解按钮的功能，定义如下表：**
 
@@ -24,53 +24,37 @@ title:  GoKit3(S)使用说明书
 
 # 下载官方应用
 
-#### 下载GoKit的官方APP （分IOS、安卓两个版本）
+想控制使用Gokit3（S），通常推荐这两种方法：使用“机智云（又称IoE Demo）”APP或机智云公众号（微信号：go-kit）。
 
-##### 方式一：用微信扫说明书上的二维码（首选推荐方式）
-
-首先，使用手机上具有“扫一扫”功能的APP（如微信或扫一扫），扫描说明书上的二维码。
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image2.png)
-
- **注：说明书上含有两个二维码，印刷在说明书上的二维码才是GoKit对应的APP的下载链接，如上图。**
-
-接下来，点击右上角选择在浏览器中打开，并点击安装。
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image3.png) 
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image4.png)
-
-最后，待APP下载成功后点击安装IOE Demo，等待安装成功后点击完成。
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image5.png) ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image6.png)
-
-##### 方式二：在**机智云下载中心**中下载
-
-在手机浏览器中登录机智云下载中心：
-
-[*http://site.gizwits.com/zh-cn/developer/resource/demo\_app?protoc=WIFI*](http://site.gizwits.com/zh-cn/developer/resource/demo_app?protoc=WIFI)
-
-根据您手机系统选择对应的下载，将鼠标放到下图二维码位置，即可放大二维码。打开手机的“扫一扫”功能app软件，对准二维码进行扫描，按照提示进行下载并安装即可。（**安装过程与方式一相同**）
-
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image7.png)
-
-安装成功后可以在桌面看到IOE Demo的图标。
-
+**获取Gokit的官方APP“机智云（又称IoE Demo）” 的方式有：**
+ - 1）用微信扫一扫说明书上的二维码，下载“机智云”APP
+ - 2）在机智云“下载中心”下载
+ - 3）在应用商店，搜索“机智云”
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image8.png)
 
-##### 将GoKit和微信账号绑定：
-
-打开微信软件，使用“扫一扫”功能扫描说明书上的二维码，关注“机智云智能宠物屋”公众号。
-
+安装成功后可以在桌面看到“机智云（又称IOE Demo）”APP的图标。接下来，就可以控制Gokit3（S）了。
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image9.png)
 
-**注：贴在说明书上的二维码为绑定微信用的二维码，不要与上面的APP二维码弄混，效果如上图。**
 
 # 连接到路由器
 
-现在您已经拿到了GoKit，已经下载了APP，那么接下来的一步，就是将您的GoKit连接到您的路由器上去，如何做到呢？GoKit提供两种配置入网方式：AirLink 、 SoftAP。
+现在您已经拿到了GoKit，安装了“机智云（又称IoE Demo）”APP，那么接下来的一步，就是将您的GoKit连接到您的路由器上去，如何做到呢？GoKit提供两种配置入网方式：AirLink 、 SoftAP。
 
 ## 1 AirLink配置入网
+
+Airlink配置入网，操作步骤和Gokit3（S）纸质说明书的内容一致,如下所示：
+ - 使用USB电源线为Gokit供电并开机
+ - 收集接入Wifi网络，打开“机智云（IOE Demo）”APP，可选择登录APP或跳过，再在主界面点击“我的设备”，选择“添加设备”
+ - 长按GoKit上的“KEY2”，【RGB LED】灯绿色目标是GoKit进入配置模式。
+ - App上输入正在使用的WiFi网络密码，并点击“配置”，等待设备接入Wifi网络。
+ - 在App上选择模组类型（请注意需和GoKit的模组型号保持一致），点击“下一步”，等待搜索并连接设备，通常这个过程是10~120s内完成。
+ 
+ **配置入网时的注意事项：**
+ - 路由器需为2.4G网络。暂不支持路由器为5G网络。
+ - 请保持WiFi环境稳定。
+ - GoKit天生支持远程连接，您可以将您的手机切换成2G、3G、4G，然后打开软件，您的GoKit依然存在，点击设备后就如同本地操作一样，唯一不同的就是目前的连接方式是远程连接。
+  
+接下来的是图文版Airlink配置入网方式。
 
 ##### 给GoKit供电（如下图）
 
@@ -92,13 +76,13 @@ title:  GoKit3(S)使用说明书
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image13.png)
 
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image14.png) 
+![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image14.png)
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image15.png)
 
 ##### 在APP上点击**配置**按钮，等待不超过一分钟，APP就可以提示配置成功（下图）
 
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image16.png) 
+![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image16.png)
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image17.png)
 
@@ -116,7 +100,7 @@ title:  GoKit3(S)使用说明书
 
 > 选择形如“XPG-GAgent-XXXX”的WiFi热点**密码：123456789**（如下图）
 
-![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image19.png) 
+![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image19.png)
 
 ![](/assets/zh-cn/deviceDev/WiFiSOC/Instructions/image20.png)
 
@@ -152,9 +136,9 @@ title:  GoKit3(S)使用说明书
 需要注意的几点：
 
 > i. 如果您在设定LED组合颜色中，选择了自定义，您可以分别设定R、G、B的颜色；
-> 
+>
 > ii. 如果您在设定LED组合颜色中，选择了具体的颜色，您就不可以再对R、G、B进行设置；
-> 
+>
 > iii. 红外探测和温湿度上报都属于用户触发行为，都是在GoKit上进行触发，在APP上显示；
 
 即使GoKit不在身边依然近在咫尺
@@ -174,11 +158,9 @@ GoKit3(S)除了支持SOC模式同时支持MCU模式，两者区别请查看[《G
 
 ## 2 烧写ESP8266对应的Gagent程序
 
-使用MCU模式时，ESP8266(WiFi模组)只负责信息的接收与发送，所以WiFi模组需要烧写Gagent源码固件。**Gagent**是机智云开发的可运行在各种通讯模组上的一款应用程序，开发者使用**Gagent**后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
+使用MCU模式时，ESP8266(WiFi模组)只负责信息的接收与发送，所以WiFi模组需要烧写Gagent源码固件。**Gagent** 是机智云开发的可运行在各种通讯模组上的一款应用程序，开发者使用 **Gagent** 后，只需要关心产品的业务逻辑开发，不用关心数据的通讯功能开发，大大降低了开发的难度。
 
- 新版Gagent程序下载地址：
-
- [*http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent*](http://site.gizwits.com/zh-cn/developer/resource/hardware?type=GAgent)
+ 新版Gagent程序[下载地址](http://download.gizwits.com)
 
  注：要下载ESP8266对应的最新版本，如下图：
 

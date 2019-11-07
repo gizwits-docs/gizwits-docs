@@ -1,3 +1,5 @@
+/* global $ */
+
 // common variables
 var BODY_BP = 1119
 var HEADER_BP = 915
@@ -56,7 +58,8 @@ var HEADER_BP = 915
 +function() {
 
   // DELETE THIS SHIT BEFORE LONG
-  var lang = 'zh-cn'
+  var isEn = window.location.pathname.indexOf('/en-us/') !== -1
+  var lang = isEn ? 'en-us' : 'zh-cn'
   localStorage.setItem('lang', lang)
 
 
@@ -140,7 +143,7 @@ var HEADER_BP = 915
     var path = location.pathname
     var editPath = 'https://github.com/gizwits-docs/gizwits-docs/edit/master/source' + path.slice(0, path.length - 4) + 'md'
     $('.edit-link').attr('href', editPath)
-  }) 
+  })
 }(jQuery)
 
 
@@ -207,7 +210,7 @@ var HEADER_BP = 915
       if (!$('.nav-control').data().show) {
         var activeGroup = $active.data().group
         $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
-        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
+      //hohuiking  $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
       }
     })
   })
@@ -218,7 +221,7 @@ var HEADER_BP = 915
       if (!$('.nav-control').data().show) {
         var activeGroup = $(this).data().group
         $('.nav > ul > .h2[data-group=' + activeGroup + ']').show()
-        $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
+      //hohuiking  $('.nav ul > .h2').not('[data-group=' + activeGroup + ']').hide()
       }
     })
   })
@@ -226,6 +229,7 @@ var HEADER_BP = 915
   // nav's sub-menu show/hide
   $(function() {
     $('.nav-control').click(function() {
+    //$(document).ready(function() {
       var $this = $(this)
       var langIsEn = localStorage.getItem('lang') === 'en-us'
       if ($this.data().show) {
@@ -274,7 +278,7 @@ var HEADER_BP = 915
 // open doc anchor in new page
 +function($) {
   $(function() {
-    $('.markdown-body a').not('.anchor').attr('target', '_blank')
+    $('.markdown-body a').not('.anchor').attr('target') //, '_blank')//页内跳转
   })
 }(jQuery)
 
@@ -309,3 +313,143 @@ var HEADER_BP = 915
     var spinner = new Spinner(opts).spin(target)
   }
 }()
+
+
+$(function() {
+
+  function measureScrollbar() {
+    var scrollDiv = document.createElement('div')
+    scrollDiv.className = 'modal-scrollbar-measure'
+    $('body').append(scrollDiv)
+    var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
+    $('body')[0].removeChild(scrollDiv)
+    return scrollbarWidth
+  }
+
+  var scrollbarWidth = measureScrollbar()
+  $(window).on('resize', function() {
+    scrollbarWidth = measureScrollbar()
+    if ($('#header-search-panel').is(':visible')) {
+      $('body').css('padding-right', scrollbarWidth)
+      $('.header').css('padding-right', scrollbarWidth)
+      $('#chatBtn').css('margin-right', scrollbarWidth)
+    }
+  })
+
+
+  var resultHeight = $(window).height() - 250
+  $('#header-search-result').height(resultHeight)
+
+  var SEARCH_DATA = []
+  $.getJSON('/search.json?t={{searchjsonmd5}}', function(data) {
+    SEARCH_DATA = data
+  })
+
+  var $searchTrend = $('#header-search-trend')
+  var $searchResult = $('#header-search-result')
+  var $searchInput = $('#header-search-input')
+
+  $('.header-search-trend-item').on('click', function() {
+    $searchInput.val($(this).data('word'))
+    $searchInput.trigger('keyup')
+  })
+
+  $searchInput.on('keyup', function(e) {
+    var $this = $(this)
+    var v = $this.val()
+    if (!v) {
+      $searchTrend.removeClass('hidden')
+      $searchResult.addClass('hidden')
+    }
+    else {
+      $searchTrend.addClass('hidden')
+      $searchResult.removeClass('hidden')
+      $('#header-search-keyword').text(v)
+
+      var sVal = v.toLowerCase()
+      var sReg = new RegExp('(' + sVal + ')', 'gi')
+      var sData = SEARCH_DATA.filter(function(item) {
+        if (!item.title || !item.content) {
+          return false
+        }
+
+        var contentIndex = item.content.toLowerCase().indexOf(sVal)
+
+        if (
+          (item.title && item.title.toLowerCase().indexOf(sVal) !== -1) ||
+          (item.content && contentIndex !== -1)
+          ) {
+          item.first_occur = contentIndex === -1 ? 0 : contentIndex
+          return true
+        }
+        return false
+      }).map(function(item) {
+        var content = item.content
+        var start = 0
+
+        if (item.first_occur - 10 > 0) {
+          start = item.first_occur - 10
+        }
+
+        content = content.slice(start, start + 100)
+        content = content.replace(sReg, '<span class="hl">$1</span>')
+
+        var h = ''
+        h += '<div class="header-search-result-item">\n'
+        h += '<div class="header-search-result-item-title"><a href="' + item.url + '" target="_blank">' + item.title.replace(sReg, '<span class="hl">$1</span>') + '</a></div>\n'
+        h += '<div class="header-search-result-item-content">' + content + '</div>'
+        h += '</div>'
+        return h
+      })
+
+      if (sData.length === 0) {
+        sData = '<div class="header-search-result-empty">未找到相关文档</div>'
+      }
+      else {
+        sData = sData.join('\n')
+      }
+
+      $('#header-search-result-items').html(sData)
+    }
+  })
+
+  function closeSearchPanel() {
+    var $panel = $('#header-search-panel')
+    if ($panel.is(':visible')) {
+      $panel.removeClass('in')
+      setTimeout(function() {
+        $panel.css('display', 'none')
+        $('body').removeClass('header-search-open')
+        $('body').css('padding-right', '0')
+        $('.header').css('padding-right', '0')
+        $('#chatBtn').css('margin-right', '0')
+        $(document).off('click.searchpanel')
+      }, 300)
+    }
+  }
+
+  $('#header-search-close').click(closeSearchPanel)
+
+  $('#header-search-btn').click(function() {
+    if ($('#header-search-panel').is(':visible')) {
+      return
+    }
+    $searchInput.val('').trigger('keyup')
+    $('#header-search-panel').css('display', 'block')
+    $('body').addClass('header-search-open')
+    $('body').css('padding-right', scrollbarWidth)
+    $('.header').css('padding-right', scrollbarWidth)
+    $('#chatBtn').css('margin-right', scrollbarWidth)
+    setTimeout(function() {
+      $('#header-search-panel').one('transitionend', function() {
+        $('#header-search-input').focus()
+        $(document).on('click.searchpanel', function(e) {
+          if (!$(e.target).closest('#header-search-panel').length) {
+            closeSearchPanel()
+          }
+        })
+      })
+      $('#header-search-panel').addClass('in')
+    }, 50)
+  })
+})

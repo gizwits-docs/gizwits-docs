@@ -5,23 +5,17 @@
 快速入门:
   5分钟了解机智云:
     path: /quickstart/5分钟了解机智云.html
-    
-  设备快速接入机智云:
-    path: /quickstart/设备快速接入.html
-
-  App快速接入机智云:
-    App开发准备工作:
-      path: /quickstart/准备工作.html
-    Android App 快速开发:
-      path: /quickstart/AndroidAppFrame.html    
-    iOS App 快速开发:
-      path: /quickstart/iOSAPP快速入门.html
 
   机智云名词定义解释:
     path: /quickstart/noun.html
-    
 
-APP开发:
+应用开发:
+  App开发准备工作及向导:
+    path: /quickstart/准备工作.html
+
+  App代码自动生成服务介绍:
+    path: /UserManual/devApp.html
+
   App 开源框架:
     iOS 开源框架说明(含源码):
       path: /AppDev/iosframe.html
@@ -29,124 +23,235 @@ APP开发:
       path: /AppDev/iOS消息推送.html
     iOS 第三方登录与换肤:
       path: /AppDev/iOS第三方登陆与换肤.html
+    iOS开源框架的快速开发实例:
+      path: /quickstart/iOSAPPFrame.html
     Android 开源框架说明（含源码）:
       path: /AppDev/Android开源框架使用指南.html
     Android 消息推送:
       path: /AppDev/Android消息推送.html
     Android 第三方登录与换肤:
       path: /AppDev/Android第三方登录与换肤.html
-  
-  iOS SDK:
-    path: /AppDev/iOSSDKA2.html
-    
-  Android SDK:
-    path: /AppDev/AndroidSDKA2.html
-    
-  APICloud SDK:
-    path: /AppDev/APICloudWifiSDK.html
-
-  更多App开发指南:
-    SDK数据透传方法解析:
-      path: /AppDev/SDK数据透传方法解析.html
-      
-  App开发教学视频:
+    Android开源框架的快速开发实例:
+      path: /quickstart/AndroidAppFrame.html
+    APICloud开源框架使用指南(含源码):
+      path: /AppDev/APICloudFrame.html
     开源框架使用视频教程:
       path: /AppDev/开源框架视频教程.html
 
 
-微信开发:
+  App 开发 SDK:
+    iOS SDK:
+      path: /AppDev/iOSSDKA2.html
+    Android SDK:
+      path: /AppDev/AndroidSDKA2.html
+    APICloud SDK:
+      path: /AppDev/APICloudWifiSDK.html
+    SDK数据透传方法解析:
+      path: /AppDev/SDK数据透传方法解析.html
+    SDK调试日志抓取教程:
+      path: /AppDev/SDK调试日志抓取教程.html
+    SDK错误码列表:
+      path: /AppDev/sdk_error.html
+
   了解微信应用开发:
     path: /WechatDev/了解微信应用开发.html
   微信应用开发教程:
     path: /WechatDev/WeChatDev.html
 
-设备开发:
-  GAgent详解:
-    path: /deviceDev/gagent_info.html
-    
-  MCU开发框架使用说明:
-    GoKit3代码自动生成工具:
+  更多教程:
+    设备分享功能SDK使用流程:
+      path: /Cloud/SharingSDK.html
+    第三方登录平台申请流程:
+      path: /AppDev/third-party.html
+
+  应用开发FAQ:
+    path: /AppDev/应用开发FAQ.html
+
+设备接入:
+  设备接入准备工作及向导:
+      path: /deviceDev/设备接入准备工作及向导.html
+
+  设备快速接入机智云流程:
+    MCU+WiFi通讯模组接入机智云流程:
+      path: /quickstart/UseMCU_BK.html
+    通讯模组SoC方案接入机智云流程:
+      path: /deviceDev/UseSOC_BK.html
+    MCU+2G/4G通讯模组接入机智云流程:
+      path: /deviceDev/debug/G510_Project.html
+    MCU+NB通讯模组接入机智云流程:
+      path: /deviceDev/debug/NB_Project.html
+
+  模块硬件资料:
+      path: /module_source/module_source.html
+
+  GAgent通讯模组使用教程:
+    GAgent详细介绍:
+      path: /deviceDev/gagent_info.html
+    串口工具使用文档:
+      path: /deviceDev/串口工具使用文档.html
+    合宙 Air202 串口烧写说明:
+      path: /deviceDev/debug/Air202.html
+    通讯模组调试日志抓取教程:
+      path: /deviceDev/通讯模组调试日志抓取教程.html
+
+  WiFi模组接入方案:
+    A101模组接入机智云方案及问题排查指引:
+      path: /deviceDev/WiFi_Module/A101模组接入机智云方案及问题排查指引.html
+    ESP-WROOM-02DCUC接入机智云方案及问题排查指引:
+      path: /deviceDev/WiFi_Module/ESP-WROOM-02DCUC接入机智云方案及问题排查指引.html
+    ESP32-WROOM-32D接入机智云方案及问题排查指引:
+      path: /deviceDev/debug/ESP32-WROOM-32D接入机智云方案及问题排查指引.html
+    安信可ESP8266系列接入机智云方案及问题排查指引:
+      path: /deviceDev/安信可ESP8266接入机智云方案及问题排查指引.html
+    HF-LPX30系列接入机智云方案及问题排查指引:
+      path: /deviceDev/HF-LPX30系列接入机智云方案及问题排查指引.html
+    HF-LPX20系列接入机智云方案及问题排查指引:
+      path: /deviceDev/HF-LPX20系列接入机智云方案及问题排查指引.html
+
+  2G/4G模组接入方案:
+    博实结BC20模组接入机智云方案及问题排查指引:
+      path: /deviceDev/BC20.html
+    博实结BC23M模组接入机智云方案及问题排查指引:
+      path: /deviceDev/BC23M.html
+    广和通G510模组接入方案:
+      path: /deviceDev/debug/G510.html
+    域格CLM920_NC3模组接入机智云方案及问题排查指引:
+      path: /deviceDev/域格CLM920_NC3接入机智云方案及问题排查指引.html
+    BLZ2261-P转接板接入机智云方案及问题排查指引:
+      path: /deviceDev/BLZ2261-P转接板.html
+    移远EC20接入机智云方案及问题排查指引:
+      path: /deviceDev/GPRS_Module/移远EC20接入机智云方案及问题排查指引.html
+    GA211转接板使用说明:
+      path: /deviceDev/GPRS_Module/GA211转接板使用说明.html
+
+  NB模组接入方案:
+    N102转接板接入机智云方案及问题排查指引:
+      path: /deviceDev/debug/N102.html
+    N256模组接入机智云方案及问题排查指引:
+      path: /deviceDev/debug/N256.html
+
+  DTU(数据传送装置)接入方案:
+    GR515使用说明:
+      path: /deviceDev/GR515使用说明.html
+    GN511使用说明:
+      path: /deviceDev/debug/GN511_use.html
+
+  MCU代码自动生成服务介绍:
+    MCU代码自动生成工具使用教程:
       path: /deviceDev/DevSDK/代码自动生成工具.html
-    GoKit3 DEV SDK Common版移植说明:
-      path: /deviceDev/GoKit3 DEV SDK Common版移植说明.html
-      
-  Gokit3介绍:
+    MCU SDK 通用平台移植教程:
+      path: /deviceDev/GoKit3_DEV_SDK_Common_transplant.html
+    STM32CubeMX移植机智云自动生成代码详解:
+      path: /deviceDev/STM32CubeMX_transplant.html
+    8051平台最小资源裁剪说明:
+      path: /deviceDev/approach_to_tailoring_8051.html
+
+  开源套件Gokit资料:
+    Gokit2 使用指南:
+      path: /deviceDev/Gokit2使用指南.html
+
     Gokit3系列开发套件简介:
       path: /deviceDev/Gokit3/Gokit3开发套件简介.html
     Gokit3硬件手册:
       path: /deviceDev/Gokit3/GoKit3硬件手册.html
-      
-  Gokit3 SOC方案:
     GoKit3(S)使用说明书:
       path: /deviceDev/WiFiSOC/GoKit3S使用说明书.html
     Gokit3(S)开发套件介绍:
       path: /deviceDev/WiFiSOC/GoKit3S开发套件介绍.html
     GoKit3(S)开发环境搭建:
       path: /deviceDev/WiFiSOC/GoKit3S二次开发.html
-    Gokit3(S)源码详解:
-      path: /deviceDev/WiFiSOC/GoKit3S程序详解.html
-      
-  SOC快速入门:
-    path: /deviceDev/UseSOC.html
-    
-  Gokit3语音开发:
-    GoKit3(V)使用说明书:
-      path: /deviceDev/Gokit3Voice/GoKit3V使用说明书.html
-    Gokit3(V)开发指南:
-      path: /deviceDev/Gokit3Voice/GoKit3V二次开发指南.html
-    GoKit3(V)词条管理:
-      path: /deviceDev/Gokit3Voice/GoKit3V词条.html
-    Gokit3(V)源码详解:
-      path: /deviceDev/Gokit3Voice/GoKit3V程序详解.html
-           
-  Gokit2 使用指南:
-    path: /deviceDev/Gokit2使用指南.html
- 
-  调试与烧写:
+    GoKit-SoC程序详解:
+      path: /deviceDev/WiFiSOC/GoKit-SoC-explanation.html
+    GoKit-MCU程序详解:
+      path: /deviceDev/Gokit3Voice/GoKit-MCU-explanation.html
+    Gokit4(G) SoC开发环境搭建、开发指南:
+      path: /deviceDev/Gokit4/Gokit4_Dev_Assets.html
+
+  开发套件Arduino资料:
+    ArduinoUNOWiFi接入机智云介绍:
+      path: /deviceDev/ArduinoUNO/ArduinoUNOWiFi_intro.html
+    ArduinoUnoWiFi 之ESP8266固件烧写教程:
+      path: /deviceDev/ArduinoUNO/Tutorial.html
+    ArduinoUnoWiFi SDK之API介绍:
+      path: /deviceDev/ArduinoUNO/ArduinoUnoWiFi_SDK_API.html
+    Arduino Uno WiFi智能小夜灯:
+      path: /deviceDev/ArduinoUNO/example.html
+
+  更多接入指南:
+    ECE Demo开发教程:
+      path: /UserManual/ecevideos.html
     串口工具使用文档:
       path: /deviceDev/串口工具使用文档.html
-    HF-LPB100串口烧写说明:
-      path: /deviceDev/HF-LPB100串口烧写说明.html
-    HF-LPT120串口烧写说明:
-      path: /deviceDev/debug/HF-LPT120.html
-    MXCHIP串口烧写说明:
-      path: /deviceDev/MXCHIP串口烧写说明.html
-    ESP8266串口烧写说明:
-      path: /deviceDev/ESP8266串口烧写说明.html
-    广和通G510模组烧写方法:
-      path: /deviceDev/debug/G510.html
-    日志抓取教程文档:
-      path: /deviceDev/日志抓取教程文档.html
-      
-  ECE Demo开发教程:
-    path: /UserManual/ecevideos.html
- 
- 
-云平台:
-    企业应用开发:
-      path: /Cloud/ent_dev.html
-    消息代理服务:
-      path: /Cloud/noti1.0.html
-    企业API:
-      path: /Cloud/enterprise_api.html 
+    ST I-CUBE-GizWits套件快速接入指南:
+      path: /deviceDev/STICubeGizwits/STICubeGizwits.html
+
+  Airlink配网排查引导:
+    path: /deviceDev/Onboarding.html
+
+  设备接入FAQ:
+    path: /deviceDev/设备接入FAQ.html
+
+云API:
     Open API 指南:
       path: /Cloud/openapi_apps.html
-    WebSocketAPI:
-      path: /Cloud/WebsocketAPI.html
+    企业应用开发:
+      path: /Cloud/ent_dev.html
+    企业API:
+      path: /Cloud/enterprise_api.html
     SNoti API:
       path: /Cloud/NotificationAPI.html
+    WebSocketAPI:
+      path: /Cloud/WebsocketAPI.html
+
+    API使用教程:
+      使用OpenAPI控制虚拟设备教程:
+        path: /UserManual/UseOpenAPI.html
+      Snoti数据实时同步服务demo使用教程:
+        path: /UserManual/UseSNoti.html
+      使用Websocket 网页控制设备教程:
+        path: /UserManual/UseWebsocket.html
+      使用聚合API教程:
+        path: /UserManual/DataAPI.html
+      设备联动API使用教程:
+        path: /UserManual/LinkageAPI.html
+      设备分组API使用教程:
+        path: /UserManual/devgroup_API.html
+      APP绑定设备二维码生成教程:
+        path: /UserManual/UseQRCode.html
+
+    云端应用FAQ:
+      path: /Cloud/CloudFAQ.html
 
 
 用户手册:
+  个人项目产品转企业项目产品:
+    path: /UserManual/change.html
+
   OTA使用教程:
-    path: /UserManual/OTA使用教程.html
+    GAgent OTA教程:
+      path: /UserManual/OTA.html
+    MCU OTA教程:
+      path: /UserManual/MCUOTA.html
+
   产测工具使用文档:
     path: /deviceDev/产测工具使用文档.html
+
   D3 Engine使用教程:
     path: /UserManual/D3.html
+
   ECE雾计算使用教程:
     path: /UserManual/ece.html
-  接入亚马逊ECho教程:
-    path: /UserManual/echo.html
-  利用OpenAPI控制虚拟设备:
-    path: /UserManual/UseOpenAPI.html
+
+  语音音箱接入教程:
+      接入Echo开发教程:
+         path: /UserManual/echo.html
+      使用Echo音箱控制GoKit:
+         path: /deviceDev/echo.html
+      使用Google Home音箱控制GoKit:
+         path: /UserManual/Google_Home_GoKit.html
+
+  实时大数据使用教程:
+    path: /UserManual/rtbd.html
+
+  全球部署方案:
+    path: /UserManual/WorldWideConnectSolution.html

@@ -51,23 +51,23 @@ title: iOS SDK 2.0集成指南
 
 5.5.1.	导入动态SDK
 
-动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：
-![Alt text](/assets/zh-cn/AppDev/iOSSDK/image13.JPG)
+动态库在解压后的DynamicLibrary目录下。动态库加载请注意按照下图进行设置，否则应用运行后会立即崩溃：
+![Alt text](/assets/zh-cn/AppDev/iOSSDK/image17.png)
 
 5.5.2.	导入静态SDK
 
-第一步，将解压后的文件添加到指定的工程中：
+第一步，解压后，将StaticLibrary目录下的文件添加到指定的工程中：
 ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image3.png)
   
-第三步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
+第二步，下载并添加依赖库OpenSSL。下载完成双击解压后，将lib-ios拷贝到项目目录，并添加到指定的工程中。
 ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image4.png)
 
 ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image5.png)
   
-第四步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
+第三步，如果使用的是Xcode7.2以下版本，需要添加AudioToolbox、SystemConfiguration、CoreTelephony库。
 ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image6.png)
 
-第五步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
+第四步，一定要记得在Info.plist设置支持ATS特性，否则iOS9下某些功能无法正常使用
 ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image7.png)
 
 最后，确保工程里面有这些链接库，SDK就添加完成了:
@@ -161,6 +161,7 @@ NSLog(@"token %@ expired: %@", (NSString*)eventSource, eventMessage);
 
 以下流程中涉及到的监听器注册方法是用子类继承基类的方式实现的。
 ### 2.1.	用户部分主要流程图
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image11.png)
  
 用户的注册方式有多种，比如手机号、普通用户名、邮箱等，APP可以根据需要采取不同的方式。其他流程比如登录、密码修改、个人信息修改等部分，请直接阅读下面的流程文档。
 ### 2.2.	用户注册
@@ -514,7 +515,7 @@ additialInfo.birthday = @"1990-1-1";
 additialInfo.address = @"Beijing";
 additialInfo.remark = @"home";
 
-[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:nil SMSVerifyCode:nil userType:GizUserEmail additionalInfo:additialInfo]; 
+[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_email_address" SMSVerifyCode:nil userType:GizUserEmail additionalInfo:additialInfo]; 
 
 // 实现回调
 - (void)wifiSDK:(GizWifiSDK *)wifiSDK didChangeUserInfo:(NSError *)result {
@@ -541,7 +542,7 @@ additialInfo.birthday = @"1990-1-1";
 additialInfo.address = @"Beijing";
 additialInfo.remark = @"home";
 
-[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_phone_number" SMSVerifyCode: @"your_verify_code" userType:GizUserPhone additionalInfo:nil];
+[[GizWifiSDK sharedInstance] changeUserInfo:@"your_token" username:@"your_phone_number" SMSVerifyCode: @"your_verify_code" userType:GizUserPhone additionalInfo:additialInfo];
 
 // 实现回调
 - (void)wifiSDK:(GizWifiSDK *)wifiSDK didChangeUserInfo:(NSError *)result {
@@ -563,7 +564,7 @@ SDK的设备配置接口如果超时时间还未结束，无法进行下一次�
 需要注意的是，如果配置上线的设备不是APP要获取的产品类型，该设备就不会出现在设备列表中。
 
 ### 3.1.	设备配置流程图
- ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image11.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image12.png)
 
 ### 3.2.	AirLink配置
 AirLink使⽤UDP广播方式，由手机端发出含有目标路由器名称和密码的广播，设备上的Wifi模块接收到广播包后自动连接目标路由器，连上路由器后发出配置成功广播，通知手机配置已完成。
@@ -617,7 +618,7 @@ if(result.code == GIZ_SDK_SUCCESS) {
 
 ## 4.	设备发现和订阅部分
 ### 4.1.	设备发现和订阅流程图
- ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image12.png)
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image13.png)
 
 ### 4.2.	设备发现
 APP设置好委托，启动SDK后，就可以收到SDK的设备列表推送。每次局域网设备或者用户绑定设备发生变化时，SDK都会主动上报最新的设备列表。设备断电再上电、有新设备上线等都会触发设备列表发生变化。用户登录后，SDK会主动把用户已绑定的设备列表上报给APP，绑定设备在不同的手机上登录帐号都可获取到。
@@ -781,6 +782,7 @@ SDK通过字典键值对方式进行设备控制和状态接收。SDK接收到AP
 智能设备需正确烧写了GAgent固件和机智云串口通讯协议。如果设备定义了数据点，APP发送的指令必须符合数据点定义。如果设备没有定义数据点，设备指令可以按照透传数据以自定义格式下发。
 
 ## 5.1.	设备控制流程图
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image14.png)
  
 ## 5.2.	发送控制指令
 设备订阅变成可控状态后，APP可以发送控制指令。控制指令是字典格式，键值对为数据点名称和值。操作指令的确认回复，通过didReceiveData回调返回。
@@ -853,6 +855,331 @@ mDevice.delegate = self;
 }
 ```
 
+## 6. 设备定时任务
+    通过给设备设置定时任务，可以让设备在预定的日期和时间执行某些操作。这些操作可以在一个月内的某几天重复，也可以在一周内的某几天重复。
+    定时任务可以先设定好，然后在任何时候开始执行或停止执行。定时任务创建时默认开启。
+
+### 6.1. 流程图
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image15.png)
+ 
+### 6.2. 创建定时任务
+    定时任务可以重复执行，也可以只执行一次，重复执行分为按月重复和按周重复。但同时只能指定一种重复方式，即或者不重复或者按周重复或者按月重复。
+    使用SDK接口时，按周重复时给变量weekDays传值，按月重复时给monthDays传值，但如果两个变量都传值则只会处理weekDays。
+    下面分别以这三种情况举例说明。
+
+#### 6.2.1. 创建一次性定时任务
+    假设我们需要在2017年1月16日早上6点30分开灯。如下代码中，日期和时间想要设置为几月几日几时几分，就设定为对应的值。
+    比如我们希望设定的是2017年1月16日早上6点30分，那么date为2017-01-16，time为06:30，其中time是24小时制，date按照示例代码格式传值即可。
+
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 一次性定时任务，在2017年1月16日早上6点30分开灯
+GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
+scheduler.date = @"2017-01-16";
+scheduler.time = @"06:30";
+scheduler.remark = @"一次性开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+
+// 创建设备定时任务，mDevice为在设备列表中得到的设备对象
+[GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
+
+#### 6.2.2. 创建按周重复的定时任务
+    我们现在让定时任务按周重复执行，现在要每周的周一至周五早上6点30分都开灯。
+
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 每周一到周五重复执行的定时任务
+GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
+scheduler.time = @"06:30";
+scheduler.weekDays = @[@GizScheduleMonday, @GizScheduleTuesday, @GizScheduleWednesday, @GizScheduleThursday, @GizScheduleFriday];
+scheduler.remark = @"按周重复执行的开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+
+// 创建设备的定时任务，mDevice为在设备列表中得到的设备对象
+[GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
+
+#### 6.2.3. 创建按月重复的定时任务
+    我们现在让定时任务按周重复执行，现在要每个月的1号、15号早上6点30分都开灯。
+    注意不要同时设置按周重复，如果同时设置了按周重复，按月重复会被忽略。
+
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 每月1号和15号重复执行的定时任务
+GizDeviceScheduler *scheduler = [[GizDeviceScheduler alloc] init];
+scheduler.time = @"06:30";
+scheduler.monthDays = @[@1, @15];
+scheduler.remark = @"按月重复执行的开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+
+// 创建设备的定时任务，mDevice为在设备列表中得到的设备对象
+[GizDeviceSchedulerCenter createScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
+
+### 6.3. 获取定时任务列表
+
+    创建定时任务后，可以通过查询得到已经创建好的所有定时任务列表。得到定时任务列表后，可以对已经创建好的定时任务做修改或删除。
+
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 同步更新设备的定时任务列表，mDevice为在设备列表中得到的设备对象
+[GizDeviceSchedulerCenter updateSchedulers:@"your_uid" token:@"your_token" schedulerOwner:mDevice]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务列表同步更新成功
+    } else {
+        // 同步更新失败
+    }
+}
+```
+
+### 6.4. 修改定时任务
+    
+    可以修改已经创建好的定时任务。修改时，从获取到的定时任务列表中取出定时任务对象，编辑好要修改的内容。
+    注意，一旦定时任务创建好之后，就被分配了一个ID，这个ID是不能被修改的。
+    
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 把之前创建好的一次性定时任务修改成每月1号和15号重复执行的定时任务，scheduler是定时任务列表中要修改的定时任务对象
+scheduler.time = @"06:30";
+scheduler.remark = @"开灯任务";
+scheduler.attrs = @{@"LED_OnOff": @YES};
+scheduler.monthDays = @[@1, @15];
+
+// 修改设备的定时任务，mDevice为在设备列表中得到的设备对象
+[GizDeviceSchedulerCenter editScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice scheduler:scheduler]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务修改成功
+    } else {
+        // 修改失败
+    }
+}
+```
+
+### 6.5. 删除定时任务
+
+    在得到的定时任务列表中，找到要删除的定时任务ID，删除定时任务。
+    
+【示例代码】
+
+```objectivec
+// 设置定时任务委托
+[GizDeviceSchedulerCenter setDelegate:self];
+
+// 删除设备的定时任务列表，mDevice为在设备列表中得到的设备对象，your_scheduler_id是要删除的定时任务ID
+[GizDeviceSchedulerCenter deleteScheduler:@"your_uid" token:@"your_token" schedulerOwner:mDevice schedulerID:@"your_scheduler_id"]; 
+
+// 实现回调
+- (void)didUpdateSchedulers:(GizWifiDevice*)schedulerOwner result:(NSError*)result schedulerList:(NSArray*)schedulerList {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 定时任务删除成功
+    } else {
+        // 删除失败
+    }
+}
+```
+
+## 7. 设备分享
+用户绑定设备后，可以通过设备分享的方式让其他人使用设备。设备分享提供了更好的设备权限管理，在多用户使用同一个设备时提供了更安全、更便捷的设备绑定方式。设备绑定权限分为四种：
+
+* Owner：设备的主账号，可以分享设备；
+* Guest：设备的分享账号，可以接受分享邀请，不能再分享设备给其他人；
+* Special：最早绑定设备但还未分享设备的账号，分享设备后即成为设备的主账号；
+* Normal：其他已绑定了设备的账号，不能分享设备，也不能成为设备的主账号；
+    
+只有最早绑定设备的账号或设备的主账号才能分享设备。一旦设备有了主账号，其他人就无法再绑定了。主账号可以查看设备的当前已绑定用户，可以解绑其他用户。在设备没有主账号时，其他用户仍然可以绑定这个设备。
+        
+### 7.1. 流程图
+ ![Alt text](/assets/zh-cn/AppDev/iOSSDK/image16.png)
+ 
+### 7.2. 创建设备分享邀请
+分享设备之前，先检查自己有哪些可以分享的设备。App可以遍历查找SDK提供的设备列表，找到那些绑定权限为GizDeviceSharingSpecial或者GizDeviceSharingOwner的，就可以创建分享邀请了。
+
+有两种方式可以创建分享邀请：账号分享和二维码分享。
+    
+#### 7.2.1. 账号分享
+账号分享时，对方账号可以是手机号、邮箱、普通用户名或者匿名账号，但必须是已经在机智云注册过的用户。如果该用户已经是这个设备的Guest账号或者已经绑定了这个设备，分享邀请会创建失败。账号分享邀请的有效期为24小时，即对方必须在24小时内作出响应，否则账号邀请会过期失效。
+
+账号分享时要指定账号类型，匿名账号的guestUser参数填匿名账号的uid。账号分享创建成功时，回调参数中会返回sharingID，但不会返回QRCodeImage。下面仅以手机号分享举例：
+    
+【示例代码】
+
+```objectivec
+// 设置设备分享委托
+[GizDeviceSharing setDelegate:self];
+
+// 在设备列表中找到可以分享的设备
+
+// 通过手机号分享设备
+[GizDeviceSharing sharingDevice:@"your_token" deviceID: @"your_device_id" sharingWay:GizDeviceSharingByNormal guestUser:@"guest_phone_number" guestUserType:GizUserPhone]; 
+
+// 实现回调
+- (void)didSharingDevice:(NSError*)result deviceID:(NSString*)deviceID sharingID:(NSInteger)sharingID QRCodeImage:(UIImage*)QRCodeImage {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 分享邀请创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
+
+#### 7.2.2. 二维码分享
+二维码分享时，二维码有效期为15分钟，即对方必须在15分钟内扫描生成的二维码并作出响应，否则二维码邀请会过期失效。二维码分享邀请创建成功时，回调参数中会返回sharingID，同时还会返回对应的二维码图片QRCodeImage，App直接加载图片即可。
+    
+【示例代码】
+
+```objectivec
+// 设置设备分享委托
+[GizDeviceSharing setDelegate:self];
+
+// 在设备列表中找到可以分享的设备
+
+// 二维码分享设备
+[GizDeviceSharing sharingDevice:@"your_token" deviceID: @"your_device_id" sharingWay:GizDeviceSharingByQRCode guestUser:nil guestUserType:GizUserOther]; 
+
+// 实现回调
+- (void)didSharingDevice:(NSError*)result deviceID:(NSString*)deviceID sharingID:(NSInteger)sharingID QRCodeImage:(UIImage*)QRCodeImage {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 分享邀请创建成功
+    } else {
+        // 创建失败
+    }
+}
+```
+### 7.3. 接受分享邀请
+Guest账号可以查询发给自己的设备分享邀请，只有Guest账号可以接受分享邀请。
+    
+#### 7.3.1. 接受账号分享邀请
+Guest查询到的分享邀请如果是还未接受的状态，可以接受或者拒绝邀请。
+    
+【示例代码】
+```objectivec
+// 设置设备分享委托
+[GizDeviceSharing setDelegate:self];
+
+// 查询发给自己的分享邀请列表
+[GizDeviceSharing getDeviceSharingInfos:@"your_token" sharingType: GizDeviceSharingToMe deviceID: @"your_device_id"];
+
+// 实现获取分享邀请列表的回调
+- (void)didGetDeviceSharingInfos:(NSError*)result deviceID:(NSString*)deviceID deviceSharingInfos:(NSArray*)deviceSharingInfos {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 获取成功。找到deviceSharingInfos中状态为未接受的分享邀请，your_sharing_id为要接受的分享邀请
+        NSInteger your_sharing_id = -1;
+        for (int i = 0; i < deviceSharingInfos.count; i++) {
+            GizDeviceSharingInfo* mDeviceSharing = [deviceSharingInfos objectAtIndex:i];
+            if (mDeviceSharing.status == GizDeviceSharingNotAccepted) {
+                your_sharing_id = mDeviceSharing.id;
+                break;
+            }
+        }
+           
+        // 接受邀请
+        if (your_sharing_id != -1) {
+            [GizDeviceSharing acceptDeviceSharing:@"your_token" sharingID:your_sharing_id accept:YES];
+        }
+    } else {
+        // 获取失败
+    }
+}
+
+// 实现接受分享邀请的回调	
+- (void)didAcceptDeviceSharing:(NSError*)result sharingID:(NSInteger)sharingID {
+    if(result.code == GIZ_SDK_SUCCESS) {
+        // 接受成功
+    } else {
+        // 接受失败
+    }
+}
+```
+
+
+
+
+
+## 8. 重要提示
+
+#### 查阅《[APP代码自动生成服务介绍](http://docs.gizwits.com/zh-cn/UserManual/devApp.html)》，可了解自动生成的APP代码模块具备哪些功能
+
+#### 查阅《APP开源框架》，可了解
+
+ - [iOS开源框架使用指南](http://docs.gizwits.com/zh-cn/AppDev/iosframe.html)
+ 
+ - [iOS App消息推送集成指南](http://docs.gizwits.com/zh-cn/AppDev/iOS%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
+ 
+ - [iOS App集成第三方登录与换肤指南](http://docs.gizwits.com/zh-cn/AppDev/iOS%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E9%99%86%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
+ - [iOS App快速开发实例](http://docs.gizwits.com/zh-cn/quickstart/iOSAPPFrame.html)
+ - [Android开源框架使用指南（含源码）](http://docs.gizwits.com/zh-cn/AppDev/Android%E5%BC%80%E6%BA%90%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.html)
+ - [Android App消息推送集成指南](http://docs.gizwits.com/zh-cn/AppDev/Android%E6%B6%88%E6%81%AF%E6%8E%A8%E9%80%81.html)
+ - [Android App集成第三方登录与换肤指南](http://docs.gizwits.com/zh-cn/AppDev/Android%E7%AC%AC%E4%B8%89%E6%96%B9%E7%99%BB%E5%BD%95%E4%B8%8E%E6%8D%A2%E8%82%A4.html)
+ - [APICloud开源框架使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudFrame.html)
+ 
+#### 查阅《APP开发SDK》，可随心开发IoT APP（很多细节设计，均可在里面找到应用案例）
+ 
+ - [iOS SDK 2.0集成指南](http://docs.gizwits.com/zh-cn/AppDev/iOSSDKA2.html)
+ - [Android SDK 2.0集成指南](http://docs.gizwits.com/zh-cn/AppDev/AndroidSDKA2.html)
+ - [APICloud SDK使用指南](http://docs.gizwits.com/zh-cn/AppDev/APICloudWifiSDK.html)
+ - [SDK数据透传方法解析](http://docs.gizwits.com/zh-cn/AppDev/SDK%E6%95%B0%E6%8D%AE%E9%80%8F%E4%BC%A0%E6%96%B9%E6%B3%95%E8%A7%A3%E6%9E%90.html)
+ - [SDK调试日志抓取教程](http://docs.gizwits.com/zh-cn/AppDev/SDK%E8%B0%83%E8%AF%95%E6%97%A5%E5%BF%97%E6%8A%93%E5%8F%96%E6%95%99%E7%A8%8B.html)
+ - [SDK错误码表](http://docs.gizwits.com/zh-cn/AppDev/sdk_error.html)
+ 
+#### 更多应用开发
+
+ - [应用开发FAQ](http://docs.gizwits.com/zh-cn/AppDev/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91FAQ.html)
+ - [设备分享功能使用流程](http://docs.gizwits.com/zh-cn/Cloud/SharingSDK.html)
+ - [第三方登录平台申请流程](http://docs.gizwits.com/zh-cn/AppDev/third-party.html)
 
 
 

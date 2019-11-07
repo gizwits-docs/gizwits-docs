@@ -3,7 +3,7 @@ title:  GAgent详解
 
 # GAgent功能概述
 
-GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫LPB100](http://topic.gizwits.com/hf-lpb100/)、[乐鑫8266](http://topic.gizwits.com/esp8266/)、汉枫LPT120、高通4004 、RealTek 8711AM 、庆科3162等。
+GAgent主要的作用是数据转发，是设备数据、机智云、应用端（APP）的数据交互桥梁。可将GAgent移植到WiFi模组、GPRS模组、PC端等。目前机智云提供由机智云移植的WiFi模组对应固件有：[汉枫 LPB100](http://topic.gizwits.com/hf-lpb100/)/ [LPB120](http://topic.gizwits.com/hf-lpb120/)/ [LPT120](http://topic.gizwits.com/hf-lpb120/)/ LPT220、[乐鑫8266](http://topic.gizwits.com/esp8266/)、高通4004 、RealTek 8711AM 、联盛德 TLN13SP01、锐凌微 TinyCon3350-M26、庆科3162等；GPRS模组对应固件有：广和通G510等。
 
 ![GAgent功能概述](/assets/zh-cn/deviceDev/GAgent/1478078696133.png)
 
@@ -150,5 +150,5 @@ APP与GAgent心跳：4s一次，三次超时离线。
 
 ## 12.GPRS模组流量的基本要求
 
-设备与机智云数据交互主要采用MQTT协议。设备与机智云数据交互的最小数据量是设备与机智云通讯的心跳。mqtt心跳是2个字节，tcp协议头是40字节，50秒一次，需要包括心跳和心跳回复。所以每50秒流量是：（40+2）\*2=84 Bytes。一个月按30天算流量大概是：72K。所以GPRS模组至少需要每个月有72K流量，以保证GPRS可以正常上网。
+设备与机智云数据交互主要采用MQTT协议。设备与机智云数据交互的最小数据量是设备与机智云通讯的心跳。mqtt心跳是2个字节，tcp协议头是40字节，50秒一次，需要包括心跳和心跳回复。所以每50秒流量是：（40+2）\*2=84 Bytes。一个月按30天算流量大概是：4252K。所以GPRS模组至少需要每个月有4252K流量，以保证GPRS可以正常上网。
 
