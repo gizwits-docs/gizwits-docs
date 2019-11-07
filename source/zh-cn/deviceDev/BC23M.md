@@ -30,6 +30,10 @@ title: 博实结BC23M模组接入机智云方案及问题排查指引
 
 ![Alt text](/assets/zh-cn/deviceDev/BC26_png/png2.png)
 
+选择对应的固件.ex文件
+
+![Alt text](/assets/zh-cn/deviceDev/BC26_png/png12.png)
+
 （2）点击“Start”后，烧写软件界面提示“Waiting for power on module”，此时，再设备上电。
 
 ![Alt text](/assets/zh-cn/deviceDev/BC26_png/png3.png)
@@ -71,7 +75,9 @@ BC23M模组与mcu通信串口引脚为RXD_AUX和TXD_AUX，就是下图的28和29
 
 # 7.BC23M搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP绑定及控制设备等等）
 
-快速接入文档参考链接：http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html
+快速接入文档参考链接：
+
+[http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html](http://docs.gizwits.com/zh-cn/deviceDev/debug/G510_Project.html)
 
 > ***备注：
 1.BC23M模组与gokit_st底板通信串口通信引脚请查看“6.BC23M模组与mcu通信串口”。2. 应用模组开发中，建议在板卡上将模组打印日志引脚接引出来,方便后期调试。***
