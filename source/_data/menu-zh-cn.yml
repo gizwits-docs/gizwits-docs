@@ -177,6 +177,12 @@
     Arduino Uno WiFi智能小夜灯:
       path: /deviceDev/ArduinoUNO/example.html
 
+  工具资料:
+    机智云串口调试助手:
+      path: /deviceDev/机智云串口调试助手.html
+    机智云日志打印工具:
+      path: /deviceDev/机智云日志打印工具.html
+
   更多接入指南:
     ECE Demo开发教程:
       path: /UserManual/ecevideos.html
