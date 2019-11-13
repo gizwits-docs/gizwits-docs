@@ -103,6 +103,8 @@
       path: /deviceDev/debug/ESP32-WROOM-32D接入机智云方案及问题排查指引.html
     安信可ESP8266系列接入机智云方案及问题排查指引:
       path: /deviceDev/安信可ESP8266接入机智云方案及问题排查指引.html
+    四博ESP8266系列接入机智云方案及问题排查指引:
+      path: /deviceDev/WiFi_Module/四博ESP8266系列接入机智云方案及问题排查指引.html
     HF-LPX30系列接入机智云方案及问题排查指引:
       path: /deviceDev/HF-LPX30系列接入机智云方案及问题排查指引.html
     HF-LPX20系列接入机智云方案及问题排查指引:
@@ -149,7 +151,6 @@
   开源套件Gokit资料:
     Gokit2 使用指南:
       path: /deviceDev/Gokit2使用指南.html
-
     Gokit3系列开发套件简介:
       path: /deviceDev/Gokit3/Gokit3开发套件简介.html
     Gokit3硬件手册:
