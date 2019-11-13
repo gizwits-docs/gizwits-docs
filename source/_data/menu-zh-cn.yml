@@ -180,14 +180,14 @@
   工具资料:
     机智云串口调试助手:
       path: /deviceDev/机智云串口调试助手.html
+    机智云串口调试助手（旧）:
+      path: /deviceDev/串口工具使用文档.html
     机智云日志打印工具:
       path: /deviceDev/机智云日志打印工具.html
 
   更多接入指南:
     ECE Demo开发教程:
       path: /UserManual/ecevideos.html
-    串口工具使用文档:
-      path: /deviceDev/串口工具使用文档.html
     ST I-CUBE-GizWits套件快速接入指南:
       path: /deviceDev/STICubeGizwits/STICubeGizwits.html
 
