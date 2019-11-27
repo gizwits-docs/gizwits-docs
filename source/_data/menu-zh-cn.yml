@@ -81,7 +81,7 @@
     MCU+NB通讯模组接入机智云流程:
       path: /deviceDev/debug/NB_Project.html
     轻网关方案接入机智云流程:
-      path: /deviceDev/轻网关方案接入机智云流程指引.html
+      path: /deviceDev/轻网关方案接入机智云流程.html
 
   模块硬件资料:
       path: /module_source/module_source.html
