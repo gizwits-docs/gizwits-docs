@@ -80,6 +80,8 @@
       path: /deviceDev/debug/G510_Project.html
     MCU+NB通讯模组接入机智云流程:
       path: /deviceDev/debug/NB_Project.html
+    轻网关方案接入机智云流程:
+      path: /deviceDev/轻网关方案接入机智云流程指引.html
 
   模块硬件资料:
       path: /module_source/module_source.html
@@ -192,11 +194,13 @@
     ST I-CUBE-GizWits套件快速接入指南:
       path: /deviceDev/STICubeGizwits/STICubeGizwits.html
 
-  Airlink配网排查引导:
-    path: /deviceDev/Onboarding.html
-
-  设备接入FAQ:
-    path: /deviceDev/设备接入FAQ.html
+  常见问题和解决方案:
+    Airlink配网排查引导:
+      path: /deviceDev/Onboarding.html
+    Wifi模组入网之SoftAp配网方案:
+      path: /deviceDev/SoftAp配网方案.html
+    设备接入FAQ:
+      path: /deviceDev/设备接入FAQ.html
 
 云API:
     Open API 指南:
