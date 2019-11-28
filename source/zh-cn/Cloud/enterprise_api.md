@@ -502,6 +502,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 
 
 # 设备管理
+***备注： 此接口只在产品未发布的情况下使用，产品发布后如要使用，请联系机智云工作人员。***
 ## 获取设备did
 
 [调试接口](http://swagger.gizwits.com/doc/index/debug_enterprise#!/设备管理/get_v1_products_product_key_devices)
