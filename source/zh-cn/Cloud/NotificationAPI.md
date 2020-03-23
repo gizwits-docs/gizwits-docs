@@ -1,6 +1,6 @@
 title:  SNoti API
 ---
-v2.3.0
+v2.5.0
 
 # 目的
 企业客户可通过SNoti提供的安全数据传输通道，实时的接收设备的数据，用于设备信息归类整理，设备状态统计，设备监控等；也可以通过远程控制功能，实时发送业务指令控制在线设备。
@@ -10,15 +10,15 @@ v2.3.0
 
 1.Java版客户端
 
-  代码仓库：https://github.com/smallCC/noti-client
+  代码仓库：https://github.com/smallCC/noti-client
 
 2.Ruby版客户端
 
-  代码仓库：https://github.com/AbelLai/gizwits_sac_rb
+  代码仓库：https://github.com/AbelLai/gizwits_sac_rb
 
 3.Python版客户端
 
-  代码仓库：https://github.com/wangzhenandy/snoti_client_python
+  代码仓库：https://github.com/wangzhenandy/snoti_client_python
 
 # SNoti申请流程
 
@@ -36,7 +36,8 @@ v2.3.0
 
 2.subkey：消息分发机制，以ProductKey + subkey作为唯一主键，不同主键之间，消息互不影响（即同一个ProductKey使用不同的subkey，可产生消息副本）；subkey(subscription key)为自定义字符串，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线（即[a-zA-Z0-9]）；
 
-3.产品的12种消息类型（event_type）分别为：
+3.产品的17种消息类型（event_type）分别为：
+
 - device.online：设备上线消息
 - device.offline：设备下线消息
 - device.status.raw：设备上报自定义透传业务指令
@@ -52,6 +53,8 @@ v2.3.0
 - device.file.download：设备文件下载消息
 - device.app2dev.raw: 控制设备自定义透传业务指令
 - device.app2dev.kv: 控制设备数据点业务指令
+- device.gps.kv：设备的gps解析数据
+- device.lbs.kv：设备的lbs解析数据
 
 # 过程描述
 事件通过 SSL 接口推送。通讯过程如下：
@@ -98,15 +101,15 @@ v2.3.0
 请求字段说明：
 
 
-| 字段      | 是否必须         |             描述           |
-| ------------- |:-------------:|    -------------    |  
-| cmd     | 必须   | 登录类型，必须为login_req|
-| prefetch_count  | 	非必须     | 默认值为50|
-| data.product_key| 必须 	| 产品ID|
-| data.auth_id	| 必须 	| 产品授权ID|
-| data.auth_secret 	| 必须 	| 产品授权密匙|
-| data.subkey | 必须 	| subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线|
-| data.events	| 必须 	|客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline;   device.status.raw;device.status.kv;datapoints.changed;   center_control.sub_device_added;center_control.sub_device_deleted;   device.bind;device.unbind;device.reset;device.file.download; device.app2dev.raw;device.app2dev.kv|
+| 字段             | 是否必须 | 描述                                                         |
+| ---------------- | :------: | ------------------------------------------------------------ |
+| cmd              |   必须   | 登录类型，必须为login_req                                    |
+| prefetch_count   |  非必须  | 默认值为50                                                   |
+| data.product_key |   必须   | 产品ID                                                       |
+| data.auth_id     |   必须   | 产品授权ID                                                   |
+| data.auth_secret |   必须   | 产品授权密匙                                                 |
+| data.subkey      |   必须   | subscription key，为客户端自定义标识，大小写敏感，长度为 1 到 32 个字符，可包含数字，字母和下划线 |
+| data.events      |   必须   | 客户端接收消息类型，使用逗号隔开的字符串列表，目前支持类型 为device.attr_fault;device.attr_alert;device.online;device.offline;   device.status.raw;device.status.kv;datapoints.changed;   center_control.sub_device_added;center_control.sub_device_deleted;   device.bind;device.unbind;device.reset;device.file.download; device.app2dev.raw;device.app2dev.kv；device.gps.kv；device.lbs.kv； |
 
 
 Gizwits Platform 回复：
@@ -136,7 +139,65 @@ Gizwits Platform 回复：
 }\n
 ```
 如没有及时收到 Gizwits Platform 的回复，可以认为与 Gizwits Platform 的连接已关闭，需重连。
-## 3.  控制设备
+## 3. 订阅和取消订阅
+
+客户端在成功登陆后，可以订阅想要接受的设备数据类型，需要经过安全校验。或者取消订阅接受的数据类型。
+
+客户端订阅下发数据格式：
+
+```json
+	{
+		"cmd":"subscribe_req",
+		"data":[
+	  		{"product_key": <str>,
+   		"subkey": <str>,
+   		"auth_id": <str>,
+			"auth_secret": <str>,
+   		"events": [<event string>]
+  		},...
+		]
+}\n
+```
+
+服务端返回：
+
+```json
+{
+		"cmd":"subscribe_res",
+		"result": true|false,
+		"msg":"ok"|<error msg>,
+		"data": 同订阅内容
+}\n
+```
+
+客户端取消订阅下发数据格式：
+
+```json
+{
+		"cmd":"unsubscribe_req",
+		"data":[
+  		{"product_key": <str>,
+   		"subkey": <str>,
+   		"auth_id": <str>,
+   		"events": [<event string>]
+  		},...
+		]
+}\n
+```
+
+服务端返回：
+
+```json
+{
+		"cmd":"unsubscribe_res",
+		"result": true|false,
+		"msg":"ok"|<error msg>,
+		"data": 同取消订阅内容
+}\n
+```
+
+## 4.  控制设备
+
 客户端和 Gizwits Platform 建立 SSL 连接后，客户端可发送以下字符串内容，控制设备：
 ```json
 {
@@ -162,30 +223,30 @@ OR
 ```
 请求字段说明：
 
-| 字段      | 是否必须         |             描述           |
-| ------------- |:-------------:|    -------------    |  
-| cmd     | 必须   | 控制设备，必须为 remote_control_req|
-| msg_id  | 可选  | 可用于标识本消息，将会在回复指令中返回|
-| data  | 必须 	| 控制指令，数组类型|
-| data.cmd| 必须 	| V4 产品数据点协议格式，填写write_attrs；V4 产品自定义协议格式，填写 write；V1 产品协议格式，填写 write_v1|
-| data.source	| 必须 	| 固定填写 noti|
-| data.data.did 	| 必须 	| 设备 ID|
-| data.data.mac	| 必须 	| 设备 Mac 地址,长度为 12 的字符串，大小写敏感|
-| data.data.product_key	| 必须 	|设备所属产品的标识码|
-| data.data.binary_coding | 可选 | Raw数据或数据点扩展类型数据的编码格式|
-| data.data.attrs / data.data.raw	| 必须 	| V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式（参考通用数据点协议之透传业务指令），选择data.data.raw；V1 产品协议格式，选择 data.data.raw|
+| 字段                            | 是否必须 | 描述                                                         |
+| ------------------------------- | :------: | ------------------------------------------------------------ |
+| cmd                             |   必须   | 控制设备，必须为 remote_control_req                          |
+| msg_id                          |   可选   | 可用于标识本消息，将会在回复指令中返回                       |
+| data                            |   必须   | 控制指令，数组类型                                           |
+| data.cmd                        |   必须   | V4 产品数据点协议格式，填写write_attrs；V4 产品自定义协议格式，填写 write；V1 产品协议格式，填写 write_v1 |
+| data.source                     |   必须   | 固定填写 noti                                                |
+| data.data.did                   |   必须   | 设备 ID                                                      |
+| data.data.mac                   |   必须   | 设备 Mac 地址,长度为 12 的字符串，大小写敏感                 |
+| data.data.product_key           |   必须   | 设备所属产品的标识码                                         |
+| data.data.binary_coding         |   可选   | Raw数据或数据点扩展类型数据的编码格式                        |
+| data.data.attrs / data.data.raw |   必须   | V4 产品数据点协议格式，选择data.data.attrs；V4 产品自定义协议格式（参考通用数据点协议之透传业务指令），选择data.data.raw；V1 产品协议格式，选择 data.data.raw |
 
 数据类型说明：
 
-| 协议类型     | 编码         |             值类型           |
-| ------------- |:-------------:|    -------------    |
-| 数据点：Bool |  | true OR false; 1 OR 0 |
-| 数据点：Enum |  | 枚举Unicode字符串；枚举下标   |
-| 数据点：Int  |  | 整型数字 |
-| 数据点：扩展类型 | hex | byte数组:[1,2,3],取值范围0-255; Hex字符串: "010203aaff" |
-| 数据点：扩展类型 | base64 | 传输数据经过base64加密后的字符串 |
-| 透传：Raw | hex | byte数组:[1,2,3],取值范围0-255; Hex字符串: "010203aaff" |
-| 透传：Raw | base64 | 传输数据经过base64加密后的字符串 |
+| 协议类型         |  编码  | 值类型                                                  |
+| ---------------- | :----: | ------------------------------------------------------- |
+| 数据点：Bool     |        | true OR false; 1 OR 0                                   |
+| 数据点：Enum     |        | 枚举Unicode字符串；枚举下标                             |
+| 数据点：Int      |        | 整型数字                                                |
+| 数据点：扩展类型 |  hex   | byte数组:[1,2,3],取值范围0-255; Hex字符串: "010203aaff" |
+| 数据点：扩展类型 | base64 | 传输数据经过base64加密后的字符串                        |
+| 透传：Raw        |  hex   | byte数组:[1,2,3],取值范围0-255; Hex字符串: "010203aaff" |
+| 透传：Raw        | base64 | 传输数据经过base64加密后的字符串                        |
 
 Gizwits Platform 回复：
 ```json
@@ -216,7 +277,7 @@ Gizwits Platform 回复：
 其中msg_id的内容为请求消息中msg_id字段的内容，如请求消息中不存在该字段，回复消息中将不会出现该字段。
 如协议自身引起的错误，Gizwits Platform 回复 错误响应消息，该消息格式参见下文。
 
-## 4.  推送事件
+## 5.  推送事件
 ### 数据点编辑事件
 ```json
 {
@@ -465,6 +526,57 @@ AES mode为AES.MODE_ECB
 }\n
 ```
 
+### GPS数据
+
+```json
+{
+		"cmd": "event_push",
+		"msg_id": <msg_id string optional>, (如消息包含此字段，ACK时原样返回）
+		"delivery_id": <delivery_id>，(用于ACK)
+		"event_type": "device_gps_kv",
+		"product_key": <product_key string>,
+		"did": <did string>,
+		"mac": <mac string>,
+		"created_at"：<timestamp in seconds, float>,
+		"data":  {
+				"longitude": "float",
+			  "latitude": "float",
+  			"hdop": "float",
+		    "num_satellites": “int”,
+				"payload": “string”
+			}
+	}
+```
+
+### LBS数据
+
+```json
+{
+		"cmd": "event_push",
+		"msg_id": <msg_id string optional>, (如消息包含此字段，ACK时原样返回）
+		"delivery_id": <delivery_id>，(用于ACK)
+		"event_type": "device_lbs_kv",
+		"product_key": <product_key string>,
+		"did": <did string>,
+		"mac": <mac string>,
+		"created_at"：<timestamp in seconds, float>,
+		"data":  {
+				"longitude": <float>,
+			  "latitude": <float>,
+  			"country": <string>,
+		    "province": <string>,
+				“city”: <string>,
+				“city”: <string>,
+				“adcode”: <string>,
+				“road”: <string>,
+				“street”: <string>,
+				“poi”: <string>,
+				“imsi”: <string>,
+				“signal”: <float>
+			}
+	}
+```
+
 ### 事件 ACK
 
 客户端每收到一事件消息都需要回复以下 ACK 消息：
@@ -477,7 +589,7 @@ AES mode为AES.MODE_ECB
 ```
 如 Gizwits Platform 没有收到客户端的回复，该事件会重复推送直至收到 ACK 或过期为止。一般情况下事件按发生时间顺序推送，当prefetch_count > 1 时，有可能因某事件没有 ACK而导致重发而表现为事件没有按时间顺序到达，例如先收到故障恢复或报警取消的事件，所以客户端开发者在处理时应比较 event_id 和 created_at 的值。
 
-## 5.  错误响应
+## 6.  错误响应
 当客户端发送的消息 Gizwits Platform 不能识别时，Gizwits Platform 返回以下的消息：
 ```json
 {
