@@ -114,7 +114,11 @@ A: 有可能是网络或者信号问题。
 
 Q2：如果产品采用变长数据传输方式，需要修改demo工程上面的代码
 A2：（1）修改action位，如下图
+
 ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_15.png)
+
      (2) 增加attr_flags位，如下图
+     
 ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_16.png)
+
 
