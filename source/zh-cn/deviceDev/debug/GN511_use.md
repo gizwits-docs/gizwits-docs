@@ -112,3 +112,9 @@ A: 有可能是网络或者信号问题。
 
 信号问题：如果电信NB卡没问题，但是连接服务器、上报数据失败，则有可能是当地信号覆盖不良。此时可以通过往串口0发送AT指令AT+CSQ指令查看模组信号强度，0~10 代表低； 10~20代表中； 20~31代表高；99代表未插卡。
 
+Q2：如果产品采用变长数据传输方式，需要修改demo工程上面的代码
+A2：（1）修改action位，如下图
+     ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_13.png)
+    (2) 增加attr_flags位，如下图
+    ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_14.png)
+
