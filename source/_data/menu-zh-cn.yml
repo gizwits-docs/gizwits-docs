@@ -133,6 +133,8 @@
       path: /deviceDev/debug/N102.html
     N256模组接入机智云方案及问题排查指引:
       path: /deviceDev/debug/N256.html
+    中移M5311-DB模组接入机智云方案及问题排查指引:
+      path: /deviceDev/中移M5311-DB接入机智云方案及问题排查指引.html
 
   DTU(数据传送装置)接入方案:
     GR515使用说明:
