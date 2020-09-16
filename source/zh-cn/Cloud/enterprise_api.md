@@ -185,7 +185,7 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 # 产品管理
 
 ## 获取产品数据点
-该接口查询的是产品的数据点定义 
+该接口查询的是产品的数据点定义
 *  数值型数据点真实范围需要通过计算获得
 ```
 最大值 = max * ratio + addition
@@ -637,9 +637,9 @@ Token值有效期为7天， 调用获取token接口返回的expired_at为失效�
 | online_latest     | integer  | 设备最近上线时间 |
 | created_at        | integer  | 设备创建时间     |
 | mcu_hard_version  | string   | mcu 硬件版本     |
-| mcu_soft_version  | string   | mcu 软件件版本   |
+| mcu_soft_version  | string   | mcu 软件版本   |
 | wifi_hard_version | string   | wifi 硬件版本    |
-| wifi_soft_version | string   | wifi 软件件版本  |
+| wifi_soft_version | string   | wifi 软件版本  |
 
 
 
