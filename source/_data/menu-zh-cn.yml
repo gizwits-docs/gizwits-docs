@@ -272,3 +272,17 @@
 
   全球部署方案:
     path: /UserManual/WorldWideConnectSolution.html
+
+  新版开发者中心使用教程:
+      创建账号/组织:
+         path: /UserManual/NewDev/创建账号_组织.html
+      产品创建教程:
+         path: /UserManual/NewDev/产品创建教程.html
+      移动应用创建教程:
+        path: /UserManual/NewDev/移动应用创建教程.html
+      语音应用（第三方平台）开通教程:
+        path: /UserManual/NewDev/语音应用（第三方平台）开通教程.html
+      业务应用（AEP）开通教程:
+        path: /UserManual/NewDev/业务应用（AEP）开通教程.html
+      账户管理:
+        path: /UserManual/NewDev/账户管理.html
