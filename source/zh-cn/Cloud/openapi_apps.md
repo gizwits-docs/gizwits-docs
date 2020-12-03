@@ -169,7 +169,7 @@ X-Gizwits-Application-Id 简称 AppID，是一个应用在机智云平台中的�
 
 X-Gizwits-User-token 简称 UserToken，它代表着接口调用中的用户上下文。
 
-UserToken 具有有效期，默认为 7 天。
+UserToken 具有有效期，默认为 180 天。
 
 可以通过用户注册或者登录接口获取 UserToken，返回字段中的 token 就是 UserToken，expire_at 表示 UserToken 过期的时间戳：
 ```json
