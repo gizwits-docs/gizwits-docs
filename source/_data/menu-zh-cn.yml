@@ -207,6 +207,8 @@
       path: /deviceDev/SoftAp配网方案.html
     设备接入FAQ:
       path: /deviceDev/设备接入FAQ.html
+    轻产测方案:
+      path: /deviceDev/轻产测方案.html
 
 云API:
     Open API 指南:
