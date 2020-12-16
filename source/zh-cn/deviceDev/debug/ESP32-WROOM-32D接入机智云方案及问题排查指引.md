@@ -13,7 +13,7 @@ title: ESP32-WROOM-32D接入机智云方案及问题排查指引
 
 # 2. ESP32模组资料下载及获取
 
-链接：https://eyun.baidu.com/s/3eTgCeVw 密码：CcKm
+ESP32-WROOM-32D模组资料下载 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/ModuleData/WIFI-Module/ESP-ESP32/ESP32-WROOM-32D-ModuleData.zip)
 
 # 3. ESP32外围设计原理图
 

@@ -6,7 +6,7 @@ title: 博实结BC23M模组接入机智云方案及问题排查指引
 > ***备注：BC23M模组，前期名称叫BC26M，后期变更名称叫BC23M。该模组只是更换名称，其它的功能都是一样。***
 
 # 2.博实结BC23M资料下载及获取
-链接：[https://eyun.baidu.com/s/3eSRIZZG](https://eyun.baidu.com/s/3eSRIZZG) 密码：6pAt
+博实结BC23M资料下载 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/ModuleData/2G-Module/BSJ-BC23M/BC23M-ModuleData.zip)
 
 # 3.博实结BC23M外围设计原理理图
 请参考本文第2章节的资料分享，《BC23(BC26、BC26M)设计参考》文档。
@@ -24,7 +24,7 @@ title: 博实结BC23M模组接入机智云方案及问题排查指引
 烧录固件用到的串口，如下：
 
 ![Alt text](/assets/zh-cn/deviceDev/BC26_png/png1.png)
- 
+
 ###  4.4.烧录流程
 （1）打开烧录工具BSJ App Download Tool V1.3 (BC20 BC26M).exe，选择对应的串口和固件,如下图。
 

@@ -13,7 +13,7 @@ title: ESP-WROOM-02DC/UC接入机智云方案及问题排查指引
 
 # 2. ESP-WROOM-02模组资料下载及获取
 
-链接：https://eyun.baidu.com/s/3mjyaKnm 密码：w3Th
+ESP-WROOM-02模组资料下载 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/ModuleData/WIFI-Module/ESP-ESP8266/DOIT-ESP8266-ModuleData.zip)
 
 # 3. ESP-WROOM-02外围设计原理理图
 
@@ -73,7 +73,7 @@ title: ESP-WROOM-02DC/UC接入机智云方案及问题排查指引
 
 # 6.搭配gokit接入机智云（包含创建数据点，下载代码，demoAPP配网绑定及控制设备等）
 
-快速接入文档参考链接： http://docs.gizwits.com/zh-cn/quickstart/UseMCU_BK.html 
+快速接入文档参考链接： http://docs.gizwits.com/zh-cn/quickstart/UseMCU_BK.html
 
 > ***备注：模组的UART0为与GoKit串口通讯串口，通讯波特率为9600bps。***
 

@@ -12,7 +12,7 @@ title: 域格CLM920_NC3接入机智云方案及问题排查指引
 本文主要介绍域格CLM920_NC3（以下略称域格NC3）如何快速从零开始接入机智云，实现简单的透传功能，以及常见的问题排查，还提供了该模组的相关资料。
 
 # 2. 域格NC3模组资料下载及获取
-链接：https://eyun.baidu.com/s/3i6VWNzv 密码：1Zvv
+域格NC3模组资料下载 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/ModuleData/4G-Module/YUGE-CLM920NC3/CLM920NC3-ModuleData.rar)
 
 # 3. 域格NC3外围设计原理图
 

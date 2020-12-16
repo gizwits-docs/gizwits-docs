@@ -17,7 +17,7 @@ title: HF-LPX20系列接入机智云方案及问题排查指引
 4、HF-LPT220；
 
 # 2. HF-LPX20模组资料下载及获取
-链接：https://eyun.baidu.com/s/3i5SYLk5 密码：SgtN
+HF-LPX20模组资料下载 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/ModuleData/WIFI-Module/HF-LPX20/HF-LPX20-ModuleData.rar)
 
 # 3. HF-LPX20外围设计原理图
 
@@ -73,7 +73,7 @@ title: HF-LPX20系列接入机智云方案及问题排查指引
 
 备注：此步骤不易操作实现，需要多次进行试验，当进行进入烧写模式操作始终无法显示上述信息的时候要注意检查串口设置是否正确，待确保串口设置无误后再次进行连接操作。
 
-上述窗体显示信息中，各命令解释如下： 
+上述窗体显示信息中，各命令解释如下：
 
 | Item      |    Value |
 | :-------- |:--------|
@@ -135,4 +135,3 @@ title: HF-LPX20系列接入机智云方案及问题排查指引
 # 7.FAQ
 1. Q: 如何排查AirLink配网失败问题？
     A: 参考链接：http://docs.gizwits.com/zh-cn/deviceDev/Onboarding.html
-

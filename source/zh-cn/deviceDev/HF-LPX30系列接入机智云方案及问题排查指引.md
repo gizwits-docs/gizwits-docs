@@ -16,10 +16,10 @@ title: HF-LPX30系列接入机智云方案及问题排查指引
 2、HF-LPB135；
 3、HF-LPT130A&B；
 4、HF-LPT230；
-5、HF-LPT330；
+5、HF-LPT330；  
 
 # 2. HF-LPX30模组资料下载及获取
-链接：https://eyun.baidu.com/s/3eTv5jyy 密码：a2pQ
+HF-LPX30模组资料下载 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/ModuleData/WIFI-Module/HF-LPX30/HF-LPX30-ModuleData.rar)
 
 # 3. HF-LPX30外围设计原理图
 

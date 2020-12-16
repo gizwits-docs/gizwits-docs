@@ -12,13 +12,13 @@ title: GN511使用说明
 #### 1.1 创建新产品
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_1.png)
- 
+
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_2.png)
 
 #### 1.2 定义数据点
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_3.png)
- 
+
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_4.png)
 
  ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_5.png)
@@ -41,11 +41,11 @@ title: GN511使用说明
 
 ## 3. 修改mcu程序，使得mcu可以正常运行
 
-#### MCU 无外部晶振，必须使用内部时钟 HSI。 
-#### STM32 的部分 IO 口默认主功能是 JLINK 的功能管脚，需要将关闭 JTAG-DP，启动SW-DP 才可以控制该 IO 口，例如本硬件中用到的 PB3 和 PB4. 
-##### 注：寄存器控制配置方式: 
+#### MCU 无外部晶振，必须使用内部时钟 HSI。
+#### STM32 的部分 IO 口默认主功能是 JLINK 的功能管脚，需要将关闭 JTAG-DP，启动SW-DP 才可以控制该 IO 口，例如本硬件中用到的 PB3 和 PB4.
+##### 注：寄存器控制配置方式:
 
-RCC->APB2ENR|=0x1D; //使能 ABC IO 口时钟 开启辅助时钟 
+RCC->APB2ENR|=0x1D; //使能 ABC IO 口时钟 开启辅助时钟
 
 AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
 
@@ -55,19 +55,19 @@ AFIO->MAPR |= 0x02000000; //关闭 JTAG-DP，启动 SW-DP
 
 #### 4.1 N256 上电
 #### N256 默认不得电，需要通过 MCU 的 PB0(NB_PWR)来控制得电。
- i. PB0(NB_PWR)=1，N256 上电。 
- 
+ i. PB0(NB_PWR)=1，N256 上电。
+
  ii. PB0(NB_PWR)=0，N256 掉电。
 
 #### 4.2 N256 开机
-###### a) MCU 需要先通过 PB0(NB_PWR)=1 给 N256 上电。 
-###### b) 等 N256 电压稳定后 MCU 再通过 PB1(NB_PKEY)来控制 N256 开机或关机。 
-###### c) PB1(NB_PKEY)的电平逻辑和 N256 的 PWRKEY 的电平逻辑是非门 
- i. PB1(NB_PKEY)=1，N256 PWRKEY=0. 
- 
- ii. PB1(NB_PKEY)=0，N256 PWRKEY=1. 
- 
-###### d) 在拉低管脚 PWRKEY 之前，保证 VBAT 电压稳定。建议 VBAT 上电到管脚 PWRKEY 拉低之间的时间 T1 为 100ms 左右。 
+###### a) MCU 需要先通过 PB0(NB_PWR)=1 给 N256 上电。
+###### b) 等 N256 电压稳定后 MCU 再通过 PB1(NB_PKEY)来控制 N256 开机或关机。
+###### c) PB1(NB_PKEY)的电平逻辑和 N256 的 PWRKEY 的电平逻辑是非门
+ i. PB1(NB_PKEY)=1，N256 PWRKEY=0.
+
+ ii. PB1(NB_PKEY)=0，N256 PWRKEY=1.
+
+###### d) 在拉低管脚 PWRKEY 之前，保证 VBAT 电压稳定。建议 VBAT 上电到管脚 PWRKEY 拉低之间的时间 T1 为 100ms 左右。
 #### N256 开机后，可以通过查看模组日志或者输入 AT 命令（如AT+CGSN=1）查看响应，判断模块是否已经开机成功，若成功可以释放 PWRKEY 引脚，反之，则模块开机失败。
 #### 注：使用GN511的COM1查看模组日志
 #### 模组日志截图
@@ -99,9 +99,7 @@ APP下载地址：https://download.gizwits.com/zh-cn/p/98/99
 
 ## 7. 参考资料下载
 
-#### 参考代码下载地址：链接：https://eyun.baidu.com/s/3ggsfur5 密码：OaBy
-
-#### 《GN511硬件IO说明书 V1.5》链接：https://eyun.baidu.com/s/3o9q5kwi 密码：MdSA
+#### GN511参考资料下载地址 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/GizwitsDTUData/G-GN511/GN511-ModuleData.zip)
 
 ## 8. FAQ
 
@@ -118,7 +116,5 @@ A2：（1）修改action位，如下图
 ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_15.png)
 
      (2) 增加attr_flags位，如下图
-     
+
 ![name](/assets/zh-cn/deviceDev/debug/GN511/GN511_use_16.png)
-
-
