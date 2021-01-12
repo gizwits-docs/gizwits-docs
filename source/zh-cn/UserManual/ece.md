@@ -14,7 +14,7 @@ title:  如何使用机智云ECE雾计算
 
 ![Alt text](/assets/zh-cn/UserManual/ECE/001.png)
 
-## 3必读术语
+## 3.必读术语
 #### 3.1 ECE
 ECE是Edge Computing Engine的缩写，意为边缘计算引擎。
 #### 3.2 PK
@@ -27,6 +27,30 @@ PK是Pruduct Key的缩写，是企业在机智云平台开发者中心创建的�
 微应用可设置数据通信方法（数据包格式、加密方式等），对数据的处理（取最大值、最小值等），以及设备行为参数（采样频率、心跳时间等）。
 ####  3.6 LUA脚本
 LUA是嵌入式脚本语言，实现可配置性和可扩展性。
+
+## 4.ECE 雾计算申请流程
+
+申请条件：企业开发者
+
+第一步：登录机智云新版【开发者中心】，在组织层面开通【ECE 雾计算】服务后，全部产品均可使用该服务。
+
+https://developer.gizwits.com/#/login
+
+第二步：点击【账号】，选择【企业信息】页面，选择左侧组织，点击【服务中心】；
+
+![11](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/11_1610349249501.png)
+
+第三步：选择【ECE雾计算】，点击【立即开通】按钮，等待机智云审核；
+
+![12](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/12_1610349250001.png)
+
+第四步：待审核通过后，点击【返回旧版】，需返回旧版开发者中心使用此功能。（由于新版功能还在开发完善中，部分功能仍会在旧版使用中）。
+
+![13](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/13_1610349249905.png)
+
+第五步：选择产品，在服务列表即可看到ECE 雾计算；点击【ECE 雾计算】即可开始体验。
+
+![14](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/14_1610349249827.png)
 
 # 使用场景与业务流程
 ## 1.服务对象
@@ -95,7 +119,7 @@ LUA是嵌入式脚本语言，实现可配置性和可扩展性。
 
 **场景3：高级数据运算**
  让设备进行比较高效复杂的数据运算，并把运算结果转换为json后上传云端。假设设备默认5秒一次温度采样频率，为了得到更多的采样点，我们设定设备新的采样频率为100毫秒采集一次温度值，5秒后，用采集的数据计算出平均值、最大值、最小值和方差，然后上报云端。
- 
+
 同样是5秒上报一次，但是后者更具数据价值。
 我们使用ECE雾计算服务，在【微应用】里，录入设备行为设定以及数据分析(如下图)，然后点击【推送】，设置好推送地址。
 
@@ -215,22 +239,22 @@ MAC支持输入任何符号、数字0-9、大写A-Z、小写a-z，限制12个字
 功能：处理设备端发送的业务数据。
 
 # ECE雾计算视频教学
-####  1 企业账号注册	
+####  1 企业账号注册
 https://v.qq.com/x/page/n0362u2fgws.html
 
-#### 2 固件烧录	
+#### 2 固件烧录
 http://v.qq.com/x/page/r03612h7pr0.html
 
-#### 3 pk烧录	
+#### 3 pk烧录
 http://v.qq.com/x/page/p0361baxn9z.html
 
-####  4 MCU协议介绍	
+####  4 MCU协议介绍
 http://v.qq.com/x/page/a03619wrrqr.html
 
-####  5 lua脚本讲解	
+####  5 lua脚本讲解
 http://v.qq.com/x/page/d03617dbq8p.html
 
-#### 6 gokit跑lua演示	
+#### 6 gokit跑lua演示
 http://v.qq.com/x/page/y0361kmy887.html
 
 # 常见问题
@@ -246,5 +270,3 @@ http://v.qq.com/x/page/y0361kmy887.html
 目前版本暂不支持模组或手机是否成功接收，只给用户反馈是否推送成功。
 #### 6 支持脚本文件上传吗？
 此版本暂不支持脚本文件上传，日后会开放此功能。
-
-

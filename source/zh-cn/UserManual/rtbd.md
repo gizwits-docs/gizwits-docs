@@ -5,13 +5,25 @@ title: 实时大数据使用说明
 
 ## 1.功能介绍
 通过拖放的方式生成API， 用于对产品数据点进行实时大数据统计分析。
-## 2.申请流程
-第一步：登录机智云【开发者中心】，打开需要申请开通【实时大数据】的产品(仅限机智云企业开发者)；
-第二步：点击【添加服务】，进入到【添加服务】页面，找到【实时大数据】；
-![Alt text](/assets/zh-cn/UserManual/RTBD/image1.png)
-第三步：打开【实时大数据】，点击【开通服务】按钮，等待机智云审核；
-![Alt text](/assets/zh-cn/UserManual/RTBD/image2.png)
-第四步：待机智云审核通过后，在服务列表即可看到实时大数据；点击【实时大数据】即可开始体验。
+## 2.申请流程[#](http://docs.gizwits.com/zh-cn/UserManual/rtbd.html#2-申请流程)
+
+第一步：登录机智云新版开发者中心，在组织层面开通【基础数据统计分析】（实时大数据）服务后，全部产品均可使用该服务。(仅限机智云企业开发者)；
+
+https://developer.gizwits.com/#/login
+
+第二步：点击【账号】，选择【企业信息】页面，选择左侧组织，点击【服务中心】；
+
+![15](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/15_1610349249900.png)
+
+第三步：选择【基础数据统计分析】，点击【立即开通】按钮，等待机智云审核；
+
+![16](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/16_1610349249800.png)
+
+第四步：待审核通过后，点击【返回旧版】，需返回旧版开发者中心使用此功能。（由于新版功能还在开发完善中，部分功能仍会在旧版使用中）。
+![17](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/17_1610349249913.png)
+
+第五步：选择产品，在服务列表即可看到实时大数据；点击【实时大数据】即可开始体验。
+
 ![Alt text](/assets/zh-cn/UserManual/RTBD/image3.png)
 
 # 实时大数据API构建

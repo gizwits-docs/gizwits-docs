@@ -20,16 +20,27 @@ v2.5.0
 
   代码仓库：https://github.com/wangzhenandy/snoti_client_python
 
-# SNoti申请流程
+  # SNoti申请流程
 
-1.企业开发者登陆开发者中心，选择添加服务，如下图
-![添加](/assets/zh-cn/cloud/添加SNoti服务.png)
+  第一步：企业开发者登陆新版开发者中心
+  
+  https://developer.gizwits.com/#/login
 
-2.点击上图箭头指向的SNoti服务，进入下一步，申请开通服务
-![添加](/assets/zh-cn/cloud/开通SNoti服务.png)
+  点击右上角【账号】-【企业信息】-【服务中心】，如下图
 
-3.成功添加SNoti服务后，在服务页面点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
-![添加](/assets/zh-cn/cloud/添加api.png)
+  ![4](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/4_1610349249206.png)
+
+  第二步：选择左侧组织，再点击【数据推送服务】，点击【立即开通】，申请开通后等待审核。
+
+  ![5](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/5_1610349249197.png)
+
+  第三步：待审核通过后，点击【返回旧版】，需返回旧版开发者中心使用此功能。（由于新版功能还在开发完善中，部分功能仍会在旧版使用中）。
+
+  ![6](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/6_1610349249202.png)
+
+  第四步：选择产品，然后再点击【Snoti 服务】，点击“新建授权”创建，该 auth_id 拥有获取该产品下所有设备消息和控制设备的权限；
+
+  ![7](https://xbgroup-1251025085.cos.ap-guangzhou.myqcloud.com/cybertron/users/409949/media/7_1610349249392.png)
 
 # 关键术语
 1.auth_id & auth_secret: 产品授权ID和密钥，一款产品可创建多个auth_id，一个auth_id对应唯一的一款产品；SNoti客户端登陆时，会验证auth_id和auth_secret的正确性；
@@ -514,7 +525,7 @@ AES mode为AES.MODE_ECB
 "mac": <mac string>,
 "group_id": <group_id string>,
 "created_at"：<timestamp in seconds, float>,
-"source: "client"|"open_api"|"scheduler"|"enterprise_api"|"gateway" 
+"source: "client"|"open_api"|"scheduler"|"enterprise_api"|"gateway"
 "appid": <appid string>, (missing if source="enterprise_api"|"gateway" or v1.0 devices)
 "uid": <uid string>, (missing if source="enterprise_api"|"gateway" or v1.0 devices)
 "enterprise_id": <enterprise_id string>, (only for source="enterprise_api")
@@ -659,7 +670,6 @@ c. 需要接收子设备的数据，就使用子设备产品对应的auth_id。
 2. 设备上报数据 or 云端下发控制
 3. 设备离线
 
-当然也存在特殊的情况, 即: 设备在没有离线的情况下, 再次上线. 我们称之为 "再上线". 
+当然也存在特殊的情况, 即: 设备在没有离线的情况下, 再次上线. 我们称之为 "再上线".
 
 此时, "再上线" 会推送一个 上线事件.
-
