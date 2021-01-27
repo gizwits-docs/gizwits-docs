@@ -253,6 +253,8 @@
       path: /UserManual/OTA.html
     MCU OTA教程:
       path: /UserManual/MCUOTA.html
+    新版 OTA使用教程:
+      path: /UserManual/NewOTA使用教程.html
 
   产测工具使用文档:
     path: /deviceDev/产测工具使用文档.html
