@@ -203,3 +203,5 @@ OK，恭喜您已经通过虚拟设备和机智云测试APP快速了解和体验
 
 视频-自助接入机智云（2018）https://v.youku.com/v_show/id_XMzgwOTI2NTg2OA==.html
 视频-How to create a IoT product on Gizwits Platform   https://youtu.be/-wypfTDGmv4
+
+FAQtest
