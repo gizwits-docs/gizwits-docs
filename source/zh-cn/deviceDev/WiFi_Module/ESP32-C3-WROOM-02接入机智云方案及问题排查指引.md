@@ -89,7 +89,7 @@ ESP32-C3-WROOM-02模组资料下载 ====> [点击下载](https://gizwits-doc-125
 
 快速接入文档参考链接：http://docs.gizwits.com/zh-cn/deviceDev/debug/WIF_Project.html
 
-> 备注：模组的IO4(RXD)与IO5(TXD)为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图
+> 备注：模组的RXD与TXD为与Gokit通讯的通讯串口，通讯波特率为9600bps，具体可参考文章5.1的模组接线方法图
 
 # 7.FAQ
 
