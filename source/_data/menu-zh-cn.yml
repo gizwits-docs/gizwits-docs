@@ -151,6 +151,8 @@
       path: /deviceDev/GR515使用说明.html
     GN511使用说明:
       path: /deviceDev/debug/GN511_use.html
+    GC511使用说明:
+      path: /deviceDev/GC511使用说明.html
 
   MCU代码自动生成服务介绍:
     MCU代码自动生成工具使用教程:
