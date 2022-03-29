@@ -15,6 +15,8 @@ title: ESP32-C3-WROOM-02接入机智云方案及问题排查指引
 
 ESP32-C3-WROOM-02模组资料下载 ====> [点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/ModuleData/WIFI-Module/ESP-ESP32-C3/ESP32-C3-WROOM-02%E6%A8%A1%E7%BB%84%E8%B5%84%E6%96%99.zip)
 
+机智云GE211-02转接板资料下载 ====>[点击下载](https://gizwits-doc-1251025085.cos.ap-guangzhou.myqcloud.com/GizwitsDTUData/GE211-02/%E6%9C%BA%E6%99%BA%E4%BA%91GE211%E8%BD%AC%E6%8E%A5%E6%9D%BF%E6%8E%A5%E5%85%A5%E6%96%87%E6%A1%A3/%E6%9C%BA%E6%99%BA%E4%BA%91GE211-02%E8%BD%AC%E6%8E%A5%E6%9D%BF%E6%8E%A5%E5%85%A5%E6%9C%BA%E6%99%BA%E4%BA%91%E6%96%B9%E6%A1%88%E5%8F%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E6%8C%87%E5%BC%95V1.0.0.pdf)
+
 # 3. C3外围设计原理图
 
 请下载第2章内容，下载模组规格说明书与模组参考设计，使用说明书内推荐的外围设计原理图。
